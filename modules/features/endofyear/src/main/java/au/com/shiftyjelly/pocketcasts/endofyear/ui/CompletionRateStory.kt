@@ -297,8 +297,8 @@ private fun CompletionRateInfo(
             modifier = Modifier.height(16.dp),
         )
         val badgeId = when (story.subscriptionTier) {
-            SubscriptionTier.PLUS -> IR.drawable.end_of_year_2024_completion_rate_plus_badge
-            SubscriptionTier.PATRON -> IR.drawable.end_of_year_2024_completion_rate_patron_badge
+            SubscriptionTier.PLUS -> R.drawable.end_of_year_2024_completion_rate_plus_badge
+            SubscriptionTier.PATRON -> R.drawable.end_of_year_2024_completion_rate_patron_badge
             SubscriptionTier.NONE -> null
         }
 
@@ -314,7 +314,7 @@ private fun CompletionRateInfo(
         )
         TextH10(
             text = stringResource(
-                LR.string.end_of_year_stories_year_completion_rate_title,
+                R.string.end_of_year_stories_year_completion_rate_title,
                 (story.completionRate * 100).roundToInt(),
             ),
             fontScale = measurements.smallDeviceFactor,
@@ -327,7 +327,7 @@ private fun CompletionRateInfo(
         )
         TextP40(
             text = stringResource(
-                LR.string.end_of_year_stories_year_completion_rate_subtitle,
+                R.string.end_of_year_stories_year_completion_rate_subtitle,
                 story.listenedCount,
                 story.completedCount,
             ),

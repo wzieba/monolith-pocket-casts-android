@@ -20,7 +20,7 @@ internal class CatalogFactory(
     private val context: Context,
 ) {
     fun subscribedPodcasts(data: List<ExternalPodcast>) = PodcastSeriesCatalog("SubscribedPodcasts")
-        .setLabel(context.getString(LR.string.nova_launcher_subscribed_podcasts))
+        .setLabel(context.getString(R.string.nova_launcher_subscribed_podcasts))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(
             data.mapIndexed { index, podcast ->
@@ -37,7 +37,7 @@ internal class CatalogFactory(
         )
 
     fun recentlyPlayedPodcasts(data: List<ExternalPodcast>) = PodcastSeriesCatalog("RecentlyPlayed")
-        .setLabel(context.getString(LR.string.nova_launcher_recently_played))
+        .setLabel(context.getString(R.string.nova_launcher_recently_played))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(
             data.mapIndexed { index, podcast ->
@@ -54,7 +54,7 @@ internal class CatalogFactory(
         )
 
     fun trendingPodcasts(data: List<ExternalPodcastView>) = PodcastSeriesCatalog("TrendingPodcasts")
-        .setLabel(context.getString(LR.string.nova_launcher_trending))
+        .setLabel(context.getString(R.string.nova_launcher_trending))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(
             data.mapIndexed { index, podcast ->
@@ -67,7 +67,7 @@ internal class CatalogFactory(
         )
 
     fun newEpisodes(data: List<ExternalEpisode.Podcast>) = PodcastEpisodeCatalog("NewReleases")
-        .setLabel(context.getString(LR.string.nova_launcher_new_releases))
+        .setLabel(context.getString(R.string.nova_launcher_new_releases))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(
             data.mapIndexed { index, episode ->
@@ -86,7 +86,7 @@ internal class CatalogFactory(
         )
 
     fun inProgressEpisodes(data: List<ExternalEpisode.Podcast>) = PodcastEpisodeCatalog("ContinueListening")
-        .setLabel(context.getString(LR.string.nova_launcher_continue_listening))
+        .setLabel(context.getString(R.string.nova_launcher_continue_listening))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(
             data.mapIndexed { index, episode ->
@@ -105,7 +105,7 @@ internal class CatalogFactory(
         )
 
     fun queuedEpisodes(data: List<ExternalEpisode>) = PodcastEpisodeCatalog("UpNextQueue")
-        .setLabel(context.getString(LR.string.nova_launcher_up_next))
+        .setLabel(context.getString(R.string.nova_launcher_up_next))
         .setPreferredAspectRatio(1, 1)
         .addAllItems(data.mapIndexed { index, episode -> episode.toNovaEpisode(index) })
 

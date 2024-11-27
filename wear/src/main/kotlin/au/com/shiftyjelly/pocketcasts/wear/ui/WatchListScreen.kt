@@ -61,8 +61,8 @@ fun WatchListScreen(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.podcasts),
-                iconRes = IR.drawable.ic_podcasts,
+                title = stringResource(R.string.podcasts),
+                iconRes = R.drawable.ic_podcasts,
                 onClick = {
                     viewModel.onPodcastsClicked()
                     navigateToRoute(PodcastsScreen.routeHomeFolder)
@@ -72,8 +72,8 @@ fun WatchListScreen(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.downloads),
-                iconRes = IR.drawable.ic_download,
+                title = stringResource(R.string.downloads),
+                iconRes = R.drawable.ic_download,
                 onClick = {
                     viewModel.onDownloadsClicked()
                     navigateToRoute(DownloadsScreen.route)
@@ -83,8 +83,8 @@ fun WatchListScreen(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.filters),
-                iconRes = IR.drawable.ic_filters,
+                title = stringResource(R.string.filters),
+                iconRes = R.drawable.ic_filters,
                 onClick = {
                     viewModel.onFiltersClicked()
                     navigateToRoute(FiltersScreen.route)
@@ -94,8 +94,8 @@ fun WatchListScreen(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.profile_navigation_files),
-                iconRes = IR.drawable.ic_file,
+                title = stringResource(R.string.profile_navigation_files),
+                iconRes = R.drawable.ic_file,
                 onClick = {
                     viewModel.onFilesClicked()
                     navigateToRoute(FilesScreen.route)
@@ -105,8 +105,8 @@ fun WatchListScreen(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.settings),
-                iconRes = IR.drawable.ic_profile_settings,
+                title = stringResource(R.string.settings),
+                iconRes = R.drawable.ic_profile_settings,
                 onClick = {
                     viewModel.onSettingsClicked()
                     navigateToRoute(SettingsScreen.route)

@@ -33,7 +33,7 @@ fun EpisodeImage(
 
     CoilImage(
         imageRequest = imageRequest,
-        title = stringResource(id = LR.string.episode_cover_description, episode.title),
+        title = stringResource(id = R.string.episode_cover_description, episode.title),
         showTitle = false,
         contentScale = contentScale,
         modifier = modifier

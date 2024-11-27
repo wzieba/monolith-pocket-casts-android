@@ -64,7 +64,7 @@ class EpisodeOptionsFragment : BaseFragment(), CoroutineScope {
 
         val binding = binding ?: return
 
-        binding.lblTitle.text = getString(LR.string.filters_chip_episode_status)
+        binding.lblTitle.text = getString(R.string.filters_chip_episode_status)
 
         val btnSave = binding.btnSave
         val btnClose = binding.btnClose
@@ -76,15 +76,15 @@ class EpisodeOptionsFragment : BaseFragment(), CoroutineScope {
             val playlist = playlistManager.findByUuid(uuid) ?: return@launch
             this@EpisodeOptionsFragment.playlist = playlist
 
-            val unplayedOption = FilterOption(LR.string.unplayed, playlist.unplayed, { v, _ ->
+            val unplayedOption = FilterOption(R.string.unplayed, playlist.unplayed, { v, _ ->
                 playlist.unplayed = v
                 userChanged = true
             })
-            val inProgressOption = FilterOption(LR.string.in_progress, playlist.partiallyPlayed, { v, _ ->
+            val inProgressOption = FilterOption(R.string.in_progress, playlist.partiallyPlayed, { v, _ ->
                 playlist.partiallyPlayed = v
                 userChanged = true
             })
-            val playedOption = FilterOption(LR.string.played, playlist.finished, { v, _ ->
+            val playedOption = FilterOption(R.string.played, playlist.finished, { v, _ ->
                 playlist.finished = v
                 userChanged = true
             })

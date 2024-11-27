@@ -174,7 +174,7 @@ open class PodcastGridListFragment : BaseFragment(), Toolbar.OnMenuItemClickList
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, shareUrl ?: "")
             }
-            startActivity(Intent.createChooser(intent, getString(LR.string.podcasts_share_via)))
+            startActivity(Intent.createChooser(intent, getString(R.string.podcasts_share_via)))
             return true
         }
         return false

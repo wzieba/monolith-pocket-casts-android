@@ -19,7 +19,7 @@ class BookmarksSortByDialog(
 ) {
     fun show(context: Context, fragmentManager: FragmentManager) {
         val dialog = OptionsDialog()
-            .setTitle(context.resources.getString(LR.string.sort_by))
+            .setTitle(context.resources.getString(R.string.sort_by))
             .setForceDarkTheme(forceDarkTheme)
         val sortOrder = sourceView.mapToBookmarksSortType()
         val valuesToShow = getValuesToShow()

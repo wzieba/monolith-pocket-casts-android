@@ -27,19 +27,19 @@ sealed class PodcastGrouping(
     abstract fun groupTitles(index: Int, context: Context): String
 
     data object None : PodcastGrouping(
-        groupName = LR.string.none,
+        groupName = R.string.none,
         index = 0,
         serverId = 0,
     ) {
         override val sortFunction: ((PodcastEpisode) -> Int)? = null
 
         override fun groupTitles(index: Int, context: Context): String {
-            return context.getString(LR.string.none)
+            return context.getString(R.string.none)
         }
     }
 
     data object Downloaded : PodcastGrouping(
-        groupName = LR.string.podcast_group_downloaded,
+        groupName = R.string.podcast_group_downloaded,
         index = 1,
         serverId = 1,
     ) {
@@ -48,17 +48,17 @@ sealed class PodcastGrouping(
 
         override fun groupTitles(index: Int, context: Context): String {
             return if (index == 0) {
-                context.getString(LR.string.podcast_group_downloaded)
+                context.getString(R.string.podcast_group_downloaded)
             } else {
                 context.getString(
-                    LR.string.podcast_group_not_downloaded,
+                    R.string.podcast_group_not_downloaded,
                 )
             }
         }
     }
 
     data object Unplayed : PodcastGrouping(
-        groupName = LR.string.podcast_group_unplayed,
+        groupName = R.string.podcast_group_unplayed,
         index = 2,
         serverId = 2,
     ) {
@@ -67,17 +67,17 @@ sealed class PodcastGrouping(
 
         override fun groupTitles(index: Int, context: Context): String {
             return if (index == 0) {
-                context.getString(LR.string.podcast_group_unplayed)
+                context.getString(R.string.podcast_group_unplayed)
             } else {
                 context.getString(
-                    LR.string.podcast_group_played,
+                    R.string.podcast_group_played,
                 )
             }
         }
     }
 
     data object Season : PodcastGrouping(
-        groupName = LR.string.podcast_group_season,
+        groupName = R.string.podcast_group_season,
         index = 3,
         serverId = 3,
     ) {
@@ -87,7 +87,7 @@ sealed class PodcastGrouping(
             get() = { getSeasonGroupId(it) }
 
         override fun groupTitles(index: Int, context: Context): String {
-            return groupTitlesList.getOrNull(index) ?: context.getString(LR.string.podcast_no_season)
+            return groupTitlesList.getOrNull(index) ?: context.getString(R.string.podcast_no_season)
         }
 
         override fun formGroups(episodes: List<PodcastEpisode>, podcast: Podcast, resources: Resources): List<List<PodcastEpisode>> {
@@ -97,9 +97,9 @@ sealed class PodcastGrouping(
                 val firstEpisode = it.firstOrNull()
                 if (firstEpisode != null) {
                     if (getSeasonGroupId(firstEpisode) > 0) {
-                        titleList.add(resources.getString(LR.string.podcast_season_x, firstEpisode.season ?: 0))
+                        titleList.add(resources.getString(R.string.podcast_season_x, firstEpisode.season ?: 0))
                     } else {
-                        titleList.add(resources.getString(LR.string.podcast_no_season))
+                        titleList.add(resources.getString(R.string.podcast_no_season))
                     }
                 } else {
                     titleList.add("")
@@ -115,7 +115,7 @@ sealed class PodcastGrouping(
     }
 
     data object Starred : PodcastGrouping(
-        groupName = LR.string.profile_navigation_starred,
+        groupName = R.string.profile_navigation_starred,
         index = 4,
         serverId = 4,
     ) {
@@ -124,10 +124,10 @@ sealed class PodcastGrouping(
 
         override fun groupTitles(index: Int, context: Context): String {
             return if (index == 0) {
-                context.getString(LR.string.profile_navigation_starred)
+                context.getString(R.string.profile_navigation_starred)
             } else {
                 context.getString(
-                    LR.string.podcast_group_not_starred,
+                    R.string.podcast_group_not_starred,
                 )
             }
         }

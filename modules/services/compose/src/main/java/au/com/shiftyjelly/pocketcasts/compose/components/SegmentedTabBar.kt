@@ -137,7 +137,7 @@ data class SegmentedTabBarColors(
 fun SegmentedTabBarPreview() {
     AppThemeWithBackground(Theme.ThemeType.DARK) {
         SegmentedTabBar(
-            items = listOf(stringResource(LR.string.plus_yearly), stringResource(LR.string.plus_monthly)),
+            items = listOf(stringResource(R.string.plus_yearly), stringResource(R.string.plus_monthly)),
             onItemSelected = {},
             modifier = Modifier.width(IntrinsicSize.Max),
         )

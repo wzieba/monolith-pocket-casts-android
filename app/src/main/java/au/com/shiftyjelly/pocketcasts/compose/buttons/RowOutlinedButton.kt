@@ -145,7 +145,7 @@ fun RowOutlinedButtonDarkPreview() {
 fun RowOutlinedButtonLeadingIconPreview() {
     AppThemeWithBackground(Theme.ThemeType.LIGHT) {
         RowOutlinedButton(
-            text = stringResource(LR.string.onboarding_continue_with_google),
+            text = stringResource(R.string.onboarding_continue_with_google),
             leadingIcon = painterResource(R.drawable.google_g),
             tintIcon = false,
             onClick = {},

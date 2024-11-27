@@ -39,10 +39,10 @@ class NotificationDrawerImpl @Inject constructor(
     @ApplicationContext private val context: Context,
 ) : NotificationDrawer {
 
-    private val playAction = NotificationCompat.Action(IR.drawable.notification_play, context.getString(LR.string.play), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_PLAY))
-    private val pauseAction = NotificationCompat.Action(IR.drawable.notification_pause, context.getString(LR.string.pause), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_PAUSE))
-    private val skipBackAction = NotificationCompat.Action(IR.drawable.notification_skipbackwards, context.getString(LR.string.player_notification_skip_back, settings.skipBackInSecs.value), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_SKIP_TO_PREVIOUS))
-    private val skipForwardAction = NotificationCompat.Action(IR.drawable.notification_skipforward, context.getString(LR.string.player_notification_skip_forward, settings.skipForwardInSecs.value), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_SKIP_TO_NEXT))
+    private val playAction = NotificationCompat.Action(R.drawable.notification_play, context.getString(R.string.play), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_PLAY))
+    private val pauseAction = NotificationCompat.Action(R.drawable.notification_pause, context.getString(R.string.pause), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_PAUSE))
+    private val skipBackAction = NotificationCompat.Action(R.drawable.notification_skipbackwards, context.getString(R.string.player_notification_skip_back, settings.skipBackInSecs.value), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_SKIP_TO_PREVIOUS))
+    private val skipForwardAction = NotificationCompat.Action(R.drawable.notification_skipforward, context.getString(R.string.player_notification_skip_forward, settings.skipForwardInSecs.value), MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_SKIP_TO_NEXT))
     private val stopPendingIntent = MediaButtonReceiver.buildMediaButtonPendingIntent(context, ACTION_STOP)
 
     private var notificationData: NotificationData? = null
@@ -82,7 +82,7 @@ class NotificationDrawerImpl @Inject constructor(
             .setLargeIcon(data.icon)
             .setOnlyAlertOnce(true)
             .setShowWhen(false)
-            .setSmallIcon(IR.drawable.notification)
+            .setSmallIcon(R.drawable.notification)
             .setStyle(mediaStyle)
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
             .build()

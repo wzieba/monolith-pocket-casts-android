@@ -55,7 +55,7 @@ class PocketCastsAccountAuthenticatorTest {
             .client(OkHttpClient.Builder().build())
             .build()
 
-        val okhttpCache = Cache(File(context.cacheDir.absolutePath, "HttpCache"), (10 * 1024 * 1024).toLong())
+        val okhttpCache = Cache(File(context.cacheDR.absolutePath, "HttpCache"), (10 * 1024 * 1024).toLong())
 
         account = Account("support@pocketcasts.com", AccountConstants.ACCOUNT_TYPE)
         val accountManager = mock<AccountManager> {

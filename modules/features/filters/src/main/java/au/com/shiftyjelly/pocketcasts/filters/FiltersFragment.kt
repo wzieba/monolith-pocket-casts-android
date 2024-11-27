@@ -76,7 +76,7 @@ class FiltersFragment : BaseFragment(), CoroutineScope, Toolbar.OnMenuItemClickL
 
         setupToolbarAndStatusBar(
             toolbar = binding.toolbar,
-            title = getString(LR.string.filters),
+            title = getString(R.string.filters),
             menu = R.menu.menu_filters,
             chromeCastButton = Shown(chromeCastAnalytics),
             navigationIcon = None,

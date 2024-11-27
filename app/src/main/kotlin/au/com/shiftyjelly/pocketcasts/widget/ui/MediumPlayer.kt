@@ -68,7 +68,7 @@ internal fun MediumPlayer(state: MediumPlayerWidgetState) {
                         modifier = GlanceModifier.fillMaxSize(),
                     ) {
                         NonScalingText(
-                            text = LocalContext.current.getString(LR.string.widget_no_episode_playing),
+                            text = LocalContext.current.getString(R.string.widget_no_episode_playing),
                             textSize = 16.dp,
                             useDynamicColors = state.useDynamicColors,
                             isBold = true,
@@ -77,7 +77,7 @@ internal fun MediumPlayer(state: MediumPlayerWidgetState) {
                             modifier = GlanceModifier.height(2.dp),
                         )
                         NonScalingText(
-                            text = LocalContext.current.getString(LR.string.widget_check_out_discover),
+                            text = LocalContext.current.getString(R.string.widget_check_out_discover),
                             textSize = 13.dp,
                             useDynamicColors = state.useDynamicColors,
                             isTransparent = true,

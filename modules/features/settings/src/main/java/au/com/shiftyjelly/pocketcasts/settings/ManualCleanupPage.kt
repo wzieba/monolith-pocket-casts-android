@@ -49,7 +49,7 @@ fun ManualCleanupPage(
     val context = LocalContext.current
     Column {
         ThemedTopAppBar(
-            title = stringResource(id = LR.string.settings_title_manage_downloads),
+            title = stringResource(id = R.string.settings_title_manage_downloads),
             navigationButton = NavigationButton.Back,
             onNavigationClick = onBackClick,
         )
@@ -94,7 +94,7 @@ private fun ManageDownloadsView(
         IncludeStarredRow(includeStarredSwitchState, onStarredSwitchClicked)
         TotalSelectedDownloadSizeRow(state.totalSelectedDownloadSize)
         RowButton(
-            text = stringResource(LR.string.settings_downloads_clean_up),
+            text = stringResource(R.string.settings_downloads_clean_up),
             enabled = state.deleteButton.isEnabled,
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = deleteButtonColor,
@@ -130,7 +130,7 @@ private fun IncludeStarredRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_manage_downloads_include_starred),
+        primaryText = stringResource(R.string.settings_manage_downloads_include_starred),
         toggle = SettingRowToggle.Switch(checked = checkedState),
         modifier = modifier.toggleable(
             value = checkedState,
@@ -144,11 +144,11 @@ private fun TotalSelectedDownloadSizeRow(
     totalSelectedDownloadSize: Long,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_manage_downloads_total),
+        primaryText = stringResource(R.string.settings_manage_downloads_total),
         secondaryText = Util.formattedBytes(
             bytes = totalSelectedDownloadSize,
             context = LocalContext.current,
-        ).replace("-", stringResource(LR.string.settings_storage_downloaded_bytes, 0)),
+        ).replace("-", stringResource(R.string.settings_storage_downloaded_bytes, 0)),
     )
 }
 

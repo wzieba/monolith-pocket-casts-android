@@ -165,7 +165,7 @@ private fun LinkButton(textColor: Color, onClick: () -> Unit, modifier: Modifier
         Icon(
             painter = painterResource(id = R.drawable.ic_link),
             tint = textColor,
-            contentDescription = stringResource(LR.string.player_chapter_url),
+            contentDescription = stringResource(R.string.player_chapter_url),
             modifier = Modifier.size(16.dp),
         )
     }

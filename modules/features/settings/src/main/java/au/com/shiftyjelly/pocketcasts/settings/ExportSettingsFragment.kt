@@ -66,7 +66,7 @@ class ExportSettingsFragment : PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findToolbar().setup(title = getString(LR.string.settings_title_import_export), navigationIcon = BackArrow, activity = activity, theme = theme)
+        view.findToolbar().setup(title = getString(R.string.settings_title_import_export), navigationIcon = BackArrow, activity = activity, theme = theme)
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -140,7 +140,7 @@ class ExportSettingsFragment : PreferenceFragmentCompat() {
             type = "*/*"
             action = Intent.ACTION_GET_CONTENT
         }
-        importOpmlFilePickerLauncher.launch(Intent.createChooser(intent, getString(LR.string.settings_import_choose_file)))
+        importOpmlFilePickerLauncher.launch(Intent.createChooser(intent, getString(R.string.settings_import_choose_file)))
     }
 
     override fun onPause() {

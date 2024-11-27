@@ -75,11 +75,11 @@ class PromoCodeFragment : BaseFragment() {
                         binding.progress.isVisible = false
                         binding.loadedGroup.isVisible = true
                         binding.btnSignIn.isVisible = true
-                        binding.btnDone.setText(LR.string.profile_promo_create_account)
+                        binding.btnDone.setText(R.string.profile_promo_create_account)
                         binding.btnCreateOnError.isVisible = false
 
-                        binding.lblTitle.setText(LR.string.profile_promo_sign_in_or_create)
-                        binding.lblDetail.setText(LR.string.profile_promo_sign_in_or_create_summary)
+                        binding.lblTitle.setText(R.string.profile_promo_sign_in_or_create)
+                        binding.lblDetail.setText(R.string.profile_promo_sign_in_or_create_summary)
                         binding.imgDone.setup(ContextCompat.getDrawable(binding.imgDone.context, R.drawable.ic_plus_account))
 
                         binding.btnSignIn.setOnClickListener {
@@ -103,10 +103,10 @@ class PromoCodeFragment : BaseFragment() {
                         val overlay = if (it.errorOverlayRes != null) ContextCompat.getDrawable(imgDone.context, it.errorOverlayRes) else null
                         imgDone.setup(ContextCompat.getDrawable(imgDone.context, it.errorImageRes), overlay = overlay)
 
-                        binding.btnDone.setText(LR.string.done)
+                        binding.btnDone.setText(R.string.done)
                         binding.btnDone.setOnClickListener { activity?.finish() }
 
-                        binding.btnCreateOnError.setText(if (it.isSignedIn) LR.string.profile_promo_sign_up_for_plus else LR.string.profile_promo_create_pocket_casts_account)
+                        binding.btnCreateOnError.setText(if (it.isSignedIn) R.string.profile_promo_sign_up_for_plus else R.string.profile_promo_create_pocket_casts_account)
                         binding.btnCreateOnError.setOnClickListener { _ ->
                             if (it.isSignedIn) {
                                 activity?.finish()

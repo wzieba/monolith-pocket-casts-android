@@ -82,7 +82,7 @@ fun Content(
         modifier = Modifier.fillMaxWidth(),
     ) {
         item {
-            ScreenHeaderChip(text = LR.string.effects)
+            ScreenHeaderChip(text = R.string.effects)
         }
         when (state) {
             EffectsViewModel.State.Loading -> Unit
@@ -97,7 +97,7 @@ fun Content(
                 val trimSilence = state.playbackEffects.trimMode != TrimMode.OFF
                 item {
                     ToggleChip(
-                        label = stringResource(LR.string.player_effects_trim_silence),
+                        label = stringResource(R.string.player_effects_trim_silence),
                         checked = trimSilence,
                         onCheckedChanged = { value ->
                             val newValue = if (value) TrimMode.LOW else TrimMode.OFF
@@ -117,7 +117,7 @@ fun Content(
                 }
                 item {
                     ToggleChip(
-                        label = stringResource(LR.string.player_effects_volume_boost),
+                        label = stringResource(R.string.player_effects_volume_boost),
                         checked = state.playbackEffects.isVolumeBoosted,
                         onCheckedChanged = { updateBoostVolume(it) },
                     )
@@ -151,12 +151,12 @@ private fun SpeedChip(
                         .padding(vertical = 8.dp),
                 ) {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_speed),
+                        painter = painterResource(R.drawable.ic_speed),
                         contentDescription = null,
                         modifier = Modifier.size(20.dp),
                     )
                     Text(
-                        text = stringResource(id = LR.string.player_effects_speed),
+                        text = stringResource(id = R.string.player_effects_speed),
                         modifier = Modifier.padding(start = 8.dp),
                         style = MaterialTheme.typography.button.copy(
                             color = Color.White,
@@ -170,8 +170,8 @@ private fun SpeedChip(
                 ) {
                     IconButton(onClick = onMinusClicked) {
                         Icon(
-                            painter = painterResource(IR.drawable.minus_simple),
-                            contentDescription = stringResource(LR.string.player_effects_speed_up),
+                            painter = painterResource(R.drawable.minus_simple),
+                            contentDescription = stringResource(R.string.player_effects_speed_up),
                         )
                     }
                     TextH30(
@@ -180,8 +180,8 @@ private fun SpeedChip(
                     )
                     IconButton(onClick = onPlusClicked) {
                         Icon(
-                            painter = painterResource(IR.drawable.plus_simple),
-                            contentDescription = stringResource(LR.string.player_effects_speed_down),
+                            painter = painterResource(R.drawable.plus_simple),
+                            contentDescription = stringResource(R.string.player_effects_speed_down),
                         )
                     }
                 }
@@ -203,14 +203,14 @@ fun TrimSilenceSlider(
             modifier = Modifier.fillMaxWidth(),
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_trim),
-                contentDescription = stringResource(id = LR.string.player_effects_trim_silence),
+                painter = painterResource(R.drawable.ic_trim),
+                contentDescription = stringResource(id = R.string.player_effects_trim_silence),
                 modifier = Modifier
                     .padding(start = 24.dp)
                     .size(20.dp),
             )
             TextH50(
-                text = stringResource(id = LR.string.player_effects_trim_silence),
+                text = stringResource(id = R.string.player_effects_trim_silence),
                 fontWeight = FontWeight.W700,
                 color = MaterialTheme.colors.onPrimary,
                 modifier = Modifier.padding(start = 8.dp),
@@ -223,13 +223,13 @@ fun TrimSilenceSlider(
             increaseIcon = {
                 Icon(
                     InlineSliderDefaults.Increase,
-                    stringResource(LR.string.player_effects_trim_level_up),
+                    stringResource(R.string.player_effects_trim_level_up),
                 )
             },
             decreaseIcon = {
                 Icon(
                     InlineSliderDefaults.Decrease,
-                    stringResource(LR.string.player_effects_trim_level_down),
+                    stringResource(R.string.player_effects_trim_level_down),
                 )
             },
             valueRange = 0f..3f,

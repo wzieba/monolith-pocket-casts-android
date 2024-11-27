@@ -72,7 +72,7 @@ private fun Content(
     state: RatingState.Loaded,
     onClick: (RatingTappedSource) -> Unit,
 ) {
-    val starsContentDescription = stringResource(LR.string.podcast_star_rating_content_description)
+    val starsContentDescription = stringResource(R.string.podcast_star_rating_content_description)
 
     Row(
         modifier = Modifier.padding(

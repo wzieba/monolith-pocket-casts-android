@@ -29,9 +29,9 @@ internal fun SmallPlayer(state: SmallPlayerWidgetState) {
         controlPlaybackAction(state.isPlaying, LocalSource.current)
     }
     val contentDescription = when {
-        state.episode == null -> LR.string.pocket_casts
-        state.isPlaying -> LR.string.play_episode
-        else -> LR.string.pause_episode
+        state.episode == null -> R.string.pocket_casts
+        state.isPlaying -> R.string.play_episode
+        else -> R.string.pause_episode
     }.let { LocalContext.current.getString(it) }
 
     val size = min(LocalSize.current.width, LocalSize.current.height)

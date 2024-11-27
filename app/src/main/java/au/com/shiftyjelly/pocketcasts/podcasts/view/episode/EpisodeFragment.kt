@@ -280,7 +280,7 @@ class EpisodeFragment : BaseFragment() {
                         val downloadSize = Util.formattedBytes(bytes = state.episode.sizeInBytes, context = binding.btnDownload.context).replace(
                             "-",
                             getString(
-                                LR.string.podcasts_download_download,
+                                R.string.podcasts_download_download,
                             ),
                         )
                         val episodeStatus = state.episode.episodeStatus
@@ -300,9 +300,9 @@ class EpisodeFragment : BaseFragment() {
                             binding.lblErrorDetail.isVisible = false
 
                             binding.lblError.text = when (episodeStatus) {
-                                EpisodeStatusEnum.DOWNLOAD_FAILED -> getString(LR.string.podcasts_download_failed)
-                                EpisodeStatusEnum.WAITING_FOR_WIFI -> getString(LR.string.podcasts_download_wifi)
-                                EpisodeStatusEnum.WAITING_FOR_POWER -> getString(LR.string.podcasts_download_power)
+                                EpisodeStatusEnum.DOWNLOAD_FAILED -> getString(R.string.podcasts_download_failed)
+                                EpisodeStatusEnum.WAITING_FOR_WIFI -> getString(R.string.podcasts_download_wifi)
+                                EpisodeStatusEnum.WAITING_FOR_POWER -> getString(R.string.podcasts_download_power)
                                 else -> null
                             }
                             if (episodeStatus == EpisodeStatusEnum.DOWNLOAD_FAILED) {
@@ -310,9 +310,9 @@ class EpisodeFragment : BaseFragment() {
                                 binding.lblErrorDetail.isVisible = true
                             }
                             val iconResource = when (episodeStatus) {
-                                EpisodeStatusEnum.DOWNLOAD_FAILED -> IR.drawable.ic_failedwarning
-                                EpisodeStatusEnum.WAITING_FOR_WIFI -> IR.drawable.ic_waitingforwifi
-                                EpisodeStatusEnum.WAITING_FOR_POWER -> IR.drawable.ic_waitingforpower
+                                EpisodeStatusEnum.DOWNLOAD_FAILED -> R.drawable.ic_failedwarning
+                                EpisodeStatusEnum.WAITING_FOR_WIFI -> R.drawable.ic_waitingforwifi
+                                EpisodeStatusEnum.WAITING_FOR_POWER -> R.drawable.ic_waitingforpower
                                 else -> null
                             }
                             if (iconResource != null) {
@@ -322,9 +322,9 @@ class EpisodeFragment : BaseFragment() {
                             }
                         } else {
                             binding.errorLayout.isVisible = true
-                            binding.lblError.setText(LR.string.podcast_episode_playback_error)
+                            binding.lblError.setText(R.string.podcast_episode_playback_error)
                             binding.lblErrorDetail.text = playbackError
-                            binding.imgError.setImageResource(IR.drawable.ic_play_all)
+                            binding.imgError.setImageResource(R.drawable.ic_play_all)
                         }
 
                         // If we aren't showing another error we can show the episode limit warning
@@ -332,9 +332,9 @@ class EpisodeFragment : BaseFragment() {
                         if (!state.episode.isArchived && !binding.errorLayout.isVisible && state.episode.excludeFromEpisodeLimit && autoArchiveLimit != null) {
                             binding.errorLayout.isVisible = true
                             binding.lblErrorDetail.isVisible = true
-                            binding.lblError.setText(LR.string.podcast_episode_manually_unarchived)
-                            binding.lblErrorDetail.text = getString(LR.string.podcast_episode_manually_unarchived_summary, autoArchiveLimit)
-                            binding.imgError.setImageResource(IR.drawable.ic_archive)
+                            binding.lblError.setText(R.string.podcast_episode_manually_unarchived)
+                            binding.lblErrorDetail.text = getString(R.string.podcast_episode_manually_unarchived_summary, autoArchiveLimit)
+                            binding.imgError.setImageResource(R.drawable.ic_archive)
                         }
 
                         TextViewCompat.setCompoundDrawableTintList(binding.lblAuthor, ColorStateList.valueOf(iconColor))
@@ -359,7 +359,7 @@ class EpisodeFragment : BaseFragment() {
                                 "Last Download: ${state.episode.lastDownloadAttemptDate}"
                             AlertDialog.Builder(context)
                                 .setMessage(message)
-                                .setPositiveButton(LR.string.ok, null)
+                                .setPositiveButton(R.string.ok, null)
                                 .show()
                             true
                         }
@@ -439,15 +439,15 @@ class EpisodeFragment : BaseFragment() {
                 val tintColor = ThemeColor.podcastIcon02(activeTheme, (viewModel.state.value as? EpisodeFragmentState.Loaded)?.tintColor ?: 0xFF000000.toInt())
                 val dialog = OptionsDialog()
                     .setIconColor(tintColor)
-                    .addCheckedOption(LR.string.play_next, imageId = IR.drawable.ic_upnext_playnext, click = { viewModel.addToUpNext(binding.btnAddToUpNext.isOn) })
-                    .addCheckedOption(LR.string.play_last, imageId = IR.drawable.ic_upnext_playlast, click = { viewModel.addToUpNext(binding.btnAddToUpNext.isOn, addLast = true) })
+                    .addCheckedOption(R.string.play_next, imageId = R.drawable.ic_upnext_playnext, click = { viewModel.addToUpNext(binding.btnAddToUpNext.isOn) })
+                    .addCheckedOption(R.string.play_last, imageId = R.drawable.ic_upnext_playlast, click = { viewModel.addToUpNext(binding.btnAddToUpNext.isOn, addLast = true) })
                 activity?.supportFragmentManager?.let {
                     dialog.show(it, "upnext")
                 }
             } else {
                 val wasAdded = viewModel.addToUpNext(binding.btnAddToUpNext.isOn)
                 activity?.let { activity ->
-                    val text = if (wasAdded) LR.string.episode_added_to_up_next else LR.string.episode_removed_from_up_next
+                    val text = if (wasAdded) R.string.episode_added_to_up_next else R.string.episode_removed_from_up_next
                     Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
                 }
             }
@@ -465,9 +465,9 @@ class EpisodeFragment : BaseFragment() {
             val episode = viewModel.episode ?: return@setOnClickListener
             if (episode.isDownloaded) {
                 val dialog = OptionsDialog()
-                    .setTitle(getString(LR.string.podcast_remove_downloaded_file))
+                    .setTitle(getString(R.string.podcast_remove_downloaded_file))
                     .addTextOption(
-                        titleId = LR.string.podcast_file_remove,
+                        titleId = R.string.podcast_file_remove,
                         titleColor = it.context.getThemeColor(UR.attr.support_05),
                         click = { viewModel.deleteDownloadedEpisode() },
                     )
@@ -486,9 +486,9 @@ class EpisodeFragment : BaseFragment() {
             }
         }
 
-        binding?.btnAddToUpNext?.setup(ToggleActionButton.State.On(LR.string.podcasts_up_next, IR.drawable.ic_upnext_remove), ToggleActionButton.State.Off(LR.string.podcasts_up_next, IR.drawable.ic_upnext_playnext), false)
-        binding?.btnPlayed?.setup(ToggleActionButton.State.On(LR.string.podcasts_mark_unplayed, IR.drawable.ic_markasunplayed), ToggleActionButton.State.Off(LR.string.podcasts_mark_played, IR.drawable.ic_markasplayed), false)
-        binding?.btnArchive?.setup(ToggleActionButton.State.On(LR.string.podcasts_unarchive, IR.drawable.ic_unarchive), ToggleActionButton.State.Off(LR.string.podcasts_archive, IR.drawable.ic_archive), false)
+        binding?.btnAddToUpNext?.setup(ToggleActionButton.State.On(R.string.podcasts_up_next, R.drawable.ic_upnext_remove), ToggleActionButton.State.Off(R.string.podcasts_up_next, R.drawable.ic_upnext_playnext), false)
+        binding?.btnPlayed?.setup(ToggleActionButton.State.On(R.string.podcasts_mark_unplayed, R.drawable.ic_markasunplayed), ToggleActionButton.State.Off(R.string.podcasts_mark_played, R.drawable.ic_markasplayed), false)
+        binding?.btnArchive?.setup(ToggleActionButton.State.On(R.string.podcasts_unarchive, R.drawable.ic_unarchive), ToggleActionButton.State.Off(R.string.podcasts_archive, R.drawable.ic_archive), false)
     }
 
     private fun loadShowNotes(notes: String) {
@@ -565,7 +565,7 @@ class EpisodeFragment : BaseFragment() {
             } catch (e: Exception) {
                 Timber.e(e)
                 binding?.webViewLoader?.hide()
-                val errorMessage = resources.getString(if (e.message?.contains("webview", ignoreCase = true) == true) LR.string.error_webview_not_installed else LR.string.error_loading_show_notes)
+                val errorMessage = resources.getString(if (e.message?.contains("webview", ignoreCase = true) == true) R.string.error_webview_not_installed else R.string.error_loading_show_notes)
                 binding?.webViewErrorText?.text = errorMessage
                 binding?.webViewErrorText?.show()
             }

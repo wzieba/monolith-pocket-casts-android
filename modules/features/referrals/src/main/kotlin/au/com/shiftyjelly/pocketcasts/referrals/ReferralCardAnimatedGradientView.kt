@@ -92,7 +92,7 @@ private fun ReferralCardAnimatedBackgroundView(
                     start = Offset(0.12f * circleSizePx, 0f * circleSizePx),
                     end = Offset(0.89f * circleSizePx, 0.95f * circleSizePx),
                 ),
-                compatImageId = IR.drawable.referrals_blob_top_left,
+                compatImageId = R.drawable.referrals_blob_top_left,
                 modifier = Modifier
                     .offset(x = -maxWidth / 1.8f, y = -maxHeight / 4f)
                     .offset { animationData.topLeftOffset },
@@ -104,7 +104,7 @@ private fun ReferralCardAnimatedBackgroundView(
                     start = Offset(0.29f * circleSizePx, 0.19f * circleSizePx),
                     end = Offset(0.87f * circleSizePx, 1.18f * circleSizePx),
                 ),
-                compatImageId = IR.drawable.referrals_blob_bottom_right,
+                compatImageId = R.drawable.referrals_blob_bottom_right,
                 modifier = Modifier
                     .offset(x = maxWidth / 1.7f, y = maxHeight / 3.5f)
                     .offset { animationData.bottomRightOffset },

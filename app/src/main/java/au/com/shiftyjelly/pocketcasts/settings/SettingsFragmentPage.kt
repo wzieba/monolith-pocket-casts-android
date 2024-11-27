@@ -49,7 +49,7 @@ fun SettingsFragmentPage(
     val context = LocalContext.current
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings),
+            title = stringResource(R.string.settings),
             bottomShadow = true,
             onNavigationClick = onBackPressed,
         )
@@ -135,7 +135,7 @@ fun SettingsFragmentPage(
 @Composable
 private fun DeveloperRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_developer),
+        primaryText = stringResource(R.string.settings_developer),
         icon = painterResource(SR.drawable.ic_developer_mode),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient03A,
@@ -148,8 +148,8 @@ private fun DeveloperRow(onClick: () -> Unit) {
 @Composable
 private fun BetaFeatures(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_beta_features),
-        icon = painterResource(IR.drawable.ic_science),
+        primaryText = stringResource(R.string.settings_beta_features),
+        icon = painterResource(R.drawable.ic_science),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient03A,
             MaterialTheme.theme.colors.gradient03E,
@@ -161,7 +161,7 @@ private fun BetaFeatures(onClick: () -> Unit) {
 @Composable
 private fun BatteryOptimizationRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_battery_settings),
+        primaryText = stringResource(R.string.settings_battery_settings),
         icon = painterResource(SR.drawable.ic_baseline_warning_amber_24),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient03A,
@@ -174,8 +174,8 @@ private fun BatteryOptimizationRow(onClick: () -> Unit) {
 @Composable
 private fun PlusRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.pocket_casts_plus),
-        icon = painterResource(IR.drawable.ic_plus),
+        primaryText = stringResource(R.string.pocket_casts_plus),
+        icon = painterResource(R.drawable.ic_plus),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient01A,
             MaterialTheme.theme.colors.gradient01E,
@@ -187,8 +187,8 @@ private fun PlusRow(onClick: () -> Unit) {
 @Composable
 private fun GeneralRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_playback),
-        icon = painterResource(IR.drawable.ic_profile_settings),
+        primaryText = stringResource(R.string.settings_title_playback),
+        icon = painterResource(R.drawable.ic_profile_settings),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -196,7 +196,7 @@ private fun GeneralRow(onClick: () -> Unit) {
 @Composable
 private fun NotificationRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_notifications),
+        primaryText = stringResource(R.string.settings_title_notifications),
         icon = painterResource(SR.drawable.settings_notifications),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -205,9 +205,9 @@ private fun NotificationRow(onClick: () -> Unit) {
 @Composable
 private fun AppearanceRow(isSignedInAsPlusOrPatron: Boolean, onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_appearance),
+        primaryText = stringResource(R.string.settings_title_appearance),
         icon = painterResource(SR.drawable.settings_appearance),
-        primaryTextEndDrawable = if (isSignedInAsPlusOrPatron) null else IR.drawable.ic_plus,
+        primaryTextEndDrawable = if (isSignedInAsPlusOrPatron) null else R.drawable.ic_plus,
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -215,7 +215,7 @@ private fun AppearanceRow(isSignedInAsPlusOrPatron: Boolean, onClick: () -> Unit
 @Composable
 private fun StorageAndDataUseRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_storage),
+        primaryText = stringResource(R.string.settings_title_storage),
         icon = painterResource(SR.drawable.settings_storage),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -224,7 +224,7 @@ private fun StorageAndDataUseRow(onClick: () -> Unit) {
 @Composable
 private fun AutoArchiveRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_auto_archive),
+        primaryText = stringResource(R.string.settings_title_auto_archive),
         icon = painterResource(SR.drawable.settings_auto_archive),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -233,7 +233,7 @@ private fun AutoArchiveRow(onClick: () -> Unit) {
 @Composable
 private fun AutoDownloadRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_auto_download),
+        primaryText = stringResource(R.string.settings_title_auto_download),
         icon = painterResource(SR.drawable.settings_auto_download),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -242,8 +242,8 @@ private fun AutoDownloadRow(onClick: () -> Unit) {
 @Composable
 private fun AutoAddToUpNextRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_auto_add_to_up_next),
-        icon = painterResource(IR.drawable.ic_upnext_playlast),
+        primaryText = stringResource(R.string.settings_title_auto_add_to_up_next),
+        icon = painterResource(R.drawable.ic_upnext_playlast),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -251,8 +251,8 @@ private fun AutoAddToUpNextRow(onClick: () -> Unit) {
 @Composable
 private fun HeadphoneControlsRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_headphone_controls),
-        icon = painterResource(IR.drawable.ic_headphone),
+        primaryText = stringResource(R.string.settings_title_headphone_controls),
+        icon = painterResource(R.drawable.ic_headphone),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -260,7 +260,7 @@ private fun HeadphoneControlsRow(onClick: () -> Unit) {
 @Composable
 private fun ImportAndExportOpmlRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_import_export),
+        primaryText = stringResource(R.string.settings_title_import_export),
         icon = painterResource(SR.drawable.settings_import_export),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -269,7 +269,7 @@ private fun ImportAndExportOpmlRow(onClick: () -> Unit) {
 @Composable
 private fun PrivacyRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_privacy),
+        primaryText = stringResource(R.string.settings_title_privacy),
         icon = painterResource(SR.drawable.whatsnew_privacy),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -278,7 +278,7 @@ private fun PrivacyRow(onClick: () -> Unit) {
 @Composable
 private fun AboutRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_about),
+        primaryText = stringResource(R.string.settings_title_about),
         icon = painterResource(SR.drawable.settings_about),
         modifier = Modifier.rowModifier(onClick),
     )
@@ -287,7 +287,7 @@ private fun AboutRow(onClick: () -> Unit) {
 @Composable
 private fun AdvancedRow(onClick: () -> Unit) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_title_advanced),
+        primaryText = stringResource(R.string.settings_title_advanced),
         icon = painterResource(SR.drawable.settings_advanced),
         modifier = Modifier.rowModifier(onClick),
     )

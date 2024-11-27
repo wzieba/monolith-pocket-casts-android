@@ -96,8 +96,8 @@ private fun VerticalShareEpisodePage(
 ) {
     val scope = rememberCoroutineScope()
     VerticalSharePage(
-        shareTitle = stringResource(LR.string.share_episode_title),
-        shareDescription = stringResource(LR.string.share_episode_description),
+        shareTitle = stringResource(R.string.share_episode_title),
+        shareDescription = stringResource(R.string.share_episode_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         snackbarHostState = snackbarHostState,
@@ -141,8 +141,8 @@ private fun HorizontalShareEpisodePage(
 ) {
     val scope = rememberCoroutineScope()
     HorizontalSharePage(
-        shareTitle = stringResource(LR.string.share_episode_title),
-        shareDescription = stringResource(LR.string.share_episode_description),
+        shareTitle = stringResource(R.string.share_episode_title),
+        shareDescription = stringResource(R.string.share_episode_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         snackbarHostState = snackbarHostState,

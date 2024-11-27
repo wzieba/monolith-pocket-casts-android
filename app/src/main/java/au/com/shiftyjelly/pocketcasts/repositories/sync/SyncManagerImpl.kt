@@ -203,7 +203,7 @@ class SyncManagerImpl @Inject constructor(
             LoginResult.Success(result)
         } catch (ex: Exception) {
             Timber.e(ex, "Failed to sign in with Pocket Casts")
-            exceptionToAuthResult(exception = ex, fallbackMessage = LR.string.error_login_failed)
+            exceptionToAuthResult(exception = ex, fallbackMessage = R.string.error_login_failed)
         }
 
         trackSignIn(loginResult, signInSource, loginIdentity)
@@ -218,7 +218,7 @@ class SyncManagerImpl @Inject constructor(
             LoginResult.Success(result)
         } catch (ex: Exception) {
             Timber.e(ex, "Failed to create a Pocket Casts account")
-            exceptionToAuthResult(exception = ex, fallbackMessage = LR.string.server_login_unable_to_create_account)
+            exceptionToAuthResult(exception = ex, fallbackMessage = R.string.server_login_unable_to_create_account)
         }
         trackRegister(loginResult)
         return loginResult
@@ -235,7 +235,7 @@ class SyncManagerImpl @Inject constructor(
             }
         } catch (ex: Exception) {
             Timber.e(ex, "Failed to reset password.")
-            onError(context.resources.getString(LR.string.profile_reset_password_failed))
+            onError(context.resources.getString(R.string.profile_reset_password_failed))
         }
     }
 

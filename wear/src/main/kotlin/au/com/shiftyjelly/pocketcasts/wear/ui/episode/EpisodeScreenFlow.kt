@@ -123,7 +123,7 @@ object EpisodeScreenFlow {
                 val viewModel = hiltViewModel<EpisodeViewModel>(episodeScreenViewModelStoreOwner)
 
                 ObtainConfirmationScreen(
-                    text = stringResource(LR.string.podcast_remove_downloaded_file),
+                    text = stringResource(R.string.podcast_remove_downloaded_file),
                     onConfirm = {
                         viewModel.deleteDownloadedEpisode()
                         navController.navigate(deleteDownloadNotificationScreen) {
@@ -140,7 +140,7 @@ object EpisodeScreenFlow {
                 route = deleteDownloadNotificationScreen,
             ) {
                 NotificationScreen(
-                    text = stringResource(LR.string.removed),
+                    text = stringResource(R.string.removed),
                     onClose = { navController.popBackStack() },
                 )
             }
@@ -149,7 +149,7 @@ object EpisodeScreenFlow {
                 route = removeFromUpNextNotificationScreen,
             ) {
                 NotificationScreen(
-                    text = stringResource(LR.string.episode_removed_from_up_next),
+                    text = stringResource(R.string.episode_removed_from_up_next),
                     onClose = { navController.popBackStack() },
                 )
             }

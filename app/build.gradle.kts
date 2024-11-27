@@ -51,6 +51,10 @@ dependencies {
     ksp(libs.dagger.hilt.compiler)
     ksp(libs.hilt.compiler)
     ksp(libs.showkase.processor)
+    ksp(libs.moshi.kotlin.codegen)
+    ksp(libs.room.compiler)
+    api(libs.showkase)
+
 
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.firebase.bom))
@@ -88,6 +92,7 @@ dependencies {
     implementation(libs.rx2.relay)
     implementation(libs.timber)
     implementation(libs.work.runtime)
+    implementation(libs.engage)
 
 //    implementation(projects.modules.features.account)
 //    implementation(projects.modules.features.discover)
@@ -160,6 +165,10 @@ dependencies {
     androidTestImplementation(libs.turbine)
     androidTestImplementation(libs.work.test)
 
+    implementation(libs.compose.material3)
+
+    implementation("io.branch.engage:conduit-source:0.2.3-pocketcasts.9@aar") { isTransitive = true }
+
     api(libs.androidx.appcompat)
     api(libs.compose.ui.graphics)
     api(libs.dagger.hilt.android)
@@ -225,6 +234,48 @@ dependencies {
     implementation(libs.media3.ui)
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
+
+    implementation(libs.automattic.explat)
+    implementation(libs.play.review)
+    implementation(libs.work.runtime)
+    implementation(libs.work.rx2)
+    implementation(libs.tasker)
+
+    implementation(platform(libs.compose.bom))
+    implementation(platform(libs.firebase.bom))
+
+    implementation(libs.aboutlibraries.compose)
+    implementation(libs.aboutlibraries.core)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.compose.animation)
+    implementation(libs.compose.material)
+    implementation(libs.compose.material.icons.extended)
+    implementation(libs.compose.rxjava2)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.rx2)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.config)
+    implementation(libs.fragment.compose)
+    implementation(libs.fragment.ktx)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.lifecycle.reactivestreams.ktx)
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.material.dialogs)
+    implementation(libs.okhttp)
+    implementation(libs.play.cast)
+    implementation(libs.rx2.android)
+    implementation(libs.rx2.java)
+    implementation(libs.rx2.kotlin)
+    implementation(libs.rx2.relay)
+    implementation(libs.timber)
+
+    implementation(libs.billing.ktx)
+
+
+
 
 
 //    androidTestImplementation(projects.modules.services.sharedtest)

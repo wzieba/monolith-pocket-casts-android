@@ -54,7 +54,7 @@ fun ReferralGuestPassCardView(
     source: ReferralGuestPassCardViewSource,
     referralsOfferInfo: ReferralsOfferInfo,
 ) {
-    val cardTitle = stringResource(LR.string.referrals_guest_pass_card_title, referralsOfferInfo.localizedOfferDurationAdjective)
+    val cardTitle = stringResource(R.string.referrals_guest_pass_card_title, referralsOfferInfo.localizedOfferDurationAdjective)
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(ReferralGuestPassCardDefaults.cardRadius(source)))
@@ -92,7 +92,7 @@ fun ReferralGuestPassCardView(
                 .align(Alignment.TopEnd),
         ) {
             Image(
-                painter = painterResource(IR.drawable.ic_plus),
+                painter = painterResource(R.drawable.ic_plus),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(Color.White),
                 modifier = Modifier

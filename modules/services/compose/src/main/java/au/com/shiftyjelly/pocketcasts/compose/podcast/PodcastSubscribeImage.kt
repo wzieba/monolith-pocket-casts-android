@@ -42,9 +42,9 @@ fun PodcastSubscribeImage(
     subscribeOnPodcastTap: Boolean = true,
 ) {
     val onClickLabel = if (podcastSubscribed) {
-        stringResource(LR.string.unsubscribe)
+        stringResource(R.string.unsubscribe)
     } else {
-        stringResource(LR.string.subscribe)
+        stringResource(R.string.subscribe)
     }
     var rootModifier = modifier
         .aspectRatio(1f)
@@ -101,8 +101,8 @@ fun PodcastSubscribeImage(
                         .background(buttonBackgroundColor),
                 ) {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_tick),
-                        contentDescription = stringResource(LR.string.podcast_subscribed),
+                        painter = painterResource(R.drawable.ic_tick),
+                        contentDescription = stringResource(R.string.podcast_subscribed),
                         tint = Color.White,
                         modifier = iconModifier,
                     )
@@ -117,8 +117,8 @@ fun PodcastSubscribeImage(
                         .background(buttonBackgroundColor),
                 ) {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_add_black_24dp),
-                        contentDescription = stringResource(LR.string.podcast_not_subscribed),
+                        painter = painterResource(R.drawable.ic_add_black_24dp),
+                        contentDescription = stringResource(R.string.podcast_not_subscribed),
                         tint = Color.White,
                         modifier = iconModifier,
                     )

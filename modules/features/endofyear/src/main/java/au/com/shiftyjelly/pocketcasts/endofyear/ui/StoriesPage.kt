@@ -279,8 +279,8 @@ internal fun BoxScope.TopControls(
             modifier = Modifier.height(10.dp),
         )
         Image(
-            painter = painterResource(IR.drawable.ic_close),
-            contentDescription = stringResource(LR.string.close),
+            painter = painterResource(R.drawable.ic_close),
+            contentDescription = stringResource(R.string.close),
             colorFilter = ColorFilter.tint(Color.Black),
             modifier = Modifier
                 // Increase touch target of the image
@@ -289,7 +289,7 @@ internal fun BoxScope.TopControls(
                 .clickable(
                     interactionSource = remember(::MutableInteractionSource),
                     indication = ripple(color = Color.Black, bounded = false),
-                    onClickLabel = stringResource(LR.string.close),
+                    onClickLabel = stringResource(R.string.close),
                     role = Role.Button,
                     onClick = onClose,
                 )
@@ -323,7 +323,7 @@ private fun ErrorMessage(
             .background(Story.Cover.backgroundColor),
     ) {
         TextH30(
-            text = stringResource(id = LR.string.end_of_year_stories_failed),
+            text = stringResource(id = R.string.end_of_year_stories_failed),
             textAlign = TextAlign.Center,
             color = Color.Black,
             modifier = Modifier.padding(horizontal = 40.dp),
@@ -335,7 +335,7 @@ private fun ErrorMessage(
             modifier = Modifier.padding(top = 20.dp),
         ) {
             TextP40(
-                text = stringResource(id = LR.string.retry),
+                text = stringResource(id = R.string.retry),
                 color = Color.Black,
             )
         }

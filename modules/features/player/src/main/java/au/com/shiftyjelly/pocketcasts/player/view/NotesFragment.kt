@@ -149,7 +149,7 @@ class NotesFragment : BaseFragment() {
 
             binding?.showNotes?.addView(webView, 0, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
         } catch (e: Exception) {
-            val errorMessage = resources.getString(if (e.message?.contains("webview", ignoreCase = true) == true) LR.string.error_webview_not_installed else LR.string.error_loading_show_notes)
+            val errorMessage = resources.getString(if (e.message?.contains("webview", ignoreCase = true) == true) R.string.error_webview_not_installed else R.string.error_loading_show_notes)
             binding?.showNotesErrorText?.text = errorMessage
             binding?.showNotesErrorText?.show()
         }
@@ -158,7 +158,7 @@ class NotesFragment : BaseFragment() {
     private fun jumpToTime(timeStr: String) {
         val timeInSeconds = timeStr.toSecondsFromColonFormattedString() ?: return
 
-        Toast.makeText(context, getString(LR.string.skipping_to, timeStr), Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, getString(R.string.skipping_to, timeStr), Toast.LENGTH_SHORT).show()
         playbackManager.seekToTimeMs((timeInSeconds * 1000))
     }
 

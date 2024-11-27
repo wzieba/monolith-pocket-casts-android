@@ -33,14 +33,14 @@ fun WearAboutScreen(
         ) {
             item {
                 Image(
-                    painter = painterResource(IR.drawable.about_logo_pocketcasts),
-                    contentDescription = stringResource(LR.string.settings_app_icon),
+                    painter = painterResource(R.drawable.about_logo_pocketcasts),
+                    contentDescription = stringResource(R.string.settings_app_icon),
                 )
             }
 
             item {
                 Text(
-                    text = stringResource(LR.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
+                    text = stringResource(R.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
                     style = MaterialTheme.typography.body1,
                     color = MaterialTheme.colors.onSecondary,
                     textAlign = TextAlign.Center,
@@ -49,14 +49,14 @@ fun WearAboutScreen(
 
             item {
                 WatchListChip(
-                    title = stringResource(LR.string.settings_about_terms_of_serivce),
+                    title = stringResource(R.string.settings_about_terms_of_serivce),
                     onClick = onTermsOfServiceClick,
                 )
             }
 
             item {
                 WatchListChip(
-                    title = stringResource(LR.string.settings_about_privacy_policy),
+                    title = stringResource(R.string.settings_about_privacy_policy),
                     onClick = onPrivacyClick,
                 )
             }

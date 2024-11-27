@@ -34,7 +34,7 @@ fun PocketCastsPill(
         .padding(start = 4.dp, end = 8.dp),
 ) {
     Image(
-        painter = painterResource(id = IR.drawable.ic_logo_foreground),
+        painter = painterResource(id = R.drawable.ic_logo_foreground),
         contentDescription = null,
         modifier = Modifier.size(18.dp),
     )
@@ -42,7 +42,7 @@ fun PocketCastsPill(
         modifier = Modifier.width(8.dp),
     )
     TextH70(
-        text = stringResource(id = LR.string.pocket_casts),
+        text = stringResource(id = R.string.pocket_casts),
         color = Color.White,
         disableAutoScale = disableScale,
     )
@@ -52,7 +52,7 @@ fun PocketCastsPill(
 fun PocketCastsLogo(
     modifier: Modifier = Modifier,
 ) = Image(
-    painter = painterResource(id = IR.drawable.ic_logo_foreground),
+    painter = painterResource(id = R.drawable.ic_logo_foreground),
     contentDescription = null,
     modifier = Modifier
         .background(Color(0xFFF43E37), CircleShape)

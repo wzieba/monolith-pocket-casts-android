@@ -94,12 +94,12 @@ class FixDownloadsWorker @AssistedInject constructor(
     private fun buildProgressNotification(progress: Int, total: Int): Notification {
         val cancelIntent = WorkManager.getInstance(applicationContext).createCancelPendingIntent(id)
         return notificationHelper.downloadsFixChannelBuilder()
-            .setSmallIcon(IR.drawable.notification)
-            .setContentTitle(applicationContext.getString(LR.string.settings_fix_downloads_title))
-            .setContentText(applicationContext.getString(LR.string.settings_fix_downloads_progress, progress, total))
+            .setSmallIcon(R.drawable.notification)
+            .setContentTitle(applicationContext.getString(R.string.settings_fix_downloads_title))
+            .setContentText(applicationContext.getString(R.string.settings_fix_downloads_progress, progress, total))
             .setProgress(total, progress, false)
             .setOngoing(true)
-            .addAction(IR.drawable.ic_cancel, applicationContext.getString(LR.string.stop), cancelIntent)
+            .addAction(R.drawable.ic_cancel, applicationContext.getString(R.string.stop), cancelIntent)
             .build()
     }
 
@@ -108,9 +108,9 @@ class FixDownloadsWorker @AssistedInject constructor(
             "Notification manager not found"
         }
         val notification = notificationHelper.downloadsFixCompleteChannelBuilder()
-            .setSmallIcon(IR.drawable.notification)
-            .setContentTitle(applicationContext.getString(LR.string.settings_fix_downloads_complete_title))
-            .setContentText(applicationContext.getString(LR.string.settings_fix_downloads_complete_message, fixed))
+            .setSmallIcon(R.drawable.notification)
+            .setContentTitle(applicationContext.getString(R.string.settings_fix_downloads_complete_title))
+            .setContentText(applicationContext.getString(R.string.settings_fix_downloads_complete_message, fixed))
             .setOngoing(false)
             .build()
         manager.notify(Settings.NotificationId.FIX_DOWNLOADS_COMPLETE.value, notification)

@@ -144,7 +144,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
 
             val colors = ToolbarColors.podcast(podcast = podcast, theme = theme)
 
-            preferenceFeedIssueDetected?.icon = context.getTintedDrawable(IR.drawable.ic_alert_small, colors.iconColor)
+            preferenceFeedIssueDetected?.icon = context.getTintedDrawable(R.drawable.ic_alert_small, colors.iconColor)
             preferenceFeedIssueDetected?.isVisible = podcast.refreshAvailable
 
             val effectsDrawableId = if (podcast.overrideGlobalEffects) R.drawable.ic_effects_on else R.drawable.ic_effects_off
@@ -166,7 +166,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
 
             preferenceAddToUpNext?.isChecked = !podcast.isAutoAddToUpNextOff
             preferenceAddToUpNextOrder?.isVisible = !podcast.isAutoAddToUpNextOff
-            preferenceAddToUpNextOrder?.summary = if (podcast.autoAddToUpNext == Podcast.AutoAddUpNext.PLAY_NEXT) getString(LR.string.play_next) else getString(LR.string.play_last)
+            preferenceAddToUpNextOrder?.summary = if (podcast.autoAddToUpNext == Podcast.AutoAddUpNext.PLAY_NEXT) getString(R.string.play_next) else getString(R.string.play_last)
             preferenceAddToUpNextOrder?.setValueIndex(if (podcast.isAutoAddToUpNextOff) 0 else podcast.autoAddToUpNext.databaseInt - 1)
             preferenceAddToUpNextGlobal?.isVisible = preferenceAddToUpNextOrder?.isVisible ?: false
 
@@ -176,7 +176,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
             preferenceSkipLast?.text = podcast.skipLastSecs.toString()
             preferenceSkipLast?.summary = resources.getStringPluralSeconds(podcast.skipLastSecs)
 
-            preferenceFilters?.icon = context.getTintedDrawable(IR.drawable.ic_filters, colors.iconColor)
+            preferenceFilters?.icon = context.getTintedDrawable(R.drawable.ic_filters, colors.iconColor)
 
             preferenceUnsubscribe?.isVisible = podcast.isSubscribed
 
@@ -191,11 +191,11 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
 
         viewModel.globalSettings.observe(viewLifecycleOwner) {
             val summary = when (it.second) {
-                AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP -> getString(LR.string.settings_auto_up_next_limit_reached_top_summary, it.first)
-                AutoAddUpNextLimitBehaviour.STOP_ADDING -> getString(LR.string.settings_auto_up_next_limit_reached_stop_summary, it.first)
+                AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP -> getString(R.string.settings_auto_up_next_limit_reached_top_summary, it.first)
+                AutoAddUpNextLimitBehaviour.STOP_ADDING -> getString(R.string.settings_auto_up_next_limit_reached_stop_summary, it.first)
             }
 
-            preferenceAddToUpNextGlobal?.summary = getString(LR.string.podcast_settings_up_next_episode_limit, it.first) + "\n\n" + summary
+            preferenceAddToUpNextGlobal?.summary = getString(R.string.podcast_settings_up_next_episode_limit, it.first) + "\n\n" + summary
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -221,10 +221,10 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
     private fun setupFeedIssueDetected() {
         preferenceFeedIssueDetected?.setOnPreferenceClickListener {
             analyticsTracker.track(AnalyticsEvent.PODCAST_SETTINGS_FEED_ERROR_TAPPED)
-            val dialog = ConfirmationDialog().setButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.podcast_feed_issue_dialog_button)))
-                .setTitle(getString(LR.string.podcast_feed_issue_dialog_title))
-                .setSummary(getString(LR.string.podcast_feed_issue_dialog_summary))
-                .setIconId(IR.drawable.ic_failedwarning)
+            val dialog = ConfirmationDialog().setButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.podcast_feed_issue_dialog_button)))
+                .setTitle(getString(R.string.podcast_feed_issue_dialog_title))
+                .setSummary(getString(R.string.podcast_feed_issue_dialog_summary))
+                .setIconId(R.drawable.ic_failedwarning)
                 .setOnConfirm {
                     lifecycleScope.launch {
                         analyticsTracker.track(AnalyticsEvent.PODCAST_SETTINGS_FEED_ERROR_UPDATE_TAPPED)
@@ -251,17 +251,17 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
         val title: Int
         val summary: Int
         if (success) {
-            title = LR.string.podcast_update_queued_success_title
-            summary = LR.string.podcast_update_queued_success_summary
+            title = R.string.podcast_update_queued_success_title
+            summary = R.string.podcast_update_queued_success_summary
         } else {
-            title = LR.string.podcast_update_queued_failed_title
-            summary = LR.string.podcast_update_queued_failed_summary
+            title = R.string.podcast_update_queued_failed_title
+            summary = R.string.podcast_update_queued_failed_summary
         }
 
         val dialog = ConfirmationDialog().setButtonType(
             ConfirmationDialog.ButtonType.Normal(
                 getString(
-                    LR.string.ok,
+                    R.string.ok,
                 ),
             ),
         )
@@ -372,20 +372,20 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
                 val resources = context?.resources ?: return@launch
                 val downloaded = withContext(Dispatchers.Default) { podcastManager.countEpisodesInPodcastWithStatus(podcastUuid, EpisodeStatusEnum.DOWNLOADED) }
                 val title = when (downloaded) {
-                    0 -> resources.getString(LR.string.are_you_sure)
-                    1 -> resources.getString(LR.string.podcast_unsubscribe_downloaded_file_singular)
-                    else -> resources.getString(LR.string.podcast_unsubscribe_downloaded_file_plural, downloaded)
+                    0 -> resources.getString(R.string.are_you_sure)
+                    1 -> resources.getString(R.string.podcast_unsubscribe_downloaded_file_singular)
+                    else -> resources.getString(R.string.podcast_unsubscribe_downloaded_file_plural, downloaded)
                 }
                 val dialog = ConfirmationDialog().setButtonType(
                     ConfirmationDialog.ButtonType.Danger(
                         resources.getString(
-                            LR.string.unsubscribe,
+                            R.string.unsubscribe,
                         ),
                     ),
                 )
                     .setTitle(title)
-                    .setSummary(resources.getString(LR.string.podcast_unsubscribe_warning))
-                    .setIconId(IR.drawable.ic_failedwarning)
+                    .setSummary(resources.getString(R.string.podcast_unsubscribe_warning))
+                    .setIconId(R.drawable.ic_failedwarning)
                     .setOnConfirm {
                         viewModel.unsubscribe()
                         (activity as FragmentHostListener).closeToRoot()
@@ -400,12 +400,12 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
     private fun buildEffectsSummary(podcast: Podcast): String {
         return if (podcast.overrideGlobalEffects) {
             listOf(
-                getString(LR.string.podcast_effects_summary_speed, podcast.playbackSpeed.toString()),
-                getString(if (podcast.isSilenceRemoved) LR.string.podcast_effects_summary_trim_silence_on else LR.string.podcast_effects_summary_trim_silence_off),
-                getString(if (podcast.isVolumeBoosted) LR.string.podcast_effects_summary_volume_boost_on else LR.string.podcast_effects_summary_volume_boost_off),
+                getString(R.string.podcast_effects_summary_speed, podcast.playbackSpeed.toString()),
+                getString(if (podcast.isSilenceRemoved) R.string.podcast_effects_summary_trim_silence_on else R.string.podcast_effects_summary_trim_silence_off),
+                getString(if (podcast.isVolumeBoosted) R.string.podcast_effects_summary_volume_boost_on else R.string.podcast_effects_summary_volume_boost_off),
             ).joinToString()
         } else {
-            getString(LR.string.podcast_effects_summary_default)
+            getString(R.string.podcast_effects_summary_default)
         }
     }
 
@@ -430,9 +430,9 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
 
         preferenceAddToUpNextOrder?.run {
             entries = arrayOf(
-                getString(LR.string.play_last),
+                getString(R.string.play_last),
                 getString(
-                    LR.string.play_next,
+                    R.string.play_next,
                 ),
             )
             entryValues = arrayOf("1", "2")
@@ -477,19 +477,19 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
         // xml doesn't support tinting icons so we need to do it manually
         val context = preferenceManager.context
         preferenceNotifications?.icon = context.getTintedDrawable(R.drawable.ic_notifications, tintColor)
-        preferenceAutoDownload?.icon = context.getTintedDrawable(IR.drawable.ic_download, tintColor)
-        preferenceAddToUpNext?.icon = context.getTintedDrawable(IR.drawable.ic_upnext, tintColor)
+        preferenceAutoDownload?.icon = context.getTintedDrawable(R.drawable.ic_download, tintColor)
+        preferenceAddToUpNext?.icon = context.getTintedDrawable(R.drawable.ic_upnext, tintColor)
         preferenceSkipFirst?.icon = context.getTintedDrawable(R.drawable.ic_skipintros, tintColor)
-        preferenceAutoArchive?.icon = context.getTintedDrawable(IR.drawable.ic_archive, tintColor)
+        preferenceAutoArchive?.icon = context.getTintedDrawable(R.drawable.ic_archive, tintColor)
         preferenceSkipLast?.icon = context.getTintedDrawable(R.drawable.ic_skip_outro, tintColor)
     }
 
     private fun updateFiltersSummary(includedFilters: List<Playlist>, availableFilters: List<Playlist>) {
         val filterTitles = includedFilters.map { it.title }
         if (filterTitles.isEmpty()) {
-            preferenceFilters?.summary = getString(LR.string.podcast_not_in_filters)
+            preferenceFilters?.summary = getString(R.string.podcast_not_in_filters)
         } else {
-            preferenceFilters?.summary = getString(LR.string.podcast_included_in_filters, filterTitles.joinToString())
+            preferenceFilters?.summary = getString(R.string.podcast_included_in_filters, filterTitles.joinToString())
         }
         preferenceFilters?.isVisible = availableFilters.isNotEmpty()
     }
@@ -505,7 +505,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
     override fun onBackPressed(): Boolean {
         if (childFragmentManager.backStackEntryCount > 0) {
             childFragmentManager.popBackStack()
-            toolbar?.title = viewModel.podcast.value?.title ?: getString(LR.string.settings)
+            toolbar?.title = viewModel.podcast.value?.title ?: getString(R.string.settings)
             return true
         }
 

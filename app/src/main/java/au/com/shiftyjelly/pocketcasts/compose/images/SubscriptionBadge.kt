@@ -138,8 +138,8 @@ fun SubscriptionBadgeForTier(
         SubscriptionTier.PLUS -> SubscriptionBadge(
             fontSize = fontSize,
             padding = padding,
-            iconRes = IR.drawable.ic_plus,
-            shortNameRes = LR.string.pocket_casts_plus_short,
+            iconRes = R.drawable.ic_plus,
+            shortNameRes = R.string.pocket_casts_plus_short,
             iconColor = when (displayMode) {
                 SubscriptionBadgeDisplayMode.Black -> SubscriptionTierColor.plusGold
                 SubscriptionBadgeDisplayMode.Colored -> MaterialTheme.theme.colors.primaryUi01
@@ -164,8 +164,8 @@ fun SubscriptionBadgeForTier(
         SubscriptionTier.PATRON -> SubscriptionBadge(
             fontSize = fontSize,
             padding = padding,
-            iconRes = IR.drawable.ic_patron,
-            shortNameRes = LR.string.pocket_casts_patron_short,
+            iconRes = R.drawable.ic_patron,
+            shortNameRes = R.string.pocket_casts_patron_short,
             iconColor = when (displayMode) {
                 SubscriptionBadgeDisplayMode.Black -> SubscriptionTierColor.patronPurpleLight
                 SubscriptionBadgeDisplayMode.Colored,
@@ -200,16 +200,16 @@ fun SubscriptionIconForTier(
 ) {
     when (tier) {
         SubscriptionTier.PLUS -> Icon(
-            painter = painterResource(IR.drawable.ic_plus),
-            contentDescription = stringResource(LR.string.pocket_casts_plus_short),
+            painter = painterResource(R.drawable.ic_plus),
+            contentDescription = stringResource(R.string.pocket_casts_plus_short),
             tint = SubscriptionTierColor.plusGold,
             modifier = Modifier
                 .size(iconSize),
         )
 
         SubscriptionTier.PATRON -> Icon(
-            painter = painterResource(IR.drawable.ic_patron),
-            contentDescription = stringResource(LR.string.pocket_casts_patron_short),
+            painter = painterResource(R.drawable.ic_patron),
+            contentDescription = stringResource(R.string.pocket_casts_patron_short),
             tint = if (MaterialTheme.theme.isLight) {
                 SubscriptionTierColor.patronPurple
             } else {
@@ -361,7 +361,7 @@ fun SubscriptionBadgeWithGradientBackgroundPreview() {
         fontSize = 16.sp,
         padding = 4.dp,
         iconRes = R.drawable.ic_plus,
-        shortNameRes = LR.string.pocket_casts_plus_short,
+        shortNameRes = R.string.pocket_casts_plus_short,
         iconColor = Color.Black,
         backgroundBrush = Brush.horizontalGradient(
             0f to Color(0xFFFED745),

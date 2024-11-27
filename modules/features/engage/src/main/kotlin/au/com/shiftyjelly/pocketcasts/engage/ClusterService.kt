@@ -61,7 +61,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_recently_played))
+                .setTitle(context.getString(R.string.engage_sdk_recently_played))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
         }
@@ -90,7 +90,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_new_releases))
+                .setTitle(context.getString(R.string.engage_sdk_new_releases))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
         }
@@ -110,7 +110,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_trending))
+                .setTitle(context.getString(R.string.engage_sdk_trending))
                 .setActionUri(list.uri(SourceView.ENGAGE_SDK_RECOMMENDATIONS))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
@@ -268,7 +268,7 @@ internal class ClusterService(
                             .setImageHeightInPixel(712)
                             .build(),
                     )
-                    .setActionText(context.getString(LR.string.engage_sdk_sign_in))
+                    .setActionText(context.getString(R.string.engage_sdk_sign_in))
                     .setActionUri(SignInDeepLink(SourceView.ENGAGE_SDK_SIGN_IN.analyticsValue).toUri(SERVER_SHORT_HOST).also { Timber.tag(TAG).d(it.toString()) })
                     .build()
                 val request = PublishUserAccountManagementRequest.Builder().setSignInCardEntity(entity).build()

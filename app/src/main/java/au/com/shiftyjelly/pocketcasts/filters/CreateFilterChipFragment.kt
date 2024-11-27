@@ -108,7 +108,7 @@ class CreateFilterChipFragment : BaseFragment(), CoroutineScope {
 
             val chipPodcasts = binding.chipPodcasts
             if (playlist.allPodcasts) {
-                chipPodcasts.text = getString(LR.string.filters_chip_all_your_podcasts)
+                chipPodcasts.text = getString(R.string.filters_chip_all_your_podcasts)
                 chipPodcasts.setInactiveColors(theme.activeTheme, color)
             } else {
                 chipPodcasts.text = resources.getStringPluralPodcasts(playlist.podcastUuidList.count())
@@ -121,13 +121,13 @@ class CreateFilterChipFragment : BaseFragment(), CoroutineScope {
             val chipEpisodes = binding.chipEpisodes
             val episodeOptions = playlist.episodeOptionStringIds
             if ((playlist.unplayed && playlist.partiallyPlayed && playlist.finished) || episodeOptions.isEmpty()) {
-                chipEpisodes.text = getString(LR.string.filters_chip_episode_status)
+                chipEpisodes.text = getString(R.string.filters_chip_episode_status)
                 chipEpisodes.setInactiveColors(theme.activeTheme, color)
             } else {
                 when {
                     episodeOptions.count() > 1 -> chipEpisodes.text = episodeOptions.joinToString { getString(it) }
                     episodeOptions.isNotEmpty() -> chipEpisodes.setText(episodeOptions.first())
-                    else -> chipEpisodes.text = getString(LR.string.filters_chip_episode_status)
+                    else -> chipEpisodes.text = getString(R.string.filters_chip_episode_status)
                 }
                 chipEpisodes.setActiveColors(theme.activeTheme, color)
             }
@@ -161,7 +161,7 @@ class CreateFilterChipFragment : BaseFragment(), CoroutineScope {
             val downloadOptions = playlist.downloadOptionStrings
             if (downloadOptions.isEmpty()) {
                 chipDownload.setInactiveColors(theme.activeTheme, color)
-                chipDownload.text = getString(LR.string.filters_chip_download_status)
+                chipDownload.text = getString(R.string.filters_chip_download_status)
             } else {
                 chipDownload.text = downloadOptions.joinToString { getString(it) }
                 chipDownload.setActiveColors(theme.activeTheme, color)
@@ -174,7 +174,7 @@ class CreateFilterChipFragment : BaseFragment(), CoroutineScope {
             val audioOptions = playlist.audioOptionStrings
             if (audioOptions.isEmpty()) {
                 chipAudioVideo.setInactiveColors(theme.activeTheme, color)
-                chipAudioVideo.text = getString(LR.string.filters_chip_media_type)
+                chipAudioVideo.text = getString(R.string.filters_chip_media_type)
             } else {
                 chipAudioVideo.text = audioOptions.joinToString { getString(it) }
                 chipAudioVideo.setActiveColors(theme.activeTheme, color)
@@ -185,7 +185,7 @@ class CreateFilterChipFragment : BaseFragment(), CoroutineScope {
 
             val chipStarred = binding.chipStarred
             val starred = playlist.starred
-            chipStarred.text = getString(LR.string.filters_chip_starred)
+            chipStarred.text = getString(R.string.filters_chip_starred)
             if (starred) {
                 chipStarred.setActiveColors(theme.activeTheme, color)
             } else {

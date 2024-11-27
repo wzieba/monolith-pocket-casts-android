@@ -177,8 +177,8 @@ private fun Content(
 
                     if (state.isChaptersPresent) {
                         state.chapterSummary.takeIf { it.currentIndex != -1 && it.size > 0 }?.let {
-                            val chapterSummary = stringResource(LR.string.chapter_count_summary, state.chapterSummary.currentIndex, state.chapterSummary.size)
-                            val contentDescription = "$chapterSummary ${pluralStringResource(id = LR.plurals.chapter, count = state.chapterSummary.size)}"
+                            val chapterSummary = stringResource(R.string.chapter_count_summary, state.chapterSummary.currentIndex, state.chapterSummary.size)
+                            val contentDescription = "$chapterSummary ${pluralStringResource(id = R.plurals.chapter, count = state.chapterSummary.size)}"
 
                             Spacer(
                                 modifier = Modifier.height(4.dp),
@@ -197,7 +197,7 @@ private fun Content(
 
                 if (state.isChaptersPresent) {
                     val timeRemainingContentDescription = stringResource(
-                        LR.string.chapter_time_remaining_content_description,
+                        R.string.chapter_time_remaining_content_description,
                         formatTimeRemainingContentDescription(state.chapterTimeRemaining, LocalContext.current.resources),
                     )
                     Column(
@@ -262,7 +262,7 @@ private fun ChapterPreviousButton(
             Icon(
                 painterResource(R.drawable.ic_chapter_skipbackwards),
                 tint = Color.White,
-                contentDescription = stringResource(LR.string.player_action_previous_chapter),
+                contentDescription = stringResource(R.string.player_action_previous_chapter),
             )
         }
     }
@@ -274,7 +274,7 @@ private fun ChapterNextButtonWithChapterProgressCircle(
     enabled: Boolean,
     alpha: Float,
 ) {
-    val contentDescription = stringResource(LR.string.player_action_next_chapter)
+    val contentDescription = stringResource(R.string.player_action_next_chapter)
     IconButton(
         onClick = onClick,
         enabled = enabled,

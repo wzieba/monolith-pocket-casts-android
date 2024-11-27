@@ -209,15 +209,15 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
         lifecycleScope.launch {
             val downloaded = withContext(Dispatchers.Default) { podcastManager.countEpisodesInPodcastWithStatus(podcastUuid, EpisodeStatusEnum.DOWNLOADED) }
             val title = when (downloaded) {
-                0 -> getString(LR.string.are_you_sure)
-                1 -> getString(LR.string.podcast_unsubscribe_downloaded_file_singular)
-                else -> getString(LR.string.podcast_unsubscribe_downloaded_file_plural, downloaded)
+                0 -> getString(R.string.are_you_sure)
+                1 -> getString(R.string.podcast_unsubscribe_downloaded_file_singular)
+                else -> getString(R.string.podcast_unsubscribe_downloaded_file_plural, downloaded)
             }
             analyticsTracker.track(AnalyticsEvent.PODCAST_SCREEN_UNSUBSCRIBE_TAPPED)
-            val dialog = ConfirmationDialog().setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.unsubscribe)))
+            val dialog = ConfirmationDialog().setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.unsubscribe)))
                 .setTitle(title)
-                .setSummary(getString(LR.string.podcast_unsubscribe_warning))
-                .setIconId(IR.drawable.ic_failedwarning)
+                .setSummary(getString(R.string.podcast_unsubscribe_warning))
+                .setIconId(R.drawable.ic_failedwarning)
                 .setOnConfirm {
                     successCallback()
                     viewModel.unsubscribeFromPodcast()
@@ -251,11 +251,11 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
     private val onArchiveAllClicked: () -> Unit = {
         val count = viewModel.archiveAllCount()
-        val buttonString = resources.getStringPlural(count = count, singular = LR.string.archive_episodes_singular, plural = LR.string.archive_episodes_plural)
+        val buttonString = resources.getStringPlural(count = count, singular = R.string.archive_episodes_singular, plural = R.string.archive_episodes_plural)
 
         val dialog = ConfirmationDialog()
-            .setTitle(getString(LR.string.podcast_archive_all))
-            .setSummary(getString(LR.string.podcast_archive_played))
+            .setTitle(getString(R.string.podcast_archive_all))
+            .setSummary(getString(R.string.podcast_archive_played))
             .setIconId(R.drawable.ic_archive_all)
             .setButtonType(ConfirmationDialog.ButtonType.Danger(buttonString))
             .setOnConfirm(viewModel::onArchiveAllClicked)
@@ -315,32 +315,32 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
     private val showEpisodeSortOptions = {
         val dialog = OptionsDialog()
             .addCheckedOption(
-                titleId = LR.string.episode_sort_title_a_z,
+                titleId = R.string.episode_sort_title_a_z,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_TITLE_ASC,
                 click = sortEpisodesTitleAZ,
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_title_z_a,
+                titleId = R.string.episode_sort_title_z_a,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_TITLE_DESC,
                 click = sortEpisodesTitleZA,
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_newest_to_oldest,
+                titleId = R.string.episode_sort_newest_to_oldest,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_DATE_DESC,
                 click = sortEpisodesNewestToOldest,
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_oldest_to_newest,
+                titleId = R.string.episode_sort_oldest_to_newest,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_DATE_ASC,
                 click = sortEpisodesOldestToNewest,
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_short_to_long,
+                titleId = R.string.episode_sort_short_to_long,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_LENGTH_ASC,
                 click = sortEpisodesLengthShortToLong,
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_long_to_short,
+                titleId = R.string.episode_sort_long_to_short,
                 checked = viewModel.podcast.value?.episodesSortType == EpisodesSortType.EPISODES_SORT_BY_LENGTH_DESC,
                 click = sortEpisodesLengthLongToShort,
             )
@@ -379,26 +379,26 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
         analyticsTracker.track(AnalyticsEvent.PODCAST_SCREEN_OPTIONS_TAPPED)
         var optionsDialog = OptionsDialog()
             .addTextOption(
-                titleId = LR.string.podcast_sort_episodes,
-                imageId = IR.drawable.ic_sort,
+                titleId = R.string.podcast_sort_episodes,
+                imageId = R.drawable.ic_sort,
                 valueId = selectedSortOrderStringId(),
                 click = showEpisodeSortOptions,
             )
             .addTextOption(
-                titleId = LR.string.podcast_group_episodes,
+                titleId = R.string.podcast_group_episodes,
                 imageId = R.drawable.ic_group,
                 valueId = selectedGroupStringId(),
                 click = showGroupingOptions,
             )
             .addTextOption(
-                LR.string.podcast_download_all,
-                imageId = IR.drawable.ic_download,
+                R.string.podcast_download_all,
+                imageId = R.drawable.ic_download,
                 click = { downloadAll() },
             )
 
         if (viewModel.shouldShowArchiveAll()) {
             optionsDialog = optionsDialog.addTextOption(
-                titleId = LR.string.podcast_archive_all,
+                titleId = R.string.podcast_archive_all,
                 imageId = R.drawable.ic_archive_all,
                 click = onArchiveAllClicked,
             )
@@ -406,7 +406,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
         if (viewModel.shouldShowArchivePlayed()) {
             optionsDialog = optionsDialog.addTextOption(
-                LR.string.podcast_archive_all_played,
+                R.string.podcast_archive_all_played,
                 imageId = R.drawable.ic_archive_all,
                 click = this::archiveAllPlayed,
             )
@@ -414,8 +414,8 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
         if (viewModel.shouldShowUnarchive()) {
             optionsDialog = optionsDialog.addTextOption(
-                titleId = LR.string.unarchive_all,
-                imageId = IR.drawable.ic_unarchive,
+                titleId = R.string.unarchive_all,
+                imageId = R.drawable.ic_unarchive,
                 click = viewModel::onUnarchiveClicked,
             )
         }
@@ -431,13 +431,13 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
     private fun selectedSortOrderStringId(): Int {
         return when (viewModel.podcast.value?.episodesSortType) {
-            EpisodesSortType.EPISODES_SORT_BY_TITLE_ASC -> LR.string.episode_sort_title_a_z
-            EpisodesSortType.EPISODES_SORT_BY_TITLE_DESC -> LR.string.episode_sort_title_z_a
-            EpisodesSortType.EPISODES_SORT_BY_DATE_ASC -> LR.string.episode_sort_oldest_to_newest
-            EpisodesSortType.EPISODES_SORT_BY_DATE_DESC -> LR.string.episode_sort_newest_to_oldest
-            EpisodesSortType.EPISODES_SORT_BY_LENGTH_ASC -> LR.string.episode_sort_short_to_long
-            EpisodesSortType.EPISODES_SORT_BY_LENGTH_DESC -> LR.string.episode_sort_long_to_short
-            null -> LR.string.empty
+            EpisodesSortType.EPISODES_SORT_BY_TITLE_ASC -> R.string.episode_sort_title_a_z
+            EpisodesSortType.EPISODES_SORT_BY_TITLE_DESC -> R.string.episode_sort_title_z_a
+            EpisodesSortType.EPISODES_SORT_BY_DATE_ASC -> R.string.episode_sort_oldest_to_newest
+            EpisodesSortType.EPISODES_SORT_BY_DATE_DESC -> R.string.episode_sort_newest_to_oldest
+            EpisodesSortType.EPISODES_SORT_BY_LENGTH_ASC -> R.string.episode_sort_short_to_long
+            EpisodesSortType.EPISODES_SORT_BY_LENGTH_DESC -> R.string.episode_sort_long_to_short
+            null -> R.string.empty
         }
     }
 
@@ -508,7 +508,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
     private val onArtworkLongClicked: (successCallback: () -> Unit) -> Unit = { successCallback ->
         val dialog = OptionsDialog()
             .addTextOption(
-                titleId = LR.string.podcast_refresh_artwork,
+                titleId = R.string.podcast_refresh_artwork,
                 click = {
                     coilManager.clearCache(viewModel.podcastUuid)
                     successCallback()
@@ -626,7 +626,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
             }
             it.menu.tintIcons(iconColor)
             it.navigationIcon?.setTint(iconColor)
-            it.navigationContentDescription = getString(LR.string.back)
+            it.navigationContentDescription = getString(R.string.back)
             it.setOnLongClickListener {
                 theme.toggleDarkLightThemeActivity(activity as AppCompatActivity)
                 true
@@ -893,7 +893,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
                     adapter?.setError()
                     binding?.loading?.visibility = View.GONE
                     binding?.errorContainer?.visibility = View.VISIBLE
-                    binding?.errorMessage?.text = getString(LR.string.podcast_load_error)
+                    binding?.errorMessage?.text = getString(R.string.podcast_load_error)
 
                     if (BuildConfig.DEBUG) {
                         UiUtil.displayAlertError(requireContext(), state.errorMessage, null)
@@ -953,11 +953,11 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
     private fun archiveAllPlayed() {
         val count = viewModel.archivePlayedCount()
-        val buttonString = resources.getStringPlural(count = count, singular = LR.string.archive_episodes_singular, plural = LR.string.archive_episodes_plural)
+        val buttonString = resources.getStringPlural(count = count, singular = R.string.archive_episodes_singular, plural = R.string.archive_episodes_plural)
 
         val dialog = ConfirmationDialog()
-            .setTitle(getString(LR.string.podcast_archive_all_played))
-            .setSummary(getString(LR.string.podcast_archive_played))
+            .setTitle(getString(R.string.podcast_archive_all_played))
+            .setSummary(getString(R.string.podcast_archive_played))
             .setIconId(R.drawable.ic_archive_all)
             .setButtonType(ConfirmationDialog.ButtonType.Danger(buttonString))
             .setOnConfirm(viewModel::archivePlayed)

@@ -92,9 +92,9 @@ class SignInViewModel
 }
 
 enum class SignInError(@StringRes val message: Int) {
-    INVALID_EMAIL(LR.string.error_invalid_email_address),
-    INVALID_PASSWORD(LR.string.error_invalid_password_length),
-    SERVER(LR.string.error_server_failed),
+    INVALID_EMAIL(R.string.error_invalid_email_address),
+    INVALID_PASSWORD(R.string.error_invalid_password_length),
+    SERVER(R.string.error_server_failed),
 }
 
 sealed class SignInState {

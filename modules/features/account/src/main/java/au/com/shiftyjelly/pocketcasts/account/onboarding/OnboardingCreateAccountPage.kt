@@ -84,7 +84,7 @@ internal fun OnboardingCreateAccountPage(
             .windowInsetsPadding(WindowInsets.ime),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.create_account),
+            title = stringResource(R.string.create_account),
             onNavigationClick = {
                 viewModel.onBackPressed()
                 onBackPressed()
@@ -111,7 +111,7 @@ internal fun OnboardingCreateAccountPage(
             )
 
             TextP40(
-                text = "• ${stringResource(LR.string.profile_create_password_requirements)}",
+                text = "• ${stringResource(R.string.profile_create_password_requirements)}",
                 color = if (state.showPasswordError) {
                     MaterialTheme.theme.colors.support05
                 } else {
@@ -135,7 +135,7 @@ internal fun OnboardingCreateAccountPage(
             Spacer(Modifier.weight(1f))
 
             RowButton(
-                text = stringResource(LR.string.create_account),
+                text = stringResource(R.string.create_account),
                 enabled = state.enableSubmissionFields,
                 onClick = { viewModel.createAccount(onAccountCreated) },
             )

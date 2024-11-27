@@ -89,7 +89,7 @@ internal fun OnboardingLoginPage(
             .windowInsetsPadding(WindowInsets.ime),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.onboarding_welcome_back),
+            title = stringResource(R.string.onboarding_welcome_back),
             onNavigationClick = {
                 viewModel.onBackPressed()
                 onBackPressed()
@@ -129,7 +129,7 @@ internal fun OnboardingLoginPage(
             )
 
             TextH40(
-                text = stringResource(LR.string.onboarding_forgot_password),
+                text = stringResource(R.string.onboarding_forgot_password),
                 color = MaterialTheme.theme.colors.primaryText02,
                 modifier = Modifier
                     .clickable { onForgotPasswordTapped() }
@@ -139,7 +139,7 @@ internal fun OnboardingLoginPage(
             Spacer(Modifier.height(16.dp))
 
             RowButton(
-                text = stringResource(LR.string.onboarding_log_in),
+                text = stringResource(R.string.onboarding_log_in),
                 enabled = state.enableSubmissionFields,
                 onClick = { viewModel.logIn(onLoginComplete) },
             )

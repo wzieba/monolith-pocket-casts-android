@@ -3,9 +3,8 @@ package au.com.shiftyjelly.pocketcasts.sharing
 import android.content.Context
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.getPackageInfo
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 enum class SocialPlatform(
     @DrawableRes val logoId: Int,
@@ -13,38 +12,38 @@ enum class SocialPlatform(
     val packageId: String?,
 ) {
     Instagram(
-        logoId = IR.drawable.ic_share_logo_instagram,
-        nameId = LR.string.share_label_instagram_stories,
+        logoId = R.drawable.ic_share_logo_instagram,
+        nameId = R.string.share_label_instagram_stories,
         packageId = "com.instagram.android",
     ),
     WhatsApp(
-        logoId = IR.drawable.ic_share_logo_whats_app,
-        nameId = LR.string.share_label_whats_app,
+        logoId = R.drawable.ic_share_logo_whats_app,
+        nameId = R.string.share_label_whats_app,
         packageId = "com.whatsapp",
     ),
     Telegram(
-        logoId = IR.drawable.ic_share_logo_telegram,
-        nameId = LR.string.share_label_telegram,
+        logoId = R.drawable.ic_share_logo_telegram,
+        nameId = R.string.share_label_telegram,
         packageId = "org.telegram.messenger",
     ),
     X(
-        logoId = IR.drawable.ic_share_logo_x,
-        nameId = LR.string.share_label_x,
+        logoId = R.drawable.ic_share_logo_x,
+        nameId = R.string.share_label_x,
         packageId = "com.twitter.android",
     ),
     Tumblr(
-        logoId = IR.drawable.ic_share_logo_tumblr,
-        nameId = LR.string.share_label_tumblr,
+        logoId = R.drawable.ic_share_logo_tumblr,
+        nameId = R.string.share_label_tumblr,
         packageId = "com.tumblr",
     ),
     PocketCasts(
-        logoId = IR.drawable.ic_share_logo_pocket_casts,
-        nameId = LR.string.share_label_copy_link,
+        logoId = R.drawable.ic_share_logo_pocket_casts,
+        nameId = R.string.share_label_copy_link,
         packageId = null,
     ),
     More(
-        logoId = IR.drawable.ic_share_logo_more,
-        nameId = LR.string.share_label_more,
+        logoId = R.drawable.ic_share_logo_more,
+        nameId = R.string.share_label_more,
         packageId = null,
     ),
     ;

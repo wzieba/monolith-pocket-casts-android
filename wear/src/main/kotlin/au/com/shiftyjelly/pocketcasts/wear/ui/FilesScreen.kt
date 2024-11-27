@@ -45,7 +45,7 @@ fun FilesScreen(
             ScalingLazyColumn(
                 columnState = columnState,
             ) {
-                item { ScreenHeaderChip(LR.string.profile_navigation_files) }
+                item { ScreenHeaderChip(R.string.profile_navigation_files) }
 
                 items(userEpisodes) { episode ->
                     EpisodeChip(
@@ -67,7 +67,7 @@ private fun EmptyState() {
         modifier = Modifier.fillMaxSize(),
     ) {
         Text(
-            text = stringResource(LR.string.profile_cloud_no_files_uploaded),
+            text = stringResource(R.string.profile_cloud_no_files_uploaded),
             textAlign = TextAlign.Center,
             color = MaterialTheme.colors.onPrimary,
             style = MaterialTheme.typography.title3,

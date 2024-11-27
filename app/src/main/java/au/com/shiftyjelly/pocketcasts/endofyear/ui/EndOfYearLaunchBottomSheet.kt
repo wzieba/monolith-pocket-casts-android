@@ -56,9 +56,9 @@ fun EndOfYearLaunchBottomSheet(
                     },
                 )
             },
-            summaryText = stringResource(LR.string.end_of_year_launch_modal_summary),
+            summaryText = stringResource(R.string.end_of_year_launch_modal_summary),
             primaryButton = BottomSheetContentState.Content.Button.Primary(
-                label = stringResource(LR.string.end_of_year_launch_modal_primary_button_title),
+                label = stringResource(R.string.end_of_year_launch_modal_primary_button_title),
                 onClick = onClick,
             ),
         ),
@@ -85,26 +85,26 @@ private fun ImageContent(modifier: Modifier = Modifier) {
         }
 
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_playback_text),
+            painter = painterResource(R.drawable.end_of_year_2024_playback_text),
             contentDescription = null,
             modifier = Modifier
                 .offset(y = -imageSize.height - 6.dp)
                 .size(imageSize),
         )
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_playback_text),
+            painter = painterResource(R.drawable.end_of_year_2024_playback_text),
             contentDescription = null,
             modifier = Modifier.size(imageSize),
         )
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_playback_text),
+            painter = painterResource(R.drawable.end_of_year_2024_playback_text),
             contentDescription = null,
             modifier = Modifier
                 .offset(y = imageSize.height + 6.dp)
                 .size(imageSize),
         )
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_sticker_1),
+            painter = painterResource(R.drawable.end_of_year_2024_sticker_1),
             contentDescription = null,
             modifier = Modifier
                 .offset(x = -imageSize.width / 4f, y = -imageSize.height / 4f)

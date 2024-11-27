@@ -432,7 +432,7 @@ internal class DiscoverAdapter(
         }
         fun submitCategories(categories: List<CategoryPill>, source: String, context: Context, clearFilter: Boolean = false, region: String? = null) {
             this.source = source
-            this.allCategories = CategoryPill(DiscoverCategory(ALL_CATEGORIES_ID, context.getString(LR.string.discover_all_categories), icon = "", source = ""))
+            this.allCategories = CategoryPill(DiscoverCategory(ALL_CATEGORIES_ID, context.getString(R.string.discover_all_categories), icon = "", source = ""))
 
             // Reset category list when the current list is empty
             // or user asked to clear the category filter
@@ -703,10 +703,10 @@ internal class DiscoverAdapter(
                             val lblSponsored = holder.binding.lblSponsored
                             if (row.sponsored) {
                                 lblSponsored.setTextColor(context.getThemeColor(UR.attr.primary_text_02))
-                                lblSponsored.text = context.getString(LR.string.discover_row_sponsored)
+                                lblSponsored.text = context.getString(R.string.discover_row_sponsored)
                             } else {
                                 lblSponsored.setTextColor(context.getThemeColor(UR.attr.support_02))
-                                lblSponsored.text = context.getString(LR.string.discover_row_fresh_pick)
+                                lblSponsored.text = context.getString(R.string.discover_row_fresh_pick)
                             }
 
                             row.listUuid?.let { listUuid -> trackListImpression(listUuid) }
@@ -731,7 +731,7 @@ internal class DiscoverAdapter(
 
                             // Set the play button text to either Play Trailer or Play Episode
                             val episodeType = PodcastEpisode.EpisodeType.fromString(episode.type)
-                            binding.btnPlay.setText(if (episodeType == PodcastEpisode.EpisodeType.Trailer) LR.string.discover_button_play_trailer else LR.string.discover_button_play_episode)
+                            binding.btnPlay.setText(if (episodeType == PodcastEpisode.EpisodeType.Trailer) R.string.discover_button_play_trailer else R.string.discover_button_play_episode)
                             binding.btnPlay.show()
 
                             imageRequestFactory.createForPodcast(episode.podcast_uuid).loadInto(holder.binding.imgPodcast)
@@ -910,10 +910,10 @@ internal class DiscoverAdapter(
                     val lblSponsored = adHolder.binding.lblSponsored
                     if (row.discoverRow.sponsored) {
                         lblSponsored.setTextColor(context.getThemeColor(UR.attr.primary_text_02))
-                        lblSponsored.text = context.getString(LR.string.discover_row_sponsored)
+                        lblSponsored.text = context.getString(R.string.discover_row_sponsored)
                     } else {
                         lblSponsored.setTextColor(context.getThemeColor(UR.attr.support_02))
-                        lblSponsored.text = context.getString(LR.string.discover_row_fresh_pick)
+                        lblSponsored.text = context.getString(R.string.discover_row_fresh_pick)
                     }
 
                     val textSize = if ((podcastTitle ?: "").length < 15) 18f else 15f

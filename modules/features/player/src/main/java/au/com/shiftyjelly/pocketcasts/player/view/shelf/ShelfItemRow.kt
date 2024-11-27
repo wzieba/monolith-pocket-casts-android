@@ -94,8 +94,8 @@ fun ShelfItemRow(
             }
             if (isEditable) {
                 Icon(
-                    painter = painterResource(IR.drawable.ic_reorder),
-                    contentDescription = stringResource(LR.string.rearrange_actions),
+                    painter = painterResource(R.drawable.ic_reorder),
+                    contentDescription = stringResource(R.string.rearrange_actions),
                     modifier = Modifier
                         .padding(end = 16.dp)
                         .size(24.dp),

@@ -105,7 +105,7 @@ fun NowPlayingScreen(
 
                     is NowPlayingViewModel.State.Empty -> {
                         MessageMediaDisplay(
-                            message = stringResource(LR.string.empty_play_state),
+                            message = stringResource(R.string.empty_play_state),
                             modifier = modifier,
                         )
                     }
@@ -132,8 +132,8 @@ fun NowPlayingScreen(
                             seekForwardButtonEnabled = true,
                             seekBackIcon = ImageVector.vectorResource(au.com.shiftyjelly.pocketcasts.images.R.drawable.wear_skip_back),
                             seekForwardIcon = ImageVector.vectorResource(au.com.shiftyjelly.pocketcasts.images.R.drawable.wear_skip_foreward),
-                            playIcon = ImageVector.vectorResource(IR.drawable.wear_play),
-                            pauseIcon = ImageVector.vectorResource(IR.drawable.wear_pause),
+                            playIcon = ImageVector.vectorResource(R.drawable.wear_play),
+                            pauseIcon = ImageVector.vectorResource(R.drawable.wear_pause),
                             seekIconSize = 35.dp,
                             seekIconAlign = Alignment.CenterHorizontally,
                             progressColor = MaterialTheme.colors.onPrimary,
@@ -154,8 +154,8 @@ fun NowPlayingScreen(
                             seekForwardButtonEnabled = false,
                             seekBackIcon = ImageVector.vectorResource(au.com.shiftyjelly.pocketcasts.images.R.drawable.wear_skip_back),
                             seekForwardIcon = ImageVector.vectorResource(au.com.shiftyjelly.pocketcasts.images.R.drawable.wear_skip_foreward),
-                            playIcon = ImageVector.vectorResource(IR.drawable.wear_play),
-                            pauseIcon = ImageVector.vectorResource(IR.drawable.wear_pause),
+                            playIcon = ImageVector.vectorResource(R.drawable.wear_play),
+                            pauseIcon = ImageVector.vectorResource(R.drawable.wear_pause),
                             sidePadding = 12.dp,
                             seekIconAlign = Alignment.CenterHorizontally,
                         )
@@ -219,17 +219,17 @@ fun NowPlayingSettingsButtons(
             },
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_effects_off),
-                contentDescription = stringResource(LR.string.player_effects),
+                painter = painterResource(R.drawable.ic_effects_off),
+                contentDescription = stringResource(R.string.player_effects),
                 tint = Color.White,
             )
         }
         SetVolumeButtonStyled(
             onVolumeClick = onVolumeClick,
             volumeUiState = volumeUiState,
-            imageVolumeMute = ImageVector.vectorResource(IR.drawable.wear_volume_mute),
-            imageVolume = ImageVector.vectorResource(IR.drawable.wear_volume),
-            imageVolumeMax = ImageVector.vectorResource(IR.drawable.wear_volume_max),
+            imageVolumeMute = ImageVector.vectorResource(R.drawable.wear_volume_mute),
+            imageVolume = ImageVector.vectorResource(R.drawable.wear_volume),
+            imageVolumeMax = ImageVector.vectorResource(R.drawable.wear_volume_max),
         )
     }
 }

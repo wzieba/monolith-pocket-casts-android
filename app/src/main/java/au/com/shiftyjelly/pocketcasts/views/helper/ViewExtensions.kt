@@ -30,7 +30,7 @@ fun TextView.setLongStyleDate(date: Date?) {
 
 fun TextView.setEpisodeTimeLeft(episode: BaseEpisode) {
     if (episode is UserEpisode && episode.serverStatus == UserEpisodeServerStatus.MISSING) {
-        text = resources.getString(LR.string.podcast_episode_file_not_uploaded)
+        text = resources.getString(R.string.podcast_episode_file_not_uploaded)
     } else {
         val timeLeft = TimeHelper.getTimeLeft(
             currentTimeMs = episode.playedUpToMs,

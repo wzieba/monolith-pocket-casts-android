@@ -32,7 +32,7 @@ internal fun RounderCornerBox(
     ) {
         if (!isSystemCornerRadiusSupported) {
             Image(
-                provider = ImageProvider(IR.drawable.rounded_rectangle),
+                provider = ImageProvider(R.drawable.rounded_rectangle),
                 contentDescription = null,
                 colorFilter = backgroundTint?.let(ColorFilter::tint),
                 modifier = modifierCompat,

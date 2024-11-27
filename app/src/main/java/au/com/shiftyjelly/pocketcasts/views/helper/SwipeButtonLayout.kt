@@ -32,7 +32,7 @@ sealed interface SwipeButton {
         private val viewModel: SwipeButtonLayoutViewModel,
     ) : SwipeButton {
 
-        override val iconRes = IR.drawable.ic_upnext_movetotop
+        override val iconRes = R.drawable.ic_upnext_movetotop
 
         override val backgroundColor: (Context) -> Int = { it.getThemeColor(UR.attr.support_04) }
 
@@ -53,7 +53,7 @@ sealed interface SwipeButton {
         private val viewModel: SwipeButtonLayoutViewModel,
     ) : SwipeButton {
 
-        override val iconRes = IR.drawable.ic_upnext_movetobottom
+        override val iconRes = R.drawable.ic_upnext_movetobottom
 
         override val backgroundColor: (Context) -> Int = {
             it.getThemeColor(UR.attr.support_03)
@@ -74,7 +74,7 @@ sealed interface SwipeButton {
         private val viewModel: SwipeButtonLayoutViewModel,
     ) : SwipeButton {
 
-        override val iconRes = IR.drawable.ic_upnext_remove
+        override val iconRes = R.drawable.ic_upnext_remove
 
         override val backgroundColor: (Context) -> Int = { it.getThemeColor(UR.attr.support_05) }
 
@@ -121,9 +121,9 @@ sealed interface SwipeButton {
 
         override val iconRes
             get() = if (episode.isArchived) {
-                IR.drawable.ic_unarchive
+                R.drawable.ic_unarchive
             } else {
-                IR.drawable.ic_archive
+                R.drawable.ic_archive
             }
 
         override val backgroundColor: (Context) -> Int =
@@ -144,7 +144,7 @@ sealed interface SwipeButton {
         viewModel: SwipeButtonLayoutViewModel,
     ) : SwipeButton {
 
-        override val iconRes = IR.drawable.ic_share
+        override val iconRes = R.drawable.ic_share
 
         override val backgroundColor: (Context) -> Int =
             { it.getThemeColor(UR.attr.support_01) }

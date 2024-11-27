@@ -24,7 +24,7 @@ internal fun SkipBackButton(
     modifier: GlanceModifier = GlanceModifier,
     isClickable: Boolean = true,
 ) {
-    val contentDescription = LocalContext.current.getString(LR.string.skip_back)
+    val contentDescription = LocalContext.current.getString(R.string.skip_back)
     val source = LocalSource.current
 
     RounderCornerBox(
@@ -37,7 +37,7 @@ internal fun SkipBackButton(
         },
     ) {
         Image(
-            provider = ImageProvider(IR.drawable.ic_widget_skip_back),
+            provider = ImageProvider(R.drawable.ic_widget_skip_back),
             contentDescription = null,
             colorFilter = ColorFilter.tint(LocalWidgetTheme.current.icon),
             modifier = GlanceModifier.fillMaxSize().padding(vertical = iconPadding),

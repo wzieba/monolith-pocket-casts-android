@@ -15,7 +15,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import au.com.shiftyjelly.pocketcasts.account.databinding.AccountActivityBinding
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SubscriptionType
@@ -26,7 +26,7 @@ import au.com.shiftyjelly.pocketcasts.utils.Util
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
+import au.com.shiftyjelly.pocketcasts.databinding.AccountActivityBinding
 
 @AndroidEntryPoint
 class AccountActivity : AppCompatActivity() {
@@ -103,10 +103,10 @@ class AccountActivity : AppCompatActivity() {
                 } else {
                     val resource = when (destination.id) {
                         R.id.createDoneFragment, R.id.accountFragment, R.id.promoCodeFragment -> {
-                            IR.drawable.ic_close
+                            R.drawable.ic_close
                         }
                         else -> {
-                            IR.drawable.ic_arrow_back
+                            R.drawable.ic_arrow_back
                         }
                     }
                     binding.carHeader?.btnClose?.setImageResource(resource)

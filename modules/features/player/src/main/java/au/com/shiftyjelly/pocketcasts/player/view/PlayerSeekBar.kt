@@ -136,7 +136,7 @@ class PlayerSeekBar @JvmOverloads constructor(context: Context, attrs: Attribute
         } else {
             val elapsedTime = currentTime.toHhMmSs()
             elapsedTimeText.text = currentTime.toHhMmSs()
-            elapsedTimeText.contentDescription = resources.getString(LR.string.player_played_up_to, elapsedTime)
+            elapsedTimeText.contentDescription = resources.getString(R.string.player_played_up_to, elapsedTime)
             val timeLeft = remainingDuration()
             val remainingTime = buildString {
                 if (timeLeft > Duration.ZERO) {
@@ -145,7 +145,7 @@ class PlayerSeekBar @JvmOverloads constructor(context: Context, attrs: Attribute
                 append(timeLeft.toHhMmSs())
             }
             remainingTimeText.text = remainingTime
-            remainingTimeText.contentDescription = resources.getString(LR.string.player_time_remaining, remainingTime.removePrefix("-"))
+            remainingTimeText.contentDescription = resources.getString(R.string.player_time_remaining, remainingTime.removePrefix("-"))
         }
     }
 

@@ -6,47 +6,47 @@ import au.com.shiftyjelly.pocketcasts.images.R as IR
 private const val FILTER_COLOR_SIZE = 5
 
 private val ICON_DRAWABLES = listOf(
-    IR.drawable.ic_filters_list,
-    IR.drawable.ic_filters_headphones,
-    IR.drawable.ic_filters_clock,
-    IR.drawable.ic_filters_download,
-    IR.drawable.ic_filters_play,
-    IR.drawable.ic_filters_volume,
-    IR.drawable.ic_filters_video,
-    IR.drawable.ic_filters_star,
+    R.drawable.ic_filters_list,
+    R.drawable.ic_filters_headphones,
+    R.drawable.ic_filters_clock,
+    R.drawable.ic_filters_download,
+    R.drawable.ic_filters_play,
+    R.drawable.ic_filters_volume,
+    R.drawable.ic_filters_video,
+    R.drawable.ic_filters_star,
 )
 
 private val SHORTCUT_DRAWABLES = listOf(
-    IR.drawable.shortcut_list,
-    IR.drawable.shortcut_headphones,
-    IR.drawable.shortcut_clock,
-    IR.drawable.shortcut_download,
-    IR.drawable.shortcut_play,
-    IR.drawable.shortcut_volume,
-    IR.drawable.shortcut_video,
-    IR.drawable.shortcut_star,
+    R.drawable.shortcut_list,
+    R.drawable.shortcut_headphones,
+    R.drawable.shortcut_clock,
+    R.drawable.shortcut_download,
+    R.drawable.shortcut_play,
+    R.drawable.shortcut_volume,
+    R.drawable.shortcut_video,
+    R.drawable.shortcut_star,
 )
 
 private val AUTO_DRAWABLES = arrayOf(
-    IR.drawable.auto_filter_list,
-    IR.drawable.auto_filter_headphones,
-    IR.drawable.auto_filter_clock,
-    IR.drawable.auto_filter_downloaded,
-    IR.drawable.auto_filter_play,
-    IR.drawable.auto_filter_volume,
-    IR.drawable.auto_filter_video,
-    IR.drawable.auto_filter_star,
+    R.drawable.auto_filter_list,
+    R.drawable.auto_filter_headphones,
+    R.drawable.auto_filter_clock,
+    R.drawable.auto_filter_downloaded,
+    R.drawable.auto_filter_play,
+    R.drawable.auto_filter_volume,
+    R.drawable.auto_filter_video,
+    R.drawable.auto_filter_star,
 )
 
 private val AUTOMOTIVE_DRAWABLES = arrayOf(
-    IR.drawable.automotive_filter_list,
-    IR.drawable.automotive_filter_headphones,
-    IR.drawable.automotive_filter_clock,
-    IR.drawable.automotive_filter_downloaded,
-    IR.drawable.automotive_filter_play,
-    IR.drawable.automotive_filter_volume,
-    IR.drawable.automotive_filter_video,
-    IR.drawable.automotive_filter_star,
+    R.drawable.automotive_filter_list,
+    R.drawable.automotive_filter_headphones,
+    R.drawable.automotive_filter_clock,
+    R.drawable.automotive_filter_downloaded,
+    R.drawable.automotive_filter_play,
+    R.drawable.automotive_filter_volume,
+    R.drawable.automotive_filter_video,
+    R.drawable.automotive_filter_star,
 )
 
 val Playlist.drawableIndex: Int

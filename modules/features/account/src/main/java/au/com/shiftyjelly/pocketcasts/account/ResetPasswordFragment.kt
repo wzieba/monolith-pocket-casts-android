@@ -83,8 +83,8 @@ class ResetPasswordFragment : BaseFragment() {
                         progress.isVisible = false
                         UiUtil.displayAlert(
                             activity,
-                            getString(LR.string.profile_reset_password_sent),
-                            getString(LR.string.profile_reset_password_check_email),
+                            getString(R.string.profile_reset_password_sent),
+                            getString(R.string.profile_reset_password_check_email),
                             onComplete = {
                                 if (isAdded) {
                                     view.findNavController().popBackStack()
@@ -109,9 +109,9 @@ class ResetPasswordFragment : BaseFragment() {
         val context = binding.root.context
 
         val emailColor = context.getThemeColor(UR.attr.primary_interactive_01)
-        val emailDrawable = context.getTintedDrawable(IR.drawable.ic_mail, emailColor)
+        val emailDrawable = context.getTintedDrawable(R.drawable.ic_mail, emailColor)
         val tickColor = context.getThemeColor(UR.attr.support_02)
-        val tickDrawable = if (!invalidEmail)context.getTintedDrawable(IR.drawable.ic_tick_circle, tickColor) else null
+        val tickDrawable = if (!invalidEmail)context.getTintedDrawable(R.drawable.ic_tick_circle, tickColor) else null
         val max = 64
         emailDrawable?.setBounds(0, 0, max, max)
         tickDrawable?.setBounds(0, 0, max, max)

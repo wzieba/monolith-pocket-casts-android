@@ -155,9 +155,9 @@ private fun Content(
         TextH10(
             text = stringResource(
                 if (isSignedInAsPlusOrPatron) {
-                    LR.string.onboarding_welcome_get_you_listening_plus
+                    R.string.onboarding_welcome_get_you_listening_plus
                 } else {
-                    LR.string.onboarding_welcome_get_you_listening
+                    R.string.onboarding_welcome_get_you_listening
                 },
             ),
             modifier = Modifier.padding(end = 8.dp),
@@ -165,20 +165,20 @@ private fun Content(
 
         Spacer(Modifier.height(24.dp))
         CardSection(
-            titleRes = LR.string.onboarding_import_podcasts_title,
-            descriptionRes = LR.string.onboarding_import_podcasts_text,
-            actionRes = LR.string.onboarding_import_podcasts_button,
-            iconRes = IR.drawable.pc_bw_import,
+            titleRes = R.string.onboarding_import_podcasts_title,
+            descriptionRes = R.string.onboarding_import_podcasts_text,
+            actionRes = R.string.onboarding_import_podcasts_button,
+            iconRes = R.drawable.pc_bw_import,
             onClick = onImportTapped,
         )
 
         if (showDiscover) {
             Spacer(Modifier.height(24.dp))
             CardSection(
-                titleRes = LR.string.onboarding_welcome_recommendations_title,
-                descriptionRes = LR.string.onboarding_welcome_recommendations_text,
-                actionRes = LR.string.onboarding_welcome_recommendations_button,
-                iconRes = IR.drawable.circle_star,
+                titleRes = R.string.onboarding_welcome_recommendations_title,
+                descriptionRes = R.string.onboarding_welcome_recommendations_text,
+                actionRes = R.string.onboarding_welcome_recommendations_button,
+                iconRes = R.drawable.circle_star,
                 onClick = onContinueToDiscover,
             )
         }
@@ -193,7 +193,7 @@ private fun Content(
 
         Spacer(Modifier.height(16.dp))
         RowButton(
-            text = stringResource(LR.string.done),
+            text = stringResource(R.string.done),
             includePadding = false,
             onClick = onDone,
 
@@ -280,9 +280,9 @@ private fun NewsletterSwitch(
                 .padding(end = 16.dp)
                 .weight(1f),
         ) {
-            TextH40(stringResource(LR.string.onboarding_get_the_newsletter))
+            TextH40(stringResource(R.string.onboarding_get_the_newsletter))
             TextP60(
-                text = stringResource(LR.string.profile_create_newsletter_summary),
+                text = stringResource(R.string.profile_create_newsletter_summary),
                 color = MaterialTheme.theme.colors.primaryText02,
             )
         }
@@ -317,14 +317,14 @@ private fun PersonCheckmark(
             } ?: modifier
         }
         Icon(
-            painter = painterResource(id = IR.drawable.person_outline),
+            painter = painterResource(id = R.drawable.person_outline),
             contentDescription = null,
             tint = MaterialTheme.theme.colors.primaryInteractive01,
             modifier = personModifier,
         )
 
         Icon(
-            painter = painterResource(id = IR.drawable.person_outline_check),
+            painter = painterResource(id = R.drawable.person_outline_check),
             contentDescription = null,
             modifier = Modifier
                 .offset(x = 32.dp, y = 32.dp)

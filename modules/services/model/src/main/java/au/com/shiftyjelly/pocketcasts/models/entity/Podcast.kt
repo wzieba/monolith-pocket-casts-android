@@ -264,11 +264,11 @@ data class Podcast(
     fun displayableFrequency(resources: Resources): String? {
         val frequency = episodeFrequency ?: return null
         val stringId = when (frequency.lowercase()) {
-            "hourly" -> LR.string.podcast_released_hourly
-            "daily" -> LR.string.podcast_released_daily
-            "weekly" -> LR.string.podcast_released_weekly
-            "fortnightly" -> LR.string.podcast_released_fortnightly
-            "monthly" -> LR.string.podcast_released_monthly
+            "hourly" -> R.string.podcast_released_hourly
+            "daily" -> R.string.podcast_released_daily
+            "weekly" -> R.string.podcast_released_weekly
+            "fortnightly" -> R.string.podcast_released_fortnightly
+            "monthly" -> R.string.podcast_released_monthly
             else -> return null
         }
         return resources.getString(stringId)
@@ -288,12 +288,12 @@ data class Podcast(
         val resources = context.resources
         return when {
             expectedTime < sevenDaysAgo -> null
-            DateUtils.isToday(expectedTime) -> resources.getString(LR.string.podcast_next_episode_today)
-            DateUtils.isToday(expectedTime - DateUtils.DAY_IN_MILLIS) -> resources.getString(LR.string.podcast_next_episode_tomorrow)
-            expectedTime in sevenDaysAgo..now -> resources.getString(LR.string.podcast_next_episode_any_day_now)
+            DateUtils.isToday(expectedTime) -> resources.getString(R.string.podcast_next_episode_today)
+            DateUtils.isToday(expectedTime - DateUtils.DAY_IN_MILLIS) -> resources.getString(R.string.podcast_next_episode_tomorrow)
+            expectedTime in sevenDaysAgo..now -> resources.getString(R.string.podcast_next_episode_any_day_now)
             else -> {
                 val formattedDate = RelativeDateFormatter(context).format(expectedDate)
-                resources.getString(LR.string.podcast_next_episode_value, formattedDate)
+                resources.getString(R.string.podcast_next_episode_value, formattedDate)
             }
         }
     }

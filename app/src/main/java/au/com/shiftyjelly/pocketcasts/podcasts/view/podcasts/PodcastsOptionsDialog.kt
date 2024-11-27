@@ -30,8 +30,8 @@ class PodcastsOptionsDialog(
     fun show() {
         val dialog = OptionsDialog()
             .addTextOption(
-                titleId = LR.string.podcasts_menu_sort_by,
-                imageId = IR.drawable.ic_sort,
+                titleId = R.string.podcasts_menu_sort_by,
+                imageId = R.drawable.ic_sort,
                 valueId = settings.podcastsSortType.value.labelId,
                 click = {
                     openSortOptions()
@@ -39,11 +39,11 @@ class PodcastsOptionsDialog(
                 },
             )
             .addToggleOptions(
-                LR.string.podcasts_menu_layout,
+                R.string.podcasts_menu_layout,
                 R.drawable.ic_largegrid,
                 ToggleButtonOption(
                     imageId = R.drawable.ic_largegrid,
-                    descriptionId = LR.string.podcasts_layout_large_grid,
+                    descriptionId = R.string.podcasts_layout_large_grid,
                     isOn = { settings.podcastGridLayout.value == PodcastGridLayoutType.LARGE_ARTWORK },
                     click = {
                         settings.podcastGridLayout.set(PodcastGridLayoutType.LARGE_ARTWORK, updateModifiedAt = true)
@@ -53,7 +53,7 @@ class PodcastsOptionsDialog(
                 ),
                 ToggleButtonOption(
                     imageId = R.drawable.ic_smallgrid,
-                    descriptionId = LR.string.podcasts_layout_small_grid,
+                    descriptionId = R.string.podcasts_layout_small_grid,
                     isOn = { settings.podcastGridLayout.value == PodcastGridLayoutType.SMALL_ARTWORK },
                     click = {
                         settings.podcastGridLayout.set(PodcastGridLayoutType.SMALL_ARTWORK, updateModifiedAt = true)
@@ -63,7 +63,7 @@ class PodcastsOptionsDialog(
                 ),
                 ToggleButtonOption(
                     imageId = R.drawable.ic_list,
-                    descriptionId = LR.string.podcasts_layout_list_view,
+                    descriptionId = R.string.podcasts_layout_list_view,
                     isOn = { settings.podcastGridLayout.value == PodcastGridLayoutType.LIST_VIEW },
                     click = {
                         settings.podcastGridLayout.set(PodcastGridLayoutType.LIST_VIEW, updateModifiedAt = true)
@@ -73,7 +73,7 @@ class PodcastsOptionsDialog(
                 ),
             )
             .addTextOption(
-                titleId = LR.string.podcasts_menu_badges,
+                titleId = R.string.podcasts_menu_badges,
                 imageId = R.drawable.ic_badge,
                 valueId = settings.podcastBadgeType.value.labelId,
                 click = {
@@ -82,7 +82,7 @@ class PodcastsOptionsDialog(
                 },
             )
             .addTextOption(
-                titleId = LR.string.podcasts_menu_share_podcasts,
+                titleId = R.string.podcasts_menu_share_podcasts,
                 imageId = R.drawable.ic_share_option,
                 click = {
                     sharePodcasts()
@@ -102,7 +102,7 @@ class PodcastsOptionsDialog(
 
     private fun openSortOptions() {
         val sortOrder = settings.podcastsSortType.value
-        val title = fragment.getString(LR.string.sort_by)
+        val title = fragment.getString(R.string.sort_by)
         val dialog = OptionsDialog().setTitle(title)
         for (order in PodcastsSortType.values()) {
             dialog.addCheckedOption(
@@ -122,11 +122,11 @@ class PodcastsOptionsDialog(
 
     private fun openBadgeOptions() {
         val badgeType: BadgeType = settings.podcastBadgeType.value
-        val title = fragment.getString(LR.string.podcasts_menu_badges)
+        val title = fragment.getString(R.string.podcasts_menu_badges)
         val dialog = OptionsDialog()
             .setTitle(title)
             .addCheckedOption(
-                titleId = LR.string.podcasts_badges_off,
+                titleId = R.string.podcasts_badges_off,
                 checked = badgeType == BadgeType.OFF,
                 click = {
                     val newBadgeType = BadgeType.OFF
@@ -135,7 +135,7 @@ class PodcastsOptionsDialog(
                 },
             )
             .addCheckedOption(
-                titleId = LR.string.podcasts_badges_all_unfinished,
+                titleId = R.string.podcasts_badges_all_unfinished,
                 checked = badgeType == BadgeType.ALL_UNFINISHED,
                 click = {
                     val newBadgeType = BadgeType.ALL_UNFINISHED
@@ -144,7 +144,7 @@ class PodcastsOptionsDialog(
                 },
             )
             .addCheckedOption(
-                titleId = LR.string.podcasts_badges_only_latest_episode,
+                titleId = R.string.podcasts_badges_only_latest_episode,
                 checked = badgeType == BadgeType.LATEST_EPISODE,
                 click = {
                     val newBadgeType = BadgeType.LATEST_EPISODE

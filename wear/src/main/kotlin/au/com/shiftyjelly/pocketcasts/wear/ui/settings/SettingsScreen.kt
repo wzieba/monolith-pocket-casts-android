@@ -88,26 +88,26 @@ private fun Content(
 ) {
     ScalingLazyColumn(columnState = scrollState) {
         item {
-            ScreenHeaderChip(LR.string.settings)
+            ScreenHeaderChip(R.string.settings)
         }
 
         item {
             ToggleChip(
-                label = stringResource(LR.string.settings_metered_data_warning),
+                label = stringResource(R.string.settings_metered_data_warning),
                 checked = state.showDataWarning,
                 onCheckedChanged = onWarnOnMeteredChanged,
             )
         }
 
         val backgroundRefreshStringRes = if (state.refreshInBackground) {
-            LR.string.settings_storage_background_refresh_on_watch
+            R.string.settings_storage_background_refresh_on_watch
         } else {
-            LR.string.settings_storage_background_refresh_off_watch
+            R.string.settings_storage_background_refresh_off_watch
         }
 
         item {
             ToggleChip(
-                label = stringResource(LR.string.settings_storage_background_refresh),
+                label = stringResource(R.string.settings_storage_background_refresh),
                 checked = state.refreshInBackground,
                 onCheckedChanged = onRefreshInBackgroundChanged,
             )
@@ -124,11 +124,11 @@ private fun Content(
         }
 
         item {
-            SectionHeaderChip(LR.string.account)
+            SectionHeaderChip(R.string.account)
         }
 
         item {
-            val title = stringResource(LR.string.profile_refresh_now)
+            val title = stringResource(R.string.profile_refresh_now)
             val rotation = RotationAnimation(
                 state = state.refreshState,
                 durationMillis = 800,
@@ -137,7 +137,7 @@ private fun Content(
                 title = title,
                 icon = {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_retry),
+                        painter = painterResource(R.drawable.ic_retry),
                         contentDescription = null,
                         modifier = Modifier.graphicsLayer {
                             rotationZ = rotation.value
@@ -150,7 +150,7 @@ private fun Content(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.settings_privacy_analytics),
+                title = stringResource(R.string.settings_privacy_analytics),
                 iconRes = SR.drawable.whatsnew_privacy,
                 onClick = onPrivacyClicked,
             )
@@ -161,17 +161,17 @@ private fun Content(
             when (signInState) {
                 is SignInState.SignedIn -> {
                     WatchListChip(
-                        title = stringResource(LR.string.log_out),
+                        title = stringResource(R.string.log_out),
                         secondaryLabel = signInState.email,
-                        iconRes = IR.drawable.ic_signout,
+                        iconRes = R.drawable.ic_signout,
                         onClick = onSignOutClicked,
                     )
                 }
 
                 is SignInState.SignedOut -> {
                     WatchListChip(
-                        title = stringResource(LR.string.log_in),
-                        iconRes = IR.drawable.signin,
+                        title = stringResource(R.string.log_in),
+                        iconRes = R.drawable.signin,
                         onClick = signInClick,
                     )
                 }
@@ -180,15 +180,15 @@ private fun Content(
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.settings_title_help),
-                iconRes = IR.drawable.ic_help,
+                title = stringResource(R.string.settings_title_help),
+                iconRes = R.drawable.ic_help,
                 onClick = onHelpClicked,
             )
         }
 
         item {
             WatchListChip(
-                title = stringResource(LR.string.settings_title_about),
+                title = stringResource(R.string.settings_title_about),
                 iconRes = SR.drawable.settings_about,
                 onClick = onAboutClicked,
             )

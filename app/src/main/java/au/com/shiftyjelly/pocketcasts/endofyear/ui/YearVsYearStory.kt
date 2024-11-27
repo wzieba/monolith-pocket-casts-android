@@ -272,8 +272,8 @@ private fun TextInfo(
 ) {
     Column {
         val badgeId = when (story.subscriptionTier) {
-            SubscriptionTier.PLUS -> IR.drawable.end_of_year_2024_year_vs_year_plus_badge
-            SubscriptionTier.PATRON -> IR.drawable.end_of_year_2024_year_vs_year_patron_badge
+            SubscriptionTier.PLUS -> R.drawable.end_of_year_2024_year_vs_year_plus_badge
+            SubscriptionTier.PATRON -> R.drawable.end_of_year_2024_year_vs_year_patron_badge
             SubscriptionTier.NONE -> null
         }
         if (badgeId != null) {
@@ -288,27 +288,27 @@ private fun TextInfo(
         )
         val (title, subtitle) = when (val percentage = story.yearOverYearChange) {
             in 0.9..1.1 -> {
-                val title = stringResource(LR.string.end_of_year_stories_year_over_year_title_flat, "2023")
-                val subtitle = stringResource(LR.string.end_of_year_stories_year_over_year_subtitle_flat)
+                val title = stringResource(R.string.end_of_year_stories_year_over_year_title_flat, "2023")
+                val subtitle = stringResource(R.string.end_of_year_stories_year_over_year_subtitle_flat)
                 title to subtitle
             }
 
             in 0.0..0.9 -> {
-                val title = stringResource(LR.string.end_of_year_stories_year_over_year_title_went_down, "2023")
-                val subtitle = stringResource(LR.string.end_of_year_stories_year_over_year_subtitle_went_down)
+                val title = stringResource(R.string.end_of_year_stories_year_over_year_title_went_down, "2023")
+                val subtitle = stringResource(R.string.end_of_year_stories_year_over_year_subtitle_went_down)
                 title to subtitle
             }
 
             in 1.1..5.0 -> {
                 val percentageString = (100 * percentage).roundToInt().toString()
-                val title = stringResource(LR.string.end_of_year_stories_year_over_year_title_went_up, "2023", percentageString)
-                val subtitle = stringResource(LR.string.end_of_year_stories_year_over_year_subtitle_went_up, "2025")
+                val title = stringResource(R.string.end_of_year_stories_year_over_year_title_went_up, "2023", percentageString)
+                val subtitle = stringResource(R.string.end_of_year_stories_year_over_year_subtitle_went_up, "2025")
                 title to subtitle
             }
 
             else -> {
-                val title = stringResource(LR.string.end_of_year_stories_year_over_year_title_went_up_a_lot, "2023")
-                val subtitle = stringResource(LR.string.end_of_year_stories_year_over_year_subtitle_went_up, "2025")
+                val title = stringResource(R.string.end_of_year_stories_year_over_year_title_went_up_a_lot, "2023")
+                val subtitle = stringResource(R.string.end_of_year_stories_year_over_year_subtitle_went_up, "2025")
                 title to subtitle
             }
         }

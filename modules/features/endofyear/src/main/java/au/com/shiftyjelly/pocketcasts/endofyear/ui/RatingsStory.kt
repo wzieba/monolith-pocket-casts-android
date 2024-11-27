@@ -144,7 +144,7 @@ private fun PresentRatings(
                 modifier = Modifier.height(32.dp),
             )
             TextH10(
-                text = stringResource(LR.string.eoy_story_ratings_title_1),
+                text = stringResource(R.string.eoy_story_ratings_title_1),
                 fontScale = measurements.smallDeviceFactor,
                 disableAutoScale = true,
                 color = colorResource(UR.color.coolgrey_90),
@@ -155,8 +155,8 @@ private fun PresentRatings(
             )
             TextP40(
                 text = when (val rating = story.stats.max().first) {
-                    Rating.One, Rating.Two, Rating.Three -> stringResource(LR.string.eoy_story_ratings_subtitle_2)
-                    Rating.Four, Rating.Five -> stringResource(LR.string.eoy_story_ratings_subtitle_1, rating.numericalValue)
+                    Rating.One, Rating.Two, Rating.Three -> stringResource(R.string.eoy_story_ratings_subtitle_2)
+                    Rating.Four, Rating.Five -> stringResource(R.string.eoy_story_ratings_subtitle_1, rating.numericalValue)
                 },
                 fontSize = 15.sp,
                 disableAutoScale = true,
@@ -378,7 +378,7 @@ private fun OopsiesText(
                 modifier = Modifier.height(12.dp),
             )
             Image(
-                painter = painterResource(IR.drawable.eoy_star_text_stop),
+                painter = painterResource(R.drawable.eoy_star_text_stop),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(colorResource(UR.color.coolgrey_90)),
                 modifier = Modifier.padding(horizontal = 8.dp),
@@ -405,7 +405,7 @@ private fun NoRatingsInfo(
             modifier = Modifier.height(16.dp),
         )
         TextH10(
-            text = stringResource(LR.string.eoy_story_ratings_title_2),
+            text = stringResource(R.string.eoy_story_ratings_title_2),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
@@ -415,14 +415,14 @@ private fun NoRatingsInfo(
             modifier = Modifier.height(16.dp),
         )
         TextP40(
-            text = stringResource(LR.string.eoy_story_ratings_subtitle_3),
+            text = stringResource(R.string.eoy_story_ratings_subtitle_3),
             fontSize = 15.sp,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         OutlinedEoyButton(
-            text = stringResource(LR.string.eoy_story_ratings_learn_button_label),
+            text = stringResource(R.string.eoy_story_ratings_learn_button_label),
             onClick = onLearnAboutRatings,
         )
     }

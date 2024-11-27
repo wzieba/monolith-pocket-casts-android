@@ -13,10 +13,10 @@ fun ImageView.updateSubscribeButtonIcon(
     @AttrRes colorSubscribed: Int = UR.attr.support_02,
     @AttrRes colorUnsubscribed: Int = UR.attr.primary_icon_02,
 ) {
-    val drawableRes = if (subscribed) IR.drawable.ic_check_black_24dp else IR.drawable.ic_add_black_24dp
+    val drawableRes = if (subscribed) R.drawable.ic_check_black_24dp else R.drawable.ic_add_black_24dp
     this.setImageResource(drawableRes)
     this.isEnabled = !subscribed
-    this.contentDescription = this.context.getString(if (subscribed) LR.string.podcast_subscribed else LR.string.subscribe)
+    this.contentDescription = this.context.getString(if (subscribed) R.string.podcast_subscribed else R.string.subscribe)
 
     val tintColor = context.getThemeColor(if (subscribed) colorSubscribed else colorUnsubscribed)
     this.imageTintList = ColorStateList.valueOf(tintColor)

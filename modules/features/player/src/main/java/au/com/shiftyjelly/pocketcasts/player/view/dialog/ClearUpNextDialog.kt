@@ -24,11 +24,11 @@ class ClearUpNextDialog(
 ) : ConfirmationDialog() {
 
     init {
-        setTitle(context.getString(LR.string.player_up_next_clear_queue_button))
-        setSummary(context.getString(LR.string.player_up_next_clear_queue_summary))
+        setTitle(context.getString(R.string.player_up_next_clear_queue_button))
+        setSummary(context.getString(R.string.player_up_next_clear_queue_summary))
         setIconId(R.drawable.ic_upnext_remove)
         val episodeCount = playbackManager.upNextQueue.queueEpisodes.size
-        setButtonType(ButtonType.Danger(context.getString(LR.string.player_up_next_clear_episodes_plural, episodeCount)))
+        setButtonType(ButtonType.Danger(context.getString(R.string.player_up_next_clear_episodes_plural, episodeCount)))
         setOnConfirm { clear() }
     }
 

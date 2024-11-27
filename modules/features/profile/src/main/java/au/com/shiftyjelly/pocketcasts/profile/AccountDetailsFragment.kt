@@ -111,7 +111,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
         binding.toolbar?.let { toolbar ->
             setupToolbarAndStatusBar(
                 toolbar = toolbar,
-                title = getString(LR.string.profile_pocket_casts_account),
+                title = getString(R.string.profile_pocket_casts_account),
                 navigationIcon = NavigationIcon.BackArrow,
             )
         }
@@ -245,22 +245,22 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             return
         }
 
-        val body = getString(LR.string.profile_sign_out_confirm)
+        val body = getString(R.string.profile_sign_out_confirm)
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.profile_sign_out)))
-            .setTitle(getString(LR.string.profile_sign_out))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.profile_sign_out)))
+            .setTitle(getString(R.string.profile_sign_out))
             .setSummary(body)
             .setOnConfirm { performSignOut() }
-            .setIconId(IR.drawable.ic_signout)
+            .setIconId(R.drawable.ic_signout)
             .setIconTint(UR.attr.support_05)
             .show(childFragmentManager, "signout_warning")
     }
 
     private fun deleteAccount() {
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.profile_account_delete)))
-            .setTitle(getString(LR.string.profile_delete_account_title))
-            .setSummary(getString(LR.string.profile_delete_account_question))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.profile_account_delete)))
+            .setTitle(getString(R.string.profile_delete_account_title))
+            .setSummary(getString(R.string.profile_delete_account_question))
             .setOnConfirm { deleteAccountPermanent() }
             .setIconId(VR.drawable.ic_delete)
             .setIconTint(UR.attr.support_05)
@@ -269,11 +269,11 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
 
     private fun deleteAccountPermanent() {
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.profile_account_delete_yes)))
-            .setTitle(getString(LR.string.profile_delete_account_title))
-            .setSummary(getString(LR.string.profile_delete_account_permanent_question))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.profile_account_delete_yes)))
+            .setTitle(getString(R.string.profile_delete_account_title))
+            .setSummary(getString(R.string.profile_delete_account_permanent_question))
             .setOnConfirm { performDeleteAccount() }
-            .setIconId(IR.drawable.ic_failedwarning)
+            .setIconId(R.drawable.ic_failedwarning)
             .setIconTint(UR.attr.support_05)
             .show(childFragmentManager, "deleteaccount_permanent_warning")
     }
@@ -287,9 +287,9 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             is DeleteAccountState.Failure -> {
                 viewModel.clearDeleteAccountState()
                 AlertDialog.Builder(requireContext())
-                    .setTitle(getString(LR.string.profile_delete_account_failed_title))
-                    .setMessage(state.message ?: getString(LR.string.profile_delete_account_failed_message))
-                    .setPositiveButton(getString(LR.string.ok)) { dialog, _ -> dialog.dismiss() }
+                    .setTitle(getString(R.string.profile_delete_account_failed_title))
+                    .setMessage(state.message ?: getString(R.string.profile_delete_account_failed_message))
+                    .setPositiveButton(getString(R.string.ok)) { dialog, _ -> dialog.dismiss() }
                     .show()
             }
             is DeleteAccountState.Empty -> {}
@@ -298,17 +298,17 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
 
     private fun performDeleteAccount() {
         viewModel.deleteAccount()
-        Toast.makeText(requireContext(), LR.string.profile_deleting_account, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), R.string.profile_deleting_account, Toast.LENGTH_LONG).show()
     }
 
     private fun signOutAutomotive() {
         val context = context ?: return
         val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, CR.style.Theme_Car_NoActionBar) else context
         val builder = AlertDialog.Builder(themedContext)
-        builder.setTitle(getString(LR.string.profile_sign_out))
-            .setMessage(getString(LR.string.profile_sign_out_confirm))
-            .setPositiveButton(getString(LR.string.profile_sign_out)) { _, _ -> clearDataAlert() }
-            .setNegativeButton(getString(LR.string.cancel), null)
+        builder.setTitle(getString(R.string.profile_sign_out))
+            .setMessage(getString(R.string.profile_sign_out_confirm))
+            .setPositiveButton(getString(R.string.profile_sign_out)) { _, _ -> clearDataAlert() }
+            .setNegativeButton(getString(R.string.cancel), null)
             .show()
     }
 
@@ -316,10 +316,10 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
         val context = context ?: return
         val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, CR.style.Theme_Car_NoActionBar) else context
         val builder = AlertDialog.Builder(themedContext)
-        builder.setTitle(getString(LR.string.profile_clear_data_question))
-            .setMessage(getString(LR.string.profile_clear_data_would_you_also_like_question))
-            .setPositiveButton(getString(LR.string.profile_just_sign_out)) { _, _ -> performSignOut() }
-            .setNegativeButton(getString(LR.string.profile_clear_data)) { _, _ ->
+        builder.setTitle(getString(R.string.profile_clear_data_question))
+            .setMessage(getString(R.string.profile_clear_data_would_you_also_like_question))
+            .setPositiveButton(getString(R.string.profile_just_sign_out)) { _, _ -> performSignOut() }
+            .setNegativeButton(getString(R.string.profile_clear_data)) { _, _ ->
                 signOutAndClearData()
             }
             .show()

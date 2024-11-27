@@ -49,7 +49,7 @@ private fun ColorSelectCircle(color: Color, selected: Boolean, onClick: () -> Un
         size = size,
         iconSize = 28.dp,
         iconVisible = selected,
-        icon = painterResource(IR.drawable.ic_tick),
+        icon = painterResource(R.drawable.ic_tick),
         backgroundColor = color,
         onClick = onClick,
         contentDescription = "",

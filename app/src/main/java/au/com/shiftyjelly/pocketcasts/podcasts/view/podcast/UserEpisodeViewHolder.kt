@@ -96,15 +96,15 @@ class UserEpisodeViewHolder(
     override val leftIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
         get() {
             return if (isUpNext == true) {
-                listOf(EpisodeItemTouchHelper.IconWithBackground(IR.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
+                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
             } else {
                 val addToUpNextIcon = when (upNextAction) {
-                    Settings.UpNextAction.PLAY_NEXT -> IR.drawable.ic_upnext_playnext
-                    Settings.UpNextAction.PLAY_LAST -> IR.drawable.ic_upnext_playlast
+                    Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playnext
+                    Settings.UpNextAction.PLAY_LAST -> R.drawable.ic_upnext_playlast
                 }
                 val secondaryUpNextIcon = when (upNextAction) {
-                    Settings.UpNextAction.PLAY_NEXT -> IR.drawable.ic_upnext_playlast
-                    Settings.UpNextAction.PLAY_LAST -> IR.drawable.ic_upnext_playnext
+                    Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playlast
+                    Settings.UpNextAction.PLAY_LAST -> R.drawable.ic_upnext_playnext
                 }
 
                 listOf(

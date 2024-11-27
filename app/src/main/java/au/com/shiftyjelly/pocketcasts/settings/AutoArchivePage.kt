@@ -53,7 +53,7 @@ fun AutoArchiveSettingsPage(
             .background(MaterialTheme.theme.colors.primaryUi02),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings_title_auto_archive),
+            title = stringResource(R.string.settings_title_auto_archive),
             onNavigationClick = onBackPressed,
         )
 
@@ -63,7 +63,7 @@ fun AutoArchiveSettingsPage(
         ) {
             item {
                 SettingRow(
-                    primaryText = stringResource(LR.string.settings_archive_played),
+                    primaryText = stringResource(R.string.settings_archive_played),
                     secondaryText = stringResource(state.archiveAfterPlaying.stringRes),
                     toggle = SettingRowToggle.None,
                     modifier = Modifier.clickable { openArchiveAfterPlayingDialog = true },
@@ -72,7 +72,7 @@ fun AutoArchiveSettingsPage(
 
             item {
                 SettingRow(
-                    primaryText = stringResource(LR.string.settings_auto_archive_inactive),
+                    primaryText = stringResource(R.string.settings_auto_archive_inactive),
                     secondaryText = stringResource(state.archiveInactive.stringRes),
                     toggle = SettingRowToggle.None,
                     modifier = Modifier.clickable { openArchiveInactiveDialog = true },
@@ -81,7 +81,7 @@ fun AutoArchiveSettingsPage(
 
             item {
                 SettingInfoRow(
-                    text = stringResource(LR.string.settings_auto_archive_time_limits),
+                    text = stringResource(R.string.settings_auto_archive_time_limits),
                 )
             }
 
@@ -91,8 +91,8 @@ fun AutoArchiveSettingsPage(
 
             item {
                 SettingRow(
-                    primaryText = stringResource(LR.string.settings_auto_archive_starred),
-                    secondaryText = stringResource(if (state.starredEpisodes) LR.string.settings_auto_archive_starred_summary else LR.string.settings_auto_archive_no_starred_summary),
+                    primaryText = stringResource(R.string.settings_auto_archive_starred),
+                    secondaryText = stringResource(if (state.starredEpisodes) R.string.settings_auto_archive_starred_summary else R.string.settings_auto_archive_no_starred_summary),
                     toggle = SettingRowToggle.Switch(checked = state.starredEpisodes),
                     modifier = modifier
                         .toggleable(
@@ -106,7 +106,7 @@ fun AutoArchiveSettingsPage(
 
         if (openArchiveAfterPlayingDialog) {
             RadioOptionsDialog(
-                title = stringResource(LR.string.podcast_settings_played_episodes),
+                title = stringResource(R.string.podcast_settings_played_episodes),
                 selectedOption = state.archiveAfterPlaying,
                 allOptions = AutoArchiveAfterPlaying.All,
                 optionName = { option -> stringResource(option.stringRes) },
@@ -121,7 +121,7 @@ fun AutoArchiveSettingsPage(
 
         if (openArchiveInactiveDialog) {
             RadioOptionsDialog(
-                title = stringResource(LR.string.settings_inactive_episodes),
+                title = stringResource(R.string.settings_inactive_episodes),
                 selectedOption = state.archiveInactive,
                 allOptions = AutoArchiveInactive.All,
                 optionName = { option -> stringResource(option.stringRes) },

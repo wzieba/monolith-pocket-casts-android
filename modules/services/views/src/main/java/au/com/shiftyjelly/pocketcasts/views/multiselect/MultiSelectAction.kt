@@ -17,8 +17,8 @@ sealed class MultiSelectAction(
     object SelectAll : MultiSelectAction(
         groupId = "select_all",
         actionId = R.id.menu_select_all,
-        title = LR.string.select_all,
-        iconRes = IR.drawable.ic_selectall_up,
+        title = R.string.select_all,
+        iconRes = R.drawable.ic_selectall_up,
         analyticsValue = "select_all",
     )
 }

@@ -62,38 +62,38 @@ class WarningsHelper @Inject constructor(
 
     fun streamingWarningDialog(onConfirm: () -> Unit): ConfirmationDialog {
         val titleRes =
-            if (Network.isWifiConnection(activity)) LR.string.stream_warning_title_metered_wifi else LR.string.stream_warning_title_not_wifi
+            if (Network.isWifiConnection(activity)) R.string.stream_warning_title_metered_wifi else R.string.stream_warning_title_not_wifi
         return ConfirmationDialog()
             .setTitle(activity.getString(titleRes))
-            .setSummary(activity.getString(LR.string.stream_warning_summary))
-            .setIconId(IR.drawable.ic_wifi)
-            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(LR.string.stream_warning_button)))
+            .setSummary(activity.getString(R.string.stream_warning_summary))
+            .setIconId(R.drawable.ic_wifi)
+            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(R.string.stream_warning_button)))
             .setOnConfirm(onConfirm)
     }
 
     fun downloadWarning(episodeUuid: String, from: String): ConfirmationDialog {
         val titleRes =
-            if (Network.isWifiConnection(activity)) LR.string.download_warning_title_metered_wifi else LR.string.download_warning_title_on_wifi
+            if (Network.isWifiConnection(activity)) R.string.download_warning_title_metered_wifi else R.string.download_warning_title_on_wifi
         return ConfirmationDialog()
-            .setIconId(IR.drawable.ic_wifi)
+            .setIconId(R.drawable.ic_wifi)
             .setTitle(activity.getString(titleRes))
-            .setSummary(activity.getString(LR.string.download_warning_on_wifi_summary))
-            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(LR.string.download_warning_on_wifi_button)))
+            .setSummary(activity.getString(R.string.download_warning_on_wifi_summary))
+            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(R.string.download_warning_on_wifi_button)))
             .setOnConfirm { download(episodeUuid, waitForWifi = false, from = from) }
-            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(LR.string.download_warning_on_wifi_later)))
+            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(R.string.download_warning_on_wifi_later)))
             .setOnSecondary { download(episodeUuid, waitForWifi = true, from = from) }
     }
 
     fun uploadWarning(episodeUuid: String, source: SourceView): ConfirmationDialog {
         val titleRes =
-            if (Network.isWifiConnection(activity)) LR.string.profile_cloud_upload_warning_title_metered_wifi else LR.string.profile_cloud_upload_warning_title_on_wifi
+            if (Network.isWifiConnection(activity)) R.string.profile_cloud_upload_warning_title_metered_wifi else R.string.profile_cloud_upload_warning_title_on_wifi
         return ConfirmationDialog()
-            .setIconId(IR.drawable.ic_wifi)
+            .setIconId(R.drawable.ic_wifi)
             .setTitle(activity.getString(titleRes))
-            .setSummary(activity.getString(LR.string.profile_cloud_upload_warning_summary))
-            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(LR.string.profile_cloud_upload_warning_button)))
+            .setSummary(activity.getString(R.string.profile_cloud_upload_warning_summary))
+            .setButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(R.string.profile_cloud_upload_warning_button)))
             .setOnConfirm { upload(episodeUuid, waitForWifi = false, source = source) }
-            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(LR.string.profile_cloud_upload_warning_later)))
+            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(activity.getString(R.string.profile_cloud_upload_warning_later)))
             .setOnSecondary { upload(episodeUuid, waitForWifi = true, source = source) }
     }
 
@@ -151,12 +151,12 @@ class WarningsHelper @Inject constructor(
         // Setting an extra-long duration since this is such a high-priority notification
         val snackbar = Snackbar.make(
             snackbarParentView,
-            LR.string.player_battery_warning_snackbar,
+            R.string.player_battery_warning_snackbar,
             EXTRA_LONG_SNACKBAR_DURATION_MS,
         )
 
         snackbar.setAction(
-            snackbarParentView.resources.getString(LR.string.player_battery_warning_snackbar_action)
+            snackbarParentView.resources.getString(R.string.player_battery_warning_snackbar_action)
                 .uppercase(Locale.getDefault()),
         ) {
             val fragment = BatteryRestrictionsSettingsFragment.newInstance(closeButton = true)

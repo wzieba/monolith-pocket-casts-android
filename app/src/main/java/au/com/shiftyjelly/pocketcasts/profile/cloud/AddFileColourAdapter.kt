@@ -86,7 +86,7 @@ class AddFileColourAdapter(val onSelectedChange: (Item) -> Unit, val onLockedIte
         } else if (item is Item.Colour) {
             holder.itemView.backgroundTintList = ColorStateList.valueOf(item.color)
             if (locked && item.lockable) {
-                view.setImageResource(IR.drawable.ic_locked)
+                view.setImageResource(R.drawable.ic_locked)
                 view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(UR.attr.contrast_01))
                 holder.itemView.setOnClickListener { onLockedItemTapped() }
             } else {

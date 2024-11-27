@@ -179,7 +179,7 @@ fun TranscriptToolbar(
                         .padding(start = 16.dp),
                     onClick = onCloseClick,
                     tintColor = TranscriptColors.iconColor(),
-                    contentDescription = stringResource(LR.string.transcript_close),
+                    contentDescription = stringResource(R.string.transcript_close),
                 )
             }
 
@@ -197,7 +197,7 @@ fun TranscriptToolbar(
                     ) {
                         Icon(
                             imageVector = Icons.Default.Search,
-                            contentDescription = stringResource(LR.string.transcript_search),
+                            contentDescription = stringResource(R.string.transcript_search),
                             tint = Color.White,
                         )
                     }
@@ -224,7 +224,7 @@ fun TranscriptToolbar(
                                 onNext = onSearchNextClicked,
                             )
                         },
-                        placeholder = stringResource(LR.string.search),
+                        placeholder = stringResource(R.string.search),
                         onTextChanged = onSearchQueryChanged,
                         onSearch = {},
                         cornerRadius = SearchViewCornerRadius,
@@ -273,7 +273,7 @@ private fun SearchBarLeadingIcons(
         ) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                contentDescription = stringResource(LR.string.done),
+                contentDescription = stringResource(R.string.done),
             )
         }
     }
@@ -302,7 +302,7 @@ private fun SearchBarTrailingIcons(
             ) {
                 Icon(
                     painter = painterResource(R.drawable.ic_cancel),
-                    contentDescription = stringResource(LR.string.cancel),
+                    contentDescription = stringResource(R.string.cancel),
                 )
             }
         }
@@ -313,7 +313,7 @@ private fun SearchBarTrailingIcons(
         ) {
             Icon(
                 imageVector = Icons.Default.KeyboardArrowUp,
-                contentDescription = stringResource(LR.string.go_to_previous),
+                contentDescription = stringResource(R.string.go_to_previous),
             )
         }
         IconButtonSmall(
@@ -322,7 +322,7 @@ private fun SearchBarTrailingIcons(
         ) {
             Icon(
                 imageVector = Icons.Default.KeyboardArrowDown,
-                contentDescription = stringResource(LR.string.go_to_next),
+                contentDescription = stringResource(R.string.go_to_next),
             )
         }
         Spacer(modifier = Modifier.width(8.dp))

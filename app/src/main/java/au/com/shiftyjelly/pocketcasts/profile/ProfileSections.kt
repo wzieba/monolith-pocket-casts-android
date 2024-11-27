@@ -84,32 +84,32 @@ internal enum class ProfileSection(
     @StringRes val labelId: Int,
 ) {
     Stats(
-        iconId = IR.drawable.ic_stats,
-        labelId = LR.string.profile_navigation_stats,
+        iconId = R.drawable.ic_stats,
+        labelId = R.string.profile_navigation_stats,
     ),
     Downloads(
-        iconId = IR.drawable.ic_profile_download,
-        labelId = LR.string.profile_navigation_downloads,
+        iconId = R.drawable.ic_profile_download,
+        labelId = R.string.profile_navigation_downloads,
     ),
     CloudFiles(
-        iconId = IR.drawable.ic_file,
-        labelId = LR.string.profile_navigation_files,
+        iconId = R.drawable.ic_file,
+        labelId = R.string.profile_navigation_files,
     ),
     Starred(
-        iconId = IR.drawable.ic_starred,
-        labelId = LR.string.profile_navigation_starred,
+        iconId = R.drawable.ic_starred,
+        labelId = R.string.profile_navigation_starred,
     ),
     Bookmarks(
-        iconId = IR.drawable.ic_bookmark,
-        labelId = LR.string.bookmarks,
+        iconId = R.drawable.ic_bookmark,
+        labelId = R.string.bookmarks,
     ),
     ListeningHistory(
-        iconId = IR.drawable.ic_listen_history,
-        labelId = LR.string.profile_navigation_listening_history,
+        iconId = R.drawable.ic_listen_history,
+        labelId = R.string.profile_navigation_listening_history,
     ),
     Help(
-        iconId = IR.drawable.ic_help,
-        labelId = LR.string.settings_title_help,
+        iconId = R.drawable.ic_help,
+        labelId = R.string.settings_title_help,
     ),
 }
 

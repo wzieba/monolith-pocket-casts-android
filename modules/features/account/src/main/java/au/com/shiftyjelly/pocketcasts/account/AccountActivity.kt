@@ -103,10 +103,10 @@ class AccountActivity : AppCompatActivity() {
                 } else {
                     val resource = when (destination.id) {
                         R.id.createDoneFragment, R.id.accountFragment, R.id.promoCodeFragment -> {
-                            IR.drawable.ic_close
+                            R.drawable.ic_close
                         }
                         else -> {
-                            IR.drawable.ic_arrow_back
+                            R.drawable.ic_arrow_back
                         }
                     }
                     binding.carHeader?.btnClose?.setImageResource(resource)

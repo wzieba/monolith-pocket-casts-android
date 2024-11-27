@@ -733,38 +733,38 @@ class EpisodeManagerImpl @Inject constructor(
             return
         } else if (isPlaybackRemote) {
             if (episode is UserEpisode) {
-                messageId = if (episode.serverStatus != UserEpisodeServerStatus.UPLOADED) LR.string.error_unable_to_cast_local else LR.string.error_unable_to_play
+                messageId = if (episode.serverStatus != UserEpisodeServerStatus.UPLOADED) R.string.error_unable_to_cast_local else R.string.error_unable_to_play
             } else {
-                messageId = LR.string.error_unable_to_cast
+                messageId = R.string.error_unable_to_cast
             }
         } else if (event.error != null && event.error.cause is UnrecognizedInputFormatException) {
-            messageId = LR.string.error_playing_format
+            messageId = R.string.error_playing_format
         } else if (episode.isDownloaded) {
             val downloadedFilePath = episode.downloadedFilePath
             if (downloadedFilePath?.isNotBlank() == true) {
                 val file = File(downloadedFilePath)
                 if (file.exists()) {
                     if (file.canRead()) {
-                        messageId = LR.string.error_playing_format_external
+                        messageId = R.string.error_playing_format_external
                     } else {
-                        messageId = LR.string.error_storage_permission
+                        messageId = R.string.error_storage_permission
                     }
                 } else {
-                    messageId = LR.string.error_file_not_found
+                    messageId = R.string.error_file_not_found
                 }
             } else {
-                messageId = LR.string.error_file_not_found
+                messageId = R.string.error_file_not_found
             }
         } else {
             if (Network.isConnected(context)) {
                 val chtblBlocked = event.error.anyMessageContains("chtbl.com")
                 if (chtblBlocked) {
-                    messageId = LR.string.error_chartable_streaming
+                    messageId = R.string.error_chartable_streaming
                 } else {
-                    messageId = LR.string.error_streaming_try_downloading
+                    messageId = R.string.error_streaming_try_downloading
                 }
             } else {
-                messageId = LR.string.error_streaming_internet
+                messageId = R.string.error_streaming_internet
             }
         }
 

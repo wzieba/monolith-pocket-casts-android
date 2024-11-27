@@ -118,10 +118,10 @@ class VideoActivity : AppCompatActivity() {
 
         // create PiP actions
         if (pipActionsPlaying == null) {
-            val skipBackward = createRemoteAction(IR.drawable.notification_skipbackwards, LR.string.skip_back, PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS)
-            val play = createRemoteAction(IR.drawable.notification_play, LR.string.play, PlaybackStateCompat.ACTION_PLAY)
-            val pause = createRemoteAction(IR.drawable.notification_pause, LR.string.pause, PlaybackStateCompat.ACTION_PAUSE)
-            val skipForward = createRemoteAction(IR.drawable.notification_skipforward, LR.string.skip_forward, PlaybackStateCompat.ACTION_SKIP_TO_NEXT)
+            val skipBackward = createRemoteAction(R.drawable.notification_skipbackwards, R.string.skip_back, PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS)
+            val play = createRemoteAction(R.drawable.notification_play, R.string.play, PlaybackStateCompat.ACTION_PLAY)
+            val pause = createRemoteAction(R.drawable.notification_pause, R.string.pause, PlaybackStateCompat.ACTION_PAUSE)
+            val skipForward = createRemoteAction(R.drawable.notification_skipforward, R.string.skip_forward, PlaybackStateCompat.ACTION_SKIP_TO_NEXT)
 
             pipActionsPlaying = listOf(skipBackward, pause, skipForward)
             pipActionsPaused = listOf(skipBackward, play, skipForward)

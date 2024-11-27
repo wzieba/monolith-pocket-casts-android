@@ -64,7 +64,7 @@ fun RequirePlusScreen(
             item {
                 Text(
                     text = buildAnnotatedString {
-                        append(stringResource(LR.string.log_in_watch_requires_plus))
+                        append(stringResource(R.string.log_in_watch_requires_plus))
                         append(" ")
                         withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
                             append("play.pocketcasts.com")
@@ -79,8 +79,8 @@ fun RequirePlusScreen(
 
             item {
                 WatchListChip(
-                    title = stringResource(LR.string.log_in),
-                    iconRes = IR.drawable.signin,
+                    title = stringResource(R.string.log_in),
+                    iconRes = R.drawable.signin,
                     onClick = onContinueToLogin,
                 )
             }

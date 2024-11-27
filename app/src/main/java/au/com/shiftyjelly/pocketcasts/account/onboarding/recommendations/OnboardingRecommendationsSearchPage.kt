@@ -77,7 +77,7 @@ fun OnboardingRecommendationsSearchPage(
             .fillMaxHeight(),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.onboarding_find_podcasts),
+            title = stringResource(R.string.onboarding_find_podcasts),
             onNavigationClick = {
                 viewModel.onBackPressed()
                 onBackPressed()
@@ -86,7 +86,7 @@ fun OnboardingRecommendationsSearchPage(
 
         SearchBar(
             text = state.searchQuery,
-            placeholder = stringResource(LR.string.search),
+            placeholder = stringResource(R.string.search),
             onTextChanged = viewModel::updateSearchQuery,
             onSearch = with(LocalContext.current) {
                 {

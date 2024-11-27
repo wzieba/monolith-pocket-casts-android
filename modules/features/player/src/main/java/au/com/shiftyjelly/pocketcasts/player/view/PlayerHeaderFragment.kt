@@ -207,7 +207,7 @@ class PlayerHeaderFragment : BaseFragment(), PlayerClickListener {
                                 startActivity(intent)
                             } catch (e: ActivityNotFoundException) {
                                 Timber.e(e)
-                                UiUtil.displayAlertError(requireContext(), getString(LR.string.player_open_url_failed, chapterUrl), null)
+                                UiUtil.displayAlertError(requireContext(), getString(R.string.player_open_url_failed, chapterUrl), null)
                             }
                         }
                     }
@@ -271,9 +271,9 @@ class PlayerHeaderFragment : BaseFragment(), PlayerClickListener {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 shelfSharedViewModel.snackbarMessages.collect { message ->
                     val text = when (message) {
-                        SnackbarMessage.EpisodeDownloadStarted -> LR.string.episode_queued_for_download
-                        SnackbarMessage.EpisodeRemoved -> LR.string.episode_was_removed
-                        SnackbarMessage.TranscriptNotAvailable -> LR.string.transcript_error_not_available
+                        SnackbarMessage.EpisodeDownloadStarted -> R.string.episode_queued_for_download
+                        SnackbarMessage.EpisodeRemoved -> R.string.episode_was_removed
+                        SnackbarMessage.TranscriptNotAvailable -> R.string.transcript_error_not_available
                     }
                     showSnackBar(text = getString(text))
                 }
@@ -314,9 +314,9 @@ class PlayerHeaderFragment : BaseFragment(), PlayerClickListener {
                             context?.let {
                                 ConfirmationDialog()
                                     .setForceDarkTheme(true)
-                                    .setSummary(it.getString(LR.string.player_mark_as_played))
-                                    .setIconId(IR.drawable.ic_markasplayed)
-                                    .setButtonType(Danger(it.getString(LR.string.player_mark_as_played_button)))
+                                    .setSummary(it.getString(R.string.player_mark_as_played))
+                                    .setIconId(R.drawable.ic_markasplayed)
+                                    .setButtonType(Danger(it.getString(R.string.player_mark_as_played_button)))
                                     .setOnConfirm {
                                         navigationState.onMarkAsPlayedConfirmed(navigationState.episode)
                                     }
@@ -327,9 +327,9 @@ class PlayerHeaderFragment : BaseFragment(), PlayerClickListener {
                         is NavigationState.ShowPodcastEpisodeArchiveConfirmation -> {
                             ConfirmationDialog()
                                 .setForceDarkTheme(true)
-                                .setSummary(resources.getString(LR.string.player_archive_summary))
-                                .setIconId(IR.drawable.ic_archive)
-                                .setButtonType(Danger(resources.getString(LR.string.player_archive_title)))
+                                .setSummary(resources.getString(R.string.player_archive_summary))
+                                .setIconId(R.drawable.ic_archive)
+                                .setButtonType(Danger(resources.getString(R.string.player_archive_title)))
                                 .setOnConfirm { navigationState.onArchiveConfirmed(navigationState.episode) }
                                 .show(childFragmentManager, "archive")
                         }
@@ -505,16 +505,16 @@ class PlayerHeaderFragment : BaseFragment(), PlayerClickListener {
         }
 
         val snackbarMessage = if (result.isExistingBookmark) {
-            getString(LR.string.bookmark_updated, result.title)
+            getString(R.string.bookmark_updated, result.title)
         } else {
-            getString(LR.string.bookmark_added, result.title)
+            getString(R.string.bookmark_added, result.title)
         }
         val viewBookmarksAction = View.OnClickListener {
             (parentFragment as? PlayerContainerFragment)?.openBookmarks()
         }
 
         Snackbar.make(view, snackbarMessage, Snackbar.LENGTH_LONG)
-            .setAction(LR.string.settings_view, viewBookmarksAction)
+            .setAction(R.string.settings_view, viewBookmarksAction)
             .setActionTextColor(result.tintColor)
             .setBackgroundTint(ThemeColor.primaryUi01(Theme.ThemeType.DARK))
             .setTextColor(ThemeColor.primaryText01(Theme.ThemeType.DARK))

@@ -19,7 +19,7 @@ import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun VerticalLogoPlus(modifier: Modifier = Modifier) {
-    val pocketCastsPlusString = stringResource(LR.string.pocket_casts_plus)
+    val pocketCastsPlusString = stringResource(R.string.pocket_casts_plus)
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier.clearAndSetSemantics {
@@ -28,8 +28,8 @@ fun VerticalLogoPlus(modifier: Modifier = Modifier) {
     ) {
         VerticalLogo()
         Image(
-            painter = painterResource(IR.drawable.plus_logo),
-            contentDescription = stringResource(LR.string.pocket_casts),
+            painter = painterResource(R.drawable.plus_logo),
+            contentDescription = stringResource(R.string.pocket_casts),
             modifier = Modifier.padding(top = 15.dp),
         )
     }

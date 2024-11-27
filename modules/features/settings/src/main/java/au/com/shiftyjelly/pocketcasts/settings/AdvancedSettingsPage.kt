@@ -68,7 +68,7 @@ fun AdvancedSettingsView(
 ) {
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings_title_advanced),
+            title = stringResource(R.string.settings_title_advanced),
             bottomShadow = true,
             onNavigationClick = { onBackPressed() },
         )
@@ -81,14 +81,14 @@ fun AdvancedSettingsView(
         ) {
             item {
                 TextP50(
-                    text = stringResource(LR.string.settings_description_advanced),
+                    text = stringResource(R.string.settings_description_advanced),
                     color = MaterialTheme.theme.colors.primaryText02,
                     modifier = Modifier.padding(SettingsSection.horizontalPadding),
                 )
             }
             item {
                 SettingSection(
-                    heading = stringResource(LR.string.settings_storage_section_heading_mobile_data),
+                    heading = stringResource(R.string.settings_storage_section_heading_mobile_data),
                     indent = false,
                 ) {
                     SyncOnMeteredRow(state.backgroundSyncOnMeteredState)
@@ -96,7 +96,7 @@ fun AdvancedSettingsView(
             }
             item {
                 SettingSection(
-                    heading = stringResource(LR.string.settings_advanced_heading_playback),
+                    heading = stringResource(R.string.settings_advanced_heading_playback),
                     indent = false,
                 ) {
                     if (FeatureFlag.isEnabled(Feature.CACHE_ENTIRE_PLAYING_EPISODE)) {
@@ -115,8 +115,8 @@ private fun SyncOnMeteredRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_advanced_sync_on_metered),
-        secondaryText = stringResource(LR.string.settings_advanced_sync_on_metered_summary),
+        primaryText = stringResource(R.string.settings_advanced_sync_on_metered),
+        secondaryText = stringResource(R.string.settings_advanced_sync_on_metered_summary),
         toggle = SettingRowToggle.Switch(state.isChecked, state.isEnabled),
         indent = false,
         modifier = modifier.toggleable(
@@ -133,8 +133,8 @@ private fun PrioritizeSeekAccuracydRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_advanced_prioritize_seek_accuracy),
-        secondaryText = stringResource(LR.string.settings_advanced_prioritize_seek_accuracy_summary),
+        primaryText = stringResource(R.string.settings_advanced_prioritize_seek_accuracy),
+        secondaryText = stringResource(R.string.settings_advanced_prioritize_seek_accuracy_summary),
         toggle = SettingRowToggle.Switch(state.isChecked),
         indent = false,
         modifier = modifier.toggleable(
@@ -151,8 +151,8 @@ private fun CacheEntirePlayingEpisodeRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_advanced_cache_entire_playing_episode),
-        secondaryText = stringResource(LR.string.settings_advanced_cache_entire_playing_episode_summary),
+        primaryText = stringResource(R.string.settings_advanced_cache_entire_playing_episode),
+        secondaryText = stringResource(R.string.settings_advanced_cache_entire_playing_episode_summary),
         toggle = SettingRowToggle.Switch(state.isChecked),
         indent = false,
         modifier = modifier.toggleable(

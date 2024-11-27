@@ -138,7 +138,7 @@ class GiveRatingViewModel @Inject constructor(
             LogBuffer.i(TAG, "Cannot submit rating, no network connection")
             Toast.makeText(
                 context,
-                context.getString(LR.string.podcast_submit_rating_no_internet),
+                context.getString(R.string.podcast_submit_rating_no_internet),
                 Toast.LENGTH_LONG,
             ).show()
             return

@@ -316,10 +316,10 @@ class MainActivity :
                     if (settings.isNotificationsDisabledMessageShown()) return
                     Snackbar.make(
                         findViewById(R.id.root),
-                        getString(LR.string.notifications_blocked_warning),
+                        getString(R.string.notifications_blocked_warning),
                         EXTRA_LONG_SNACKBAR_DURATION_MS,
                     ).setAction(
-                        getString(LR.string.notifications_blocked_warning_snackbar_action)
+                        getString(R.string.notifications_blocked_warning_snackbar_action)
                             .uppercase(Locale.getDefault()),
                     ) {
                         // Responds to click on the action
@@ -573,7 +573,7 @@ class MainActivity :
 
     @Suppress("DEPRECATION")
     private suspend fun refreshAppAndWait() = withContext(Dispatchers.Main) {
-        val dialog = android.app.ProgressDialog.show(this@MainActivity, getString(LR.string.loading), getString(LR.string.please_wait), true)
+        val dialog = android.app.ProgressDialog.show(this@MainActivity, getString(R.string.loading), getString(R.string.please_wait), true)
         LogBuffer.i(LogBuffer.TAG_BACKGROUND_TASKS, "Running refresh from refresh and wait")
         RefreshPodcastsTask.runNowSync(application, applicationScope)
 
@@ -1389,7 +1389,7 @@ class MainActivity :
         // We do not have a capability of playing a section of an episode between some timestamps.
         if (startTimestamp != null && endTimestamp != null) {
             val url = "${Settings.SERVER_SHORT_URL}/episode/$episodeUuid?t=${startTimestamp.inWholeSeconds},${endTimestamp.inWholeSeconds}"
-            WebViewActivity.show(this, getString(LR.string.clip_title), url)
+            WebViewActivity.show(this, getString(R.string.clip_title), url)
             return
         }
 
@@ -1409,7 +1409,7 @@ class MainActivity :
                     )
                 }
                 null -> {
-                    val dialog = android.app.ProgressDialog.show(this@MainActivity, getString(LR.string.loading), getString(LR.string.please_wait), true)
+                    val dialog = android.app.ProgressDialog.show(this@MainActivity, getString(R.string.loading), getString(R.string.please_wait), true)
                     val searchResult = serviceManager.getSharedItemDetailsSuspend("/social/share/show/$episodeUuid")
                     dialog.hide()
                     searchResult?.episode?.let {
@@ -1432,7 +1432,7 @@ class MainActivity :
     private fun openPodcastUrl(url: String?) {
         url ?: return
 
-        val dialog = android.app.ProgressDialog.show(this, getString(LR.string.loading), getString(LR.string.please_wait), true)
+        val dialog = android.app.ProgressDialog.show(this, getString(R.string.loading), getString(R.string.please_wait), true)
         serviceManager.searchForPodcasts(
             url,
             object : ServerCallback<PodcastSearch> {
@@ -1453,7 +1453,7 @@ class MainActivity :
 
                     val message = LocaliseHelper.serverMessageIdToMessage(serverMessageId, ::getString)
                         ?: userMessage
-                        ?: getString(LR.string.podcast_add_failed)
+                        ?: getString(R.string.podcast_add_failed)
                     UiUtil.displayAlertError(
                         context = this@MainActivity,
                         message = message,
@@ -1469,11 +1469,11 @@ class MainActivity :
         // If a clip has both start and end we don't open it in the app.
         // We do not have a capability of playing a section of an episode between some timestamps.
         if (deepLink.startTimestamp != null && deepLink.endTimestamp != null) {
-            WebViewActivity.show(this, getString(LR.string.clip_title), deepLink.uri.toString())
+            WebViewActivity.show(this, getString(R.string.clip_title), deepLink.uri.toString())
             return
         }
 
-        val dialog = android.app.ProgressDialog.show(this, getString(LR.string.loading), getString(LR.string.please_wait), true)
+        val dialog = android.app.ProgressDialog.show(this, getString(R.string.loading), getString(R.string.please_wait), true)
         serviceManager.getSharedItemDetails(
             deepLink.sharePath,
             object : ServerCallback<au.com.shiftyjelly.pocketcasts.models.to.Share> {
@@ -1485,8 +1485,8 @@ class MainActivity :
                     if (podcastUuid.isBlank()) {
                         UiUtil.displayAlertError(
                             this@MainActivity,
-                            getString(LR.string.podcast_share_open_fail_title),
-                            getString(LR.string.podcast_share_open_fail),
+                            getString(R.string.podcast_share_open_fail_title),
+                            getString(R.string.podcast_share_open_fail),
                             null,
                         )
                         return
@@ -1518,8 +1518,8 @@ class MainActivity :
                     Timber.e(serverMessage)
                     UiUtil.displayAlertError(
                         this@MainActivity,
-                        getString(LR.string.podcast_share_open_fail_title),
-                        getString(LR.string.podcast_share_open_fail),
+                        getString(R.string.podcast_share_open_fail_title),
+                        getString(R.string.podcast_share_open_fail),
                         null,
                     )
                 }
@@ -1595,9 +1595,9 @@ class MainActivity :
         if (result == null) return
 
         val snackbarMessage = if (result.isExistingBookmark) {
-            getString(LR.string.bookmark_updated, result.title)
+            getString(R.string.bookmark_updated, result.title)
         } else {
-            getString(LR.string.bookmark_added, result.title)
+            getString(R.string.bookmark_added, result.title)
         }
 
         val action = View.OnClickListener {
@@ -1605,7 +1605,7 @@ class MainActivity :
         }
 
         Snackbar.make(view, snackbarMessage, Snackbar.LENGTH_LONG)
-            .setAction(LR.string.settings_view, action)
+            .setAction(R.string.settings_view, action)
             .setActionTextColor(result.tintColor)
             .setBackgroundTint(ThemeColor.primaryUi01(Theme.ThemeType.DARK))
             .setTextColor(ThemeColor.primaryText01(Theme.ThemeType.DARK))

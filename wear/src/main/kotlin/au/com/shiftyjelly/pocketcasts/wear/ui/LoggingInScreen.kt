@@ -113,10 +113,10 @@ private fun Content(
         Spacer(modifier = Modifier.height(4.dp))
 
         if (name != null) {
-            Text(stringResource(LR.string.profile_hi, name))
+            Text(stringResource(R.string.profile_hi, name))
         } else {
             Text(
-                text = stringResource(LR.string.profile_logging_in),
+                text = stringResource(R.string.profile_logging_in),
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colors.onPrimary,
                 style = MaterialTheme.typography.title2,

@@ -121,22 +121,22 @@ class ProfileEpisodeListViewModel @Inject constructor(
         ) : State() {
             companion object {
                 fun titleRes(mode: Mode, isSearchEmpty: Boolean): Int = if (isSearchEmpty) {
-                    LR.string.search_episodes_not_found_title
+                    R.string.search_episodes_not_found_title
                 } else {
                     when (mode) {
-                        is Mode.Downloaded -> LR.string.profile_empty_downloaded
-                        is Mode.Starred -> LR.string.profile_empty_starred
-                        is Mode.History -> LR.string.profile_empty_history
+                        is Mode.Downloaded -> R.string.profile_empty_downloaded
+                        is Mode.Starred -> R.string.profile_empty_starred
+                        is Mode.History -> R.string.profile_empty_history
                     }
                 }
 
                 fun summaryRes(mode: Mode, isSearchEmpty: Boolean): Int = if (isSearchEmpty) {
-                    LR.string.search_episodes_not_found_summary
+                    R.string.search_episodes_not_found_summary
                 } else {
                     when (mode) {
-                        is Mode.Downloaded -> LR.string.profile_empty_downloaded_summary
-                        is Mode.Starred -> LR.string.profile_empty_starred_summary
-                        is Mode.History -> LR.string.profile_empty_history_summary
+                        is Mode.Downloaded -> R.string.profile_empty_downloaded_summary
+                        is Mode.Starred -> R.string.profile_empty_starred_summary
+                        is Mode.History -> R.string.profile_empty_history_summary
                     }
                 }
             }

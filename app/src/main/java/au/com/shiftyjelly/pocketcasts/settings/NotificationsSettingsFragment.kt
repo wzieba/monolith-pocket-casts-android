@@ -88,7 +88,7 @@ class NotificationsSettingsFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findToolbar().setup(title = getString(LR.string.settings_title_notifications), navigationIcon = BackArrow, activity = activity, theme = theme)
+        view.findToolbar().setup(title = getString(R.string.settings_title_notifications), navigationIcon = BackArrow, activity = activity, theme = theme)
         analyticsTracker.track(AnalyticsEvent.SETTINGS_NOTIFICATIONS_SHOWN)
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -178,7 +178,7 @@ class NotificationsSettingsFragment :
             .replace(UR.id.frameChildFragment, fragment)
             .addToBackStack("podcastSelect")
             .commit()
-        toolbar?.title = getString(LR.string.settings_select_podcasts)
+        toolbar?.title = getString(R.string.settings_select_podcasts)
     }
 
     override fun podcastSelectFragmentSelectionChanged(newSelection: List<String>) {
@@ -201,7 +201,7 @@ class NotificationsSettingsFragment :
     override fun onBackPressed(): Boolean {
         if (childFragmentManager.backStackEntryCount > 0) {
             childFragmentManager.popBackStack()
-            toolbar?.title = getString(LR.string.settings_title_notifications)
+            toolbar?.title = getString(R.string.settings_title_notifications)
             return true
         }
 
@@ -267,9 +267,9 @@ class NotificationsSettingsFragment :
                         selection = onSelect,
                     )
                     .show {
-                        title(res = LR.string.settings_notification_actions_title)
+                        title(res = R.string.settings_notification_actions_title)
                         positiveButton(
-                            res = LR.string.ok,
+                            res = R.string.ok,
                             click = {
                                 val madeChange = initialActions != selectedActions
                                 if (madeChange) {
@@ -279,7 +279,7 @@ class NotificationsSettingsFragment :
                                 changeActionsSummary()
                             },
                         )
-                        negativeButton(res = LR.string.cancel)
+                        negativeButton(res = R.string.cancel)
                     }
                 changeActionsDialog(selectedActions, dialog)
             }
@@ -304,7 +304,7 @@ class NotificationsSettingsFragment :
     private fun changeActionsSummary() {
         val userActions = settings.newEpisodeNotificationActions.value
         val actionStrings = userActions.joinToString { resources.getString(it.labelId) }
-        notificationActions?.summary = if (userActions.isEmpty()) resources.getString(LR.string.none) else actionStrings
+        notificationActions?.summary = if (userActions.isEmpty()) resources.getString(R.string.none) else actionStrings
     }
 
     private fun changeActionsDialog(actions: MutableList<NewEpisodeNotificationAction>, dialog: MaterialDialog) {
@@ -363,11 +363,11 @@ class NotificationsSettingsFragment :
                 val notificationCount = podcasts.count { it.isShowNotifications }
 
                 val summary = when {
-                    notificationCount == 0 -> resources.getString(LR.string.settings_podcasts_selected_zero)
-                    notificationCount == 1 -> resources.getString(LR.string.settings_podcasts_selected_one)
-                    notificationCount >= podcastCount -> resources.getString(LR.string.settings_podcasts_selected_all)
+                    notificationCount == 0 -> resources.getString(R.string.settings_podcasts_selected_zero)
+                    notificationCount == 1 -> resources.getString(R.string.settings_podcasts_selected_one)
+                    notificationCount >= podcastCount -> resources.getString(R.string.settings_podcasts_selected_all)
                     else -> resources.getString(
-                        LR.string.settings_podcasts_selected_x,
+                        R.string.settings_podcasts_selected_x,
                         notificationCount,
                     )
                 }
@@ -392,7 +392,7 @@ class NotificationsSettingsFragment :
 
     private fun getRingtoneValue(ringtonePath: String): String {
         if (ringtonePath.isNullOrBlank()) {
-            return getString(LR.string.settings_notification_silent)
+            return getString(R.string.settings_notification_silent)
         }
         val ringtone = RingtoneManager.getRingtone(activity, Uri.parse(ringtonePath))
 
@@ -401,7 +401,7 @@ class NotificationsSettingsFragment :
             else -> {
                 val title = ringtone.getTitle(activity)
                 if (title == NotificationSound.defaultPath) {
-                    getString(LR.string.settings_notification_default_sound)
+                    getString(R.string.settings_notification_default_sound)
                 } else {
                     title
                 }

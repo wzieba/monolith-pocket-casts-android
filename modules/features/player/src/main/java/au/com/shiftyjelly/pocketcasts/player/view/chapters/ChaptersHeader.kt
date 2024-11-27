@@ -39,9 +39,9 @@ fun ChaptersHeader(
         toggle = TextToggle(
             checked = isTogglingChapters,
             text = if (isTogglingChapters) {
-                stringResource(LR.string.done)
+                stringResource(R.string.done)
             } else {
-                stringResource(LR.string.skip_chapters)
+                stringResource(R.string.skip_chapters)
             },
         ),
         showSubscriptionIcon = showSubscriptionIcon,
@@ -127,15 +127,15 @@ private fun getHeaderTitle(
     unselectedChaptersCount: Int,
 ) = if (unselectedChaptersCount > 0) {
     if (chaptersTotalCount > 1) {
-        stringResource(LR.string.number_of_chapters_summary_plural, chaptersTotalCount, unselectedChaptersCount)
+        stringResource(R.string.number_of_chapters_summary_plural, chaptersTotalCount, unselectedChaptersCount)
     } else {
-        stringResource(LR.string.number_of_chapters_summary_singular, unselectedChaptersCount)
+        stringResource(R.string.number_of_chapters_summary_singular, unselectedChaptersCount)
     }
 } else {
     if (chaptersTotalCount > 1) {
-        stringResource(LR.string.number_of_chapters, chaptersTotalCount)
+        stringResource(R.string.number_of_chapters, chaptersTotalCount)
     } else {
-        stringResource(LR.string.single_chapter)
+        stringResource(R.string.single_chapter)
     }
 }
 

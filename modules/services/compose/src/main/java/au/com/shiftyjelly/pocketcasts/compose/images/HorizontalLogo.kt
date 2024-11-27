@@ -16,14 +16,14 @@ import au.com.shiftyjelly.pocketcasts.localization.R as LR
 @Composable
 fun HorizontalLogo(modifier: Modifier = Modifier) {
     val resourceId = if (MaterialTheme.theme.isLight) {
-        IR.drawable.ic_logo_title_hor_dark
+        R.drawable.ic_logo_title_hor_dark
     } else {
-        IR.drawable.ic_logo_title_hor_light
+        R.drawable.ic_logo_title_hor_light
     }
 
     Image(
         painter = painterResource(resourceId),
-        contentDescription = stringResource(LR.string.pocket_casts),
+        contentDescription = stringResource(R.string.pocket_casts),
         modifier = modifier,
     )
 }

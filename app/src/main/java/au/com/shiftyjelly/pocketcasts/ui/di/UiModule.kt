@@ -21,7 +21,7 @@ class UiModule {
             .crossfade(true)
             .diskCache {
                 DiskCache.Builder()
-                    .directory(context.cacheDir.resolve("ImageCache"))
+                    .directory(context.cacheDR.resolve("ImageCache"))
                     .build()
             }
             .build()

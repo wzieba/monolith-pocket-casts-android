@@ -333,15 +333,15 @@ class PodcastAdapter(
         holder.binding.top.header.setBackgroundColor(ThemeColor.podcastUi03(theme.activeTheme, podcast.backgroundColor))
         holder.binding.top.folders.setImageResource(
             when {
-                !isPlusOrPatronUser -> IR.drawable.ic_folder_plus
-                podcast.folderUuid != null -> IR.drawable.ic_folder_check
-                else -> IR.drawable.ic_folder
+                !isPlusOrPatronUser -> R.drawable.ic_folder_plus
+                podcast.folderUuid != null -> R.drawable.ic_folder_check
+                else -> R.drawable.ic_folder
             },
         )
         holder.binding.top.folders.isVisible = podcast.isSubscribed
         with(holder.binding.top.notifications) {
             val notificationsIconText =
-                context.getString(if (podcast.isShowNotifications) LR.string.podcast_notifications_on else LR.string.podcast_notifications_off)
+                context.getString(if (podcast.isShowNotifications) R.string.podcast_notifications_on else R.string.podcast_notifications_off)
             contentDescription = notificationsIconText
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 tooltipText = notificationsIconText
@@ -357,9 +357,9 @@ class PodcastAdapter(
         val episodeHeader = getItem(position) as? EpisodeHeader ?: return
         holder.binding.episodesSummary.let {
             val quantityString = if (episodeHeader.episodeCount == 1) {
-                it.context.resources.getString(LR.string.podcast_episode_summary_singular, episodeHeader.archivedCount)
+                it.context.resources.getString(R.string.podcast_episode_summary_singular, episodeHeader.archivedCount)
             } else {
-                it.context.resources.getString(LR.string.podcast_episode_summary_plural, episodeHeader.episodeCount, episodeHeader.archivedCount)
+                it.context.resources.getString(R.string.podcast_episode_summary_plural, episodeHeader.episodeCount, episodeHeader.archivedCount)
             }
             val text = if (episodeHeader.episodeLimit != null) {
                 val limited = "Limited to ${episodeHeader.episodeLimit}"
@@ -378,7 +378,7 @@ class PodcastAdapter(
             }
             text = episodeHeader.searchTerm
         }
-        holder.binding.btnArchived.setText(if (episodeHeader.showingArchived) LR.string.podcast_hide_archived else LR.string.podcast_show_archived)
+        holder.binding.btnArchived.setText(if (episodeHeader.showingArchived) R.string.podcast_hide_archived else R.string.podcast_show_archived)
         holder.binding.btnArchived.setOnClickListener { onShowArchivedClicked() }
     }
 
@@ -413,7 +413,7 @@ class PodcastAdapter(
     private fun bindEpisodeLimitRow(holder: EpisodeLimitViewHolder, position: Int) {
         val episodeLimitRow = getItem(position) as? EpisodeLimitRow ?: return
         val limit = episodeLimitRow.episodeLimit
-        holder.lblTitle.text = holder.itemView.resources.getString(LR.string.podcast_episodes_limited, limit)
+        holder.lblTitle.text = holder.itemView.resources.getString(R.string.podcast_episodes_limited, limit)
     }
 
     private fun bindNoResultsMessage(holder: NoResultsViewHolder, position: Int) {
@@ -506,16 +506,16 @@ class PodcastAdapter(
                 if (archivedCount == 0) {
                     content.add(
                         NoResultsMessage(
-                            title = context.getString(LR.string.podcast_no_episodes_found),
-                            bodyText = context.getString(LR.string.podcast_no_episodes),
+                            title = context.getString(R.string.podcast_no_episodes_found),
+                            bodyText = context.getString(R.string.podcast_no_episodes),
                             showButton = false,
                         ),
                     )
                 } else {
                     content.add(
                         NoResultsMessage(
-                            title = context.getString(LR.string.podcast_no_episodes_found),
-                            bodyText = context.getString(LR.string.podcast_no_episodes_all_archived, archivedCount),
+                            title = context.getString(R.string.podcast_no_episodes_found),
+                            bodyText = context.getString(R.string.podcast_no_episodes_all_archived, archivedCount),
                             showButton = true,
                         ),
                     )
@@ -523,8 +523,8 @@ class PodcastAdapter(
             } else {
                 content.add(
                     NoResultsMessage(
-                        title = context.getString(LR.string.podcast_no_episodes_found),
-                        bodyText = context.getString(LR.string.podcast_no_episodes_matching),
+                        title = context.getString(R.string.podcast_no_episodes_found),
+                        bodyText = context.getString(R.string.podcast_no_episodes_matching),
                         showButton = false,
                     ),
                 )
@@ -561,8 +561,8 @@ class PodcastAdapter(
                 if (searchTerm.isNotEmpty() && bookmarks.isEmpty()) {
                     add(
                         NoResultsMessage(
-                            title = context.getString(LR.string.podcast_no_bookmarks_found),
-                            bodyText = context.getString(LR.string.podcast_no_bookmarks_matching),
+                            title = context.getString(R.string.podcast_no_bookmarks_found),
+                            bodyText = context.getString(R.string.podcast_no_bookmarks_matching),
                             showButton = false,
                         ),
                     )

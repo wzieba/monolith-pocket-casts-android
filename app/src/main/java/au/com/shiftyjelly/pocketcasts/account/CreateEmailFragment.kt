@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentCreateEmailBinding
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
@@ -24,9 +23,8 @@ import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateEmailBinding
 
 @AndroidEntryPoint
 class CreateEmailFragment : BaseFragment() {
@@ -109,7 +107,7 @@ class CreateEmailFragment : BaseFragment() {
                     updateForm(invalidEmail, invalidPassword)
 
                     if (serverFail) {
-                        val error = it.message ?: getString(LR.string.profile_create_failed)
+                        val error = it.message ?: getString(R.string.profile_create_failed)
                         txtError.text = error
                         viewModel.clearError(CreateAccountError.CANNOT_CREATE_ACCOUNT)
                     }
@@ -149,12 +147,12 @@ class CreateEmailFragment : BaseFragment() {
         val finalInvalidEmail = invalidEmail || txtEmail.length() == 0
         val finalInvalidPassword = invalidPassword && txtPassword.length() > 0
 
-        val emailColor = if (currentEditText == txtEmail) context.getThemeColor(UR.attr.primary_icon_03_active) else context.getThemeColor(UR.attr.primary_icon_03)
-        val emailDrawable = context.getTintedDrawable(IR.drawable.ic_mail, emailColor)
-        val tickColor = context.getThemeColor(UR.attr.support_02)
-        val tickDrawable = if (!finalInvalidEmail) context.getTintedDrawable(IR.drawable.ic_tick_circle, tickColor) else null
-        val passwordColor = if (currentEditText == txtPassword) context.getThemeColor(UR.attr.primary_icon_03_active) else context.getThemeColor(UR.attr.primary_icon_03)
-        val passwordDrawable = context.getTintedDrawable(IR.drawable.ic_password, passwordColor)
+        val emailColor = if (currentEditText == txtEmail) context.getThemeColor(R.attr.primary_icon_03_active) else context.getThemeColor(R.attr.primary_icon_03)
+        val emailDrawable = context.getTintedDrawable(R.drawable.ic_mail, emailColor)
+        val tickColor = context.getThemeColor(R.attr.support_02)
+        val tickDrawable = if (!finalInvalidEmail) context.getTintedDrawable(R.drawable.ic_tick_circle, tickColor) else null
+        val passwordColor = if (currentEditText == txtPassword) context.getThemeColor(R.attr.primary_icon_03_active) else context.getThemeColor(R.attr.primary_icon_03)
+        val passwordDrawable = context.getTintedDrawable(R.drawable.ic_password, passwordColor)
 
         val iconSize = 32.dpToPx(context)
         val tickSize = 24.dpToPx(context)
@@ -165,9 +163,9 @@ class CreateEmailFragment : BaseFragment() {
         txtEmail.setCompoundDrawables(emailDrawable, null, tickDrawable, null)
         txtPassword.setCompoundDrawablesRelative(passwordDrawable, null, null, null)
 
-        var passwordTextColor = context.getThemeColor(UR.attr.primary_text_02)
+        var passwordTextColor = context.getThemeColor(R.attr.primary_text_02)
         if (finalInvalidPassword) {
-            passwordTextColor = context.getThemeColor(UR.attr.support_05)
+            passwordTextColor = context.getThemeColor(R.attr.support_05)
         }
         lblPasswordRequirements.setTextColor(passwordTextColor)
 

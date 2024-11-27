@@ -51,7 +51,7 @@ class ServersModule {
     companion object {
         fun createCache(folder: String, context: Context, cacheSizeInMB: Int): Cache {
             val cacheSize = cacheSizeInMB * 1024 * 1024
-            val cacheDirectory = File(context.cacheDir.absolutePath, folder)
+            val cacheDirectory = File(context.cacheDR.absolutePath, folder)
             return Cache(cacheDirectory, cacheSize.toLong())
         }
 

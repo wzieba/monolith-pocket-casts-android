@@ -923,7 +923,7 @@ Language: pt_BR
     <string name="error_invalid_email">Este endereço de e-mail é inválido</string>
     <string name="error_file_not_found">Arquivo de episódio não encontrado. Tente fazer download novamente.</string>
     <string name="error_storage_permission">Negado! O Pocket Casts não pode reproduzir este arquivo. Verifique suas permissões de armazenamento.</string>
-    <string name="error_playing_format_external">Este episódio parece estar em um formato que não podemos reproduzir. Quem sabe algum outro aplicativo consiga?</string>
+    <string name="error_playing_format_external">Este episódio parece estar em um formato que não podemos reproduzR. Quem sabe algum outro aplicativo consiga?</string>
     <string name="error_playing_format">O arquivo não pode ser reproduzido. Tente converter para outro formato.</string>
     <string name="error_unable_to_play">Não foi possível reproduzir o arquivo.</string>
     <string name="error_unable_to_cast">Não foi possível reproduzir este episódio. Talvez o autor não o tenha disponibilizado.</string>

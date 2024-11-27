@@ -587,7 +587,7 @@ class DownloadManagerImpl @Inject constructor(
             val color = ContextCompat.getColor(context, R.color.notification_color)
 
             notificationBuilder = notificationHelper.downloadChannelBuilder()
-                .setSmallIcon(IR.drawable.notification_download)
+                .setSmallIcon(R.drawable.notification_download)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setOnlyAlertOnce(true)
                 .setColor(color)

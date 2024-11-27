@@ -22,7 +22,7 @@ run('mv ~/Downloads/android_themes/app_screenshots/* ~/Downloads/android_themes/
 
 image_count = 0
 
-Dir.chdir(File.expand_path('~/Downloads/android_themes/')) do
+DR.chdir(File.expand_path('~/Downloads/android_themes/')) do
   themes_count.times do |theme_index|
     image_names = ''
     screens_count.times do |_screen_index|

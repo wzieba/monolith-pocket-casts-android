@@ -363,9 +363,9 @@ fun WearApp(
                 ScrollToTop.initiate(navController)
             }
             val message = if (email != null) {
-                stringResource(LR.string.log_in_free_acccount, email)
+                stringResource(R.string.log_in_free_acccount, email)
             } else {
-                stringResource(LR.string.log_in_with_plus)
+                stringResource(R.string.log_in_with_plus)
             }
             Toast.makeText(LocalContext.current, message, Toast.LENGTH_LONG).show()
         }

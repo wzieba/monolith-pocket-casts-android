@@ -101,15 +101,15 @@ class EpisodeViewHolder(
     override val leftIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
         get() {
             return if (isUpNext == true) {
-                listOf(EpisodeItemTouchHelper.IconWithBackground(IR.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
+                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
             } else {
                 val addToUpNextIcon = when (upNextAction) {
-                    Settings.UpNextAction.PLAY_NEXT -> IR.drawable.ic_upnext_playnext
-                    Settings.UpNextAction.PLAY_LAST -> IR.drawable.ic_upnext_playlast
+                    Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playnext
+                    Settings.UpNextAction.PLAY_LAST -> R.drawable.ic_upnext_playlast
                 }
                 val secondaryUpNextIcon = when (upNextAction) {
-                    Settings.UpNextAction.PLAY_NEXT -> IR.drawable.ic_upnext_playlast
-                    Settings.UpNextAction.PLAY_LAST -> IR.drawable.ic_upnext_playnext
+                    Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playlast
+                    Settings.UpNextAction.PLAY_LAST -> R.drawable.ic_upnext_playnext
                 }
 
                 listOf(
@@ -123,15 +123,15 @@ class EpisodeViewHolder(
 
             val archiveItem = EpisodeItemTouchHelper.IconWithBackground(
                 iconRes = if (episode?.isArchived == true) {
-                    IR.drawable.ic_unarchive
+                    R.drawable.ic_unarchive
                 } else {
-                    IR.drawable.ic_archive
+                    R.drawable.ic_archive
                 },
                 backgroundColor = binding.episodeRow.context.getThemeColor(UR.attr.support_06),
             )
 
             val shareItem = EpisodeItemTouchHelper.IconWithBackground(
-                iconRes = IR.drawable.ic_share,
+                iconRes = R.drawable.ic_share,
                 backgroundColor = binding.episodeRow.context.getThemeColor(UR.attr.support_01),
             )
 
@@ -230,47 +230,47 @@ class EpisodeViewHolder(
                 imgIcon.alpha = 1.0f
                 if (combinedData.playbackState.episodeUuid == episode.uuid && combinedData.playbackState.isBuffering) {
                     progressBar.isVisible = true
-                    lblStatus.text = context.getString(LR.string.episode_row_buffering)
+                    lblStatus.text = context.getString(R.string.episode_row_buffering)
                 } else if (episode.episodeStatus == EpisodeStatusEnum.DOWNLOADED) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_downloaded)
+                    imgIcon.setImageResource(R.drawable.ic_downloaded)
                     updateTimeLeft(textView = lblStatus, episode = episode)
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(context.getThemeColor(UR.attr.support_02)))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.DOWNLOADING) {
                     progressCircle.isVisible = true
-                    lblStatus.text = context.getString(LR.string.episode_row_downloading, combinedData.downloadProgress)
+                    lblStatus.text = context.getString(R.string.episode_row_downloading, combinedData.downloadProgress)
                     progressCircle.setPercent(combinedData.downloadProgress / 100.0f)
                 } else if (episode.episodeStatus == EpisodeStatusEnum.DOWNLOAD_FAILED) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_download_failed_row)
-                    lblStatus.text = context.getString(LR.string.episode_row_download_failed)
+                    imgIcon.setImageResource(R.drawable.ic_download_failed_row)
+                    lblStatus.text = context.getString(R.string.episode_row_download_failed)
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.WAITING_FOR_POWER) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_waitingforpower)
-                    lblStatus.text = context.getString(LR.string.episode_row_waiting_for_power)
+                    imgIcon.setImageResource(R.drawable.ic_waitingforpower)
+                    lblStatus.text = context.getString(R.string.episode_row_waiting_for_power)
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.WAITING_FOR_WIFI) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_waitingforwifi)
-                    lblStatus.text = context.getString(LR.string.episode_row_waiting_for_wifi)
+                    imgIcon.setImageResource(R.drawable.ic_waitingforwifi)
+                    lblStatus.text = context.getString(R.string.episode_row_waiting_for_wifi)
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.QUEUED) {
-                    lblStatus.text = context.getString(LR.string.episode_row_queued)
-                    imgIcon.setImageResource(IR.drawable.ic_waitingforwifi)
+                    lblStatus.text = context.getString(R.string.episode_row_queued)
+                    imgIcon.setImageResource(R.drawable.ic_waitingforwifi)
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else if (episode.isArchived) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_archive)
+                    imgIcon.setImageResource(R.drawable.ic_archive)
                     imgIcon.alpha = 0.5f
-                    val archivedString = context.getString(LR.string.archived)
+                    val archivedString = context.getString(R.string.archived)
                     val timeLeft = TimeHelper.getTimeLeft(episode.playedUpToMs, episode.durationMs.toLong(), episode.isInProgress, context)
                     lblStatus.text = "$archivedString • ${timeLeft.text}"
                     lblStatus.contentDescription = "$archivedString. ${timeLeft.description}"
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else if (episode.playErrorDetails != null) {
                     imgIcon.isVisible = true
-                    imgIcon.setImageResource(IR.drawable.ic_alert_small)
+                    imgIcon.setImageResource(R.drawable.ic_alert_small)
                     lblStatus.text = episode.playErrorDetails
                     ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(iconColor))
                 } else {
@@ -360,18 +360,18 @@ class EpisodeViewHolder(
             },
         )
         if (episode.isInProgress) {
-            attributes.add(context.getString(LR.string.in_progress))
+            attributes.add(context.getString(R.string.in_progress))
         } else if (isInUpNext) {
-            attributes.add(context.getString(LR.string.episode_in_up_next))
+            attributes.add(context.getString(R.string.episode_in_up_next))
         }
         if (episode.isDownloaded) {
-            attributes.add(context.getString(LR.string.downloaded))
+            attributes.add(context.getString(R.string.downloaded))
         }
         if (episode.isDownloading) {
-            attributes.add(context.getString(LR.string.episode_downloading))
+            attributes.add(context.getString(R.string.episode_downloading))
         }
         if (episode.isStarred) {
-            attributes.add(context.getString(LR.string.starred))
+            attributes.add(context.getString(R.string.starred))
         }
         episodeRow.contentDescription = attributes.joinToString(separator = ". ") + ". "
     }

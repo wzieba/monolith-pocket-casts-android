@@ -107,7 +107,7 @@ private fun Content(
 
         SkipButton(
             skipDuration = playerControlsData.skipBackInSecs,
-            contentDescription = stringResource(LR.string.skip_back),
+            contentDescription = stringResource(R.string.skip_back),
             tintColor = tintColor,
             onClick = onSkipBackClick,
         )
@@ -122,7 +122,7 @@ private fun Content(
         SkipButton(
             skipDuration = playerControlsData.skipForwardInSecs,
             scaleX = -1f,
-            contentDescription = stringResource(LR.string.skip_forward),
+            contentDescription = stringResource(R.string.skip_forward),
             tintColor = tintColor,
             onClick = onSkipForwardClick,
             onLongClick = onSkipForwardLongPress,

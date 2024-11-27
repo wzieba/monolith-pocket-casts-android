@@ -200,13 +200,13 @@ class CreateFilterFragment : BaseFragment(), CoroutineScope {
 
         layoutDownloadLimit.setOnClickListener {
             val dialog = OptionsDialog()
-                .addTextOption(LR.string.filters_download_limit_3, click = { setDownloadLimit(3) })
-                .addTextOption(LR.string.filters_download_limit_5, click = { setDownloadLimit(5) })
-                .addTextOption(LR.string.filters_download_limit_10, click = { setDownloadLimit(10) })
-                .addTextOption(LR.string.filters_download_limit_20, click = { setDownloadLimit(20) })
-                .addTextOption(LR.string.filters_download_limit_40, click = { setDownloadLimit(40) })
-                .addTextOption(LR.string.filters_download_limit_100, click = { setDownloadLimit(100) })
-                .setTitle(getString(LR.string.filters_download_title))
+                .addTextOption(R.string.filters_download_limit_3, click = { setDownloadLimit(3) })
+                .addTextOption(R.string.filters_download_limit_5, click = { setDownloadLimit(5) })
+                .addTextOption(R.string.filters_download_limit_10, click = { setDownloadLimit(10) })
+                .addTextOption(R.string.filters_download_limit_20, click = { setDownloadLimit(20) })
+                .addTextOption(R.string.filters_download_limit_40, click = { setDownloadLimit(40) })
+                .addTextOption(R.string.filters_download_limit_100, click = { setDownloadLimit(100) })
+                .setTitle(getString(R.string.filters_download_title))
             dialog.show(parentFragmentManager, "auto_download_first")
         }
     }
@@ -273,7 +273,7 @@ class CreateFilterFragment : BaseFragment(), CoroutineScope {
     }
 
     private fun setDownloadLimit(limit: Int) {
-        binding?.lblDownloadLimit?.text = getString(LR.string.filters_auto_download_limit, limit)
+        binding?.lblDownloadLimit?.text = getString(R.string.filters_auto_download_limit, limit)
         viewModel.updateDownloadLimit(limit)
     }
 
@@ -282,7 +282,7 @@ class CreateFilterFragment : BaseFragment(), CoroutineScope {
             if (binding == null) return@observe
 
             if (filter.title.isEmpty()) {
-                binding!!.txtName.setHint(LR.string.filters_filter_name)
+                binding!!.txtName.setHint(R.string.filters_filter_name)
             } else {
                 txtNameInitialized = false
                 binding!!.txtName.setText(filter.title)
@@ -302,7 +302,7 @@ class CreateFilterFragment : BaseFragment(), CoroutineScope {
             viewModel.isAutoDownloadSwitchInitialized = true
 
             binding!!.layoutDownloadLimit.isVisible = filter.autoDownload && !isCreate
-            binding!!.lblDownloadLimit.text = getString(LR.string.filters_auto_download_limit, filter.autodownloadLimit)
+            binding!!.lblDownloadLimit.text = getString(R.string.filters_auto_download_limit, filter.autodownloadLimit)
         }
     }
 

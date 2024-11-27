@@ -55,16 +55,16 @@ object OnboardingImportFlow {
                 val viewModel = hiltViewModel<OnboardingImportViewModel>()
                 OnboardingImportFrom(
                     theme = theme,
-                    drawableRes = IR.drawable.castbox,
-                    title = (stringResource(LR.string.onboarding_import_from_castbox)),
+                    drawableRes = R.drawable.castbox,
+                    title = (stringResource(R.string.onboarding_import_from_castbox)),
                     steps = listOf(
-                        stringResource(LR.string.onboarding_import_from_castbox_step_1),
-                        stringResource(LR.string.onboarding_import_from_castbox_step_2),
-                        stringResource(LR.string.onboarding_import_from_castbox_step_3),
-                        stringResource(LR.string.onboarding_import_from_castbox_step_4),
-                        stringResource(LR.string.onboarding_import_from_castbox_step_5),
+                        stringResource(R.string.onboarding_import_from_castbox_step_1),
+                        stringResource(R.string.onboarding_import_from_castbox_step_2),
+                        stringResource(R.string.onboarding_import_from_castbox_step_3),
+                        stringResource(R.string.onboarding_import_from_castbox_step_4),
+                        stringResource(R.string.onboarding_import_from_castbox_step_5),
                     ),
-                    buttonText = stringResource(LR.string.onboarding_import_from_castbox_open),
+                    buttonText = stringResource(R.string.onboarding_import_from_castbox_open),
                     buttonClick = openCastboxFun()?.let { function ->
                         {
                             viewModel.onOpenApp(flow, AnalyticsProps.castbox)
@@ -79,12 +79,12 @@ object OnboardingImportFlow {
             composable(NavigationRoutes.otherApps) {
                 OnboardingImportFrom(
                     theme = theme,
-                    drawableRes = IR.drawable.other_apps,
-                    title = stringResource(LR.string.onboarding_import_from_other_apps),
-                    text = stringResource(LR.string.onboarding_can_import_from_opml),
+                    drawableRes = R.drawable.other_apps,
+                    title = stringResource(R.string.onboarding_import_from_other_apps),
+                    text = stringResource(R.string.onboarding_can_import_from_opml),
                     steps = listOf(
-                        stringResource(LR.string.onboarding_import_from_other_apps_step_1),
-                        stringResource(LR.string.onboarding_import_from_other_apps_step_2),
+                        stringResource(R.string.onboarding_import_from_other_apps_step_1),
+                        stringResource(R.string.onboarding_import_from_other_apps_step_2),
                     ),
                     onBackPressed = { navController.popBackStack() },
                     onUpdateSystemBars = onUpdateSystemBars,

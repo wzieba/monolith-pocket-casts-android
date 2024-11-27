@@ -104,7 +104,7 @@ fun TimePlayButton(
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
         Icon(
-            painter = painterResource(IR.drawable.ic_play),
+            painter = painterResource(R.drawable.ic_play),
             contentDescription = null,
             tint = colors.textColor(),
             modifier = Modifier.size(10.dp, 13.dp),

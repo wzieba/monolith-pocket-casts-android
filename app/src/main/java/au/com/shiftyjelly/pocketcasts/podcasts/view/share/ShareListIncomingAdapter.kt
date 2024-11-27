@@ -125,7 +125,7 @@ class ShareListIncomingAdapter(
                 holder.allButton.hide()
             } else {
                 holder.allButton.show()
-                holder.allButton.setText(LR.string.podcasts_share_subscribe_to_all)
+                holder.allButton.setText(R.string.podcasts_share_subscribe_to_all)
                 holder.allButton.setTextColor(context.getThemeColor(UR.attr.support_02))
             }
             holder.countText.text = context.resources.getStringPluralPodcasts(podcasts.size)
@@ -146,12 +146,12 @@ class ShareListIncomingAdapter(
 
     private fun updateTick(imageView: ImageView, alreadyAdded: Boolean, podcast: Podcast) {
         if (alreadyAdded) {
-            imageView.setImageResource(IR.drawable.ic_tick)
+            imageView.setImageResource(R.drawable.ic_tick)
             ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(UR.attr.support_02)))
             imageView.contentDescription = "Unsubscribe from " + podcast.title.ifEmpty { "podcast" } + " button."
             imageView.setOnClickListener { clickListener.onUnsubscribeClick(podcast) }
         } else {
-            imageView.setImageResource(IR.drawable.ic_add_black_24dp)
+            imageView.setImageResource(R.drawable.ic_add_black_24dp)
             ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(UR.attr.primary_icon_01)))
             imageView.contentDescription = "Subscribe to " + podcast.title.ifEmpty { "podcast" } + " button."
             imageView.setOnClickListener {

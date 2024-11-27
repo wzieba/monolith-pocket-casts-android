@@ -16,8 +16,8 @@ import au.com.shiftyjelly.pocketcasts.localization.R as LR
 @Composable
 fun VerticalLogo(modifier: Modifier = Modifier) {
     Image(
-        painter = painterResource(if (MaterialTheme.theme.isLight) IR.drawable.ic_logo_title_ver_light else IR.drawable.ic_logo_title_ver_dark),
-        contentDescription = stringResource(LR.string.pocket_casts),
+        painter = painterResource(if (MaterialTheme.theme.isLight) R.drawable.ic_logo_title_ver_light else R.drawable.ic_logo_title_ver_dark),
+        contentDescription = stringResource(R.string.pocket_casts),
         modifier = modifier,
     )
 }

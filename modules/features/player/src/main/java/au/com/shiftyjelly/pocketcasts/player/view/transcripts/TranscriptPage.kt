@@ -184,7 +184,7 @@ private fun TranscriptContent(
     ) {
         if (state.isTranscriptEmpty) {
             TextP40(
-                text = stringResource(LR.string.transcript_empty),
+                text = stringResource(R.string.transcript_empty),
                 color = TranscriptColors.textColor(),
                 modifier = Modifier
                     .padding(horizontal = 16.dp)

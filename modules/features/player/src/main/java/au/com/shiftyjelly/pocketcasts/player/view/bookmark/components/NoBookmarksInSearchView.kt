@@ -32,12 +32,12 @@ private fun Content(
     MessageView(
         titleView = {
             TextH20(
-                text = stringResource(LR.string.podcast_no_bookmarks_found),
+                text = stringResource(R.string.podcast_no_bookmarks_found),
                 color = MaterialTheme.theme.colors.primaryText01,
             )
         },
-        message = stringResource(LR.string.bookmarks_search_results_not_found),
-        buttonTitle = stringResource(LR.string.clear_search),
+        message = stringResource(R.string.bookmarks_search_results_not_found),
+        buttonTitle = stringResource(R.string.clear_search),
         buttonAction = onClick,
         style = MessageViewColors.Default,
         modifier = modifier,

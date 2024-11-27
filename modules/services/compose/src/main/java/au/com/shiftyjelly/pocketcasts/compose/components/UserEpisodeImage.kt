@@ -15,7 +15,7 @@ fun UserEpisodeImage(
     episode: UserEpisode,
     contentDescription: String?,
     modifier: Modifier = Modifier,
-    placeholder: Int = IR.drawable.ic_uploadedfile,
+    placeholder: Int = R.drawable.ic_uploadedfile,
 ) {
     AsyncImage(
         model = ImageRequest.Builder(LocalContext.current)

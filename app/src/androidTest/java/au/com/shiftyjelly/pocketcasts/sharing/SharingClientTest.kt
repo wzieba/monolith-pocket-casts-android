@@ -102,7 +102,7 @@ class SharingClientTest {
 
         assertNull(shareStarter.intent)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
         assertEquals("Sharing to Instagram requires a background image", response.error?.message)
     }
 
@@ -116,7 +116,7 @@ class SharingClientTest {
         val clipData = shareStarter.requireShareLink
 
         assertEquals("https://pca.st/podcast/podcast-uuid", clipData.getItemAt(0).text)
-        assertEquals(context.getString(LR.string.share_link_podcast), clipData.description.label)
+        assertEquals(context.getString(R.string.share_link_podcast), clipData.description.label)
         assertNull(shareStarter.chooserIntent)
     }
 
@@ -130,7 +130,7 @@ class SharingClientTest {
 
         val response = client.share(request)
 
-        assertEquals(context.getString(LR.string.share_link_copied_feedback), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_link_copied_feedback), response.feedbackMessage)
     }
 
     @Test
@@ -200,7 +200,7 @@ class SharingClientTest {
 
         assertNull(shareStarter.intent)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
         assertEquals("Sharing to Instagram requires a background image", response.error?.message)
     }
 
@@ -216,7 +216,7 @@ class SharingClientTest {
         val clipData = shareStarter.requireShareLink
 
         assertEquals("https://pca.st/episode/episode-uuid", clipData.getItemAt(0).text)
-        assertEquals(context.getString(LR.string.share_link_episode), clipData.description.label)
+        assertEquals(context.getString(R.string.share_link_episode), clipData.description.label)
         assertNull(shareStarter.chooserIntent)
     }
 
@@ -232,7 +232,7 @@ class SharingClientTest {
 
         val response = client.share(request)
 
-        assertEquals(context.getString(LR.string.share_link_copied_feedback), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_link_copied_feedback), response.feedbackMessage)
     }
 
     @Test
@@ -307,7 +307,7 @@ class SharingClientTest {
 
         assertNull(shareStarter.intent)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
         assertEquals("Sharing to Instagram requires a background image", response.error?.message)
     }
 
@@ -324,7 +324,7 @@ class SharingClientTest {
         val clipData = shareStarter.requireShareLink
 
         assertEquals("https://pca.st/episode/episode-uuid?t=10", clipData.getItemAt(0).text)
-        assertEquals(context.getString(LR.string.share_link_episode_position), clipData.description.label)
+        assertEquals(context.getString(R.string.share_link_episode_position), clipData.description.label)
         assertNull(shareStarter.chooserIntent)
     }
 
@@ -341,7 +341,7 @@ class SharingClientTest {
 
         val response = client.share(request)
 
-        assertEquals(context.getString(LR.string.share_link_copied_feedback), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_link_copied_feedback), response.feedbackMessage)
     }
 
     @Test
@@ -395,7 +395,7 @@ class SharingClientTest {
         val clipData = shareStarter.requireShareLink
 
         assertEquals("https://pca.st/episode/episode-uuid?t=10", clipData.getItemAt(0).text)
-        assertEquals(context.getString(LR.string.share_link_bookmark), clipData.description.label)
+        assertEquals(context.getString(R.string.share_link_bookmark), clipData.description.label)
         assertNull(shareStarter.chooserIntent)
     }
 
@@ -412,7 +412,7 @@ class SharingClientTest {
 
         val response = client.share(request)
 
-        assertEquals(context.getString(LR.string.share_link_copied_feedback), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_link_copied_feedback), response.feedbackMessage)
     }
 
     @Test
@@ -459,7 +459,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -476,7 +476,7 @@ class SharingClientTest {
         val clipData = shareStarter.requireShareLink
 
         assertEquals("https://pca.st/episode/episode-uuid?t=15.2,28.1", clipData.getItemAt(0).text)
-        assertEquals(context.getString(LR.string.share_link_clip), clipData.description.label)
+        assertEquals(context.getString(R.string.share_link_clip), clipData.description.label)
         assertNull(shareStarter.chooserIntent)
     }
 
@@ -492,7 +492,7 @@ class SharingClientTest {
 
         val response = client.share(request)
 
-        assertEquals(context.getString(LR.string.share_link_copied_feedback), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_link_copied_feedback), response.feedbackMessage)
     }
 
     @Test
@@ -572,7 +572,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -670,7 +670,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.share_error_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.share_error_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -679,8 +679,8 @@ class SharingClientTest {
     fun shareReferralLink() = runTest {
         val referralCode = "referral-code"
         val referralsOfferInfo = ReferralsOfferInfoMock
-        val text = context.getString(LR.string.referrals_share_text, referralsOfferInfo.localizedOfferDurationAdjective.lowercase())
-        val subject = context.getString(LR.string.referrals_share_subject, referralsOfferInfo.localizedOfferDurationNoun)
+        val text = context.getString(R.string.referrals_share_text, referralsOfferInfo.localizedOfferDurationAdjective.lowercase())
+        val subject = context.getString(R.string.referrals_share_subject, referralsOfferInfo.localizedOfferDurationNoun)
         val request = SharingRequest.referralLink(
             referralCode = referralCode,
             referralsOfferInfo = referralsOfferInfo,
@@ -703,7 +703,7 @@ class SharingClientTest {
     fun numberOfShowsStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_listened_to_numbers_share_text, 100, 200, 1000))
+            append(context.getString(R.string.end_of_year_story_listened_to_numbers_share_text, 100, 200, 1000))
             append(" https://pca.st")
             append(" #pocketcasts #playback1000")
         }
@@ -732,7 +732,7 @@ class SharingClientTest {
     fun shareTopShowStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_top_podcast_share_text, 1000, "https://pca.st/podcast/podcast-id"))
+            append(context.getString(R.string.end_of_year_story_top_podcast_share_text, 1000, "https://pca.st/podcast/podcast-id"))
             append(" #pocketcasts #playback1000")
         }
         val story = Story.TopShow(
@@ -763,7 +763,7 @@ class SharingClientTest {
     fun shareTopShowsStoryWithCustomUrl() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_top_podcasts_share_text, "https://pca.st"))
+            append(context.getString(R.string.end_of_year_story_top_podcasts_share_text, "https://pca.st"))
             append(" #pocketcasts #playback1000")
         }
         val story = Story.TopShows(
@@ -789,7 +789,7 @@ class SharingClientTest {
     fun shareTopShowsStoryWithoutCustomUrl() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_top_podcasts_share_text, "podcast-list-url"))
+            append(context.getString(R.string.end_of_year_story_top_podcasts_share_text, "podcast-list-url"))
             append(" #pocketcasts #playback1000")
         }
         val story = Story.TopShows(
@@ -815,7 +815,7 @@ class SharingClientTest {
     fun shareRatingsStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_ratings_share_text, 150, 1000, 5))
+            append(context.getString(R.string.end_of_year_story_ratings_share_text, 150, 1000, 5))
             append(" https://pca.st")
             append(" #pocketcasts #playback1000")
         }
@@ -849,7 +849,7 @@ class SharingClientTest {
         val text = buildString {
             append(
                 context.getString(
-                    LR.string.end_of_year_story_listened_to_share_text,
+                    R.string.end_of_year_story_listened_to_share_text,
                     StatsHelper.secondsToFriendlyString(12345, context.resources),
                 ),
             )
@@ -878,7 +878,7 @@ class SharingClientTest {
     fun shareLongestEpisodeStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_story_longest_episode_share_text, 1000, "https://pca.st/episode/episode-id"))
+            append(context.getString(R.string.end_of_year_story_longest_episode_share_text, 1000, "https://pca.st/episode/episode-id"))
             append(" #pocketcasts #playback1000")
         }
         val story = Story.LongestEpisode(
@@ -910,7 +910,7 @@ class SharingClientTest {
     fun shareYearVsYearStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_stories_year_over_share_text, 1000, 999))
+            append(context.getString(R.string.end_of_year_stories_year_over_share_text, 1000, 999))
             append(" https://pca.st")
             append(" #pocketcasts #playback1000")
         }
@@ -938,7 +938,7 @@ class SharingClientTest {
     fun shareCompletionRateStory() = runTest {
         val screenshot = File(context.cacheDir, "file.png").also { it.writeBytes(Random.nextBytes(8)) }
         val text = buildString {
-            append(context.getString(LR.string.end_of_year_stories_completion_rate_share_text, 1000))
+            append(context.getString(R.string.end_of_year_stories_completion_rate_share_text, 1000))
             append(" https://pca.st")
             append(" #pocketcasts #playback1000")
         }
@@ -970,7 +970,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.end_of_year_cant_share_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.end_of_year_cant_share_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -983,7 +983,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.end_of_year_cant_share_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.end_of_year_cant_share_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -996,7 +996,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.end_of_year_cant_share_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.end_of_year_cant_share_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }
@@ -1017,7 +1017,7 @@ class SharingClientTest {
 
         val response = client.share(request)
         assertFalse(response.isSuccsessful)
-        assertEquals(context.getString(LR.string.end_of_year_cant_share_message), response.feedbackMessage)
+        assertEquals(context.getString(R.string.end_of_year_cant_share_message), response.feedbackMessage)
 
         assertNull(shareStarter.chooserIntent)
     }

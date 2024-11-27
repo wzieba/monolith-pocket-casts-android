@@ -105,7 +105,7 @@ private fun ByeByeText(
                 modifier = Modifier.height(8.dp),
             )
             Image(
-                painter = painterResource(IR.drawable.eoy_heart_text_stop),
+                painter = painterResource(R.drawable.eoy_heart_text_stop),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(Color(0xFFEEB1F4)),
                 modifier = Modifier.padding(horizontal = 8.dp),
@@ -132,7 +132,7 @@ private fun EndingInfo(
             modifier = Modifier.height(16.dp),
         )
         TextH10(
-            text = stringResource(LR.string.end_of_year_story_epilogue_title, 2025),
+            text = stringResource(R.string.end_of_year_story_epilogue_title, 2025),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
@@ -142,14 +142,14 @@ private fun EndingInfo(
             modifier = Modifier.height(16.dp),
         )
         TextP40(
-            text = stringResource(LR.string.end_of_year_story_epilogue_subtitle),
+            text = stringResource(R.string.end_of_year_story_epilogue_subtitle),
             fontSize = 15.sp,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         OutlinedEoyButton(
-            text = stringResource(LR.string.end_of_year_replay),
+            text = stringResource(R.string.end_of_year_replay),
             onClick = onRestartPlayback,
         )
     }

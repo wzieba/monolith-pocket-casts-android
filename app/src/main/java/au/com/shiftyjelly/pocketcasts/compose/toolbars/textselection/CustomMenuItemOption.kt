@@ -8,7 +8,7 @@ enum class CustomMenuItemOption(val id: Int) {
 
     val titleResource: Int
         get() = when (this) {
-            Share -> LR.string.share
+            Share -> R.string.share
         }
     val order = id
 }

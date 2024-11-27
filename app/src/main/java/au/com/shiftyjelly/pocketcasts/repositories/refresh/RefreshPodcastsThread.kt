@@ -512,7 +512,7 @@ class RefreshPodcastsThread(
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContentTitle(podcast.title)
                 .setContentText(episode.title)
-                .setSmallIcon(IR.drawable.notification)
+                .setSmallIcon(R.drawable.notification)
                 .setAutoCancel(true)
                 .setColor(color)
                 .setOnlyAlertOnce(true)
@@ -625,7 +625,7 @@ class RefreshPodcastsThread(
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContentTitle("$episodeCounts new episode" + (if (episodeCounts == 1) "" else "s"))
                 .setContentText(notificationLines[0])
-                .setSmallIcon(IR.drawable.notification)
+                .setSmallIcon(R.drawable.notification)
                 .setStyle(inboxStyle)
                 .setColor(color)
                 .setDeleteIntent(deletePendingIntent)
@@ -694,7 +694,7 @@ class RefreshPodcastsThread(
         private fun formatNotificationLine(podcastName: String?, episodeName: String?, context: Context): CharSequence {
             return HtmlCompat.fromHtml(
                 context.resources.getString(
-                    LR.string.podcast_notification_new_episode,
+                    R.string.podcast_notification_new_episode,
                     if (podcastName == null) "" else TextUtils.htmlEncode(podcastName),
                     if (episodeName == null) "" else TextUtils.htmlEncode(episodeName),
                 ),

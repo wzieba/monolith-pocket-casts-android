@@ -46,19 +46,19 @@ fun TranscriptError(
 ) {
     val errorMessage = when (val error = state.error) {
         is TranscriptError.Empty ->
-            stringResource(LR.string.transcript_empty)
+            stringResource(R.string.transcript_empty)
 
         is TranscriptError.NotSupported ->
-            stringResource(LR.string.error_transcript_format_not_supported, error.format)
+            stringResource(R.string.error_transcript_format_not_supported, error.format)
 
         is TranscriptError.NoNetwork ->
-            stringResource(LR.string.error_no_network)
+            stringResource(R.string.error_no_network)
 
         is TranscriptError.FailedToParse ->
-            stringResource(LR.string.error_transcript_failed_to_parse)
+            stringResource(R.string.error_transcript_failed_to_parse)
 
         is TranscriptError.FailedToLoad ->
-            stringResource(LR.string.error_transcript_failed_to_load)
+            stringResource(R.string.error_transcript_failed_to_load)
     }
 
     Column(
@@ -77,7 +77,7 @@ fun TranscriptError(
                 .padding(bottom = bottomPadding()),
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_warning),
+                painter = painterResource(R.drawable.ic_warning),
                 contentDescription = null,
                 tint = TranscriptColors.iconColor().copy(alpha = 0.5f),
             )
@@ -97,7 +97,7 @@ fun TranscriptError(
                 colors = ButtonDefaults.buttonColors(backgroundColor = TranscriptColors.contentColor()),
             ) {
                 TextP40(
-                    text = stringResource(LR.string.try_again),
+                    text = stringResource(R.string.try_again),
                     color = Color.White,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.W400,

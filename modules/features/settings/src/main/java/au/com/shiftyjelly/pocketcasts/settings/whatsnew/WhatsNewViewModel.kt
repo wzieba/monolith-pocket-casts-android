@@ -59,9 +59,9 @@ class WhatsNewViewModel @Inject constructor() : ViewModel() {
         val subscriptionTier: SubscriptionTier? // To show subscription when user is not entitled to the feature
 
         data object ReimagineSharing : WhatsNewFeature {
-            override val title = LR.string.share_whats_new_title
-            override val message = LR.string.share_whats_new_message
-            override val confirmButtonTitle = LR.string.got_it
+            override val title = R.string.share_whats_new_title
+            override val message = R.string.share_whats_new_message
+            override val confirmButtonTitle = R.string.got_it
             override val hasOffer = false
             override val isUserEntitled = true
             override val subscriptionTier = null

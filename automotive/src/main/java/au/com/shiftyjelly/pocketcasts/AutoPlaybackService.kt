@@ -111,10 +111,10 @@ class AutoPlaybackService : PlaybackService() {
     override suspend fun loadRootChildren(): List<MediaBrowserCompat.MediaItem> {
         val extrasContentAsList = bundleOf(DESCRIPTION_EXTRAS_KEY_CONTENT_STYLE_BROWSABLE to DESCRIPTION_EXTRAS_VALUE_CONTENT_STYLE_LIST_ITEM)
 
-        val podcastsItem = buildListMediaItem(id = PODCASTS_ROOT, title = LR.string.podcasts, drawable = IR.drawable.auto_tab_podcasts)
-        val filtersItem = buildListMediaItem(id = FILTERS_ROOT, title = LR.string.filters, drawable = IR.drawable.auto_tab_filter, extras = extrasContentAsList)
-        val discoverItem = buildListMediaItem(id = DISCOVER_ROOT, title = LR.string.discover, drawable = IR.drawable.auto_tab_discover)
-        val profileItem = buildListMediaItem(id = PROFILE_ROOT, title = LR.string.profile, drawable = IR.drawable.auto_tab_profile, extras = extrasContentAsList)
+        val podcastsItem = buildListMediaItem(id = PODCASTS_ROOT, title = R.string.podcasts, drawable = R.drawable.auto_tab_podcasts)
+        val filtersItem = buildListMediaItem(id = FILTERS_ROOT, title = R.string.filters, drawable = R.drawable.auto_tab_filter, extras = extrasContentAsList)
+        val discoverItem = buildListMediaItem(id = DISCOVER_ROOT, title = R.string.discover, drawable = R.drawable.auto_tab_discover)
+        val profileItem = buildListMediaItem(id = PROFILE_ROOT, title = R.string.profile, drawable = R.drawable.auto_tab_profile, extras = extrasContentAsList)
 
         // show the user's podcast collection first if they are subscribed any
         return if (podcastManager.countSubscribed() > 0) {
@@ -144,10 +144,10 @@ class AutoPlaybackService : PlaybackService() {
             // Add the user uploaded Files if they are a paying subscriber
             val isPaidUser = subscriptionManager.getCachedStatus() is SubscriptionStatus.Paid
             if (isPaidUser) {
-                add(buildListMediaItem(id = PROFILE_FILES, title = LR.string.profile_navigation_files, drawable = IR.drawable.automotive_files))
+                add(buildListMediaItem(id = PROFILE_FILES, title = R.string.profile_navigation_files, drawable = R.drawable.automotive_files))
             }
-            add(buildListMediaItem(id = PROFILE_STARRED, title = LR.string.profile_navigation_starred, drawable = IR.drawable.automotive_filter_star))
-            add(buildListMediaItem(id = PROFILE_LISTENING_HISTORY, title = LR.string.profile_navigation_listening_history, drawable = IR.drawable.automotive_listening_history))
+            add(buildListMediaItem(id = PROFILE_STARRED, title = R.string.profile_navigation_starred, drawable = R.drawable.automotive_filter_star))
+            add(buildListMediaItem(id = PROFILE_LISTENING_HISTORY, title = R.string.profile_navigation_listening_history, drawable = R.drawable.automotive_listening_history))
         }
     }
 

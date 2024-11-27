@@ -181,7 +181,7 @@ private fun CoversSection(
         val xFactor = if (measurements.width > 380.dp) 2f else 2.5f
         val yFactor = if (measurements.width > 380.dp) 3f else 4f
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_sticker_7),
+            painter = painterResource(R.drawable.end_of_year_2024_sticker_7),
             contentDescription = null,
             modifier = Modifier
                 .offset(
@@ -246,7 +246,7 @@ private fun TextInfo(
         val context = LocalContext.current
         TextH10(
             text = stringResource(
-                LR.string.end_of_year_story_longest_episode_title,
+                R.string.end_of_year_story_longest_episode_title,
                 remember(story.episode.duration, context) {
                     story.episode.duration.toFriendlyString(
                         resources = context.resources,
@@ -264,7 +264,7 @@ private fun TextInfo(
         )
         TextP40(
             text = stringResource(
-                LR.string.end_of_year_story_longest_episode_subtitle,
+                R.string.end_of_year_story_longest_episode_subtitle,
                 story.episode.episodeTitle,
                 story.episode.podcastTitle,
             ),

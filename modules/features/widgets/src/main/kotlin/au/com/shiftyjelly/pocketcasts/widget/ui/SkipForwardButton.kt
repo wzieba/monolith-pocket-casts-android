@@ -24,7 +24,7 @@ internal fun SkipForwardButton(
     modifier: GlanceModifier = GlanceModifier,
     isClickable: Boolean = true,
 ) {
-    val contentDescription = LocalContext.current.getString(LR.string.skip_forward)
+    val contentDescription = LocalContext.current.getString(R.string.skip_forward)
     val source = LocalSource.current
 
     RounderCornerBox(
@@ -37,7 +37,7 @@ internal fun SkipForwardButton(
         },
     ) {
         Image(
-            provider = ImageProvider(IR.drawable.ic_widget_skip_forward),
+            provider = ImageProvider(R.drawable.ic_widget_skip_forward),
             contentDescription = null,
             colorFilter = ColorFilter.tint(LocalWidgetTheme.current.icon),
             modifier = GlanceModifier.fillMaxSize().padding(vertical = iconPadding),

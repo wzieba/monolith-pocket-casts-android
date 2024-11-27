@@ -40,9 +40,9 @@ fun ContinueWithGoogleButton(
     if (!showContinueWithGoogleButton) return
 
     val errorMessage = if (!Network.isConnected(context)) {
-        stringResource(LR.string.log_in_no_network)
+        stringResource(R.string.log_in_no_network)
     } else {
-        stringResource(LR.string.onboarding_continue_with_google_error)
+        stringResource(R.string.onboarding_continue_with_google_error)
     }
 
     val showError = {
@@ -86,8 +86,8 @@ fun ContinueWithGoogleButton(
     }
 
     RowOutlinedButton(
-        text = stringResource(LR.string.onboarding_continue_with_google),
-        leadingIcon = painterResource(IR.drawable.google_g),
+        text = stringResource(R.string.onboarding_continue_with_google),
+        leadingIcon = painterResource(R.drawable.google_g),
         tintIcon = false,
         border = BorderStroke(2.dp, MaterialTheme.theme.colors.primaryInteractive03),
         fontSize = fontSize,

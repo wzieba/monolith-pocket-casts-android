@@ -27,8 +27,8 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 sealed class NavigationButton(val image: ImageVector, val contentDescription: Int) {
-    object Back : NavigationButton(image = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = LR.string.back)
-    object Close : NavigationButton(image = Icons.Default.Close, contentDescription = LR.string.close)
+    object Back : NavigationButton(image = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = R.string.back)
+    object Close : NavigationButton(image = Icons.Default.Close, contentDescription = R.string.close)
 }
 
 @Composable

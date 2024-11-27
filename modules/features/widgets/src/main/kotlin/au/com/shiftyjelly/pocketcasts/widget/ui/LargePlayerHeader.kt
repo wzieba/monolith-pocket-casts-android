@@ -48,7 +48,7 @@ internal fun LargePlayerHeader(
                 modifier = GlanceModifier.defaultWeight().height(116.dp),
             ) {
                 NonScalingText(
-                    text = episode?.title ?: LocalContext.current.getString(LR.string.widget_no_episode_playing),
+                    text = episode?.title ?: LocalContext.current.getString(R.string.widget_no_episode_playing),
                     textSize = 16.dp,
                     useDynamicColors = state.useDynamicColors,
                     isBold = true,

@@ -77,9 +77,9 @@ class ColorAdapter(
 
     private fun setupView(iconView: IconView, selected: Boolean) {
         if (currentReadOnly) {
-            iconView.setImageResource(IR.drawable.ic_locked)
+            iconView.setImageResource(R.drawable.ic_locked)
         } else if (selected) {
-            iconView.setImageResource(IR.drawable.ic_tick_small)
+            iconView.setImageResource(R.drawable.ic_tick_small)
         } else {
             iconView.setImageDrawable(null)
         }

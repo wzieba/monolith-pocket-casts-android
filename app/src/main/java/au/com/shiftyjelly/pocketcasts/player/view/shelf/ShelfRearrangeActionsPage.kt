@@ -86,7 +86,7 @@ private fun Content(
             .background(Color(AndroidColor.parseColor(ColorUtils.colorIntToHexString(backgroundColorInt)))),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.rearrange_actions),
+            title = stringResource(R.string.rearrange_actions),
             backgroundColor = Color(AndroidColor.parseColor(ColorUtils.colorIntToHexString(toolbarColorInt))),
             textColor = MaterialTheme.theme.colors.playerContrast01,
             iconColor = Color(AndroidColor.parseColor(ColorUtils.colorIntToHexString(iconColorInt))),

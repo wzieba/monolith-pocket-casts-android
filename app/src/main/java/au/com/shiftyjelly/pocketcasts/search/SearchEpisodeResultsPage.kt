@@ -25,7 +25,7 @@ fun SearchEpisodeResultsPage(
     val state by viewModel.state.collectAsState()
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.search_results_all_episodes),
+            title = stringResource(R.string.search_results_all_episodes),
             bottomShadow = true,
             onNavigationClick = { onBackClick() },
         )

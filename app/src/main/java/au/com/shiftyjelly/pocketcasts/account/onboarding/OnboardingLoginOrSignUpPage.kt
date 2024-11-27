@@ -178,7 +178,7 @@ private fun Content(
             Spacer(Modifier.weight(1f))
 
             TextH10(
-                text = stringResource(LR.string.onboarding_discover_your_next_favorite_podcast),
+                text = stringResource(R.string.onboarding_discover_your_next_favorite_podcast),
                 modifier = Modifier
                     .padding(horizontal = 24.dp)
                     .fillMaxWidth(),
@@ -188,7 +188,7 @@ private fun Content(
             Spacer(Modifier.height(8.dp))
 
             TextH40(
-                text = stringResource(LR.string.onboarding_create_an_account_to),
+                text = stringResource(R.string.onboarding_create_an_account_to),
                 modifier = Modifier
                     .padding(horizontal = 24.dp)
                     .fillMaxWidth(),
@@ -266,7 +266,7 @@ private fun Artwork(
 @Composable
 private fun SignUpButton(onClick: () -> Unit) {
     RowButton(
-        text = stringResource(LR.string.onboarding_sign_up),
+        text = stringResource(R.string.onboarding_sign_up),
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.theme.colors.primaryText01, contentColor = MaterialTheme.theme.colors.primaryUi01),
         includePadding = false,
         onClick = onClick,
@@ -277,7 +277,7 @@ private fun SignUpButton(onClick: () -> Unit) {
 @Composable
 private fun LogInButton(onClick: () -> Unit) {
     RowTextButton(
-        text = stringResource(LR.string.onboarding_log_in),
+        text = stringResource(R.string.onboarding_log_in),
         colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.theme.colors.primaryText01),
         includePadding = false,
         onClick = onClick,

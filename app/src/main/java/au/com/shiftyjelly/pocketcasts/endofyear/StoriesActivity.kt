@@ -76,7 +76,7 @@ class StoriesActivity : ComponentActivity() {
                 val year = EndOfYearManager.YEAR_TO_SYNC
                 factory.create(
                     year = year,
-                    topListTitle = getString(LR.string.end_of_year_story_top_podcasts_list_title, year.value),
+                    topListTitle = getString(R.string.end_of_year_story_top_podcasts_list_title, year.value),
                     source = source,
                 )
             }
@@ -291,7 +291,7 @@ class StoriesActivity : ComponentActivity() {
         viewModel.trackLearnRatingsShown()
         WebViewActivity.show(
             this,
-            getString(LR.string.podcast_ratings_page_title),
+            getString(R.string.podcast_ratings_page_title),
             "https://support.pocketcasts.com/knowledge-base/ratings/",
         )
     }

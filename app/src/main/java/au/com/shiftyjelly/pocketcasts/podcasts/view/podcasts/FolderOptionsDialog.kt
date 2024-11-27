@@ -29,8 +29,8 @@ class FolderOptionsDialog(
         val fragmentManager = fragmentManager ?: return
         val dialog = OptionsDialog()
             .addTextOption(
-                titleId = LR.string.podcasts_menu_sort_by,
-                imageId = IR.drawable.ic_sort,
+                titleId = R.string.podcasts_menu_sort_by,
+                imageId = R.drawable.ic_sort,
                 valueId = folder.podcastsSortType.labelId,
                 click = {
                     onOpenSortOptions()
@@ -38,7 +38,7 @@ class FolderOptionsDialog(
                 },
             )
             .addTextOption(
-                titleId = LR.string.edit_folder,
+                titleId = R.string.edit_folder,
                 imageId = R.drawable.ic_pencil_edit,
                 click = {
                     onEditFolder()
@@ -46,7 +46,7 @@ class FolderOptionsDialog(
                 },
             )
             .addTextOption(
-                titleId = LR.string.add_or_remove_podcasts,
+                titleId = R.string.add_or_remove_podcasts,
                 imageId = R.drawable.ic_podcasts,
                 click = {
                     onAddOrRemovePodcast()
@@ -59,7 +59,7 @@ class FolderOptionsDialog(
     private fun openSortOptions() {
         val fragmentManager = fragmentManager ?: return
         val podcastsSortType = folder.podcastsSortType
-        val title = fragment.getString(LR.string.sort_by)
+        val title = fragment.getString(R.string.sort_by)
         val dialog = OptionsDialog().setTitle(title)
         for (sortType in PodcastsSortType.values()) {
             dialog.addCheckedOption(

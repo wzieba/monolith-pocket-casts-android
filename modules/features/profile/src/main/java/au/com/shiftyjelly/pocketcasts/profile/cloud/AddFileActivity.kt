@@ -279,7 +279,7 @@ class AddFileActivity :
                     return@launch
                 }
 
-                setupToolbar(title = LR.string.profile_cloud_edit_file)
+                setupToolbar(title = R.string.profile_cloud_edit_file)
 
                 binding.lblFilename.text = ""
                 binding.lblFilesize.text = Util.formattedBytes(bytes = userEpisode.sizeInBytes, context = binding.lblFilesize.context)
@@ -332,7 +332,7 @@ class AddFileActivity :
         val fileUri = fileUri ?: return
         preparePlayer(fileUri)
 
-        setupToolbar(title = LR.string.profile_cloud_add_file)
+        setupToolbar(title = R.string.profile_cloud_add_file)
 
         val filename = getFilenameOfContent(fileUri)
         binding.txtFilename.setText(filename?.substringBeforeLast("."))
@@ -375,7 +375,7 @@ class AddFileActivity :
             imgFileArtwork.isVisible = true
             imgFileArtwork.imageTintList = null
             imgFileArtwork.setImageBitmap(bitmap)
-            binding.btnImage.text = getString(LR.string.profile_files_remove_image)
+            binding.btnImage.text = getString(R.string.profile_files_remove_image)
         } else {
             clearImageView()
         }
@@ -383,9 +383,9 @@ class AddFileActivity :
 
     private fun clearImageView() {
         binding.imgFileArtwork.isVisible = false
-        binding.imgFile.setImageResource(IR.drawable.ic_uploadedfile)
+        binding.imgFile.setImageResource(R.drawable.ic_uploadedfile)
         binding.imgFile.imageTintList = ColorStateList.valueOf(tintColor)
-        binding.btnImage.text = getString(LR.string.profile_files_add_custom_image)
+        binding.btnImage.text = getString(R.string.profile_files_add_custom_image)
     }
 
     @UnstableApi
@@ -416,7 +416,7 @@ class AddFileActivity :
             }
 
             override fun onSuccess(result: Drawable) {
-                binding.btnImage.text = getString(LR.string.profile_files_remove_image)
+                binding.btnImage.text = getString(R.string.profile_files_remove_image)
                 bitmap = result.toBitmap()
                 binding.imgFileArtwork.setImageBitmap(bitmap)
                 if (tintColor == 0) {
@@ -425,7 +425,7 @@ class AddFileActivity :
             }
         }
 
-        binding.imgFileArtwork.setImageResource(IR.drawable.defaultartwork)
+        binding.imgFileArtwork.setImageResource(R.drawable.defaultartwork)
 
         if (isFile) {
             val path = uri.path
@@ -488,7 +488,7 @@ class AddFileActivity :
 
             Timber.e("Could not upload invalid file")
 
-            val message = getString(LR.string.profile_cloud_add_invalid_file)
+            val message = getString(R.string.profile_cloud_add_invalid_file)
             handleErrorWhenLoadingFile(errorMessage = message)
         } else {
             launch(Dispatchers.IO) {
@@ -535,7 +535,7 @@ class AddFileActivity :
                     Timber.e(e, "Could not load file")
 
                     launch(Dispatchers.Main) {
-                        handleErrorWhenLoadingFile(errorMessage = getString(LR.string.profile_cloud_add_file_error, e.message))
+                        handleErrorWhenLoadingFile(errorMessage = getString(R.string.profile_cloud_add_file_error, e.message))
                     }
                 }
             }
@@ -546,9 +546,9 @@ class AddFileActivity :
         binding.layoutLoading.isVisible = false
 
         AlertDialog.Builder(this)
-            .setTitle(LR.string.error)
+            .setTitle(R.string.error)
             .setMessage(errorMessage)
-            .setPositiveButton(LR.string.ok, null)
+            .setPositiveButton(R.string.ok, null)
             .show()
     }
 
@@ -602,9 +602,9 @@ class AddFileActivity :
                 finish()
             } catch (e: Exception) {
                 AlertDialog.Builder(this@AddFileActivity)
-                    .setTitle(LR.string.error)
-                    .setMessage(getString(LR.string.profile_cloud_update_file_error) + "\n\n" + e.message)
-                    .setPositiveButton(LR.string.ok, null)
+                    .setTitle(R.string.error)
+                    .setMessage(getString(R.string.profile_cloud_update_file_error) + "\n\n" + e.message)
+                    .setPositiveButton(R.string.ok, null)
                     .show()
                 binding.layoutLoading.isVisible = false
                 return@launch

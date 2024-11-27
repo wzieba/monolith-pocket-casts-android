@@ -129,7 +129,7 @@ Language: fr
     <string name="paywall_slumber_studios_description">Obtenez un an de contenu premium de Slumber Studios.</string>
     <string name="paywall_slumber_studios_title">Rêver avec Slumber Studios</string>
     <string name="paywall_watch_content_description">Image Lecture sur Apple Watch et Wear OS</string>
-    <string name="paywall_watch_description">Laissez tomber le téléphone et allez courir.</string>
+    <string name="paywall_watch_description">Laissez tomber le téléphone et allez courR.</string>
     <string name="paywall_watch_title">Lecture sur l’Apple Watch</string>
     <string name="paywall_bookmarks_content_description">Image Signets</string>
     <string name="paywall_bookmarks_description">Enregistrez vos moments préférés de n’importe quel épisode et réécoutez-les.</string>
@@ -1595,7 +1595,7 @@ Language: fr
     <string name="podcast_archive_all_played">Archiver tous les épisodes lus</string>
     <string name="podcast_archive_all">Tout archiver</string>
     <string name="podcasts_unarchive">Désarchiver</string>
-    <string name="podcasts_time_to_add_some_podcasts_summary">Vous pouvez ajouter des podcasts en effectuant une recherche ci-dessus ou, si vous cherchez de l’inspiration, consultez l’onglet Découvrir.</string>
+    <string name="podcasts_time_to_add_some_podcasts_summary">Vous pouvez ajouter des podcasts en effectuant une recherche ci-dessus ou, si vous cherchez de l’inspiration, consultez l’onglet DécouvrR.</string>
     <string name="podcasts_time_to_add_some_podcasts">Il est temps d’ajouter des podcasts !</string>
     <string name="podcasts_sort_order">Ordre de tri</string>
     <string name="podcasts_sort_by_title">« Titre (A - Z) »</string>

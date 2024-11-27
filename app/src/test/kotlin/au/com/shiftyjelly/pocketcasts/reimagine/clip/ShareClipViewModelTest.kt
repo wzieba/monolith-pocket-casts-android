@@ -322,7 +322,7 @@ class ShareClipViewModelTest {
             SocialPlatform.Instagram,
             CardType.Square,
             SourceView.PLAYER,
-            createBackgroundAsset = { Result.success(tempDir.newFile()) },
+            createBackgroundAsset = { Result.success(tempDR.newFile()) },
         )
 
         val event = tracker.events.last()
@@ -540,7 +540,7 @@ class ShareClipViewModelTest {
             SocialPlatform.Instagram,
             CardType.Vertical,
             SourceView.PLAYER,
-            createBackgroundAsset = { Result.success(tempDir.newFile()) },
+            createBackgroundAsset = { Result.success(tempDR.newFile()) },
         )
         val request = sharingClient.request!!
 

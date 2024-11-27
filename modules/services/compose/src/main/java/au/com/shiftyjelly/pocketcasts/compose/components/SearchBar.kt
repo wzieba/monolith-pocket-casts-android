@@ -93,7 +93,7 @@ fun SearchBar(
     modifier: Modifier = Modifier,
     leadingIcon: @Composable (() -> Unit)? = null,
     trailingIcon: @Composable (() -> Unit)? = null,
-    placeholder: String = stringResource(LR.string.search_podcasts_or_add_url),
+    placeholder: String = stringResource(R.string.search_podcasts_or_add_url),
     onSearch: () -> Unit = {},
     enabled: Boolean = true,
     textStyle: TextStyle = LocalTextStyle.current,
@@ -155,7 +155,7 @@ fun SearchBar(
                 },
                 leadingIcon = leadingIcon ?: {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_search),
+                        painter = painterResource(R.drawable.ic_search),
                         contentDescription = null,
                     )
                 },
@@ -168,8 +168,8 @@ fun SearchBar(
                             },
                         ) {
                             Icon(
-                                painter = painterResource(IR.drawable.ic_cancel),
-                                contentDescription = stringResource(LR.string.cancel),
+                                painter = painterResource(R.drawable.ic_cancel),
+                                contentDescription = stringResource(R.string.cancel),
                             )
                         }
                     }

@@ -75,7 +75,7 @@ class EpisodeArtworkConfigurationFragment : BaseFragment() {
                 .verticalScroll(rememberScrollState()),
         ) {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_use_episode_artwork_title),
+                title = stringResource(R.string.settings_use_episode_artwork_title),
                 onNavigationClick = onBackPressed,
                 bottomShadow = true,
             )
@@ -83,8 +83,8 @@ class EpisodeArtworkConfigurationFragment : BaseFragment() {
                 UseEpisodeArtwork(artworkConfiguration, onUpdateConfiguration)
             }
             SettingSection(
-                heading = stringResource(LR.string.settings_use_episode_artwork_customization_section),
-                subHeading = stringResource(LR.string.settings_use_episode_artwork_customization_description),
+                heading = stringResource(R.string.settings_use_episode_artwork_customization_section),
+                subHeading = stringResource(R.string.settings_use_episode_artwork_customization_description),
                 showDivider = false,
             ) {
                 elements.forEach { element ->
@@ -103,8 +103,8 @@ class EpisodeArtworkConfigurationFragment : BaseFragment() {
         onUpdateConfiguration: (ArtworkConfiguration) -> Unit,
     ) {
         SettingRow(
-            primaryText = stringResource(LR.string.settings_use_episode_artwork),
-            secondaryText = stringResource(LR.string.settings_use_episode_artwork_details),
+            primaryText = stringResource(R.string.settings_use_episode_artwork),
+            secondaryText = stringResource(R.string.settings_use_episode_artwork_details),
             toggle = SettingRowToggle.Switch(checked = configuration.useEpisodeArtwork),
             modifier = Modifier.toggleable(value = configuration.useEpisodeArtwork, role = Role.Switch) { newValue ->
                 onUpdateConfiguration(configuration.copy(useEpisodeArtwork = newValue))
@@ -129,13 +129,13 @@ class EpisodeArtworkConfigurationFragment : BaseFragment() {
 
     private val ArtworkConfiguration.Element.titleId
         get() = when (this) {
-            ArtworkConfiguration.Element.Filters -> LR.string.filters
-            ArtworkConfiguration.Element.UpNext -> LR.string.up_next
-            ArtworkConfiguration.Element.Downloads -> LR.string.profile_navigation_downloads
-            ArtworkConfiguration.Element.Files -> LR.string.profile_navigation_files
-            ArtworkConfiguration.Element.Starred -> LR.string.profile_navigation_starred
-            ArtworkConfiguration.Element.Bookmarks -> LR.string.bookmarks
-            ArtworkConfiguration.Element.ListeningHistory -> LR.string.profile_navigation_listening_history
-            ArtworkConfiguration.Element.Podcasts -> LR.string.podcasts
+            ArtworkConfiguration.Element.Filters -> R.string.filters
+            ArtworkConfiguration.Element.UpNext -> R.string.up_next
+            ArtworkConfiguration.Element.Downloads -> R.string.profile_navigation_downloads
+            ArtworkConfiguration.Element.Files -> R.string.profile_navigation_files
+            ArtworkConfiguration.Element.Starred -> R.string.profile_navigation_starred
+            ArtworkConfiguration.Element.Bookmarks -> R.string.bookmarks
+            ArtworkConfiguration.Element.ListeningHistory -> R.string.profile_navigation_listening_history
+            ArtworkConfiguration.Element.Podcasts -> R.string.podcasts
         }
 }

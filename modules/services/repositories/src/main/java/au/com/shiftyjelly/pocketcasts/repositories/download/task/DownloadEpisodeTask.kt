@@ -495,7 +495,7 @@ class DownloadEpisodeTask @AssistedInject constructor(
             exception = e
             errorMessage = if (e.anyMessageContains("chtbl.com")) {
                 episodeDownloadError.reason = EpisodeDownloadError.Reason.ChartableBlocked
-                context.resources.getString(LR.string.error_chartable)
+                context.resources.getString(R.string.error_chartable)
             } else {
                 episodeDownloadError.reason = EpisodeDownloadError.Reason.SocketIssue
                 createErrorMessage(e)

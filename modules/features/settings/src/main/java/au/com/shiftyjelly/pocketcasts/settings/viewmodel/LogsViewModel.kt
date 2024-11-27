@@ -37,7 +37,7 @@ class LogsViewModel @Inject constructor(
     fun shareLogs(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
             val intent = support.shareLogs(
-                subject = context.getString(LR.string.settings_logs),
+                subject = context.getString(R.string.settings_logs),
                 intro = "",
                 emailSupport = false,
                 context = context,

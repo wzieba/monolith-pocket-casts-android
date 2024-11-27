@@ -62,7 +62,7 @@ fun FilterScreen(
                 state.filter?.let {
                     ScreenHeaderChip(it.title)
                     Text(
-                        text = stringResource(LR.string.filters_no_episodes),
+                        text = stringResource(R.string.filters_no_episodes),
                         modifier = Modifier.padding(16.dp),
                         textAlign = TextAlign.Center,
                         color = MaterialTheme.colors.onPrimary,
@@ -70,7 +70,7 @@ fun FilterScreen(
                     )
                 } ?: run {
                     Text(
-                        text = stringResource(LR.string.filters_not_found),
+                        text = stringResource(R.string.filters_not_found),
                         modifier = Modifier.padding(16.dp),
                         textAlign = TextAlign.Center,
                         color = MaterialTheme.colors.onPrimary,

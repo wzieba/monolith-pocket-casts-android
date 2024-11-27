@@ -112,8 +112,8 @@ fun BookmarksPage(
             .message
             .collectLatest { message ->
                 val string = when (message) {
-                    is BookmarkMessage.BookmarkEpisodeNotFound -> context.getString(LR.string.episode_not_found)
-                    is BookmarkMessage.PlayingBookmark -> context.getString(LR.string.playing_bookmark, message.bookmarkTitle)
+                    is BookmarkMessage.BookmarkEpisodeNotFound -> context.getString(R.string.episode_not_found)
+                    is BookmarkMessage.PlayingBookmark -> context.getString(R.string.playing_bookmark, message.bookmarkTitle)
                 }
                 Toast.makeText(context, string, Toast.LENGTH_SHORT).show()
             }
@@ -191,7 +191,7 @@ private fun BookmarksView(
             item {
                 SearchBar(
                     text = state.searchText,
-                    placeholder = stringResource(LR.string.search),
+                    placeholder = stringResource(R.string.search),
                     onTextChanged = onSearchTextChanged,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -210,9 +210,9 @@ private fun BookmarksView(
             item {
                 val title = stringResource(
                     id = if (state.bookmarks.size > 1) {
-                        LR.string.bookmarks_plural
+                        R.string.bookmarks_plural
                     } else {
-                        LR.string.bookmarks_singular
+                        R.string.bookmarks_singular
                     },
                     state.bookmarks.size,
                 )

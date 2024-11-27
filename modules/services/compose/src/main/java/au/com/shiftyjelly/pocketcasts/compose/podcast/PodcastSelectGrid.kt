@@ -75,8 +75,8 @@ private fun SelectGridFooter(
 ) {
     Row(modifier = modifier.padding(top = 4.dp, start = 16.dp, bottom = 4.dp, end = 8.dp), verticalAlignment = Alignment.CenterVertically) {
         val amountSelected = when (selectedPodcasts.size) {
-            podcasts.size -> stringResource(LR.string.podcasts_share_all_selected)
-            else -> stringResource(LR.string.podcasts_share_selected, selectedPodcasts.size)
+            podcasts.size -> stringResource(R.string.podcasts_share_all_selected)
+            else -> stringResource(R.string.podcasts_share_selected, selectedPodcasts.size)
         }
         TextH40(
             text = amountSelected,
@@ -84,7 +84,7 @@ private fun SelectGridFooter(
         )
         Spacer(Modifier.weight(1f))
         LinkText(
-            text = stringResource(if (podcasts.size == selectedPodcasts.size) LR.string.select_none else LR.string.select_all),
+            text = stringResource(if (podcasts.size == selectedPodcasts.size) R.string.select_none else R.string.select_all),
             onClick = {
                 if (podcasts.size == selectedPodcasts.size) {
                     onSelectNone()

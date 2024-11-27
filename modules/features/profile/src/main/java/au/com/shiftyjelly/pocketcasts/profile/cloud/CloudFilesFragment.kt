@@ -166,11 +166,11 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.emptyLayout?.isVisible = false
-        binding?.lblEmptyTitle?.text = getString(LR.string.profile_files_empty_title)
-        binding?.lblEmptySummary?.text = getString(LR.string.profile_files_empty_summary)
+        binding?.lblEmptyTitle?.text = getString(R.string.profile_files_empty_title)
+        binding?.lblEmptySummary?.text = getString(R.string.profile_files_empty_summary)
 
         binding?.toolbar?.setup(
-            title = getString(LR.string.profile_navigation_files),
+            title = getString(R.string.profile_navigation_files),
             navigationIcon = BackArrow,
             activity = activity,
             theme = theme,
@@ -221,7 +221,7 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
                 val binding = binding ?: return@Observer
 
                 accountOptional.get()?.let {
-                    binding.lblFilecount.text = getString(LR.string.profile_cloud_count_files, it.totalFiles)
+                    binding.lblFilecount.text = getString(R.string.profile_cloud_count_files, it.totalFiles)
 
                     val context = context ?: return@let
                     val used = Util.formattedBytes(it.usedSize, context = context, minimumBytes = 0)
@@ -229,7 +229,7 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
                     val percentage = ((it.usedSize.toDouble() / it.totalSize.toDouble()) * 100f).roundToInt()
 
                     if (percentage in 0..100) {
-                        binding.lblPercentage.text = getString(LR.string.profile_cloud_percentage_full, percentage)
+                        binding.lblPercentage.text = getString(R.string.profile_cloud_percentage_full, percentage)
 
                         val color = when (percentage) {
                             in 80..95 -> ThemeColor.support08(theme.activeTheme)
@@ -270,7 +270,7 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
             val wasMultiSelecting = binding?.multiSelectToolbar?.isVisible ?: false
             binding?.multiSelectToolbar?.isVisible = isMultiSelecting
             binding?.toolbar?.isVisible = !isMultiSelecting
-            binding?.multiSelectToolbar?.setNavigationIcon(IR.drawable.ic_arrow_back)
+            binding?.multiSelectToolbar?.setNavigationIcon(R.drawable.ic_arrow_back)
 
             if (isMultiSelecting) {
                 analyticsTracker.track(AnalyticsEvent.UPLOADED_FILES_MULTI_SELECT_ENTERED)
@@ -368,16 +368,16 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
     private fun showOptionsDialog() {
         val dialog = OptionsDialog()
             .addTextOption(
-                titleId = LR.string.sort_by,
-                imageId = IR.drawable.ic_sort,
+                titleId = R.string.sort_by,
+                imageId = R.drawable.ic_sort,
                 click = {
                     analyticsTracker.track(AnalyticsEvent.UPLOADED_FILES_OPTIONS_MODAL_OPTION_TAPPED, mapOf(OPTION_KEY to SORT_BY))
                     showSortOptions()
                 },
             )
             .addTextOption(
-                titleId = LR.string.profile_cloud_settings,
-                imageId = IR.drawable.ic_profile_settings,
+                titleId = R.string.profile_cloud_settings,
+                imageId = R.drawable.ic_profile_settings,
                 click = {
                     analyticsTracker.track(AnalyticsEvent.UPLOADED_FILES_OPTIONS_MODAL_OPTION_TAPPED, mapOf(OPTION_KEY to FILE_SETTINGS))
                     showCloudSettings()
@@ -393,23 +393,23 @@ class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 
     private fun showSortOptions() {
         val dialog = OptionsDialog()
-            .setTitle(getString(LR.string.sort_by))
+            .setTitle(getString(R.string.sort_by))
             .addCheckedOption(
-                titleId = LR.string.episode_sort_newest_to_oldest,
+                titleId = R.string.episode_sort_newest_to_oldest,
                 click = {
                     viewModel.changeSort(Settings.CloudSortOrder.NEWEST_OLDEST)
                 },
                 checked = (viewModel.getSortOrder() == Settings.CloudSortOrder.NEWEST_OLDEST),
             )
             .addCheckedOption(
-                titleId = LR.string.episode_sort_oldest_to_newest,
+                titleId = R.string.episode_sort_oldest_to_newest,
                 click = {
                     viewModel.changeSort(Settings.CloudSortOrder.OLDEST_NEWEST)
                 },
                 checked = (viewModel.getSortOrder() == Settings.CloudSortOrder.OLDEST_NEWEST),
             )
             .addCheckedOption(
-                titleId = LR.string.podcasts_sort_by_title,
+                titleId = R.string.podcasts_sort_by_title,
                 click = {
                     viewModel.changeSort(Settings.CloudSortOrder.A_TO_Z)
                 },

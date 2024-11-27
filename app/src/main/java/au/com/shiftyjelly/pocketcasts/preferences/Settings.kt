@@ -221,36 +221,36 @@ interface Settings {
         }
 
         data object Archive : MediaNotificationControls(
-            controlName = LR.string.archive,
-            iconRes = IR.drawable.ic_archive,
+            controlName = R.string.archive,
+            iconRes = R.drawable.ic_archive,
             key = ARCHIVE_KEY,
             serverId = "archive",
         )
 
         data object MarkAsPlayed : MediaNotificationControls(
-            controlName = LR.string.mark_as_played,
-            iconRes = IR.drawable.ic_markasplayed,
+            controlName = R.string.mark_as_played,
+            iconRes = R.drawable.ic_markasplayed,
             key = MARK_AS_PLAYED_KEY,
             serverId = "mark_as_played",
         )
 
         data object PlayNext : MediaNotificationControls(
-            controlName = LR.string.play_next,
-            iconRes = IR.drawable.ic_skip_next,
+            controlName = R.string.play_next,
+            iconRes = R.drawable.ic_skip_next,
             key = PLAY_NEXT_KEY,
             serverId = "play_next",
         )
 
         data object PlaybackSpeed : MediaNotificationControls(
-            controlName = LR.string.playback_speed,
-            iconRes = IR.drawable.ic_speed_number,
+            controlName = R.string.playback_speed,
+            iconRes = R.drawable.ic_speed_number,
             key = PLAYBACK_SPEED_KEY,
             serverId = "playback_speed",
         )
 
         data object Star : MediaNotificationControls(
-            controlName = LR.string.star,
-            iconRes = IR.drawable.ic_star,
+            controlName = R.string.star,
+            iconRes = R.drawable.ic_star,
             key = STAR_KEY,
             serverId = "star",
         )

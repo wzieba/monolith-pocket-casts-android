@@ -148,8 +148,8 @@ fun EpisodeChip(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Icon(
-                            painter = painterResource(IR.drawable.ic_alert_small),
-                            contentDescription = stringResource(LR.string.podcast_episode_playback_error),
+                            painter = painterResource(R.drawable.ic_alert_small),
+                            contentDescription = stringResource(R.string.podcast_episode_playback_error),
                             modifier = Modifier.size(14.dp),
                             tint = MaterialTheme.colors.onSecondary,
                         )
@@ -181,7 +181,7 @@ private fun IconsRow(
         if (showUpNextIcon) {
             Icon(
                 painter = painterResource(R.drawable.ic_upnext),
-                contentDescription = stringResource(LR.string.episode_in_up_next),
+                contentDescription = stringResource(R.string.episode_in_up_next),
                 tint = WearColors.upNextIcon,
                 modifier = Modifier.size(12.dp),
             )
@@ -190,7 +190,7 @@ private fun IconsRow(
         if (episode.isDownloaded) {
             Icon(
                 painter = painterResource(R.drawable.ic_downloaded),
-                contentDescription = stringResource(LR.string.downloaded),
+                contentDescription = stringResource(R.string.downloaded),
                 tint = WearColors.downloadedIcon,
                 modifier = Modifier.size(12.dp),
             )

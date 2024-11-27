@@ -60,14 +60,14 @@ fun PodcastsScreen(
                 modifier = Modifier.fillMaxSize(),
             ) {
                 Text(
-                    text = stringResource(LR.string.podcasts_no_subscriptions),
+                    text = stringResource(R.string.podcasts_no_subscriptions),
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colors.onPrimary,
                     style = MaterialTheme.typography.title2,
                 )
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    text = stringResource(LR.string.podcasts_subscribe_on_phone),
+                    text = stringResource(R.string.podcasts_subscribe_on_phone),
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colors.onPrimary,
                     style = MaterialTheme.typography.body1,
@@ -81,7 +81,7 @@ fun PodcastsScreen(
                 columnState = columnState,
             ) {
                 item {
-                    ScreenHeaderChip(if (uiState.folder == null) stringResource(LR.string.podcasts) else uiState.folder.name)
+                    ScreenHeaderChip(if (uiState.folder == null) stringResource(R.string.podcasts) else uiState.folder.name)
                 }
                 items(items = uiState.items, key = { item -> item.uuid }) { item ->
                     when (item) {
@@ -106,7 +106,7 @@ fun PodcastsScreen(
                 LoadingSpinner()
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    text = stringResource(LR.string.podcast_loading),
+                    text = stringResource(R.string.podcast_loading),
                     textAlign = TextAlign.Center,
                     color = MaterialTheme.colors.onPrimary,
                     style = MaterialTheme.typography.body1,
@@ -130,7 +130,7 @@ private fun FolderChip(
         },
         icon = {
             Icon(
-                painter = painterResource(IR.drawable.ic_folder),
+                painter = painterResource(R.drawable.ic_folder),
                 contentDescription = null,
                 tint = WearColors.getFolderColor(folder.color),
                 modifier = Modifier.padding(horizontal = 8.dp).size(24.dp),

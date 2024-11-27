@@ -372,8 +372,8 @@ open class ServiceManager @Inject constructor(
         fun toFormBody(): FormBody {
             val builder = FormBody.Builder()
             for (pair in pairs) {
-                val first = pair.first
-                val second = pair.second
+                val first = paR.first
+                val second = paR.second
                 if (second != null) {
                     builder.add(first, second)
                 }
@@ -382,7 +382,7 @@ open class ServiceManager @Inject constructor(
         }
 
         override fun toString(): String {
-            return pairs.joinToString { pair -> "${pair.first}=${pair.second}" }
+            return pairs.joinToString { pair -> "${paR.first}=${paR.second}" }
         }
     }
 }

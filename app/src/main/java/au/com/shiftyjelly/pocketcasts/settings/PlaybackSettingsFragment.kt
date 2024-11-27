@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.fragment.compose.content
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
@@ -52,7 +53,6 @@ import au.com.shiftyjelly.pocketcasts.compose.components.SettingRowToggle
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingSectionHeader
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingsSection
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.images.R
 import au.com.shiftyjelly.pocketcasts.models.to.PodcastGrouping
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.repositories.di.ApplicationScope
@@ -69,7 +69,6 @@ import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class PlaybackSettingsFragment : BaseFragment() {
@@ -131,7 +130,7 @@ class PlaybackSettingsFragment : BaseFragment() {
 
         Column {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_title_playback),
+                title = stringResource(R.string.settings_title_playback),
                 onNavigationClick = onBackClick,
                 bottomShadow = true,
             )
@@ -147,7 +146,7 @@ class PlaybackSettingsFragment : BaseFragment() {
                             Column {
                                 Spacer(modifier = Modifier.height(SettingsSection.verticalPadding))
                                 SettingSectionHeader(
-                                    text = stringResource(LR.string.settings_general_defaults),
+                                    text = stringResource(R.string.settings_general_defaults),
                                     indent = false,
                                 )
                             }
@@ -232,8 +231,8 @@ class PlaybackSettingsFragment : BaseFragment() {
 
                         SettingsItems.SETTINGS_MEDIA_NOTIFICATION_CONTROLS -> {
                             SettingRow(
-                                primaryText = stringResource(LR.string.settings_media_notification_controls),
-                                secondaryText = stringResource(LR.string.settings_customize_buttons_displayed_in_android_13_notification_and_android_auto),
+                                primaryText = stringResource(R.string.settings_media_notification_controls),
+                                secondaryText = stringResource(R.string.settings_customize_buttons_displayed_in_android_13_notification_and_android_auto),
                                 modifier = Modifier.clickable {
                                     (activity as? FragmentHostListener)?.addFragment(MediaActionsFragment())
                                 },
@@ -245,7 +244,7 @@ class PlaybackSettingsFragment : BaseFragment() {
                             Column {
                                 Spacer(modifier = Modifier.height(SettingsSection.verticalPadding))
                                 SettingSectionHeader(
-                                    text = stringResource(LR.string.settings_general_player),
+                                    text = stringResource(R.string.settings_general_player),
                                     indent = false,
                                 )
                             }
@@ -253,7 +252,7 @@ class PlaybackSettingsFragment : BaseFragment() {
 
                         SettingsItems.SETTINGS_SKIP_FORWARD_TIME -> {
                             SkipTime(
-                                primaryText = stringResource(LR.string.settings_skip_forward_time),
+                                primaryText = stringResource(R.string.settings_skip_forward_time),
                                 saved = settings.skipForwardInSecs.flow
                                     .collectAsState()
                                     .value,
@@ -269,7 +268,7 @@ class PlaybackSettingsFragment : BaseFragment() {
 
                         SettingsItems.SETTINGS_SKIP_BACK_TIME -> {
                             SkipTime(
-                                primaryText = stringResource(LR.string.settings_skip_back_time),
+                                primaryText = stringResource(R.string.settings_skip_back_time),
                                 saved = settings.skipBackInSecs.flow.collectAsState().value,
                                 onSave = {
                                     analyticsTracker.track(
@@ -350,7 +349,7 @@ class PlaybackSettingsFragment : BaseFragment() {
                             Column {
                                 Spacer(modifier = Modifier.height(SettingsSection.verticalPadding))
                                 SettingSectionHeader(
-                                    text = stringResource(LR.string.settings_general_sleep_timer),
+                                    text = stringResource(R.string.settings_general_sleep_timer),
                                     indent = false,
                                 )
                             }
@@ -406,9 +405,9 @@ class PlaybackSettingsFragment : BaseFragment() {
         onSave: (Boolean) -> Unit,
     ) {
         val savedString = stringResource(rowActionToStringRes(saved)).lowercase(Locale.getDefault())
-        val secondaryText = stringResource(LR.string.settings_row_action_summary, savedString)
+        val secondaryText = stringResource(R.string.settings_row_action_summary, savedString)
         SettingRadioDialogRow(
-            primaryText = stringResource(LR.string.settings_row_action),
+            primaryText = stringResource(R.string.settings_row_action),
             secondaryText = secondaryText,
             options = listOf(true, false),
             savedOption = saved,
@@ -420,8 +419,8 @@ class PlaybackSettingsFragment : BaseFragment() {
 
     @StringRes
     private fun rowActionToStringRes(value: Boolean) = when (value) {
-        true -> LR.string.settings_row_action_play
-        false -> LR.string.settings_row_action_download
+        true -> R.string.settings_row_action_play
+        false -> R.string.settings_row_action_download
     }
 
     @Composable
@@ -431,9 +430,9 @@ class PlaybackSettingsFragment : BaseFragment() {
     ) {
         val savedString =
             stringResource(upNextActionToStringRes(saved)).lowercase(Locale.getDefault())
-        val secondaryText = stringResource(LR.string.settings_up_next_swipe_summary, savedString)
+        val secondaryText = stringResource(R.string.settings_up_next_swipe_summary, savedString)
         SettingRadioDialogRow(
-            primaryText = stringResource(LR.string.settings_up_next_swipe),
+            primaryText = stringResource(R.string.settings_up_next_swipe),
             secondaryText = secondaryText,
             options = listOf(Settings.UpNextAction.PLAY_NEXT, Settings.UpNextAction.PLAY_LAST),
             savedOption = saved,
@@ -445,8 +444,8 @@ class PlaybackSettingsFragment : BaseFragment() {
 
     @StringRes
     private fun upNextActionToStringRes(a: Settings.UpNextAction) = when (a) {
-        Settings.UpNextAction.PLAY_NEXT -> LR.string.settings_up_next_swipe_play_next
-        Settings.UpNextAction.PLAY_LAST -> LR.string.settings_up_next_swipe_play_last
+        Settings.UpNextAction.PLAY_NEXT -> R.string.settings_up_next_swipe_play_next
+        Settings.UpNextAction.PLAY_LAST -> R.string.settings_up_next_swipe_play_last
     }
 
     @Composable
@@ -455,12 +454,12 @@ class PlaybackSettingsFragment : BaseFragment() {
         onSave: (PodcastGrouping) -> Unit,
     ) {
         SettingRadioDialogRow(
-            primaryText = stringResource(LR.string.settings_podcast_episode_grouping),
+            primaryText = stringResource(R.string.settings_podcast_episode_grouping),
             secondaryText = when (saved) {
-                PodcastGrouping.None -> stringResource(LR.string.settings_podcast_episode_grouping_summary_none)
+                PodcastGrouping.None -> stringResource(R.string.settings_podcast_episode_grouping_summary_none)
                 else -> {
                     val selected = stringResource(saved.groupName).lowercase(Locale.getDefault())
-                    stringResource(LR.string.settings_podcast_episode_grouping_summary, selected)
+                    stringResource(R.string.settings_podcast_episode_grouping_summary, selected)
                 }
             },
             options = PodcastGrouping.All,
@@ -473,11 +472,11 @@ class PlaybackSettingsFragment : BaseFragment() {
 
     @StringRes
     private fun podcastGroupingToStringRes(grouping: PodcastGrouping) = when (grouping) {
-        PodcastGrouping.Downloaded -> LR.string.settings_podcast_episode_grouping_title_downloaded
-        PodcastGrouping.None -> LR.string.settings_podcast_episode_grouping_title_none
-        PodcastGrouping.Season -> LR.string.settings_podcast_episode_grouping_title_season
-        PodcastGrouping.Starred -> LR.string.settings_podcast_episode_grouping_title_starred
-        PodcastGrouping.Unplayed -> LR.string.settings_podcast_episode_grouping_title_unplayed
+        PodcastGrouping.Downloaded -> R.string.settings_podcast_episode_grouping_title_downloaded
+        PodcastGrouping.None -> R.string.settings_podcast_episode_grouping_title_none
+        PodcastGrouping.Season -> R.string.settings_podcast_episode_grouping_title_season
+        PodcastGrouping.Starred -> R.string.settings_podcast_episode_grouping_title_starred
+        PodcastGrouping.Unplayed -> R.string.settings_podcast_episode_grouping_title_unplayed
     }
 
     @Composable
@@ -485,18 +484,18 @@ class PlaybackSettingsFragment : BaseFragment() {
         saved: Boolean,
         onSave: (Boolean) -> Unit,
     ) = SettingRadioDialogRow(
-        primaryText = stringResource(LR.string.settings_show_archived),
+        primaryText = stringResource(R.string.settings_show_archived),
         secondaryText = when (saved) {
-            true -> getString(LR.string.settings_show_archived_summary_show)
-            false -> getString(LR.string.settings_show_archived_summary_hide)
+            true -> getString(R.string.settings_show_archived_summary_show)
+            false -> getString(R.string.settings_show_archived_summary_hide)
         },
         options = listOf(false, true),
         savedOption = saved,
         onSave = onSave,
         optionToLocalisedString = {
             when (it) {
-                true -> getString(LR.string.settings_show_archived_action_show)
-                false -> getString(LR.string.settings_show_archived_action_hide)
+                true -> getString(R.string.settings_show_archived_action_show)
+                false -> getString(R.string.settings_show_archived_action_hide)
             }
         },
         indent = false,
@@ -512,7 +511,7 @@ class PlaybackSettingsFragment : BaseFragment() {
 
         SettingRow(
             primaryText = primaryText,
-            secondaryText = stringResource(LR.string.seconds_plural, saved),
+            secondaryText = stringResource(R.string.seconds_plural, saved),
             modifier = Modifier.clickable { showDialog = true },
             indent = false,
         ) {
@@ -576,7 +575,7 @@ class PlaybackSettingsFragment : BaseFragment() {
                             backgroundColor = MaterialTheme.theme.colors.primaryUi01,
                         ),
                         label = {
-                            Text(stringResource(LR.string.seconds_label))
+                            Text(stringResource(R.string.seconds_label))
                         },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
@@ -599,8 +598,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun KeepScreenAwake(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(LR.string.settings_keep_screen_awake),
-            secondaryText = stringResource(LR.string.settings_keep_screen_awake_summary),
+            primaryText = stringResource(R.string.settings_keep_screen_awake),
+            secondaryText = stringResource(R.string.settings_keep_screen_awake_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -609,8 +608,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun OpenPlayerAutomatically(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(id = LR.string.settings_open_player_automatically),
-            secondaryText = stringResource(id = LR.string.settings_open_player_automatically_summary),
+            primaryText = stringResource(id = R.string.settings_open_player_automatically),
+            secondaryText = stringResource(id = R.string.settings_open_player_automatically_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -619,8 +618,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun IntelligentPlaybackResumption(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(LR.string.settings_playback_resumption),
-            secondaryText = stringResource(LR.string.settings_playback_resumption_summary),
+            primaryText = stringResource(R.string.settings_playback_resumption),
+            secondaryText = stringResource(R.string.settings_playback_resumption_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -629,8 +628,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun PlayUpNextOnTap(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(LR.string.settings_up_next_tap),
-            secondaryText = stringResource(LR.string.settings_up_next_tap_summary),
+            primaryText = stringResource(R.string.settings_up_next_tap),
+            secondaryText = stringResource(R.string.settings_up_next_tap_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -639,8 +638,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun ShakeToResetSleepTimer(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(LR.string.settings_sleep_timer_shake_to_reset),
-            secondaryText = stringResource(LR.string.settings_sleep_timer_shake_to_reset_summary),
+            primaryText = stringResource(R.string.settings_sleep_timer_shake_to_reset),
+            secondaryText = stringResource(R.string.settings_sleep_timer_shake_to_reset_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -649,8 +648,8 @@ class PlaybackSettingsFragment : BaseFragment() {
     @Composable
     private fun AutoSleepTimerRestart(saved: Boolean, onSave: (Boolean) -> Unit) =
         SettingRow(
-            primaryText = stringResource(LR.string.settings_sleep_timer_auto_restart),
-            secondaryText = stringResource(LR.string.settings_sleep_timer_auto_restart_summary),
+            primaryText = stringResource(R.string.settings_sleep_timer_auto_restart),
+            secondaryText = stringResource(R.string.settings_sleep_timer_auto_restart_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
             indent = false,
@@ -661,8 +660,8 @@ class PlaybackSettingsFragment : BaseFragment() {
         saved: Boolean,
         onSave: (Boolean) -> Unit,
     ) = SettingRow(
-        primaryText = stringResource(LR.string.settings_autoplay),
-        secondaryText = stringResource(LR.string.settings_continuous_playback_summary),
+        primaryText = stringResource(R.string.settings_autoplay),
+        secondaryText = stringResource(R.string.settings_continuous_playback_summary),
         toggle = SettingRowToggle.Switch(checked = saved),
         modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
         indent = false,
@@ -673,8 +672,8 @@ class PlaybackSettingsFragment : BaseFragment() {
         saved: Boolean,
         onSave: (Boolean) -> Unit,
     ) = SettingRow(
-        primaryText = stringResource(LR.string.settings_real_time_playback),
-        secondaryText = stringResource(LR.string.settings_real_time_playback_summary),
+        primaryText = stringResource(R.string.settings_real_time_playback),
+        secondaryText = stringResource(R.string.settings_real_time_playback_summary),
         toggle = SettingRowToggle.Switch(checked = saved),
         modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
         indent = false,
@@ -682,12 +681,12 @@ class PlaybackSettingsFragment : BaseFragment() {
 
     private fun showSetAllGroupingDialog(grouping: PodcastGrouping) {
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.settings_apply_to_existing)))
-            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.settings_no_thanks)))
-            .setTitle(getString(LR.string.settings_apply_to_existing_podcasts))
+            .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.settings_apply_to_existing)))
+            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.settings_no_thanks)))
+            .setTitle(getString(R.string.settings_apply_to_existing_podcasts))
             .setSummary(
                 getString(
-                    LR.string.settings_apply_group_by,
+                    R.string.settings_apply_group_by,
                     getString(grouping.groupName).lowercase(),
                 ),
             )
@@ -702,10 +701,10 @@ class PlaybackSettingsFragment : BaseFragment() {
 
     private fun showSetAllArchiveDialog(shouldShow: Boolean) {
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.settings_apply_to_existing)))
-            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.settings_no_thanks)))
-            .setTitle(getString(LR.string.settings_apply_to_existing_podcasts))
-            .setSummary(getString(if (shouldShow) LR.string.settings_apply_archived_show else LR.string.settings_apply_archived_hide))
+            .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.settings_apply_to_existing)))
+            .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.settings_no_thanks)))
+            .setTitle(getString(R.string.settings_apply_to_existing_podcasts))
+            .setSummary(getString(if (shouldShow) R.string.settings_apply_archived_show else R.string.settings_apply_archived_hide))
             .setIconId(R.drawable.ic_podcasts)
             .setOnConfirm {
                 applicationScope.launch {

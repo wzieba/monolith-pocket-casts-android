@@ -73,7 +73,7 @@ class HelpFragment : BaseFragment(), HasBackstack, Toolbar.OnMenuItemClickListen
 
         val toolbar = view.findToolbar()
         toolbar.setup(
-            title = getString(LR.string.settings_title_help),
+            title = getString(R.string.settings_title_help),
             navigationIcon = BackArrow,
             activity = activity,
             theme = theme,
@@ -266,9 +266,9 @@ class HelpFragment : BaseFragment(), HasBackstack, Toolbar.OnMenuItemClickListen
         val context = context ?: return
         val forumUrl = "https://forums.pocketcasts.com/"
         AlertDialog.Builder(context)
-            .setTitle(LR.string.settings_forums)
-            .setMessage(context.getString(LR.string.settings_forums_description, forumUrl))
-            .setPositiveButton(LR.string.settings_take_me_there) { _, _ ->
+            .setTitle(R.string.settings_forums)
+            .setMessage(context.getString(R.string.settings_forums_description, forumUrl))
+            .setPositiveButton(R.string.settings_take_me_there) { _, _ ->
                 val intent =
                     Intent(Intent.ACTION_VIEW, Uri.parse(forumUrl))
                 startActivity(intent)
@@ -299,7 +299,7 @@ class HelpFragment : BaseFragment(), HasBackstack, Toolbar.OnMenuItemClickListen
             context = context,
             file = file,
             intentType = "application/zip",
-            errorMessage = context.getString(LR.string.settings_export_database_failed),
+            errorMessage = context.getString(R.string.settings_export_database_failed),
         )
     }
 }

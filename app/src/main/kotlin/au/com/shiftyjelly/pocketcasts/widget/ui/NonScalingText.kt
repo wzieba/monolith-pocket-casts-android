@@ -8,7 +8,7 @@ import androidx.glance.GlanceModifier
 import androidx.glance.LocalContext
 import androidx.glance.appwidget.AndroidRemoteViews
 import androidx.glance.layout.wrapContentSize
-import au.com.shiftyjelly.pocketcasts.widget.R
+import au.com.shiftyjelly.pocketcasts.R
 
 @Composable
 internal fun NonScalingText(

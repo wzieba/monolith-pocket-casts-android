@@ -83,7 +83,7 @@ class PodcastEffectsFragment : PreferenceFragmentCompat() {
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
 
         toolbar.setup(
-            title = getString(LR.string.podcast_playback_effects),
+            title = getString(R.string.podcast_playback_effects),
             navigationIcon = NavigationIcon.BackArrow,
             activity = activity,
             theme = theme,
@@ -160,7 +160,7 @@ class PodcastEffectsFragment : PreferenceFragmentCompat() {
     private fun updateTintColor(tintColor: Int) {
         // xml doesn't support tinting icons so we need to do it manually
         val context = preferenceManager.context
-        preferencePlaybackSpeed?.icon = context.getTintedDrawable(IR.drawable.ic_speed, tintColor)
+        preferencePlaybackSpeed?.icon = context.getTintedDrawable(R.drawable.ic_speed, tintColor)
         preferenceTrimSilence?.icon = context.getTintedDrawable(R.drawable.ic_silence, tintColor)
         preferenceBoostVolume?.icon = context.getTintedDrawable(R.drawable.ic_volumeboost, tintColor)
     }

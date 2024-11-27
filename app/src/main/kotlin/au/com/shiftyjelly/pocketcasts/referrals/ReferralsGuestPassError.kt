@@ -65,7 +65,7 @@ fun ReferralsGuestPassError(
             ),
         ) {
             TextP40(
-                text = stringResource(LR.string.try_again),
+                text = stringResource(R.string.try_again),
                 color = Color.White,
                 fontSize = 15.sp,
                 fontWeight = FontWeight.W400,
@@ -80,7 +80,7 @@ fun ReferralsGuestPassError(
 fun ReferralsSendGuestPassErrorPreview() {
     AppTheme(Theme.ThemeType.DARK) {
         ReferralsGuestPassError(
-            errorMessage = stringResource(LR.string.error_no_network),
+            errorMessage = stringResource(R.string.error_no_network),
             onRetry = {},
             onDismiss = {},
         )

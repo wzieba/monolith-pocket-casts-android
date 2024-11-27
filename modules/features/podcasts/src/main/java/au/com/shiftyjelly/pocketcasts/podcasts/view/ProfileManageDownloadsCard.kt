@@ -53,8 +53,8 @@ fun ManageDownloadsCard(
 
     ) {
         Icon(
-            painter = painterResource(id = IR.drawable.pencil_cleanup),
-            contentDescription = stringResource(LR.string.pencil_clean_up_icon_content_description),
+            painter = painterResource(id = R.drawable.pencil_cleanup),
+            contentDescription = stringResource(R.string.pencil_clean_up_icon_content_description),
             modifier = Modifier
                 .padding(end = 12.dp)
                 .size(24.dp),
@@ -66,7 +66,7 @@ fun ManageDownloadsCard(
             modifier = Modifier.padding(end = 16.dp),
         ) {
             TextH40(
-                text = stringResource(LR.string.need_to_free_up_space),
+                text = stringResource(R.string.need_to_free_up_space),
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.theme.colors.primaryText01,
             )
@@ -74,12 +74,12 @@ fun ManageDownloadsCard(
             Spacer(modifier = Modifier.height(2.dp))
 
             TextP50(
-                text = stringResource(LR.string.save_space_by_managing_downloaded_episodes, formattedTotalDownloadSize),
+                text = stringResource(R.string.save_space_by_managing_downloaded_episodes, formattedTotalDownloadSize),
                 color = MaterialTheme.theme.colors.primaryText02,
             )
 
             TextButton(onClick = { onManageDownloadsClick.invoke() }, contentPadding = PaddingValues()) {
-                TextH50(text = stringResource(LR.string.manage_downloads), color = MaterialTheme.theme.colors.primaryIcon01)
+                TextH50(text = stringResource(R.string.manage_downloads), color = MaterialTheme.theme.colors.primaryIcon01)
             }
         }
     }

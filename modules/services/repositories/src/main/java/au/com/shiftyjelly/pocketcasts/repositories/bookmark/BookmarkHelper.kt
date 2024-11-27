@@ -57,7 +57,7 @@ class BookmarkHelper @Inject constructor(
                 bookmark = bookmarkManager.add(
                     episode = episode,
                     timeSecs = timeInSecs,
-                    title = context.getString(LR.string.bookmark),
+                    title = context.getString(R.string.bookmark),
                     creationSource = BookmarkManager.CreationSource.HEADPHONES,
                 )
             }
@@ -79,14 +79,14 @@ private fun buildAndShowNotification(
     bookmarkUuid: String,
 ) {
     val changeTitleAction = NotificationCompat.Action(
-        IR.drawable.ic_notification_edit,
-        context.getString(LR.string.bookmark_notification_action_change_title),
+        R.drawable.ic_notification_edit,
+        context.getString(R.string.bookmark_notification_action_change_title),
         buildPendingIntent(context, ChangeBookmarkTitleDeepLink(bookmarkUuid).toIntent(context)),
     )
 
     val deleteAction = NotificationCompat.Action(
         R.drawable.ic_delete_black,
-        context.getString(LR.string.bookmark_notification_action_delete_title),
+        context.getString(R.string.bookmark_notification_action_delete_title),
         buildPendingIntent(context, DeleteBookmarkDeepLink(bookmarkUuid).toIntent(context)),
     )
 
@@ -95,9 +95,9 @@ private fun buildAndShowNotification(
         Settings.NotificationChannel.NOTIFICATION_CHANNEL_ID_BOOKMARK.id,
     )
         .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-        .setContentTitle(context.getString(LR.string.bookmark_notification_title_added))
-        .setContentText(context.getString(LR.string.bookmark_notification_content_tap_to_view))
-        .setSmallIcon(IR.drawable.notification)
+        .setContentTitle(context.getString(R.string.bookmark_notification_title_added))
+        .setContentText(context.getString(R.string.bookmark_notification_content_tap_to_view))
+        .setSmallIcon(R.drawable.notification)
         .setAutoCancel(true)
         .setOnlyAlertOnce(true)
         .setContentIntent(buildPendingIntent(context, ShowBookmarkDeepLink(bookmarkUuid).toIntent(context)))

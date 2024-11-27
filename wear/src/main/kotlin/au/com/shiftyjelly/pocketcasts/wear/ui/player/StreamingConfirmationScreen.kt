@@ -25,7 +25,7 @@ fun StreamingConfirmationScreen(
         timeText = {},
     ) {
         ObtainConfirmationScreen(
-            text = stringResource(LR.string.stream_warning_summary_short),
+            text = stringResource(R.string.stream_warning_summary_short),
             onConfirm = { onFinished(Result.CONFIRMED) },
             onCancel = { onFinished(Result.CANCELLED) },
         )

@@ -160,7 +160,7 @@ private fun AppBarWithShare(
     modifier: Modifier = Modifier,
 ) {
     ThemedTopAppBar(
-        title = stringResource(LR.string.settings_logs),
+        title = stringResource(R.string.settings_logs),
         onNavigationClick = onBackPressed,
         actions = {
             IconButton(
@@ -169,7 +169,7 @@ private fun AppBarWithShare(
             ) {
                 Icon(
                     imageVector = Icons.Default.VerticalAlignTop,
-                    contentDescription = stringResource(LR.string.go_to_top),
+                    contentDescription = stringResource(R.string.go_to_top),
                 )
             }
             IconButton(
@@ -178,7 +178,7 @@ private fun AppBarWithShare(
             ) {
                 Icon(
                     imageVector = Icons.Default.VerticalAlignBottom,
-                    contentDescription = stringResource(LR.string.go_to_bottom),
+                    contentDescription = stringResource(R.string.go_to_bottom),
                 )
             }
             IconButton(
@@ -187,7 +187,7 @@ private fun AppBarWithShare(
             ) {
                 Icon(
                     imageVector = Icons.Default.CopyAll,
-                    contentDescription = stringResource(LR.string.share),
+                    contentDescription = stringResource(R.string.share),
                 )
             }
             IconButton(
@@ -196,7 +196,7 @@ private fun AppBarWithShare(
             ) {
                 Icon(
                     imageVector = Icons.Default.Share,
-                    contentDescription = stringResource(LR.string.share),
+                    contentDescription = stringResource(R.string.share),
                 )
             }
         },

@@ -14,6 +14,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.view.doOnLayout
 import androidx.fragment.compose.content
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.buttons.ToggleButtonOption
 import au.com.shiftyjelly.pocketcasts.compose.dialogs.OptionsDialogComponent
@@ -24,7 +25,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class OptionsDialog : BottomSheetDialogFragment() {
@@ -47,8 +47,8 @@ class OptionsDialog : BottomSheetDialogFragment() {
             return super.onCreateDialog(savedInstanceState)
         }
 
-        val context = ContextThemeWrapper(requireContext(), UR.style.ThemeDark)
-        return BottomSheetDialog(context, UR.style.BottomSheetDialogThemeDark)
+        val context = ContextThemeWrapper(requireContext(), R.style.ThemeDark)
+        return BottomSheetDialog(context, R.style.BottomSheetDialogThemeDark)
     }
 
     fun setTitle(title: String): OptionsDialog {

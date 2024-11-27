@@ -12,12 +12,13 @@ import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentAccountBinding
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.components.ContinueWithGoogleButton
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.AccountFragmentViewModel
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentAccountBinding
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeTintedDrawable
 import au.com.shiftyjelly.pocketcasts.utils.Util
@@ -25,10 +26,6 @@ import au.com.shiftyjelly.pocketcasts.utils.observeOnce
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.cartheme.R as CR
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class AccountFragment : BaseFragment() {
@@ -63,10 +60,10 @@ class AccountFragment : BaseFragment() {
 
                 if (it is SignInState.SignedIn) {
                     binding.btnSignIn.isVisible = false
-                    binding.lblSignIn.text = getString(LR.string.profile_alreadysignedin)
-                    binding.lblSaveYourPodcasts.text = getString(LR.string.profile_alreadysignedindescription)
-                    binding.imgCreateAccount.setup(view.context.getThemeTintedDrawable(IR.drawable.ic_alert_small, UR.attr.support_05))
-                    binding.btnCreate.text = getString(LR.string.done)
+                    binding.lblSignIn.text = getString(R.string.profile_alreadysignedin)
+                    binding.lblSaveYourPodcasts.text = getString(R.string.profile_alreadysignedindescription)
+                    binding.imgCreateAccount.setup(view.context.getThemeTintedDrawable(R.drawable.ic_alert_small, R.attr.support_05))
+                    binding.btnCreate.text = getString(R.string.done)
                     binding.btnCreate.setOnClickListener { activity?.finish() }
                 }
             },
@@ -89,7 +86,7 @@ class AccountFragment : BaseFragment() {
                 AppThemeWithBackground(theme.activeTheme) {
                     ContinueWithGoogleButton(
                         flow = null,
-                        fontSize = dimensionResource(CR.dimen.car_body2_size).value.sp,
+                        fontSize = dimensionResource(R.dimen.car_body2_size).value.sp,
                         includePadding = false,
                         onComplete = { activity?.finish() },
                     )

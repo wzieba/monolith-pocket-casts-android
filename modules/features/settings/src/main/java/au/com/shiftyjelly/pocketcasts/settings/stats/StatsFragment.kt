@@ -119,7 +119,7 @@ private fun StatsPage(
 ) {
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.profile_navigation_stats),
+            title = stringResource(R.string.profile_navigation_stats),
             onNavigationClick = onBackClick,
         )
         when (state) {
@@ -145,12 +145,12 @@ private fun StatsPageError(onRetryClick: () -> Unit, modifier: Modifier = Modifi
         modifier = Modifier.fillMaxSize(),
     ) {
         TextH40(
-            text = stringResource(LR.string.profile_status_error_internet),
+            text = stringResource(R.string.profile_status_error_internet),
             textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(12.dp))
         TextH40(
-            text = stringResource(LR.string.retry),
+            text = stringResource(R.string.retry),
             color = MaterialTheme.theme.colors.primaryInteractive01,
             modifier = modifier
                 .clickable { onRetryClick() }
@@ -173,11 +173,11 @@ private fun StatsPageLoaded(
     ) {
         if (state.startedAt == null || state.startedAt.time <= 0) {
             item {
-                TextP40(stringResource(LR.string.profile_stats_listened_for))
+                TextP40(stringResource(R.string.profile_stats_listened_for))
             }
         } else {
             item {
-                TextP40(stringResource(LR.string.profile_stats_since_listened_for, state.startedAt.toLocalizedFormatLongStyle()))
+                TextP40(stringResource(R.string.profile_stats_since_listened_for, state.startedAt.toLocalizedFormatLongStyle()))
             }
         }
         item {
@@ -190,34 +190,34 @@ private fun StatsPageLoaded(
             Spacer(Modifier.height(24.dp))
         }
         item {
-            TextC70(stringResource(LR.string.profile_stats_time_saved_by))
+            TextC70(stringResource(R.string.profile_stats_time_saved_by))
             Spacer(Modifier.height(6.dp))
         }
         item {
             StatsRow(
                 icon = R.drawable.ic_skipping,
-                label = LR.string.profile_stats_skipping,
+                label = R.string.profile_stats_skipping,
                 value = state.skipping,
             )
         }
         item {
             StatsRow(
                 icon = R.drawable.ic_speed,
-                label = LR.string.profile_stats_variable_speed,
+                label = R.string.profile_stats_variable_speed,
                 value = state.variableSpeed,
             )
         }
         item {
             StatsRow(
                 icon = R.drawable.ic_trim,
-                label = LR.string.profile_stats_trim_silence,
+                label = R.string.profile_stats_trim_silence,
                 value = state.trimSilence,
             )
         }
         item {
             StatsRow(
                 icon = R.drawable.ic_skip_both,
-                label = LR.string.profile_stats_auto_skipping,
+                label = R.string.profile_stats_auto_skipping,
                 value = state.autoSkipping,
             )
             Spacer(Modifier.height(12.dp))
@@ -243,7 +243,7 @@ private fun StatsPageLoaded(
 @Composable
 private fun TotalRow(time: Long) {
     Row(Modifier.semantics(mergeDescendants = true) {}) {
-        TextP40(stringResource(LR.string.profile_stats_total))
+        TextP40(stringResource(R.string.profile_stats_total))
         Spacer(Modifier.weight(1f))
         TimeText(
             time = time,

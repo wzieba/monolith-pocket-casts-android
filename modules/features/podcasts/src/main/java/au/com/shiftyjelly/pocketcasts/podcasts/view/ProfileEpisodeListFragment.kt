@@ -409,9 +409,9 @@ class ProfileEpisodeListFragment : BaseFragment(), Toolbar.OnMenuItemClickListen
     private fun updateToolbar() {
         val toolbar = binding?.toolbar ?: return
         val title = when (mode) {
-            is Mode.Downloaded -> LR.string.profile_navigation_downloads
-            is Mode.Starred -> LR.string.profile_navigation_starred
-            is Mode.History -> LR.string.profile_navigation_listening_history
+            is Mode.Downloaded -> R.string.profile_navigation_downloads
+            is Mode.Starred -> R.string.profile_navigation_starred
+            is Mode.History -> R.string.profile_navigation_listening_history
         }
         toolbar.setup(
             title = getString(title),
@@ -456,14 +456,14 @@ class ProfileEpisodeListFragment : BaseFragment(), Toolbar.OnMenuItemClickListen
             val dialog = OptionsDialog()
             if (mode is Mode.Downloaded) {
                 analyticsTracker.track(AnalyticsEvent.DOWNLOADS_OPTIONS_BUTTON_TAPPED)
-                dialog.addTextOption(LR.string.profile_auto_download_settings, imageId = R.drawable.ic_settings_small, click = this::showAutodownloadSettings)
+                dialog.addTextOption(R.string.profile_auto_download_settings, imageId = R.drawable.ic_settings_small, click = this::showAutodownloadSettings)
                 if (downloadManager.hasPendingOrRunningDownloads()) {
-                    dialog.addTextOption(LR.string.settings_auto_download_stop_all, imageId = IR.drawable.ic_stop, click = this::stopAllDownloads)
+                    dialog.addTextOption(R.string.settings_auto_download_stop_all, imageId = R.drawable.ic_stop, click = this::stopAllDownloads)
                 }
-                dialog.addTextOption(LR.string.profile_clean_up, imageId = VR.drawable.ic_delete, click = this::showCleanupSettings)
+                dialog.addTextOption(R.string.profile_clean_up, imageId = VR.drawable.ic_delete, click = this::showCleanupSettings)
             } else if (mode is Mode.History) {
                 analyticsTracker.track(AnalyticsEvent.LISTENING_HISTORY_OPTIONS_BUTTON_TAPPED)
-                dialog.addTextOption(LR.string.profile_clear_listening_history, imageId = R.drawable.ic_history, click = this::clearListeningHistory)
+                dialog.addTextOption(R.string.profile_clear_listening_history, imageId = R.drawable.ic_history, click = this::clearListeningHistory)
             }
             dialog.show(parentFragmentManager, "more_options")
             true
@@ -476,7 +476,7 @@ class ProfileEpisodeListFragment : BaseFragment(), Toolbar.OnMenuItemClickListen
         val fragment = AutoDownloadSettingsFragment.newInstance(showToolbar = true)
         showFragment(fragment)
         analyticsTracker.track(AnalyticsEvent.DOWNLOADS_OPTIONS_MODAL_OPTION_TAPPED, mapOf(OPTION_KEY to AUTO_DOWNLOAD_SETTINGS))
-        (activity as AppCompatActivity).supportActionBar?.setTitle(LR.string.profile_auto_download_settings)
+        (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.profile_auto_download_settings)
     }
 
     private fun stopAllDownloads() {
@@ -494,9 +494,9 @@ class ProfileEpisodeListFragment : BaseFragment(), Toolbar.OnMenuItemClickListen
         analyticsTracker.track(AnalyticsEvent.LISTENING_HISTORY_OPTIONS_MODAL_OPTION_TAPPED, mapOf(OPTION_KEY to CLEAR_HISTORY))
         val dialog = ConfirmationDialog()
             .setIconId(R.drawable.ic_history)
-            .setTitle(resources.getString(LR.string.profile_clear_listening_history_title))
-            .setSummary(resources.getString(LR.string.profile_clear_cannot_be_undone))
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(LR.string.profile_clear_all)))
+            .setTitle(resources.getString(R.string.profile_clear_listening_history_title))
+            .setSummary(resources.getString(R.string.profile_clear_cannot_be_undone))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(R.string.profile_clear_all)))
             .setOnConfirm {
                 analyticsTracker.track(AnalyticsEvent.LISTENING_HISTORY_CLEAR_HISTORY_BUTTON_TAPPED)
                 viewModel.clearAllEpisodeHistory()

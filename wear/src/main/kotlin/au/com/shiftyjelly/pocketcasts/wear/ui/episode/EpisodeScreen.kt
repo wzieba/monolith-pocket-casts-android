@@ -114,7 +114,7 @@ fun EpisodeScreen(
                     .fillMaxWidth(),
             ) {
                 val downloadSize = Util.formattedBytes(episode.sizeInBytes, context)
-                    .replace("-", stringResource(LR.string.podcasts_download_download))
+                    .replace("-", stringResource(R.string.podcasts_download_download))
 
                 val tintColor = state.tintColor ?: MaterialTheme.colors.primary
 
@@ -227,14 +227,14 @@ fun EpisodeScreen(
                 if (episode is PodcastEpisode) {
                     EpisodeScreenItem(
                         title = if (episode.isArchived) {
-                            LR.string.podcasts_unarchive
+                            R.string.podcasts_unarchive
                         } else {
-                            LR.string.archive
+                            R.string.archive
                         },
                         iconRes = if (episode.isArchived) {
-                            IR.drawable.ic_unarchive
+                            R.drawable.ic_unarchive
                         } else {
-                            IR.drawable.ic_archive
+                            R.drawable.ic_archive
                         },
                         onClick = viewModel::onArchiveClicked,
                     )
@@ -244,14 +244,14 @@ fun EpisodeScreen(
                 if (episode is PodcastEpisode) {
                     EpisodeScreenItem(
                         title = if (episode.isStarred) {
-                            LR.string.unstar
+                            R.string.unstar
                         } else {
-                            LR.string.star
+                            R.string.star
                         },
                         iconRes = if (episode.isStarred) {
-                            IR.drawable.ic_star_filled
+                            R.drawable.ic_star_filled
                         } else {
-                            IR.drawable.ic_star
+                            R.drawable.ic_star
                         },
                         onClick = viewModel::onStarClicked,
                     )
@@ -260,21 +260,21 @@ fun EpisodeScreen(
                 },
                 EpisodeScreenItem(
                     title = if (episodeIsMarkedPlayed) {
-                        LR.string.mark_unplayed
+                        R.string.mark_unplayed
                     } else {
-                        LR.string.mark_played
+                        R.string.mark_played
                     },
                     iconRes = if (episodeIsMarkedPlayed) {
-                        IR.drawable.ic_markasunplayed
+                        R.drawable.ic_markasunplayed
                     } else {
-                        IR.drawable.ic_markasplayed
+                        R.drawable.ic_markasplayed
                     },
                     onClick = viewModel::onMarkAsPlayedClicked,
                 ),
                 if (podcast != null) {
                     EpisodeScreenItem(
-                        title = LR.string.go_to_podcast,
-                        iconRes = IR.drawable.ic_goto_32,
+                        title = R.string.go_to_podcast,
+                        iconRes = R.drawable.ic_goto_32,
                         onClick = { navigateToPodcast(podcast.uuid) },
                     )
                 } else {

@@ -73,8 +73,8 @@ class BookmarkHeaderViewHolder(
                 modifier = Modifier,
             ) {
                 Icon(
-                    painter = painterResource(IR.drawable.ic_more_vert_black_24dp),
-                    contentDescription = stringResource(LR.string.more_options),
+                    painter = painterResource(R.drawable.ic_more_vert_black_24dp),
+                    contentDescription = stringResource(R.string.more_options),
                     tint = MaterialTheme.theme.colors.primaryIcon02,
                 )
             }
@@ -86,7 +86,7 @@ class BookmarkHeaderViewHolder(
         bookmarkHeader: BookmarkHeader,
         modifier: Modifier = Modifier,
     ) {
-        val hintText = stringResource(id = LR.string.bookmarks_search)
+        val hintText = stringResource(id = R.string.bookmarks_search)
         AndroidView(
             modifier = modifier,
             factory = { context ->
@@ -107,9 +107,9 @@ class BookmarkHeaderViewHolder(
     private fun BookmarksCountView(bookmarkHeader: BookmarkHeader) {
         TextP60(
             text = if (bookmarkHeader.bookmarksCount > 1) {
-                stringResource(LR.string.bookmarks_plural, bookmarkHeader.bookmarksCount)
+                stringResource(R.string.bookmarks_plural, bookmarkHeader.bookmarksCount)
             } else {
-                stringResource(LR.string.bookmarks_singular)
+                stringResource(R.string.bookmarks_singular)
             },
             color = MaterialTheme.theme.colors.primaryText02,
             modifier = Modifier

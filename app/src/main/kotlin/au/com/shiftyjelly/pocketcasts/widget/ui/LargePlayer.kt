@@ -68,7 +68,7 @@ internal fun LargePlayer(state: LargePlayerWidgetState) {
                             .height(expectedContentHeight + 12.dp),
                     ) {
                         NonScalingText(
-                            text = LocalContext.current.getString(LR.string.widget_nothing_in_up_next),
+                            text = LocalContext.current.getString(R.string.widget_nothing_in_up_next),
                             textSize = 16.dp,
                             useDynamicColors = state.useDynamicColors,
                             isBold = true,
@@ -77,7 +77,7 @@ internal fun LargePlayer(state: LargePlayerWidgetState) {
                             modifier = GlanceModifier.height(4.dp),
                         )
                         NonScalingText(
-                            text = LocalContext.current.getString(LR.string.widget_check_out_discover),
+                            text = LocalContext.current.getString(R.string.widget_check_out_discover),
                             textSize = 13.dp,
                             useDynamicColors = state.useDynamicColors,
                             isTransparent = true,

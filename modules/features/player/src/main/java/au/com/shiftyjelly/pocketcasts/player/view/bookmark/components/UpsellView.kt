@@ -91,8 +91,8 @@ private fun UpsellViewContent(
 }
 
 private fun SubscriptionTier.getContentDescription() = when (this) {
-    SubscriptionTier.PATRON -> LR.string.pocket_casts_patron
-    SubscriptionTier.PLUS -> LR.string.pocket_casts_plus
+    SubscriptionTier.PATRON -> R.string.pocket_casts_patron
+    SubscriptionTier.PLUS -> R.string.pocket_casts_plus
     SubscriptionTier.UNKNOWN -> throw IllegalStateException("Unknown subscription tier")
 }
 
@@ -100,9 +100,9 @@ private fun SubscriptionTier.getContentDescription() = when (this) {
 private fun getMessage(
     showEarlyAccessMessage: Boolean,
 ) = if (showEarlyAccessMessage) {
-    stringResource(LR.string.bookmarks_upsell_instructions_early_access)
+    stringResource(R.string.bookmarks_upsell_instructions_early_access)
 } else {
-    stringResource(LR.string.bookmarks_upsell_instructions)
+    stringResource(R.string.bookmarks_upsell_instructions)
 }
 
 @ShowkaseComposable(name = "UpsellView", group = "Subscriptions")

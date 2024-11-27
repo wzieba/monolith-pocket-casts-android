@@ -47,9 +47,9 @@ private fun Content(
             item {
                 ScreenHeaderChip(
                     text = if (episodes.isEmpty()) {
-                        LR.string.profile_empty_downloaded
+                        R.string.profile_empty_downloaded
                     } else {
-                        LR.string.downloads
+                        R.string.downloads
                     },
                 )
             }

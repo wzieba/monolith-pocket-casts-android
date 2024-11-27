@@ -137,7 +137,7 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
     ) {
         Column {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_title_headphone_controls),
+                title = stringResource(R.string.settings_title_headphone_controls),
                 bottomShadow = true,
                 onNavigationClick = { onBackPressed() },
             )
@@ -146,7 +146,7 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
             ) {
                 item {
                     TextP50(
-                        text = stringResource(LR.string.settings_headphone_controls_summary),
+                        text = stringResource(R.string.settings_headphone_controls_summary),
                         color = MaterialTheme.theme.colors.primaryText02,
                         modifier = Modifier.padding(16.dp),
                     )
@@ -188,14 +188,14 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
     ) {
         val iconColor = state.addBookmarkIconColor.toArgb()
         SettingRow(
-            primaryText = stringResource(LR.string.settings_headphone_controls_action_next),
+            primaryText = stringResource(R.string.settings_headphone_controls_action_next),
             secondaryText = stringResource(headphoneActionToStringRes(saved)),
-            icon = painterResource(IR.drawable.ic_skip_forward),
+            icon = painterResource(R.drawable.ic_skip_forward),
             modifier = Modifier
                 .clickable {
                     onOptionsDialogShown()
                     val optionsDialog = OptionsDialog()
-                        .setTitle(getString(LR.string.settings_headphone_controls_action_next))
+                        .setTitle(getString(R.string.settings_headphone_controls_action_next))
                         .setIconColor(iconColor)
                         .addCheckedOption(
                             titleId = headphoneActionToStringRes(HeadphoneAction.SKIP_FORWARD),
@@ -230,14 +230,14 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
     ) {
         val iconColor = state.addBookmarkIconColor.toArgb()
         SettingRow(
-            primaryText = stringResource(LR.string.settings_headphone_controls_action_previous),
+            primaryText = stringResource(R.string.settings_headphone_controls_action_previous),
             secondaryText = stringResource(headphoneActionToStringRes(saved)),
-            icon = painterResource(IR.drawable.ic_skip_back),
+            icon = painterResource(R.drawable.ic_skip_back),
             modifier = Modifier
                 .clickable {
                     onOptionsDialogShown()
                     val optionsDialog = OptionsDialog()
-                        .setTitle(getString(LR.string.settings_headphone_controls_action_previous))
+                        .setTitle(getString(R.string.settings_headphone_controls_action_previous))
                         .setIconColor(iconColor)
                         .addCheckedOption(
                             titleId = headphoneActionToStringRes(HeadphoneAction.SKIP_BACK),
@@ -270,8 +270,8 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
         onSave: (Boolean) -> Unit,
     ) {
         SettingRow(
-            primaryText = stringResource(LR.string.settings_headphone_controls_confirmation_sound),
-            secondaryText = stringResource(LR.string.settings_headphone_controls_confirmation_sound_summary),
+            primaryText = stringResource(R.string.settings_headphone_controls_confirmation_sound),
+            secondaryText = stringResource(R.string.settings_headphone_controls_confirmation_sound_summary),
             toggle = SettingRowToggle.Switch(checked = saved),
             modifier = Modifier.toggleable(value = saved, role = Role.Switch) { onSave(!saved) },
         )
@@ -286,11 +286,11 @@ class HeadphoneControlsSettingsFragment : BaseFragment() {
 
     @StringRes
     private fun headphoneActionToStringRes(action: HeadphoneAction) = when (action) {
-        HeadphoneAction.ADD_BOOKMARK -> LR.string.settings_headphone_controls_choice_add_bookmark
-        HeadphoneAction.SKIP_BACK -> LR.string.settings_headphone_controls_choice_skip_back
-        HeadphoneAction.SKIP_FORWARD -> LR.string.settings_headphone_controls_choice_skip_forward
-        HeadphoneAction.NEXT_CHAPTER -> LR.string.settings_headphone_controls_choice_next_chapter
-        HeadphoneAction.PREVIOUS_CHAPTER -> LR.string.settings_headphone_controls_choice_previous_chapter
+        HeadphoneAction.ADD_BOOKMARK -> R.string.settings_headphone_controls_choice_add_bookmark
+        HeadphoneAction.SKIP_BACK -> R.string.settings_headphone_controls_choice_skip_back
+        HeadphoneAction.SKIP_FORWARD -> R.string.settings_headphone_controls_choice_skip_forward
+        HeadphoneAction.NEXT_CHAPTER -> R.string.settings_headphone_controls_choice_next_chapter
+        HeadphoneAction.PREVIOUS_CHAPTER -> R.string.settings_headphone_controls_choice_previous_chapter
     }
 
     @Preview

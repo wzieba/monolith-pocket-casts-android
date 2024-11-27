@@ -434,66 +434,66 @@ class MediaSessionManager(
 
     private fun addCustomActions(stateBuilder: PlaybackStateCompat.Builder, currentEpisode: BaseEpisode, playbackState: PlaybackState) {
         if (!shouldHideCustomSkipButtons()) {
-            addCustomAction(stateBuilder, APP_ACTION_SKIP_BACK, "Skip back", IR.drawable.auto_skipback)
-            addCustomAction(stateBuilder, APP_ACTION_SKIP_FWD, "Skip forward", IR.drawable.auto_skipforward)
+            addCustomAction(stateBuilder, APP_ACTION_SKIP_BACK, "Skip back", R.drawable.auto_skipback)
+            addCustomAction(stateBuilder, APP_ACTION_SKIP_FWD, "Skip forward", R.drawable.auto_skipforward)
         }
 
         val visibleCount = if (settings.customMediaActionsVisibility.value) MediaNotificationControls.MAX_VISIBLE_OPTIONS else 0
         settings.mediaControlItems.value.take(visibleCount).forEach { mediaControl ->
             when (mediaControl) {
-                MediaNotificationControls.Archive -> addCustomAction(stateBuilder, APP_ACTION_ARCHIVE, "Archive", IR.drawable.ic_archive)
-                MediaNotificationControls.MarkAsPlayed -> addCustomAction(stateBuilder, APP_ACTION_MARK_AS_PLAYED, "Mark as played", IR.drawable.auto_markasplayed)
+                MediaNotificationControls.Archive -> addCustomAction(stateBuilder, APP_ACTION_ARCHIVE, "Archive", R.drawable.ic_archive)
+                MediaNotificationControls.MarkAsPlayed -> addCustomAction(stateBuilder, APP_ACTION_MARK_AS_PLAYED, "Mark as played", R.drawable.auto_markasplayed)
                 MediaNotificationControls.PlayNext -> addCustomAction(stateBuilder, APP_ACTION_PLAY_NEXT, "Play next", com.google.android.gms.cast.framework.R.drawable.cast_ic_mini_controller_skip_next)
                 MediaNotificationControls.PlaybackSpeed -> {
                     if (playbackManager.isAudioEffectsAvailable()) {
                         val drawableId = when (playbackState.playbackSpeed.roundedSpeed()) {
-                            in 0.0..<0.55 -> IR.drawable.auto_0_5
-                            in 0.55..<0.65 -> IR.drawable.auto_0_6
-                            in 0.65..<0.75 -> IR.drawable.auto_0_7
-                            in 0.75..<0.85 -> IR.drawable.auto_0_8
-                            in 0.85..<0.95 -> IR.drawable.auto_0_9
-                            in 0.95..<1.05 -> IR.drawable.auto_1
-                            in 1.05..<1.15 -> IR.drawable.auto_1_1
-                            in 1.15..<1.25 -> IR.drawable.auto_1_2
-                            in 1.25..<1.35 -> IR.drawable.auto_1_3
-                            in 1.35..<1.45 -> IR.drawable.auto_1_4
-                            in 1.45..<1.55 -> IR.drawable.auto_1_5
-                            in 1.55..<1.65 -> IR.drawable.auto_1_6
-                            in 1.65..<1.75 -> IR.drawable.auto_1_7
-                            in 1.75..<1.85 -> IR.drawable.auto_1_8
-                            in 1.85..<1.95 -> IR.drawable.auto_1_9
-                            in 1.95..<2.05 -> IR.drawable.auto_2
-                            in 2.05..<2.15 -> IR.drawable.auto_2_1
-                            in 2.15..<2.25 -> IR.drawable.auto_2_2
-                            in 2.25..<2.35 -> IR.drawable.auto_2_3
-                            in 2.35..<2.45 -> IR.drawable.auto_2_4
-                            in 2.45..<2.55 -> IR.drawable.auto_2_5
-                            in 2.55..<2.65 -> IR.drawable.auto_2_6
-                            in 2.65..<2.75 -> IR.drawable.auto_2_7
-                            in 2.75..<2.85 -> IR.drawable.auto_2_8
-                            in 2.85..<2.95 -> IR.drawable.auto_2_9
-                            in 2.95..<3.05 -> IR.drawable.auto_3
-                            in 3.05..<3.15 -> IR.drawable.auto_3_1
-                            in 3.15..<3.25 -> IR.drawable.auto_3_2
-                            in 3.25..<3.35 -> IR.drawable.auto_3_3
-                            in 3.35..<3.45 -> IR.drawable.auto_3_4
-                            in 3.45..<3.55 -> IR.drawable.auto_3_5
-                            in 3.55..<3.65 -> IR.drawable.auto_3_6
-                            in 3.65..<3.75 -> IR.drawable.auto_3_7
-                            in 3.75..<3.85 -> IR.drawable.auto_3_8
-                            in 3.85..<3.95 -> IR.drawable.auto_3_9
-                            in 3.95..<4.05 -> IR.drawable.auto_4
-                            in 4.05..<4.15 -> IR.drawable.auto_4_1
-                            in 4.15..<4.25 -> IR.drawable.auto_4_2
-                            in 4.25..<4.35 -> IR.drawable.auto_4_3
-                            in 4.35..<4.45 -> IR.drawable.auto_4_4
-                            in 4.45..<4.55 -> IR.drawable.auto_4_5
-                            in 4.55..<4.65 -> IR.drawable.auto_4_6
-                            in 4.65..<4.75 -> IR.drawable.auto_4_7
-                            in 4.75..<4.85 -> IR.drawable.auto_4_8
-                            in 4.85..<4.95 -> IR.drawable.auto_4_9
-                            in 4.95..<5.05 -> IR.drawable.auto_5
-                            else -> IR.drawable.auto_1
+                            in 0.0..<0.55 -> R.drawable.auto_0_5
+                            in 0.55..<0.65 -> R.drawable.auto_0_6
+                            in 0.65..<0.75 -> R.drawable.auto_0_7
+                            in 0.75..<0.85 -> R.drawable.auto_0_8
+                            in 0.85..<0.95 -> R.drawable.auto_0_9
+                            in 0.95..<1.05 -> R.drawable.auto_1
+                            in 1.05..<1.15 -> R.drawable.auto_1_1
+                            in 1.15..<1.25 -> R.drawable.auto_1_2
+                            in 1.25..<1.35 -> R.drawable.auto_1_3
+                            in 1.35..<1.45 -> R.drawable.auto_1_4
+                            in 1.45..<1.55 -> R.drawable.auto_1_5
+                            in 1.55..<1.65 -> R.drawable.auto_1_6
+                            in 1.65..<1.75 -> R.drawable.auto_1_7
+                            in 1.75..<1.85 -> R.drawable.auto_1_8
+                            in 1.85..<1.95 -> R.drawable.auto_1_9
+                            in 1.95..<2.05 -> R.drawable.auto_2
+                            in 2.05..<2.15 -> R.drawable.auto_2_1
+                            in 2.15..<2.25 -> R.drawable.auto_2_2
+                            in 2.25..<2.35 -> R.drawable.auto_2_3
+                            in 2.35..<2.45 -> R.drawable.auto_2_4
+                            in 2.45..<2.55 -> R.drawable.auto_2_5
+                            in 2.55..<2.65 -> R.drawable.auto_2_6
+                            in 2.65..<2.75 -> R.drawable.auto_2_7
+                            in 2.75..<2.85 -> R.drawable.auto_2_8
+                            in 2.85..<2.95 -> R.drawable.auto_2_9
+                            in 2.95..<3.05 -> R.drawable.auto_3
+                            in 3.05..<3.15 -> R.drawable.auto_3_1
+                            in 3.15..<3.25 -> R.drawable.auto_3_2
+                            in 3.25..<3.35 -> R.drawable.auto_3_3
+                            in 3.35..<3.45 -> R.drawable.auto_3_4
+                            in 3.45..<3.55 -> R.drawable.auto_3_5
+                            in 3.55..<3.65 -> R.drawable.auto_3_6
+                            in 3.65..<3.75 -> R.drawable.auto_3_7
+                            in 3.75..<3.85 -> R.drawable.auto_3_8
+                            in 3.85..<3.95 -> R.drawable.auto_3_9
+                            in 3.95..<4.05 -> R.drawable.auto_4
+                            in 4.05..<4.15 -> R.drawable.auto_4_1
+                            in 4.15..<4.25 -> R.drawable.auto_4_2
+                            in 4.25..<4.35 -> R.drawable.auto_4_3
+                            in 4.35..<4.45 -> R.drawable.auto_4_4
+                            in 4.45..<4.55 -> R.drawable.auto_4_5
+                            in 4.55..<4.65 -> R.drawable.auto_4_6
+                            in 4.65..<4.75 -> R.drawable.auto_4_7
+                            in 4.75..<4.85 -> R.drawable.auto_4_8
+                            in 4.85..<4.95 -> R.drawable.auto_4_9
+                            in 4.95..<5.05 -> R.drawable.auto_5
+                            else -> R.drawable.auto_1
                         }
 
                         stateBuilder.addCustomAction(APP_ACTION_CHANGE_SPEED, "Change speed", drawableId)
@@ -502,9 +502,9 @@ class MediaSessionManager(
                 MediaNotificationControls.Star -> {
                     if (currentEpisode is PodcastEpisode) {
                         if (currentEpisode.isStarred) {
-                            addCustomAction(stateBuilder, APP_ACTION_UNSTAR, "Unstar", IR.drawable.auto_starred)
+                            addCustomAction(stateBuilder, APP_ACTION_UNSTAR, "Unstar", R.drawable.auto_starred)
                         } else {
-                            addCustomAction(stateBuilder, APP_ACTION_STAR, "Star", IR.drawable.auto_star)
+                            addCustomAction(stateBuilder, APP_ACTION_STAR, "Star", R.drawable.auto_star)
                         }
                     }
                 }

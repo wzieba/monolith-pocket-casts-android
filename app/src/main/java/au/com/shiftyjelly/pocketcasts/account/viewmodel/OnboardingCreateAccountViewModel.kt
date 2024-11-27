@@ -38,7 +38,7 @@ class OnboardingCreateAccountViewModel @Inject constructor(
 
     private val _stateFlow = MutableStateFlow(
         OnboardingCreateAccountState(
-            noNetworkErrorMessage = getApplication<Application>().getString(LR.string.log_in_no_network),
+            noNetworkErrorMessage = getApplication<Application>().getString(R.string.log_in_no_network),
         ),
     )
     val stateFlow: StateFlow<OnboardingCreateAccountState> = _stateFlow

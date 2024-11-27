@@ -50,8 +50,8 @@ fun MarqueeTextMediaDisplay(
                 }
                 Image(
                     modifier = Modifier.size(imageSize),
-                    painter = painterResource(id = IR.drawable.playback_error),
-                    contentDescription = stringResource(id = LR.string.podcast_episode_playback_error),
+                    painter = painterResource(id = R.drawable.playback_error),
+                    contentDescription = stringResource(id = R.string.podcast_episode_playback_error),
                 )
                 Spacer(Modifier.width(4.dp))
             }

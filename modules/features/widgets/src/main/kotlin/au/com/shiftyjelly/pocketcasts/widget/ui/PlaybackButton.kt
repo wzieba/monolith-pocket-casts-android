@@ -25,7 +25,7 @@ internal fun PlaybackButton(
     modifier: GlanceModifier = GlanceModifier,
     isClickable: Boolean = true,
 ) {
-    val contentDescription = LocalContext.current.getString(if (isPlaying) LR.string.play_episode else LR.string.pause_episode)
+    val contentDescription = LocalContext.current.getString(if (isPlaying) R.string.play_episode else R.string.pause_episode)
     val source = LocalSource.current
 
     RounderCornerBox(
@@ -38,7 +38,7 @@ internal fun PlaybackButton(
         },
     ) {
         Image(
-            provider = ImageProvider(if (isPlaying) IR.drawable.ic_widget_pause else IR.drawable.ic_widget_play),
+            provider = ImageProvider(if (isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play),
             contentDescription = null,
             colorFilter = ColorFilter.tint(LocalWidgetTheme.current.icon),
             modifier = GlanceModifier.fillMaxSize().padding(vertical = iconPadding),

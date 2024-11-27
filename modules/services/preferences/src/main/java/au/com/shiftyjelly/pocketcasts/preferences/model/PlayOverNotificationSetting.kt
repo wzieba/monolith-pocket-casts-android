@@ -12,19 +12,19 @@ enum class PlayOverNotificationSetting(
     NEVER(
         preferenceInt = 2,
         serverId = 0,
-        titleRes = LR.string.settings_notification_play_over_never,
+        titleRes = R.string.settings_notification_play_over_never,
         analyticsString = "never",
     ),
     DUCK(
         preferenceInt = 1,
         serverId = 2,
-        titleRes = LR.string.settings_notification_play_over_duck,
+        titleRes = R.string.settings_notification_play_over_duck,
         analyticsString = "duck",
     ),
     ALWAYS(
         preferenceInt = 0,
         serverId = 1,
-        titleRes = LR.string.settings_notification_play_over_always,
+        titleRes = R.string.settings_notification_play_over_always,
         analyticsString = "always",
     ),
     ;

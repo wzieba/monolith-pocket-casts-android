@@ -180,9 +180,9 @@ class UpNextAdapter(
                 val time = TimeHelper.getTimeDurationShortString(timeMs = (header.totalTimeSecs * 1000).toLong(), context = root.context)
                 lblUpNextTime.isVisible = hasEpisodeInProgress()
                 lblUpNextTime.text = if (header.episodeCount == 0) {
-                    root.resources.getString(LR.string.player_up_next_time_left, time)
+                    root.resources.getString(R.string.player_up_next_time_left, time)
                 } else {
-                    root.resources.getQuantityString(LR.plurals.player_up_next_header_title, header.episodeCount, header.episodeCount, time)
+                    root.resources.getQuantityString(R.plurals.player_up_next_header_title, header.episodeCount, header.episodeCount, time)
                 }
 
                 shuffle.isVisible = isUpNextNotEmpty && FeatureFlag.isEnabled(Feature.UP_NEXT_SHUFFLE)
@@ -210,17 +210,17 @@ class UpNextAdapter(
 
             this.setImageResource(
                 when {
-                    !isSignedInAsPaidUser -> IR.drawable.shuffle_plus_feature_icon
-                    settings.upNextShuffle.value -> IR.drawable.shuffle_enabled
-                    else -> IR.drawable.shuffle
+                    !isSignedInAsPaidUser -> R.drawable.shuffle_plus_feature_icon
+                    settings.upNextShuffle.value -> R.drawable.shuffle_enabled
+                    else -> R.drawable.shuffle
                 },
             )
 
             this.contentDescription = context.getString(
                 when {
-                    isSignedInAsPaidUser -> LR.string.up_next_shuffle_button_content_description
-                    settings.upNextShuffle.value -> LR.string.up_next_shuffle_disable_button_content_description
-                    else -> LR.string.up_next_shuffle_button_content_description
+                    isSignedInAsPaidUser -> R.string.up_next_shuffle_button_content_description
+                    settings.upNextShuffle.value -> R.string.up_next_shuffle_disable_button_content_description
+                    else -> R.string.up_next_shuffle_button_content_description
                 },
             )
 
@@ -234,7 +234,7 @@ class UpNextAdapter(
 
             TooltipCompat.setTooltipText(
                 this,
-                context.getString(LR.string.up_next_shuffle_button_content_description),
+                context.getString(R.string.up_next_shuffle_button_content_description),
             )
         }
 

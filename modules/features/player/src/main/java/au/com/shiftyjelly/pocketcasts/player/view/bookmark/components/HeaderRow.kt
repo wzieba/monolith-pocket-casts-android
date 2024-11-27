@@ -44,8 +44,8 @@ fun HeaderRow(
             onClick = { onOptionsMenuClicked() },
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_more_vert_black_24dp),
-                contentDescription = stringResource(LR.string.more_options),
+                painter = painterResource(R.drawable.ic_more_vert_black_24dp),
+                contentDescription = stringResource(R.string.more_options),
                 tint = style.iconColor(),
             )
         }

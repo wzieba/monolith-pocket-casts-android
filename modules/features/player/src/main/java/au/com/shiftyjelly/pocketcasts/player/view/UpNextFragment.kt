@@ -266,7 +266,7 @@ class UpNextFragment : BaseFragment(), UpNextListener, UpNextTouchCallback.ItemT
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
         setupToolbarAndStatusBar(
             toolbar = binding.toolbar,
-            title = getString(LR.string.up_next),
+            title = getString(R.string.up_next),
             menu = R.menu.upnext,
             navigationIcon = if (upNextSource != UpNextSource.UP_NEXT_TAB) {
                 NavigationIcon.Close
@@ -278,7 +278,7 @@ class UpNextFragment : BaseFragment(), UpNextListener, UpNextTouchCallback.ItemT
             toolbarColors = null,
         )
         if (upNextSource != UpNextSource.UP_NEXT_TAB) {
-            toolbar.setNavigationIcon(IR.drawable.ic_close)
+            toolbar.setNavigationIcon(R.drawable.ic_close)
         }
         toolbar.menu.findItem(R.id.media_route_menu_item)?.isVisible = upNextSource == UpNextSource.UP_NEXT_TAB
         toolbar.navigationIcon?.setTint(ThemeColor.secondaryIcon01(overrideTheme))
@@ -349,7 +349,7 @@ class UpNextFragment : BaseFragment(), UpNextListener, UpNextTouchCallback.ItemT
                 }
             }
 
-            multiSelectToolbar.setNavigationIcon(IR.drawable.ic_arrow_back)
+            multiSelectToolbar.setNavigationIcon(R.drawable.ic_arrow_back)
 
             adapter.notifyDataSetChanged()
         }

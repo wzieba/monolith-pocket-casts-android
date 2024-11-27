@@ -106,7 +106,7 @@ private fun Content(
         horizontalArrangement = Arrangement.End,
     ) {
         RowTextButton(
-            text = stringResource(LR.string.not_now),
+            text = stringResource(R.string.not_now),
             colors = ButtonDefaults.outlinedButtonColors(
                 backgroundColor = Color.Transparent,
                 contentColor = Color.White,
@@ -128,8 +128,8 @@ private fun Content(
             SubscriptionBadge(
                 fontSize = 16.sp,
                 padding = 8.dp,
-                iconRes = IR.drawable.ic_plus,
-                shortNameRes = LR.string.pocket_casts_plus_short,
+                iconRes = R.drawable.ic_plus,
+                shortNameRes = R.string.pocket_casts_plus_short,
                 iconColor = Color.Black,
                 backgroundBrush = plusGradientBrush,
                 textColor = Color.Black,
@@ -176,7 +176,7 @@ private fun SmallDeviceContent(
         horizontalArrangement = Arrangement.End,
     ) {
         RowTextButton(
-            text = stringResource(LR.string.not_now),
+            text = stringResource(R.string.not_now),
             colors = ButtonDefaults.outlinedButtonColors(
                 backgroundColor = Color.Transparent,
                 contentColor = Color.White,
@@ -198,8 +198,8 @@ private fun SmallDeviceContent(
             SubscriptionBadge(
                 fontSize = 16.sp,
                 padding = 4.dp,
-                iconRes = IR.drawable.ic_plus,
-                shortNameRes = LR.string.pocket_casts_plus_short,
+                iconRes = R.drawable.ic_plus,
+                shortNameRes = R.string.pocket_casts_plus_short,
                 iconColor = Color.Black,
                 backgroundBrush = plusGradientBrush,
                 textColor = Color.Black,

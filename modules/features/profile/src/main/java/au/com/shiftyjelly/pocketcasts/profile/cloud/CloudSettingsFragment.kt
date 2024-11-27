@@ -58,7 +58,7 @@ class CloudSettingsFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.toolbar.setup(title = getString(LR.string.profile_cloud_settings_title), navigationIcon = BackArrow, activity = activity, theme = theme)
+        binding.toolbar.setup(title = getString(R.string.profile_cloud_settings_title), navigationIcon = BackArrow, activity = activity, theme = theme)
 
         context?.let { context ->
             AppCompatResources.getDrawable(context, R.drawable.ic_lock)?.let {

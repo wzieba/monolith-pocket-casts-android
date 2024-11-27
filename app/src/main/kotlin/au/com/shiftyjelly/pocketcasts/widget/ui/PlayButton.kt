@@ -25,7 +25,7 @@ internal fun PlayButton(
     iconPadding: Dp,
     modifier: GlanceModifier = GlanceModifier,
 ) {
-    val contentDescription = LocalContext.current.getString(LR.string.play_episode)
+    val contentDescription = LocalContext.current.getString(R.string.play_episode)
 
     RounderCornerBox(
         contentAlignment = Alignment.Center,
@@ -35,7 +35,7 @@ internal fun PlayButton(
             .semantics { this.contentDescription = contentDescription },
     ) {
         Image(
-            provider = ImageProvider(IR.drawable.ic_widget_play),
+            provider = ImageProvider(R.drawable.ic_widget_play),
             contentDescription = null,
             colorFilter = ColorFilter.tint(LocalWidgetTheme.current.icon),
             modifier = GlanceModifier.fillMaxSize().padding(vertical = iconPadding),

@@ -155,18 +155,18 @@ class AutomotiveSettingsPreferenceFragment : PreferenceFragmentCompat() {
             is RefreshState.Success -> {
                 val time = Date().time - state.date.time
                 val timeAmount = resources.getStringPluralSecondsMinutesHoursDaysOrYears(time)
-                getString(LR.string.profile_last_refresh, timeAmount)
+                getString(R.string.profile_last_refresh, timeAmount)
             }
-            is RefreshState.Never -> getString(LR.string.profile_refreshed_never)
-            is RefreshState.Refreshing -> getString(LR.string.profile_refreshing)
-            is RefreshState.Failed -> getString(LR.string.profile_refresh_failed)
-            else -> getString(LR.string.profile_refresh_status_unknown)
+            is RefreshState.Never -> getString(R.string.profile_refreshed_never)
+            is RefreshState.Refreshing -> getString(R.string.profile_refreshing)
+            is RefreshState.Failed -> getString(R.string.profile_refresh_failed)
+            else -> getString(R.string.profile_refresh_status_unknown)
         }
         preferenceRefreshNow.summary = status
     }
 
     private fun setupAbout() {
-        about.summary = getString(LR.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString())
+        about.summary = getString(R.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString())
         about.setOnPreferenceClickListener {
             (activity as? FragmentHostListener)?.addFragment(AutomotiveAboutFragment())
             true

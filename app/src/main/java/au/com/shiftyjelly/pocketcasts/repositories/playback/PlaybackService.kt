@@ -363,7 +363,7 @@ open class PlaybackService : MediaBrowserServiceCompat(), CoroutineScope {
         extras.putInt(CONTENT_STYLE_PLAYABLE_HINT, CONTENT_STYLE_LIST_ITEM_HINT_VALUE)
 
         // To ensure you are not allowing any arbitrary app to browse your app's contents, check the origin
-        if (!PackageValidator(this, LR.xml.allowed_media_browser_callers).isKnownCaller(clientPackageName, clientUid) && !BuildConfig.DEBUG) {
+        if (!PackageValidator(this, R.xml.allowed_media_browser_callers).isKnownCaller(clientPackageName, clientUid) && !BuildConfig.DEBUG) {
             // If the request comes from an untrusted package, return null
             Timber.e("Unknown caller trying to connect to media service $clientPackageName $clientUid")
             return null

@@ -62,7 +62,7 @@ class CreateFilterContainerFragment : BaseFragment() {
                 when (position) {
                     0 -> {
                         binding.toolbar.title = ""
-                        binding.btnCreate.text = getString(LR.string.navigation_continue)
+                        binding.btnCreate.text = getString(R.string.navigation_continue)
                         binding.btnCreate.isEnabled = !adapter.lockedToFirstPage
                         binding.toolbar.setNavigationOnClickListener {
                             @Suppress("DEPRECATION")
@@ -70,8 +70,8 @@ class CreateFilterContainerFragment : BaseFragment() {
                         }
                     }
                     1 -> {
-                        binding.toolbar.title = getString(LR.string.filters_create_filter_details)
-                        binding.btnCreate.text = getString(LR.string.filters_create_save_filter)
+                        binding.toolbar.title = getString(R.string.filters_create_filter_details)
+                        binding.btnCreate.text = getString(R.string.filters_create_save_filter)
                         binding.btnCreate.isEnabled = viewModel.filterName.value.isNotEmpty()
                         binding.toolbar.setNavigationOnClickListener { binding.viewPager.setCurrentItem(0, true) }
                     }
@@ -103,7 +103,7 @@ class CreateFilterContainerFragment : BaseFragment() {
     private fun updateToolbarColors() {
         val colorResId = Playlist.themeColors.getOrNull(viewModel.colorIndex.value) ?: UR.attr.filter_01
         val tintColor = view?.context?.getThemeColor(colorResId) ?: return
-        val iconRes = if (binding.viewPager.currentItem == 0) IR.drawable.ic_close else IR.drawable.ic_arrow_back
+        val iconRes = if (binding.viewPager.currentItem == 0) R.drawable.ic_close else R.drawable.ic_arrow_back
         val backIcon = context?.getTintedDrawable(iconRes, ThemeColor.filterIcon01(theme.activeTheme, tintColor))
         val toolbar = binding.toolbar
         toolbar.navigationIcon = backIcon

@@ -79,26 +79,26 @@ fun OnboardingImportStartPage(
 
             Spacer(Modifier.height(12.dp))
             TextH10(
-                text = stringResource(LR.string.onboarding_bring_your_podcasts),
+                text = stringResource(R.string.onboarding_bring_your_podcasts),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
 
             Spacer(Modifier.height(8.dp))
             TextP40(
-                text = stringResource(LR.string.onboarding_coming_from_another_app),
+                text = stringResource(R.string.onboarding_coming_from_another_app),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
 
             Spacer(Modifier.height(24.dp))
             ImportRow(
-                text = stringResource(LR.string.onboarding_import_from_castbox),
-                iconRes = IR.drawable.castbox,
+                text = stringResource(R.string.onboarding_import_from_castbox),
+                iconRes = R.drawable.castbox,
                 onClick = onCastboxClicked,
             )
 
             ImportRow(
-                text = stringResource(LR.string.onboarding_import_from_other_apps),
-                iconRes = IR.drawable.other_apps,
+                text = stringResource(R.string.onboarding_import_from_other_apps),
+                iconRes = R.drawable.other_apps,
                 onClick = onOtherAppsClicked,
             )
 

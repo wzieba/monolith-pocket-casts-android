@@ -101,7 +101,7 @@ fun UpgradeLayoutReviews(
             ) {
                 item {
                     TextH20(
-                        text = stringResource(LR.string.paywall_layout_reviews_title),
+                        text = stringResource(R.string.paywall_layout_reviews_title),
                         color = Color.White,
                         textAlign = TextAlign.Center,
                         modifier = Modifier
@@ -111,7 +111,7 @@ fun UpgradeLayoutReviews(
                     )
 
                     TextP50(
-                        text = stringResource(LR.string.paywall_layout_reviews_subtitle),
+                        text = stringResource(R.string.paywall_layout_reviews_subtitle),
                         fontWeight = FontWeight.W400,
                         color = colorResource(UR.color.coolgrey_50),
                         textAlign = TextAlign.Center,
@@ -162,7 +162,7 @@ fun UpgradeLayoutReviews(
                             .padding(top = 20.dp, bottom = 32.dp),
                     ) {
                         TextP60(
-                            text = stringResource(LR.string.paywall_layout_reviews_see_all_reviews_in_store),
+                            text = stringResource(R.string.paywall_layout_reviews_see_all_reviews_in_store),
                             fontWeight = FontWeight.W400,
                             color = colorResource(UR.color.plus_gold_dark),
                             textAlign = TextAlign.Center,
@@ -218,8 +218,8 @@ private fun PlusBenefits(
             SubscriptionBadge(
                 fontSize = 16.sp,
                 padding = 8.dp,
-                iconRes = IR.drawable.ic_plus,
-                shortNameRes = LR.string.pocket_casts_plus_short,
+                iconRes = R.drawable.ic_plus,
+                shortNameRes = R.string.pocket_casts_plus_short,
                 iconColor = Color.Black,
                 backgroundBrush = plusGradientBrush,
                 textColor = Color.Black,
@@ -236,15 +236,15 @@ fun Stars(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
     ) {
         Image(
-            painter = painterResource(IR.drawable.stars_gradient),
-            contentDescription = stringResource(LR.string.paywall_layout_reviews_stars_content_description),
+            painter = painterResource(R.drawable.stars_gradient),
+            contentDescription = stringResource(R.string.paywall_layout_reviews_stars_content_description),
             modifier = Modifier
                 .padding(bottom = 8.dp)
                 .size(width = 157.dp, height = 29.dp),
         )
 
         TextH40(
-            text = stringResource(LR.string.paywall_layout_reviews_rating),
+            text = stringResource(R.string.paywall_layout_reviews_rating),
             color = Color.White,
             textAlign = TextAlign.Center,
         )
@@ -289,8 +289,8 @@ fun ReviewItem(
             Spacer(modifier = Modifier.height(6.dp))
 
             Image(
-                painter = painterResource(IR.drawable.stars),
-                contentDescription = stringResource(LR.string.paywall_layout_reviews_stars_content_description),
+                painter = painterResource(R.drawable.stars),
+                contentDescription = stringResource(R.string.paywall_layout_reviews_stars_content_description),
             )
 
             Spacer(modifier = Modifier.height(6.dp))
@@ -320,9 +320,9 @@ fun StarsPreview() {
 fun ReviewItemPreview() {
     ReviewItem(
         data = ReviewData(
-            titleResourceId = LR.string.paywall_layout_reviews_review_five_title,
-            messageResourceId = LR.string.paywall_layout_reviews_review_five_message,
-            dateResourceId = LR.string.paywall_layout_reviews_review_five_date,
+            titleResourceId = R.string.paywall_layout_reviews_review_five_title,
+            messageResourceId = R.string.paywall_layout_reviews_review_five_message,
+            dateResourceId = R.string.paywall_layout_reviews_review_five_date,
         ),
     )
 }

@@ -97,7 +97,7 @@ class ShareListIncomingFragment : BaseFragment(), ShareListIncomingAdapter.Click
             @Suppress("DEPRECATION")
             activity?.onBackPressed()
         }
-        toolbar.navigationIcon = context.getThemeTintedDrawable(IR.drawable.ic_cancel, UR.attr.secondary_icon_01)
+        toolbar.navigationIcon = context.getThemeTintedDrawable(R.drawable.ic_cancel, UR.attr.secondary_icon_01)
 
         viewModel.share.observe(viewLifecycleOwner) { share ->
             when (share) {
@@ -140,9 +140,9 @@ class ShareListIncomingFragment : BaseFragment(), ShareListIncomingAdapter.Click
     override fun onUnsubscribeClick(podcast: Podcast) {
         val uuid = podcast.uuid
         val dialog = OptionsDialog()
-            .setTitle(getString(LR.string.podcasts_unsubscribe_are_you_sure))
+            .setTitle(getString(R.string.podcasts_unsubscribe_are_you_sure))
             .addTextOption(
-                titleId = LR.string.unsubscribe,
+                titleId = R.string.unsubscribe,
                 click = {
                     viewModel.unsubscribeFromPodcast(uuid)
                     viewModel.trackShareEvent(

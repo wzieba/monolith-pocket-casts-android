@@ -113,8 +113,8 @@ fun ButtonTabsDarkPreview() {
 @Composable
 private fun ButtonTabsPreview(themeType: Theme.ThemeType) {
     AppThemeWithBackground(themeType) {
-        val episodesTab = ButtonTab(labelResId = LR.string.episodes, onClick = {})
-        val bookmarksTab = ButtonTab(labelResId = LR.string.bookmarks, onClick = {})
+        val episodesTab = ButtonTab(labelResId = R.string.episodes, onClick = {})
+        val bookmarksTab = ButtonTab(labelResId = R.string.bookmarks, onClick = {})
         ButtonTabs(
             tabs = listOf(episodesTab, bookmarksTab),
             selectedTab = episodesTab,

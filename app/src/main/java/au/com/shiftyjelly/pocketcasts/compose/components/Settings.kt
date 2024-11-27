@@ -329,9 +329,9 @@ private fun SettingSectionPreview(
                 primaryText = "Such very very very very very very very long text",
                 secondaryText = "I know you want to flip this toggle, so just do it. DO IT!",
                 toggle = SettingRowToggle.Switch(checked = false),
-                icon = painterResource(IR.drawable.ic_podcasts),
+                icon = painterResource(R.drawable.ic_podcasts),
                 iconGradientColors = listOf(Color.Red, Color.Yellow),
-                primaryTextEndDrawable = IR.drawable.ic_effects_plus,
+                primaryTextEndDrawable = R.drawable.ic_effects_plus,
             )
         }
     }
@@ -368,7 +368,7 @@ fun SettingRowIconProjectPreview() {
     AppThemeWithBackground(Theme.ThemeType.LIGHT) {
         SettingRow(
             primaryText = "Row with icon",
-            icon = painterResource(IR.drawable.ic_profile_settings),
+            icon = painterResource(R.drawable.ic_profile_settings),
         )
     }
 }
@@ -392,7 +392,7 @@ fun SettingRowIconGradientPreview() {
     AppThemeWithBackground(Theme.ThemeType.LIGHT) {
         SettingRow(
             primaryText = "Row with icon",
-            icon = painterResource(IR.drawable.ic_podcasts),
+            icon = painterResource(R.drawable.ic_podcasts),
             iconGradientColors = listOf(Color.Red, Color.Yellow),
         )
     }

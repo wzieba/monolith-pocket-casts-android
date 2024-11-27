@@ -172,7 +172,7 @@ object OnboardingUpgradeHelper {
                     )
                     if (selectedCheckMark) {
                         Icon(
-                            painter = painterResource(IR.drawable.plus_check),
+                            painter = painterResource(R.drawable.plus_check),
                             contentDescription = null,
                             modifier = Modifier
                                 .brush(brush)
@@ -392,10 +392,10 @@ object OnboardingUpgradeHelper {
         modifier: Modifier = Modifier,
         lineHeight: TextUnit = 16.sp,
     ) {
-        val privacyPolicyText = stringResource(LR.string.onboarding_plus_privacy_policy)
-        val termsAndConditionsText = stringResource(LR.string.onboarding_plus_terms_and_conditions)
+        val privacyPolicyText = stringResource(R.string.onboarding_plus_privacy_policy)
+        val termsAndConditionsText = stringResource(R.string.onboarding_plus_terms_and_conditions)
         val text = stringResource(
-            LR.string.onboarding_plus_continuing_agrees_to,
+            R.string.onboarding_plus_continuing_agrees_to,
             privacyPolicyText,
             termsAndConditionsText,
         )

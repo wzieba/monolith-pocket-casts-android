@@ -86,8 +86,8 @@ class OpmlExporter(
                                         context = context,
                                         file = opmlFile,
                                         intentType = "text/xml",
-                                        errorMessage = context.getString(LR.string.settings_opml_export_failed),
-                                        errorTitle = context.getString(LR.string.settings_no_file_browser_title),
+                                        errorMessage = context.getString(R.string.settings_opml_export_failed),
+                                        errorTitle = context.getString(R.string.settings_no_file_browser_title),
                                     )
                                 }
                             }
@@ -119,15 +119,15 @@ class OpmlExporter(
                 intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
             }
 
-            intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(LR.string.settings_opml_email_subject))
-            intent.putExtra(Intent.EXTRA_TEXT, HtmlCompat.fromHtml(context.getString(LR.string.settings_opml_email_body), HtmlCompat.FROM_HTML_MODE_COMPACT))
+            intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.settings_opml_email_subject))
+            intent.putExtra(Intent.EXTRA_TEXT, HtmlCompat.fromHtml(context.getString(R.string.settings_opml_email_body), HtmlCompat.FROM_HTML_MODE_COMPACT))
             val uri = FileUtil.createUriWithReadPermissions(fragment.requireActivity(), file, intent)
             intent.putExtra(Intent.EXTRA_STREAM, uri)
             try {
                 context.startActivity(intent)
             } catch (e: ActivityNotFoundException) {
                 Timber.e(e)
-                UiUtil.displayAlertError(context, context.getString(LR.string.settings_no_email_app_title), context.getString(LR.string.settings_no_email_app), null)
+                UiUtil.displayAlertError(context, context.getString(R.string.settings_no_email_app_title), context.getString(R.string.settings_no_email_app), null)
             }
         } catch (e: Exception) {
             Timber.e(e)
@@ -137,7 +137,7 @@ class OpmlExporter(
     @Suppress("deprecation")
     fun showProgressDialog() {
         UiUtil.hideProgressDialog(progressDialog)
-        progressDialog = ProgressDialog.show(context, "", context.getString(LR.string.settings_opml_exporting), true, true) {
+        progressDialog = ProgressDialog.show(context, "", context.getString(R.string.settings_opml_exporting), true, true) {
             serviceTask?.cancel()
         }.apply {
             show()

@@ -96,7 +96,7 @@ private fun TooltipContent(
             },
     ) {
         TextH40(
-            text = stringResource(LR.string.referrals_tooltip_message, referralsOfferInfo.localizedOfferDurationNoun.lowercase()),
+            text = stringResource(R.string.referrals_tooltip_message, referralsOfferInfo.localizedOfferDurationNoun.lowercase()),
         )
     }
 }
@@ -109,7 +109,7 @@ private fun Icon(
     IconButton(onClick = onIconClick) {
         Icon(
             painter = painterResource(id = R.drawable.ic_gift),
-            contentDescription = stringResource(LR.string.gift),
+            contentDescription = stringResource(R.string.gift),
             tint = colors.secondaryIcon01,
         )
     }

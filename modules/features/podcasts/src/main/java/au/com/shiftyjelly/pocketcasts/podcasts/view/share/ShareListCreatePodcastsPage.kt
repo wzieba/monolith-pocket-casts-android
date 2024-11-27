@@ -28,7 +28,7 @@ fun ShareListCreatePodcastsPage(
     val state: ShareListCreateViewModel.State by viewModel.state.collectAsState()
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.podcasts_share_select_podcasts),
+            title = stringResource(R.string.podcasts_share_select_podcasts),
             navigationButton = NavigationButton.Close,
             onNavigationClick = onCloseClick,
             actions = {
@@ -38,7 +38,7 @@ fun ShareListCreatePodcastsPage(
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                        contentDescription = stringResource(LR.string.next),
+                        contentDescription = stringResource(R.string.next),
                     )
                 }
             },

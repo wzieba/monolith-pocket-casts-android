@@ -45,8 +45,8 @@ internal fun ChampionDialog(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
-                painterResource(IR.drawable.crown),
-                contentDescription = stringResource(LR.string.pocket_casts_logo),
+                painterResource(R.drawable.crown),
+                contentDescription = stringResource(R.string.pocket_casts_logo),
                 contentScale = ContentScale.Fit,
                 modifier = modifier
                     .width(122.dp)
@@ -55,13 +55,13 @@ internal fun ChampionDialog(
             )
 
             TextH20(
-                text = stringResource(LR.string.pocket_casts_champion_dialog_title),
+                text = stringResource(R.string.pocket_casts_champion_dialog_title),
                 textAlign = TextAlign.Center,
                 modifier = modifier.padding(bottom = 16.dp),
             )
 
             TextP40(
-                text = stringResource(LR.string.pocket_casts_champion_dialog_description),
+                text = stringResource(R.string.pocket_casts_champion_dialog_description),
                 fontSize = 14.sp,
                 color = MaterialTheme.theme.colors.primaryText02,
                 textAlign = TextAlign.Center,
@@ -69,8 +69,8 @@ internal fun ChampionDialog(
             )
 
             RowButton(
-                text = stringResource(LR.string.rate_pocket_casts),
-                contentDescription = stringResource(LR.string.rate_pocket_casts),
+                text = stringResource(R.string.rate_pocket_casts),
+                contentDescription = stringResource(R.string.rate_pocket_casts),
                 onClick = { onRateClick() },
                 includePadding = false,
                 textColor = MaterialTheme.theme.colors.primaryInteractive02,

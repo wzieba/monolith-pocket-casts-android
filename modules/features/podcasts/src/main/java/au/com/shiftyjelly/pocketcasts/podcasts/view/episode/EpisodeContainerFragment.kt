@@ -306,9 +306,9 @@ class EpisodeContainerFragment :
             get() = sections.indexOf(Section.Bookmarks)
 
         private sealed class Section(@StringRes val titleRes: Int, val analyticsValue: String) {
-            data object Details : Section(LR.string.details, "details")
-            data object Chapters : Section(LR.string.chapters, "chapters")
-            data object Bookmarks : Section(LR.string.bookmarks, "bookmarks")
+            data object Details : Section(R.string.details, "details")
+            data object Chapters : Section(R.string.chapters, "chapters")
+            data object Bookmarks : Section(R.string.bookmarks, "bookmarks")
         }
 
         private var sections = listOf(
@@ -394,7 +394,7 @@ class EpisodeContainerFragment :
             tabLayout.tabTextColors = iconTint
             tabLayout.setSelectedTabIndicatorColor(iconColor)
             btnShare.setOnClickListener { state.onShareClicked() }
-            btnFav.contentDescription = getString(if (state.episode.isStarred) LR.string.podcast_episode_starred else LR.string.podcast_episode_unstarred)
+            btnFav.contentDescription = getString(if (state.episode.isStarred) R.string.podcast_episode_starred else R.string.podcast_episode_unstarred)
             btnFav.setOnClickListener { state.onFavClicked() }
         }
     }

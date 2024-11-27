@@ -169,7 +169,7 @@ private fun ColumnScope.TopShowCover(
             )
         }
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_sticker_8),
+            painter = painterResource(R.drawable.end_of_year_2024_sticker_8),
             contentDescription = null,
             modifier = Modifier
                 .align(Alignment.TopStart)

@@ -106,13 +106,13 @@ class FilterSelectFragment private constructor() : BaseFragment() {
                 onSuccess = {
                     val adapter = FilterSelectAdapter(theme.isDarkTheme, it) {
                         val selectedList = it.map { it.uuid }
-                        binding?.lblFiltersChosen?.text = resources.getStringPlural(count = selectedList.size, singular = LR.string.filters_chosen_singular, plural = LR.string.filters_chosen_plural)
+                        binding?.lblFiltersChosen?.text = resources.getStringPlural(count = selectedList.size, singular = R.string.filters_chosen_singular, plural = R.string.filters_chosen_plural)
                         listener.filterSelectFragmentSelectionChanged(selectedList)
                         hasChanged = true
                     }
 
                     val selected = it.filter { it.selected }
-                    binding?.lblFiltersChosen?.text = resources.getStringPlural(count = selected.size, singular = LR.string.filters_chosen_singular, plural = LR.string.filters_chosen_plural)
+                    binding?.lblFiltersChosen?.text = resources.getStringPlural(count = selected.size, singular = R.string.filters_chosen_singular, plural = R.string.filters_chosen_plural)
                     binding?.recyclerView?.layoutManager = layoutManager
                     binding?.recyclerView?.adapter = adapter
 
@@ -136,9 +136,9 @@ class FilterSelectFragment private constructor() : BaseFragment() {
     private fun updateSelectButtonText(selectedSize: Int, listSize: Int) {
         val btnSelect = binding?.btnSelect ?: return
         if (selectedSize == listSize) { // Everything is selected
-            btnSelect.text = getString(LR.string.select_none)
+            btnSelect.text = getString(R.string.select_none)
         } else {
-            btnSelect.text = getString(LR.string.select_all)
+            btnSelect.text = getString(R.string.select_all)
         }
     }
 

@@ -43,7 +43,7 @@ fun LoginWithGoogleScreen(
                 val message = if (Network.isConnected(context)) {
                     HR.string.horologist_auth_error_message
                 } else {
-                    LR.string.log_in_no_network
+                    R.string.log_in_no_network
                 }
                 ErrorScreen(stringResource(message))
             },

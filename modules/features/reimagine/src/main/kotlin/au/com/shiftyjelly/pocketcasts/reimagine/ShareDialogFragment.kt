@@ -170,7 +170,7 @@ class ShareDialogFragment : BottomSheetDialogFragment() {
         if (ShareDialogFragment.Options.Podcast in args.options) {
             add(
                 shareOption(
-                    textId = LR.string.share_podcast,
+                    textId = R.string.share_podcast,
                     textColor = textColor,
                     backgroundColor = backgroundColor,
                     onClick = {
@@ -193,7 +193,7 @@ class ShareDialogFragment : BottomSheetDialogFragment() {
         if (ShareDialogFragment.Options.Episode in args.options) {
             add(
                 shareOption(
-                    textId = LR.string.podcast_share_episode,
+                    textId = R.string.podcast_share_episode,
                     textColor = textColor,
                     backgroundColor = backgroundColor,
                     onClick = {
@@ -214,7 +214,7 @@ class ShareDialogFragment : BottomSheetDialogFragment() {
             )
             add(
                 shareOption(
-                    textId = LR.string.podcast_share_current_position,
+                    textId = R.string.podcast_share_current_position,
                     textColor = textColor,
                     backgroundColor = backgroundColor,
                     onClick = {
@@ -236,7 +236,7 @@ class ShareDialogFragment : BottomSheetDialogFragment() {
             if (FeatureFlag.isEnabled(Feature.REIMAGINE_SHARING)) {
                 add(
                     shareOption(
-                        textId = LR.string.podcast_share_clip,
+                        textId = R.string.podcast_share_clip,
                         textColor = textColor,
                         backgroundColor = backgroundColor,
                         onClick = {
@@ -250,7 +250,7 @@ class ShareDialogFragment : BottomSheetDialogFragment() {
             if (episode.isDownloaded) {
                 add(
                     shareOption(
-                        textId = LR.string.podcast_share_open_file_in,
+                        textId = R.string.podcast_share_open_file_in,
                         textColor = textColor,
                         backgroundColor = backgroundColor,
                         onClick = {

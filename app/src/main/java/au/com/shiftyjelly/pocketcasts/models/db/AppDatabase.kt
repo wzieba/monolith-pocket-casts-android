@@ -894,7 +894,7 @@ abstract class AppDatabase : RoomDatabase() {
                         SQLiteDatabase.CONFLICT_IGNORE,
                         contentValuesOf(
                             "uuid" to "2797DCF8-1C93-4999-B52A-D1849736FA2C",
-                            "title" to context.getString(LR.string.filters_title_new_releases),
+                            "title" to context.getString(R.string.filters_title_new_releases),
                             "unplayed" to 1,
                             "partiallyPlayed" to 1,
                             "finished" to 0,
@@ -921,7 +921,7 @@ abstract class AppDatabase : RoomDatabase() {
                         SQLiteDatabase.CONFLICT_IGNORE,
                         contentValuesOf(
                             "uuid" to "D89A925C-5CE1-41A4-A879-2751838CE5CE",
-                            "title" to context.getString(LR.string.filters_title_in_progress),
+                            "title" to context.getString(R.string.filters_title_in_progress),
                             "unplayed" to 0,
                             "partiallyPlayed" to 1,
                             "finished" to 0,
@@ -948,7 +948,7 @@ abstract class AppDatabase : RoomDatabase() {
                         SQLiteDatabase.CONFLICT_IGNORE,
                         contentValuesOf(
                             "uuid" to "78EC673E-4C3A-4985-9D83-7A79C825A359",
-                            "title" to context.getString(LR.string.filters_title_starred),
+                            "title" to context.getString(R.string.filters_title_starred),
                             "unplayed" to 1,
                             "partiallyPlayed" to 1,
                             "finished" to 1,

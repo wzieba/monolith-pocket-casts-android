@@ -34,8 +34,8 @@ class HelpScreenViewModel @Inject constructor(
         viewModelScope.launch {
             val result = watchPhoneCommunication.emailLogsToSupportMessage()
             val message = when (result) {
-                WatchMessageSendState.QUEUED -> LR.string.settings_help_contact_support_email_sent_to_phone
-                WatchMessageSendState.FAILED_TO_QUEUE -> LR.string.settings_help_phone_unavailable_message
+                WatchMessageSendState.QUEUED -> R.string.settings_help_contact_support_email_sent_to_phone
+                WatchMessageSendState.FAILED_TO_QUEUE -> R.string.settings_help_phone_unavailable_message
             }
 
             if (result == WatchMessageSendState.QUEUED) {

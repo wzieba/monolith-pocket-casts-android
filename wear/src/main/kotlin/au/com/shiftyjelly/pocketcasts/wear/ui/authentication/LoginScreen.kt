@@ -35,9 +35,9 @@ fun LoginScreen(
         ) {
             item {
                 Chip(
-                    labelId = LR.string.log_in_with_google,
+                    labelId = R.string.log_in_with_google,
                     colors = ChipDefaults.secondaryChipColors(),
-                    icon = DrawableResPaintable(IR.drawable.google_g_white),
+                    icon = DrawableResPaintable(R.drawable.google_g_white),
                     onClick = {
                         viewModel.onGoogleLoginClicked()
                         onLoginWithGoogleClick()
@@ -47,9 +47,9 @@ fun LoginScreen(
 
             item {
                 Chip(
-                    labelId = LR.string.log_in_on_phone,
+                    labelId = R.string.log_in_on_phone,
                     colors = ChipDefaults.secondaryChipColors(),
-                    icon = DrawableResPaintable(IR.drawable.baseline_phone_android_24),
+                    icon = DrawableResPaintable(R.drawable.baseline_phone_android_24),
                     onClick = {
                         viewModel.onPhoneLoginClicked()
                         onLoginWithPhoneClick()
@@ -60,9 +60,9 @@ fun LoginScreen(
             if (BuildConfig.DEBUG) {
                 item {
                     Chip(
-                        labelId = LR.string.log_in_with_email,
+                        labelId = R.string.log_in_with_email,
                         colors = ChipDefaults.secondaryChipColors(),
-                        icon = DrawableResPaintable(IR.drawable.ic_email_white_24dp),
+                        icon = DrawableResPaintable(R.drawable.ic_email_white_24dp),
                         onClick = {
                             viewModel.onEmailLoginClicked()
                             onLoginWithEmailClick()

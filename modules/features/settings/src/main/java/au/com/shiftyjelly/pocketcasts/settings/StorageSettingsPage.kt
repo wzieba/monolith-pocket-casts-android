@@ -81,7 +81,7 @@ fun StorageSettingsPage(
     var showProgressDialog by remember { mutableStateOf(false) }
     if (showProgressDialog) {
         ProgressDialog(
-            text = stringResource(LR.string.settings_storage_move_podcasts),
+            text = stringResource(R.string.settings_storage_move_podcasts),
             onDismiss = { showProgressDialog = false },
         )
     }
@@ -133,7 +133,7 @@ fun StorageSettingsView(
 ) {
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings_title_storage),
+            title = stringResource(R.string.settings_title_storage),
             bottomShadow = true,
             onNavigationClick = { onBackPressed() },
         )
@@ -145,7 +145,7 @@ fun StorageSettingsView(
             contentPadding = PaddingValues(bottom = bottomInset),
         ) {
             item {
-                SettingSection(heading = stringResource(LR.string.settings_storage_section_heading_usage)) {
+                SettingSection(heading = stringResource(R.string.settings_storage_section_heading_usage)) {
                     DownloadedFilesRow(
                         state = state.downloadedFilesState,
                         onClick = onManageDownloadedFilesClick,
@@ -157,7 +157,7 @@ fun StorageSettingsView(
                 }
             }
             item {
-                SettingSection(heading = stringResource(LR.string.settings_storage_section_heading_mobile_data)) {
+                SettingSection(heading = stringResource(R.string.settings_storage_section_heading_mobile_data)) {
                     BackgroundRefreshRow(state.backgroundRefreshState)
                     StorageDataWarningRow(state.storageDataWarningState)
                 }
@@ -173,11 +173,11 @@ private fun DownloadedFilesRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_storage_downloaded_files),
+        primaryText = stringResource(R.string.settings_storage_downloaded_files),
         secondaryText = Util.formattedBytes(
             bytes = state.size,
             context = LocalContext.current,
-        ).replace("-", stringResource(LR.string.settings_storage_downloaded_bytes, 0)),
+        ).replace("-", stringResource(R.string.settings_storage_downloaded_bytes, 0)),
         modifier = modifier
             .clickable { onClick() }
             .padding(vertical = 6.dp),
@@ -190,7 +190,7 @@ private fun ClearDownloadCacheRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_storage_clear_download_cache),
+        primaryText = stringResource(R.string.settings_storage_clear_download_cache),
         modifier = modifier
             .clickable { onClick() }
             .padding(vertical = 6.dp),
@@ -217,10 +217,10 @@ private fun StorageChoiceRow(
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
-    val defaultStorageFolderLabel = stringResource(LR.string.settings_storage_phone)
+    val defaultStorageFolderLabel = stringResource(R.string.settings_storage_phone)
     val choices = storageChoiceState.choices
     SettingRadioDialogRow(
-        primaryText = stringResource(LR.string.settings_storage_store_on),
+        primaryText = stringResource(R.string.settings_storage_store_on),
         modifier = modifier,
         secondaryText = storageChoiceState.summary,
         options = choices.map { it.label },
@@ -258,7 +258,7 @@ private fun StorageFolderRow(
     if (storageFolderState.isVisible) {
         var showDialog by remember { mutableStateOf(false) }
         SettingRow(
-            primaryText = stringResource(LR.string.settings_storage_custom_folder_location),
+            primaryText = stringResource(R.string.settings_storage_custom_folder_location),
             secondaryText = storageFolderState.summary,
             modifier = modifier
                 .clickable { showDialog = true },
@@ -285,16 +285,16 @@ private fun StorageFolderRow(
                 }
 
                 DialogFrame(
-                    title = stringResource(LR.string.settings_storage_custom_folder_location),
+                    title = stringResource(R.string.settings_storage_custom_folder_location),
                     buttons = listOf(
                         DialogButtonState(
-                            text = stringResource(LR.string.cancel).uppercase(
+                            text = stringResource(R.string.cancel).uppercase(
                                 Locale.getDefault(),
                             ),
                             onClick = { showDialog = false },
                         ),
                         DialogButtonState(
-                            text = stringResource(LR.string.ok),
+                            text = stringResource(R.string.ok),
                             onClick = onFinish,
                         ),
                     ),
@@ -328,7 +328,7 @@ private fun BackgroundRefreshRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_storage_background_refresh),
+        primaryText = stringResource(R.string.settings_storage_background_refresh),
         secondaryText = stringResource(state.summary),
         toggle = SettingRowToggle.Switch(state.isChecked),
         modifier = modifier.toggleable(
@@ -344,8 +344,8 @@ private fun StorageDataWarningRow(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_storage_data_warning),
-        secondaryText = stringResource(LR.string.settings_storage_data_warning_summary),
+        primaryText = stringResource(R.string.settings_storage_data_warning),
+        secondaryText = stringResource(R.string.settings_storage_data_warning_summary),
         toggle = SettingRowToggle.Switch(checked = state.isChecked),
         modifier = modifier.toggleable(
             value = state.isChecked,
@@ -353,7 +353,7 @@ private fun StorageDataWarningRow(
         ) { state.onCheckedChange(it) },
     ) {
         TextP50(
-            text = stringResource(LR.string.settings_storage_data_warning_car),
+            text = stringResource(R.string.settings_storage_data_warning_car),
             style = MaterialTheme.typography.body1,
             color = MaterialTheme.theme.colors.primaryText02,
             modifier = modifier
@@ -405,7 +405,7 @@ private fun getStorageSpaceString(
     val stat = StatFs(path)
     val free = stat.availableBlocksLong * stat.blockSizeLong
     context.getString(
-        LR.string.settings_storage_size_free,
+        R.string.settings_storage_size_free,
         Util.formattedBytes(free, context = context),
     )
 } catch (e: Exception) {
@@ -430,7 +430,7 @@ private fun StorageSettingsPreview(
                 ),
                 backgroundRefreshState = StorageSettingsViewModel.State.BackgroundRefreshState(
                     isChecked = true,
-                    summary = LR.string.settings_storage_background_refresh_on,
+                    summary = R.string.settings_storage_background_refresh_on,
                     onCheckedChange = {},
                 ),
                 storageDataWarningState = StorageSettingsViewModel.State.StorageDataWarningState(

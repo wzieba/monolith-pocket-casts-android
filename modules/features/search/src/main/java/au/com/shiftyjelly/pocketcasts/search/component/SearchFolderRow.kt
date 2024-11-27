@@ -49,9 +49,9 @@ fun SearchFolderRow(folder: Folder, podcasts: List<Podcast>, onClick: (() -> Uni
                     modifier = Modifier.padding(bottom = 2.dp),
                 )
                 val podcastCount = if (podcastUuids.size == 1) {
-                    stringResource(LR.string.podcasts_singular)
+                    stringResource(R.string.podcasts_singular)
                 } else {
-                    stringResource(LR.string.podcasts_plural, podcastUuids.size)
+                    stringResource(R.string.podcasts_plural, podcastUuids.size)
                 }
                 TextH50(
                     text = podcastCount,
@@ -61,8 +61,8 @@ fun SearchFolderRow(folder: Folder, podcasts: List<Podcast>, onClick: (() -> Uni
                 )
             }
             Icon(
-                painter = painterResource(id = IR.drawable.ic_tick),
-                contentDescription = stringResource(LR.string.podcast_subscribed),
+                painter = painterResource(id = R.drawable.ic_tick),
+                contentDescription = stringResource(R.string.podcast_subscribed),
                 tint = MaterialTheme.theme.colors.support02,
                 modifier = Modifier.padding(end = 16.dp),
             )

@@ -16,7 +16,7 @@ class SelectSortByDialog(val settings: Settings, val changeSortOrder: (PodcastsS
 
     fun show(context: Context, fragmentManager: FragmentManager) {
         val sortOrder = settings.getSelectPodcastsSortType()
-        val dialog = OptionsDialog().setTitle(context.resources.getString(LR.string.sort_by))
+        val dialog = OptionsDialog().setTitle(context.resources.getString(R.string.sort_by))
         for (order in PodcastsSortType.values()) {
             if (order == PodcastsSortType.DRAG_DROP) {
                 // sorting by drag and drop doesn't make sense on this podcast picking page

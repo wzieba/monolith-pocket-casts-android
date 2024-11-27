@@ -326,7 +326,7 @@ class FilterEpisodeListFragment : BaseFragment() {
 
             val chipPodcasts = binding.chipPodcasts
             if (playlist.allPodcasts) {
-                chipPodcasts.text = getString(LR.string.filters_chip_all_your_podcasts)
+                chipPodcasts.text = getString(R.string.filters_chip_all_your_podcasts)
                 chipPodcasts.setInactiveColors(theme.activeTheme, color)
             } else {
                 chipPodcasts.text =
@@ -344,13 +344,13 @@ class FilterEpisodeListFragment : BaseFragment() {
             val chipEpisodes = binding.chipEpisodes
             val episodeOptions = playlist.episodeOptionStringIds.map { resources.getString(it) }
             if ((playlist.unplayed && playlist.partiallyPlayed && playlist.finished) || episodeOptions.isEmpty()) {
-                chipEpisodes.text = getString(LR.string.filters_chip_episode_status)
+                chipEpisodes.text = getString(R.string.filters_chip_episode_status)
                 chipEpisodes.setInactiveColors(theme.activeTheme, color)
             } else {
                 when {
                     episodeOptions.count() > 1 -> chipEpisodes.text = episodeOptions.joinToString()
                     episodeOptions.isNotEmpty() -> chipEpisodes.text = episodeOptions.first()
-                    else -> chipEpisodes.text = getString(LR.string.filters_chip_episode_status)
+                    else -> chipEpisodes.text = getString(R.string.filters_chip_episode_status)
                 }
                 chipEpisodes.setActiveColors(theme.activeTheme, color)
             }
@@ -397,7 +397,7 @@ class FilterEpisodeListFragment : BaseFragment() {
             val downloadOptions = playlist.downloadOptionStrings
             if (downloadOptions.isEmpty()) {
                 chipDownload.setInactiveColors(theme.activeTheme, color)
-                chipDownload.text = getString(LR.string.filters_chip_download_status)
+                chipDownload.text = getString(R.string.filters_chip_download_status)
             } else {
                 chipDownload.text = downloadOptions.joinToString { getString(it) }
                 chipDownload.setActiveColors(theme.activeTheme, color)
@@ -415,7 +415,7 @@ class FilterEpisodeListFragment : BaseFragment() {
             val audioOptions = playlist.audioOptionStrings
             if (audioOptions.isEmpty()) {
                 chipAudioVideo.setInactiveColors(theme.activeTheme, color)
-                chipAudioVideo.text = getString(LR.string.filters_chip_media_type)
+                chipAudioVideo.text = getString(R.string.filters_chip_media_type)
             } else {
                 chipAudioVideo.text = audioOptions.joinToString { getString(it) }
                 chipAudioVideo.setActiveColors(theme.activeTheme, color)
@@ -431,7 +431,7 @@ class FilterEpisodeListFragment : BaseFragment() {
 
             val chipStarred = binding.chipStarred
             val starred = playlist.starred
-            chipStarred.text = getString(LR.string.filters_chip_starred)
+            chipStarred.text = getString(R.string.filters_chip_starred)
             if (starred) {
                 chipStarred.setActiveColors(theme.activeTheme, color)
             } else {
@@ -587,24 +587,24 @@ class FilterEpisodeListFragment : BaseFragment() {
     fun showSortOptions() {
         viewModel.playlist.value?.let {
             val dialog = OptionsDialog()
-                .setTitle(getString(LR.string.sort_by))
+                .setTitle(getString(R.string.sort_by))
                 .addCheckedOption(
-                    titleId = LR.string.episode_sort_newest_to_oldest,
+                    titleId = R.string.episode_sort_newest_to_oldest,
                     click = { viewModel.changeSort(Playlist.SortOrder.NEWEST_TO_OLDEST) },
                     checked = (it.sortOrder() == Playlist.SortOrder.NEWEST_TO_OLDEST),
                 )
                 .addCheckedOption(
-                    titleId = LR.string.episode_sort_oldest_to_newest,
+                    titleId = R.string.episode_sort_oldest_to_newest,
                     click = { viewModel.changeSort(Playlist.SortOrder.OLDEST_TO_NEWEST) },
                     checked = (it.sortOrder() == Playlist.SortOrder.OLDEST_TO_NEWEST),
                 )
                 .addCheckedOption(
-                    titleId = LR.string.episode_sort_short_to_long,
+                    titleId = R.string.episode_sort_short_to_long,
                     click = { viewModel.changeSort(Playlist.SortOrder.SHORTEST_TO_LONGEST) },
                     checked = (it.sortOrder() == Playlist.SortOrder.SHORTEST_TO_LONGEST),
                 )
                 .addCheckedOption(
-                    titleId = LR.string.episode_sort_long_to_short,
+                    titleId = R.string.episode_sort_long_to_short,
                     click = { viewModel.changeSort(Playlist.SortOrder.LONGEST_TO_SHORTEST) },
                     checked = (it.sortOrder() == Playlist.SortOrder.LONGEST_TO_SHORTEST),
                 )
@@ -620,10 +620,10 @@ class FilterEpisodeListFragment : BaseFragment() {
     }
 
     fun showDeleteConfirmation() {
-        ConfirmationDialog().setTitle(getString(LR.string.are_you_sure))
-            .setIconId(IR.drawable.ic_filters)
-            .setSummary(getString(LR.string.filters_warning_delete_summary))
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.filters_warning_delete_button)))
+        ConfirmationDialog().setTitle(getString(R.string.are_you_sure))
+            .setIconId(R.drawable.ic_filters)
+            .setSummary(getString(R.string.filters_warning_delete_summary))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.filters_warning_delete_button)))
             .setOnConfirm {
                 viewModel.deletePlaylist()
                 clearSelectedFilter()
@@ -639,17 +639,17 @@ class FilterEpisodeListFragment : BaseFragment() {
             viewModel.downloadAll()
         } else if (episodeCount in 5..FilterEpisodeListViewModel.MAX_DOWNLOAD_ALL) {
             val dialog = ConfirmationDialog()
-                .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.download_warning_button, episodeCount)))
-                .setIconId(IR.drawable.ic_download)
-                .setTitle(getString(LR.string.download_warning_title))
+                .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.download_warning_button, episodeCount)))
+                .setIconId(R.drawable.ic_download)
+                .setTitle(getString(R.string.download_warning_title))
                 .setOnConfirm { viewModel.downloadAll() }
             dialog.show(parentFragmentManager, "download_confirm")
         } else {
             val dialog = ConfirmationDialog()
-                .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(LR.string.download_warning_button, FilterEpisodeListViewModel.MAX_DOWNLOAD_ALL)))
-                .setIconId(IR.drawable.ic_download)
-                .setTitle(getString(LR.string.download_warning_title))
-                .setSummary(getString(LR.string.download_warning_limit_summary, FilterEpisodeListViewModel.MAX_DOWNLOAD_ALL))
+                .setButtonType(ConfirmationDialog.ButtonType.Normal(getString(R.string.download_warning_button, FilterEpisodeListViewModel.MAX_DOWNLOAD_ALL)))
+                .setIconId(R.drawable.ic_download)
+                .setTitle(getString(R.string.download_warning_title))
+                .setSummary(getString(R.string.download_warning_limit_summary, FilterEpisodeListViewModel.MAX_DOWNLOAD_ALL))
                 .setOnConfirm { viewModel.downloadAll() }
             dialog.show(parentFragmentManager, "download_confirm")
         }
@@ -662,14 +662,14 @@ class FilterEpisodeListFragment : BaseFragment() {
             return
         }
 
-        val title = if (isFirstEpisode) getString(LR.string.filters_play_all) else getString(LR.string.play_all_from_here)
-        val summary = if (isFirstEpisode) getString(LR.string.filters_play_all_summary) else getString(LR.string.filters_play_all_from_here_summary)
-        val buttonString = getString(LR.string.filters_play_episodes, count)
+        val title = if (isFirstEpisode) getString(R.string.filters_play_all) else getString(R.string.play_all_from_here)
+        val summary = if (isFirstEpisode) getString(R.string.filters_play_all_summary) else getString(R.string.filters_play_all_from_here_summary)
+        val buttonString = getString(R.string.filters_play_episodes, count)
 
         val dialog = ConfirmationDialog()
             .setTitle(title)
             .setSummary(summary)
-            .setIconId(IR.drawable.ic_play_all)
+            .setIconId(R.drawable.ic_play_all)
             .setButtonType(ConfirmationDialog.ButtonType.Danger(buttonString))
             .setOnConfirm { viewModel.onPlayAllFromHere(episode) }
         dialog.show(parentFragmentManager, "confirm_play_all")

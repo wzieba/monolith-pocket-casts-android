@@ -43,7 +43,7 @@ object UiUtil {
             builder.setTitle(title)
                 .setMessage(message)
                 .setCancelable(true)
-                .setPositiveButton(LR.string.ok, null)
+                .setPositiveButton(R.string.ok, null)
                 .setOnDismissListener { onComplete?.run() }
                 .show()
         } catch (e: Exception) {
@@ -57,7 +57,7 @@ object UiUtil {
     }
 
     fun displayAlertError(context: Context?, message: String, onComplete: Runnable?) {
-        displayAlertError(context, context?.getString(LR.string.error) ?: "", message, onComplete)
+        displayAlertError(context, context?.getString(R.string.error) ?: "", message, onComplete)
     }
 
     fun setTitle(menu: Menu?, menuItemId: Int, title: String) {
@@ -152,6 +152,6 @@ object UiUtil {
     }
 
     fun displayDialogNoEmailApp(context: Context) {
-        displayAlertError(context, context.getString(LR.string.settings_no_email_app_title), context.getString(LR.string.settings_no_email_app), null)
+        displayAlertError(context, context.getString(R.string.settings_no_email_app_title), context.getString(R.string.settings_no_email_app), null)
     }
 }

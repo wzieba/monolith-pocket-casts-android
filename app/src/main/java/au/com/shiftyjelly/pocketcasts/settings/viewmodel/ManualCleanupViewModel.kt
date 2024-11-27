@@ -33,9 +33,9 @@ class ManualCleanupViewModel
 ) : ViewModel() {
     data class State(
         val diskSpaceViews: List<DiskSpaceView> = listOf(
-            DiskSpaceView(title = LR.string.unplayed),
-            DiskSpaceView(title = LR.string.in_progress),
-            DiskSpaceView(title = LR.string.played),
+            DiskSpaceView(title = R.string.unplayed),
+            DiskSpaceView(title = R.string.in_progress),
+            DiskSpaceView(title = R.string.played),
         ),
         val totalSelectedDownloadSize: Long = 0L,
         val deleteButton: DeleteButton = DeleteButton(),
@@ -125,7 +125,7 @@ class ManualCleanupViewModel
                     playbackManager = playbackManager,
                     removeFromUpNext = false,
                 )
-                _snackbarMessage.emit(LR.string.settings_manage_downloads_deleting)
+                _snackbarMessage.emit(R.string.settings_manage_downloads_deleting)
             }
         }
     }
@@ -176,18 +176,18 @@ class ManualCleanupViewModel
 
     private fun EpisodePlayingStatus.mapToDiskSpaceViewTitle() =
         when (this) {
-            EpisodePlayingStatus.NOT_PLAYED -> LR.string.unplayed
-            EpisodePlayingStatus.IN_PROGRESS -> LR.string.in_progress
-            EpisodePlayingStatus.COMPLETED -> LR.string.played
+            EpisodePlayingStatus.NOT_PLAYED -> R.string.unplayed
+            EpisodePlayingStatus.IN_PROGRESS -> R.string.in_progress
+            EpisodePlayingStatus.COMPLETED -> R.string.played
         }
 
     private fun trackCleanupCompleted() {
         val properties = HashMap<String, Boolean>()
         state.value.diskSpaceViews.forEach {
             when (it.title) {
-                LR.string.unplayed -> properties[UNPLAYED_KEY] = it.isChecked
-                LR.string.played -> properties[PLAYED_KEY] = it.isChecked
-                LR.string.in_progress -> properties[IN_PROGRESS_KEY] = it.isChecked
+                R.string.unplayed -> properties[UNPLAYED_KEY] = it.isChecked
+                R.string.played -> properties[PLAYED_KEY] = it.isChecked
+                R.string.in_progress -> properties[IN_PROGRESS_KEY] = it.isChecked
             }
         }
         properties[INCLUDE_STARRED_KEY] = switchState.value ?: false

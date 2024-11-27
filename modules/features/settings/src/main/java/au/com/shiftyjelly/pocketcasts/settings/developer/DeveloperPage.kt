@@ -67,7 +67,7 @@ fun DeveloperPage(
     ) {
         item {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_developer),
+                title = stringResource(R.string.settings_developer),
                 onNavigationClick = onBackClick,
             )
         }

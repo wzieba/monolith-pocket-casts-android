@@ -160,7 +160,7 @@ Language: ca
     <string name="share_invalid_clip_message">El començament del clip ha de ser abans del seu final</string>
     <string name="go_to_next">Següent</string>
     <string name="go_to_previous">Anterior</string>
-    <string name="share_error_message">No es pot compartir. Torna-ho a intentar més tard.</string>
+    <string name="share_error_message">No es pot compartR. Torna-ho a intentar més tard.</string>
     <string name="share_clip_sharing_clip">Creant el clip…</string>
     <string name="share_clip_create_audio_description">Genera un fitxer d\'àudio .mp3</string>
     <string name="share_clip_create_audio_label">Crear un fitxer d\'àudio</string>
@@ -924,7 +924,7 @@ Language: ca
     <string name="error_file_not_found">No s\'ha trobat el fitxer de l\'episodi. Proveu-lo a descarregar de nou.</string>
     <string name="error_storage_permission">Denegat. Pocket Casts no pot reproduir aquest fitxer; revisa els permisos d\'emmagatzematge.</string>
     <string name="error_playing_format_external">Aquest episodi sembla estar en un format que no podem reproduir, però potser algunes altres aplicacions ho podran fer?</string>
-    <string name="error_playing_format">El fitxer no es pot reproduir. Prova de convertir-lo a un altre format.</string>
+    <string name="error_playing_format">El fitxer no es pot reproduR. Prova de convertir-lo a un altre format.</string>
     <string name="error_unable_to_play">No es pot reproduir el fitxer</string>
     <string name="error_unable_to_cast">Aquest episodi no es pot emetre. És possible que l\'autor del pòdcast no l\'hagi posat disponible.</string>
     <string name="error_unable_to_cast_local">No es pot emetre l\'arxiu local</string>
@@ -1595,7 +1595,7 @@ Language: ca
     <string name="podcast_archive_all_played">Arxivar tots els reproduïts</string>
     <string name="podcast_archive_all">Arxiva-ho tot</string>
     <string name="podcasts_unarchive">Desarxivar</string>
-    <string name="podcasts_time_to_add_some_podcasts_summary">Pots afegir pòdcasts si els busques amb la lupa de dalt. I si vols una mica d\'inspiració, ves a la pestanya Descobrir. Tot teu!</string>
+    <string name="podcasts_time_to_add_some_podcasts_summary">Pots afegir pòdcasts si els busques amb la lupa de dalt. I si vols una mica d\'inspiració, ves a la pestanya DescobrR. Tot teu!</string>
     <string name="podcasts_time_to_add_some_podcasts">És hora d\'afegir alguns pòdcasts!</string>
     <string name="podcasts_sort_order">Tipus d\'ordenació</string>
     <string name="podcasts_sort_by_title">\"Títol (A - Z)\"</string>

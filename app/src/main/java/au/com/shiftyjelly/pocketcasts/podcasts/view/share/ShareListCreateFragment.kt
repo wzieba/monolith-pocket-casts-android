@@ -80,7 +80,7 @@ class ShareListCreateFragment : BaseFragment() {
     private fun createShareLink(navController: NavHostController) {
         viewModel.sharePodcasts(
             context = requireContext(),
-            label = getString(LR.string.podcasts_share_via),
+            label = getString(R.string.podcasts_share_via),
             onBefore = { navController.navigate(NavRoutes.building) },
             onSuccess = { activity?.finish() },
             onFailure = { navController.navigate(NavRoutes.failed) },

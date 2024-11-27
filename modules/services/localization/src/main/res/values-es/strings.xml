@@ -160,7 +160,7 @@ Language: es
     <string name="share_invalid_clip_message">El inicio del clip debe ser anterior al final del clip</string>
     <string name="go_to_next">Siguiente</string>
     <string name="go_to_previous">Anterior</string>
-    <string name="share_error_message">No se ha podido compartir. Inténtalo de nuevo más tarde.</string>
+    <string name="share_error_message">No se ha podido compartR. Inténtalo de nuevo más tarde.</string>
     <string name="share_clip_sharing_clip">Creando clip…</string>
     <string name="share_clip_create_audio_description">Genera un archivo de audio .mp3</string>
     <string name="share_clip_create_audio_label">Crear archivo de audio</string>
@@ -675,7 +675,7 @@ Language: es
     <string name="end_of_year_launch_modal_primary_button_title">Ver Mi Playback 2024</string>
     <string name="end_of_year_launch_modal_summary">Consulta cuáles han sido los podcasts y las categorías que más has escuchado, las estadísticas de escucha y mucho más. Compártelo con tus amigos y haz que todo el mundo sepa cuáles son tus creadores favoritos.</string>
     <string name="settings_app_icon_halloween">Halloween</string>
-    <string name="settings_show_played_summary">Se seguirán mostrando los episodios que hayas terminado de reproducir.</string>
+    <string name="settings_show_played_summary">Se seguirán mostrando los episodios que hayas terminado de reproducR.</string>
     <string name="settings_show_played">Mostrar episodios reproducidos</string>
     <string name="settings_privacy_crash_link_summary">Permítenos vincular tu cuenta de Pocket Casts a los informes de errores.</string>
     <string name="settings_privacy_crash_link">Vincular tu cuenta a los errores</string>
@@ -826,7 +826,7 @@ Language: es
     <string name="profile_cloud_settings_title">Ajustes de los archivos</string>
     <string name="server_files_title_required">Se necesita un título.</string>
     <string name="server_files_storage_limit_exceeded">Has superado el límite de almacenamiento de la cuenta.</string>
-    <string name="server_files_file_too_large">Este archivo es demasiado grande para que se pueda subir.</string>
+    <string name="server_files_file_too_large">Este archivo es demasiado grande para que se pueda subR.</string>
     <string name="server_files_invalid_user">El usuario no está conectado.</string>
     <string name="server_files_invalid_content_type">No se puede subir este archivo, ya que no podemos determinar el tipo de contenido que tiene.</string>
     <string name="server_login_user_register_failed">No se puede crear una cuenta, inténtalo más tarde</string>
@@ -923,7 +923,7 @@ Language: es
     <string name="error_invalid_email">Esta dirección de correo electrónico no es válida</string>
     <string name="error_file_not_found">No se ha encontrado el archivo del episodio. Prueba a descargarlo de nuevo.</string>
     <string name="error_storage_permission">Denegado. Pocket Casts no puede reproducir este archivo; revisa los permisos de almacenamiento.</string>
-    <string name="error_playing_format_external">Parece que este episodio está en un formato que no podemos reproducir. Quizá otras aplicaciones pueden reproducirlo.</string>
+    <string name="error_playing_format_external">Parece que este episodio está en un formato que no podemos reproducR. Quizá otras aplicaciones pueden reproducirlo.</string>
     <string name="error_playing_format">No se puede reproducir el archivo. Prueba a convertirlo a otro formato.</string>
     <string name="error_unable_to_play">No se puede reproducir el archivo</string>
     <string name="error_unable_to_cast">No se puede emitir este episodio. Es posible que el autor del podcast no lo haya puesto a disposición de la gente.</string>
@@ -1595,7 +1595,7 @@ Language: es
     <string name="podcast_archive_all_played">Archivar todos los reproducidos</string>
     <string name="podcast_archive_all">Archivar todos</string>
     <string name="podcasts_unarchive">Desarchivar</string>
-    <string name="podcasts_time_to_add_some_podcasts_summary">Puedes añadir podcasts si los buscas más arriba. Si buscas inspiración, prueba la pestaña Descubrir.</string>
+    <string name="podcasts_time_to_add_some_podcasts_summary">Puedes añadir podcasts si los buscas más arriba. Si buscas inspiración, prueba la pestaña DescubrR.</string>
     <string name="podcasts_time_to_add_some_podcasts">¡Es hora de añadir algunos podcasts!</string>
     <string name="podcasts_sort_order">Criterio de ordenación</string>
     <string name="podcasts_sort_by_title">\"Título (A - Z)\"</string>
@@ -1612,7 +1612,7 @@ Language: es
     <string name="podcasts_share_generating_list">Generando lista…</string>
     <string name="podcasts_share_missing_podcast">Elige al menos un podcast.</string>
     <string name="podcasts_share_missing_title">Escribe un título para la lista.</string>
-    <string name="podcasts_share_create_error">Vaya, no se ha podido compartir.</string>
+    <string name="podcasts_share_create_error">Vaya, no se ha podido compartR.</string>
     <string name="podcasts_share_title">Título</string>
     <string name="podcasts_share_selected_podcasts">Compartir los podcasts elegidos</string>
     <string name="podcasts_share_select_all">Seleccionar todo</string>

@@ -67,16 +67,16 @@ open class ConfirmationDialog : BottomSheetDialogFragment() {
                 null
             } else if (episodeCount in 5..Settings.MAX_DOWNLOAD) {
                 ConfirmationDialog()
-                    .setButtonType(ButtonType.Normal(resources.getString(LR.string.download_warning_button, episodeCount)))
-                    .setIconId(IR.drawable.ic_download)
-                    .setTitle(resources.getString(LR.string.download_warning_title))
+                    .setButtonType(ButtonType.Normal(resources.getString(R.string.download_warning_button, episodeCount)))
+                    .setIconId(R.drawable.ic_download)
+                    .setTitle(resources.getString(R.string.download_warning_title))
                     .setOnConfirm(onConfirm)
             } else {
                 ConfirmationDialog()
-                    .setButtonType(ButtonType.Normal(resources.getString(LR.string.download_warning_button, Settings.MAX_DOWNLOAD)))
-                    .setIconId(IR.drawable.ic_download)
-                    .setTitle(resources.getString(LR.string.download_warning_title))
-                    .setSummary(resources.getString(LR.string.download_warning_limit_summary, Settings.MAX_DOWNLOAD))
+                    .setButtonType(ButtonType.Normal(resources.getString(R.string.download_warning_button, Settings.MAX_DOWNLOAD)))
+                    .setIconId(R.drawable.ic_download)
+                    .setTitle(resources.getString(R.string.download_warning_title))
+                    .setSummary(resources.getString(R.string.download_warning_limit_summary, Settings.MAX_DOWNLOAD))
                     .setOnConfirm(onConfirm)
             }
         }

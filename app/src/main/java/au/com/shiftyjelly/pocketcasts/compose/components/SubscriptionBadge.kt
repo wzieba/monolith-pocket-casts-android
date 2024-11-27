@@ -42,8 +42,8 @@ fun SubscriptionBadge(
 ) {
     val (textId, iconId) = when (subscriptionTier) {
         SubscriptionTier.NONE -> return
-        SubscriptionTier.PLUS -> LR.string.pocket_casts_plus_short to IR.drawable.ic_plus
-        SubscriptionTier.PATRON -> LR.string.pocket_casts_patron_short to IR.drawable.ic_patron
+        SubscriptionTier.PLUS -> R.string.pocket_casts_plus_short to R.drawable.ic_plus
+        SubscriptionTier.PATRON -> R.string.pocket_casts_patron_short to R.drawable.ic_patron
     }
     Row(
         verticalAlignment = Alignment.CenterVertically,

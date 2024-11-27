@@ -59,7 +59,7 @@ class SonosAppLinkActivity : AppCompatActivity(), CoroutineScope {
 
         val toolbar = binding.toolbar
         toolbar.setup(
-            title = getString(LR.string.profile_sonos_connect_to),
+            title = getString(R.string.profile_sonos_connect_to),
             navigationIcon = NavigationIcon.Close,
             onNavigationClick = { finish() },
             activity = this,
@@ -84,14 +84,14 @@ class SonosAppLinkActivity : AppCompatActivity(), CoroutineScope {
     override fun onResume() {
         super.onResume()
 
-        binding.sonosImage.setImageResource(if (theme.isDarkTheme) IR.drawable.sonos_dark else IR.drawable.sonos_light)
+        binding.sonosImage.setImageResource(if (theme.isDarkTheme) R.drawable.sonos_dark else R.drawable.sonos_light)
 
         if (syncManager.isLoggedIn()) {
-            binding.explanationText.setText(LR.string.profile_sonos_connect_account)
-            binding.connectBtn.setText(LR.string.profile_sonos_connect)
+            binding.explanationText.setText(R.string.profile_sonos_connect_account)
+            binding.connectBtn.setText(R.string.profile_sonos_connect)
         } else {
-            binding.explanationText.setText(LR.string.profile_sonos_need_account)
-            binding.connectBtn.setText(LR.string.profile_sonos_setup_account)
+            binding.explanationText.setText(R.string.profile_sonos_need_account)
+            binding.connectBtn.setText(R.string.profile_sonos_setup_account)
         }
     }
 
@@ -101,7 +101,7 @@ class SonosAppLinkActivity : AppCompatActivity(), CoroutineScope {
 
     private suspend fun connectWithSonos() {
         try {
-            binding.connectBtn.setText(LR.string.profile_sonos_connecting)
+            binding.connectBtn.setText(R.string.profile_sonos_connecting)
 
             val response = syncManager.exchangeSonos()
             val sonosToken = response.accessToken
@@ -119,8 +119,8 @@ class SonosAppLinkActivity : AppCompatActivity(), CoroutineScope {
         } catch (e: Exception) {
             LogBuffer.e(LogBuffer.TAG_CRASH, e, "Failed to link Sonos")
 
-            binding.connectBtn.setText(LR.string.profile_sonos_retry)
-            UiUtil.displayAlert(this, getString(LR.string.profile_sonos_linking_failed), getString(LR.string.profile_sonos_linking_failed_summary), null)
+            binding.connectBtn.setText(R.string.profile_sonos_retry)
+            UiUtil.displayAlert(this, getString(R.string.profile_sonos_linking_failed), getString(R.string.profile_sonos_linking_failed_summary), null)
         }
     }
 }

@@ -35,8 +35,8 @@ fun NavGraphBuilder.settingsUrlScreens() {
         route = UrlScreenRoutes.termsOfService,
     ) {
         UrlScreen(
-            title = stringResource(LR.string.settings_about_terms_of_serivce),
-            message = stringResource(LR.string.settings_about_terms_of_service_available_at, Settings.INFO_TOS_URL),
+            title = stringResource(R.string.settings_about_terms_of_serivce),
+            message = stringResource(R.string.settings_about_terms_of_service_available_at, Settings.INFO_TOS_URL),
             url = Settings.INFO_TOS_URL,
         )
     }
@@ -45,8 +45,8 @@ fun NavGraphBuilder.settingsUrlScreens() {
         route = UrlScreenRoutes.privacy,
     ) {
         UrlScreen(
-            title = stringResource(id = LR.string.settings_about_privacy_policy),
-            message = stringResource(LR.string.settings_about_privacy_policy_available_at, Settings.INFO_PRIVACY_URL),
+            title = stringResource(id = R.string.settings_about_privacy_policy),
+            message = stringResource(R.string.settings_about_privacy_policy_available_at, Settings.INFO_PRIVACY_URL),
             url = Settings.INFO_PRIVACY_URL,
         )
     }
@@ -82,7 +82,7 @@ fun UrlScreen(
             item {
                 val context = LocalContext.current
                 WatchListChip(
-                    title = stringResource(LR.string.settings_open_on_phone),
+                    title = stringResource(R.string.settings_open_on_phone),
                     onClick = {
                         coroutineScope.launch {
                             openUrlOnPhone(url, context)
@@ -104,7 +104,7 @@ private suspend fun openUrlOnPhone(url: String, context: Context) {
             .await()
     } catch (e: Exception) {
         Timber.i("UrlScreen failed to open url $url on phone")
-        Toast.makeText(context, LR.string.settings_could_not_open_on_phone, Toast.LENGTH_SHORT)
+        Toast.makeText(context, R.string.settings_could_not_open_on_phone, Toast.LENGTH_SHORT)
             .show()
     }
 }

@@ -62,11 +62,11 @@ class GiveRatingFragment : BaseDialogFragment() {
                             podcastUuid = podcastUuid,
                             context = context,
                             onSuccess = {
-                                displayMessage(getString(LR.string.thank_you_for_rating))
+                                displayMessage(getString(R.string.thank_you_for_rating))
                                 dismiss()
                             },
                             onError = {
-                                displayMessage(getString(LR.string.something_went_wrong_to_rate_this_podcast))
+                                displayMessage(getString(R.string.something_went_wrong_to_rate_this_podcast))
                                 dismiss()
                             },
                         )
@@ -75,7 +75,7 @@ class GiveRatingFragment : BaseDialogFragment() {
                 onDismiss = ::dismiss,
                 onUserSignedOut = {
                     OnboardingLauncher.openOnboardingFlow(requireActivity(), OnboardingFlow.LoggedOut)
-                    Toast.makeText(context, context.getString(LR.string.podcast_log_in_to_rate), Toast.LENGTH_LONG)
+                    Toast.makeText(context, context.getString(R.string.podcast_log_in_to_rate), Toast.LENGTH_LONG)
                         .show()
                     coroutineScope.launch {
                         // a short delay prevents the screen from flashing before the onboarding flow is shown

@@ -101,7 +101,7 @@ class AppearanceIconSettingsAdapter(
                 tickDrawable = AppCompatResources.getDrawable(itemView.context, iconDrawable)
             }
             binding.imgTick.setImageDrawable(tickDrawable)
-            binding.imgTick.contentDescription = binding.imgTick.resources.getString(if (selected) LR.string.on else LR.string.off)
+            binding.imgTick.contentDescription = binding.imgTick.resources.getString(if (selected) R.string.on else R.string.off)
             binding.imgLock.isVisible = !isValidIcon
             binding.txtTitle.setText(appIcon.labelId)
 

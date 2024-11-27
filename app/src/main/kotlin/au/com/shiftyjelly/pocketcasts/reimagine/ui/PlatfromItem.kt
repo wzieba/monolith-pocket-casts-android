@@ -40,7 +40,7 @@ internal fun PlatformItem(
         modifier = Modifier.clickable(
             interactionSource = remember(::MutableInteractionSource),
             indication = ripple(color = shareColors.accent),
-            onClickLabel = stringResource(LR.string.share_via, stringResource(platform.nameId)),
+            onClickLabel = stringResource(R.string.share_via, stringResource(platform.nameId)),
             role = Role.Button,
             onClick = { onClick(platform) },
         ),

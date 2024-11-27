@@ -66,9 +66,9 @@ fun ObtainConfirmationScreen(
                             .fillMaxSize(),
                     ) {
                         Icon(
-                            painter = painterResource(IR.drawable.ic_close),
+                            painter = painterResource(R.drawable.ic_close),
                             tint = Color.White,
-                            contentDescription = stringResource(LR.string.cancel),
+                            contentDescription = stringResource(R.string.cancel),
                         )
                     }
                 }
@@ -85,9 +85,9 @@ fun ObtainConfirmationScreen(
                             .fillMaxSize(),
                     ) {
                         Icon(
-                            painter = painterResource(IR.drawable.ic_check_black_24dp),
+                            painter = painterResource(R.drawable.ic_check_black_24dp),
                             tint = Color.Black,
-                            contentDescription = stringResource(LR.string.profile_confirm),
+                            contentDescription = stringResource(R.string.profile_confirm),
                         )
                     }
                 }

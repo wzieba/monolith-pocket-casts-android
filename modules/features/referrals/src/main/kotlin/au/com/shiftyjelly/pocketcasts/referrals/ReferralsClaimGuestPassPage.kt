@@ -133,9 +133,9 @@ fun ReferralsClaimGuestPassPage(
         LaunchedEffect(Unit) {
             viewModel.snackBarEvent.collect { snackBarEvent ->
                 val text = when (snackBarEvent) {
-                    SnackbarEvent.NoNetwork -> context.getString(LR.string.error_no_network)
-                    SnackbarEvent.PurchaseFailed -> context.getString(LR.string.referrals_create_subscription_failed)
-                    SnackbarEvent.RedeemFailed -> context.getString(LR.string.referrals_redeem_code_failed)
+                    SnackbarEvent.NoNetwork -> context.getString(R.string.error_no_network)
+                    SnackbarEvent.PurchaseFailed -> context.getString(R.string.referrals_create_subscription_failed)
+                    SnackbarEvent.RedeemFailed -> context.getString(R.string.referrals_redeem_code_failed)
                 }
                 snackbarHostState.showSnackbar(text)
             }
@@ -215,7 +215,7 @@ private fun ReferralsClaimGuestPassContent(
 
                 is UiState.Error -> {
                     val errorMessage = when (state.error) {
-                        ReferralsClaimGuestPassError.FailedToLoadOffer -> stringResource(LR.string.referrals_failed_to_load_offer)
+                        ReferralsClaimGuestPassError.FailedToLoadOffer -> stringResource(R.string.referrals_failed_to_load_offer)
                     }
                     ReferralsGuestPassError(errorMessage, onRetry, onDismiss)
                 }
@@ -254,9 +254,9 @@ private fun ClaimGuestPassContent(
     ) {
         val language = Locale.current.language
         val titleTextResId = if (language == "en") {
-            LR.string.referrals_claim_guest_pass_title_english_only
+            R.string.referrals_claim_guest_pass_title_english_only
         } else {
-            LR.string.referrals_claim_guest_pass_title
+            R.string.referrals_claim_guest_pass_title
         }
         val price = referralsOfferInfo.localizedPriceAfterOffer
 
@@ -266,15 +266,15 @@ private fun ClaimGuestPassContent(
             onClick = onDismiss,
         ) {
             TextP30(
-                text = stringResource(LR.string.not_now),
+                text = stringResource(R.string.not_now),
             )
         }
 
         SubscriptionBadge(
             fontSize = 16.sp,
             padding = 4.dp,
-            iconRes = IR.drawable.ic_plus,
-            shortNameRes = LR.string.pocket_casts_plus_short,
+            iconRes = R.drawable.ic_plus,
+            shortNameRes = R.string.pocket_casts_plus_short,
             iconColor = Color.Black,
             backgroundBrush = plusBackgroundBrush,
             textColor = Color.Black,
@@ -303,7 +303,7 @@ private fun ClaimGuestPassContent(
         Spacer(modifier = Modifier.height(16.dp))
 
         TextP60(
-            text = stringResource(LR.string.referrals_claim_guest_pass_description, price),
+            text = stringResource(R.string.referrals_claim_guest_pass_description, price),
             textAlign = TextAlign.Center,
             modifier = Modifier.width(guestPassCardWidth),
         )
@@ -315,7 +315,7 @@ private fun ClaimGuestPassContent(
         }
 
         GradientRowButton(
-            primaryText = stringResource(LR.string.referrals_activate_my_pass),
+            primaryText = stringResource(R.string.referrals_activate_my_pass),
             textColor = Color.Black,
             gradientBackgroundColor = plusBackgroundBrush,
             modifier = Modifier.padding(16.dp),

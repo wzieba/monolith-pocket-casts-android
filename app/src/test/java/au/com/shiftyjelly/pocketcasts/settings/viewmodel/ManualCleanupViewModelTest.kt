@@ -31,7 +31,7 @@ class ManualCleanupViewModelTest {
     private val episode: PodcastEpisode = PodcastEpisode(uuid = "1", publishedDate = Date())
     private val episodes = listOf(episode)
     private val diskSpaceView =
-        ManualCleanupViewModel.State.DiskSpaceView(title = LR.string.unplayed, episodes = episodes)
+        ManualCleanupViewModel.State.DiskSpaceView(title = R.string.unplayed, episodes = episodes)
 
     @Before
     fun setUp() {

@@ -74,9 +74,9 @@ private fun Content(
 
     WatchListChip(
         title = if (isPlaying) {
-            stringResource(LR.string.player_tab_playing_wide)
+            stringResource(R.string.player_tab_playing_wide)
         } else {
-            podcast?.title ?: stringResource(LR.string.player_tab_playing_wide)
+            podcast?.title ?: stringResource(R.string.player_tab_playing_wide)
         },
         icon = {
             if (isPlaying) {
@@ -127,7 +127,7 @@ private val nothingPainter = object : Painter() {
 @Composable
 private fun PlayingAnimation() {
     val composition by rememberLottieComposition(
-        LottieCompositionSpec.RawRes(IR.raw.nowplaying),
+        LottieCompositionSpec.RawRes(R.raw.nowplaying),
     )
     LottieAnimation(
         composition = composition,
@@ -138,7 +138,7 @@ private fun PlayingAnimation() {
 @Composable
 private fun PlayIcon() {
     Icon(
-        painter = painterResource(IR.drawable.ic_play_all),
+        painter = painterResource(R.drawable.ic_play_all),
         contentDescription = null,
     )
 }

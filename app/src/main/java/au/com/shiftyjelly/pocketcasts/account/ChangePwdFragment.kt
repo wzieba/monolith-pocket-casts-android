@@ -53,7 +53,7 @@ class ChangePwdFragment : BaseFragment() {
                     viewModel.changePassword()
                 },
                 onSuccess = {
-                    doneViewModel.setChangedPasswordState(detail = getString(LR.string.profile_password_changed_successful))
+                    doneViewModel.setChangedPasswordState(detail = getString(R.string.profile_password_changed_successful))
 
                     doneViewModel.trackShown(AccountActivity.AccountUpdatedSource.CHANGE_PASSWORD)
 

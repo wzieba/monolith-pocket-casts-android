@@ -149,7 +149,7 @@ fun OnboardingUpgradeBottomSheet(
                 if (offerPhase != null) {
                     if (selectedSubscription is Subscription.Intro) {
                         stringResource(
-                            LR.string.onboarding_plus_recurring_after_intro_offer,
+                            R.string.onboarding_plus_recurring_after_intro_offer,
                             recurringAfterIntroString(
                                 offerPhase,
                                 state.selectedSubscription.recurringPricingPhase,
@@ -158,13 +158,13 @@ fun OnboardingUpgradeBottomSheet(
                         )
                     } else {
                         stringResource(
-                            LR.string.onboarding_plus_recurring_after_free_trial,
+                            R.string.onboarding_plus_recurring_after_free_trial,
                             recurringAfterTrialString(offerPhase, resources),
                         )
                     }
                 } else {
                     val firstLine = stringResource(state.selectedSubscription.recurringPricingPhase.renews)
-                    val secondLine = stringResource(LR.string.onboarding_plus_can_be_canceled_at_any_time)
+                    val secondLine = stringResource(R.string.onboarding_plus_can_be_canceled_at_any_time)
                     "$firstLine.\n$secondLine"
                 }
             }
@@ -188,7 +188,7 @@ fun OnboardingUpgradeBottomSheet(
                 ),
             ) {
                 TextP60(
-                    text = stringResource(LR.string.profile_create_subscription_failed),
+                    text = stringResource(R.string.profile_create_subscription_failed),
                     color = Color.Red,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(top = 16.dp),
@@ -257,7 +257,7 @@ private fun recurringAfterIntroString(
     recurringSubscriptionPricingPhase: RecurringSubscriptionPricingPhase,
     res: Resources,
 ): String =
-    "${recurringSubscriptionPricingPhase.formattedPrice} ${res.getString(LR.string.onboarding_plus_recurring_after_intro_offer_sufix)} (${offerSubscriptionPricingPhase.offerEnd()})"
+    "${recurringSubscriptionPricingPhase.formattedPrice} ${res.getString(R.string.onboarding_plus_recurring_after_intro_offer_sufix)} (${offerSubscriptionPricingPhase.offerEnd()})"
 
 fun SubscriptionTier.toSubscribeTitle() = when (this) {
     SubscriptionTier.PLUS -> R.string.onboarding_subscribe_to_plus
@@ -266,11 +266,11 @@ fun SubscriptionTier.toSubscribeTitle() = when (this) {
 }
 fun SubscriptionTier.toSubscribeButton(res: Resources) =
     res.getString(
-        LR.string.subscribe_to,
+        R.string.subscribe_to,
         when (this) {
-            SubscriptionTier.PATRON -> res.getString(LR.string.pocket_casts_patron_short)
-            SubscriptionTier.PLUS -> res.getString(LR.string.pocket_casts_plus_short)
-            SubscriptionTier.UNKNOWN -> res.getString(LR.string.pocket_casts_plus_short)
+            SubscriptionTier.PATRON -> res.getString(R.string.pocket_casts_patron_short)
+            SubscriptionTier.PLUS -> res.getString(R.string.pocket_casts_plus_short)
+            SubscriptionTier.UNKNOWN -> res.getString(R.string.pocket_casts_plus_short)
         },
     )
 fun SubscriptionTier.toOutlinedButtonBrush() = when (this) {

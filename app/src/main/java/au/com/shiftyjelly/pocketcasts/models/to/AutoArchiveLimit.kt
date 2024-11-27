@@ -13,31 +13,31 @@ enum class AutoArchiveLimit(
         value = null,
         serverId = 0,
         analyticsValue = "none",
-        stringRes = LR.string.settings_auto_archive_limit_none,
+        stringRes = R.string.settings_auto_archive_limit_none,
     ),
     One(
         value = 1,
         serverId = 1,
         analyticsValue = "1",
-        stringRes = LR.string.settings_auto_archive_limit_1,
+        stringRes = R.string.settings_auto_archive_limit_1,
     ),
     Two(
         value = 2,
         serverId = 2,
         analyticsValue = "2",
-        stringRes = LR.string.settings_auto_archive_limit_2,
+        stringRes = R.string.settings_auto_archive_limit_2,
     ),
     Five(
         value = 5,
         serverId = 5,
         analyticsValue = "5",
-        stringRes = LR.string.settings_auto_archive_limit_5,
+        stringRes = R.string.settings_auto_archive_limit_5,
     ),
     Ten(
         value = 10,
         serverId = 10,
         analyticsValue = "10",
-        stringRes = LR.string.settings_auto_archive_limit_10,
+        stringRes = R.string.settings_auto_archive_limit_10,
     ),
     ;
 

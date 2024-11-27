@@ -108,7 +108,7 @@ private fun WaitText(
                 modifier = Modifier.height(8.dp),
             )
             Image(
-                painter = painterResource(IR.drawable.eoy_plus_text_stop),
+                painter = painterResource(R.drawable.eoy_plus_text_stop),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(Color(0xFFF9BC48)),
                 modifier = Modifier.size(28.dp),
@@ -132,7 +132,7 @@ private fun PlusInfo(
         ),
     ) {
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_plus_interstitial_plus_badge),
+            painter = painterResource(R.drawable.end_of_year_2024_plus_interstitial_plus_badge),
             contentDescription = null,
             modifier = Modifier.padding(start = 24.dp),
         )
@@ -140,7 +140,7 @@ private fun PlusInfo(
             modifier = Modifier.height(16.dp),
         )
         TextH10(
-            text = stringResource(LR.string.end_of_year_stories_theres_more),
+            text = stringResource(R.string.end_of_year_stories_theres_more),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
@@ -150,14 +150,14 @@ private fun PlusInfo(
             modifier = Modifier.height(16.dp),
         )
         TextP40(
-            text = stringResource(LR.string.end_of_year_stories_subscribe_to_plus),
+            text = stringResource(R.string.end_of_year_stories_subscribe_to_plus),
             fontSize = 15.sp,
             disableAutoScale = true,
             color = colorResource(UR.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         OutlinedEoyButton(
-            text = stringResource(LR.string.eoy_story_stories_subscribe_to_plus_button_label),
+            text = stringResource(R.string.eoy_story_stories_subscribe_to_plus_button_label),
             onClick = onClickUpsell,
         )
     }

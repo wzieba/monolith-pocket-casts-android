@@ -66,7 +66,7 @@ data class PocketCastsImageRequestFactory(
     ) = ImageRequest.Builder(context)
         .data(type.data(context))
         .placeholder(placeholderId)
-        .error(if (isDarkTheme) IR.drawable.defaultartwork_dark else IR.drawable.defaultartwork)
+        .error(if (isDarkTheme) R.drawable.defaultartwork_dark else R.drawable.defaultartwork)
         .transformations(
             buildList {
                 add(RoundedCornersTransformation(actualCornerRadius.toFloat()))
@@ -80,8 +80,8 @@ data class PocketCastsImageRequestFactory(
     @get:DrawableRes private val placeholderId
         get() = when (placeholderType) {
             PlaceholderType.None -> 0
-            PlaceholderType.Small -> if (isDarkTheme) IR.drawable.defaultartwork_small_dark else IR.drawable.defaultartwork_small
-            PlaceholderType.Large -> if (isDarkTheme) IR.drawable.defaultartwork_dark else IR.drawable.defaultartwork
+            PlaceholderType.Small -> if (isDarkTheme) R.drawable.defaultartwork_small_dark else R.drawable.defaultartwork_small
+            PlaceholderType.Large -> if (isDarkTheme) R.drawable.defaultartwork_dark else R.drawable.defaultartwork
         }
 
     private fun RequestType.data(context: Context) = when (this) {

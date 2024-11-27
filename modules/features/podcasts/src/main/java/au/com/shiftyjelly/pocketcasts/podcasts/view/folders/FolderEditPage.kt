@@ -48,17 +48,17 @@ fun FolderEditPage(
                 .verticalScroll(rememberScrollState()),
         ) {
             BottomSheetAppBar(
-                title = stringResource(LR.string.edit_folder),
+                title = stringResource(R.string.edit_folder),
                 navigationButton = NavigationButton.Close,
                 onNavigationClick = { onBackClick() },
             )
             TextC70(
-                text = stringResource(LR.string.name),
+                text = stringResource(R.string.name),
                 modifier = Modifier.padding(top = 16.dp, end = 16.dp, start = 16.dp),
             )
             FormField(
                 value = folderName,
-                placeholder = stringResource(LR.string.folder_name),
+                placeholder = stringResource(R.string.folder_name),
                 onValueChange = {
                     viewModel.changeFolderName(it)
                     viewModel.saveFolderName(resources = resources)
@@ -68,7 +68,7 @@ fun FolderEditPage(
                     .padding(top = 8.dp, start = 16.dp, end = 16.dp, bottom = 16.dp),
             )
             TextC70(
-                text = stringResource(LR.string.color),
+                text = stringResource(R.string.color),
                 modifier = Modifier.padding(top = 16.dp, end = 16.dp, start = 16.dp),
             )
             FolderColorPicker(
@@ -106,11 +106,11 @@ private fun DeleteButton(onDeleteClick: () -> Unit, modifier: Modifier = Modifie
             modifier = Modifier.padding(vertical = 12.dp),
         ) {
             TextP40(
-                text = stringResource(LR.string.delete_folder),
+                text = stringResource(R.string.delete_folder),
                 color = MaterialTheme.theme.colors.support05,
             )
             TextP50(
-                text = stringResource(LR.string.delete_folder_summary),
+                text = stringResource(R.string.delete_folder_summary),
                 color = MaterialTheme.theme.colors.primaryText02,
             )
         }

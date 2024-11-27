@@ -46,7 +46,7 @@ object OnboardingRecommendationsFlow {
                             } else {
                                 Toast.makeText(
                                     this,
-                                    this.getString(LR.string.error_check_your_internet_connection),
+                                    this.getString(R.string.error_check_your_internet_connection),
                                     Toast.LENGTH_SHORT,
                                 ).show()
                             }

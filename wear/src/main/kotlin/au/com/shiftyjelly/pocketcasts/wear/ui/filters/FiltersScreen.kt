@@ -58,7 +58,7 @@ private fun Content(
         columnState = columnState,
     ) {
         item {
-            ScreenHeaderChip(LR.string.filters)
+            ScreenHeaderChip(R.string.filters)
         }
         items(items = filters, key = { filter -> filter.uuid }) { filter ->
             WatchListChip(

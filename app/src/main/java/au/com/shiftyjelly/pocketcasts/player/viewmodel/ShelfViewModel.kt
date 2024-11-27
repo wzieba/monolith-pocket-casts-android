@@ -166,8 +166,8 @@ class ShelfViewModel @AssistedInject constructor(
     companion object {
         const val ERROR_MINIMUM_SHELF_ITEMS = "Minimum 4 shelf items should be present"
         const val ERROR_SHELF_ITEM_INVALID_MOVE_POSITION = "Shelf item invalid move position"
-        val shortcutTitle = ShelfTitle(LR.string.player_rearrange_actions_shown)
-        val moreActionsTitle = ShelfTitle(LR.string.player_rearrange_actions_hidden)
+        val shortcutTitle = ShelfTitle(R.string.player_rearrange_actions_shown)
+        val moreActionsTitle = ShelfTitle(R.string.player_rearrange_actions_hidden)
 
         object AnalyticsProp {
             object Key {

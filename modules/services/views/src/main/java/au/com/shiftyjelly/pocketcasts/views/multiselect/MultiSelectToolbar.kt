@@ -70,8 +70,8 @@ class MultiSelectToolbar @JvmOverloads constructor(
                         }
                     }
                     is MultiSelectEpisodesHelper -> {
-                        val overflow = menu.add(Menu.NONE, R.id.menu_overflow, 0, context.getString(LR.string.more_options))
-                        overflow.setIcon(IR.drawable.ic_more_vert_black_24dp)
+                        val overflow = menu.add(Menu.NONE, R.id.menu_overflow, 0, context.getString(R.string.more_options))
+                        overflow.setIcon(R.drawable.ic_more_vert_black_24dp)
                         overflow.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
                     }
                 }
@@ -110,7 +110,7 @@ class MultiSelectToolbar @JvmOverloads constructor(
         setNavigationOnClickListener {
             multiSelectHelper.isMultiSelecting = false
         }
-        navigationContentDescription = context.getString(LR.string.back)
+        navigationContentDescription = context.getString(R.string.back)
     }
 
     private fun showOverflowBottomSheet(

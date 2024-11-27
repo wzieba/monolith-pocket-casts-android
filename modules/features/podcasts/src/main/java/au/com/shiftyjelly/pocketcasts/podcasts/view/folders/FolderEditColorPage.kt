@@ -73,7 +73,7 @@ private fun FolderEditColorForm(
         val maxHeight = this.maxHeight
         Column {
             BottomSheetAppBar(
-                title = stringResource(LR.string.folder_choose_a_color),
+                title = stringResource(R.string.folder_choose_a_color),
                 navigationButton = NavigationButton.Back,
                 onNavigationClick = { onBackClick() },
             )
@@ -83,7 +83,7 @@ private fun FolderEditColorForm(
                     .weight(1f),
             ) {
                 TextC70(
-                    text = stringResource(LR.string.color),
+                    text = stringResource(R.string.color),
                     modifier = Modifier.padding(top = 16.dp, bottom = 8.dp, end = 16.dp, start = 16.dp),
                 )
                 HorizontalDivider(Modifier.padding(horizontal = 16.dp))
@@ -92,18 +92,18 @@ private fun FolderEditColorForm(
                     onClick = { colorId -> onColorChange(colorId) },
                 )
                 TextP60(
-                    text = stringResource(LR.string.folder_background_color_summary),
+                    text = stringResource(R.string.folder_background_color_summary),
                     color = MaterialTheme.theme.colors.primaryText02,
                     modifier = Modifier.padding(start = 16.dp, bottom = 16.dp),
                 )
                 TextC70(
-                    text = stringResource(LR.string.preview),
+                    text = stringResource(R.string.preview),
                     modifier = Modifier.padding(top = 16.dp, end = 16.dp, start = 16.dp, bottom = 8.dp),
                 )
                 HorizontalDivider(Modifier.padding(horizontal = 16.dp))
                 FolderPreview(
                     layout = state.layout,
-                    name = folderName.ifBlank { stringResource(LR.string.new_folder_title) },
+                    name = folderName.ifBlank { stringResource(R.string.new_folder_title) },
                     colorId = colorId,
                     podcastUuids = state.selectedUuids.toList(),
                     gridImageWidthDp = gridImageWidthDp,
@@ -112,7 +112,7 @@ private fun FolderEditColorForm(
             // only elevate the bottom button if the content will go under it
             Card(elevation = if (maxHeight > 600.dp) 0.dp else 6.dp) {
                 RowButton(
-                    text = stringResource(LR.string.save_folder),
+                    text = stringResource(R.string.save_folder),
                     onClick = { onSaveClick() },
                 )
             }

@@ -113,8 +113,8 @@ private fun ReferralsInvalidOfferPageContent(
                 SubscriptionBadge(
                     fontSize = 16.sp,
                     padding = 4.dp,
-                    iconRes = IR.drawable.ic_plus,
-                    shortNameRes = LR.string.pocket_casts_plus_short,
+                    iconRes = R.drawable.ic_plus,
+                    shortNameRes = R.string.pocket_casts_plus_short,
                     iconColor = Color.Black,
                     backgroundBrush = plusBackgroundBrush,
                     textColor = Color.Black,
@@ -123,14 +123,14 @@ private fun ReferralsInvalidOfferPageContent(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 TextH10(
-                    text = stringResource(LR.string.referrals_invalid_offer_title),
+                    text = stringResource(R.string.referrals_invalid_offer_title),
                     textAlign = TextAlign.Center,
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
                 TextH50(
-                    text = stringResource(LR.string.referrals_invalid_offer_description),
+                    text = stringResource(R.string.referrals_invalid_offer_description),
                     textAlign = TextAlign.Center,
                     modifier = Modifier.width(pageWidth * 0.8f),
                 )
@@ -142,7 +142,7 @@ private fun ReferralsInvalidOfferPageContent(
                 }
 
                 GradientRowButton(
-                    primaryText = stringResource(LR.string.got_it),
+                    primaryText = stringResource(R.string.got_it),
                     textColor = Color.Black,
                     gradientBackgroundColor = plusBackgroundBrush,
                     modifier = Modifier.padding(16.dp),

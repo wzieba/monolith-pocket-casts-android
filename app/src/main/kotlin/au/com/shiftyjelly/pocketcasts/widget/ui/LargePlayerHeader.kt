@@ -15,8 +15,8 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.data.LargePlayerWidgetState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun LargePlayerHeader(
@@ -48,7 +48,7 @@ internal fun LargePlayerHeader(
                 modifier = GlanceModifier.defaultWeight().height(116.dp),
             ) {
                 NonScalingText(
-                    text = episode?.title ?: LocalContext.current.getString(LR.string.widget_no_episode_playing),
+                    text = episode?.title ?: LocalContext.current.getString(R.string.widget_no_episode_playing),
                     textSize = 16.dp,
                     useDynamicColors = state.useDynamicColors,
                     isBold = true,

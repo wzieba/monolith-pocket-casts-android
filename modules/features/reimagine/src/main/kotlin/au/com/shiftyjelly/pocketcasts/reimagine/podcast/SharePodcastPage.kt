@@ -87,8 +87,8 @@ private fun VerticalSharePodcastPage(
 ) {
     val scope = rememberCoroutineScope()
     VerticalSharePage(
-        shareTitle = stringResource(LR.string.share_podcast_title),
-        shareDescription = stringResource(LR.string.share_podcast_description),
+        shareTitle = stringResource(R.string.share_podcast_title),
+        shareDescription = stringResource(R.string.share_podcast_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         onClose = listener::onClose,
@@ -130,8 +130,8 @@ private fun HorizontalSharePodcastPage(
 ) {
     val scope = rememberCoroutineScope()
     HorizontalSharePage(
-        shareTitle = stringResource(LR.string.share_podcast_title),
-        shareDescription = stringResource(LR.string.share_podcast_description),
+        shareTitle = stringResource(R.string.share_podcast_title),
+        shareDescription = stringResource(R.string.share_podcast_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         snackbarHostState = snackbarHostState,

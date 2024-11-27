@@ -21,9 +21,9 @@ fun PodcastSelectedText(
     color: Color = MaterialTheme.theme.colors.primaryText01,
 ) {
     val selectedString = when (count) {
-        0 -> stringResource(LR.string.settings_choose_podcasts)
-        1 -> stringResource(LR.string.podcasts_chosen_singular)
-        else -> stringResource(LR.string.podcasts_chosen_plural, count)
+        0 -> stringResource(R.string.settings_choose_podcasts)
+        1 -> stringResource(R.string.podcasts_chosen_singular)
+        else -> stringResource(R.string.podcasts_chosen_plural, count)
     }
     TextP40(
         text = selectedString,

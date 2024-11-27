@@ -123,7 +123,7 @@ private fun Page(
 ) {
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings_battery),
+            title = stringResource(R.string.settings_battery),
             bottomShadow = true,
             navigationButton = navigationButton,
             onNavigationClick = onBackPressed,
@@ -144,7 +144,7 @@ private fun Page(
                     .padding(start = startPadding, end = 16.dp),
             ) {
                 TextH30(
-                    text = stringResource(LR.string.settings_battery_unrestricted),
+                    text = stringResource(R.string.settings_battery_unrestricted),
                     color = MaterialTheme.theme.colors.primaryInteractive02,
                     modifier = Modifier.padding(vertical = 16.dp),
                 )
@@ -169,11 +169,11 @@ private fun Page(
                 )
             }
 
-            val learnMoreUrl = stringResource(LR.string.settings_battery_learn_more_url)
+            val learnMoreUrl = stringResource(R.string.settings_battery_learn_more_url)
             Column(
                 Modifier.clickable(
                     onClick = { openUrl(learnMoreUrl) },
-                    onClickLabel = stringResource(LR.string.settings_battery_learn_more),
+                    onClickLabel = stringResource(R.string.settings_battery_learn_more),
                 ),
             ) {
                 Row(Modifier.padding(top = 16.dp, end = 16.dp)) {
@@ -196,10 +196,10 @@ private fun Page(
                         )
                     }
 
-                    val learnMoreString = stringResource(LR.string.learn_more)
+                    val learnMoreString = stringResource(R.string.learn_more)
                     TextP50(
                         text = buildAnnotatedString {
-                            append(stringResource(LR.string.settings_battery_usage_message))
+                            append(stringResource(R.string.settings_battery_usage_message))
                             append(" ")
                             withStyle(SpanStyle(color = MaterialTheme.theme.colors.primaryInteractive01)) {
                                 append(learnMoreString)
@@ -213,8 +213,8 @@ private fun Page(
                 if (!isUnrestricted) {
                     TextP50(
                         text = stringResource(
-                            LR.string.settings_battery_update_message,
-                            stringResource(LR.string.settings_battery_unrestricted),
+                            R.string.settings_battery_update_message,
+                            stringResource(R.string.settings_battery_unrestricted),
                         ),
                         style = MaterialTheme.typography.body1,
                         color = MaterialTheme.theme.colors.primaryText02,

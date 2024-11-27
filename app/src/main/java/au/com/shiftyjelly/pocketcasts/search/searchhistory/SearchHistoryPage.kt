@@ -108,13 +108,13 @@ fun SearchHistoryView(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     TextH20(
-                        text = stringResource(LR.string.search_history_recent_searches),
+                        text = stringResource(R.string.search_history_recent_searches),
                         color = MaterialTheme.theme.colors.primaryText01,
                         modifier = modifier.weight(1f),
 
                     )
                     TextP60(
-                        text = stringResource(LR.string.clear_all).uppercase(),
+                        text = stringResource(R.string.clear_all).uppercase(),
                         color = MaterialTheme.theme.colors.support03,
                         fontWeight = FontWeight.W700,
                         modifier = modifier
@@ -213,7 +213,7 @@ fun SearchHistoryEpisodeView(
             )
             val formattedDuration = TimeHelper.getTimeDurationMediumString(durationMs.toInt(), context)
             val subTitle = stringResource(
-                LR.string.search_history_row_type_episode_subtitle,
+                R.string.search_history_row_type_episode_subtitle,
                 formattedDuration,
                 entry.podcastTitle,
             )
@@ -271,15 +271,15 @@ fun SearchHistoryFolderView(
                     modifier = modifier.padding(bottom = 2.dp),
                 )
                 val podcastCount = if (entry.podcastIds.size == 1) {
-                    stringResource(LR.string.podcasts_singular)
+                    stringResource(R.string.podcasts_singular)
                 } else {
                     stringResource(
-                        LR.string.podcasts_plural,
+                        R.string.podcasts_plural,
                         entry.podcastIds.size,
                     )
                 }
                 TextH50(
-                    text = stringResource(LR.string.search_history_row_type_folder_subtitle, podcastCount),
+                    text = stringResource(R.string.search_history_row_type_folder_subtitle, podcastCount),
                     maxLines = 1,
                     color = MaterialTheme.theme.colors.primaryText02,
                     modifier = Modifier.padding(top = 2.dp),
@@ -307,9 +307,9 @@ fun SearchHistoryPodcastView(
                     .size(IconSize),
             )
             val subTitle = if (entry.author.isNotEmpty()) {
-                stringResource(LR.string.search_history_row_type_podcast_subtitle, entry.author)
+                stringResource(R.string.search_history_row_type_podcast_subtitle, entry.author)
             } else {
-                stringResource(LR.string.podcast)
+                stringResource(R.string.podcast)
             }
             Column(
                 modifier = modifier
@@ -350,7 +350,7 @@ fun SearchHistoryTermView(
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(
-                    painter = painterResource(id = IR.drawable.ic_search),
+                    painter = painterResource(id = R.drawable.ic_search),
                     contentDescription = null,
                     tint = MaterialTheme.theme.colors.primaryIcon02,
                 )

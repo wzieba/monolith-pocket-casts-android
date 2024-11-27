@@ -44,7 +44,7 @@ fun ChangePasswordPage(
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
-    val serverErrorMessage = stringResource(LR.string.server_login_password_change_failed)
+    val serverErrorMessage = stringResource(R.string.server_login_password_change_failed)
 
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -102,7 +102,7 @@ fun ChangePasswordPage(
         modifier = modifier.fillMaxSize(),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.profile_change_password_title),
+            title = stringResource(R.string.profile_change_password_title),
             bottomShadow = true,
             onNavigationClick = onBackPressed,
         )
@@ -118,7 +118,7 @@ fun ChangePasswordPage(
                 PasswordField(
                     password = passwordCurrent,
                     isError = false,
-                    placeholder = stringResource(LR.string.profile_current_password),
+                    placeholder = stringResource(R.string.profile_current_password),
                     enabled = true,
                     imeAction = ImeAction.Next,
                     onImeAction = { passwordNewFocusRequester.requestFocus() },
@@ -131,7 +131,7 @@ fun ChangePasswordPage(
                 PasswordField(
                     password = passwordNew,
                     isError = false,
-                    placeholder = stringResource(LR.string.profile_new_password),
+                    placeholder = stringResource(R.string.profile_new_password),
                     enabled = true,
                     imeAction = ImeAction.Next,
                     onImeAction = { passwordConfirmFocusRequester.requestFocus() },
@@ -145,7 +145,7 @@ fun ChangePasswordPage(
                     PasswordField(
                         password = passwordConfirm,
                         isError = false,
-                        placeholder = stringResource(LR.string.profile_confirm_new_password),
+                        placeholder = stringResource(R.string.profile_confirm_new_password),
                         enabled = true,
                         imeAction = ImeAction.Done,
                         onImeAction = { keyboardController?.hide() },
@@ -162,7 +162,7 @@ fun ChangePasswordPage(
             }
             item {
                 RowLoadingButton(
-                    text = stringResource(LR.string.profile_confirm),
+                    text = stringResource(R.string.profile_confirm),
                     onClick = onFormSubmit,
                     isLoading = state is ChangePasswordState.Loading,
                     enabled = !invalidPasswordCurrent && !invalidPasswordNew && !invalidPasswordConfirm,

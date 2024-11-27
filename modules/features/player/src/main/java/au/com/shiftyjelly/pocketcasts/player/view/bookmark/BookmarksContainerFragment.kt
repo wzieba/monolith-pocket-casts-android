@@ -119,7 +119,7 @@ class BookmarksContainerFragment :
             .commit()
 
         binding.toolbar.setup(
-            title = getString(LR.string.bookmarks),
+            title = getString(R.string.bookmarks),
             navigationIcon = if (dialog == null) {
                 NavigationIcon.BackArrow
             } else {

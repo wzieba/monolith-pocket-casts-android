@@ -184,15 +184,15 @@ class BookmarksFragment : BaseFragment() {
             OptionsDialog()
                 .setForceDarkTheme(sourceView == SourceView.PLAYER)
                 .addTextOption(
-                    titleId = LR.string.bookmarks_select_option,
-                    imageId = IR.drawable.ic_multiselect,
+                    titleId = R.string.bookmarks_select_option,
+                    imageId = R.drawable.ic_multiselect,
                     click = {
                         bookmarksViewModel.multiSelectHelper.isMultiSelecting = true
                     },
                 )
                 .addTextOption(
-                    titleId = LR.string.bookmarks_sort_option,
-                    imageId = IR.drawable.ic_sort,
+                    titleId = R.string.bookmarks_sort_option,
+                    imageId = R.drawable.ic_sort,
                     valueId = selectedValue,
                     click = {
                         BookmarksSortByDialog(

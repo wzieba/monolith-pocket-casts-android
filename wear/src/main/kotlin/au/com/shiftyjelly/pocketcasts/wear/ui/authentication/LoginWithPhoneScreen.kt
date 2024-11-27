@@ -32,7 +32,7 @@ fun LoginWithPhoneScreen(
         ) {
             item {
                 Text(
-                    text = stringResource(LR.string.log_in_on_phone),
+                    text = stringResource(R.string.log_in_on_phone),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.title2,
                 )
@@ -44,7 +44,7 @@ fun LoginWithPhoneScreen(
 
             item {
                 Text(
-                    text = "1. ${stringResource(LR.string.log_in_watch_from_phone_instructions_1)}",
+                    text = "1. ${stringResource(R.string.log_in_watch_from_phone_instructions_1)}",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.body2,
                 )
@@ -56,7 +56,7 @@ fun LoginWithPhoneScreen(
 
             item {
                 Text(
-                    text = "2. ${stringResource(LR.string.log_in_watch_from_phone_instructions_2)}",
+                    text = "2. ${stringResource(R.string.log_in_watch_from_phone_instructions_2)}",
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.body2,
                     modifier = Modifier.padding(bottom = 24.dp),
@@ -65,7 +65,7 @@ fun LoginWithPhoneScreen(
 
             item {
                 Text(
-                    text = stringResource(LR.string.log_in_watch_from_phone_instructions_3, BuildConfig.VERSION_NAME),
+                    text = stringResource(R.string.log_in_watch_from_phone_instructions_3, BuildConfig.VERSION_NAME),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.body2,
                     modifier = Modifier.padding(bottom = 24.dp),

@@ -86,7 +86,7 @@ fun StatusPage(
     ) {
         item {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_status_page),
+                title = stringResource(R.string.settings_status_page),
                 onNavigationClick = onBackPressed,
             )
         }
@@ -104,7 +104,7 @@ fun StatusPageContent(viewModel: StatusViewModel) {
             .fillMaxWidth(),
     ) {
         Text(
-            text = stringResource(LR.string.settings_status_description),
+            text = stringResource(R.string.settings_status_description),
             color = MaterialTheme.theme.colors.primaryText01,
             style = MaterialTheme.typography.body1.copy(lineHeight = 20.sp),
             modifier = Modifier.padding(bottom = 16.dp),
@@ -125,7 +125,7 @@ fun StatusWelcomePage(viewModel: StatusViewModel) {
         Button(
             onClick = { viewModel.run() },
         ) {
-            Text(stringResource(LR.string.settings_status_run))
+            Text(stringResource(R.string.settings_status_run))
         }
     }
 }
@@ -153,14 +153,14 @@ fun StatusServicesPage(state: StatusUiState.ListServices, viewModel: StatusViewM
                 onClick = { viewModel.run() },
                 enabled = !state.running,
             ) {
-                Text(stringResource(LR.string.settings_status_retry))
+                Text(stringResource(R.string.settings_status_retry))
             }
             Spacer(modifier = Modifier.width(24.dp))
             Button(
                 onClick = { viewModel.sendReport(context) },
                 enabled = !state.running,
             ) {
-                Text(stringResource(LR.string.settings_status_send_report))
+                Text(stringResource(R.string.settings_status_send_report))
             }
         }
     }
@@ -240,7 +240,7 @@ fun ServiceStatusRow(title: String, summary: String, help: String, status: Servi
 private fun PreviewServiceStatusRow() {
     MaterialTheme {
         ServiceStatusRow(
-            title = stringResource(LR.string.settings_status_service_internet),
+            title = stringResource(R.string.settings_status_service_internet),
             summary = "test",
             help = "Ouch",
             status = ServiceStatus.Running,

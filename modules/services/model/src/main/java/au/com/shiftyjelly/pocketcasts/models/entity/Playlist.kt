@@ -95,13 +95,13 @@ data class Playlist(
             }
 
             if (unplayed) {
-                list.add(LR.string.unplayed)
+                list.add(R.string.unplayed)
             }
             if (partiallyPlayed) {
-                list.add(LR.string.in_progress)
+                list.add(R.string.in_progress)
             }
             if (finished) {
-                list.add(LR.string.played)
+                list.add(R.string.played)
             }
             return list.toList()
         }
@@ -114,10 +114,10 @@ data class Playlist(
             }
 
             if (downloaded) {
-                list.add(LR.string.downloaded)
+                list.add(R.string.downloaded)
             }
             if (notDownloaded) {
-                list.add(LR.string.not_downloaded)
+                list.add(R.string.not_downloaded)
             }
             return list.toList()
         }
@@ -129,23 +129,23 @@ data class Playlist(
                 return emptyList()
             }
             if (isAudioOnly) {
-                list.add(LR.string.audio)
+                list.add(R.string.audio)
             }
             if (isVideoOnly) {
-                list.add(LR.string.video)
+                list.add(R.string.video)
             }
             return list.toList()
         }
 
     val stringForFilterHours: Int
         get() = when (filterHours) {
-            ANYTIME -> LR.string.filters_release_date
-            LAST_24_HOURS -> LR.string.filters_time_24_hours
-            LAST_3_DAYS -> LR.string.filters_time_3_days
-            LAST_WEEK -> LR.string.filters_time_week
-            LAST_2_WEEKS -> LR.string.filters_time_2_weeks
-            LAST_MONTH -> LR.string.filters_time_month
-            else -> LR.string.filters_release_date
+            ANYTIME -> R.string.filters_release_date
+            LAST_24_HOURS -> R.string.filters_time_24_hours
+            LAST_3_DAYS -> R.string.filters_time_3_days
+            LAST_WEEK -> R.string.filters_time_week
+            LAST_2_WEEKS -> R.string.filters_time_2_weeks
+            LAST_MONTH -> R.string.filters_time_month
+            else -> R.string.filters_release_date
         }
 
     val isAllEpisodes: Boolean

@@ -95,18 +95,18 @@ abstract class MultiSelectHelper<T> : CoroutineScope {
                 .addTextOption(
                     titleId = selectAllAbove,
                     click = { toggleSelectAllAbove(multiSelectable) },
-                    imageId = if (isSelected(multiSelectable) && selectedList.size > 1) IR.drawable.ic_deselectall_up else IR.drawable.ic_selectall_up,
+                    imageId = if (isSelected(multiSelectable) && selectedList.size > 1) R.drawable.ic_deselectall_up else R.drawable.ic_selectall_up,
 
                 )
                 .addTextOption(
                     titleId = selectAll,
                     click = { toggleSelectAll(multiSelectable) },
-                    imageId = if (selectedList.contains(multiSelectable) && selectedList.size > 1) IR.drawable.ic_deselectall else IR.drawable.ic_selectall,
+                    imageId = if (selectedList.contains(multiSelectable) && selectedList.size > 1) R.drawable.ic_deselectall else R.drawable.ic_selectall,
                 )
                 .addTextOption(
                     titleId = selectAllBelow,
                     click = { toggleSelectAllBelow(multiSelectable) },
-                    imageId = if (isSelected(multiSelectable) && selectedList.size > 1) IR.drawable.ic_deselectall_down else IR.drawable.ic_selectall_down,
+                    imageId = if (isSelected(multiSelectable) && selectedList.size > 1) R.drawable.ic_deselectall_down else R.drawable.ic_selectall_down,
                 )
                 .show(fragmentManager, "multi_select_select_dialog")
         }

@@ -20,24 +20,24 @@ class PodcastFolderOptionsDialog(
         val dialog = OptionsDialog()
             .setTitle(folder.name)
             .addTextOption(
-                titleId = LR.string.remove_from_folder,
-                imageId = IR.drawable.folder_remove,
+                titleId = R.string.remove_from_folder,
+                imageId = R.drawable.folder_remove,
                 click = {
                     onRemoveFolder()
                     dismiss()
                 },
             )
             .addTextOption(
-                titleId = LR.string.change_folder,
-                imageId = IR.drawable.folder_change,
+                titleId = R.string.change_folder,
+                imageId = R.drawable.folder_change,
                 click = {
                     onChangeFolder()
                     dismiss()
                 },
             )
             .addTextOption(
-                titleId = LR.string.go_to_folder,
-                imageId = IR.drawable.go_to,
+                titleId = R.string.go_to_folder,
+                imageId = R.drawable.go_to,
                 click = {
                     onOpenFolder()
                     dismiss()

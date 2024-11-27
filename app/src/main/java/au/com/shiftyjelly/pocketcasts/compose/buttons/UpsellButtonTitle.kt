@@ -12,14 +12,14 @@ fun UpsellButtonTitle(
     tier: SubscriptionTier,
     hasFreeTrial: Boolean,
 ) = if (hasFreeTrial && !FeatureFlag.isEnabled(Feature.INTRO_PLUS_OFFER_ENABLED)) {
-    stringResource(LR.string.profile_start_free_trial)
+    stringResource(R.string.profile_start_free_trial)
 } else {
     stringResource(
-        LR.string.upgrade_to,
+        R.string.upgrade_to,
         when (tier) {
-            SubscriptionTier.PATRON -> stringResource(LR.string.pocket_casts_patron_short)
-            SubscriptionTier.PLUS -> stringResource(LR.string.pocket_casts_plus_short)
-            SubscriptionTier.UNKNOWN -> stringResource(LR.string.pocket_casts_plus_short)
+            SubscriptionTier.PATRON -> stringResource(R.string.pocket_casts_patron_short)
+            SubscriptionTier.PLUS -> stringResource(R.string.pocket_casts_plus_short)
+            SubscriptionTier.UNKNOWN -> stringResource(R.string.pocket_casts_plus_short)
         },
     )
 }

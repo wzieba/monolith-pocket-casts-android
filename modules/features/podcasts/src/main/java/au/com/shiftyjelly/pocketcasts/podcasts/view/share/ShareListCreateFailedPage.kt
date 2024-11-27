@@ -43,7 +43,7 @@ fun ShareListCreateFailedPage(
 ) {
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.podcasts_share_creating_list),
+            title = stringResource(R.string.podcasts_share_creating_list),
             navigationButton = NavigationButton.Close,
             onNavigationClick = onCloseClick,
         )
@@ -56,21 +56,21 @@ fun ShareListCreateFailedPage(
                 .verticalScroll(rememberScrollState()),
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_failedwarning),
+                painter = painterResource(R.drawable.ic_failedwarning),
                 tint = MaterialTheme.theme.colors.primaryIcon01,
                 contentDescription = null,
                 modifier = Modifier.size(96.dp),
             )
             Spacer(Modifier.height(16.dp))
-            TextH20(stringResource(LR.string.podcasts_share_failed))
+            TextH20(stringResource(R.string.podcasts_share_failed))
             Spacer(Modifier.height(16.dp))
             TextP50(
-                text = stringResource(LR.string.podcasts_share_failed_description),
+                text = stringResource(R.string.podcasts_share_failed_description),
                 color = MaterialTheme.theme.colors.primaryText02,
             )
             Spacer(Modifier.height(32.dp))
             TextButton(onClick = onRetryClick) {
-                Text(stringResource(LR.string.retry))
+                Text(stringResource(R.string.retry))
             }
         }
     }

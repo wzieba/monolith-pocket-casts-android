@@ -73,7 +73,7 @@ fun SearchFolderItem(
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.ic_tick),
-                        contentDescription = stringResource(LR.string.podcast_subscribed),
+                        contentDescription = stringResource(R.string.podcast_subscribed),
                         tint = Color.White,
                         modifier = Modifier.size(SubscribeIconSize / 1.25f),
                     )
@@ -90,10 +90,10 @@ fun SearchFolderItem(
                 maxLines = 1,
             )
             val podcastCount = if (podcasts.size == 1) {
-                stringResource(LR.string.podcasts_singular)
+                stringResource(R.string.podcasts_singular)
             } else {
                 stringResource(
-                    LR.string.podcasts_plural,
+                    R.string.podcasts_plural,
                     podcasts.size,
                 )
             }

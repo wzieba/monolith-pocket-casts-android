@@ -139,7 +139,7 @@ class PodcastsFragment : BaseFragment(), FolderAdapter.ClickListener, PodcastTou
             }
             setupToolbarAndStatusBar(
                 toolbar = toolbar,
-                title = folder?.name ?: getString(LR.string.podcasts),
+                title = folder?.name ?: getString(R.string.podcasts),
                 toolbarColors = toolbarColors,
                 navigationIcon = navigationIcon,
             )

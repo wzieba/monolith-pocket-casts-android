@@ -112,7 +112,7 @@ class PrivacyFragment : BaseFragment() {
                 .fillMaxHeight(),
         ) {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_title_privacy),
+                title = stringResource(R.string.settings_title_privacy),
                 onNavigationClick = onBackClick,
             )
             LazyColumn(
@@ -120,7 +120,7 @@ class PrivacyFragment : BaseFragment() {
             ) {
                 item {
                     TextP50(
-                        text = stringResource(LR.string.settings_privacy_summary),
+                        text = stringResource(R.string.settings_privacy_summary),
                         color = MaterialTheme.theme.colors.primaryText02,
                         modifier = Modifier.padding(16.dp),
                     )
@@ -129,8 +129,8 @@ class PrivacyFragment : BaseFragment() {
                 if (state is PrivacyViewModel.UiState.Loaded) {
                     item {
                         SettingRow(
-                            primaryText = stringResource(LR.string.settings_privacy_analytics),
-                            secondaryText = stringResource(LR.string.settings_privacy_analytics_summary),
+                            primaryText = stringResource(R.string.settings_privacy_analytics),
+                            secondaryText = stringResource(R.string.settings_privacy_analytics_summary),
                             toggle = SettingRowToggle.Switch(checked = state.analytics),
                             modifier = Modifier.toggleable(
                                 value = state.analytics,
@@ -141,8 +141,8 @@ class PrivacyFragment : BaseFragment() {
                     }
                     item {
                         SettingRow(
-                            primaryText = stringResource(LR.string.settings_privacy_crash),
-                            secondaryText = stringResource(LR.string.settings_privacy_crash_summary),
+                            primaryText = stringResource(R.string.settings_privacy_crash),
+                            secondaryText = stringResource(R.string.settings_privacy_crash_summary),
                             toggle = SettingRowToggle.Switch(checked = state.crashReports),
                             modifier = Modifier.toggleable(
                                 value = state.crashReports,
@@ -154,8 +154,8 @@ class PrivacyFragment : BaseFragment() {
                     if (state.shouldShowLinkUserSetting()) {
                         item {
                             SettingRow(
-                                primaryText = stringResource(LR.string.settings_privacy_crash_link),
-                                secondaryText = stringResource(LR.string.settings_privacy_crash_link_summary),
+                                primaryText = stringResource(R.string.settings_privacy_crash_link),
+                                secondaryText = stringResource(R.string.settings_privacy_crash_link_summary),
                                 toggle = SettingRowToggle.Switch(checked = state.linkAccount),
                                 modifier = Modifier.toggleable(
                                     value = state.linkAccount,
@@ -167,7 +167,7 @@ class PrivacyFragment : BaseFragment() {
                     }
                     item {
                         LinkText(
-                            text = stringResource(LR.string.profile_privacy_policy_read),
+                            text = stringResource(R.string.profile_privacy_policy_read),
                             textAlign = TextAlign.Start,
                             onClick = onPrivacyPolicyClick,
                             modifier = Modifier.padding(16.dp),

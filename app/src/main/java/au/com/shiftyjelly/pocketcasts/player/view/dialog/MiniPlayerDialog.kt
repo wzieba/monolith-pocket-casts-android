@@ -35,8 +35,8 @@ class MiniPlayerDialog(
         val dangerColor = context.getThemeColor(UR.attr.support_05)
         OptionsDialog()
             .addTextOption(
-                titleId = LR.string.mark_played,
-                imageId = IR.drawable.ic_markasplayed,
+                titleId = R.string.mark_played,
+                imageId = R.drawable.ic_markasplayed,
                 click = {
                     isOptionClicked = true
                     analyticsTracker.track(AnalyticsEvent.MINI_PLAYER_LONG_PRESS_MENU_OPTION_TAPPED, mapOf(OPTION_KEY to MARK_PLAYED))
@@ -44,9 +44,9 @@ class MiniPlayerDialog(
                 },
             )
             .addTextOption(
-                titleId = LR.string.player_end_playback_clear_up_next,
+                titleId = R.string.player_end_playback_clear_up_next,
                 titleColor = dangerColor,
-                imageId = IR.drawable.ic_close,
+                imageId = R.drawable.ic_close,
                 imageColor = dangerColor,
                 click = {
                     isOptionClicked = true

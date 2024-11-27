@@ -53,7 +53,7 @@ internal fun ProfileStats(
     ) {
         StatsColumn(
             numberText = state.podcastsCount.toString(),
-            labelText = pluralStringResource(LR.plurals.podcast, state.podcastsCount).uppercase(),
+            labelText = pluralStringResource(R.plurals.podcast, state.podcastsCount).uppercase(),
         )
 
         val resource = LocalContext.current.resources
@@ -122,18 +122,18 @@ internal data class ProfileStatsState(
 
 private val FriendlyDurationUnit.savedPlural
     get() = when (this) {
-        FriendlyDurationUnit.Day -> LR.plurals.profile_stats_day_saved
-        FriendlyDurationUnit.Hour -> LR.plurals.profile_stats_hour_saved
-        FriendlyDurationUnit.Minute -> LR.plurals.profile_stats_minute_saved
-        FriendlyDurationUnit.Second -> LR.plurals.profile_stats_second_saved
+        FriendlyDurationUnit.Day -> R.plurals.profile_stats_day_saved
+        FriendlyDurationUnit.Hour -> R.plurals.profile_stats_hour_saved
+        FriendlyDurationUnit.Minute -> R.plurals.profile_stats_minute_saved
+        FriendlyDurationUnit.Second -> R.plurals.profile_stats_second_saved
     }
 
 private val FriendlyDurationUnit.listenedPlural
     get() = when (this) {
-        FriendlyDurationUnit.Day -> LR.plurals.profile_stats_day_listened
-        FriendlyDurationUnit.Hour -> LR.plurals.profile_stats_hour_listened
-        FriendlyDurationUnit.Minute -> LR.plurals.profile_stats_minute_listened
-        FriendlyDurationUnit.Second -> LR.plurals.profile_stats_second_listened
+        FriendlyDurationUnit.Day -> R.plurals.profile_stats_day_listened
+        FriendlyDurationUnit.Hour -> R.plurals.profile_stats_hour_listened
+        FriendlyDurationUnit.Minute -> R.plurals.profile_stats_minute_listened
+        FriendlyDurationUnit.Second -> R.plurals.profile_stats_second_listened
     }
 
 @Preview

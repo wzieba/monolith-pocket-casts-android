@@ -102,8 +102,8 @@ private fun VerticalShareEpisodeTimestampPage(
 ) {
     val scope = rememberCoroutineScope()
     VerticalSharePage(
-        shareTitle = stringResource(LR.string.share_episode_timestamp_title, timestamp.toHhMmSs()),
-        shareDescription = stringResource(LR.string.share_episode_timestamp_description),
+        shareTitle = stringResource(R.string.share_episode_timestamp_title, timestamp.toHhMmSs()),
+        shareDescription = stringResource(R.string.share_episode_timestamp_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         snackbarHostState = snackbarHostState,
@@ -148,8 +148,8 @@ private fun HorizontalShareEpisodeTimestampPage(
 ) {
     val scope = rememberCoroutineScope()
     HorizontalSharePage(
-        shareTitle = stringResource(LR.string.share_episode_timestamp_title, timestamp.toHhMmSs()),
-        shareDescription = stringResource(LR.string.share_episode_timestamp_description),
+        shareTitle = stringResource(R.string.share_episode_timestamp_title, timestamp.toHhMmSs()),
+        shareDescription = stringResource(R.string.share_episode_timestamp_description),
         shareColors = shareColors,
         socialPlatforms = socialPlatforms,
         snackbarHostState = snackbarHostState,

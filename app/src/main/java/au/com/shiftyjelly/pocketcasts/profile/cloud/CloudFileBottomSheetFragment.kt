@@ -175,28 +175,28 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
                 val lblUpNext = binding.lblUpNext
                 val layoutUpNext = binding.layoutUpNext
                 if (inUpNext) {
-                    imgIconUpNext.setImageResource(IR.drawable.ic_upnext_remove)
-                    lblUpNext.setText(LR.string.profile_cloud_remove_from_up_next)
+                    imgIconUpNext.setImageResource(R.drawable.ic_upnext_remove)
+                    lblUpNext.setText(R.string.profile_cloud_remove_from_up_next)
                     layoutUpNext.setOnClickListener {
                         viewModel.removeFromUpNext(episode)
                         dialog?.dismiss()
                     }
                 } else {
-                    imgIconUpNext.setImageResource(IR.drawable.ic_upnext_playnext)
-                    lblUpNext.setText(LR.string.profile_cloud_add_to_up_next)
+                    imgIconUpNext.setImageResource(R.drawable.ic_upnext_playnext)
+                    lblUpNext.setText(R.string.profile_cloud_add_to_up_next)
                     layoutUpNext.setOnClickListener {
                         val upNextDialog = OptionsDialog()
                             .setIconColor(ThemeColor.primaryIcon01(theme.activeTheme))
                             .addCheckedOption(
-                                LR.string.play_next,
-                                imageId = IR.drawable.ic_upnext_playnext,
+                                R.string.play_next,
+                                imageId = R.drawable.ic_upnext_playnext,
                                 click = {
                                     viewModel.playNext(episode)
                                 },
                             )
                             .addCheckedOption(
-                                LR.string.play_last,
-                                imageId = IR.drawable.ic_upnext_playlast,
+                                R.string.play_last,
+                                imageId = R.drawable.ic_upnext_playlast,
                                 click = {
                                     viewModel.playLast(episode)
                                 },
@@ -213,15 +213,15 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
                 val lblPlayed = binding.lblPlayed
                 val layoutPlayed = binding.layoutPlayed
                 if (episode.isFinished) {
-                    imgIconPlayed.setImageResource(IR.drawable.ic_markasunplayed)
-                    lblPlayed.setText(LR.string.mark_as_unplayed)
+                    imgIconPlayed.setImageResource(R.drawable.ic_markasunplayed)
+                    lblPlayed.setText(R.string.mark_as_unplayed)
                     layoutPlayed.setOnClickListener {
                         viewModel.markAsUnplayed(episode)
                         dialog?.dismiss()
                     }
                 } else {
-                    imgIconPlayed.setImageResource(IR.drawable.ic_markasplayed)
-                    lblPlayed.setText(LR.string.mark_as_played)
+                    imgIconPlayed.setImageResource(R.drawable.ic_markasplayed)
+                    lblPlayed.setText(R.string.mark_as_played)
                     layoutPlayed.setOnClickListener {
                         viewModel.markAsPlayed(episode)
                         dialog?.dismiss()
@@ -243,15 +243,15 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
                 val lblErrorDetail = binding.lblErrorDetail
                 if (episode.downloadErrorDetails != null) {
                     errorLayout.visibility = View.VISIBLE
-                    lblError.setText(LR.string.profile_cloud_download_failed)
+                    lblError.setText(R.string.profile_cloud_download_failed)
                     lblErrorDetail.text = episode.downloadErrorDetails
                 } else if (episode.uploadErrorDetails != null) {
                     errorLayout.visibility = View.VISIBLE
-                    lblError.setText(LR.string.profile_cloud_upload_failed)
+                    lblError.setText(R.string.profile_cloud_upload_failed)
                     lblErrorDetail.text = episode.uploadErrorDetails
                 } else if (episode.playErrorDetails != null) {
                     errorLayout.visibility = View.VISIBLE
-                    lblError.setText(LR.string.profile_cloud_playback_failed)
+                    lblError.setText(R.string.profile_cloud_playback_failed)
                     lblErrorDetail.text = episode.playErrorDetails
                 } else {
                     errorLayout.visibility = View.GONE
@@ -268,16 +268,16 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
                 )
 
                 binding.lblCloud.text = when (episode.serverStatus) {
-                    UserEpisodeServerStatus.LOCAL -> getString(LR.string.profile_cloud_upload)
-                    UserEpisodeServerStatus.UPLOADING, UserEpisodeServerStatus.WAITING_FOR_WIFI, UserEpisodeServerStatus.QUEUED -> getString(LR.string.profile_cloud_cancel_upload)
-                    UserEpisodeServerStatus.UPLOADED -> getString(if (episode.isDownloaded) LR.string.profile_cloud_remove else if (episode.isDownloading) LR.string.cancel_download else LR.string.download)
+                    UserEpisodeServerStatus.LOCAL -> getString(R.string.profile_cloud_upload)
+                    UserEpisodeServerStatus.UPLOADING, UserEpisodeServerStatus.WAITING_FOR_WIFI, UserEpisodeServerStatus.QUEUED -> getString(R.string.profile_cloud_cancel_upload)
+                    UserEpisodeServerStatus.UPLOADED -> getString(if (episode.isDownloaded) R.string.profile_cloud_remove else if (episode.isDownloading) R.string.cancel_download else R.string.download)
                     UserEpisodeServerStatus.MISSING -> ""
                 }
 
                 val cloudRes = when (episode.serverStatus) {
                     UserEpisodeServerStatus.LOCAL, UserEpisodeServerStatus.MISSING -> PR.drawable.ic_upload_file
-                    UserEpisodeServerStatus.UPLOADING, UserEpisodeServerStatus.WAITING_FOR_WIFI, UserEpisodeServerStatus.QUEUED -> IR.drawable.ic_downloading
-                    UserEpisodeServerStatus.UPLOADED -> if (episode.isDownloaded) R.drawable.ic_upload___remove_from_cloud___menu else IR.drawable.ic_download
+                    UserEpisodeServerStatus.UPLOADING, UserEpisodeServerStatus.WAITING_FOR_WIFI, UserEpisodeServerStatus.QUEUED -> R.drawable.ic_downloading
+                    UserEpisodeServerStatus.UPLOADED -> if (episode.isDownloaded) R.drawable.ic_upload___remove_from_cloud___menu else R.drawable.ic_download
                 }
                 binding.imgIconCloud.setImageResource(cloudRes)
 

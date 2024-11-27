@@ -44,14 +44,14 @@ fun EndOfYearPromptCard(
             verticalArrangement = Arrangement.SpaceBetween,
         ) {
             TextH30(
-                text = stringResource(LR.string.end_of_year_prompt_card_title),
+                text = stringResource(R.string.end_of_year_prompt_card_title),
                 color = Color.White,
             )
             Spacer(
                 modifier = Modifier.height(8.dp),
             )
             TextH70(
-                text = stringResource(LR.string.end_of_year_prompt_card_summary),
+                text = stringResource(R.string.end_of_year_prompt_card_summary),
                 color = Color.White,
                 fontWeight = FontWeight.W600,
                 fontSize = 11.sp,
@@ -65,7 +65,7 @@ fun EndOfYearPromptCard(
                 .padding(end = 16.dp),
         ) {
             Image(
-                painter = painterResource(IR.drawable.end_of_year_2024_pb24),
+                painter = painterResource(R.drawable.end_of_year_2024_pb24),
                 contentDescription = null,
             )
         }

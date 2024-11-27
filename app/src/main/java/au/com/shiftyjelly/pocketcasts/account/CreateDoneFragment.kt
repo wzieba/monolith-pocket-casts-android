@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentCreateDoneBinding
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
@@ -16,8 +16,7 @@ import au.com.shiftyjelly.pocketcasts.account.viewmodel.SubscriptionType
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateDoneBinding
 
 @AndroidEntryPoint
 class CreateDoneFragment : BaseFragment() {
@@ -61,7 +60,7 @@ class CreateDoneFragment : BaseFragment() {
                         progress.isVisible = false
                         val serverFail = it.errors.contains(CreateAccountError.CANNOT_CREATE_ACCOUNT)
                         if (!serverFail) {
-                            updateForm(complete = true, title = getString(LR.string.profile_create_failed_title), detail = getString(LR.string.please_try_again))
+                            updateForm(complete = true, title = getString(R.string.profile_create_failed_title), detail = getString(R.string.please_try_again))
                         }
                     }
                     else -> {}
@@ -71,7 +70,7 @@ class CreateDoneFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.imgDone.setImageResource(IR.drawable.ic_circle)
+        binding.imgDone.setImageResource(R.drawable.ic_circle)
         binding.btnClose?.setOnClickListener {
             closeForm()
         }
@@ -105,12 +104,12 @@ class CreateDoneFragment : BaseFragment() {
         if (subscriptionType != null) {
             if (subscriptionType == SubscriptionType.FREE) {
                 resourceId = R.drawable.ic_created_free_account
-                detail = getString(LR.string.profile_welcome_to_free)
-                title = getString(LR.string.profile_account_created)
+                detail = getString(R.string.profile_welcome_to_free)
+                title = getString(R.string.profile_account_created)
             } else {
                 resourceId = R.drawable.ic_created_plus_account
-                detail = getString(LR.string.profile_welcome_to_plus)
-                title = getString(LR.string.profile_account_upgraded)
+                detail = getString(R.string.profile_welcome_to_plus)
+                title = getString(R.string.profile_account_upgraded)
             }
         }
         binding?.imgDone?.setImageResource(resourceId)

@@ -67,21 +67,21 @@ class AutoAddSettingsFragment : BaseFragment(), PodcastSelectFragment.Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.toolbar.setup(title = getString(LR.string.settings_auto_up_next_title), navigationIcon = BackArrow, activity = activity, theme = theme)
+        binding.toolbar.setup(title = getString(R.string.settings_auto_up_next_title), navigationIcon = BackArrow, activity = activity, theme = theme)
 
         val topAdapter = AutoAddTopAdapter()
-        val headerRow = AutoAddTopSections.Header(getString(LR.string.settings_auto_up_next_podcasts))
+        val headerRow = AutoAddTopSections.Header(getString(R.string.settings_auto_up_next_podcasts))
 
         val autoAddAdapter = AutoAddPodcastAdapter(view.context) {
             OptionsDialog()
-                .setTitle(getString(LR.string.settings_auto_up_next_add_to))
+                .setTitle(getString(R.string.settings_auto_up_next_add_to))
                 .addCheckedOption(
-                    titleString = getString(LR.string.settings_auto_up_next_top),
+                    titleString = getString(R.string.settings_auto_up_next_top),
                     checked = it.autoAddToUpNext == Podcast.AutoAddUpNext.PLAY_NEXT,
                     click = { viewModel.updatePodcast(it, Podcast.AutoAddUpNext.PLAY_NEXT) },
                 )
                 .addCheckedOption(
-                    titleString = getString(LR.string.settings_auto_up_next_bottom),
+                    titleString = getString(R.string.settings_auto_up_next_bottom),
                     checked = it.autoAddToUpNext == Podcast.AutoAddUpNext.PLAY_LAST,
                     click = { viewModel.updatePodcast(it, Podcast.AutoAddUpNext.PLAY_LAST) },
                 )
@@ -93,53 +93,53 @@ class AutoAddSettingsFragment : BaseFragment(), PodcastSelectFragment.Listener {
 
         viewModel.autoAddPodcasts.observe(viewLifecycleOwner) { state ->
             val limitRow = AutoAddTopSections.Option(
-                IR.drawable.ic_upnext_playlast,
+                R.drawable.ic_upnext_playlast,
                 getString(
-                    LR.string.settings_auto_up_next_limit,
+                    R.string.settings_auto_up_next_limit,
                 ),
                 getString(
-                    LR.string.episodes_plural,
+                    R.string.episodes_plural,
                     settings.autoAddUpNextLimit.value,
                 ),
             ) {
                 val currentLimit = settings.autoAddUpNextLimit.value
                 OptionsDialog()
-                    .setTitle(getString(LR.string.settings_auto_up_next_limit))
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 10), checked = currentLimit == 10) { viewModel.autoAddUpNextLimitChanged(10) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 20), checked = currentLimit == 20) { viewModel.autoAddUpNextLimitChanged(20) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 50), checked = currentLimit == 50) { viewModel.autoAddUpNextLimitChanged(50) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 100), checked = currentLimit == 100) { viewModel.autoAddUpNextLimitChanged(100) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 200), checked = currentLimit == 200) { viewModel.autoAddUpNextLimitChanged(200) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 500), checked = currentLimit == 500) { viewModel.autoAddUpNextLimitChanged(500) }
-                    .addCheckedOption(titleString = getString(LR.string.episodes_plural, 1000), checked = currentLimit == 1000) { viewModel.autoAddUpNextLimitChanged(1000) }
+                    .setTitle(getString(R.string.settings_auto_up_next_limit))
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 10), checked = currentLimit == 10) { viewModel.autoAddUpNextLimitChanged(10) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 20), checked = currentLimit == 20) { viewModel.autoAddUpNextLimitChanged(20) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 50), checked = currentLimit == 50) { viewModel.autoAddUpNextLimitChanged(50) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 100), checked = currentLimit == 100) { viewModel.autoAddUpNextLimitChanged(100) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 200), checked = currentLimit == 200) { viewModel.autoAddUpNextLimitChanged(200) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 500), checked = currentLimit == 500) { viewModel.autoAddUpNextLimitChanged(500) }
+                    .addCheckedOption(titleString = getString(R.string.episodes_plural, 1000), checked = currentLimit == 1000) { viewModel.autoAddUpNextLimitChanged(1000) }
                     .show(childFragmentManager, "autoadd_options")
             }
 
             val podcasts = state.autoAddPodcasts
             val optionSubtitle = when (state.behaviour) {
-                AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP -> getString(LR.string.settings_auto_up_next_limit_reached_top)
-                AutoAddUpNextLimitBehaviour.STOP_ADDING -> getString(LR.string.settings_auto_up_next_limit_reached_stop)
+                AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP -> getString(R.string.settings_auto_up_next_limit_reached_top)
+                AutoAddUpNextLimitBehaviour.STOP_ADDING -> getString(R.string.settings_auto_up_next_limit_reached_stop)
             }
-            val optionRow = AutoAddTopSections.Option(null, getString(LR.string.settings_auto_up_next_limit_reached), optionSubtitle) {
+            val optionRow = AutoAddTopSections.Option(null, getString(R.string.settings_auto_up_next_limit_reached), optionSubtitle) {
                 OptionsDialog()
-                    .setTitle(getString(LR.string.settings_auto_up_next_add_to))
-                    .addCheckedOption(titleId = LR.string.settings_auto_up_next_limit_reached_stop, checked = state.behaviour == AutoAddUpNextLimitBehaviour.STOP_ADDING) {
+                    .setTitle(getString(R.string.settings_auto_up_next_add_to))
+                    .addCheckedOption(titleId = R.string.settings_auto_up_next_limit_reached_stop, checked = state.behaviour == AutoAddUpNextLimitBehaviour.STOP_ADDING) {
                         viewModel.autoAddUpNextLimitBehaviorChanged(AutoAddUpNextLimitBehaviour.STOP_ADDING)
                     }
-                    .addCheckedOption(titleId = LR.string.settings_auto_up_next_limit_reached_top, checked = state.behaviour == AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP) {
+                    .addCheckedOption(titleId = R.string.settings_auto_up_next_limit_reached_top, checked = state.behaviour == AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP) {
                         viewModel.autoAddUpNextLimitBehaviorChanged(AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP)
                     }
                     .show(childFragmentManager, "autoadd_options")
             }
             val chosenText = resources.getStringPluralPodcastsSelected(podcasts.size)
-            val podcastsChosenRow = AutoAddTopSections.Option(null, getString(LR.string.settings_choose_podcasts), chosenText) { openPodcastsList() }
+            val podcastsChosenRow = AutoAddTopSections.Option(null, getString(R.string.settings_choose_podcasts), chosenText) { openPodcastsList() }
 
             val topFooter = when (state.behaviour) {
                 AutoAddUpNextLimitBehaviour.ONLY_ADD_TO_TOP -> {
-                    AutoAddTopSections.Footer(getString(LR.string.settings_auto_up_next_limit_reached_top_summary, state.limit))
+                    AutoAddTopSections.Footer(getString(R.string.settings_auto_up_next_limit_reached_top_summary, state.limit))
                 }
                 AutoAddUpNextLimitBehaviour.STOP_ADDING -> {
-                    AutoAddTopSections.Footer(getString(LR.string.settings_auto_up_next_limit_reached_stop_summary, state.limit))
+                    AutoAddTopSections.Footer(getString(R.string.settings_auto_up_next_limit_reached_stop_summary, state.limit))
                 }
             }
 
@@ -302,8 +302,8 @@ class AutoAddPodcastAdapter(
             lblTitle.text = podcast.title
             val resources = holder.itemView.resources
             lblSubtitle.text = when (podcast.autoAddToUpNext) {
-                Podcast.AutoAddUpNext.PLAY_NEXT -> resources.getString(LR.string.settings_auto_up_next_to_top)
-                Podcast.AutoAddUpNext.PLAY_LAST -> resources.getString(LR.string.settings_auto_up_next_to_bottom)
+                Podcast.AutoAddUpNext.PLAY_NEXT -> resources.getString(R.string.settings_auto_up_next_to_top)
+                Podcast.AutoAddUpNext.PLAY_LAST -> resources.getString(R.string.settings_auto_up_next_to_bottom)
                 Podcast.AutoAddUpNext.OFF -> null
             }
             root.setOnClickListener { onClick(podcast) }

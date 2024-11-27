@@ -45,7 +45,7 @@ class PromoCodeUpgradedFragment : BaseDialogFragment() {
         val binding = binding ?: return
 
         binding.imgLogo.setImageDrawable(theme.verticalPlusLogo(binding.imgLogo.context))
-        binding.lblDescription.text = "$codeDescription\n${getString(LR.string.profile_promo_upgraded_welcome)}"
+        binding.lblDescription.text = "$codeDescription\n${getString(R.string.profile_promo_upgraded_welcome)}"
 
         binding.btnDone.setOnClickListener { dismiss() }
     }

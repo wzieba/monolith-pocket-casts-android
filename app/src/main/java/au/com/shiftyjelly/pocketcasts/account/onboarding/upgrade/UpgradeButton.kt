@@ -21,7 +21,7 @@ sealed class UpgradeButton(
         override val subscription: Subscription,
         override val planType: PlanType,
     ) : UpgradeButton(
-        shortNameRes = LR.string.pocket_casts_plus_short,
+        shortNameRes = R.string.pocket_casts_plus_short,
         backgroundColorRes = UR.color.plus_gold,
         textColorRes = UR.color.black,
         subscription = subscription,
@@ -33,7 +33,7 @@ sealed class UpgradeButton(
         override val subscription: Subscription,
         override val planType: PlanType,
     ) : UpgradeButton(
-        shortNameRes = LR.string.pocket_casts_patron_short,
+        shortNameRes = R.string.pocket_casts_patron_short,
         backgroundColorRes = UR.color.patron_purple,
         textColorRes = UR.color.white,
         subscription = subscription,

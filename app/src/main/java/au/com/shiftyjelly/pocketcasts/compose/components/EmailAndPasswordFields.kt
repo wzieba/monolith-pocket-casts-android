@@ -55,8 +55,8 @@ import au.com.shiftyjelly.pocketcasts.localization.R as LR
 fun EmailAndPasswordFields(
     email: String,
     password: String,
-    emailPlaceholder: String = stringResource(LR.string.profile_email_address),
-    passwordPlaceholder: String = stringResource(LR.string.profile_password),
+    emailPlaceholder: String = stringResource(R.string.profile_email_address),
+    passwordPlaceholder: String = stringResource(R.string.profile_password),
     showEmailError: Boolean,
     showPasswordError: Boolean,
     showPasswordErrorMessage: Boolean = showPasswordError,
@@ -91,7 +91,7 @@ fun EmailAndPasswordFields(
         )
 
         if (showEmailError) {
-            ErrorText(LR.string.onboarding_email_invalid_message)
+            ErrorText(R.string.onboarding_email_invalid_message)
         }
 
         Spacer(Modifier.height(16.dp))
@@ -109,7 +109,7 @@ fun EmailAndPasswordFields(
         )
 
         if (showPasswordError && showPasswordErrorMessage) {
-            ErrorText(LR.string.profile_create_password_requirements)
+            ErrorText(R.string.profile_create_password_requirements)
         }
     }
 }
@@ -130,7 +130,7 @@ fun EmailField(
     email: String,
     enabled: Boolean,
     isError: Boolean,
-    placeholder: String = stringResource(LR.string.profile_email_address),
+    placeholder: String = stringResource(R.string.profile_email_address),
     onUpdateEmail: (String) -> Unit,
     imeAction: ImeAction = ImeAction.Next,
     onImeAction: () -> Unit,
@@ -170,7 +170,7 @@ fun PasswordField(
     password: String,
     enabled: Boolean,
     isError: Boolean,
-    placeholder: String = stringResource(LR.string.profile_password),
+    placeholder: String = stringResource(R.string.profile_password),
     imeAction: ImeAction = ImeAction.Done,
     onImeAction: () -> Unit,
     focusRequester: FocusRequester = remember { FocusRequester() },
@@ -201,7 +201,7 @@ fun PasswordField(
         isError = isError,
         leadingIcon = {
             Icon(
-                painter = painterResource(IR.drawable.ic_password),
+                painter = painterResource(R.drawable.ic_password),
                 contentDescription = null,
             )
         },

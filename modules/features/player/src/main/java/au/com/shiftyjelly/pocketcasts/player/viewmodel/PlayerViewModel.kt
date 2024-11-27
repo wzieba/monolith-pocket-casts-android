@@ -193,7 +193,7 @@ class PlayerViewModel @Inject constructor(
     val playingEpisodeLive: LiveData<Pair<BaseEpisode, Int>> =
         listDataRx.map { Pair(it.podcastHeader.episodeUuid, it.podcastHeader.backgroundColor) }
             .distinctUntilChanged()
-            .switchMap { pair -> episodeManager.findEpisodeByUuidRxFlowable(pair.first).map { Pair(it, pair.second) } }
+            .switchMap { pair -> episodeManager.findEpisodeByUuidRxFlowable(paR.first).map { Pair(it, paR.second) } }
             .toLiveData()
 
     private var playbackPositionMs: Int = 0
@@ -544,49 +544,49 @@ class PlayerViewModel @Inject constructor(
         val minutes = sleepCustomTimeInMinutes % 60
 
         return if (hours == 1 && minutes == 0) {
-            context.resources.getString(LR.string.hours_singular)
+            context.resources.getString(R.string.hours_singular)
         } else if (hours == 1 && minutes > 0) {
-            context.resources.getString(LR.string.hour_and_minutes, minutes)
+            context.resources.getString(R.string.hour_and_minutes, minutes)
         } else if (hours > 1 && minutes == 0) {
-            context.resources.getString(LR.string.hours_plural, hours)
+            context.resources.getString(R.string.hours_plural, hours)
         } else if (hours > 0) {
-            context.resources.getString(LR.string.hours_and_minutes, hours, minutes)
+            context.resources.getString(R.string.hours_and_minutes, hours, minutes)
         } else if (hours == 0 && minutes == 1) {
-            context.resources.getString(LR.string.minutes_singular)
+            context.resources.getString(R.string.minutes_singular)
         } else {
-            context.resources.getString(LR.string.minutes_plural, sleepCustomTimeInMinutes)
+            context.resources.getString(R.string.minutes_plural, sleepCustomTimeInMinutes)
         }
     }
 
     private fun calcEndOfEpisodeText(): String {
         return if (getSleepEndOfEpisodes() == 1) {
-            context.resources.getString(LR.string.player_sleep_timer_in_episode)
+            context.resources.getString(R.string.player_sleep_timer_in_episode)
         } else {
-            context.resources.getString(LR.string.player_sleep_timer_in_episode_plural, getSleepEndOfEpisodes())
+            context.resources.getString(R.string.player_sleep_timer_in_episode_plural, getSleepEndOfEpisodes())
         }
     }
 
     private fun calcEndOfChapterText(): String {
         return if (getSleepEndOfChapters() == 1) {
-            context.resources.getString(LR.string.player_sleep_timer_in_chapter)
+            context.resources.getString(R.string.player_sleep_timer_in_chapter)
         } else {
-            context.resources.getString(LR.string.player_sleep_timer_in_chapter_plural, getSleepEndOfChapters())
+            context.resources.getString(R.string.player_sleep_timer_in_chapter_plural, getSleepEndOfChapters())
         }
     }
 
     private fun calcSleepingInEpisodesText(): String {
         return if (getSleepEndOfEpisodes() == 1) {
-            context.resources.getString(LR.string.player_sleep_in_one_episode)
+            context.resources.getString(R.string.player_sleep_in_one_episode)
         } else {
-            context.resources.getString(LR.string.player_sleep_in_episodes, getSleepEndOfEpisodes())
+            context.resources.getString(R.string.player_sleep_in_episodes, getSleepEndOfEpisodes())
         }
     }
 
     private fun calcSleepingInChaptersText(): String {
         return if (getSleepEndOfChapters() == 1) {
-            context.resources.getString(LR.string.player_sleep_in_one_chapter)
+            context.resources.getString(R.string.player_sleep_in_one_chapter)
         } else {
-            context.resources.getString(LR.string.player_sleep_in_chapters, getSleepEndOfChapters())
+            context.resources.getString(R.string.player_sleep_in_chapters, getSleepEndOfChapters())
         }
     }
 
@@ -767,7 +767,7 @@ class PlayerViewModel @Inject constructor(
     }
 
     enum class PlaybackEffectsSettingsTab(@StringRes val labelResId: Int, val analyticsValue: String) {
-        AllPodcasts(LR.string.podcasts_all, "global"),
-        ThisPodcast(LR.string.podcast_this, "local"),
+        AllPodcasts(R.string.podcasts_all, "global"),
+        ThisPodcast(R.string.podcast_this, "local"),
     }
 }

@@ -113,7 +113,7 @@ class ChaptersFragment : BaseFragment() {
             viewModel.trackChapterLinkTap(chapter)
             startActivity(Intent(Intent.ACTION_VIEW).setData(chapter.url.toString().toUri()))
         } catch (_: Throwable) {
-            UiUtil.displayAlertError(requireContext(), getString(LR.string.player_open_url_failed, chapter.url.toString()), null)
+            UiUtil.displayAlertError(requireContext(), getString(R.string.player_open_url_failed, chapter.url.toString()), null)
         }
     }
 

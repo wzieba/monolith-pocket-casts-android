@@ -111,7 +111,7 @@ class AboutFragment : BaseFragment() {
 private val icons = listOf(
     AppIcon(
         image = UR.attr.about_logo_wordpress,
-        text = LR.string.settings_about_wordpress,
+        text = R.string.settings_about_wordpress,
         url = "https://wordpress.com/",
         color = UR.attr.about_logo_wordpress_color,
         rotate = (-45..45).random(),
@@ -120,7 +120,7 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_jetpack,
-        text = LR.string.settings_about_jetpack,
+        text = R.string.settings_about_jetpack,
         url = "https://jetpack.com/",
         color = UR.attr.about_logo_jetpack_color,
         rotate = (-45..45).random(),
@@ -129,7 +129,7 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_dayone,
-        text = LR.string.settings_about_dayone,
+        text = R.string.settings_about_dayone,
         url = "https://dayoneapp.com/",
         color = UR.attr.about_logo_dayone_color,
         rotate = (-45..45).random(),
@@ -138,7 +138,7 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_pocketcasts,
-        text = LR.string.app_name,
+        text = R.string.app_name,
         url = "https://www.pocketcasts.com/",
         color = UR.attr.about_logo_pocketcasts_color,
         rotate = 0,
@@ -147,7 +147,7 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_woo,
-        text = LR.string.settings_about_woo,
+        text = R.string.settings_about_woo,
         url = "https://woocommerce.com/",
         color = UR.attr.about_logo_woo_color,
         rotate = (-45..45).random(),
@@ -156,7 +156,7 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_simplenote,
-        text = LR.string.settings_about_simplenote,
+        text = R.string.settings_about_simplenote,
         url = "https://simplenote.com/",
         color = UR.attr.about_logo_simplenote_color,
         rotate = (-45..45).random(),
@@ -165,8 +165,8 @@ private val icons = listOf(
     ),
     AppIcon(
         image = UR.attr.about_logo_tumblr,
-        text = LR.string.settings_about_tumblr,
-        url = "https://tumblr.com/",
+        text = R.string.settings_about_tumblr,
+        url = "https://tumbR.com/",
         color = UR.attr.about_logo_tumblr_color,
         rotate = (-45..45).random(),
         x = 1.205,
@@ -189,20 +189,20 @@ private fun AboutPage(
     ) {
         item {
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_title_about),
+                title = stringResource(R.string.settings_title_about),
                 onNavigationClick = onBackPressed,
             )
         }
         item {
             Image(
                 painter = painterResource(context.getThemeDrawable(UR.attr.logo_title_vertical)),
-                contentDescription = stringResource(LR.string.settings_app_icon),
+                contentDescription = stringResource(R.string.settings_app_icon),
                 modifier = Modifier.padding(top = 56.dp),
             )
         }
         item {
             Text(
-                text = stringResource(LR.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
+                text = stringResource(R.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
                 style = MaterialTheme.typography.body1,
                 modifier = Modifier.padding(top = 8.dp),
                 color = MaterialTheme.theme.colors.primaryText02,
@@ -215,13 +215,13 @@ private fun AboutPage(
         }
         item {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_rate_us),
+                text = stringResource(R.string.settings_about_rate_us),
                 onClick = { rateUs(context) },
             )
         }
         item {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_share_with_friends),
+                text = stringResource(R.string.settings_about_share_with_friends),
                 onClick = { shareWithFriends(context) },
             )
         }
@@ -230,21 +230,21 @@ private fun AboutPage(
         }
         item {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_website),
+                text = stringResource(R.string.settings_about_website),
                 secondaryText = "pocketcasts.com",
                 onClick = { openUrl("https://www.pocketcasts.com", context) },
             )
         }
         item {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_instagram),
+                text = stringResource(R.string.settings_about_instagram),
                 secondaryText = "@pocketcasts",
                 onClick = { openUrl("https://www.instagram.com/pocketcasts/", context) },
             )
         }
         item {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_twitter),
+                text = stringResource(R.string.settings_about_twitter),
                 secondaryText = "@pocketcasts",
                 onClick = { openUrl("https://twitter.com/pocketcasts", context) },
             )
@@ -272,12 +272,12 @@ private fun AboutPage(
                     .padding(all = 14.dp),
             ) {
                 Text(
-                    text = stringResource(LR.string.settings_about_work_with_us),
+                    text = stringResource(R.string.settings_about_work_with_us),
                     fontSize = 17.sp,
                     color = MaterialTheme.theme.colors.primaryText01,
                 )
                 Text(
-                    text = stringResource(LR.string.settings_about_work_from_anywhere),
+                    text = stringResource(R.string.settings_about_work_from_anywhere),
                     fontSize = 14.sp,
                     style = MaterialTheme.typography.body1,
                     color = MaterialTheme.theme.colors.primaryText02,
@@ -306,7 +306,7 @@ fun AutomatticFamilyRow() {
         contentAlignment = Alignment.TopStart,
     ) {
         Text(
-            text = stringResource(LR.string.settings_about_automattic_family),
+            text = stringResource(R.string.settings_about_automattic_family),
             fontSize = 17.sp,
             color = MaterialTheme.theme.colors.primaryText01,
             modifier = Modifier.padding(all = 14.dp),
@@ -344,13 +344,13 @@ fun LegalAndMoreRow(openFragment: (Fragment) -> Unit) {
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
-            text = stringResource(LR.string.settings_about_legal),
+            text = stringResource(R.string.settings_about_legal),
             fontSize = 17.sp,
             color = MaterialTheme.theme.colors.primaryText01,
         )
         Image(
             painter = painterResource(R.drawable.row_expand_arrow),
-            contentDescription = stringResource(if (legalExpanded) LR.string.expanded else LR.string.collapsed),
+            contentDescription = stringResource(if (legalExpanded) R.string.expanded else R.string.collapsed),
             colorFilter = ColorFilter.tint(MaterialTheme.theme.colors.primaryText02),
             modifier = Modifier.rotate(rotation),
         )
@@ -358,15 +358,15 @@ fun LegalAndMoreRow(openFragment: (Fragment) -> Unit) {
     AnimatedVisibility(visible = legalExpanded) {
         Column {
             RowTextButton(
-                text = stringResource(LR.string.settings_about_terms_of_serivce),
+                text = stringResource(R.string.settings_about_terms_of_serivce),
                 onClick = { openUrl(Settings.INFO_TOS_URL, context) },
             )
             RowTextButton(
-                text = stringResource(LR.string.settings_about_privacy_policy),
+                text = stringResource(R.string.settings_about_privacy_policy),
                 onClick = { openUrl(Settings.INFO_PRIVACY_URL, context) },
             )
             RowTextButton(
-                text = stringResource(LR.string.settings_about_acknowledgements),
+                text = stringResource(R.string.settings_about_acknowledgements),
                 onClick = { openFragment(LicensesFragment()) },
             )
         }
@@ -376,9 +376,9 @@ fun LegalAndMoreRow(openFragment: (Fragment) -> Unit) {
 private fun shareWithFriends(context: Context) {
     val intent = Intent(Intent.ACTION_SEND)
     intent.type = "text/plain"
-    intent.putExtra(Intent.EXTRA_TEXT, context.getString(LR.string.settings_about_share_with_friends_message))
+    intent.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.settings_about_share_with_friends_message))
     try {
-        context.startActivity(Intent.createChooser(intent, context.getString(LR.string.share)))
+        context.startActivity(Intent.createChooser(intent, context.getString(R.string.share)))
     } catch (e: IllegalStateException) {
         // Not attached to activity anymore
     }

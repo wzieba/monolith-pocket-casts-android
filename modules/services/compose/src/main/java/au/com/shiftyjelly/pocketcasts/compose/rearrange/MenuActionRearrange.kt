@@ -157,7 +157,7 @@ fun MenuActionRearrange(
                                 enabled = enabled,
                             ) {
                                 Icon(
-                                    painter = painterResource(IR.drawable.ic_reorder),
+                                    painter = painterResource(R.drawable.ic_reorder),
                                     contentDescription = null,
                                     tint = iconColor,
                                 )
@@ -174,7 +174,7 @@ fun MenuActionRearrange(
 fun accessibilityActions(index: Int, menuActions: List<MenuAction>, onActionsOrderChanged: (List<MenuAction>) -> Unit, resources: Resources): List<CustomAccessibilityAction> {
     return listOf(
         CustomAccessibilityAction(
-            label = resources.getString(LR.string.move_up),
+            label = resources.getString(R.string.move_up),
             action = {
                 if (index > 0) {
                     val list = menuActions.toMutableList().apply {
@@ -188,7 +188,7 @@ fun accessibilityActions(index: Int, menuActions: List<MenuAction>, onActionsOrd
             },
         ),
         CustomAccessibilityAction(
-            label = resources.getString(LR.string.move_down),
+            label = resources.getString(R.string.move_down),
             action = {
                 if (index < menuActions.size - 1) {
                     val list = menuActions.toMutableList().apply {
@@ -224,11 +224,11 @@ fun MenuActionRearrangePreview() {
                 )
             },
             menuActions = listOf(
-                MenuAction("1", LR.string.archive, IR.drawable.ic_archive),
-                MenuAction("2", LR.string.mark_as_played, IR.drawable.ic_markasplayed),
-                MenuAction("3", LR.string.play_next, IR.drawable.ic_skip_next),
-                MenuAction("4", LR.string.playback_speed, IR.drawable.ic_speed_number),
-                MenuAction("5", LR.string.star, IR.drawable.ic_star),
+                MenuAction("1", R.string.archive, R.drawable.ic_archive),
+                MenuAction("2", R.string.mark_as_played, R.drawable.ic_markasplayed),
+                MenuAction("3", R.string.play_next, R.drawable.ic_skip_next),
+                MenuAction("4", R.string.playback_speed, R.drawable.ic_speed_number),
+                MenuAction("5", R.string.star, R.drawable.ic_star),
             ),
             onActionsOrderChanged = {},
             chooseCount = 3,

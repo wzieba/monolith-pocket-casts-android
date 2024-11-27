@@ -93,9 +93,9 @@ private fun VerticalProfileHeader(
     onClick: () -> Unit,
 ) {
     val accountLabel = if (state.email == null) {
-        stringResource(LR.string.profile_set_up_account)
+        stringResource(R.string.profile_set_up_account)
     } else {
-        stringResource(LR.string.account)
+        stringResource(R.string.account)
     }
     val context = LocalContext.current
     val expirationLabel = remember(state.expiresIn) {
@@ -162,9 +162,9 @@ private fun HorizontalProfileHeader(
     onClick: () -> Unit,
 ) {
     val accountLabel = if (state.email == null) {
-        stringResource(LR.string.profile_set_up_account)
+        stringResource(R.string.profile_set_up_account)
     } else {
-        stringResource(LR.string.account)
+        stringResource(R.string.account)
     }
     val context = LocalContext.current
     val expirationLabel = remember(state.expiresIn) {
@@ -237,8 +237,8 @@ private fun expirationLabel(context: Context, duration: Duration, subscriptionTi
     }
     return when (subscriptionTier) {
         NONE -> null
-        PLUS -> context.getString(LR.string.profile_plus_expires_in, duration.toExpirationString(context))
-        PATRON -> context.getString(LR.string.profile_patron_expires_in, duration.toExpirationString(context))
+        PLUS -> context.getString(R.string.profile_plus_expires_in, duration.toExpirationString(context))
+        PATRON -> context.getString(R.string.profile_patron_expires_in, duration.toExpirationString(context))
     }
 }
 

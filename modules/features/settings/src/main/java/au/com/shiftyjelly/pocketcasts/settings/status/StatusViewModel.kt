@@ -33,29 +33,29 @@ class StatusViewModel @Inject constructor(
 
     private val services = mutableListOf(
         Service(
-            title = LR.string.settings_status_service_internet,
-            summary = LR.string.settings_status_service_internet_summary,
-            help = LR.string.settings_status_service_internet_help,
+            title = R.string.settings_status_service_internet,
+            summary = R.string.settings_status_service_internet_summary,
+            help = R.string.settings_status_service_internet_help,
             check = Internet,
         ),
         Service(
-            title = LR.string.settings_status_service_refresh,
-            summary = LR.string.settings_status_service_refresh_summary,
-            help = LR.string.settings_status_service_ad_blocker_help_singular,
+            title = R.string.settings_status_service_refresh,
+            summary = R.string.settings_status_service_refresh_summary,
+            help = R.string.settings_status_service_ad_blocker_help_singular,
             helpArgs = listOf("refresh.pocketcasts.com"),
             check = Urls(listOf("https://refresh.pocketcasts.com/health.html")),
         ),
         Service(
-            title = LR.string.settings_status_service_account,
-            summary = LR.string.settings_status_service_account_summary,
-            help = LR.string.settings_status_service_ad_blocker_help_singular,
+            title = R.string.settings_status_service_account,
+            summary = R.string.settings_status_service_account_summary,
+            help = R.string.settings_status_service_ad_blocker_help_singular,
             helpArgs = listOf("api.pocketcasts.com"),
             check = Urls(listOf("https://api.pocketcasts.com/health")),
         ),
         Service(
-            title = LR.string.settings_status_service_discover,
-            summary = LR.string.settings_status_service_discover_summary,
-            help = LR.string.settings_status_service_ad_blocker_help_plural,
+            title = R.string.settings_status_service_discover,
+            summary = R.string.settings_status_service_discover_summary,
+            help = R.string.settings_status_service_ad_blocker_help_plural,
             helpArgs = listOf("static.pocketcasts.com, cache.pocketcasts.com and podcasts.pocketcasts.com"),
             check = Urls(
                 listOf(
@@ -65,9 +65,9 @@ class StatusViewModel @Inject constructor(
             ),
         ),
         Service(
-            title = LR.string.settings_status_service_hosts,
-            summary = LR.string.settings_status_service_hosts_summary,
-            help = LR.string.settings_status_service_hosts_help,
+            title = R.string.settings_status_service_hosts,
+            summary = R.string.settings_status_service_hosts_summary,
+            help = R.string.settings_status_service_hosts_help,
             check = Urls(
                 listOf("https://dts.podtrac.com/redirect.mp3/static.pocketcasts.com/assets/feeds/status/episode1.mp3"),
             ),

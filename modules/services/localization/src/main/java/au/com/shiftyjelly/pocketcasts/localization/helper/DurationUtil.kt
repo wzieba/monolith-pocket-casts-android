@@ -66,19 +66,19 @@ enum class FriendlyDurationUnit(
 ) {
     Second(
         durationUnit = DurationUnit.SECONDS,
-        resourceId = LR.plurals.second,
+        resourceId = R.plurals.second,
     ),
     Minute(
         durationUnit = DurationUnit.MINUTES,
-        resourceId = LR.plurals.minute,
+        resourceId = R.plurals.minute,
     ),
     Hour(
         durationUnit = DurationUnit.HOURS,
-        resourceId = LR.plurals.hour,
+        resourceId = R.plurals.hour,
     ),
     Day(
         durationUnit = DurationUnit.DAYS,
-        resourceId = LR.plurals.day,
+        resourceId = R.plurals.day,
     ),
     ;
 

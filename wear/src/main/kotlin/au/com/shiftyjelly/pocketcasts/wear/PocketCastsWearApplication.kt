@@ -105,7 +105,7 @@ class PocketCastsWearApplication : Application(), Configuration.Provider {
                     if (folder != null) {
                         settings.setStorageChoice(folder.filePath, folder.label)
                     } else {
-                        settings.setStorageCustomFolder(this@PocketCastsWearApplication.filesDir.absolutePath)
+                        settings.setStorageCustomFolder(this@PocketCastsWearApplication.filesDR.absolutePath)
                     }
                 }
             }

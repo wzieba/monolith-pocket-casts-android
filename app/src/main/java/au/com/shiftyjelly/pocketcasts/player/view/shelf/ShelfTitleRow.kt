@@ -41,7 +41,7 @@ fun ShelfTitlePreview(
 ) {
     AppTheme(themeType) {
         ShelfTitleRow(
-            item = ShelfTitle(title = LR.string.more_options),
+            item = ShelfTitle(title = R.string.more_options),
         )
     }
 }

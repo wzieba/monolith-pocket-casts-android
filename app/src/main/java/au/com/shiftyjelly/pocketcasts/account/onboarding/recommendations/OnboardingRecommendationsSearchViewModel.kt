@@ -117,7 +117,7 @@ class OnboardingRecommendationsSearchViewModel @Inject constructor(
         } else {
             Toast.makeText(
                 context,
-                context.getString(LR.string.error_check_your_internet_connection),
+                context.getString(R.string.error_check_your_internet_connection),
                 Toast.LENGTH_SHORT,
             ).show()
         }

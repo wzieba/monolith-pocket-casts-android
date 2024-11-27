@@ -90,7 +90,7 @@ private fun PageList(
     LazyColumn(modifier = modifier) {
         item {
             Column {
-                LargePageTitle(text = stringResource(if (state.isCreateFolder) LR.string.create_folder else LR.string.filters_choose_podcasts))
+                LargePageTitle(text = stringResource(if (state.isCreateFolder) R.string.create_folder else R.string.filters_choose_podcasts))
                 SearchSortBar(
                     searchText = state.searchText,
                     onSearchTextChanged = { text -> viewModel.searchPodcasts(text) },
@@ -122,9 +122,9 @@ private fun PageList(
         }
     }
     val buttonText = when {
-        state.isEditFolder -> stringResource(LR.string.update)
-        state.selectedCount == 1 -> stringResource(LR.string.add_podcasts_singular)
-        else -> stringResource(LR.string.add_podcasts_plural, state.selectedCount)
+        state.isEditFolder -> stringResource(R.string.update)
+        state.selectedCount == 1 -> stringResource(R.string.add_podcasts_singular)
+        else -> stringResource(R.string.add_podcasts_plural, state.selectedCount)
     }
     Card(elevation = 8.dp) {
         RowButton(text = buttonText, onClick = { onNextClick() })
@@ -141,7 +141,7 @@ private fun SearchSortBar(searchText: String, onSearchTextChanged: (String) -> U
     ) {
         SearchBar(
             text = searchText,
-            placeholder = stringResource(LR.string.search_podcasts),
+            placeholder = stringResource(R.string.search_podcasts),
             onTextChanged = onSearchTextChanged,
             modifier = Modifier
                 .padding(start = 16.dp)
@@ -149,8 +149,8 @@ private fun SearchSortBar(searchText: String, onSearchTextChanged: (String) -> U
         )
         IconButton(onClick = { onSortClick() }) {
             Icon(
-                painter = painterResource(IR.drawable.ic_sort),
-                contentDescription = stringResource(LR.string.podcasts_sort_order),
+                painter = painterResource(R.drawable.ic_sort),
+                contentDescription = stringResource(R.string.podcasts_sort_order),
                 tint = MaterialTheme.theme.colors.primaryIcon01,
                 modifier = Modifier.padding(end = 16.dp, start = 16.dp),
             )
@@ -195,7 +195,7 @@ private fun PodcastSelectRow(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     val folderColor = MaterialTheme.theme.colors.getFolderColor(folder.color)
                     Icon(
-                        painter = painterResource(IR.drawable.ic_folder_bold),
+                        painter = painterResource(R.drawable.ic_folder_bold),
                         contentDescription = null,
                         tint = folderColor,
                         modifier = Modifier.padding(end = 4.dp),

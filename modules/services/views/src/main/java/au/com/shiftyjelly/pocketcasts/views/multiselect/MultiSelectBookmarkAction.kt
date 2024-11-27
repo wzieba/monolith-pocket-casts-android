@@ -25,7 +25,7 @@ sealed class MultiSelectBookmarkAction(
     data object DeleteBookmark : MultiSelectBookmarkAction(
         groupId = "delete",
         actionId = R.id.menu_delete,
-        title = LR.string.delete,
+        title = R.string.delete,
         iconRes = R.drawable.ic_delete,
         analyticsValue = "delete",
     )
@@ -33,8 +33,8 @@ sealed class MultiSelectBookmarkAction(
     data class EditBookmark(override val isVisible: Boolean) : MultiSelectBookmarkAction(
         groupId = "edit",
         actionId = UR.id.menu_edit,
-        title = LR.string.edit,
-        iconRes = IR.drawable.ic_edit,
+        title = R.string.edit,
+        iconRes = R.drawable.ic_edit,
         analyticsValue = "edit",
         isVisible = isVisible,
     )
@@ -42,8 +42,8 @@ sealed class MultiSelectBookmarkAction(
     data class ShareBookmark(override val isVisible: Boolean) : MultiSelectBookmarkAction(
         groupId = "share",
         actionId = R.id.menu_share,
-        title = LR.string.share,
-        iconRes = IR.drawable.ic_share,
+        title = R.string.share,
+        iconRes = R.drawable.ic_share,
         analyticsValue = "share",
     )
 }

@@ -30,17 +30,17 @@ fun FolderEditNamePage(
     val focusRequester = remember { FocusRequester() }
     Column {
         BottomSheetAppBar(
-            title = stringResource(LR.string.name_your_folder),
+            title = stringResource(R.string.name_your_folder),
             navigationButton = NavigationButton.Back,
             onNavigationClick = { onBackClick() },
         )
         TextC70(
-            text = stringResource(LR.string.name),
+            text = stringResource(R.string.name),
             modifier = Modifier.padding(start = 16.dp, top = 6.dp, bottom = 8.dp),
         )
         FormField(
             value = folderName,
-            placeholder = stringResource(LR.string.folder_name),
+            placeholder = stringResource(R.string.folder_name),
             onValueChange = { viewModel.changeFolderName(it) },
             onImeAction = { onNextClick() },
             modifier = Modifier
@@ -48,7 +48,7 @@ fun FolderEditNamePage(
                 .focusRequester(focusRequester),
         )
         RowButton(
-            text = stringResource(LR.string.navigation_continue),
+            text = stringResource(R.string.navigation_continue),
             onClick = { onNextClick() },
         )
         // so the bottom sheet goes full height

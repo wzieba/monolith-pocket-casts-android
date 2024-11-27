@@ -57,7 +57,7 @@ private fun Content(
     ) {
         item {
             ScreenHeaderChip(
-                text = LR.string.add_to_up_next_question,
+                text = R.string.add_to_up_next_question,
                 textColor = Color.White,
             )
         }
@@ -83,13 +83,13 @@ private fun Preview() {
             columnState = ScalingLazyColumnState(),
             upNextOptions = listOf(
                 EpisodeViewModel.UpNextOption(
-                    iconRes = IR.drawable.ic_upnext_playnext,
-                    titleRes = LR.string.play_next,
+                    iconRes = R.drawable.ic_upnext_playnext,
+                    titleRes = R.string.play_next,
                     onClick = {},
                 ),
                 EpisodeViewModel.UpNextOption(
-                    iconRes = IR.drawable.ic_upnext_playlast,
-                    titleRes = LR.string.play_last,
+                    iconRes = R.drawable.ic_upnext_playlast,
+                    titleRes = R.string.play_last,
                     onClick = {},
                 ),
             ),

@@ -8,12 +8,13 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.toLiveData
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentMultiselectBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
-import au.com.shiftyjelly.pocketcasts.views.databinding.FragmentMultiselectBinding
 import au.com.shiftyjelly.pocketcasts.views.extensions.setup
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon
@@ -22,7 +23,6 @@ import io.reactivex.BackpressureStrategy
 import java.util.Collections
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHelperAdapter {
@@ -37,8 +37,8 @@ class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHe
     private val adapter = MultiSelectAdapter(editable = true, listener = null, dragListener = this::onItemStartDrag)
     private lateinit var itemTouchHelper: ItemTouchHelper
     private var items = emptyList<Any>()
-    private val shortcutTitle = MultiSelectAdapter.Title(LR.string.multiselect_actions_shown)
-    private val overflowTitle = MultiSelectAdapter.Title(LR.string.multiselect_actions_hidden)
+    private val shortcutTitle = MultiSelectAdapter.Title(R.string.multiselect_actions_shown)
+    private val overflowTitle = MultiSelectAdapter.Title(R.string.multiselect_actions_hidden)
     private var binding: FragmentMultiselectBinding? = null
     private var dragStartPosition: Int? = null
 
@@ -59,7 +59,7 @@ class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHe
 
         val toolbar = binding.toolbar
         toolbar.setup(
-            title = getString(LR.string.rearrange_actions),
+            title = getString(R.string.rearrange_actions),
             navigationIcon = NavigationIcon.BackArrow,
             onNavigationClick = {
                 trackRearrangeFinishedEvent()

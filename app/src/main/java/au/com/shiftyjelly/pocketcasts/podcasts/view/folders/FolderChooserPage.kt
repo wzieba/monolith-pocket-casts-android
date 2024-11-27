@@ -73,7 +73,7 @@ fun FolderChooserPage(
                 backgroundColor = Color.Transparent,
             ) {
                 RowButton(
-                    text = stringResource(LR.string.done),
+                    text = stringResource(R.string.done),
                     onClick = { onCloseClick() },
                 )
             }
@@ -93,7 +93,7 @@ private fun FolderList(
     LazyColumn(modifier = modifier) {
         item {
             Column {
-                LargePageTitle(text = stringResource(LR.string.choose_folder))
+                LargePageTitle(text = stringResource(R.string.choose_folder))
                 HorizontalDivider()
             }
         }
@@ -134,7 +134,7 @@ private fun FolderSelectRow(folder: Folder, podcastCount: Int, selected: Boolean
             modifier = Modifier.width(56.dp),
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_folder),
+                painter = painterResource(R.drawable.ic_folder),
                 contentDescription = null,
                 tint = Color(folder.getColor(context)),
             )
@@ -151,7 +151,7 @@ private fun FolderSelectRow(folder: Folder, podcastCount: Int, selected: Boolean
         }
         if (selected) {
             Icon(
-                painter = painterResource(id = IR.drawable.ic_tick),
+                painter = painterResource(id = R.drawable.ic_tick),
                 contentDescription = null,
                 tint = MaterialTheme.theme.colors.primaryIcon01,
                 modifier = Modifier.padding(end = 21.dp),
@@ -173,13 +173,13 @@ fun FolderMoveRow(modifier: Modifier = Modifier, onClick: () -> Unit) {
             modifier = Modifier.width(56.dp),
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_folder_plus),
+                painter = painterResource(R.drawable.ic_folder_plus),
                 contentDescription = null,
                 tint = MaterialTheme.theme.colors.primaryInteractive01,
             )
         }
         TextH30(
-            text = stringResource(LR.string.new_folder),
+            text = stringResource(R.string.new_folder),
             color = MaterialTheme.theme.colors.primaryInteractive01,
             maxLines = 1,
             modifier = Modifier.weight(1f),

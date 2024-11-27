@@ -116,17 +116,17 @@ class MultiSelectBookmarksHelper @Inject constructor(
                 ConfirmationDialog.ButtonType.Danger(
                     resources.getStringPlural(
                         count = count,
-                        singular = LR.string.bookmarks_delete_singular,
-                        plural = LR.string.bookmarks_delete_plural,
+                        singular = R.string.bookmarks_delete_singular,
+                        plural = R.string.bookmarks_delete_plural,
                     ),
                 ),
             )
-            .setTitle(resources.getString(LR.string.are_you_sure))
+            .setTitle(resources.getString(R.string.are_you_sure))
             .setSummary(
                 resources.getStringPlural(
                     count = count,
-                    singular = LR.string.bookmarks_delete_summary_singular,
-                    plural = LR.string.bookmarks_delete_summary_plural,
+                    singular = R.string.bookmarks_delete_summary_singular,
+                    plural = R.string.bookmarks_delete_summary_plural,
                 ),
             )
             .setIconId(R.drawable.ic_delete)
@@ -144,8 +144,8 @@ class MultiSelectBookmarksHelper @Inject constructor(
                     withContext(Dispatchers.Main) {
                         val snackText = resources.getStringPlural(
                             count,
-                            LR.string.bookmarks_deleted_singular,
-                            LR.string.bookmarks_deleted_plural,
+                            R.string.bookmarks_deleted_singular,
+                            R.string.bookmarks_deleted_plural,
                         )
                         showSnackBar(snackText)
                     }

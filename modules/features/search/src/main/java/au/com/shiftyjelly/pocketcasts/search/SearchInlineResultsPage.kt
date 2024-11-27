@@ -154,7 +154,7 @@ private fun SearchResultsView(
         if (state.podcasts.isNotEmpty()) {
             item {
                 SearchResultsHeaderView(
-                    title = stringResource(LR.string.podcasts),
+                    title = stringResource(R.string.podcasts),
                     onShowAllCLick = { onShowAllCLick(ResultsType.PODCASTS) },
                 )
             }
@@ -203,7 +203,7 @@ private fun SearchResultsView(
         if (state.episodes.isNotEmpty()) {
             item {
                 SearchResultsHeaderView(
-                    title = stringResource(LR.string.episodes),
+                    title = stringResource(R.string.episodes),
                     onShowAllCLick = { onShowAllCLick(ResultsType.EPISODES) },
                 )
             }
@@ -238,7 +238,7 @@ private fun SearchResultsHeaderView(
             modifier = modifier.weight(1f),
         )
         TextP60(
-            text = stringResource(LR.string.search_show_all).uppercase(),
+            text = stringResource(R.string.search_show_all).uppercase(),
             color = MaterialTheme.theme.colors.support03,
             fontWeight = FontWeight.W700,
             modifier = modifier
@@ -252,17 +252,17 @@ private fun SearchResultsHeaderView(
 private fun NoResultsView() {
     MessageView(
         imageResId = R.drawable.search,
-        titleResId = LR.string.search_no_podcasts_found,
-        summaryResId = LR.string.search_no_podcasts_found_summary,
+        titleResId = R.string.search_no_podcasts_found,
+        summaryResId = R.string.search_no_podcasts_found_summary,
     )
 }
 
 @Composable
 private fun SearchFailedView() {
     MessageView(
-        imageResId = IR.drawable.search_failed,
-        titleResId = LR.string.error_search_failed,
-        summaryResId = LR.string.error_check_your_internet_connection,
+        imageResId = R.drawable.search_failed,
+        titleResId = R.string.error_search_failed,
+        summaryResId = R.string.error_check_your_internet_connection,
     )
 }
 

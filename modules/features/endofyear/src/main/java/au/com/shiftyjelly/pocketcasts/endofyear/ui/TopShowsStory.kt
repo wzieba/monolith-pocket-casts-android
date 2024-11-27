@@ -142,7 +142,7 @@ private fun TopShowsStory(
         )
         Column {
             TextH10(
-                text = stringResource(LR.string.eoy_story_top_podcasts_title),
+                text = stringResource(R.string.eoy_story_top_podcasts_title),
                 fontScale = measurements.smallDeviceFactor,
                 disableAutoScale = true,
                 modifier = Modifier.padding(horizontal = 24.dp),
@@ -228,9 +228,9 @@ private fun PodcastItem(
 }
 
 private val stickers = listOf(
-    IR.drawable.end_of_year_2024_sticker_3,
-    IR.drawable.end_of_year_2024_sticker_4,
-    IR.drawable.end_of_year_2024_sticker_5,
+    R.drawable.end_of_year_2024_sticker_3,
+    R.drawable.end_of_year_2024_sticker_4,
+    R.drawable.end_of_year_2024_sticker_5,
 )
 
 private fun Modifier.fadeScrollingEdges(

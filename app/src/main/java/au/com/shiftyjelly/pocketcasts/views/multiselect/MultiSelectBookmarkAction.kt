@@ -2,10 +2,7 @@ package au.com.shiftyjelly.pocketcasts.views.multiselect
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
+import au.com.shiftyjelly.pocketcasts.R
 
 sealed class MultiSelectBookmarkAction(
     override val groupId: String,
@@ -25,16 +22,16 @@ sealed class MultiSelectBookmarkAction(
     data object DeleteBookmark : MultiSelectBookmarkAction(
         groupId = "delete",
         actionId = R.id.menu_delete,
-        title = LR.string.delete,
+        title = R.string.delete,
         iconRes = R.drawable.ic_delete,
         analyticsValue = "delete",
     )
 
     data class EditBookmark(override val isVisible: Boolean) : MultiSelectBookmarkAction(
         groupId = "edit",
-        actionId = UR.id.menu_edit,
-        title = LR.string.edit,
-        iconRes = IR.drawable.ic_edit,
+        actionId = R.id.menu_edit,
+        title = R.string.edit,
+        iconRes = R.drawable.ic_edit,
         analyticsValue = "edit",
         isVisible = isVisible,
     )
@@ -42,8 +39,8 @@ sealed class MultiSelectBookmarkAction(
     data class ShareBookmark(override val isVisible: Boolean) : MultiSelectBookmarkAction(
         groupId = "share",
         actionId = R.id.menu_share,
-        title = LR.string.share,
-        iconRes = IR.drawable.ic_share,
+        title = R.string.share,
+        iconRes = R.drawable.ic_share,
         analyticsValue = "share",
     )
 }

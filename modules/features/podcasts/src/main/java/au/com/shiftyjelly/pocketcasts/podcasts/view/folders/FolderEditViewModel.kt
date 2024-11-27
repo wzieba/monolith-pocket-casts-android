@@ -206,7 +206,7 @@ class FolderEditViewModel
         var name = folderName.value.trim()
         if (name.isEmpty()) {
             // set an empty folder name to 'New Folder'
-            name = resources.getString(LR.string.new_folder_title)
+            name = resources.getString(R.string.new_folder_title)
         }
         viewModelScope.launch {
             folderManager.updateName(folderUuid = folder.uuid, name = name)
@@ -223,7 +223,7 @@ class FolderEditViewModel
             var name = folderName.value.trim()
             if (name.isEmpty()) {
                 // set an empty folder name to 'New Folder'
-                name = resources.getString(LR.string.new_folder_title)
+                name = resources.getString(R.string.new_folder_title)
             }
             viewModelScope.launch {
                 val newFolder = folderManager.create(

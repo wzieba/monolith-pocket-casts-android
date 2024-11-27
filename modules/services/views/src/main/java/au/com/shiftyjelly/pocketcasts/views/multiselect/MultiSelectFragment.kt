@@ -37,8 +37,8 @@ class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHe
     private val adapter = MultiSelectAdapter(editable = true, listener = null, dragListener = this::onItemStartDrag)
     private lateinit var itemTouchHelper: ItemTouchHelper
     private var items = emptyList<Any>()
-    private val shortcutTitle = MultiSelectAdapter.Title(LR.string.multiselect_actions_shown)
-    private val overflowTitle = MultiSelectAdapter.Title(LR.string.multiselect_actions_hidden)
+    private val shortcutTitle = MultiSelectAdapter.Title(R.string.multiselect_actions_shown)
+    private val overflowTitle = MultiSelectAdapter.Title(R.string.multiselect_actions_hidden)
     private var binding: FragmentMultiselectBinding? = null
     private var dragStartPosition: Int? = null
 
@@ -59,7 +59,7 @@ class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHe
 
         val toolbar = binding.toolbar
         toolbar.setup(
-            title = getString(LR.string.rearrange_actions),
+            title = getString(R.string.rearrange_actions),
             navigationIcon = NavigationIcon.BackArrow,
             onNavigationClick = {
                 trackRearrangeFinishedEvent()

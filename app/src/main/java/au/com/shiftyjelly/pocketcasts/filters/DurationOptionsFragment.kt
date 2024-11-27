@@ -60,7 +60,7 @@ class DurationOptionsFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.lblTitle.text = getString(LR.string.filters_episode_duration)
+        binding.lblTitle.text = getString(R.string.filters_episode_duration)
         binding.btnClose.setOnClickListener {
             @Suppress("DEPRECATION")
             activity?.onBackPressed()
@@ -71,23 +71,23 @@ class DurationOptionsFragment : BaseFragment() {
             TimeHelper.getTimeDurationShortString(
                 timeMs = (it.toDouble() * 60000).toLong(),
                 context = context,
-                emptyString = context?.getString(LR.string.time_short_seconds, 0) ?: "",
+                emptyString = context?.getString(R.string.time_short_seconds, 0) ?: "",
             )
         }
         val voiceOverFormatter: (Int) -> String = {
             TimeHelper.getTimeDurationString(
                 timeMs = (it.toDouble() * 60000).toLong(),
                 context = context,
-                emptyString = context?.getString(LR.string.seconds_plural, 0) ?: "",
+                emptyString = context?.getString(R.string.seconds_plural, 0) ?: "",
             )
         }
         stepperLongerThan.formatter = formatter
         stepperLongerThan.voiceOverFormatter = voiceOverFormatter
-        stepperLongerThan.voiceOverPrefix = getString(LR.string.filters_duration_longer_than)
+        stepperLongerThan.voiceOverPrefix = getString(R.string.filters_duration_longer_than)
         val stepperShorterThan = binding.stepperShorterThan
         stepperShorterThan.formatter = formatter
         stepperShorterThan.voiceOverFormatter = voiceOverFormatter
-        stepperShorterThan.voiceOverPrefix = getString(LR.string.filters_duration_shorter_than)
+        stepperShorterThan.voiceOverPrefix = getString(R.string.filters_duration_shorter_than)
 
         val switchDuration = binding.switchDuration
         switchDuration.setOnCheckedChangeListener { _, isChecked ->
@@ -137,8 +137,8 @@ class DurationOptionsFragment : BaseFragment() {
             val shorterValue: Int = stepperShorterThan.value
             val longerValue: Int = stepperLongerThan.value
             if (switchDuration.isChecked && shorterValue <= longerValue) {
-                val message = getString(LR.string.filters_duration_error_body, longerValue, shorterValue)
-                UiUtil.displayAlertError(btnSave.context, getString(LR.string.filters_duration_error_title), message, null)
+                val message = getString(R.string.filters_duration_error_body, longerValue, shorterValue)
+                UiUtil.displayAlertError(btnSave.context, getString(R.string.filters_duration_error_title), message, null)
                 return@setOnClickListener
             }
 

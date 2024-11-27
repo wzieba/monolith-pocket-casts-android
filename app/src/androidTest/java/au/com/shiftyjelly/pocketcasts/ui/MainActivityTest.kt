@@ -260,7 +260,7 @@ class MainActivityTest {
     @Suppress("DEPRECATION")
     private fun takeScreenshot() {
         val dir = File(getInstrumentation().targetContext.cacheDir, "app_screenshots")
-        dir.mkdirs()
+        dR.mkdirs()
         val file = File(dir, "${screenShotCount.toString().padStart(2, '0')}.jpg")
         screenShotCount += 1
         device.takeScreenshot(file)

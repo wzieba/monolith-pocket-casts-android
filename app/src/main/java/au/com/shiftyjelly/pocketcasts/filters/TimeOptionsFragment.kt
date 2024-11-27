@@ -93,15 +93,15 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val anytime = filterOptionForTitle(LR.string.filters_time_anytime, Playlist.ANYTIME)
-        val last24Hours = filterOptionForTitle(LR.string.filters_time_24_hours, Playlist.LAST_24_HOURS)
-        val last3Days = filterOptionForTitle(LR.string.filters_time_3_days, Playlist.LAST_3_DAYS)
-        val lastWeek = filterOptionForTitle(LR.string.filters_time_week, Playlist.LAST_WEEK)
-        val last2Weeks = filterOptionForTitle(LR.string.filters_time_2_weeks, Playlist.LAST_2_WEEKS)
-        val lastMonth = filterOptionForTitle(LR.string.filters_time_month, Playlist.LAST_MONTH)
+        val anytime = filterOptionForTitle(R.string.filters_time_anytime, Playlist.ANYTIME)
+        val last24Hours = filterOptionForTitle(R.string.filters_time_24_hours, Playlist.LAST_24_HOURS)
+        val last3Days = filterOptionForTitle(R.string.filters_time_3_days, Playlist.LAST_3_DAYS)
+        val lastWeek = filterOptionForTitle(R.string.filters_time_week, Playlist.LAST_WEEK)
+        val last2Weeks = filterOptionForTitle(R.string.filters_time_2_weeks, Playlist.LAST_2_WEEKS)
+        val lastMonth = filterOptionForTitle(R.string.filters_time_month, Playlist.LAST_MONTH)
 
         val downloadAll = FilterOption(
-            LR.string.all,
+            R.string.all,
             false,
             { v, position ->
                 playlist?.downloaded = true
@@ -111,7 +111,7 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
         )
 
         val downloadedOption = FilterOption(
-            LR.string.downloaded,
+            R.string.downloaded,
             false,
             { v, position ->
                 playlist?.downloaded = true
@@ -120,7 +120,7 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
             },
         )
         val notDownloadedOption = FilterOption(
-            LR.string.not_downloaded,
+            R.string.not_downloaded,
             false,
             { v, position ->
                 playlist?.downloaded = false
@@ -130,7 +130,7 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
         )
 
         val allOption = FilterOption(
-            LR.string.all,
+            R.string.all,
             false,
             { v, position ->
                 if (v) {
@@ -140,7 +140,7 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
             },
         )
         val audioOption = FilterOption(
-            LR.string.audio,
+            R.string.audio,
             false,
             { v, position ->
                 if (v) {
@@ -150,7 +150,7 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
             },
         )
         val videoOption = FilterOption(
-            LR.string.video,
+            R.string.video,
             false,
             { v, position ->
                 if (v) {
@@ -169,9 +169,9 @@ class TimeOptionsFragment : BaseFragment(), CoroutineScope {
         val binding = binding ?: return
 
         val titleId = when (optionType) {
-            OptionsType.Time -> LR.string.filters_release_date
-            OptionsType.Downloaded -> LR.string.filters_download_options
-            OptionsType.AudioVideo -> LR.string.filters_chip_media_type
+            OptionsType.Time -> R.string.filters_release_date
+            OptionsType.Downloaded -> R.string.filters_download_options
+            OptionsType.AudioVideo -> R.string.filters_chip_media_type
         }
         binding.lblTitle.setText(titleId)
 

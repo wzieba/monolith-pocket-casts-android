@@ -58,9 +58,9 @@ fun FolderListRow(
                 modifier = Modifier.padding(bottom = 2.dp),
             )
             val podcastCount = if (podcastUuids.size == 1) {
-                stringResource(LR.string.podcasts_singular)
+                stringResource(R.string.podcasts_singular)
             } else {
-                stringResource(LR.string.podcasts_plural, podcastUuids.size)
+                stringResource(R.string.podcasts_plural, podcastUuids.size)
             }
             Text(
                 text = podcastCount,

@@ -161,7 +161,7 @@ private fun Content(
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_link_back),
-                        contentDescription = stringResource(id = LR.string.player_chapter_url),
+                        contentDescription = stringResource(id = R.string.player_chapter_url),
                         modifier = Modifier
                             .size(36.dp),
                     )

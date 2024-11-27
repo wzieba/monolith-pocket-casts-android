@@ -21,7 +21,7 @@ fun HorizontalLogoText(
 ) {
     val logoColor = if (MaterialTheme.theme.isLight) Color.Black else Color.White
     Image(
-        painter = painterResource(IR.drawable.logo_pocket_casts),
+        painter = painterResource(R.drawable.logo_pocket_casts),
         contentDescription = contentDescription,
         colorFilter = ColorFilter.tint(logoColor),
         modifier = modifier,

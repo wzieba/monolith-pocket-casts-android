@@ -20,7 +20,7 @@ class FileUtilTest {
 
     @Test
     fun `delete existing file`() {
-        val file = tempDir.newFile()
+        val file = tempDR.newFile()
 
         FileUtil.deleteFileByPath(file.path)
 
@@ -29,7 +29,7 @@ class FileUtilTest {
 
     @Test
     fun `delete non existing file`() {
-        val file = tempDir.newFile()
+        val file = tempDR.newFile()
 
         FileUtil.deleteFileByPath(file.path + "test")
 
@@ -38,14 +38,14 @@ class FileUtilTest {
 
     @Test
     fun `delete directory contents`() {
-        val dir = tempDir.newFolder()
+        val dir = tempDR.newFolder()
         val contents = listOf(
             File(dir, "test1").also(File::createNewFile),
             File(dir, "test2").also(File::createNewFile),
             File(dir, "test3").also(File::createNewFile),
         )
 
-        FileUtil.deleteDirContents(dir.path)
+        FileUtil.deleteDirContents(dR.path)
 
         assertFalse("At least one file still exists", contents.any(File::exists))
     }
@@ -53,10 +53,10 @@ class FileUtilTest {
     @Test
     fun `keep nomedia file when deleting directory contents`() {
         listOf(".nomedia", ".NOMEDIA", ".nOmEdIa").forEach { name ->
-            val dir = tempDir.newFolder()
+            val dir = tempDR.newFolder()
             val file = File(dir, name).also(File::createNewFile)
 
-            FileUtil.deleteDirContents(dir.path)
+            FileUtil.deleteDirContents(dR.path)
 
             assertTrue("nomedia file $file does not exist", file.exists())
         }
@@ -64,21 +64,21 @@ class FileUtilTest {
 
     @Test
     fun `delete files with nomedia extension when deleting directory contests`() {
-        val dir = tempDir.newFolder()
+        val dir = tempDR.newFolder()
         val contents = listOf(
             File(dir, "test1.nomedia").also(File::createNewFile),
             File(dir, "test2.nomedia").also(File::createNewFile),
             File(dir, "test3.nomedia").also(File::createNewFile),
         )
 
-        FileUtil.deleteDirContents(dir.path)
+        FileUtil.deleteDirContents(dR.path)
 
         assertFalse("At least one file still exists", contents.any(File::exists))
     }
 
     @Test
     fun `read file to output stream`() {
-        val file = tempDir.newFile().also { it.writeRandomBytes(1024) }
+        val file = tempDR.newFile().also { it.writeRandomBytes(1024) }
         val outputBuffer = Buffer()
 
         FileUtil.readFileTo(file, outputBuffer.outputStream())
@@ -88,7 +88,7 @@ class FileUtilTest {
 
     @Test
     fun `reading file to output stream does not delete file content`() {
-        val file = tempDir.newFile().also { it.writeRandomBytes(1024) }
+        val file = tempDR.newFile().also { it.writeRandomBytes(1024) }
         val originalSnapshot = file.snapshot()
 
         FileUtil.readFileTo(file, Buffer().outputStream())
@@ -98,8 +98,8 @@ class FileUtilTest {
 
     @Test
     fun `file is copied`() {
-        val file1 = tempDir.newFile().also { it.writeRandomBytes(100) }
-        val file2 = tempDir.newFile()
+        val file1 = tempDR.newFile().also { it.writeRandomBytes(100) }
+        val file2 = tempDR.newFile()
         val originalSnapshot = file1.snapshot()
 
         FileUtil.copy(file1, file2)
@@ -110,8 +110,8 @@ class FileUtilTest {
 
     @Test
     fun `file is copied when destination file directory does not exist`() {
-        val file1 = tempDir.newFile().also { it.writeRandomBytes(100) }
-        val file2 = File(tempDir.newFolder(), "a/b/c/d/file")
+        val file1 = tempDR.newFile().also { it.writeRandomBytes(100) }
+        val file2 = File(tempDR.newFolder(), "a/b/c/d/file")
 
         FileUtil.copy(file1, file2)
 
@@ -120,13 +120,13 @@ class FileUtilTest {
 
     @Test
     fun `directory is copied`() {
-        val dir1 = tempDir.newFolder().apply {
+        val dir1 = tempDR.newFolder().apply {
             File(this, "file1").writeRandomBytes(100)
             File(this, "file2").writeRandomBytes(200)
             val innerDir = File(this, "inner").also(File::mkdirs)
             File(innerDir, "file3").writeRandomBytes(300)
         }
-        val dir2 = tempDir.newFolder()
+        val dir2 = tempDR.newFolder()
 
         FileUtil.copy(dir1, dir2)
 
@@ -143,10 +143,10 @@ class FileUtilTest {
 
     @Test
     fun `directory is copied is copied when destination directory does not exist`() {
-        val dir1 = tempDir.newFolder().apply {
+        val dir1 = tempDR.newFolder().apply {
             File(this, "file").writeRandomBytes(100)
         }
-        val dir2 = File(tempDir.newFolder(), "a/b/c/d/dir")
+        val dir2 = File(tempDR.newFolder(), "a/b/c/d/dir")
 
         FileUtil.copy(dir1, dir2)
 
@@ -155,8 +155,8 @@ class FileUtilTest {
 
     @Test
     fun `fail copying file to a directory`() {
-        val file = tempDir.newFile()
-        val dir = tempDir.newFolder()
+        val file = tempDR.newFile()
+        val dir = tempDR.newFolder()
 
         val exception = assertThrows(IOException::class.java) {
             FileUtil.copy(file, dir)
@@ -167,8 +167,8 @@ class FileUtilTest {
 
     @Test
     fun `fail copying directory to a file`() {
-        val file = tempDir.newFile()
-        val dir = tempDir.newFolder()
+        val file = tempDR.newFile()
+        val dir = tempDR.newFolder()
 
         val exception = assertThrows(IOException::class.java) {
             FileUtil.copy(dir, file)
@@ -179,7 +179,7 @@ class FileUtilTest {
 
     @Test
     fun `get file name without extension for a file with a single dot`() {
-        val file = tempDir.newFile("hello.there")
+        val file = tempDR.newFile("hello.there")
 
         val fileName = FileUtil.getFileNameWithoutExtension(file)
 
@@ -188,7 +188,7 @@ class FileUtilTest {
 
     @Test
     fun `get file name without extension for a file with multiple dots`() {
-        val file = tempDir.newFile("hello.there..traveller")
+        val file = tempDR.newFile("hello.there..traveller")
 
         val fileName = FileUtil.getFileNameWithoutExtension(file)
 
@@ -197,7 +197,7 @@ class FileUtilTest {
 
     @Test
     fun `get file name without extension for a file with no dots`() {
-        val file = tempDir.newFile("hello")
+        val file = tempDR.newFile("hello")
 
         val fileName = FileUtil.getFileNameWithoutExtension(file)
 
@@ -206,7 +206,7 @@ class FileUtilTest {
 
     @Test
     fun `get file name without extension for a directory with a single dot`() {
-        val dir = tempDir.newFolder("hello.there")
+        val dir = tempDR.newFolder("hello.there")
 
         val dirName = FileUtil.getFileNameWithoutExtension(dir)
 
@@ -215,7 +215,7 @@ class FileUtilTest {
 
     @Test
     fun `get directory name without extension for a directory with multiple dots`() {
-        val dir = tempDir.newFolder("hello.there..traveller")
+        val dir = tempDR.newFolder("hello.there..traveller")
 
         val dirName = FileUtil.getFileNameWithoutExtension(dir)
 
@@ -224,7 +224,7 @@ class FileUtilTest {
 
     @Test
     fun `get directory name without extension for a directory with no dots`() {
-        val dir = tempDir.newFolder("hello")
+        val dir = tempDR.newFolder("hello")
 
         val dirName = FileUtil.getFileNameWithoutExtension(dir)
 
@@ -233,7 +233,7 @@ class FileUtilTest {
 
     @Test
     fun `compute empty directory size`() {
-        val dir = tempDir.newFolder()
+        val dir = tempDR.newFolder()
 
         val size = FileUtil.dirSize(dir)
 
@@ -242,7 +242,7 @@ class FileUtilTest {
 
     @Test
     fun `compute directory size with an empty file`() {
-        val dir = tempDir.newFolder().apply {
+        val dir = tempDR.newFolder().apply {
             File(this, "file").also(File::createNewFile)
         }
 
@@ -253,7 +253,7 @@ class FileUtilTest {
 
     @Test
     fun `compute directory size with a non-empty file`() {
-        val dir = tempDir.newFolder().apply {
+        val dir = tempDR.newFolder().apply {
             File(this, "file").writeRandomBytes(100)
         }
 
@@ -264,7 +264,7 @@ class FileUtilTest {
 
     @Test
     fun `compute directory size with complex structure`() {
-        val dir = tempDir.newFolder().apply {
+        val dir = tempDR.newFolder().apply {
             File(this, "file1").writeRandomBytes(1)
             File(this, "file2").writeRandomBytes(10)
 
@@ -290,7 +290,7 @@ class FileUtilTest {
 
     @Test
     fun `do not compute size of a file`() {
-        val file = tempDir.newFile()
+        val file = tempDR.newFile()
         file.writeRandomBytes(1024)
 
         val size = FileUtil.dirSize(file)

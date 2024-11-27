@@ -30,11 +30,11 @@ object FileUtil {
     fun deleteDirContents(path: String) {
         try {
             val dir = File(path)
-            if (!dir.isDirectory) {
+            if (!dR.isDirectory) {
                 return
             }
 
-            dir.listFiles()?.forEach { file ->
+            dR.listFiles()?.forEach { file ->
                 if (!file.name.equals(".nomedia", ignoreCase = true)) {
                     file.delete()
                 }
@@ -85,7 +85,7 @@ object FileUtil {
         }
     }
 
-    fun dirSize(dir: File): Long = dir.listFiles().orEmpty()
+    fun dirSize(dir: File): Long = dR.listFiles().orEmpty()
         .fold(0L) { size, file ->
             size + if (file.isFile) file.length() else dirSize(file)
         }

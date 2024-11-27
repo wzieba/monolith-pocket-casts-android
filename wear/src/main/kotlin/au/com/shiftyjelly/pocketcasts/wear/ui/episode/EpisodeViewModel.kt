@@ -116,13 +116,13 @@ class EpisodeViewModel @Inject constructor(
 
     val upNextOptions = listOf(
         UpNextOption(
-            iconRes = IR.drawable.ic_upnext_playnext,
-            titleRes = LR.string.play_next,
+            iconRes = R.drawable.ic_upnext_playnext,
+            titleRes = R.string.play_next,
             onClick = { addToUpNext(UpNextPosition.NEXT) },
         ),
         UpNextOption(
-            iconRes = IR.drawable.ic_upnext_playlast,
-            titleRes = LR.string.play_last,
+            iconRes = R.drawable.ic_upnext_playlast,
+            titleRes = R.string.play_last,
             onClick = { addToUpNext(UpNextPosition.LAST) },
         ),
     )
@@ -204,29 +204,29 @@ class EpisodeViewModel @Inject constructor(
         val episodeStatus = episode.episodeStatus
         if (episode.playErrorDetails == null) {
             errorTitleRes = when (episodeStatus) {
-                EpisodeStatusEnum.DOWNLOAD_FAILED -> LR.string.podcasts_download_failed
-                EpisodeStatusEnum.WAITING_FOR_WIFI -> LR.string.podcasts_download_wifi
-                EpisodeStatusEnum.WAITING_FOR_POWER -> LR.string.podcasts_download_power
+                EpisodeStatusEnum.DOWNLOAD_FAILED -> R.string.podcasts_download_failed
+                EpisodeStatusEnum.WAITING_FOR_WIFI -> R.string.podcasts_download_wifi
+                EpisodeStatusEnum.WAITING_FOR_POWER -> R.string.podcasts_download_power
                 else -> null
             }
             if (episodeStatus == EpisodeStatusEnum.DOWNLOAD_FAILED) {
                 errorDescription = episode.downloadErrorDetails
             }
             errorIconRes = when (episodeStatus) {
-                EpisodeStatusEnum.DOWNLOAD_FAILED -> IR.drawable.ic_failedwarning
-                EpisodeStatusEnum.WAITING_FOR_WIFI -> IR.drawable.ic_waitingforwifi
-                EpisodeStatusEnum.WAITING_FOR_POWER -> IR.drawable.ic_waitingforpower
+                EpisodeStatusEnum.DOWNLOAD_FAILED -> R.drawable.ic_failedwarning
+                EpisodeStatusEnum.WAITING_FOR_WIFI -> R.drawable.ic_waitingforwifi
+                EpisodeStatusEnum.WAITING_FOR_POWER -> R.drawable.ic_waitingforpower
                 else -> null
             }
         } else {
-            errorIconRes = IR.drawable.ic_play_all
-            errorTitleRes = LR.string.podcast_episode_playback_error
+            errorIconRes = R.drawable.ic_play_all
+            errorTitleRes = R.string.podcast_episode_playback_error
             errorDescription = episode.playErrorDetails
         }
         return errorTitleRes?.let {
             State.Loaded.ErrorData(
                 errorTitleRes = it,
-                errorIconRes = errorIconRes ?: IR.drawable.ic_failedwarning,
+                errorIconRes = errorIconRes ?: R.drawable.ic_failedwarning,
                 errorDescription = errorDescription,
             )
         }

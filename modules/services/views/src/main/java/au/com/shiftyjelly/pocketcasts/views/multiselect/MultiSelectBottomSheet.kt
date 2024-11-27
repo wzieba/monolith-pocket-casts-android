@@ -71,7 +71,7 @@ class MultiSelectBottomSheet : BaseDialogFragment() {
         adapter.submitList(items + listOf(MultiSelectAction.SelectAll))
 
         multiSelectHelper?.selectedCount?.observe(viewLifecycleOwner) {
-            binding.lblTitle.text = view.resources.getStringPlural(count = it, singular = LR.string.podcast_selected_episode_singular, plural = LR.string.podcast_selected_episode_plural)
+            binding.lblTitle.text = view.resources.getStringPlural(count = it, singular = R.string.podcast_selected_episode_singular, plural = R.string.podcast_selected_episode_plural)
         }
 
         binding.btnEdit.setOnClickListener {

@@ -122,7 +122,7 @@ class PodcastAutoArchiveFragment : BaseFragment() {
                 tintToolbar(toolbarColors.backgroundColor)
             }
             ThemedTopAppBar(
-                title = stringResource(LR.string.settings_title_auto_archive),
+                title = stringResource(R.string.settings_title_auto_archive),
                 onNavigationClick = onBackPressed,
                 bottomShadow = true,
                 iconColor = Color(toolbarColors.iconColor),
@@ -154,8 +154,8 @@ class PodcastAutoArchiveFragment : BaseFragment() {
             modifier = modifier,
         ) {
             SettingRow(
-                primaryText = stringResource(LR.string.podcast_settings_auto_archive_custom),
-                secondaryText = stringResource(LR.string.podcast_settings_auto_archive_custom_summary),
+                primaryText = stringResource(R.string.podcast_settings_auto_archive_custom),
+                secondaryText = stringResource(R.string.podcast_settings_auto_archive_custom_summary),
                 toggle = SettingRowToggle.Switch(checked = overrideGlobalSettings),
                 modifier = Modifier.toggleable(value = overrideGlobalSettings, role = Role.Switch) { newValue ->
                     viewModel.updateGlobalOverride(newValue)
@@ -177,19 +177,19 @@ class PodcastAutoArchiveFragment : BaseFragment() {
             modifier = modifier,
         ) {
             SettingRow(
-                primaryText = stringResource(LR.string.settings_archive_played),
+                primaryText = stringResource(R.string.settings_archive_played),
                 secondaryText = stringResource(archiveAfterPlaying.stringRes),
                 toggle = SettingRowToggle.None,
                 modifier = Modifier.clickable { openArchiveAfterPlayingDialog = true },
             )
             SettingRow(
-                primaryText = stringResource(LR.string.settings_auto_archive_inactive),
+                primaryText = stringResource(R.string.settings_auto_archive_inactive),
                 secondaryText = stringResource(archiveInactive.stringRes),
                 toggle = SettingRowToggle.None,
                 modifier = Modifier.clickable { openArchiveInactiveDialog = true },
             )
             SettingInfoRow(
-                text = stringResource(LR.string.settings_auto_archive_time_limits),
+                text = stringResource(R.string.settings_auto_archive_time_limits),
             )
         }
 
@@ -229,13 +229,13 @@ class PodcastAutoArchiveFragment : BaseFragment() {
             modifier = modifier,
         ) {
             SettingRow(
-                primaryText = stringResource(LR.string.settings_auto_archive_episode_limit),
+                primaryText = stringResource(R.string.settings_auto_archive_episode_limit),
                 secondaryText = stringResource(limit.stringRes),
                 toggle = SettingRowToggle.None,
                 modifier = Modifier.clickable { openEpisodeLimitDialog = true },
             )
             SettingInfoRow(
-                text = stringResource(LR.string.settings_auto_archive_episode_limit_summary),
+                text = stringResource(R.string.settings_auto_archive_episode_limit_summary),
             )
         }
 
@@ -260,7 +260,7 @@ class PodcastAutoArchiveFragment : BaseFragment() {
         onDismiss: () -> Unit,
     ) {
         RadioOptionsDialog(
-            title = stringResource(LR.string.podcast_settings_played_episodes),
+            title = stringResource(R.string.podcast_settings_played_episodes),
             selectedOption = archiveAfterPlaying,
             allOptions = AutoArchiveAfterPlaying.All,
             optionName = { option -> stringResource(option.stringRes) },
@@ -278,7 +278,7 @@ class PodcastAutoArchiveFragment : BaseFragment() {
         onDismiss: () -> Unit,
     ) {
         RadioOptionsDialog(
-            title = stringResource(LR.string.settings_inactive_episodes),
+            title = stringResource(R.string.settings_inactive_episodes),
             selectedOption = archiveInactive,
             allOptions = AutoArchiveInactive.All,
             optionName = { option -> stringResource(option.stringRes) },
@@ -296,7 +296,7 @@ class PodcastAutoArchiveFragment : BaseFragment() {
         onDismiss: () -> Unit,
     ) {
         RadioOptionsDialog(
-            title = stringResource(LR.string.settings_auto_archive_episode_limit),
+            title = stringResource(R.string.settings_auto_archive_episode_limit),
             selectedOption = limit,
             allOptions = AutoArchiveLimit.entries,
             optionName = { option -> stringResource(option.stringRes) },

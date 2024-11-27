@@ -68,7 +68,7 @@ internal fun RefreshSection(
                 modifier = Modifier.clickable { errorDialogMessage = refreshState.error },
             ) {
                 Icon(
-                    painter = painterResource(IR.drawable.ic_alert_small),
+                    painter = painterResource(R.drawable.ic_alert_small),
                     contentDescription = null,
                     tint = MaterialTheme.theme.colors.primaryIcon02,
                 )
@@ -101,7 +101,7 @@ internal fun RefreshSection(
             onClick = onClick,
         ) {
             Icon(
-                painter = painterResource(IR.drawable.ic_retry),
+                painter = painterResource(R.drawable.ic_retry),
                 contentDescription = null,
                 tint = MaterialTheme.theme.colors.primaryText02,
             )
@@ -109,7 +109,7 @@ internal fun RefreshSection(
                 modifier = Modifier.width(4.dp),
             )
             TextP50(
-                text = stringResource(LR.string.profile_refresh_now),
+                text = stringResource(R.string.profile_refresh_now),
                 color = MaterialTheme.theme.colors.primaryText02,
             )
         }
@@ -118,19 +118,19 @@ internal fun RefreshSection(
 
 @Composable
 private fun RefreshState?.toLabel() = when (this) {
-    is RefreshState.Failed -> stringResource(LR.string.profile_refresh_failed)
-    is RefreshState.Never -> stringResource(LR.string.profile_refreshed_never)
-    is RefreshState.Refreshing -> stringResource(LR.string.profile_refreshing)
+    is RefreshState.Failed -> stringResource(R.string.profile_refresh_failed)
+    is RefreshState.Never -> stringResource(R.string.profile_refreshed_never)
+    is RefreshState.Refreshing -> stringResource(R.string.profile_refreshing)
     is RefreshState.Success -> {
         val resources = LocalContext.current.resources
         val timeAmount = remember(date) {
             val duration = (Date().time - date.time).milliseconds
             duration.toFriendlyString(resources, maxPartCount = 1)
         }
-        stringResource(LR.string.profile_last_refresh, timeAmount)
+        stringResource(R.string.profile_last_refresh, timeAmount)
     }
 
-    null -> stringResource(LR.string.profile_refresh_status_unknown)
+    null -> stringResource(R.string.profile_refresh_status_unknown)
 }
 
 @Composable
@@ -141,11 +141,11 @@ private fun ErrorInfoDialog(
     if (message != null) {
         DialogFrame(
             onDismissRequest = onDismiss,
-            title = stringResource(LR.string.profile_refresh_error),
+            title = stringResource(R.string.profile_refresh_error),
             content = { DialogText(message) },
             buttons = listOf(
                 DialogButtonState(
-                    text = stringResource(LR.string.ok),
+                    text = stringResource(R.string.ok),
                     onClick = onDismiss,
                 ),
             ),

@@ -79,6 +79,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH50
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH70
@@ -95,8 +96,6 @@ import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.DurationUnit
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun ClipSelector(
@@ -162,8 +161,8 @@ private fun TouchClipSelector(
                 .background(shareColors.container, RoundedCornerShape(topStart = 8.dp, bottomStart = 8.dp)),
         ) {
             Image(
-                painter = painterResource(if (isPlaying) IR.drawable.ic_widget_pause else IR.drawable.ic_widget_play),
-                contentDescription = stringResource(if (isPlaying) LR.string.pause else LR.string.play),
+                painter = painterResource(if (isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play),
+                contentDescription = stringResource(if (isPlaying) R.string.pause else R.string.play),
                 colorFilter = ColorFilter.tint(shareColors.onContainerPrimary),
                 modifier = Modifier
                     .size(72.dp)
@@ -171,7 +170,7 @@ private fun TouchClipSelector(
                     .clickable(
                         interactionSource = remember(::MutableInteractionSource),
                         indication = ripple(color = shareColors.accent),
-                        onClickLabel = stringResource(if (isPlaying) LR.string.pause else LR.string.play),
+                        onClickLabel = stringResource(if (isPlaying) R.string.pause else R.string.play),
                         role = Role.Button,
                         onClick = if (isPlaying) listener::onClickPause else listener::onClickPlay,
                     )
@@ -194,7 +193,7 @@ private fun TouchClipSelector(
         )
         Row {
             TextH70(
-                text = stringResource(LR.string.share_clip_start_position, clipRange.start.toHhMmSs()),
+                text = stringResource(R.string.share_clip_start_position, clipRange.start.toHhMmSs()),
                 color = shareColors.onBackgroundSecondary,
                 modifier = Modifier.combinedClickable(
                     onClick = {},
@@ -205,7 +204,7 @@ private fun TouchClipSelector(
                 modifier = Modifier.weight(1f),
             )
             TextH70(
-                text = stringResource(LR.string.share_clip_duration, clipRange.duration.toHhMmSs()),
+                text = stringResource(R.string.share_clip_duration, clipRange.duration.toHhMmSs()),
                 color = shareColors.onBackgroundSecondary,
                 modifier = Modifier.combinedClickable(
                     onClick = {},
@@ -384,7 +383,7 @@ private fun BoxWithConstraintsScope.ClipWindow(
         }
 
         val startDescription = pluralStringResource(
-            id = LR.plurals.podcast_share_start_handle_description,
+            id = R.plurals.podcast_share_start_handle_description,
             count = clipRange.startInSeconds,
             clipRange.startInSeconds,
         )
@@ -427,7 +426,7 @@ private fun BoxWithConstraintsScope.ClipWindow(
             }
         }
         val endDescription = pluralStringResource(
-            id = LR.plurals.podcast_share_end_handle_description,
+            id = R.plurals.podcast_share_end_handle_description,
             count = clipRange.endInSeconds,
             clipRange.endInSeconds,
         )
@@ -527,8 +526,8 @@ private fun KeyboardClipSelector(
                 .height(72.dp),
         ) {
             Image(
-                painter = painterResource(if (isPlaying) IR.drawable.ic_widget_pause else IR.drawable.ic_widget_play),
-                contentDescription = stringResource(if (isPlaying) LR.string.pause else LR.string.play),
+                painter = painterResource(if (isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play),
+                contentDescription = stringResource(if (isPlaying) R.string.pause else R.string.play),
                 colorFilter = ColorFilter.tint(shareColors.onContainerPrimary),
                 modifier = Modifier
                     .fillMaxSize()
@@ -536,7 +535,7 @@ private fun KeyboardClipSelector(
                     .clickable(
                         interactionSource = remember(::MutableInteractionSource),
                         indication = ripple(color = shareColors.accent),
-                        onClickLabel = stringResource(if (isPlaying) LR.string.pause else LR.string.play),
+                        onClickLabel = stringResource(if (isPlaying) R.string.pause else R.string.play),
                         role = Role.Button,
                         onClick = if (isPlaying) listener::onClickPause else listener::onClickPlay,
                     )
@@ -552,7 +551,7 @@ private fun KeyboardClipSelector(
                 .padding(12.dp),
         ) {
             TextH50(
-                text = stringResource(LR.string.share_start_position),
+                text = stringResource(R.string.share_start_position),
                 color = shareColors.onContainerSecondary,
             )
             Spacer(
@@ -562,9 +561,9 @@ private fun KeyboardClipSelector(
                 value = clipRange.start,
                 episodeDuration = episodeDuration,
                 shareColors = shareColors,
-                hoursDescription = stringResource(LR.string.share_start_hours),
-                minutesDescription = stringResource(LR.string.share_start_minutes),
-                secondsDescription = stringResource(LR.string.share_start_seconds),
+                hoursDescription = stringResource(R.string.share_start_hours),
+                minutesDescription = stringResource(R.string.share_start_minutes),
+                secondsDescription = stringResource(R.string.share_start_seconds),
                 onValueChanged = listener::onUpdateClipStart,
             )
         }
@@ -577,7 +576,7 @@ private fun KeyboardClipSelector(
                 .padding(12.dp),
         ) {
             TextH50(
-                text = stringResource(LR.string.share_end_position),
+                text = stringResource(R.string.share_end_position),
                 color = shareColors.onContainerSecondary,
             )
             Spacer(
@@ -587,9 +586,9 @@ private fun KeyboardClipSelector(
                 value = clipRange.end,
                 episodeDuration = episodeDuration,
                 shareColors = shareColors,
-                hoursDescription = stringResource(LR.string.share_end_hours),
-                minutesDescription = stringResource(LR.string.share_end_minutes),
-                secondsDescription = stringResource(LR.string.share_end_seconds),
+                hoursDescription = stringResource(R.string.share_end_hours),
+                minutesDescription = stringResource(R.string.share_end_minutes),
+                secondsDescription = stringResource(R.string.share_end_seconds),
                 onValueChanged = listener::onUpdateClipEnd,
             )
         }

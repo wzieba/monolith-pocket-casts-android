@@ -48,8 +48,8 @@ class MiniPlayer @JvmOverloads constructor(context: Context, attrs: AttributeSet
         true,
     )
     private var playing = false
-    private val stringPause: String = context.resources.getString(LR.string.pause)
-    private val stringPlay: String = context.resources.getString(LR.string.play)
+    private val stringPause: String = context.resources.getString(R.string.pause)
+    private val stringPlay: String = context.resources.getString(R.string.play)
 
     var clickListener: OnMiniPlayerClicked? = null
 

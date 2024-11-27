@@ -114,7 +114,7 @@ private fun OptionsDialogRow(option: OptionsDialogOption, @ColorInt iconColor: I
         }
         if (option.checked && option.onSwitch == null) {
             Icon(
-                painter = painterResource(id = IR.drawable.ic_tick),
+                painter = painterResource(id = R.drawable.ic_tick),
                 contentDescription = null,
                 tint = MaterialTheme.theme.colors.primaryIcon01,
                 modifier = Modifier.padding(end = 10.dp),

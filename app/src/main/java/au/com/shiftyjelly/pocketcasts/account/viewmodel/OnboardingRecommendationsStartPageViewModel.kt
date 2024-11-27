@@ -46,9 +46,9 @@ class OnboardingRecommendationsStartPageViewModel @Inject constructor(
         private val anySubscribed: Boolean = sections.any { it.anySubscribed }
 
         val buttonRes = if (anySubscribed) {
-            LR.string.navigation_continue
+            R.string.navigation_continue
         } else {
-            LR.string.not_now
+            R.string.not_now
         }
 
         companion object {

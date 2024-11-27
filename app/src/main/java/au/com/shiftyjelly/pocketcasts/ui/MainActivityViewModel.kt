@@ -144,7 +144,7 @@ class MainActivityViewModel
             // load the existing bookmark
             val bookmark = bookmarkUuid?.let { bookmarkManager.findBookmark(it) }
             if (bookmarkUuid != null && bookmark == null) {
-                _snackbarMessage.emit(LR.string.bookmark_not_found)
+                _snackbarMessage.emit(R.string.bookmark_not_found)
                 return@launch
             }
             val currentEpisode = playbackManager.getCurrentEpisode()
@@ -173,7 +173,7 @@ class MainActivityViewModel
         viewModelScope.launch {
             val bookmark = bookmarkManager.findBookmark(bookmarkUuid)
             if (bookmark == null) {
-                _snackbarMessage.emit(LR.string.bookmark_not_found)
+                _snackbarMessage.emit(R.string.bookmark_not_found)
             } else {
                 val currentEpisode = playbackManager.getCurrentEpisode()
                 val isBookmarkForCurrentlyPlayingEpisode = bookmark.episodeUuid == currentEpisode?.uuid
@@ -195,9 +195,9 @@ class MainActivityViewModel
         viewModelScope.launch {
             val bookmark = bookmarkManager.findBookmark(bookmarkUuid)
             if (bookmark == null) {
-                _snackbarMessage.emit(LR.string.bookmark_not_found)
+                _snackbarMessage.emit(R.string.bookmark_not_found)
             } else {
-                _snackbarMessage.emit(LR.string.bookmarks_deleted_singular)
+                _snackbarMessage.emit(R.string.bookmarks_deleted_singular)
                 bookmarkManager.deleteToSync(bookmarkUuid)
                 analyticsTracker.track(
                     AnalyticsEvent.BOOKMARK_DELETED,

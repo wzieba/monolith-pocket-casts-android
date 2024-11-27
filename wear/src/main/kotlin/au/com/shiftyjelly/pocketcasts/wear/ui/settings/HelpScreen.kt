@@ -36,7 +36,7 @@ fun HelpScreen() {
     ) {
         ScalingLazyColumn(columnState = columnState) {
             item {
-                ScreenHeaderChip(text = LR.string.settings_title_help)
+                ScreenHeaderChip(text = R.string.settings_title_help)
             }
 
             if (state == null) {
@@ -57,7 +57,7 @@ private fun ScalingLazyListScope.phoneAvailableContent(
 ) {
     item {
         Text(
-            text = stringResource(id = LR.string.settings_help_contact_support_wear_requires_nearby_phone),
+            text = stringResource(id = R.string.settings_help_contact_support_wear_requires_nearby_phone),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.caption3,
             color = MaterialTheme.colors.onSecondary,
@@ -70,7 +70,7 @@ private fun ScalingLazyListScope.phoneAvailableContent(
 
     item {
         WatchListChip(
-            title = stringResource(LR.string.settings_help_contact_support),
+            title = stringResource(R.string.settings_help_contact_support),
             onClick = onEmailLogsToSupport,
         )
     }
@@ -79,7 +79,7 @@ private fun ScalingLazyListScope.phoneAvailableContent(
 private fun ScalingLazyListScope.noPhoneAvailableContent() {
     item {
         Text(
-            text = stringResource(id = LR.string.settings_help_contact_support_no_phone_connection),
+            text = stringResource(id = R.string.settings_help_contact_support_no_phone_connection),
             textAlign = TextAlign.Center,
         )
     }

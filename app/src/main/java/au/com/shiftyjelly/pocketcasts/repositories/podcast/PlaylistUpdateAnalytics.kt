@@ -56,14 +56,14 @@ class PlaylistUpdateAnalytics @Inject constructor(
 
     private fun iconAnalyticsValue(playlist: Playlist) =
         when (playlist.drawableId) {
-            IR.drawable.ic_filters_list -> Value.IconName.LIST
-            IR.drawable.ic_filters_headphones -> Value.IconName.HEADPHONES
-            IR.drawable.ic_filters_clock -> Value.IconName.CLOCK
-            IR.drawable.ic_filters_download -> Value.IconName.DOWNLOADED
-            IR.drawable.ic_filters_play -> Value.IconName.PLAY
-            IR.drawable.ic_filters_volume -> Value.IconName.VOLUME
-            IR.drawable.ic_filters_video -> Value.IconName.VIDEO
-            IR.drawable.ic_filters_star -> Value.IconName.STARRED
+            R.drawable.ic_filters_list -> Value.IconName.LIST
+            R.drawable.ic_filters_headphones -> Value.IconName.HEADPHONES
+            R.drawable.ic_filters_clock -> Value.IconName.CLOCK
+            R.drawable.ic_filters_download -> Value.IconName.DOWNLOADED
+            R.drawable.ic_filters_play -> Value.IconName.PLAY
+            R.drawable.ic_filters_volume -> Value.IconName.VOLUME
+            R.drawable.ic_filters_video -> Value.IconName.VIDEO
+            R.drawable.ic_filters_star -> Value.IconName.STARRED
             else -> {
                 Timber.e("No matching analytics icon found")
                 null

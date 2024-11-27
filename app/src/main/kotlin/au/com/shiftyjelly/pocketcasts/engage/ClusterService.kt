@@ -7,8 +7,6 @@ import au.com.shiftyjelly.pocketcasts.deeplink.ShareListDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowEpisodeDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowPodcastDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.SignInDeepLink
-import au.com.shiftyjelly.pocketcasts.engage.BuildConfig.SERVER_LIST_HOST
-import au.com.shiftyjelly.pocketcasts.engage.BuildConfig.SERVER_SHORT_HOST
 import au.com.shiftyjelly.pocketcasts.engage.EngageSdkBridge.Companion.TAG
 import au.com.shiftyjelly.pocketcasts.models.entity.ExternalEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.ExternalPodcast
@@ -31,7 +29,9 @@ import com.google.android.engage.service.PublishUserAccountManagementRequest
 import com.google.android.gms.tasks.Task
 import kotlin.math.roundToInt
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_LIST_HOST
+import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_SHORT_HOST
+import au.com.shiftyjelly.pocketcasts.R
 
 internal class ClusterService(
     private val context: Context,
@@ -61,7 +61,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_recently_played))
+                .setTitle(context.getString(R.string.engage_sdk_recently_played))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
         }
@@ -90,7 +90,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_new_releases))
+                .setTitle(context.getString(R.string.engage_sdk_new_releases))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
         }
@@ -110,7 +110,7 @@ internal class ClusterService(
                     .build()
             }
             RecommendationCluster.Builder()
-                .setTitle(context.getString(LR.string.engage_sdk_trending))
+                .setTitle(context.getString(R.string.engage_sdk_trending))
                 .setActionUri(list.uri(SourceView.ENGAGE_SDK_RECOMMENDATIONS))
                 .apply { entities.forEach { addEntity(it) } }
                 .build()
@@ -268,7 +268,7 @@ internal class ClusterService(
                             .setImageHeightInPixel(712)
                             .build(),
                     )
-                    .setActionText(context.getString(LR.string.engage_sdk_sign_in))
+                    .setActionText(context.getString(R.string.engage_sdk_sign_in))
                     .setActionUri(SignInDeepLink(SourceView.ENGAGE_SDK_SIGN_IN.analyticsValue).toUri(SERVER_SHORT_HOST).also { Timber.tag(TAG).d(it.toString()) })
                     .build()
                 val request = PublishUserAccountManagementRequest.Builder().setSignInCardEntity(entity).build()

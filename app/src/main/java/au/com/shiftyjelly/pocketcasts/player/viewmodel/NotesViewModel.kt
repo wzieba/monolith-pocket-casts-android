@@ -36,7 +36,7 @@ class NotesViewModel
         linkColor = "#FFFFFF"
         setConvertTimesToLinks(true)
     }
-    private val errorLoadingString = context.getString(LR.string.error_loading_show_notes)
+    private val errorLoadingString = context.getString(R.string.error_loading_show_notes)
     private var loadShowNotesJob: Job? = null
 
     val showNotes = MutableLiveData<ShowNotesState>().apply { postValue(ShowNotesState.Loaded("")) }

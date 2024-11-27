@@ -61,7 +61,7 @@ class CreateDoneFragment : BaseFragment() {
                         progress.isVisible = false
                         val serverFail = it.errors.contains(CreateAccountError.CANNOT_CREATE_ACCOUNT)
                         if (!serverFail) {
-                            updateForm(complete = true, title = getString(LR.string.profile_create_failed_title), detail = getString(LR.string.please_try_again))
+                            updateForm(complete = true, title = getString(R.string.profile_create_failed_title), detail = getString(R.string.please_try_again))
                         }
                     }
                     else -> {}
@@ -71,7 +71,7 @@ class CreateDoneFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.imgDone.setImageResource(IR.drawable.ic_circle)
+        binding.imgDone.setImageResource(R.drawable.ic_circle)
         binding.btnClose?.setOnClickListener {
             closeForm()
         }
@@ -105,12 +105,12 @@ class CreateDoneFragment : BaseFragment() {
         if (subscriptionType != null) {
             if (subscriptionType == SubscriptionType.FREE) {
                 resourceId = R.drawable.ic_created_free_account
-                detail = getString(LR.string.profile_welcome_to_free)
-                title = getString(LR.string.profile_account_created)
+                detail = getString(R.string.profile_welcome_to_free)
+                title = getString(R.string.profile_account_created)
             } else {
                 resourceId = R.drawable.ic_created_plus_account
-                detail = getString(LR.string.profile_welcome_to_plus)
-                title = getString(LR.string.profile_account_upgraded)
+                detail = getString(R.string.profile_welcome_to_plus)
+                title = getString(R.string.profile_account_upgraded)
             }
         }
         binding?.imgDone?.setImageResource(resourceId)

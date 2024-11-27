@@ -45,12 +45,12 @@ private fun Content(
     MessageView(
         titleView = {
             TextH20(
-                text = stringResource(LR.string.bookmarks_not_found),
+                text = stringResource(R.string.bookmarks_not_found),
                 color = style.textColor(),
             )
         },
-        message = stringResource(LR.string.bookmarks_create_instructions),
-        buttonTitle = stringResource(LR.string.bookmarks_headphone_settings),
+        message = stringResource(R.string.bookmarks_create_instructions),
+        buttonTitle = stringResource(R.string.bookmarks_headphone_settings),
         buttonAction = onClick,
         style = style.toMessageViewColors(),
         modifier = modifier,

@@ -100,7 +100,7 @@ fun ChangeEmailFragmentPage(
             .fillMaxSize(),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.profile_change_email_address_title),
+            title = stringResource(R.string.profile_change_email_address_title),
             bottomShadow = true,
             onNavigationClick = onBackPressed,
         )
@@ -123,7 +123,7 @@ fun ChangeEmailFragmentPage(
                     TextH50(
                         modifier = Modifier
                             .padding(end = 8.dp),
-                        text = stringResource(LR.string.profile_current_email),
+                        text = stringResource(R.string.profile_current_email),
                         color = MaterialTheme.theme.colors.primaryText02,
                     )
                     TextH50(
@@ -145,9 +145,9 @@ fun ChangeEmailFragmentPage(
                                 horizontal = 16.dp,
                             ),
                         email = email,
-                        emailPlaceholder = stringResource(LR.string.profile_new_email_address),
+                        emailPlaceholder = stringResource(R.string.profile_new_email_address),
                         password = password,
-                        passwordPlaceholder = stringResource(LR.string.profile_confirm_password),
+                        passwordPlaceholder = stringResource(R.string.profile_confirm_password),
                         showEmailError = false,
                         showPasswordError = false,
                         enabled = true,
@@ -171,7 +171,7 @@ fun ChangeEmailFragmentPage(
 
             item {
                 RowLoadingButton(
-                    text = stringResource(LR.string.profile_confirm),
+                    text = stringResource(R.string.profile_confirm),
                     onClick = onFormSubmit,
                     isLoading = changeEmailState is ChangeEmailState.Loading,
                     enabled = !isEmailInvalid && !isPasswordInvalid,

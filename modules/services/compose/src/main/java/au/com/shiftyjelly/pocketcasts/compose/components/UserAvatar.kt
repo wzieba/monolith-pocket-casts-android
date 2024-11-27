@@ -211,8 +211,8 @@ private fun SubscriptionTier.toBackgroundBrush() = when (this) {
 
 @Composable
 private fun SubscriptionTier.toIcon() = when (this) {
-    NONE, PATRON -> IR.drawable.ic_account_free
-    PLUS -> IR.drawable.ic_account_plus
+    NONE, PATRON -> R.drawable.ic_account_free
+    PLUS -> R.drawable.ic_account_plus
 }
 
 @Composable

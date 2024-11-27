@@ -151,11 +151,11 @@ fun <T> RadioDialog(
         title = title,
         buttons = listOf(
             DialogButtonState(
-                text = stringResource(LR.string.cancel),
+                text = stringResource(R.string.cancel),
                 onClick = dismissDialog,
             ),
             DialogButtonState(
-                text = stringResource(LR.string.ok),
+                text = stringResource(R.string.ok),
                 onClick = {
                     onSave(selected)
                     dismissDialog()
@@ -214,7 +214,7 @@ private fun DialogButton(button: DialogButtonState) {
         enabled = button.enabled,
     ) {
         val buttonText =
-            if (button.text == stringResource(LR.string.ok)) {
+            if (button.text == stringResource(R.string.ok)) {
                 button.text.uppercase(Locale.getDefault())
             } else {
                 button.text
@@ -303,8 +303,8 @@ private fun RadioDialogPreview(theme: Theme.ThemeType) {
         RadioDialog(
             title = "Title",
             options = listOf(
-                Pair(true, stringResource(LR.string.player_up_next_empty_desc)),
-                Pair(false, stringResource(LR.string.player_up_next_clear)),
+                Pair(true, stringResource(R.string.player_up_next_empty_desc)),
+                Pair(false, stringResource(R.string.player_up_next_clear)),
             ),
             savedOption = true,
             onSave = {},

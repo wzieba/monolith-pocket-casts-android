@@ -15,17 +15,17 @@ internal fun ScreenshotDetectedDialog(
 ) {
     DialogFrame(
         onDismissRequest = onNotNow,
-        title = stringResource(LR.string.end_of_year_share_dialog_title),
+        title = stringResource(R.string.end_of_year_share_dialog_title),
         content = {
-            DialogText(stringResource(LR.string.end_of_year_share_dialog_message))
+            DialogText(stringResource(R.string.end_of_year_share_dialog_message))
         },
         buttons = listOf(
             DialogButtonState(
-                text = stringResource(LR.string.not_now),
+                text = stringResource(R.string.not_now),
                 onClick = onNotNow,
             ),
             DialogButtonState(
-                text = stringResource(LR.string.share),
+                text = stringResource(R.string.share),
                 onClick = onShare,
             ),
         ),

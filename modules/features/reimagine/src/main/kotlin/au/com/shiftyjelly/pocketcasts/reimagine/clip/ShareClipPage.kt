@@ -355,8 +355,8 @@ private fun DescriptionContent(
     listener: ShareClipPageListener,
     state: ClipPageState,
 ) {
-    val titleId = if (selectedCard is CardType.Audio) LR.string.share_clip_create_audio_label else LR.string.share_clip_create_label
-    val descriptionId = if (selectedCard is CardType.Audio) LR.string.share_clip_create_audio_description else LR.string.single_space
+    val titleId = if (selectedCard is CardType.Audio) R.string.share_clip_create_audio_label else R.string.share_clip_create_label
+    val descriptionId = if (selectedCard is CardType.Audio) R.string.share_clip_create_audio_description else R.string.single_space
     val orientation = LocalConfiguration.current.orientation
     AnimatedContent(
         label = "TopContent",
@@ -380,7 +380,7 @@ private fun DescriptionContent(
                 text = stringResource(
                     when (step) {
                         Step.ClipSelection -> titleId
-                        Step.PlatformSelection -> LR.string.share_clip_share_label
+                        Step.PlatformSelection -> R.string.share_clip_share_label
                     },
                 ),
                 textAlign = TextAlign.Center,
@@ -406,7 +406,7 @@ private fun DescriptionContent(
                     )
                 }
                 Step.PlatformSelection -> TextH40(
-                    text = stringResource(LR.string.share_clip_edit_label),
+                    text = stringResource(R.string.share_clip_edit_label),
                     textAlign = TextAlign.Center,
                     maxLines = 1,
                     color = shareColors.onContainerPrimary,
@@ -418,7 +418,7 @@ private fun DescriptionContent(
                         .clickable(
                             interactionSource = remember(::MutableInteractionSource),
                             indication = ripple(color = shareColors.accent),
-                            onClickLabel = stringResource(LR.string.share_clip_edit_label),
+                            onClickLabel = stringResource(R.string.share_clip_edit_label),
                             role = Role.Button,
                             onClick = listener::onShowClipSelection,
                         )
@@ -505,7 +505,7 @@ private fun PagingContent(
                 modifier = modifier,
             ) {
                 Image(
-                    painter = painterResource(IR.drawable.ic_audio_card),
+                    painter = painterResource(R.drawable.ic_audio_card),
                     contentDescription = null,
                     colorFilter = ColorFilter.tint(shareColors.onBackgroundPrimary),
                 )
@@ -620,7 +620,7 @@ private fun ClipControls(
             includePadding = false,
             modifier = Modifier.heightIn(min = 48.dp),
         ) {
-            val buttonText = stringResource(if (selectedCard is CardType.Audio) LR.string.share else LR.string.next)
+            val buttonText = stringResource(if (selectedCard is CardType.Audio) R.string.share else R.string.next)
             AnimatedContent(
                 label = "ButtonText",
                 targetState = buttonText to sharingState.iSharing,
@@ -695,7 +695,7 @@ private fun SharingControls(
                     modifier = Modifier.fillMaxWidth(),
                 ) {
                     TextH40(
-                        text = stringResource(LR.string.share_clip_sharing_clip),
+                        text = stringResource(R.string.share_clip_sharing_clip),
                         color = shareColors.onBackgroundPrimary,
                     )
                     Spacer(

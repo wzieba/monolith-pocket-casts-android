@@ -162,7 +162,7 @@ private fun Content(
                 .padding(start = 16.dp),
         ) {
             TextH30(
-                text = stringResource(LR.string.player_more_actions),
+                text = stringResource(R.string.player_more_actions),
                 color = MaterialTheme.theme.colors.playerContrast01,
             )
 
@@ -170,8 +170,8 @@ private fun Content(
                 onClick = onEditButtonClick,
             ) {
                 Icon(
-                    painter = painterResource(IR.drawable.ic_edit),
-                    contentDescription = stringResource(LR.string.edit),
+                    painter = painterResource(R.drawable.ic_edit),
+                    contentDescription = stringResource(R.string.edit),
                     tint = MaterialTheme.theme.colors.playerContrast01,
                 )
             }

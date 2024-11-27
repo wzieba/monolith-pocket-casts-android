@@ -43,7 +43,7 @@ internal class CarouselListRowAdapter(var pillText: String?, val theme: Theme, v
         val context = holder.itemView.context
         if (podcast is DiscoverPodcast) {
             val tagLineText = if (podcast.isSponsored) {
-                context.getString(LR.string.discover_sponsored)
+                context.getString(R.string.discover_sponsored)
             } else {
                 pillText
             }

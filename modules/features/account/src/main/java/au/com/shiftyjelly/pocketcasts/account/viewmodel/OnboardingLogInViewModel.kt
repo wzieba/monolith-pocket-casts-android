@@ -40,7 +40,7 @@ class OnboardingLogInViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(
         LogInState(
-            noNetworkErrorMessage = getApplication<Application>().getString(LR.string.log_in_no_network),
+            noNetworkErrorMessage = getApplication<Application>().getString(R.string.log_in_no_network),
         ),
     )
     val state: StateFlow<LogInState> = _state

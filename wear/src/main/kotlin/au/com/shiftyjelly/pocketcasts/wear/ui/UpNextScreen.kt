@@ -60,7 +60,7 @@ fun UpNextScreen(
                         columnState = columnState,
                         modifier = modifier.fillMaxWidth(),
                     ) {
-                        item { ScreenHeaderChip(LR.string.up_next) }
+                        item { ScreenHeaderChip(R.string.up_next) }
 
                         items(list) { episode ->
                             EpisodeChip(
@@ -87,14 +87,14 @@ private fun EmptyQueueState() {
         modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
     ) {
         Text(
-            text = stringResource(LR.string.player_up_next_empty),
+            text = stringResource(R.string.player_up_next_empty),
             textAlign = TextAlign.Center,
             color = MaterialTheme.colors.onPrimary,
             style = MaterialTheme.typography.title2,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = stringResource(LR.string.player_up_next_empty_desc_watch),
+            text = stringResource(R.string.player_up_next_empty_desc_watch),
             textAlign = TextAlign.Center,
             color = MaterialTheme.colors.onPrimary,
             style = MaterialTheme.typography.body1,

@@ -64,9 +64,9 @@ class FolderEditFragment : BaseDialogFragment() {
     private fun confirmFolderDelete() {
         analyticsTracker.track(AnalyticsEvent.FOLDER_EDIT_DELETE_BUTTON_TAPPED)
         ConfirmationDialog()
-            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(LR.string.delete_folder)))
-            .setTitle(getString(LR.string.are_you_sure))
-            .setSummary(getString(LR.string.delete_folder_question))
+            .setButtonType(ConfirmationDialog.ButtonType.Danger(getString(R.string.delete_folder)))
+            .setTitle(getString(R.string.are_you_sure))
+            .setSummary(getString(R.string.delete_folder_question))
             .setOnConfirm {
                 analyticsTracker.track(AnalyticsEvent.FOLDER_DELETED)
                 viewModel.deleteFolder {

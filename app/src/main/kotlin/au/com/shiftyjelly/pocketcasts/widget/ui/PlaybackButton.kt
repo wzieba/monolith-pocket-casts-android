@@ -13,10 +13,9 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.semantics.contentDescription
 import androidx.glance.semantics.semantics
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.action.controlPlaybackAction
 import au.com.shiftyjelly.pocketcasts.widget.data.LocalSource
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun PlaybackButton(
@@ -25,7 +24,7 @@ internal fun PlaybackButton(
     modifier: GlanceModifier = GlanceModifier,
     isClickable: Boolean = true,
 ) {
-    val contentDescription = LocalContext.current.getString(if (isPlaying) LR.string.play_episode else LR.string.pause_episode)
+    val contentDescription = LocalContext.current.getString(if (isPlaying) R.string.play_episode else R.string.pause_episode)
     val source = LocalSource.current
 
     RounderCornerBox(
@@ -38,7 +37,7 @@ internal fun PlaybackButton(
         },
     ) {
         Image(
-            provider = ImageProvider(if (isPlaying) IR.drawable.ic_widget_pause else IR.drawable.ic_widget_play),
+            provider = ImageProvider(if (isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play),
             contentDescription = null,
             colorFilter = ColorFilter.tint(LocalWidgetTheme.current.icon),
             modifier = GlanceModifier.fillMaxSize().padding(vertical = iconPadding),

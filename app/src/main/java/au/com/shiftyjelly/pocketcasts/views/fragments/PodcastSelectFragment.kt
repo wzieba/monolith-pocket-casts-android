@@ -116,8 +116,8 @@ class PodcastSelectFragment : BaseFragment() {
         podcastManager.findSubscribedRx()
             .zipWith(Single.fromCallable { listener.podcastSelectFragmentGetCurrentSelection() })
             .map { pair ->
-                val podcasts = pair.first
-                val selected = pair.second
+                val podcasts = paR.first
+                val selected = paR.second
                 return@map podcasts
                     .sortedBy { PodcastsSortType.cleanStringForSort(it.title) }
                     .map { SelectablePodcast(it, selected.contains(it.uuid)) }
@@ -161,9 +161,9 @@ class PodcastSelectFragment : BaseFragment() {
     private fun updateSelectButtonText(selectedSize: Int, listSize: Int) {
         val btnSelect = binding?.btnSelect ?: return
         if (selectedSize == listSize) { // Everything is selected
-            btnSelect.text = getString(LR.string.select_none)
+            btnSelect.text = getString(R.string.select_none)
         } else {
-            btnSelect.text = getString(LR.string.select_all)
+            btnSelect.text = getString(R.string.select_all)
         }
     }
 

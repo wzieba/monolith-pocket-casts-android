@@ -108,7 +108,7 @@ internal fun TotalTimeStory(
             }
         }
         Image(
-            painter = painterResource(IR.drawable.end_of_year_2024_sticker_6),
+            painter = painterResource(R.drawable.end_of_year_2024_sticker_6),
             contentDescription = null,
             modifier = Modifier
                 .padding(start = 20.dp)
@@ -136,7 +136,7 @@ private fun getListeningTimeTexts(
         val mainNumber = timeTextStrings.firstOrNull() ?: ""
         val subtitle = timeTextStrings.drop(1).joinToString(
             separator = " ",
-            postfix = " ${context.getString(LR.string.end_of_year_listening_time_subtitle)}",
+            postfix = " ${context.getString(R.string.end_of_year_listening_time_subtitle)}",
         )
         mainNumber to subtitle
     }

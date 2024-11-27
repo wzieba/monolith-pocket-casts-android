@@ -90,7 +90,7 @@ private fun ReferralsClaimGuestPassBannerCard(
                 .combinedClickable(
                     onClick = onClick,
                     onLongClick = { showPopupToHideBanner = true },
-                    onLongClickLabel = stringResource(LR.string.referrals_banner_long_press_label),
+                    onLongClickLabel = stringResource(R.string.referrals_banner_long_press_label),
                 ),
         ) {
             Row(
@@ -107,9 +107,9 @@ private fun ReferralsClaimGuestPassBannerCard(
                 ) {
                     val language = Locale.current.language
                     val textResId = if (language == "en") {
-                        LR.string.referrals_claim_guess_pass_banner_card_title_english_only
+                        R.string.referrals_claim_guess_pass_banner_card_title_english_only
                     } else {
-                        LR.string.referrals_claim_guess_pass_banner_card_title
+                        R.string.referrals_claim_guess_pass_banner_card_title
                     }
                     TextH40(
                         text = stringResource(
@@ -121,7 +121,7 @@ private fun ReferralsClaimGuestPassBannerCard(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     TextC70(
-                        text = stringResource(LR.string.referrals_claim_guess_pass_banner_card_subtitle),
+                        text = stringResource(R.string.referrals_claim_guess_pass_banner_card_subtitle),
                         isUpperCase = false,
                     )
                 }
@@ -148,7 +148,7 @@ private fun ReferralsClaimGuestPassBannerCard(
                             onHideBannerClick()
                         },
                 ) {
-                    TextH40(stringResource(LR.string.referrals_banner_hide_label))
+                    TextH40(stringResource(R.string.referrals_banner_hide_label))
                 }
             }
         }

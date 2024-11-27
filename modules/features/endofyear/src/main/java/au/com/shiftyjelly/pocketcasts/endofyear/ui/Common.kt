@@ -83,7 +83,7 @@ internal fun ShareStoryButton(
     val scope = rememberCoroutineScope()
 
     OutlinedEoyButton(
-        text = stringResource(LR.string.end_of_year_share_story),
+        text = stringResource(R.string.end_of_year_share_story),
         onClick = {
             scope.launch {
                 val file = controller.capture(story)

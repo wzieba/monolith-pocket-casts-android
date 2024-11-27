@@ -13,7 +13,7 @@ enum class NotificationVibrateSetting(
 
     Never(
         intValue = 0,
-        summary = LR.string.settings_notification_vibrate_never,
+        summary = R.string.settings_notification_vibrate_never,
         analyticsString = "never",
     ) {
         override fun isNotificationVibrateOn(context: Context) = false
@@ -21,7 +21,7 @@ enum class NotificationVibrateSetting(
 
     OnlyWhenSilent(
         intValue = 1,
-        summary = LR.string.settings_notification_vibrate_in_silent,
+        summary = R.string.settings_notification_vibrate_in_silent,
         analyticsString = "silent",
     ) {
 
@@ -33,7 +33,7 @@ enum class NotificationVibrateSetting(
 
     NewEpisodes(
         intValue = 2,
-        summary = LR.string.settings_notification_vibrate_new_episodes,
+        summary = R.string.settings_notification_vibrate_new_episodes,
         analyticsString = "new_episodes",
     ) {
         override fun isNotificationVibrateOn(context: Context) = true

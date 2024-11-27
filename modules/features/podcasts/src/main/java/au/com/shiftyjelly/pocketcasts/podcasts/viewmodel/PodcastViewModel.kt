@@ -326,7 +326,7 @@ class PodcastViewModel
         val podcast = podcast.value ?: return
         val showNotifications = !podcast.isShowNotifications
         analyticsTracker.track(AnalyticsEvent.PODCAST_SCREEN_NOTIFICATIONS_TAPPED, AnalyticsProp.notificationEnabled(showNotifications))
-        Toast.makeText(context, if (showNotifications) LR.string.podcast_notifications_on else LR.string.podcast_notifications_off, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, if (showNotifications) R.string.podcast_notifications_on else R.string.podcast_notifications_off, Toast.LENGTH_SHORT).show()
         launch {
             podcastManager.updateShowNotifications(podcast, showNotifications)
         }
@@ -578,8 +578,8 @@ class PodcastViewModel
         (uiState.value as? UiState.Loaded)?.showTab ?: PodcastTab.EPISODES
 
     enum class PodcastTab(@StringRes val labelResId: Int, val analyticsValue: String) {
-        EPISODES(LR.string.episodes, "episodes"),
-        BOOKMARKS(LR.string.bookmarks, "bookmarks"),
+        EPISODES(R.string.episodes, "episodes"),
+        BOOKMARKS(R.string.bookmarks, "bookmarks"),
     }
 
     sealed class UiState {

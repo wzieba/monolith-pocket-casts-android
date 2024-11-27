@@ -46,7 +46,7 @@ fun ShareListCreateBuildingPage(
 
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.podcasts_share_creating_list),
+            title = stringResource(R.string.podcasts_share_creating_list),
             navigationButton = NavigationButton.Close,
             onNavigationClick = onCloseClick,
         )

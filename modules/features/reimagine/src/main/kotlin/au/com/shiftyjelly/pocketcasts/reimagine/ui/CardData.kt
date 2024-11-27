@@ -40,14 +40,14 @@ internal data class PodcastCardData(
 
     @Composable
     override fun bottomText() = listOfNotNull(
-        pluralStringResource(LR.plurals.episode_count, count = episodeCount, episodeCount),
+        pluralStringResource(R.plurals.episode_count, count = episodeCount, episodeCount),
         podcast.displayableFrequency(LocalContext.current.resources),
     ).joinToString(" · ")
 
     @Composable
     override fun Image(modifier: Modifier) = PodcastImage(
         uuid = podcast.uuid,
-        title = stringResource(LR.string.podcast_cover_description, podcast.title),
+        title = stringResource(R.string.podcast_cover_description, podcast.title),
         placeholderType = if (LocalInspectionMode.current) PlaceholderType.Large else PlaceholderType.None,
         modifier = modifier,
     )

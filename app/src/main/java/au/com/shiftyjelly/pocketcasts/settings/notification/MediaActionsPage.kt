@@ -43,7 +43,7 @@ fun MediaActionsPage(
 ) {
     Column(modifier = modifier.background(MaterialTheme.theme.colors.primaryUi02)) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.settings_media_actions_customise),
+            title = stringResource(R.string.settings_media_actions_customise),
             onNavigationClick = onBackClick,
         )
 
@@ -59,7 +59,7 @@ fun MediaActionsPage(
             onActionMoved = onActionMoved,
             chooseCount = 3,
             enabled = state.customActionsVisibility,
-            otherActionsTitle = stringResource(LR.string.settings_other_media_actions),
+            otherActionsTitle = stringResource(R.string.settings_other_media_actions),
             contentPadding = PaddingValues(top = 8.dp, bottom = bottomInset + 8.dp),
         )
     }
@@ -78,8 +78,8 @@ private fun PageHeader(
         )
         Spacer(Modifier.height(16.dp))
         SettingRow(
-            primaryText = stringResource(LR.string.settings_media_actions_prioritize_title),
-            secondaryText = stringResource(LR.string.settings_media_actions_prioritize_subtitle),
+            primaryText = stringResource(R.string.settings_media_actions_prioritize_title),
+            secondaryText = stringResource(R.string.settings_media_actions_prioritize_subtitle),
             indent = false,
             modifier = Modifier
                 .then(if (customActionsVisibility) Modifier else Modifier.alpha(0.4f))
@@ -96,8 +96,8 @@ private fun ShowCustomActionsSettings(
     modifier: Modifier = Modifier,
 ) {
     SettingRow(
-        primaryText = stringResource(LR.string.settings_media_actions_show_title),
-        secondaryText = stringResource(LR.string.settings_media_actions_show_subtitle),
+        primaryText = stringResource(R.string.settings_media_actions_show_title),
+        secondaryText = stringResource(R.string.settings_media_actions_show_subtitle),
         toggle = SettingRowToggle.Switch(checked = customActionsVisibility),
         indent = false,
         modifier = modifier
@@ -119,11 +119,11 @@ fun MediaActionsPagePreview(@PreviewParameter(ThemePreviewParameterProvider::cla
             bottomInset = 0.dp,
             state = State(
                 actions = listOf(
-                    MenuAction("1", LR.string.archive, R.drawable.ic_archive),
-                    MenuAction("2", LR.string.mark_as_played, R.drawable.ic_markasplayed),
-                    MenuAction("3", LR.string.play_next, R.drawable.ic_skip_next),
-                    MenuAction("4", LR.string.playback_speed, R.drawable.ic_speed_number),
-                    MenuAction("5", LR.string.star, R.drawable.ic_star),
+                    MenuAction("1", R.string.archive, R.drawable.ic_archive),
+                    MenuAction("2", R.string.mark_as_played, R.drawable.ic_markasplayed),
+                    MenuAction("3", R.string.play_next, R.drawable.ic_skip_next),
+                    MenuAction("4", R.string.playback_speed, R.drawable.ic_speed_number),
+                    MenuAction("5", R.string.star, R.drawable.ic_star),
                 ),
                 customActionsVisibility = true,
             ),

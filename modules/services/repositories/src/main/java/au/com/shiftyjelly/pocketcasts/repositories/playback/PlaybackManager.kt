@@ -1172,7 +1172,7 @@ open class PlaybackManager @Inject constructor(
         withContext(Dispatchers.Main) {
             playbackStateRelay.blockingFirst().let { playbackState ->
                 val errorMessage = if (event.error?.cause is HttpDataSource.HttpDataSourceException) {
-                    application.getString(LR.string.player_play_failed_check_internet)
+                    application.getString(R.string.player_play_failed_check_internet)
                 } else {
                     event.message
                 }
@@ -1477,7 +1477,7 @@ open class PlaybackManager @Inject constructor(
         }
         LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Sleeping playback for end of episode")
 
-        showToast(application.getString(LR.string.player_sleep_time_fired))
+        showToast(application.getString(R.string.player_sleep_time_fired))
 
         val podcast = playbackStateRelay.blockingFirst().podcast
         if (podcast != null && podcast.skipLastSecs > 0) {
@@ -1512,7 +1512,7 @@ open class PlaybackManager @Inject constructor(
         }
         LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Sleeping playback for end of chapters")
 
-        showToast(application.getString(LR.string.player_sleep_time_fired_end_of_chapter))
+        showToast(application.getString(R.string.player_sleep_time_fired_end_of_chapter))
 
         val podcast = playbackStateRelay.blockingFirst().podcast
         if (podcast != null && podcast.skipLastSecs > 0) {
@@ -2017,7 +2017,7 @@ open class PlaybackManager @Inject constructor(
             notificationTag = notificationTag,
             context = application,
         )
-        val streamAction = NotificationCompat.Action(IR.drawable.notification_action_play, "Yes, keep playing", streamIntent)
+        val streamAction = NotificationCompat.Action(R.drawable.notification_action_play, "Yes, keep playing", streamIntent)
 
         val color = ContextCompat.getColor(application, R.color.notification_color)
 
@@ -2025,7 +2025,7 @@ open class PlaybackManager @Inject constructor(
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
             .setContentTitle(episode.title)
             .setContentText("This episode is not downloaded, do you want to stream it?")
-            .setSmallIcon(IR.drawable.notification)
+            .setSmallIcon(R.drawable.notification)
             .setAutoCancel(true)
             .setColor(color)
             .setOnlyAlertOnce(true)
@@ -2175,7 +2175,7 @@ open class PlaybackManager @Inject constructor(
         episode.playedUpToMs = startFromMs
         statsManager.addTimeSavedAutoSkipping(startFromMs.toLong())
         if (isPlaying) {
-            showToast(application.getString(LR.string.player_started_from, podcast.startFromSecs))
+            showToast(application.getString(R.string.player_started_from, podcast.startFromSecs))
         }
     }
 
@@ -2273,7 +2273,7 @@ open class PlaybackManager @Inject constructor(
                     statsManager.addTimeSavedAutoSkipping(timeRemaining.toLong() * 1000L)
                     episodeManager.markAsPlayedBlocking(episode, this, podcastManager)
                     LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Skipping remainder of ${episode.title} with skip last $skipLast")
-                    showToast(application.getString(LR.string.player_skipped_last, skipLast))
+                    showToast(application.getString(R.string.player_skipped_last, skipLast))
                 }
                 return
             }

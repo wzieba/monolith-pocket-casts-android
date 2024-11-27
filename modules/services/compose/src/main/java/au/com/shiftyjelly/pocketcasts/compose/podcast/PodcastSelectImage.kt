@@ -82,14 +82,14 @@ fun PodcastSelectImage(
                         .background(Color(0xFF78D549)),
                 ) {
                     Icon(
-                        painter = painterResource(IR.drawable.ic_tick),
-                        contentDescription = stringResource(LR.string.selected),
+                        painter = painterResource(R.drawable.ic_tick),
+                        contentDescription = stringResource(R.string.selected),
                         tint = Color.White,
                         modifier = Modifier.size(16.dp),
                     )
                 }
             } else {
-                val notSelected = stringResource(LR.string.not_selected)
+                val notSelected = stringResource(R.string.not_selected)
                 Box(
                     modifier = Modifier
                         .border(width = 1.5.dp, color = Color.White, shape = CircleShape)

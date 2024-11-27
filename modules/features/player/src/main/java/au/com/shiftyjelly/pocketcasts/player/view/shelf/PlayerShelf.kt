@@ -266,7 +266,7 @@ fun EffectsButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = effectsResource),
-            contentDescription = stringResource(LR.string.player_effects),
+            contentDescription = stringResource(R.string.player_effects),
             tint = effectsTint,
         )
     }
@@ -317,7 +317,7 @@ fun StarButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = starResource),
-            contentDescription = stringResource(LR.string.player_star),
+            contentDescription = stringResource(R.string.player_star),
             tint = starTint,
         )
     }
@@ -331,7 +331,7 @@ fun ShareButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = R.drawable.ic_share_android_32),
-            contentDescription = stringResource(LR.string.share_podcast),
+            contentDescription = stringResource(R.string.share_podcast),
             tint = iconColors.normalColor,
         )
     }
@@ -344,8 +344,8 @@ fun PodcastButton(
 ) {
     IconButton(onClick = onClick) {
         Icon(
-            painterResource(id = IR.drawable.ic_goto_32),
-            contentDescription = stringResource(LR.string.go_to_podcast),
+            painterResource(id = R.drawable.ic_goto_32),
+            contentDescription = stringResource(R.string.go_to_podcast),
             tint = iconColors.normalColor,
         )
     }
@@ -377,7 +377,7 @@ fun PlayedButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = R.drawable.ic_tick_circle_ol_32),
-            contentDescription = stringResource(LR.string.mark_as_played),
+            contentDescription = stringResource(R.string.mark_as_played),
             tint = iconColors.normalColor,
         )
     }
@@ -393,7 +393,7 @@ fun ArchiveButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = archiveResource),
-            contentDescription = stringResource(LR.string.archive_episode),
+            contentDescription = stringResource(R.string.archive_episode),
             tint = iconColors.normalColor,
         )
     }
@@ -406,8 +406,8 @@ fun BookmarkButton(
 ) {
     IconButton(onClick = onClick) {
         Icon(
-            painterResource(id = IR.drawable.ic_bookmark),
-            contentDescription = stringResource(LR.string.add_bookmark),
+            painterResource(id = R.drawable.ic_bookmark),
+            contentDescription = stringResource(R.string.add_bookmark),
             tint = iconColors.normalColor,
         )
     }
@@ -422,8 +422,8 @@ fun TranscriptButton(
     val alpha = if (isTranscriptAvailable) 1f else 0.4f
     IconButton(onClick = { onClick(isTranscriptAvailable) }) {
         Icon(
-            painterResource(id = IR.drawable.ic_transcript_24),
-            contentDescription = stringResource(LR.string.transcript),
+            painterResource(id = R.drawable.ic_transcript_24),
+            contentDescription = stringResource(R.string.transcript),
             tint = iconColors.normalColor,
             modifier = Modifier.alpha(alpha),
         )
@@ -438,14 +438,14 @@ fun DownloadButton(
     onClick: () -> Unit,
 ) {
     val downloadIcon = when {
-        isPodcastEpisode && (downloadData.isDownloading || downloadData.isQueued) -> IR.drawable.ic_download
-        isPodcastEpisode && downloadData.isDownloaded -> IR.drawable.ic_downloaded_24dp
-        else -> IR.drawable.ic_download
+        isPodcastEpisode && (downloadData.isDownloading || downloadData.isQueued) -> R.drawable.ic_download
+        isPodcastEpisode && downloadData.isDownloaded -> R.drawable.ic_downloaded_24dp
+        else -> R.drawable.ic_download
     }
     val contentDescription = when {
-        isPodcastEpisode && (downloadData.isDownloading || downloadData.isQueued) -> stringResource(LR.string.episode_downloading)
-        isPodcastEpisode && downloadData.isDownloaded -> stringResource(LR.string.remove_downloaded_file)
-        else -> stringResource(LR.string.download)
+        isPodcastEpisode && (downloadData.isDownloading || downloadData.isQueued) -> stringResource(R.string.episode_downloading)
+        isPodcastEpisode && downloadData.isDownloaded -> stringResource(R.string.remove_downloaded_file)
+        else -> stringResource(R.string.download)
     }
     IconButton(onClick = onClick) {
         Icon(
@@ -463,8 +463,8 @@ fun ReportButton(
 ) {
     IconButton(onClick = onClick) {
         Icon(
-            painterResource(id = IR.drawable.ic_flag),
-            contentDescription = stringResource(LR.string.report),
+            painterResource(id = R.drawable.ic_flag),
+            contentDescription = stringResource(R.string.report),
             tint = iconColors.normalColor,
         )
     }
@@ -478,7 +478,7 @@ fun MoreButton(
     IconButton(onClick = onClick) {
         Icon(
             painterResource(id = R.drawable.ic_more),
-            contentDescription = stringResource(LR.string.more),
+            contentDescription = stringResource(R.string.more),
             tint = iconColors.normalColor,
         )
     }

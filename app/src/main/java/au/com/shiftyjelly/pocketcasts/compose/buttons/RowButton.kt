@@ -121,7 +121,7 @@ fun RowButtonTextIconPreview() {
     AppThemeWithBackground(Theme.ThemeType.LIGHT) {
         RowButton(
             text = "Share",
-            textIcon = IR.drawable.ic_retry,
+            textIcon = R.drawable.ic_retry,
             onClick = {},
         )
     }

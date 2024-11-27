@@ -126,7 +126,7 @@ class AutoDownloadSettingsFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar?.setup(title = getString(LR.string.settings_title_auto_download), navigationIcon = BackArrow, activity = activity, theme = theme)
+        toolbar?.setup(title = getString(R.string.settings_title_auto_download), navigationIcon = BackArrow, activity = activity, theme = theme)
         toolbar?.isVisible = showToolbar
 
         podcastsAutoDownloadLimitPreference?.isVisible = FeatureFlag.isEnabled(Feature.AUTO_DOWNLOAD)
@@ -222,7 +222,7 @@ class AutoDownloadSettingsFragment :
         preferenceManager.findPreference<Preference>(PREFERENCE_CANCEL_ALL)
             ?.setOnPreferenceClickListener {
                 context?.let {
-                    Toast.makeText(it, LR.string.settings_auto_download_stopping_all, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(it, R.string.settings_auto_download_stopping_all, Toast.LENGTH_SHORT).show()
                 }
                 viewModel.stopAllDownloads()
                 true
@@ -230,7 +230,7 @@ class AutoDownloadSettingsFragment :
         preferenceManager.findPreference<Preference>(PREFERENCE_CLEAR_DOWNLOAD_ERRORS)
             ?.setOnPreferenceClickListener {
                 context?.let {
-                    Toast.makeText(it, LR.string.settings_auto_download_clearing_errors, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(it, R.string.settings_auto_download_clearing_errors, Toast.LENGTH_SHORT).show()
                 }
                 viewModel.clearDownloadErrors()
                 true
@@ -301,7 +301,7 @@ class AutoDownloadSettingsFragment :
             .replace(UR.id.frameChildFragment, fragment)
             .addToBackStack("podcastSelect")
             .commit()
-        toolbar?.title = getString(LR.string.settings_auto_download_podcasts)
+        toolbar?.title = getString(R.string.settings_auto_download_podcasts)
     }
 
     override fun podcastSelectFragmentSelectionChanged(newSelection: List<String>) {
@@ -335,7 +335,7 @@ class AutoDownloadSettingsFragment :
             .replace(UR.id.frameChildFragment, fragment)
             .addToBackStack("filterSelect")
             .commit()
-        toolbar?.title = getString(LR.string.settings_auto_download_filters)
+        toolbar?.title = getString(R.string.settings_auto_download_filters)
     }
 
     override fun filterSelectFragmentGetCurrentSelection(): List<String> {
@@ -370,7 +370,7 @@ class AutoDownloadSettingsFragment :
         lifecycleScope.launch {
             val count = withContext(Dispatchers.Default) { playlistManager.findAllBlocking() }.filter { it.autoDownload }.count()
             val preference = preferenceManager.findPreference<Preference>(PREFERENCE_CHOOSE_FILTERS)
-            preference?.summary = context?.resources?.getStringPlural(count = count, singular = LR.string.filters_chosen_singular, plural = LR.string.filters_chosen_plural)
+            preference?.summary = context?.resources?.getStringPlural(count = count, singular = R.string.filters_chosen_singular, plural = R.string.filters_chosen_plural)
         }
     }
 
@@ -383,7 +383,7 @@ class AutoDownloadSettingsFragment :
         autoDownloadOnlyDownloadOnWifi.isChecked = viewModel.getAutoDownloadUnmeteredOnly()
         autoDownloadOnlyWhenCharging.isChecked = viewModel.getAutoDownloadOnlyWhenCharging()
         if (FeatureFlag.isEnabled(Feature.AUTO_DOWNLOAD)) {
-            newEpisodesPreference?.summary = getString(LR.string.settings_auto_download_new_episodes_description)
+            newEpisodesPreference?.summary = getString(R.string.settings_auto_download_new_episodes_description)
         }
         onNewEpisodesToggleChange(viewModel.getAutoDownloadNewEpisodes())
     }
@@ -408,10 +408,10 @@ class AutoDownloadSettingsFragment :
                 onSuccess = { (autoDownloadingCount, allCount) ->
                     val resources = context?.resources ?: return@subscribeBy
                     val summary = when (autoDownloadingCount) {
-                        0 -> resources.getString(LR.string.settings_podcasts_selected_zero)
-                        1 -> resources.getString(LR.string.settings_podcasts_selected_one)
-                        allCount -> resources.getString(LR.string.settings_podcasts_selected_all)
-                        else -> resources.getString(LR.string.settings_podcasts_selected_x, autoDownloadingCount)
+                        0 -> resources.getString(R.string.settings_podcasts_selected_zero)
+                        1 -> resources.getString(R.string.settings_podcasts_selected_one)
+                        allCount -> resources.getString(R.string.settings_podcasts_selected_all)
+                        else -> resources.getString(R.string.settings_podcasts_selected_x, autoDownloadingCount)
                     }
                     podcastsPreference?.summary = summary
                 },
@@ -441,7 +441,7 @@ class AutoDownloadSettingsFragment :
     override fun onBackPressed(): Boolean {
         if (childFragmentManager.backStackEntryCount > 0) {
             childFragmentManager.popBackStack()
-            toolbar?.title = getString(LR.string.settings_title_auto_download)
+            toolbar?.title = getString(R.string.settings_title_auto_download)
             return true
         }
         return false

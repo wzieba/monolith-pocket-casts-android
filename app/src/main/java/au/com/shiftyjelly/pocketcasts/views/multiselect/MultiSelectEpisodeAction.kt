@@ -2,13 +2,10 @@ package au.com.shiftyjelly.pocketcasts.views.multiselect
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 sealed class MultiSelectEpisodeAction(
     override val groupId: String,
@@ -27,86 +24,86 @@ sealed class MultiSelectEpisodeAction(
 ) {
     object DeleteDownload : MultiSelectEpisodeAction(
         groupId = "download",
-        actionId = UR.id.menu_undownload,
-        title = LR.string.delete_download,
-        iconRes = IR.drawable.ic_undownload,
+        actionId = R.id.menu_undownload,
+        title = R.string.delete_download,
+        iconRes = R.drawable.ic_undownload,
         analyticsValue = "remove_download",
     )
     object Download : MultiSelectEpisodeAction(
         groupId = "download",
         actionId = R.id.menu_download,
-        title = LR.string.download,
-        iconRes = IR.drawable.ic_download,
+        title = R.string.download,
+        iconRes = R.drawable.ic_download,
         analyticsValue = "download",
     )
     object Archive : MultiSelectEpisodeAction(
         groupId = "archive",
         actionId = R.id.menu_archive,
-        title = LR.string.archive,
-        iconRes = IR.drawable.ic_archive,
+        title = R.string.archive,
+        iconRes = R.drawable.ic_archive,
         analyticsValue = "archive",
     )
     object Unarchive : MultiSelectEpisodeAction(
         groupId = "archive",
-        actionId = UR.id.menu_unarchive,
-        title = LR.string.unarchive,
-        iconRes = IR.drawable.ic_unarchive,
+        actionId = R.id.menu_unarchive,
+        title = R.string.unarchive,
+        iconRes = R.drawable.ic_unarchive,
         analyticsValue = "unarchive",
     )
     object DeleteUserEpisode : MultiSelectEpisodeAction(
         groupId = "archive",
         actionId = R.id.menu_delete,
-        title = LR.string.delete,
+        title = R.string.delete,
         iconRes = R.drawable.ic_delete,
         analyticsValue = "delete",
     )
     object Share : MultiSelectEpisodeAction(
         groupId = "share",
         actionId = R.id.menu_share,
-        title = LR.string.share,
-        iconRes = IR.drawable.ic_share,
+        title = R.string.share,
+        iconRes = R.drawable.ic_share,
         analyticsValue = "share",
     )
     object MarkAsUnplayed : MultiSelectEpisodeAction(
         groupId = "mark_as_played",
-        actionId = UR.id.menu_markasunplayed,
-        title = LR.string.mark_as_unplayed,
-        iconRes = IR.drawable.ic_markasunplayed,
+        actionId = R.id.menu_markasunplayed,
+        title = R.string.mark_as_unplayed,
+        iconRes = R.drawable.ic_markasunplayed,
         analyticsValue = "mark_as_unplayed",
     )
     object MarkAsPlayed : MultiSelectEpisodeAction(
         groupId = "mark_as_played",
         actionId = R.id.menu_mark_played,
-        title = LR.string.mark_as_played,
-        iconRes = IR.drawable.ic_markasplayed,
+        title = R.string.mark_as_played,
+        iconRes = R.drawable.ic_markasplayed,
         analyticsValue = "mark_as_played",
     )
     object PlayNext : MultiSelectEpisodeAction(
         groupId = "play_next",
         actionId = R.id.menu_playnext,
-        title = LR.string.play_next,
-        iconRes = IR.drawable.ic_upnext_playnext,
+        title = R.string.play_next,
+        iconRes = R.drawable.ic_upnext_playnext,
         analyticsValue = "play_next",
     )
     object PlayLast : MultiSelectEpisodeAction(
         groupId = "play_last",
         actionId = R.id.menu_playlast,
-        title = LR.string.play_last,
-        iconRes = IR.drawable.ic_upnext_playlast,
+        title = R.string.play_last,
+        iconRes = R.drawable.ic_upnext_playlast,
         analyticsValue = "play_last",
     )
     object Unstar : MultiSelectEpisodeAction(
         groupId = "star",
-        actionId = UR.id.menu_unstar,
-        title = LR.string.unstar,
-        iconRes = IR.drawable.ic_unstar,
+        actionId = R.id.menu_unstar,
+        title = R.string.unstar,
+        iconRes = R.drawable.ic_unstar,
         analyticsValue = "unstar",
     )
     object Star : MultiSelectEpisodeAction(
         groupId = "star",
         actionId = R.id.menu_star,
-        title = LR.string.star,
-        iconRes = IR.drawable.ic_star,
+        title = R.string.star,
+        iconRes = R.drawable.ic_star,
         analyticsValue = "star",
     )
 

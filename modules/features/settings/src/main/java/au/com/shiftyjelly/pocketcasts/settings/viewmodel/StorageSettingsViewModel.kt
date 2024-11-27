@@ -58,14 +58,14 @@ class StorageSettingsViewModel
 
     private val backgroundRefreshSummary: Int
         get() = if (settings.backgroundRefreshPodcasts.value) {
-            LR.string.settings_storage_background_refresh_on
+            R.string.settings_storage_background_refresh_on
         } else {
-            LR.string.settings_storage_background_refresh_off
+            R.string.settings_storage_background_refresh_off
         }
 
     private val storageChoiceSummary: String?
         get() = if (settings.usingCustomFolderStorage()) {
-            context.getString(LR.string.settings_storage_custom_folder)
+            context.getString(R.string.settings_storage_custom_folder)
         } else {
             settings.getStorageChoiceName()
         }
@@ -74,7 +74,7 @@ class StorageSettingsViewModel
         get() = if (settings.usingCustomFolderStorage()) {
             settings.getStorageCustomFolder()
         } else {
-            context.getString(LR.string.settings_storage_using, settings.getStorageChoiceName())
+            context.getString(R.string.settings_storage_using, settings.getStorageChoiceName())
         }
 
     private lateinit var foldersAvailable: List<FolderLocation>
@@ -154,7 +154,7 @@ class StorageSettingsViewModel
         viewModelScope.launch {
             val tempPath = fileStorage.getOrCreateEpisodesTempDir()
             fileUtil.deleteDirectoryContents(tempPath.absolutePath)
-            mutableSnackbarMessage.emit(LR.string.settings_storage_clear_cache)
+            mutableSnackbarMessage.emit(R.string.settings_storage_clear_cache)
         }
         analyticsTracker.track(AnalyticsEvent.SETTINGS_STORAGE_CLEAR_DOWNLOAD_CACHE)
     }
@@ -164,7 +164,7 @@ class StorageSettingsViewModel
         viewModelScope.launch {
             mutableAlertDialog.emit(
                 createAlertDialogState(
-                    title = context.getString(LR.string.settings_fix_downloads_started_message),
+                    title = context.getString(R.string.settings_fix_downloads_started_message),
                     showCancel = false,
                 ),
             )
@@ -208,7 +208,7 @@ class StorageSettingsViewModel
             if (sdkVersion < 29) {
                 add(
                     FolderLocation(
-                        label = context.getString(LR.string.settings_storage_custom_folder),
+                        label = context.getString(R.string.settings_storage_custom_folder),
                         filePath = Settings.STORAGE_ON_CUSTOM_FOLDER,
                         analyticsLabel = "custom",
                     ),
@@ -236,8 +236,8 @@ class StorageSettingsViewModel
                 viewModelScope.launch {
                     mutableAlertDialog.emit(
                         createAlertDialogState(
-                            title = context.getString(LR.string.settings_storage_folder_change_failed) + " " + e.message,
-                            message = LR.string.settings_storage_android_10_custom,
+                            title = context.getString(R.string.settings_storage_folder_change_failed) + " " + e.message,
+                            message = R.string.settings_storage_android_10_custom,
                         ),
                     )
                     return@launch
@@ -271,8 +271,8 @@ class StorageSettingsViewModel
             viewModelScope.launch {
                 mutableAlertDialog.emit(
                     createAlertDialogState(
-                        title = context.getString(LR.string.settings_storage_folder_write_failed),
-                        message = LR.string.settings_storage_android_10_custom,
+                        title = context.getString(R.string.settings_storage_folder_write_failed),
+                        message = R.string.settings_storage_android_10_custom,
                     ),
                 )
             }
@@ -289,7 +289,7 @@ class StorageSettingsViewModel
 
             // validate the path
             if (newPath.trim().isEmpty()) {
-                mutableAlertDialog.emit(createAlertDialogState(context.getString(LR.string.settings_storage_folder_blank)))
+                mutableAlertDialog.emit(createAlertDialogState(context.getString(R.string.settings_storage_folder_blank)))
                 return@launch
             }
 
@@ -310,13 +310,13 @@ class StorageSettingsViewModel
             if (!newDirectory.exists()) {
                 val success = newDirectory.mkdirs()
                 if (!success && !newDirectory.exists()) {
-                    mutableAlertDialog.emit(createAlertDialogState(context.getString(LR.string.settings_storage_folder_not_found)))
+                    mutableAlertDialog.emit(createAlertDialogState(context.getString(R.string.settings_storage_folder_not_found)))
                     return@launch
                 }
             }
 
             if (!newDirectory.canWrite()) {
-                mutableAlertDialog.emit(createAlertDialogState(context.getString(LR.string.settings_storage_folder_write_failed)))
+                mutableAlertDialog.emit(createAlertDialogState(context.getString(R.string.settings_storage_folder_write_failed)))
                 return@launch
             }
 
@@ -383,18 +383,18 @@ class StorageSettingsViewModel
         oldDirectory: String?,
         newDirectory: String?,
     ) = AlertDialogState(
-        title = context.getString(LR.string.settings_storage_move_are_you_sure),
-        message = context.getString(LR.string.settings_storage_move_message),
+        title = context.getString(R.string.settings_storage_move_are_you_sure),
+        message = context.getString(R.string.settings_storage_move_message),
         buttons = listOf(
             DialogButtonState(
-                text = context.getString(LR.string.settings_storage_move_cancel).uppercase(
+                text = context.getString(R.string.settings_storage_move_cancel).uppercase(
                     Locale.getDefault(),
                 ),
                 onClick = {},
 
             ),
             DialogButtonState(
-                text = context.getString(LR.string.settings_storage_move),
+                text = context.getString(R.string.settings_storage_move),
                 onClick = { movePodcasts(oldDirectory, newDirectory) },
             ),
         ),
@@ -411,14 +411,14 @@ class StorageSettingsViewModel
             if (showCancel) {
                 add(
                     DialogButtonState(
-                        text = context.getString(LR.string.cancel).uppercase(),
+                        text = context.getString(R.string.cancel).uppercase(),
                         onClick = {},
                     ),
                 )
             }
             add(
                 DialogButtonState(
-                    text = context.getString(LR.string.ok),
+                    text = context.getString(R.string.ok),
                     onClick = {},
                 ),
             )

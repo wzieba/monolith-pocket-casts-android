@@ -68,7 +68,7 @@ fun AnimatedPlayPauseButton(
             .background(circleColor)
             .clickable(
                 role = Role.Button,
-                onClickLabel = if (isPlaying) stringResource(LR.string.pause) else stringResource(LR.string.play),
+                onClickLabel = if (isPlaying) stringResource(R.string.pause) else stringResource(R.string.play),
                 onClick = onClick,
             ),
     ) {

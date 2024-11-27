@@ -64,8 +64,8 @@ fun OnboardingForgotPasswordPage(
         UiUtil.hideKeyboard(view)
         UiUtil.displayAlert(
             context,
-            context.getString(LR.string.profile_reset_password_sent),
-            context.getString(LR.string.profile_reset_password_check_email),
+            context.getString(R.string.profile_reset_password_sent),
+            context.getString(R.string.profile_reset_password_check_email),
             onComplete = onCompleted,
         )
     }
@@ -95,7 +95,7 @@ fun OnboardingForgotPasswordPage(
             .windowInsetsPadding(WindowInsets.ime),
     ) {
         ThemedTopAppBar(
-            title = stringResource(LR.string.profile_reset_password),
+            title = stringResource(R.string.profile_reset_password),
             onNavigationClick = {
                 viewModel.onBackPressed()
                 onBackPressed()
@@ -133,7 +133,7 @@ fun OnboardingForgotPasswordPage(
             Spacer(Modifier.weight(1f))
 
             RowButton(
-                text = stringResource(LR.string.profile_confirm),
+                text = stringResource(R.string.profile_confirm),
                 enabled = state.enableSubmissionFields,
                 onClick = { viewModel.resetPassword(onSuccess) },
             )

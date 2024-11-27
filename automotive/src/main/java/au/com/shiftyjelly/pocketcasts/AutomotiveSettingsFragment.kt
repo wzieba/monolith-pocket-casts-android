@@ -98,10 +98,10 @@ class AutomotiveSettingsFragment : Fragment(), CoroutineScope {
             val context = context ?: return
             val themedContext = ContextThemeWrapper(context, CR.style.Theme_Car_NoActionBar)
             val builder = AlertDialog.Builder(themedContext)
-            builder.setTitle(getString(LR.string.profile_clear_data_question))
-                .setMessage(getString(LR.string.profile_clear_data_would_you_also_like_question))
-                .setPositiveButton(getString(LR.string.sign_in)) { _, _ -> openSignInActivity() }
-                .setNegativeButton(getString(LR.string.profile_clear_data)) { _, _ ->
+            builder.setTitle(getString(R.string.profile_clear_data_question))
+                .setMessage(getString(R.string.profile_clear_data_would_you_also_like_question))
+                .setPositiveButton(getString(R.string.sign_in)) { _, _ -> openSignInActivity() }
+                .setNegativeButton(getString(R.string.profile_clear_data)) { _, _ ->
                     userManager.signOutAndClearData(
                         playbackManager = playbackManager,
                         upNextQueue = upNextQueue,

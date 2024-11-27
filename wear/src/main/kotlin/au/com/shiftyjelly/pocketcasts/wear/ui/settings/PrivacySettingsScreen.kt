@@ -55,15 +55,15 @@ private fun Content(
 ) {
     ScalingLazyColumn(columnState = scrollState) {
         item {
-            ScreenHeaderChip(LR.string.settings_privacy_analytics)
+            ScreenHeaderChip(R.string.settings_privacy_analytics)
         }
 
         item {
-            DescriptionText(LR.string.settings_privacy_summary)
+            DescriptionText(R.string.settings_privacy_summary)
         }
 
         item {
-            val analyticsLabel = stringResource(LR.string.settings_privacy_analytics)
+            val analyticsLabel = stringResource(R.string.settings_privacy_analytics)
             ToggleChip(
                 label = analyticsLabel,
                 checked = state.sendAnalytics,
@@ -72,11 +72,11 @@ private fun Content(
         }
 
         item {
-            DescriptionText(LR.string.settings_privacy_analytics_summary)
+            DescriptionText(R.string.settings_privacy_analytics_summary)
         }
 
         item {
-            val analyticsLabel = stringResource(LR.string.settings_privacy_crash)
+            val analyticsLabel = stringResource(R.string.settings_privacy_crash)
             ToggleChip(
                 label = analyticsLabel,
                 checked = state.sendCrashReports,
@@ -85,11 +85,11 @@ private fun Content(
         }
 
         item {
-            DescriptionText(LR.string.settings_privacy_crash_summary)
+            DescriptionText(R.string.settings_privacy_crash_summary)
         }
 
         item {
-            val analyticsLabel = stringResource(LR.string.settings_privacy_crash_link_short)
+            val analyticsLabel = stringResource(R.string.settings_privacy_crash_link_short)
             ToggleChip(
                 label = analyticsLabel,
                 checked = state.linkCrashReportsToUser,
@@ -98,7 +98,7 @@ private fun Content(
         }
 
         item {
-            DescriptionText(LR.string.settings_privacy_crash_link_summary)
+            DescriptionText(R.string.settings_privacy_crash_link_summary)
         }
     }
 }

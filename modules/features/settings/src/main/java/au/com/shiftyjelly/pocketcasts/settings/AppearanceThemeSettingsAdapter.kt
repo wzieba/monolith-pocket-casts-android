@@ -96,7 +96,7 @@ class AppearanceThemeSettingsAdapter(
                 tickDrawable = AppCompatResources.getDrawable(itemView.context, R.drawable.ic_locked_plus)
             }
             binding.imgTick.setImageDrawable(tickDrawable)
-            binding.imgTick.contentDescription = binding.imgTick.resources.getString(if (selected) LR.string.on else LR.string.off)
+            binding.imgTick.contentDescription = binding.imgTick.resources.getString(if (selected) R.string.on else R.string.off)
             binding.imgLock.isVisible = !showOption
             binding.txtTitle.setText(theme.labelId)
 

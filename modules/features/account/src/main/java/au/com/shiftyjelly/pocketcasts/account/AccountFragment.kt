@@ -63,10 +63,10 @@ class AccountFragment : BaseFragment() {
 
                 if (it is SignInState.SignedIn) {
                     binding.btnSignIn.isVisible = false
-                    binding.lblSignIn.text = getString(LR.string.profile_alreadysignedin)
-                    binding.lblSaveYourPodcasts.text = getString(LR.string.profile_alreadysignedindescription)
-                    binding.imgCreateAccount.setup(view.context.getThemeTintedDrawable(IR.drawable.ic_alert_small, UR.attr.support_05))
-                    binding.btnCreate.text = getString(LR.string.done)
+                    binding.lblSignIn.text = getString(R.string.profile_alreadysignedin)
+                    binding.lblSaveYourPodcasts.text = getString(R.string.profile_alreadysignedindescription)
+                    binding.imgCreateAccount.setup(view.context.getThemeTintedDrawable(R.drawable.ic_alert_small, UR.attr.support_05))
+                    binding.btnCreate.text = getString(R.string.done)
                     binding.btnCreate.setOnClickListener { activity?.finish() }
                 }
             },

@@ -51,14 +51,14 @@ fun ShareListCreateTitlePage(
 
     Column {
         ThemedTopAppBar(
-            title = stringResource(LR.string.podcasts_share_create_list),
+            title = stringResource(R.string.podcasts_share_create_list),
             navigationButton = NavigationButton.Back,
             onNavigationClick = onBackClick,
             actions = {
                 IconButton(onClick = onNextClick, enabled = state.title.isNotBlank()) {
                     Icon(
                         imageVector = Icons.Filled.Check,
-                        contentDescription = stringResource(LR.string.share),
+                        contentDescription = stringResource(R.string.share),
                     )
                 }
             },
@@ -148,7 +148,7 @@ private fun TitleDescriptionFields(
     Column(modifier = modifier) {
         FormField(
             value = title,
-            placeholder = stringResource(LR.string.podcasts_share_title),
+            placeholder = stringResource(R.string.podcasts_share_title),
             onValueChange = onTitleChange,
             keyboardOptions = FormFieldDefaults.keyboardOptions.copy(
                 imeAction = ImeAction.Next,
@@ -159,7 +159,7 @@ private fun TitleDescriptionFields(
         Spacer(Modifier.height(8.dp))
         FormField(
             value = description,
-            placeholder = stringResource(LR.string.podcasts_share_description),
+            placeholder = stringResource(R.string.podcasts_share_description),
             onValueChange = onDescriptionChange,
             onImeAction = onDoneClick,
             keyboardOptions = FormFieldDefaults.keyboardOptions.copy(

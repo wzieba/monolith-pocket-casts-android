@@ -13,7 +13,7 @@ import au.com.shiftyjelly.pocketcasts.images.R as IR
 fun Confetti(
     onConfettiShown: () -> Unit,
 ) {
-    val lottieComposition by rememberLottieComposition(LottieCompositionSpec.RawRes(IR.raw.confetti))
+    val lottieComposition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.confetti))
     val progress by animateLottieCompositionAsState(lottieComposition)
 
     LottieAnimation(

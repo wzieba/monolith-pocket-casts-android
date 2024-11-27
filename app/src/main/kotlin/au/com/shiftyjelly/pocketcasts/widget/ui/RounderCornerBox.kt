@@ -14,7 +14,7 @@ import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.unit.ColorProvider
-import au.com.shiftyjelly.pocketcasts.images.R as IR
+import au.com.shiftyjelly.pocketcasts.R
 
 @Composable
 internal fun RounderCornerBox(
@@ -32,7 +32,7 @@ internal fun RounderCornerBox(
     ) {
         if (!isSystemCornerRadiusSupported) {
             Image(
-                provider = ImageProvider(IR.drawable.rounded_rectangle),
+                provider = ImageProvider(R.drawable.rounded_rectangle),
                 contentDescription = null,
                 colorFilter = backgroundTint?.let(ColorFilter::tint),
                 modifier = modifierCompat,

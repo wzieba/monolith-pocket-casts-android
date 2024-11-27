@@ -200,7 +200,7 @@ fun BookmarkRow(
             Box(modifier = Modifier.padding(end = 16.dp)) {
                 TimePlayButton(
                     timeSecs = bookmark.timeSecs,
-                    contentDescriptionId = LR.string.bookmark_play,
+                    contentDescriptionId = R.string.bookmark_play,
                     onClick = { onPlayClick(bookmark) },
                     buttonStyle = timePlayButtonStyle,
                     colors = timePlayButtonColors,

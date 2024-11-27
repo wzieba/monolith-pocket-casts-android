@@ -218,7 +218,7 @@ private fun UpgradeLayoutOriginal(
                         )
                         if (state.showNotNow) {
                             TextH30(
-                                text = stringResource(LR.string.not_now),
+                                text = stringResource(R.string.not_now),
                                 color = Color.White,
                                 modifier = Modifier
                                     .padding(horizontal = 24.dp)
@@ -428,7 +428,7 @@ internal fun UpgradeButton(
 ) {
     val resources = LocalContext.current.resources
     val shortName = resources.getString(button.shortNameRes)
-    val primaryText = stringResource(LR.string.subscribe_to, shortName)
+    val primaryText = stringResource(R.string.subscribe_to, shortName)
 
     Box(
         contentAlignment = Alignment.BottomCenter,
@@ -519,7 +519,7 @@ fun NoSubscriptionsLayout(
             )
             if (showNotNow) {
                 TextH30(
-                    text = stringResource(LR.string.not_now),
+                    text = stringResource(R.string.not_now),
                     color = MaterialTheme.theme.colors.primaryText01,
                     modifier = Modifier
                         .padding(horizontal = 24.dp)
@@ -533,7 +533,7 @@ fun NoSubscriptionsLayout(
             contentAlignment = Alignment.Center,
         ) {
             TextH30(
-                text = stringResource(id = LR.string.onboarding_upgrade_no_subscriptions_found),
+                text = stringResource(id = R.string.onboarding_upgrade_no_subscriptions_found),
             )
         }
         Spacer(modifier = Modifier.weight(1f))

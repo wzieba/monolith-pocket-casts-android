@@ -73,30 +73,30 @@ object CloudDeleteHelper {
 
     fun getDeleteDialog(episodes: List<UserEpisode>, deleteState: DeleteState, deleteFunction: (List<UserEpisode>, DeleteState) -> Unit, resources: Resources): ConfirmationDialog {
         val confirmationDialog = ConfirmationDialog()
-            .setTitle(resources.getString(LR.string.profile_delete_file_title))
-            .setSummary(resources.getStringPlural(count = episodes.size, singular = LR.string.profile_cloud_delete_files_singular, plural = LR.string.profile_cloud_delete_files_plural))
+            .setTitle(resources.getString(R.string.profile_delete_file_title))
+            .setSummary(resources.getStringPlural(count = episodes.size, singular = R.string.profile_cloud_delete_files_singular, plural = R.string.profile_cloud_delete_files_plural))
             .setIconId(R.drawable.ic_delete)
             .setIconTint(null)
 
         when (deleteState) {
             is DeleteState.DeviceOnly -> {
                 confirmationDialog
-                    .setTitle(resources.getString(LR.string.profile_delete_from_device_title))
-                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(LR.string.profile_delete_from_device)))
+                    .setTitle(resources.getString(R.string.profile_delete_from_device_title))
+                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(R.string.profile_delete_from_device)))
                     .setOnConfirm { deleteFunction(episodes, deleteState) }
             }
             is DeleteState.Cloud -> {
                 confirmationDialog
-                    .setTitle(resources.getString(LR.string.profile_delete_from_cloud_title))
-                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(LR.string.profile_delete_from_cloud)))
+                    .setTitle(resources.getString(R.string.profile_delete_from_cloud_title))
+                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(R.string.profile_delete_from_cloud)))
                     .setOnConfirm { deleteFunction(episodes, deleteState) }
             }
             is DeleteState.Everywhere -> {
                 confirmationDialog
-                    .setTitle(resources.getString(LR.string.profile_delete_file_title))
-                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(LR.string.profile_delete_everywhere)))
+                    .setTitle(resources.getString(R.string.profile_delete_file_title))
+                    .setButtonType(ConfirmationDialog.ButtonType.Danger(resources.getString(R.string.profile_delete_everywhere)))
                     .setOnConfirm { deleteFunction(episodes, DeleteState.Everywhere) }
-                    .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(resources.getString(LR.string.profile_delete_from_device_only)))
+                    .setSecondaryButtonType(ConfirmationDialog.ButtonType.Normal(resources.getString(R.string.profile_delete_from_device_only)))
                     .setOnSecondary { deleteFunction(episodes, DeleteState.DeviceOnly) }
             }
         }

@@ -222,12 +222,12 @@ class EffectsFragment : BaseDialogFragment(), CompoundButton.OnCheckedChangeList
             val timeSaved = stats.timeSavedSilenceRemovalSecs
             val formattedTime = TimeHelper.formattedSeconds(timeSaved.toDouble(), "%d hours, %d minutes, %d seconds")
             if (timeSaved > 3600) {
-                getString(LR.string.player_time_saved_detail, formattedTime)
+                getString(R.string.player_time_saved_detail, formattedTime)
             } else {
-                getString(LR.string.player_time_saved_no_hour)
+                getString(R.string.player_time_saved_no_hour)
             }
         } else {
-            getString(LR.string.player_trim_silence_detail)
+            getString(R.string.player_trim_silence_detail)
         }
     }
 

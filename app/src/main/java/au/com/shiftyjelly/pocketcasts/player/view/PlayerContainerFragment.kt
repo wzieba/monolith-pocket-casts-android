@@ -232,7 +232,7 @@ class PlayerContainerFragment : BaseFragment(), HasBackstack {
 
         bookmarksViewModel.multiSelectHelper.isMultiSelectingLive.observe(viewLifecycleOwner) { isMultiSelecting ->
             binding.multiSelectToolbar.isVisible = isMultiSelecting
-            binding.multiSelectToolbar.setNavigationIcon(IR.drawable.ic_arrow_back)
+            binding.multiSelectToolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         }
         bookmarksViewModel.multiSelectHelper.context = context
         binding.multiSelectToolbar.setup(
@@ -352,9 +352,9 @@ class PlayerContainerFragment : BaseFragment(), HasBackstack {
 private class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
     private sealed class Section(@StringRes val titleRes: Int) {
         data object Player : Section(VR.string.player_tab_playing)
-        data object Notes : Section(LR.string.player_tab_notes)
-        data object Bookmarks : Section(LR.string.player_tab_bookmarks)
-        data object Chapters : Section(LR.string.player_tab_chapters)
+        data object Notes : Section(R.string.player_tab_notes)
+        data object Bookmarks : Section(R.string.player_tab_bookmarks)
+        data object Chapters : Section(R.string.player_tab_chapters)
     }
 
     private var sections = listOf(Section.Player, Section.Bookmarks)

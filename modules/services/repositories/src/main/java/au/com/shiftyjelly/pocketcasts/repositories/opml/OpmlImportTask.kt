@@ -87,7 +87,7 @@ class OpmlImportTask @AssistedInject constructor(
 
             WorkManager.getInstance(context).enqueue(task)
 
-            Toast.makeText(context, context.getString(LR.string.settings_import_opml_toast), Toast.LENGTH_LONG).show()
+            Toast.makeText(context, context.getString(R.string.settings_import_opml_toast), Toast.LENGTH_LONG).show()
         }
 
         /**
@@ -169,13 +169,13 @@ class OpmlImportTask @AssistedInject constructor(
             val numberProcessed = processFile(uri)
             trackProcessed(numberProcessed)
             CoroutineScope(Dispatchers.Main).launch {
-                Toast.makeText(applicationContext, applicationContext.getString(LR.string.settings_import_opml_succeeded_message), Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, applicationContext.getString(R.string.settings_import_opml_succeeded_message), Toast.LENGTH_LONG).show()
             }
             return Result.success()
         } catch (t: Throwable) {
             if (t is SAXParseException) {
                 CoroutineScope(Dispatchers.Main).launch {
-                    Toast.makeText(applicationContext, applicationContext.getString(LR.string.settings_import_opml_import_failed_message), Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, applicationContext.getString(R.string.settings_import_opml_import_failed_message), Toast.LENGTH_LONG).show()
                 }
             }
             LogBuffer.e(LogBuffer.TAG_BACKGROUND_TASKS, t, "OPML import failed.")
@@ -304,12 +304,12 @@ class OpmlImportTask @AssistedInject constructor(
     private fun buildNotification(progress: Int, total: Int): Notification {
         val cancelIntent = WorkManager.getInstance(applicationContext).createCancelPendingIntent(id)
         return notificationHelper.podcastImportChannelBuilder()
-            .setContentTitle(applicationContext.getString(LR.string.settings_import_opml_title))
-            .setContentText(applicationContext.getString(LR.string.settings_import_opml_progress, progress, total))
+            .setContentTitle(applicationContext.getString(R.string.settings_import_opml_title))
+            .setContentText(applicationContext.getString(R.string.settings_import_opml_progress, progress, total))
             .setProgress(total, progress, false)
-            .setSmallIcon(IR.drawable.notification_download)
+            .setSmallIcon(R.drawable.notification_download)
             .setOngoing(true)
-            .addAction(IR.drawable.ic_cancel, applicationContext.getString(LR.string.settings_import_opml_stop), cancelIntent)
+            .addAction(R.drawable.ic_cancel, applicationContext.getString(R.string.settings_import_opml_stop), cancelIntent)
             .build()
     }
 

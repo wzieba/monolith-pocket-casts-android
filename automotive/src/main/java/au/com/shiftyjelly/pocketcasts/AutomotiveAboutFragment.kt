@@ -82,13 +82,13 @@ private fun AboutPage(
     ) {
         Image(
             painter = painterResource(context.getThemeDrawable(UR.attr.logo_title_vertical)),
-            contentDescription = stringResource(LR.string.settings_app_icon),
+            contentDescription = stringResource(R.string.settings_app_icon),
             modifier = Modifier
                 .padding(top = 56.dp)
                 .size(width = 220.dp, height = 132.dp),
         )
         Text(
-            text = stringResource(LR.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
+            text = stringResource(R.string.settings_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE.toString()),
             fontSize = 24.sp,
             modifier = Modifier.padding(top = 16.dp),
             color = MaterialTheme.theme.colors.primaryText02,
@@ -96,26 +96,26 @@ private fun AboutPage(
         HorizontalDivider(
             modifier = Modifier.padding(top = 56.dp, bottom = 16.dp),
         )
-        SubTitle(stringResource(LR.string.settings_about_legal))
+        SubTitle(stringResource(R.string.settings_about_legal))
         TextLinkButton(
-            text = stringResource(LR.string.settings_about_terms_of_serivce),
+            text = stringResource(R.string.settings_about_terms_of_serivce),
             onClick = { onOpenUrl(Settings.INFO_TOS_URL) },
         )
         TextLinkButton(
-            text = stringResource(LR.string.settings_about_privacy_policy),
+            text = stringResource(R.string.settings_about_privacy_policy),
             onClick = { onOpenUrl(Settings.INFO_PRIVACY_URL) },
         )
         TextLinkButton(
-            text = stringResource(LR.string.settings_about_acknowledgements),
+            text = stringResource(R.string.settings_about_acknowledgements),
             onClick = { onOpenLicenses() },
         )
-        SubTitle(stringResource(LR.string.support))
+        SubTitle(stringResource(R.string.support))
         TextLinkButton(
-            text = stringResource(LR.string.settings_title_help),
+            text = stringResource(R.string.settings_title_help),
             onClick = { onOpenUrl(Settings.INFO_FAQ_URL) },
         )
         TextLinkButton(
-            text = stringResource(LR.string.settings_logs),
+            text = stringResource(R.string.settings_logs),
             onClick = { onOpenLogs() },
         )
         Spacer(Modifier.height(15.dp))

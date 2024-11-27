@@ -80,7 +80,7 @@ class RegionSelectFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.toolbar.setup(title = getString(LR.string.discover_select_a_region), navigationIcon = BackArrow, activity = activity, theme = theme)
+        binding.toolbar.setup(title = getString(R.string.discover_select_a_region), navigationIcon = BackArrow, activity = activity, theme = theme)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         val adapter = RegionAdapter(regionList.sortedBy { it.name }) {

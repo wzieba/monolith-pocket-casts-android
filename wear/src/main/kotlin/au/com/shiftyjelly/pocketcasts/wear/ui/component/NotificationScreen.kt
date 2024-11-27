@@ -34,7 +34,7 @@ fun NotificationScreen(
     closeAfterDuration: Duration? = 2.seconds,
     icon: @Composable () -> Unit = {
         Icon(
-            painter = painterResource(IR.drawable.ic_check_black_24dp),
+            painter = painterResource(R.drawable.ic_check_black_24dp),
             tint = WearColors.success,
             contentDescription = null,
             modifier = Modifier.size(52.dp),

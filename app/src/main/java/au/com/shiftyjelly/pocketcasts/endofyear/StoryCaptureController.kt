@@ -84,7 +84,7 @@ internal fun rememberStoryCaptureController(): StoryCaptureController {
 
                         val logoHeight = (buttonHeightPx * 0.5f).roundToInt()
                         val logoWidth = ((logoHeight * 153).toDouble() / 38).roundToInt()
-                        val pcLogo = AppCompatResources.getDrawable(context, IR.drawable.pc_logo_pill)!!
+                        val pcLogo = AppCompatResources.getDrawable(context, R.drawable.pc_logo_pill)!!
                             .toBitmap()
                             .scale(width = logoWidth, height = logoHeight)
 

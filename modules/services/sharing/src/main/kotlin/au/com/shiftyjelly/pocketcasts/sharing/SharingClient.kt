@@ -77,7 +77,7 @@ class SharingClient(
         } catch (error: Throwable) {
             SharingResponse(
                 isSuccsessful = false,
-                feedbackMessage = context.getString(LR.string.share_error_message),
+                feedbackMessage = context.getString(R.string.share_error_message),
                 error = error,
             )
         }
@@ -106,7 +106,7 @@ class SharingClient(
                 shareStarter.copyLink(context, ClipData.newPlainText(context.getString(data.linkDescription()), data.sharingUrl(hostUrl)))
                 SharingResponse(
                     isSuccsessful = true,
-                    feedbackMessage = if (showCustomCopyFeedback) context.getString(LR.string.share_link_copied_feedback) else null,
+                    feedbackMessage = if (showCustomCopyFeedback) context.getString(R.string.share_link_copied_feedback) else null,
                     error = null,
                 )
             }
@@ -134,8 +134,8 @@ class SharingClient(
         }
 
         is SharingRequest.Data.ReferralLink -> {
-            val shareText = "${context.getString(LR.string.referrals_share_text, data.referralsOfferInfo.localizedOfferDurationAdjective.lowercase())}\n\n${data.sharingUrl(webBasedHost)}"
-            val shareSubject = context.getString(LR.string.referrals_share_subject, data.referralsOfferInfo.localizedOfferDurationNoun)
+            val shareText = "${context.getString(R.string.referrals_share_text, data.referralsOfferInfo.localizedOfferDurationAdjective.lowercase())}\n\n${data.sharingUrl(webBasedHost)}"
+            val shareSubject = context.getString(R.string.referrals_share_subject, data.referralsOfferInfo.localizedOfferDurationNoun)
             Intent()
                 .setAction(Intent.ACTION_SEND)
                 .setType("text/plain")
@@ -168,7 +168,7 @@ class SharingClient(
             } else {
                 SharingResponse(
                     isSuccsessful = false,
-                    feedbackMessage = context.getString(LR.string.share_error_message),
+                    feedbackMessage = context.getString(R.string.share_error_message),
                     error = null,
                 )
             }
@@ -178,7 +178,7 @@ class SharingClient(
             shareStarter.copyLink(context, ClipData.newPlainText(context.getString(data.linkDescription()), data.sharingUrl(hostUrl)))
             SharingResponse(
                 isSuccsessful = true,
-                feedbackMessage = if (showCustomCopyFeedback) context.getString(LR.string.share_link_copied_feedback) else null,
+                feedbackMessage = if (showCustomCopyFeedback) context.getString(R.string.share_link_copied_feedback) else null,
                 error = null,
             )
         }
@@ -267,7 +267,7 @@ class SharingClient(
             } else {
                 SharingResponse(
                     isSuccsessful = false,
-                    feedbackMessage = context.getString(LR.string.end_of_year_cant_share_message),
+                    feedbackMessage = context.getString(R.string.end_of_year_cant_share_message),
                     error = null,
                 )
             }
@@ -279,7 +279,7 @@ class SharingClient(
     }
 
     private fun Intent.toChooserIntent(sender: IntentSender? = null) = Intent
-        .createChooser(this, context.getString(LR.string.podcasts_share_via), sender)
+        .createChooser(this, context.getString(R.string.podcasts_share_via), sender)
         .addFlags(FLAG_ACTIVITY_NEW_TASK)
 
     private suspend fun Intent.setPodcastCover(podcast: Podcast) = apply {
@@ -502,7 +502,7 @@ data class SharingRequest internal constructor(
 
             override fun sharingTitle() = podcast.title
 
-            override fun linkDescription() = LR.string.share_link_podcast
+            override fun linkDescription() = R.string.share_link_podcast
 
             override fun toString() = "Podcast(title=${podcast.title}, uuid=${podcast.uuid})"
         }
@@ -515,7 +515,7 @@ data class SharingRequest internal constructor(
 
             override fun sharingTitle() = episode.title
 
-            override fun linkDescription() = LR.string.share_link_episode
+            override fun linkDescription() = R.string.share_link_episode
 
             override fun toString() = "Episode(title=${episode.title}, uuid=${episode.uuid})"
         }
@@ -531,8 +531,8 @@ data class SharingRequest internal constructor(
             override fun sharingTitle() = episode.title
 
             override fun linkDescription() = when (type) {
-                TimestampType.Episode -> LR.string.share_link_episode_position
-                TimestampType.Bookmark -> LR.string.share_link_bookmark
+                TimestampType.Episode -> R.string.share_link_episode_position
+                TimestampType.Bookmark -> R.string.share_link_bookmark
             }
 
             override fun toString() = "EpisodePosition(title=${episode.title}, uuid=${episode.uuid}, position=${position.inWholeSeconds}, type=$type)"
@@ -552,7 +552,7 @@ data class SharingRequest internal constructor(
         ) : Data {
             fun sharingUrl(host: String) = "$host/episode/${episode.uuid}?t=${range.start.toSecondsWithSingleMilli()},${range.end.toSecondsWithSingleMilli()}"
 
-            fun linkDescription() = LR.string.share_link_clip
+            fun linkDescription() = R.string.share_link_clip
 
             override fun toString() = "ClipLink(title=${episode.title}, uuid=${episode.uuid}, start=${range.start.toSecondsWithSingleMilli()}, end=${range.end.toSecondsWithSingleMilli()})"
         }
@@ -599,7 +599,7 @@ data class SharingRequest internal constructor(
                 is Story.NumberOfShows -> buildString {
                     append(
                         context.getString(
-                            LR.string.end_of_year_story_listened_to_numbers_share_text,
+                            R.string.end_of_year_story_listened_to_numbers_share_text,
                             story.showCount,
                             story.epsiodeCount,
                             year.value,
@@ -609,15 +609,15 @@ data class SharingRequest internal constructor(
                     append(shortUrl)
                 }
                 is Story.TopShow -> context.getString(
-                    LR.string.end_of_year_story_top_podcast_share_text,
+                    R.string.end_of_year_story_top_podcast_share_text,
                     year.value,
                     "$shortUrl/podcast/${story.show.uuid}",
                 )
-                is Story.TopShows -> context.getString(LR.string.end_of_year_story_top_podcasts_share_text, story.podcastListUrl ?: shortUrl)
+                is Story.TopShows -> context.getString(R.string.end_of_year_story_top_podcasts_share_text, story.podcastListUrl ?: shortUrl)
                 is Story.Ratings -> buildString {
                     append(
                         context.getString(
-                            LR.string.end_of_year_story_ratings_share_text,
+                            R.string.end_of_year_story_ratings_share_text,
                             story.stats.count(),
                             year.value,
                             story.stats.max().first.numericalValue,
@@ -629,7 +629,7 @@ data class SharingRequest internal constructor(
                 is Story.TotalTime -> buildString {
                     append(
                         context.getString(
-                            LR.string.end_of_year_story_listened_to_share_text,
+                            R.string.end_of_year_story_listened_to_share_text,
                             StatsHelper.secondsToFriendlyString(story.duration.inWholeSeconds, context.resources),
                         ),
                     )
@@ -637,7 +637,7 @@ data class SharingRequest internal constructor(
                     append(shortUrl)
                 }
                 is Story.LongestEpisode -> context.getString(
-                    LR.string.end_of_year_story_longest_episode_share_text,
+                    R.string.end_of_year_story_longest_episode_share_text,
                     year.value,
                     "$shortUrl/episode/${story.episode.episodeId}",
                 )
@@ -645,7 +645,7 @@ data class SharingRequest internal constructor(
                 is Story.YearVsYear -> buildString {
                     append(
                         context.getString(
-                            LR.string.end_of_year_stories_year_over_share_text,
+                            R.string.end_of_year_stories_year_over_share_text,
                             year.value,
                             year.value - 1,
                         ),
@@ -656,7 +656,7 @@ data class SharingRequest internal constructor(
                 is Story.CompletionRate -> buildString {
                     append(
                         context.getString(
-                            LR.string.end_of_year_stories_completion_rate_share_text,
+                            R.string.end_of_year_stories_completion_rate_share_text,
                             year.value,
                         ),
                     )

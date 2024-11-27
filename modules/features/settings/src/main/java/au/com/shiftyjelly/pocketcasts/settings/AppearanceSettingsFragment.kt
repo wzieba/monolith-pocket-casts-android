@@ -65,7 +65,7 @@ class AppearanceSettingsFragment : BaseFragment() {
 
         val binding = binding ?: return
 
-        binding.toolbar.setup(title = getString(LR.string.settings_title_appearance), navigationIcon = BackArrow, activity = activity, theme = theme)
+        binding.toolbar.setup(title = getString(R.string.settings_title_appearance), navigationIcon = BackArrow, activity = activity, theme = theme)
 
         binding.themeRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         binding.appIconRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -100,9 +100,9 @@ class AppearanceSettingsFragment : BaseFragment() {
                             viewModel.updateGlobalIcon(afterAppIconType)
 
                             AlertDialog.Builder(binding.appIconRecyclerView.context)
-                                .setTitle(LR.string.settings_app_icon_updated)
-                                .setMessage(LR.string.settings_app_icon_updated_message)
-                                .setPositiveButton(LR.string.settings_app_icon_ok, null)
+                                .setTitle(R.string.settings_app_icon_updated)
+                                .setMessage(R.string.settings_app_icon_updated_message)
+                                .setPositiveButton(R.string.settings_app_icon_ok, null)
                                 .show()
                         } else {
                             viewModel.updateChangeAppIconType(Pair(beforeAppIconType, afterAppIconType))
@@ -147,9 +147,9 @@ class AppearanceSettingsFragment : BaseFragment() {
                         viewModel.updateChangeAppIconType(Pair(null, null))
 
                         AlertDialog.Builder(binding.appIconRecyclerView.context)
-                            .setTitle(LR.string.settings_app_icon_updated)
-                            .setMessage(LR.string.settings_app_icon_updated_message)
-                            .setPositiveButton(LR.string.settings_app_icon_ok, null)
+                            .setTitle(R.string.settings_app_icon_updated)
+                            .setMessage(R.string.settings_app_icon_updated_message)
+                            .setPositiveButton(R.string.settings_app_icon_ok, null)
                             .show()
                     } else {
                         (binding.appIconRecyclerView.adapter as? AppearanceIconSettingsAdapter)?.updateAppIcon(beforeAppIconType)
@@ -270,9 +270,9 @@ class AppearanceSettingsFragment : BaseFragment() {
         viewModel.onRefreshArtwork()
         val activity = activity ?: return
         AlertDialog.Builder(activity)
-            .setTitle(LR.string.settings_refresh_artwork_title)
-            .setMessage(LR.string.settings_refresh_artwork_message)
-            .setPositiveButton(LR.string.settings_refresh_artwork_ok, null)
+            .setTitle(R.string.settings_refresh_artwork_title)
+            .setMessage(R.string.settings_refresh_artwork_message)
+            .setPositiveButton(R.string.settings_refresh_artwork_ok, null)
             .show()
         RefreshArtworkWorker.start(activity)
     }

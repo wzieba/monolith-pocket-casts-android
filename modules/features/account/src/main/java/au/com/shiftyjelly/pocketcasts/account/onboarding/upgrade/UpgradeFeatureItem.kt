@@ -30,41 +30,41 @@ enum class PlusUpgradeFeatureItem(
     override val isMonthlyFeature: Boolean = true,
 ) : UpgradeFeatureItem {
     DesktopApps(
-        image = IR.drawable.ic_desktop_apps,
-        title = LR.string.onboarding_plus_feature_desktop_and_web_apps_title,
+        image = R.drawable.ic_desktop_apps,
+        title = R.string.onboarding_plus_feature_desktop_and_web_apps_title,
     ),
     Folders(
-        image = IR.drawable.ic_folder,
-        title = LR.string.onboarding_plus_feature_folders_and_bookmarks_title,
+        image = R.drawable.ic_folder,
+        title = R.string.onboarding_plus_feature_folders_and_bookmarks_title,
     ),
     SkipChapters(
-        image = IR.drawable.ic_tick_circle_filled,
-        title = LR.string.skip_chapters,
+        image = R.drawable.ic_tick_circle_filled,
+        title = R.string.skip_chapters,
         isYearlyFeature = FeatureFlag.isEnabled(Feature.DESELECT_CHAPTERS) &&
             SubscriptionTier.fromFeatureTier(Feature.DESELECT_CHAPTERS) == SubscriptionTier.PLUS,
         isMonthlyFeature = FeatureFlag.isEnabled(Feature.DESELECT_CHAPTERS) &&
             SubscriptionTier.fromFeatureTier(Feature.DESELECT_CHAPTERS) == SubscriptionTier.PLUS,
     ),
     CloudStorage(
-        image = IR.drawable.ic_cloud_storage,
-        title = LR.string.onboarding_plus_feature_cloud_storage_title,
+        image = R.drawable.ic_cloud_storage,
+        title = R.string.onboarding_plus_feature_cloud_storage_title,
     ),
     WatchPlayback(
-        image = IR.drawable.ic_watch_play,
-        title = LR.string.onboarding_plus_feature_watch_playback,
+        image = R.drawable.ic_watch_play,
+        title = R.string.onboarding_plus_feature_watch_playback,
     ),
     ThemesIcons(
-        image = IR.drawable.ic_themes,
-        title = LR.string.onboarding_plus_feature_extra_themes_icons_title,
+        image = R.drawable.ic_themes,
+        title = R.string.onboarding_plus_feature_extra_themes_icons_title,
     ),
     UndyingGratitude(
-        image = IR.drawable.ic_heart,
-        title = LR.string.onboarding_plus_feature_gratitude_title,
+        image = R.drawable.ic_heart,
+        title = R.string.onboarding_plus_feature_gratitude_title,
         isYearlyFeature = !FeatureFlag.isEnabled(Feature.SLUMBER_STUDIOS_YEARLY_PROMO),
     ),
     SlumberStudiosPromo(
-        image = IR.drawable.ic_slumber_studios,
-        title = LR.string.onboarding_plus_feature_slumber_studios_title,
+        image = R.drawable.ic_slumber_studios,
+        title = R.string.onboarding_plus_feature_slumber_studios_title,
         isMonthlyFeature = false,
         isYearlyFeature = FeatureFlag.isEnabled(Feature.SLUMBER_STUDIOS_YEARLY_PROMO),
     ),
@@ -78,28 +78,28 @@ enum class PatronUpgradeFeatureItem(
     override val isMonthlyFeature: Boolean = true,
 ) : UpgradeFeatureItem {
     EverythingInPlus(
-        image = IR.drawable.ic_check,
-        title = LR.string.onboarding_patron_feature_everything_in_plus_title,
+        image = R.drawable.ic_check,
+        title = R.string.onboarding_patron_feature_everything_in_plus_title,
     ),
     EarlyAccess(
-        image = IR.drawable.ic_new_features,
-        title = LR.string.onboarding_patron_feature_early_access_title,
+        image = R.drawable.ic_new_features,
+        title = R.string.onboarding_patron_feature_early_access_title,
     ),
     CloudStorage(
-        image = IR.drawable.ic_cloud_storage,
-        title = LR.string.onboarding_patron_feature_cloud_storage_title,
+        image = R.drawable.ic_cloud_storage,
+        title = R.string.onboarding_patron_feature_cloud_storage_title,
     ),
     ProfileBadge(
-        image = IR.drawable.ic_profile_badge,
-        title = LR.string.onboarding_patron_feature_profile_badge_title,
+        image = R.drawable.ic_profile_badge,
+        title = R.string.onboarding_patron_feature_profile_badge_title,
     ),
     SpecialIcons(
-        image = IR.drawable.ic_icons,
-        title = LR.string.onboarding_patron_feature_special_icons_title,
+        image = R.drawable.ic_icons,
+        title = R.string.onboarding_patron_feature_special_icons_title,
     ),
     UndyingGratitude(
-        image = IR.drawable.ic_heart,
-        title = LR.string.onboarding_patron_feature_gratitude_title,
+        image = R.drawable.ic_heart,
+        title = R.string.onboarding_patron_feature_gratitude_title,
     ),
 }
 
@@ -111,32 +111,32 @@ enum class PlusUpgradeLayoutReviewsItem(
     override val isMonthlyFeature: Boolean = true,
 ) : UpgradeFeatureItem {
     DesktopApps(
-        image = IR.drawable.ic_desktop_apps,
-        title = LR.string.onboarding_plus_feature_desktop_and_web_apps_title,
+        image = R.drawable.ic_desktop_apps,
+        title = R.string.onboarding_plus_feature_desktop_and_web_apps_title,
     ),
     Folders(
-        image = IR.drawable.ic_folder,
-        title = LR.string.onboarding_plus_feature_folders_and_bookmarks_title,
+        image = R.drawable.ic_folder,
+        title = R.string.onboarding_plus_feature_folders_and_bookmarks_title,
     ),
     SkipChapters(
-        image = IR.drawable.ic_tick_circle_filled,
-        title = LR.string.skip_chapters,
+        image = R.drawable.ic_tick_circle_filled,
+        title = R.string.skip_chapters,
     ),
     CloudStorage(
-        image = IR.drawable.ic_cloud_storage,
-        title = LR.string.onboarding_plus_feature_cloud_storage_title,
+        image = R.drawable.ic_cloud_storage,
+        title = R.string.onboarding_plus_feature_cloud_storage_title,
     ),
     WatchPlayback(
-        image = IR.drawable.ic_watch_play,
-        title = LR.string.onboarding_plus_feature_watch_playback,
+        image = R.drawable.ic_watch_play,
+        title = R.string.onboarding_plus_feature_watch_playback,
     ),
     SlumberStudiosPromo(
-        image = IR.drawable.ic_slumber_studios,
-        title = LR.string.onboarding_plus_feature_dream_with_slumber_studios,
+        image = R.drawable.ic_slumber_studios,
+        title = R.string.onboarding_plus_feature_dream_with_slumber_studios,
         isYearlyFeature = FeatureFlag.isEnabled(Feature.SLUMBER_STUDIOS_YEARLY_PROMO),
     ),
     ThemesIcons(
-        image = IR.drawable.ic_themes,
-        title = LR.string.onboarding_plus_feature_extra_themes_icons_title,
+        image = R.drawable.ic_themes,
+        title = R.string.onboarding_plus_feature_extra_themes_icons_title,
     ),
 }

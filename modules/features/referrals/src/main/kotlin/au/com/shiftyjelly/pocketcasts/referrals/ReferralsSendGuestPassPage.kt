@@ -152,8 +152,8 @@ private fun ReferralsSendGuestPassContent(
                     val errorMessage = when (state.error) {
                         ReferralSendGuestPassError.Empty,
                         ReferralSendGuestPassError.FailedToLoad,
-                        -> stringResource(LR.string.error_generic_message)
-                        ReferralSendGuestPassError.NoNetwork -> stringResource(LR.string.error_no_network)
+                        -> stringResource(R.string.error_generic_message)
+                        ReferralSendGuestPassError.NoNetwork -> stringResource(R.string.error_no_network)
                     }
                     ReferralsGuestPassError(errorMessage, onRetry, onDismiss)
                 }
@@ -186,8 +186,8 @@ private fun SendGuestPassContent(
         SubscriptionBadge(
             fontSize = 16.sp,
             padding = 4.dp,
-            iconRes = IR.drawable.ic_plus,
-            shortNameRes = LR.string.pocket_casts_plus_short,
+            iconRes = R.drawable.ic_plus,
+            shortNameRes = R.string.pocket_casts_plus_short,
             iconColor = Color.Black,
             backgroundBrush = plusBackgroundBrush,
             textColor = Color.Black,
@@ -196,7 +196,7 @@ private fun SendGuestPassContent(
         Spacer(modifier = Modifier.height(24.dp))
 
         TextH10(
-            text = stringResource(LR.string.referrals_send_guest_pass_title, state.referralsOfferInfo.localizedOfferDurationNoun),
+            text = stringResource(R.string.referrals_send_guest_pass_title, state.referralsOfferInfo.localizedOfferDurationNoun),
             textAlign = TextAlign.Center,
         )
 
@@ -216,7 +216,7 @@ private fun SendGuestPassContent(
         }
 
         GradientRowButton(
-            primaryText = stringResource(LR.string.referrals_share_guest_pass),
+            primaryText = stringResource(R.string.referrals_share_guest_pass),
             textColor = Color.Black,
             gradientBackgroundColor = plusBackgroundBrush,
             modifier = Modifier.padding(16.dp),

@@ -66,14 +66,14 @@ fun PodcastItem(
             }
             if (subscribed && showSubscribed) {
                 Icon(
-                    painter = painterResource(IR.drawable.ic_tick),
-                    contentDescription = stringResource(LR.string.podcast_subscribed),
+                    painter = painterResource(R.drawable.ic_tick),
+                    contentDescription = stringResource(R.string.podcast_subscribed),
                     tint = MaterialTheme.theme.colors.support02,
                 )
             } else if (showPlusIfUnsubscribed) {
                 Icon(
-                    painter = painterResource(IR.drawable.plus_simple),
-                    contentDescription = stringResource(LR.string.subscribe),
+                    painter = painterResource(R.drawable.plus_simple),
+                    contentDescription = stringResource(R.string.subscribe),
                     tint = MaterialTheme.theme.colors.primaryIcon02,
                     modifier = modifier
                         .then(if (onPlusClick == null) Modifier else Modifier.clickable { onPlusClick() }),

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import androidx.lifecycle.toLiveData
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
@@ -24,7 +25,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.UserEpisodeManager
 import au.com.shiftyjelly.pocketcasts.utils.combineLatest
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.dialog.ConfirmationDialog
 import au.com.shiftyjelly.pocketcasts.views.dialog.ShareDialogFactory
 import au.com.shiftyjelly.pocketcasts.views.helper.CloudDeleteHelper
@@ -38,9 +38,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val WARNING_LIMIT = 3
 class MultiSelectEpisodesHelper @Inject constructor(
@@ -80,7 +77,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 archive(resources = resources, fragmentManager = fragmentManager)
                 true
             }
-            UR.id.menu_unarchive -> {
+            R.id.menu_unarchive -> {
                 unarchive(resources = resources)
                 true
             }
@@ -96,7 +93,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 download(resources, fragmentManager)
                 true
             }
-            UR.id.menu_undownload -> {
+            R.id.menu_undownload -> {
                 deleteDownload()
                 true
             }
@@ -104,7 +101,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 markAsPlayed(resources = resources, fragmentManager = fragmentManager)
                 true
             }
-            UR.id.menu_markasunplayed -> {
+            R.id.menu_markasunplayed -> {
                 markAsUnplayed(resources = resources)
                 true
             }
@@ -140,7 +137,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 star(resources = resources)
                 true
             }
-            UR.id.menu_unstar -> {
+            R.id.menu_unstar -> {
                 unstar(resources = resources)
                 true
             }
@@ -177,7 +174,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.markAllAsPlayed(list, playbackManager, podcastManager)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_MARKED_AS_PLAYED, source, list.size)
             launch(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.marked_as_played_singular, LR.string.marked_as_played_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.marked_as_played_singular, R.string.marked_as_played_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -196,7 +193,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.markAsUnplayed(list)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_MARKED_AS_UNPLAYED, source, list.size)
             launch(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.marked_as_unplayed_singular, LR.string.marked_as_unplayed_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.marked_as_unplayed_singular, R.string.marked_as_unplayed_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -219,7 +216,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.archiveAllInList(list, playbackManager)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_ARCHIVED, source, list.size)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.archived_episodes_singular, LR.string.archived_episodes_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.archived_episodes_singular, R.string.archived_episodes_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -238,7 +235,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.unarchiveAllInListBlocking(episodes = list)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_UNARCHIVED, source, list.size)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.unarchived_episodes_singular, LR.string.unarchived_episodes_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.unarchived_episodes_singular, R.string.unarchived_episodes_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -256,7 +253,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.updateAllStarred(list, starred = true)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_STARRED, source, list.size)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.starred_episodes_singular, LR.string.starred_episodes_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.starred_episodes_singular, R.string.starred_episodes_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -274,7 +271,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             episodeManager.updateAllStarred(list, starred = false)
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_UNSTARRED, source, list.size)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(selectedList.size, LR.string.unstarred_episodes_singular, LR.string.unstarred_episodes_plural)
+                val snackText = resources.getStringPlural(selectedList.size, R.string.unstarred_episodes_singular, R.string.unstarred_episodes_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -282,23 +279,23 @@ class MultiSelectEpisodesHelper @Inject constructor(
     }
 
     fun playedWarning(count: Int, resources: Resources, fragmentManager: FragmentManager) {
-        val buttonString = resources.getStringPlural(count = count, singular = LR.string.mark_as_played_singular, plural = LR.string.mark_as_played_plural)
+        val buttonString = resources.getStringPlural(count = count, singular = R.string.mark_as_played_singular, plural = R.string.mark_as_played_plural)
 
         ConfirmationDialog()
-            .setTitle(resources.getString(LR.string.mark_as_played_title))
-            .setIconId(IR.drawable.ic_markasplayed)
+            .setTitle(resources.getString(R.string.mark_as_played_title))
+            .setIconId(R.drawable.ic_markasplayed)
             .setButtonType(ConfirmationDialog.ButtonType.Danger(buttonString))
             .setOnConfirm { markAsPlayed(shownWarning = true, resources = resources, fragmentManager = fragmentManager) }
             .show(fragmentManager, "confirm_played_all_")
     }
 
     private fun archiveWarning(count: Int, resources: Resources, fragmentManager: FragmentManager) {
-        val buttonString = resources.getStringPlural(count = count, singular = LR.string.archive_episodes_singular, plural = LR.string.archive_episodes_plural)
+        val buttonString = resources.getStringPlural(count = count, singular = R.string.archive_episodes_singular, plural = R.string.archive_episodes_plural)
 
         ConfirmationDialog()
-            .setTitle(resources.getString(LR.string.archive_title))
-            .setSummary(resources.getString(LR.string.archive_summary))
-            .setIconId(IR.drawable.ic_archive)
+            .setTitle(resources.getString(R.string.archive_title))
+            .setSummary(resources.getString(R.string.archive_summary))
+            .setIconId(R.drawable.ic_archive)
             .setButtonType(ConfirmationDialog.ButtonType.Danger(buttonString))
             .setOnConfirm { archive(shownWarning = true, resources = resources, fragmentManager = fragmentManager) }
             .show(fragmentManager, "confirm_archive_all_")
@@ -317,7 +314,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 downloadManager.addEpisodeToQueue(it, "podcast download all", fireEvent = false, source = source)
             }
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_DOWNLOAD_QUEUED, source, trimmedList)
-            val snackText = resources.getStringPlural(trimmedList.size, LR.string.download_queued_singular, LR.string.download_queued_plural)
+            val snackText = resources.getStringPlural(trimmedList.size, R.string.download_queued_singular, R.string.download_queued_plural)
             showSnackBar(snackText)
             closeMultiSelect()
         }?.show(fragmentManager, "multiselect_download")
@@ -362,7 +359,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
         launch {
             playbackManager.playEpisodesNext(episodes = trimmedList, source = source)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(size, LR.string.added_to_up_next_singular, LR.string.added_to_up_next_plural)
+                val snackText = resources.getStringPlural(size, R.string.added_to_up_next_singular, R.string.added_to_up_next_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -380,7 +377,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
         launch {
             playbackManager.playEpisodesLast(episodes = trimmedList, source = source)
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(size, LR.string.added_to_up_next_singular, LR.string.added_to_up_next_plural)
+                val snackText = resources.getStringPlural(size, R.string.added_to_up_next_singular, R.string.added_to_up_next_plural)
                 showSnackBar(snackText)
                 closeMultiSelect()
             }
@@ -409,7 +406,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             }
             episodeAnalytics.trackBulkEvent(AnalyticsEvent.EPISODE_BULK_DOWNLOAD_DELETED, source, episodesToDelete.size)
 
-            val snackText = resources.getStringPlural(episodesToDelete.size, LR.string.episodes_deleted_singular, LR.string.episodes_deleted_plural)
+            val snackText = resources.getStringPlural(episodesToDelete.size, R.string.episodes_deleted_singular, R.string.episodes_deleted_plural)
             showSnackBar(snackText)
             closeMultiSelect()
         }
@@ -428,7 +425,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
 
         if (episode !is PodcastEpisode) {
             LogBuffer.e(LogBuffer.TAG_INVALID_STATE, "Can only share a ${PodcastEpisode::class.java.simpleName}")
-            Toast.makeText(context, LR.string.podcasts_share_failed, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.podcasts_share_failed, Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -454,7 +451,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
             }
 
             withContext(Dispatchers.Main) {
-                val snackText = resources.getStringPlural(list.size, LR.string.removed_from_up_next_singular, LR.string.removed_from_up_next_plural)
+                val snackText = resources.getStringPlural(list.size, R.string.removed_from_up_next_singular, R.string.removed_from_up_next_plural)
                 showSnackBar(snackText)
             }
         }

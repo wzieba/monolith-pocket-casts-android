@@ -146,7 +146,7 @@ private fun Content(
 
                     ) {
                         TextH30(
-                            text = stringResource(LR.string.onboarding_recommendations_import),
+                            text = stringResource(R.string.onboarding_recommendations_import),
                             modifier = Modifier
                                 .clickable { onImportClicked() }
                                 .padding(horizontal = 16.dp, vertical = 9.dp),
@@ -154,17 +154,17 @@ private fun Content(
                     }
 
                     TextH10(
-                        text = stringResource(LR.string.onboarding_recommendations_find_favorite_podcasts),
+                        text = stringResource(R.string.onboarding_recommendations_find_favorite_podcasts),
                         modifier = Modifier.padding(bottom = 16.dp),
                     )
 
                     TextP40(
-                        text = stringResource(LR.string.onboarding_recommendations_make_pocket_casts_yours),
+                        text = stringResource(R.string.onboarding_recommendations_make_pocket_casts_yours),
                         modifier = Modifier.padding(bottom = 16.dp),
                     )
 
                     SearchBarButton(
-                        text = stringResource(LR.string.search),
+                        text = stringResource(R.string.search),
                         onClick = onSearch,
                         modifier = Modifier.padding(bottom = 25.dp),
                     )
@@ -243,7 +243,7 @@ private fun LazyGridScope.section(
 
     header {
         RowOutlinedButton(
-            text = stringResource(LR.string.onboarding_recommendations_more, section.title),
+            text = stringResource(R.string.onboarding_recommendations_more, section.title),
             includePadding = false,
             onClick = section::onShowMore,
             modifier = Modifier.padding(bottom = 16.dp),
@@ -284,7 +284,7 @@ private fun Preview(
                 ),
                 showLoadingSpinner = true,
             ),
-            buttonRes = LR.string.not_now,
+            buttonRes = R.string.not_now,
             onImportClicked = {},
             onSubscribeTap = {},
             onSearch = {},

@@ -68,7 +68,7 @@ object AutoConverter {
 
         val extrasForEpisode = extrasForEpisode(episode)
         if (groupTrailers) {
-            val groupTitle = if (episode is PodcastEpisode && episode.episodeType is PodcastEpisode.EpisodeType.Trailer) LR.string.episode_trailer else LR.string.episodes
+            val groupTitle = if (episode is PodcastEpisode && episode.episodeType is PodcastEpisode.EpisodeType.Trailer) R.string.episode_trailer else R.string.episodes
             extrasForEpisode.putString(EXTRA_CONTENT_STYLE_GROUP_TITLE_HINT, context.resources.getString(groupTitle))
         }
         val mediaId = AutoMediaId(episode.uuid, sourceId).toMediaId()
@@ -175,25 +175,25 @@ object AutoConverter {
     }
 
     fun getPodcastsBitmapUri(context: Context): Uri {
-        return getBitmapUri(drawable = IR.drawable.auto_tab_podcasts, context = context)
+        return getBitmapUri(drawable = R.drawable.auto_tab_podcasts, context = context)
     }
 
     fun getPlaylistBitmapUri(playlist: Playlist?, context: Context): Uri {
         val drawableId = if (Util.isAutomotive(context)) {
             // the Automotive UI displays the icon in a list that requires more padding around the icon
-            playlist?.automotiveDrawableId ?: IR.drawable.automotive_filter_play
+            playlist?.automotiveDrawableId ?: R.drawable.automotive_filter_play
         } else {
-            playlist?.autoDrawableId ?: IR.drawable.auto_filter_play
+            playlist?.autoDrawableId ?: R.drawable.auto_filter_play
         }
         return getBitmapUri(drawableId, context)
     }
 
     fun getDownloadsBitmapUri(context: Context): Uri {
-        return getBitmapUri(drawable = IR.drawable.auto_filter_downloaded, context = context)
+        return getBitmapUri(drawable = R.drawable.auto_filter_downloaded, context = context)
     }
 
     fun getFilesBitmapUri(context: Context): Uri {
-        return getBitmapUri(drawable = IR.drawable.auto_files, context = context)
+        return getBitmapUri(drawable = R.drawable.auto_files, context = context)
     }
 
     /**

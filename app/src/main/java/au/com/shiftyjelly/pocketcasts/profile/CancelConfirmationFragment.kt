@@ -90,7 +90,7 @@ class CancelConfirmationFragment : BaseDialogFragment() {
         viewModel.onCancelClicked()
         WebViewActivity.show(
             context,
-            resources.getString(LR.string.profile_cancel_subscription),
+            resources.getString(R.string.profile_cancel_subscription),
             Settings.INFO_CANCEL_URL,
         )
     }
@@ -152,7 +152,7 @@ class CancelConfirmationFragment : BaseDialogFragment() {
             modifier = modifier.padding(bottom = 16.dp),
         ) {
             Image(
-                painter = painterResource(IR.drawable.ic_subscription_cancel),
+                painter = painterResource(R.drawable.ic_subscription_cancel),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(MaterialTheme.theme.colors.primaryIcon01),
                 modifier = modifier
@@ -160,14 +160,14 @@ class CancelConfirmationFragment : BaseDialogFragment() {
                     .clearAndSetSemantics { },
             )
             TextH20(
-                text = stringResource(LR.string.profile_cancel_subscription),
+                text = stringResource(R.string.profile_cancel_subscription),
                 textAlign = TextAlign.Center,
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(bottom = 8.dp),
             )
             TextH40(
-                text = stringResource(id = LR.string.profile_cancel_confirm_subtitle),
+                text = stringResource(id = R.string.profile_cancel_confirm_subtitle),
                 color = MaterialTheme.theme.colors.primaryText02,
                 textAlign = TextAlign.Center,
                 modifier = modifier.fillMaxWidth(),
@@ -204,11 +204,11 @@ class CancelConfirmationFragment : BaseDialogFragment() {
     ) {
         Column {
             RowButton(
-                text = stringResource(LR.string.profile_cancel_confirm_stay_button_title),
+                text = stringResource(R.string.profile_cancel_confirm_stay_button_title),
                 onClick = onStayClicked,
             )
             RowOutlinedButton(
-                text = stringResource(LR.string.profile_cancel_confirm_cancel_button_title),
+                text = stringResource(R.string.profile_cancel_confirm_cancel_button_title),
                 border = BorderStroke(0.dp, Color.Transparent),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = Color.Transparent,
@@ -225,29 +225,29 @@ class CancelConfirmationFragment : BaseDialogFragment() {
     @Composable
     private fun getRows() = listOf(
         Row(
-            iconResId = IR.drawable.ic_subscription,
+            iconResId = R.drawable.ic_subscription,
             text = stringResource(
-                LR.string.profile_cancel_confirm_sub_expiry,
+                R.string.profile_cancel_confirm_sub_expiry,
                 viewModel.expirationDate ?: stringResource(
-                    id = LR.string.profile_cancel_confirm_sub_expiry_date_fallback,
+                    id = R.string.profile_cancel_confirm_sub_expiry_date_fallback,
                 ),
             ),
         ),
         Row(
             iconResId = R.drawable.ic_locked_large,
-            text = stringResource(LR.string.profile_cancel_confirm_item_plus),
+            text = stringResource(R.string.profile_cancel_confirm_item_plus),
         ),
         Row(
-            iconResId = IR.drawable.ic_folder_lock,
-            text = stringResource(LR.string.profile_cancel_confirm_item_folders),
+            iconResId = R.drawable.ic_folder_lock,
+            text = stringResource(R.string.profile_cancel_confirm_item_folders),
         ),
         Row(
             iconResId = R.drawable.ic_upload___remove_from_cloud___menu,
-            text = stringResource(LR.string.profile_cancel_confirm_item_uploads),
+            text = stringResource(R.string.profile_cancel_confirm_item_uploads),
         ),
         Row(
-            iconResId = IR.drawable.ic_website,
-            text = stringResource(LR.string.profile_cancel_confirm_item_web_player),
+            iconResId = R.drawable.ic_website,
+            text = stringResource(R.string.profile_cancel_confirm_item_web_player),
         ),
     )
 
@@ -266,11 +266,11 @@ class CancelConfirmationFragment : BaseDialogFragment() {
                 rows = listOf(
                     Row(
                         iconResId = R.drawable.ic_locked_large,
-                        text = stringResource(LR.string.profile_cancel_confirm_item_plus),
+                        text = stringResource(R.string.profile_cancel_confirm_item_plus),
                     ),
                     Row(
-                        iconResId = IR.drawable.ic_folder_lock,
-                        text = stringResource(LR.string.profile_cancel_confirm_item_folders),
+                        iconResId = R.drawable.ic_folder_lock,
+                        text = stringResource(R.string.profile_cancel_confirm_item_folders),
                     ),
                 ),
                 onStayClicked = {},

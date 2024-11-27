@@ -183,14 +183,14 @@ class WidgetManagerImpl @Inject constructor(
 
     private fun updateArtWork(podcast: Podcast?, playingEpisode: BaseEpisode?, views: RemoteViews, widgetName: ComponentName, context: Context) {
         if (playingEpisode == null) {
-            views.setImageViewResource(R.id.widget_artwork, IR.drawable.defaultartwork)
+            views.setImageViewResource(R.id.widget_artwork, R.drawable.defaultartwork)
             views.setContentDescription(R.id.widget_artwork, "Open Pocket Casts")
             return
         }
 
         val podcastTitle = podcast?.title ?: Podcast.userPodcast.title
         views.setContentDescription(R.id.widget_artwork, "$podcastTitle. Open Pocket Casts")
-        views.setImageViewResource(R.id.widget_artwork, IR.drawable.defaultartwork_small_dark)
+        views.setImageViewResource(R.id.widget_artwork, R.drawable.defaultartwork_small_dark)
 
         val target = RemoteViewsTarget(
             context,

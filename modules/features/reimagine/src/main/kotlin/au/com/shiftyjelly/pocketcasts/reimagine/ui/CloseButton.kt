@@ -19,8 +19,8 @@ internal fun CloseButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) = Image(
-    painter = painterResource(IR.drawable.ic_close_sheet),
-    contentDescription = stringResource(LR.string.close),
+    painter = painterResource(R.drawable.ic_close_sheet),
+    contentDescription = stringResource(R.string.close),
     colorFilter = ColorFilter.tint(shareColors.onContainerSecondary),
     modifier = modifier
         .clickable(onClick = onClick)

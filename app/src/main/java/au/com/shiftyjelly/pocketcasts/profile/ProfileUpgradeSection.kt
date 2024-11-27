@@ -66,9 +66,9 @@ internal fun ProfileUpgradeSection(
                     .padding(contentPadding),
             ) {
                 val logoResource = if (MaterialTheme.theme.isLight) {
-                    IR.drawable.plus_logo_horizontal_light
+                    R.drawable.plus_logo_horizontal_light
                 } else {
-                    IR.drawable.plus_logo_horizontal_dark
+                    R.drawable.plus_logo_horizontal_dark
                 }
                 Image(
                     painter = painterResource(logoResource),
@@ -76,20 +76,20 @@ internal fun ProfileUpgradeSection(
                     modifier = Modifier.widthIn(max = 232.dp),
                 )
                 TextH40(
-                    text = stringResource(LR.string.profile_help_support),
+                    text = stringResource(R.string.profile_help_support),
                     color = MaterialTheme.theme.colors.primaryText02,
                     textAlign = TextAlign.Center,
                 )
                 TextH50(
-                    text = stringResource(LR.string.plus_learn_more_about_plus),
+                    text = stringResource(R.string.plus_learn_more_about_plus),
                     color = MaterialTheme.theme.colors.primaryInteractive01,
                     textAlign = TextAlign.Center,
                 )
             }
             Icon(
-                painter = painterResource(IR.drawable.ic_close),
+                painter = painterResource(R.drawable.ic_close),
                 tint = MaterialTheme.theme.colors.primaryText02,
-                contentDescription = stringResource(LR.string.settings_close_upgrade_offer),
+                contentDescription = stringResource(R.string.settings_close_upgrade_offer),
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .clickable(

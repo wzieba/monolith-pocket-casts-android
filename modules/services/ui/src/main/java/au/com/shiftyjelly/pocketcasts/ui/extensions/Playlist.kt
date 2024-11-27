@@ -19,7 +19,7 @@ private val filterThemeColors = listOf(
 fun Playlist.getStringForDuration(context: Context?): String {
     return when {
         context == null -> ""
-        !filterDuration -> context.getString(LR.string.filters_duration)
+        !filterDuration -> context.getString(R.string.filters_duration)
         else -> {
             val longer = TimeHelper.getTimeDurationShortString(timeMs = (longerThan.toDouble() * 60000).toLong(), context = context)
             val shorter = TimeHelper.getTimeDurationShortString(timeMs = (shorterThan.toDouble() * 60000).toLong(), context = context)
