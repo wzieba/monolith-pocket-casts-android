@@ -1,0 +1,265 @@
+package au.com.shiftyjelly.pocketcasts.repositories.playback
+
+import android.content.Context
+import android.media.AudioDeviceCallback
+import android.media.AudioDeviceInfo
+import android.media.AudioManager
+import androidx.core.content.getSystemService
+import androidx.media.AudioAttributesCompat
+import androidx.media.AudioFocusRequestCompat
+import androidx.media.AudioManagerCompat
+import au.com.shiftyjelly.pocketcasts.preferences.Settings
+import au.com.shiftyjelly.pocketcasts.preferences.model.PlayOverNotificationSetting
+import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
+
+/**
+ * Manages the focus of the player by tracking audio focus and audio noisy events.
+ */
+class FocusManager(
+    context: Context,
+    private val settings: Settings,
+    private val focusChangeListener: FocusChangeListener,
+) : AudioManager.OnAudioFocusChangeListener {
+
+    companion object {
+        // we don't have audio focus, and can't duck
+        private const val AUDIO_NO_FOCUS_NO_DUCK = 0
+
+        // we don't have audio focus, and can't duck but focus is going to be given back
+        private const val AUDIO_NO_FOCUS_NO_DUCK_TRANSIENT = 1
+
+        // we don't have focus, but can duck (play at a low volume) and focus is going to be given back
+        private const val AUDIO_NO_FOCUS_CAN_DUCK_TRANSIENT = 2
+
+        // we have full audio focus
+        private const val AUDIO_FOCUSED = 3
+
+        private val GAIN_FOCUS_LIST = listOf(
+            AudioManager.AUDIOFOCUS_GAIN,
+            AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
+            AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK,
+            AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE,
+        )
+
+        private val LOSS_FOCUS_LIST = listOf(
+            AudioManager.AUDIOFOCUS_LOSS,
+            AudioManager.AUDIOFOCUS_LOSS_TRANSIENT,
+            AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK,
+        )
+    }
+
+    private val audioManager: AudioManager? = context.getSystemService<AudioManager>().also { manager ->
+        if (manager == null) {
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "No audio manager found for focus manager")
+        }
+    }
+
+    // track if another app has stolen audio focus
+    private var audioFocus: Int = AUDIO_NO_FOCUS_NO_DUCK
+
+    // track when the time lost as we don't want to resume if it has been too long
+    private var timeFocusLost: Long = 0
+    private var deviceRemovedWhileFocusLost = false
+
+    val isFocused: Boolean
+        get() = audioFocus == AUDIO_FOCUSED
+
+    val isFocusLost: Boolean
+        get() = audioFocus == AUDIO_NO_FOCUS_NO_DUCK || audioFocus == AUDIO_NO_FOCUS_NO_DUCK_TRANSIENT || audioFocus == AUDIO_NO_FOCUS_CAN_DUCK_TRANSIENT
+
+    val isLostTransient: Boolean
+        get() = audioFocus == AUDIO_NO_FOCUS_NO_DUCK_TRANSIENT || audioFocus == AUDIO_NO_FOCUS_CAN_DUCK_TRANSIENT
+
+    init {
+        registerAudioDeviceListener()
+    }
+
+    /**
+     * Try to get the system audio focus.
+     */
+    fun tryToGetAudioFocus(): Boolean {
+        LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Trying to gain audio focus")
+        //  we already have focus
+        if (audioFocus == AUDIO_FOCUSED) {
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "We already had audio focus")
+            return true
+        }
+        // request focus
+        if (audioManager == null) {
+            audioFocus = AUDIO_FOCUSED
+            return true
+        }
+
+        val audioFocusRequest = getAudioFocusRequest()
+        val result = AudioManagerCompat.requestAudioFocus(audioManager, audioFocusRequest)
+
+        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+            audioFocus = AUDIO_FOCUSED
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Audio focus gained")
+            return true
+        } else {
+            focusChangeListener.onFocusRequestFailed()
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Couldn't get audio focus")
+            return false
+        }
+    }
+
+    /**
+     * Give up the audio focus.
+     */
+    fun giveUpAudioFocus() {
+        if (audioManager == null) {
+            audioFocus = AUDIO_NO_FOCUS_NO_DUCK
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Giving up audio focus, null audio manager")
+        } else {
+            val audioFocusRequest = getAudioFocusRequest()
+            val result = AudioManagerCompat.abandonAudioFocusRequest(audioManager, audioFocusRequest)
+
+            LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Giving up audio focus")
+
+            if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                audioFocus = AUDIO_NO_FOCUS_NO_DUCK
+                LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Giving up audio focus. Request granted")
+            } else {
+                LogBuffer.e(LogBuffer.TAG_PLAYBACK, "Giving up audio focus request failed")
+            }
+        }
+    }
+
+    private fun getAudioFocusRequest(): AudioFocusRequestCompat {
+        val attributes = AudioAttributesCompat.Builder()
+            .setContentType(AudioAttributesCompat.CONTENT_TYPE_SPEECH)
+            .setUsage(AudioAttributesCompat.USAGE_MEDIA).build()
+        return AudioFocusRequestCompat.Builder(AudioManagerCompat.AUDIOFOCUS_GAIN)
+            .setWillPauseWhenDucked(true)
+            .setOnAudioFocusChangeListener(this)
+            .setAudioAttributes(attributes).build()
+    }
+
+    override fun onAudioFocusChange(focusChange: Int) {
+        val focusString = androidAudioFocusToString(focusChange)
+        LogBuffer.i(LogBuffer.TAG_PLAYBACK, "On audio focus change: $focusString")
+        when (focusChange) {
+            in GAIN_FOCUS_LIST -> {
+                // if not transient only let it resume within 2 minutes
+                val shouldResume = (isLostTransient || System.currentTimeMillis() < timeFocusLost + 120000) && !deviceRemovedWhileFocusLost
+                audioFocus = AUDIO_FOCUSED
+                LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Audio focus gained. Should resume: $shouldResume. Device removed: $deviceRemovedWhileFocusLost.")
+                focusChangeListener.onFocusGain(shouldResume)
+            }
+            in LOSS_FOCUS_LIST -> {
+                audioFocus = when {
+                    focusChange == AudioManager.AUDIOFOCUS_LOSS -> AUDIO_NO_FOCUS_NO_DUCK
+                    isFocused && focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT -> AUDIO_NO_FOCUS_NO_DUCK_TRANSIENT
+                    isFocused && focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> AUDIO_NO_FOCUS_CAN_DUCK_TRANSIENT
+                    else -> audioFocus
+                }
+                timeFocusLost = System.currentTimeMillis()
+                deviceRemovedWhileFocusLost = false
+                val playOverNotification = canDuck()
+                LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Audio focus lost. Play over notification: $playOverNotification, is transient: $isLostTransient")
+                focusChangeListener.onFocusLoss(playOverNotification, isLostTransient)
+            }
+            else -> {
+                LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Unexpected audio focus change: $focusString.")
+            }
+        }
+    }
+
+    private fun canDuck(): PlayOverNotificationSetting {
+        if (audioFocus != AUDIO_NO_FOCUS_CAN_DUCK_TRANSIENT) return PlayOverNotificationSetting.NEVER
+        return settings.playOverNotification.value
+    }
+
+    interface FocusChangeListener {
+        fun onFocusGain(shouldResume: Boolean)
+        fun onFocusLoss(playOverNotification: PlayOverNotificationSetting, transientLoss: Boolean)
+        fun onFocusRequestFailed()
+    }
+
+    private fun registerAudioDeviceListener() {
+        if (audioManager == null) {
+            return
+        }
+
+        audioManager.registerAudioDeviceCallback(
+            object : AudioDeviceCallback() {
+                override fun onAudioDevicesAdded(addedDevices: Array<AudioDeviceInfo>) {
+                    for (device in addedDevices) {
+                        if (isStandardDeviceType(device)) {
+                            continue
+                        }
+                        LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Audio device added: %s, %s", device.productName, deviceTypeToString(device.type))
+                    }
+                }
+
+                override fun onAudioDevicesRemoved(removedDevices: Array<AudioDeviceInfo>) {
+                    for (device in removedDevices) {
+                        if (isStandardDeviceType(device)) {
+                            continue
+                        }
+                        LogBuffer.i(LogBuffer.TAG_PLAYBACK, "Audio device removed: %s, %s", device.productName, deviceTypeToString(device.type))
+
+                        deviceRemovedWhileFocusLost = true
+                    }
+                }
+            },
+            null,
+        )
+    }
+
+    private fun isStandardDeviceType(device: AudioDeviceInfo): Boolean {
+        return device.type == 1 || device.type == 2 || device.type == 18 || device.type == 15
+    }
+
+    private fun deviceTypeToString(type: Int): String {
+        val typeString: String
+        when (type) {
+            0 -> typeString = "Unknown"
+            1 -> typeString = "Built-in earpiece"
+            2 -> typeString = "Built-in speaker"
+            3 -> typeString = "Wired headset"
+            4 -> typeString = "Wired headphones"
+            5 -> typeString = "Line analog (headphone cable)"
+            6 -> typeString = "Line digital"
+            7 -> typeString = "Bluetooth sco (telephony)"
+            8 -> typeString = "Bluetooth a2dp"
+            9 -> typeString = "Hdmi"
+            10 -> typeString = "Hdmi arc"
+            11 -> typeString = "Usb device"
+            12 -> typeString = "Usb accessory"
+            13 -> typeString = "Dock"
+            14 -> typeString = "Fm"
+            15 -> typeString = "Built-in mic"
+            16 -> typeString = "Fm tuner"
+            17 -> typeString = "Tv tuner"
+            18 -> typeString = "Telephony"
+            19 -> typeString = "Aux line"
+            20 -> typeString = "Over IP"
+            21 -> typeString = "Communication with external audio systems"
+            22 -> typeString = "USB headset"
+            23 -> typeString = "Hearing aid"
+            24 -> typeString = "Built-in speaker (safe)"
+            25 -> typeString = "Rerouting audio between mixes and system apps"
+            26 -> typeString = "BLE headset"
+            27 -> typeString = "BLE speaker"
+            28 -> typeString = "Echo canceller loopback reference"
+            29 -> typeString = "HDMI EARC"
+            else -> typeString = "Type not found $type"
+        }
+
+        return typeString
+    }
+
+    private fun androidAudioFocusToString(focus: Int) = when (focus) {
+        AudioManager.AUDIOFOCUS_NONE -> "AUDIOFOCUS_NONE"
+        AudioManager.AUDIOFOCUS_GAIN -> "AUDIOFOCUS_GAIN"
+        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT -> "AUDIOFOCUS_GAIN_TRANSIENT"
+        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK -> "AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK"
+        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE -> "AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE"
+        AudioManager.AUDIOFOCUS_LOSS -> "AUDIOFOCUS_LOSS"
+        AudioManager.AUDIOFOCUS_LOSS_TRANSIENT -> "AUDIOFOCUS_LOSS_TRANSIENT"
+        AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> "AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK"
+        else -> "AUDIO_FOCUS_UNKNOWN($focus)"
+    }
+}

@@ -1,0 +1,59 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:ns0="http://schemas.android.com/apk/res/android" xmlns:ns1="http://schemas.android.com/apk/res-auto" xmlns:ns2="http://schemas.android.com/tools" ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:background="?attr/primary_ui_01">
+
+    <ScrollView ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:background="?attr/primary_ui_01" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout ns0:id="@+id/mainLayout" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:background="?attr/primary_ui_01" ns0:padding="16dp" ns2:context="au.com.shiftyjelly.pocketcasts.account.CreateEmailFragment">
+
+            <ProgressBar ns0:id="@+id/progress" style="@style/Widget.AppCompat.ProgressBar" ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginStart="16dp" ns0:elevation="10dp" ns0:indeterminate="true" ns0:indeterminateTint="?attr/primary_interactive_02" ns1:layout_constraintBottom_toBottomOf="@+id/btnNext" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="@+id/btnNext" />
+
+            <TextView ns0:id="@+id/txtError" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_marginTop="8dp" ns0:textColor="?attr/support_05" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/lblPasswordRequirements" />
+
+            <TextView ns0:id="@+id/lblPasswordRequirements" style="@style/P50" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_marginTop="16dp" ns0:text="@string/profile_create_password_requirements" ns0:textColor="?attr/primary_text_01" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+            <com.google.android.material.button.MaterialButton ns0:id="@+id/btnNext" style="@style/MaterialButtonStyle" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:fontFamily="sans-serif-medium" ns0:letterSpacing="0.02" ns0:paddingTop="16dp" ns0:paddingBottom="16dp" ns0:text="@string/profile_next" ns0:textAllCaps="false" ns0:textSize="18sp" ns1:cornerRadius="12dp" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/txtError" />
+
+            <com.google.android.material.textfield.TextInputLayout ns0:id="@+id/emailLayout" style="@style/PCTextInputLayout" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:hint="@string/profile_email_address" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText ns0:id="@+id/txtEmail" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:drawableStart="@drawable/ic_mail" ns0:drawablePadding="16dp" ns0:imeOptions="actionDone" ns0:inputType="textEmailAddress" ns0:paddingLeft="16dp" ns0:textColor="?attr/primary_text_02" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout ns0:id="@+id/passwordLayout" style="@style/PCTextInputLayout" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:layout_marginTop="16dp" ns0:hint="@string/profile_password" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/emailLayout" ns1:passwordToggleEnabled="true" ns1:passwordToggleTint="?attr/primary_field_03">
+
+                <com.google.android.material.textfield.TextInputEditText ns0:id="@+id/txtPassword" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:drawableStart="@drawable/ic_password" ns0:drawablePadding="16dp" ns0:imeOptions="actionDone" ns0:inputType="textPassword" ns0:paddingLeft="16dp" ns0:textColor="?attr/primary_text_02" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+<ScrollView ns0:layout_width="match_parent" ns0:layout_height="match_parent" ns0:background="?attr/primary_ui_01" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:background="?attr/primary_ui_01" ns0:padding="16dp" ns2:context=".account.CreateEmailFragment">
+
+            <ProgressBar ns0:id="@+id/progress" style="@style/Widget.AppCompat.ProgressBar" ns0:layout_width="24dp" ns0:layout_height="24dp" ns0:layout_marginStart="16dp" ns0:elevation="10dp" ns0:indeterminate="true" ns0:indeterminateTint="?attr/primary_interactive_02" ns1:layout_constraintBottom_toBottomOf="@+id/btnNext" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="@+id/btnNext" />
+
+            <TextView ns0:id="@+id/txtError" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_marginTop="8dp" ns0:textColor="?attr/support_05" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/lblPasswordRequirements" />
+
+            <TextView ns0:id="@+id/lblPasswordRequirements" style="@style/P50" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:layout_marginTop="16dp" ns0:text="@string/profile_create_password_requirements" ns0:textColor="?attr/primary_text_01" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+            <com.google.android.material.button.MaterialButton ns0:id="@+id/btnNext" style="@style/MaterialButtonStyle" ns0:layout_width="0dp" ns0:layout_height="wrap_content" ns0:fontFamily="sans-serif-medium" ns0:letterSpacing="0.02" ns0:paddingTop="16dp" ns0:paddingBottom="16dp" ns0:text="@string/profile_next" ns0:textAllCaps="false" ns0:textSize="18sp" ns1:cornerRadius="12dp" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/txtError" />
+
+            <com.google.android.material.textfield.TextInputLayout ns0:id="@+id/emailLayout" style="@style/PCTextInputLayout" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:hint="@string/profile_email_address" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText ns0:id="@+id/txtEmail" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:drawableStart="@drawable/ic_mail" ns0:drawablePadding="16dp" ns0:imeOptions="actionDone" ns0:inputType="textEmailAddress" ns0:paddingLeft="16dp" ns0:textColor="?attr/primary_text_02" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout ns0:id="@+id/passwordLayout" style="@style/PCTextInputLayout" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:layout_marginTop="16dp" ns0:hint="@string/profile_password" ns1:layout_constraintEnd_toEndOf="parent" ns1:layout_constraintStart_toStartOf="parent" ns1:layout_constraintTop_toBottomOf="@+id/emailLayout" ns1:passwordToggleEnabled="true" ns1:passwordToggleTint="?attr/primary_field_03">
+
+                <com.google.android.material.textfield.TextInputEditText ns0:id="@+id/txtPassword" ns0:layout_width="match_parent" ns0:layout_height="wrap_content" ns0:drawableStart="@drawable/ic_password" ns0:drawablePadding="16dp" ns0:imeOptions="actionDone" ns0:inputType="textPassword" ns0:paddingLeft="16dp" ns0:textColor="?attr/primary_text_02" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

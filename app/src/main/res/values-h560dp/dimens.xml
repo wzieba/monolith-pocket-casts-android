@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="filters_margin_under_close">60dp</dimen>
+    <dimen name="filters_padding_top">90dp</dimen>
+<dimen name="carousel_height">269dp</dimen>
+    <dimen name="body_text_size">14sp</dimen>
+    <dimen name="network_header_height">262dp</dimen>
+    <dimen name="network_header_image_size">188dp</dimen>
+    <dimen name="network_header_margin">12dp</dimen>
+<dimen name="episode_card_image_size">192dp</dimen>
+</resources>

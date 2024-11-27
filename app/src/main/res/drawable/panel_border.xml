@@ -1,0 +1,7 @@
+<shape xmlns:ns0="http://schemas.android.com/apk/res/android">
+    <stroke ns0:width="1dp" ns0:color="?attr/primary_ui_05" />
+
+    <corners ns0:bottomLeftRadius="8dp" ns0:bottomRightRadius="8dp" ns0:topLeftRadius="8dp" ns0:topRightRadius="8dp" />
+<stroke ns0:width="1dp" ns0:color="?attr/primary_field_03" />
+    <solid ns0:color="?attr/primary_field_02" />
+    </shape>
