@@ -36,6 +36,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.OnboardingActivity
 import au.com.shiftyjelly.pocketcasts.account.onboarding.OnboardingActivityContract
 import au.com.shiftyjelly.pocketcasts.account.onboarding.OnboardingActivityContract.OnboardingFinish
@@ -59,7 +60,6 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class StoriesActivity : ComponentActivity() {

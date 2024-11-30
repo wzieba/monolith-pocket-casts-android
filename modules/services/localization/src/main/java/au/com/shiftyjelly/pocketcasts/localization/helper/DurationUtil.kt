@@ -2,10 +2,10 @@ package au.com.shiftyjelly.pocketcasts.localization.helper
 
 import android.content.res.Resources
 import androidx.annotation.PluralsRes
+import au.com.shiftyjelly.pocketcasts.R
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 import kotlin.time.toDuration
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 /**
  * Converts the duration to a readable, user-friendly string.

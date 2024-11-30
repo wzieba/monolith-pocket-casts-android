@@ -11,7 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 import dagger.hilt.android.internal.managers.FragmentComponentManager
 import java.util.Timer
 import java.util.TimerTask

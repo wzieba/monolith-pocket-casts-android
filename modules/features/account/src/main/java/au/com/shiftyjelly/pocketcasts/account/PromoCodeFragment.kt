@@ -11,12 +11,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentPromocodeBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class PromoCodeFragment : BaseFragment() {

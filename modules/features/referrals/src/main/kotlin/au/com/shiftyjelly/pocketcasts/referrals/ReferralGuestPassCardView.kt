@@ -20,12 +20,11 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH60
 import au.com.shiftyjelly.pocketcasts.models.type.ReferralsOfferInfo
 import au.com.shiftyjelly.pocketcasts.models.type.ReferralsOfferInfoMock
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object ReferralGuestPassCardDefaults {
     val cardAspectRatio = 200f / 315f

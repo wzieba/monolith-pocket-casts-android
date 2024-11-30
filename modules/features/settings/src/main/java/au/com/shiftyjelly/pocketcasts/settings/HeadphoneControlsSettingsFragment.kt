@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.compose.content
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
@@ -48,8 +49,6 @@ import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class HeadphoneControlsSettingsFragment : BaseFragment() {

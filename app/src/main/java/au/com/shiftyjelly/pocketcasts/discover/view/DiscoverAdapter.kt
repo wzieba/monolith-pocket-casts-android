@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent.DISCOVER_AD_CATEGORY_SUBSCRIBED
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent.DISCOVER_AD_CATEGORY_TAPPED
@@ -22,20 +23,19 @@ import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent.DISCOVER_CATEGORI
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent.DISCOVER_CATEGORIES_PICKER_SHOWN
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent.DISCOVER_CATEGORY_CLOSE_BUTTON_TAPPED
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
-import au.com.shiftyjelly.pocketcasts.discover.R
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowCarouselListBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowCategoriesBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowCategoryAdBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowCategoryPillsBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowChangeRegionBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowCollectionListBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowErrorBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowMostPopularPodcastsBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowPodcastLargeListBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowPodcastSmallListBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowRemainingPodcastsByCategoryBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowSingleEpisodeBinding
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowSinglePodcastBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCarouselListBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCategoriesBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCategoryAdBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCategoryPillsBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowChangeRegionBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCollectionListBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowErrorBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowMostPopularPodcastsBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowPodcastLargeListBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowPodcastSmallListBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowRemainingPodcastsByCategoryBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowSingleEpisodeBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowSinglePodcastBinding
 import au.com.shiftyjelly.pocketcasts.discover.extensions.updateSubscribeButtonIcon
 import au.com.shiftyjelly.pocketcasts.discover.util.AutoScrollHelper
 import au.com.shiftyjelly.pocketcasts.discover.util.ScrollingLinearLayoutManager
@@ -88,8 +88,6 @@ import kotlin.math.min
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val MAX_ROWS_SMALL_LIST = 20
 private const val CURRENT_PAGE = "current_page"
@@ -702,10 +700,10 @@ internal class DiscoverAdapter(
 
                             val lblSponsored = holder.binding.lblSponsored
                             if (row.sponsored) {
-                                lblSponsored.setTextColor(context.getThemeColor(UR.attr.primary_text_02))
+                                lblSponsored.setTextColor(context.getThemeColor(R.attr.primary_text_02))
                                 lblSponsored.text = context.getString(R.string.discover_row_sponsored)
                             } else {
-                                lblSponsored.setTextColor(context.getThemeColor(UR.attr.support_02))
+                                lblSponsored.setTextColor(context.getThemeColor(R.attr.support_02))
                                 lblSponsored.text = context.getString(R.string.discover_row_fresh_pick)
                             }
 
@@ -909,10 +907,10 @@ internal class DiscoverAdapter(
 
                     val lblSponsored = adHolder.binding.lblSponsored
                     if (row.discoverRow.sponsored) {
-                        lblSponsored.setTextColor(context.getThemeColor(UR.attr.primary_text_02))
+                        lblSponsored.setTextColor(context.getThemeColor(R.attr.primary_text_02))
                         lblSponsored.text = context.getString(R.string.discover_row_sponsored)
                     } else {
-                        lblSponsored.setTextColor(context.getThemeColor(UR.attr.support_02))
+                        lblSponsored.setTextColor(context.getThemeColor(R.attr.support_02))
                         lblSponsored.text = context.getString(R.string.discover_row_fresh_pick)
                     }
 

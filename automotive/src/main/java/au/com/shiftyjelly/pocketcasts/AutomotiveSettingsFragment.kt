@@ -28,7 +28,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import au.com.shiftyjelly.pocketcasts.cartheme.R as CR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class AutomotiveSettingsFragment : Fragment(), CoroutineScope {

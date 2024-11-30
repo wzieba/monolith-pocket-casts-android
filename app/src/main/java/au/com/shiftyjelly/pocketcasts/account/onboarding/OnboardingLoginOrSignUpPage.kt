@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.coerceAtMost
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import au.com.shiftyjelly.pocketcasts.account.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.components.ContinueWithGoogleButton
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.GoogleSignInButtonViewModel
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.GoogleSignInState
@@ -65,7 +65,6 @@ import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingFlow
 import au.com.shiftyjelly.pocketcasts.ui.extensions.inLandscape
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun OnboardingLoginOrSignUpPage(

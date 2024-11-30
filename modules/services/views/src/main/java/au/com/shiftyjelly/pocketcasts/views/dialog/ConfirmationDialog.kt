@@ -15,6 +15,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
@@ -25,9 +26,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 open class ConfirmationDialog : BottomSheetDialogFragment() {
@@ -43,7 +41,7 @@ open class ConfirmationDialog : BottomSheetDialogFragment() {
     private lateinit var buttonType: ButtonType
     var secondaryType: ButtonType? = null
 
-    @AttrRes private var iconTintAttr: Int? = UR.attr.primary_icon_01
+    @AttrRes private var iconTintAttr: Int? = R.attr.primary_icon_01
 
     @AttrRes private var secondaryTextColorAttr: Int? = null
 
@@ -92,8 +90,8 @@ open class ConfirmationDialog : BottomSheetDialogFragment() {
             return super.onCreateDialog(savedInstanceState)
         }
 
-        val context = ContextThemeWrapper(requireContext(), UR.style.ThemeDark)
-        return BottomSheetDialog(context, UR.style.BottomSheetDialogThemeDark)
+        val context = ContextThemeWrapper(requireContext(), R.style.ThemeDark)
+        return BottomSheetDialog(context, R.style.BottomSheetDialogThemeDark)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -153,8 +151,8 @@ open class ConfirmationDialog : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        val dangerColor = context.getThemeColor(UR.attr.support_05)
-        val defaultColor = context.getThemeColor(UR.attr.support_01)
+        val dangerColor = context.getThemeColor(R.attr.support_05)
+        val defaultColor = context.getThemeColor(R.attr.support_01)
 
         val buttonColor = if (buttonType is ButtonType.Danger) dangerColor else defaultColor
         btnConfirm.backgroundTintList = ColorStateList.valueOf(buttonColor)

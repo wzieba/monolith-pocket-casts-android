@@ -11,10 +11,10 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R
-import au.com.shiftyjelly.pocketcasts.discover.databinding.CategoryPillBinding
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.R.string.clear_all
+import au.com.shiftyjelly.pocketcasts.databinding.CategoryPillBinding
 import au.com.shiftyjelly.pocketcasts.discover.view.CategoryPillListAdapter.CategoryPillViewHolder
-import au.com.shiftyjelly.pocketcasts.localization.R.string.clear_all
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverCategory
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverCategory.Companion.ALL_CATEGORIES_ID
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
@@ -139,9 +139,9 @@ private fun TextView.setCategory(category: String) {
 }
 private fun TextView.setCategoryColor(isSelected: Boolean) {
     if (isSelected) {
-        this.setTextColor(context.getThemeColor(au.com.shiftyjelly.pocketcasts.ui.R.attr.secondary_ui_01))
+        this.setTextColor(context.getThemeColor(R.attr.secondary_ui_01))
     } else {
-        this.setTextColor(context.getThemeColor(au.com.shiftyjelly.pocketcasts.ui.R.attr.primary_text_01))
+        this.setTextColor(context.getThemeColor(R.attr.primary_text_01))
     }
 }
 

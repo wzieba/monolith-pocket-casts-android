@@ -15,6 +15,7 @@ import android.net.Uri
 import androidx.core.content.IntentCompat
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.StatsHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
@@ -40,7 +41,6 @@ import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @RunWith(AndroidJUnit4::class)
 class SharingClientTest {

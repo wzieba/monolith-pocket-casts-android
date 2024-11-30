@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.compose.Devices
@@ -55,8 +56,6 @@ import au.com.shiftyjelly.pocketcasts.referrals.ReferralsSendGuestPassViewModel.
 import au.com.shiftyjelly.pocketcasts.referrals.ReferralsSendGuestPassViewModel.UiState
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.extensions.getActivity
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable

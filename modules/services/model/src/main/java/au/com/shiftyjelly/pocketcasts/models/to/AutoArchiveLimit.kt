@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.models.to
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class AutoArchiveLimit(
     val value: Int?,

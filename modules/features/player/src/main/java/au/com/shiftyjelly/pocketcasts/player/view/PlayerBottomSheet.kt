@@ -10,9 +10,9 @@ import android.view.animation.OvershootInterpolator
 import android.widget.FrameLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.doOnLayout
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.ViewPlayerBottomSheetBinding
 import au.com.shiftyjelly.pocketcasts.player.helper.BottomSheetAnimation
 import au.com.shiftyjelly.pocketcasts.player.helper.BottomSheetAnimation.Companion.SCALE

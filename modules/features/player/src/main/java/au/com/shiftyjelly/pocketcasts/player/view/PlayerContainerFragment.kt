@@ -20,11 +20,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.to.Chapter
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentPlayerContainerBinding
 import au.com.shiftyjelly.pocketcasts.player.view.bookmark.BookmarksFragment
 import au.com.shiftyjelly.pocketcasts.player.view.chapters.ChaptersFragment
@@ -52,9 +52,6 @@ import dagger.hilt.android.lifecycle.withCreationCallback
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class PlayerContainerFragment : BaseFragment(), HasBackstack {
@@ -351,7 +348,7 @@ class PlayerContainerFragment : BaseFragment(), HasBackstack {
 
 private class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
     private sealed class Section(@StringRes val titleRes: Int) {
-        data object Player : Section(VR.string.player_tab_playing)
+        data object Player : Section(R.string.player_tab_playing)
         data object Notes : Section(R.string.player_tab_notes)
         data object Bookmarks : Section(R.string.player_tab_bookmarks)
         data object Chapters : Section(R.string.player_tab_chapters)

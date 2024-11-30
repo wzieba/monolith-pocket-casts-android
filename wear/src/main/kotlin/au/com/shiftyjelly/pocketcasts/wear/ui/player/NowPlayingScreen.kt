@@ -39,8 +39,6 @@ import com.google.android.horologist.media.ui.components.background.ColorBackgro
 import com.google.android.horologist.media.ui.components.display.MessageMediaDisplay
 import com.google.android.horologist.media.ui.screens.player.PlayerScreen
 import androidx.appcompat.R as AR
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object NowPlayingScreen {
     const val route = "now_playing"

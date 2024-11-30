@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.widget.TextView
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
-import au.com.shiftyjelly.pocketcasts.podcasts.R
+import au.com.shiftyjelly.pocketcasts.R
 
 class PlaybackSpeedPreference @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = androidx.preference.R.attr.preferenceStyle) : Preference(context, attrs, defStyleAttr) {
 

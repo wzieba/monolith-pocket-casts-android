@@ -14,13 +14,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.tooling.preview.devices.WearDevices
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearAppTheme
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ScreenHeaderChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberColumnState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object PrivacySettingsScreen {
     const val route = "analytics_settings_screen"

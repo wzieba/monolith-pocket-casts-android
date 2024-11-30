@@ -20,6 +20,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.fragment.compose.content
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingRow
@@ -31,8 +32,6 @@ import au.com.shiftyjelly.pocketcasts.preferences.model.ArtworkConfiguration
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class EpisodeArtworkConfigurationFragment : BaseFragment() {
@@ -92,7 +91,7 @@ class EpisodeArtworkConfigurationFragment : BaseFragment() {
                 }
             }
             Spacer(
-                modifier = Modifier.height(dimensionResource(UR.dimen.mini_player_height)),
+                modifier = Modifier.height(dimensionResource(R.dimen.mini_player_height)),
             )
         }
     }

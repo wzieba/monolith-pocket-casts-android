@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstrainedLayoutReference
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintLayoutScope
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.UpgradeRowButton
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.plusGradientBrush
 import au.com.shiftyjelly.pocketcasts.compose.buttons.GradientRowButton
@@ -57,9 +58,6 @@ import au.com.shiftyjelly.pocketcasts.compose.components.TextP60
 import au.com.shiftyjelly.pocketcasts.compose.extensions.brush
 import au.com.shiftyjelly.pocketcasts.models.type.Subscription.SubscriptionTier
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 object OnboardingUpgradeHelper {
     val plusGradientBrush = Brush.horizontalGradient(
@@ -442,6 +440,6 @@ fun UpgradeRowButtonPreview() {
         primaryText = "Upgrade Now",
         textColor = Color.Black,
         onClick = {},
-        backgroundColor = colorResource(UR.color.plus_gold),
+        backgroundColor = colorResource(R.color.plus_gold),
     )
 }

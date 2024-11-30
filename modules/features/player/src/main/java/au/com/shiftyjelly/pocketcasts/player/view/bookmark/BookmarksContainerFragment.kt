@@ -11,8 +11,8 @@ import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.viewModels
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.images.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentBookmarksContainerBinding
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.BookmarksViewModel
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
@@ -24,8 +24,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class BookmarksContainerFragment :
@@ -55,7 +53,7 @@ class BookmarksContainerFragment :
             StatusBarColor.Light
         } else {
             StatusBarColor.Custom(
-                context?.getThemeColor(UR.attr.primary_ui_01)
+                context?.getThemeColor(R.attr.primary_ui_01)
                     ?: Color.WHITE,
                 theme.isDarkTheme,
             )
@@ -139,9 +137,9 @@ class BookmarksContainerFragment :
 
         dialog?.let {
             with(binding.toolbar) {
-                navigationIcon = requireContext().getThemeTintedDrawable(R.drawable.ic_close, UR.attr.primary_icon_01)
-                setTitleTextColor(requireContext().getThemeColor(UR.attr.primary_text_01))
-                setBackgroundColor(requireContext().getThemeColor(UR.attr.primary_ui_01))
+                navigationIcon = requireContext().getThemeTintedDrawable(R.drawable.ic_close, R.attr.primary_icon_01)
+                setTitleTextColor(requireContext().getThemeColor(R.attr.primary_text_01))
+                setBackgroundColor(requireContext().getThemeColor(R.attr.primary_ui_01))
             }
         }
     }

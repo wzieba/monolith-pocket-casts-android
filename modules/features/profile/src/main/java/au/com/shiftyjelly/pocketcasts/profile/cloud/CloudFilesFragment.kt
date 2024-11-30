@@ -18,6 +18,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -31,7 +32,6 @@ import au.com.shiftyjelly.pocketcasts.podcasts.viewmodel.EpisodeListBookmarkView
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.ArtworkConfiguration.Element
 import au.com.shiftyjelly.pocketcasts.preferences.model.AutoPlaySource
-import au.com.shiftyjelly.pocketcasts.profile.R
 import au.com.shiftyjelly.pocketcasts.profile.databinding.FragmentCloudFilesBinding
 import au.com.shiftyjelly.pocketcasts.repositories.bookmark.BookmarkManager
 import au.com.shiftyjelly.pocketcasts.repositories.chromecast.CastManager
@@ -57,8 +57,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class CloudFilesFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {

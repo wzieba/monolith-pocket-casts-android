@@ -7,20 +7,19 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.PopupMenu
 import androidx.annotation.ColorInt
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeStatusEnum
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.views.component.ProgressCircleView
 import au.com.shiftyjelly.pocketcasts.views.extensions.inflate
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class PlayButton @JvmOverloads constructor(
@@ -137,7 +136,7 @@ class PlayButton @JvmOverloads constructor(
         }
         this.episodeStatus = episode.episodeStatus
         val buttonColor = when (buttonType) {
-            PlayButtonType.PLAYED -> context.getThemeColor(UR.attr.primary_icon_02)
+            PlayButtonType.PLAYED -> context.getThemeColor(R.attr.primary_icon_02)
             else -> color
         }
         this.buttonColor = buttonColor

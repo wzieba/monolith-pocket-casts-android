@@ -18,14 +18,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentPodcastsBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.to.RefreshState
 import au.com.shiftyjelly.pocketcasts.models.type.PodcastsSortType
-import au.com.shiftyjelly.pocketcasts.podcasts.R
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.FragmentPodcastsBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.view.folders.FolderCreateFragment
 import au.com.shiftyjelly.pocketcasts.podcasts.view.folders.FolderCreateSharedViewModel
 import au.com.shiftyjelly.pocketcasts.podcasts.view.folders.FolderEditFragment
@@ -52,8 +52,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class PodcastsFragment : BaseFragment(), FolderAdapter.ClickListener, PodcastTouchCallback.ItemTouchHelperAdapter, Toolbar.OnMenuItemClickListener {
@@ -112,7 +110,7 @@ class PodcastsFragment : BaseFragment(), FolderAdapter.ClickListener, PodcastTou
 
         binding.appBarLayout.hideShadow()
 
-        gridOuterPadding = resources.getDimensionPixelSize(VR.dimen.grid_outer_padding)
+        gridOuterPadding = resources.getDimensionPixelSize(R.dimen.grid_outer_padding)
         binding.recyclerView.let {
             it.adapter = adapter
             it.addItemDecoration(SpaceItemDecoration())
@@ -204,11 +202,11 @@ class PodcastsFragment : BaseFragment(), FolderAdapter.ClickListener, PodcastTou
         }
 
         binding.btnDiscover.setOnClickListener {
-            (activity as FragmentHostListener).openTab(VR.id.navigation_discover)
+            (activity as FragmentHostListener).openTab(R.id.navigation_discover)
         }
 
         binding.btnDiscover.setOnClickListener {
-            (activity as FragmentHostListener).openTab(VR.id.navigation_discover)
+            (activity as FragmentHostListener).openTab(R.id.navigation_discover)
         }
 
         binding.addToFolderButton.setOnClickListener {
@@ -381,7 +379,7 @@ class PodcastsFragment : BaseFragment(), FolderAdapter.ClickListener, PodcastTou
     }
 
     inner class SpaceItemDecoration : RecyclerView.ItemDecoration() {
-        private val spacing = resources.getDimensionPixelSize(VR.dimen.grid_item_padding)
+        private val spacing = resources.getDimensionPixelSize(R.dimen.grid_item_padding)
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
             val margin = if (settings.podcastGridLayout.value != PodcastGridLayoutType.LIST_VIEW) spacing else 0
             outRect.set(margin, margin, margin, margin)

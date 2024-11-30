@@ -3,7 +3,7 @@ package au.com.shiftyjelly.pocketcasts.preferences.model
 import android.content.Context
 import android.media.AudioManager
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class NotificationVibrateSetting(
     val intValue: Int,

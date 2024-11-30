@@ -24,17 +24,17 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.compose.theme
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentProfileEpisodeListBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
-import au.com.shiftyjelly.pocketcasts.podcasts.R
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.FragmentProfileEpisodeListBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.view.ProfileEpisodeListViewModel.State
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlayButton
 import au.com.shiftyjelly.pocketcasts.podcasts.view.episode.EpisodeContainerFragment
@@ -71,9 +71,6 @@ import au.com.shiftyjelly.pocketcasts.views.multiselect.MultiSelectHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 private const val ARG_MODE = "profile_list_mode"
 
@@ -460,7 +457,7 @@ class ProfileEpisodeListFragment : BaseFragment(), Toolbar.OnMenuItemClickListen
                 if (downloadManager.hasPendingOrRunningDownloads()) {
                     dialog.addTextOption(R.string.settings_auto_download_stop_all, imageId = R.drawable.ic_stop, click = this::stopAllDownloads)
                 }
-                dialog.addTextOption(R.string.profile_clean_up, imageId = VR.drawable.ic_delete, click = this::showCleanupSettings)
+                dialog.addTextOption(R.string.profile_clean_up, imageId = R.drawable.ic_delete, click = this::showCleanupSettings)
             } else if (mode is Mode.History) {
                 analyticsTracker.track(AnalyticsEvent.LISTENING_HISTORY_OPTIONS_BUTTON_TAPPED)
                 dialog.addTextOption(R.string.profile_clear_listening_history, imageId = R.drawable.ic_history, click = this::clearListeningHistory)

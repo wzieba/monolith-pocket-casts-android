@@ -23,6 +23,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.models.to.SubscriptionStatus
@@ -47,8 +48,6 @@ import java.util.Locale
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class HelpFragment : BaseFragment(), HasBackstack, Toolbar.OnMenuItemClickListener {
@@ -107,19 +106,19 @@ class HelpFragment : BaseFragment(), HasBackstack, Toolbar.OnMenuItemClickListen
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(VR.layout.fragment_webview, container, false)
+        val view = inflater.inflate(R.layout.fragment_webview, container, false)
 
-        webView = (view.findViewById<View>(VR.id.webview) as WebView).apply {
+        webView = (view.findViewById<View>(R.id.webview) as WebView).apply {
             webViewClient = SupportWebViewClient()
             loadUrl(loadedUrl ?: Settings.INFO_FAQ_URL)
             settings.javaScriptEnabled = true
             settings.textZoom = 100
             settings.domStorageEnabled = true
         }
-        loadingView = view.findViewById(VR.id.progress_circle)
-        layoutError = view.findViewById(VR.id.layoutLoadingError)
+        loadingView = view.findViewById(R.id.progress_circle)
+        layoutError = view.findViewById(R.id.layoutLoadingError)
 
-        view.findViewById<Button>(VR.id.btnContactSupport).setOnClickListener {
+        view.findViewById<Button>(R.id.btnContactSupport).setOnClickListener {
             contactSupport()
         }
 

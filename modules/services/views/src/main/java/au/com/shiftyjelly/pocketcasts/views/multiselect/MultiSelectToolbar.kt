@@ -11,18 +11,15 @@ import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LifecycleOwner
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.extensions.tintIcons
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class MultiSelectToolbar @JvmOverloads constructor(
@@ -41,7 +38,7 @@ class MultiSelectToolbar @JvmOverloads constructor(
         @MenuRes menuRes: Int?,
         activity: FragmentActivity,
     ) {
-        setBackgroundColor(context.getThemeColor(UR.attr.support_01))
+        setBackgroundColor(context.getThemeColor(R.attr.support_01))
         if (menuRes != null) {
             inflateMenu(menuRes)
         } else {
@@ -76,16 +73,16 @@ class MultiSelectToolbar @JvmOverloads constructor(
                     }
                 }
 
-                menu.tintIcons(context.getThemeColor(UR.attr.primary_interactive_02))
+                menu.tintIcons(context.getThemeColor(R.attr.primary_interactive_02))
             }
         }
 
-        menu.tintIcons(context.getThemeColor(UR.attr.primary_interactive_02))
+        menu.tintIcons(context.getThemeColor(R.attr.primary_interactive_02))
 
-        setTitleTextColor(context.getThemeColor(UR.attr.primary_interactive_02))
+        setTitleTextColor(context.getThemeColor(R.attr.primary_interactive_02))
         val overflowIcon = getOverflowIcon()!!
         val tintedOverflow = DrawableCompat.wrap(overflowIcon)
-        DrawableCompat.setTint(tintedOverflow.mutate(), context.getThemeColor(UR.attr.primary_interactive_02))
+        DrawableCompat.setTint(tintedOverflow.mutate(), context.getThemeColor(R.attr.primary_interactive_02))
         setOverflowIcon(tintedOverflow)
 
         setOnMenuItemClickListener {
@@ -130,7 +127,7 @@ class MultiSelectToolbar @JvmOverloads constructor(
         }
 
         val tintedIcon = DrawableCompat.wrap(icon)
-        DrawableCompat.setTint(tintedIcon.mutate(), context.getThemeColor(UR.attr.primary_interactive_02))
+        DrawableCompat.setTint(tintedIcon.mutate(), context.getThemeColor(R.attr.primary_interactive_02))
         super.setNavigationIcon(tintedIcon)
     }
 

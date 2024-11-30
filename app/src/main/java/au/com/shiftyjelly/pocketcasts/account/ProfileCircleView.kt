@@ -14,13 +14,13 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.toRect
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getTintedDrawable
 import coil.imageLoader
 import coil.request.ImageRequest
 import coil.target.Target
 import coil.transform.CircleCropTransformation
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val DRAW_FULL = 0
 private const val DRAW_EMPTY = 1
@@ -36,9 +36,9 @@ class ProfileCircleView @JvmOverloads constructor(
     private var plusAccount = false
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var color0 = ContextCompat.getColor(context, UR.color.plus_gold_dark)
-    private var color1 = ContextCompat.getColor(context, UR.color.plus_gold_light)
-    private var colorGrey = context.getThemeColor(UR.attr.primary_icon_02)
+    private var color0 = ContextCompat.getColor(context, R.color.plus_gold_dark)
+    private var color1 = ContextCompat.getColor(context, R.color.plus_gold_light)
+    private var colorGrey = context.getThemeColor(R.attr.primary_icon_02)
 
     private val inset = 2 * context.resources.displayMetrics.density
     private val strokeWidth = 2 * context.resources.displayMetrics.density
@@ -48,7 +48,7 @@ class ProfileCircleView @JvmOverloads constructor(
     private var bounds1Rect = RectF()
     private var bounds2Rect = RectF()
     private var bounds3Rect = RectF()
-    private val iconColor = context.getThemeColor(UR.attr.primary_ui_01)
+    private val iconColor = context.getThemeColor(R.attr.primary_ui_01)
     private var iconDrawable0: Drawable? = context.getTintedDrawable(R.drawable.ic_plus_account, iconColor)
     private var iconDrawable1: Drawable? = context.getTintedDrawable(R.drawable.ic_free_account, iconColor)
     private var bitmap: Bitmap? = null
@@ -60,8 +60,8 @@ class ProfileCircleView @JvmOverloads constructor(
     }
 
     fun update() {
-        val color0Res = if (isPatron) UR.color.patron_purple else UR.color.plus_gold_dark
-        val color1Res = if (isPatron) UR.color.patron_purple else UR.color.plus_gold_light
+        val color0Res = if (isPatron) R.color.patron_purple else R.color.plus_gold_dark
+        val color1Res = if (isPatron) R.color.patron_purple else R.color.plus_gold_light
         color0 = ContextCompat.getColor(context, color0Res)
         color1 = ContextCompat.getColor(context, color1Res)
         // -- outer circle
@@ -148,8 +148,8 @@ class ProfileCircleView @JvmOverloads constructor(
         }
 
         this.isPatron = isPatron
-        val color0Res = if (isPatron) UR.attr.gradient_05_e else UR.attr.gradient_01_a
-        val color1Res = if (isPatron) UR.attr.gradient_05_e else UR.attr.gradient_01_e
+        val color0Res = if (isPatron) R.attr.gradient_05_e else R.attr.gradient_01_a
+        val color1Res = if (isPatron) R.attr.gradient_05_e else R.attr.gradient_01_e
         color0 = context.getThemeColor(color0Res)
         color1 = context.getThemeColor(color1Res)
         update()

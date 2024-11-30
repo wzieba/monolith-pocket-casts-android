@@ -15,8 +15,8 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.data.LargePlayerWidgetState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun LargePlayerHeader(

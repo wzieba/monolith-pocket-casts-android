@@ -8,10 +8,11 @@ import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentSignInBinding
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SignInError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SignInState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SignInViewModel
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentSignInBinding
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getTintedDrawable
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
@@ -20,8 +21,6 @@ import au.com.shiftyjelly.pocketcasts.views.extensions.showKeyboard
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class SignInFragment : BaseFragment() {
@@ -147,11 +146,11 @@ class SignInFragment : BaseFragment() {
         val view = binding.root
         val context = view.context
 
-        val emailColor = context.getThemeColor(UR.attr.primary_interactive_01)
+        val emailColor = context.getThemeColor(R.attr.primary_interactive_01)
         val emailDrawable = context.getTintedDrawable(R.drawable.ic_mail, emailColor)
         val passwordDrawable = context.getTintedDrawable(R.drawable.ic_password, emailColor)
 
-        val tickColor = context.getThemeColor(UR.attr.support_02)
+        val tickColor = context.getThemeColor(R.attr.support_02)
         val tickDrawable = if (!invalidEmail) context.getTintedDrawable(R.drawable.ic_tick_circle, tickColor) else null
         val max = 32.dpToPx(context)
         emailDrawable?.setBounds(0, 0, max, max)

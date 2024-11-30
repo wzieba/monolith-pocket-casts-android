@@ -9,9 +9,9 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCloudSettingsBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.profile.R
-import au.com.shiftyjelly.pocketcasts.profile.databinding.FragmentCloudSettingsBinding
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingFlow
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingLauncher
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingUpgradeSource
@@ -20,8 +20,6 @@ import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon.BackArrow
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class CloudSettingsFragment : BaseFragment() {
@@ -62,8 +60,8 @@ class CloudSettingsFragment : BaseFragment() {
 
         context?.let { context ->
             AppCompatResources.getDrawable(context, R.drawable.ic_lock)?.let {
-                val color0 = ContextCompat.getColor(context, UR.color.plus_gold_dark)
-                val color1 = ContextCompat.getColor(context, UR.color.plus_gold_light)
+                val color0 = ContextCompat.getColor(context, R.color.plus_gold_dark)
+                val color1 = ContextCompat.getColor(context, R.color.plus_gold_light)
                 binding.imgLock.setup(it, color0, color1)
             }
         }

@@ -1,6 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.models.type
 
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.to.FolderItem
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer

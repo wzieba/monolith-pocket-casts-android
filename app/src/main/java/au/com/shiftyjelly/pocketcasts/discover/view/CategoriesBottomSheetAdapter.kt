@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.databinding.ItemCategoryBinding
+import au.com.shiftyjelly.pocketcasts.databinding.ItemCategoryBinding
 import coil.load
 
 class CategoriesBottomSheetAdapter(

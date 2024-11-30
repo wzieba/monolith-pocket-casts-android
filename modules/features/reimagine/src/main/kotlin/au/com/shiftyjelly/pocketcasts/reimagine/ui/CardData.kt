@@ -6,13 +6,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.components.EpisodeImage
 import au.com.shiftyjelly.pocketcasts.compose.components.PodcastImage
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory.PlaceholderType
 import au.com.shiftyjelly.pocketcasts.utils.extensions.toLocalizedFormatMediumStyle
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal sealed interface CardData {
     @Composable

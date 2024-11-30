@@ -2,11 +2,10 @@ package au.com.shiftyjelly.pocketcasts.ui.extensions
 
 import android.content.Context
 import android.graphics.Color
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.extensions.colorIndex
-import au.com.shiftyjelly.pocketcasts.ui.R
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private val filterThemeColors = listOf(
     R.attr.filter_01,

@@ -2,6 +2,7 @@ package au.com.shiftyjelly.pocketcasts.player.view.bookmark
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.BookmarksSortType
@@ -9,7 +10,6 @@ import au.com.shiftyjelly.pocketcasts.preferences.model.BookmarksSortTypeDefault
 import au.com.shiftyjelly.pocketcasts.preferences.model.BookmarksSortTypeForPodcast
 import au.com.shiftyjelly.pocketcasts.preferences.model.BookmarksSortTypeForProfile
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class BookmarksSortByDialog(
     val settings: Settings,

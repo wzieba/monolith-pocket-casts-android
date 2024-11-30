@@ -28,13 +28,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH30
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP50
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val PodcastCoverScaleFactor = 1.5f
 
@@ -78,7 +76,7 @@ fun FeaturedPaywallCard(cardData: CardData) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(colorResource(UR.color.coolgrey_90)),
+                .background(colorResource(R.color.coolgrey_90)),
         ) {
             Image(
                 painter = painterResource(cardData.imageResId),
@@ -113,7 +111,7 @@ fun FeaturedPaywallCard(cardData: CardData) {
                     textAlign = TextAlign.Start,
                     fontWeight = FontWeight.W400,
                     disableAutoScale = true,
-                    color = colorResource(UR.color.coolgrey_50),
+                    color = colorResource(R.color.coolgrey_50),
                     modifier = Modifier.align(Alignment.Start),
                 )
             }

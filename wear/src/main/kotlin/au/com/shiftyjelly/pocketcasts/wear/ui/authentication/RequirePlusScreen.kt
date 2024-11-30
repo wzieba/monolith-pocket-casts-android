@@ -16,6 +16,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.material.Text
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.UpgradeFeatureCard
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.compose.images.SubscriptionBadge
@@ -23,9 +24,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.component.WatchListChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 object RequirePlusScreen {
     const val route = "requirePlus"
@@ -54,7 +52,7 @@ fun RequirePlusScreen(
                     iconRes = UpgradeFeatureCard.PLUS.iconRes,
                     shortNameRes = UpgradeFeatureCard.PLUS.shortNameRes,
                     iconColor = Color.Black,
-                    backgroundColor = colorResource(UR.color.plus_gold),
+                    backgroundColor = colorResource(R.color.plus_gold),
                     textColor = Color.Black,
                 )
             }

@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.icu.text.RelativeDateTimeFormatter
 import android.text.format.DateUtils
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale

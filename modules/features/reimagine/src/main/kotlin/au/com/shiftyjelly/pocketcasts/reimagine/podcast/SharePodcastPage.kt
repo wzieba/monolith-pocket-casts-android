@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.coerceAtMost
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.reimagine.ui.BackgroundAssetController
@@ -25,7 +26,6 @@ import au.com.shiftyjelly.pocketcasts.sharing.SharingResponse
 import au.com.shiftyjelly.pocketcasts.sharing.SocialPlatform
 import au.com.shiftyjelly.pocketcasts.sharing.VisualCardType
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal interface SharePodcastPageListener {
     suspend fun onShare(podcast: Podcast, platform: SocialPlatform, cardType: VisualCardType): SharingResponse

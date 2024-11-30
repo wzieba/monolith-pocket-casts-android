@@ -25,12 +25,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.input.RemoteInputIntentHelper
 import androidx.wear.input.wearableExtender
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SignInState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SignInViewModel
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ErrorScreen
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.LoadingSpinner
 import com.google.android.horologist.compose.layout.ScreenScaffold
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun LoginWithEmailScreen(

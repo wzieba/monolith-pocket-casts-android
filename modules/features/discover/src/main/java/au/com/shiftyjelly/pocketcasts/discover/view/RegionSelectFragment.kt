@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.discover.databinding.FragmentRegionSelectBinding
@@ -26,7 +27,6 @@ import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val ARG_REGION_LIST = "regionlist"
 private const val ARG_SELECTED_REGION = "selectedregion"

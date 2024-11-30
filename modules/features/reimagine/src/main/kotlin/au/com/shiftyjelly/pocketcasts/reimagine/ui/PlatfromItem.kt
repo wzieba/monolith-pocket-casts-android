@@ -26,9 +26,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH70
 import au.com.shiftyjelly.pocketcasts.sharing.SocialPlatform
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 @Composable
 internal fun PlatformItem(
     platform: SocialPlatform,

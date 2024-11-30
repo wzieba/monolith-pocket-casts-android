@@ -9,6 +9,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.localization.helper.tryToLocalise
 import au.com.shiftyjelly.pocketcasts.models.to.AutoArchiveAfterPlaying
@@ -24,7 +25,6 @@ import java.net.MalformedURLException
 import java.net.URL
 import java.util.Date
 import java.util.UUID
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Entity(tableName = "podcasts")
 data class Podcast(

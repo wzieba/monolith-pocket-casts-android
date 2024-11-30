@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.HorizontalDirection
 import au.com.shiftyjelly.pocketcasts.compose.components.PodcastImage
@@ -32,13 +33,11 @@ import au.com.shiftyjelly.pocketcasts.compose.components.ScrollingRow
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH10
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
 import au.com.shiftyjelly.pocketcasts.endofyear.StoryCaptureController
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.models.to.Story
 import dev.shreyaspatil.capturable.capturable
 import java.io.File
 import kotlin.math.tan
 import kotlin.time.Duration.Companion.seconds
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -102,7 +101,7 @@ internal fun NumberOfShowsStory(
                 ),
                 disableAutoScale = true,
                 fontScale = measurements.smallDeviceFactor,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
             Spacer(
@@ -112,7 +111,7 @@ internal fun NumberOfShowsStory(
                 text = stringResource(R.string.end_of_year_story_listened_to_numbers_subtitle),
                 fontSize = 15.sp,
                 disableAutoScale = true,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
             ShareStoryButton(

@@ -13,6 +13,7 @@ import androidx.core.os.BundleCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcastsSelected
@@ -35,7 +36,6 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import kotlinx.parcelize.Parcelize
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class PodcastSelectFragment : BaseFragment() {

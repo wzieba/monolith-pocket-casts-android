@@ -5,7 +5,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.text.TextUtils
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.LocaliseHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.to.Share

@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.taskerplugin.controlplayback
 
 import android.content.Context
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.type.TrimMode
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.tryOrNull
 import com.joaomgcd.taskerpluginlibrary.input.TaskerInputField

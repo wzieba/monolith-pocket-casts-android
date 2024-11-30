@@ -26,7 +26,6 @@ import com.airbnb.lottie.LottieAnimationView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlin.time.Duration
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class VideoFragment : Fragment(), PlayerSeekBar.OnUserSeekListener {
@@ -73,7 +72,7 @@ class VideoFragment : Fragment(), PlayerSeekBar.OnUserSeekListener {
         binding.skipBackText.text = "${settings.skipBackInSecs.value}"
         binding.jumpForwardText.text = "${settings.skipForwardInSecs.value}"
 
-        binding.playButton.setCircleTintColor(ContextCompat.getColor(context, UR.color.transparent))
+        binding.playButton.setCircleTintColor(ContextCompat.getColor(context, R.color.transparent))
 
         binding.btnPip.setOnClickListener {
             activity?.let {

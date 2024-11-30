@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
 import au.com.shiftyjelly.pocketcasts.repositories.extensions.getUrlForArtwork
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @Composable
 fun UserEpisodeImage(

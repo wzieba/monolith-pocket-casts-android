@@ -22,8 +22,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.images.R
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
 import au.com.shiftyjelly.pocketcasts.player.view.bookmark.BookmarksFragment
@@ -46,8 +46,6 @@ import dagger.hilt.android.lifecycle.withCreationCallback
 import kotlin.time.Duration
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class EpisodeContainerFragment :
@@ -105,7 +103,7 @@ class EpisodeContainerFragment :
 
     override val statusBarColor: StatusBarColor
         get() = StatusBarColor.Custom(
-            context?.getThemeColor(UR.attr.primary_ui_01)
+            context?.getThemeColor(R.attr.primary_ui_01)
                 ?: Color.WHITE,
             theme.isDarkTheme,
         )
@@ -159,8 +157,8 @@ class EpisodeContainerFragment :
             return super.onCreateDialog(savedInstanceState)
         }
 
-        val context = ContextThemeWrapper(requireContext(), UR.style.ThemeDark)
-        return BottomSheetDialog(context, UR.style.BottomSheetDialogThemeDark)
+        val context = ContextThemeWrapper(requireContext(), R.style.ThemeDark)
+        return BottomSheetDialog(context, R.style.BottomSheetDialogThemeDark)
     }
 
     override fun onCreateView(

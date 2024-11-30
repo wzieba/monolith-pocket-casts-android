@@ -2,6 +2,7 @@ package au.com.shiftyjelly.pocketcasts.repositories.sync
 
 import android.accounts.Account
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.TracksAnalyticsTracker
@@ -18,6 +19,7 @@ import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.UploadProgressManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.toUploadData
 import au.com.shiftyjelly.pocketcasts.servers.model.AuthResultModel
+import au.com.shiftyjelly.pocketcasts.servers.podcast.PodcastRatingsResponse
 import au.com.shiftyjelly.pocketcasts.servers.sync.EpisodeSyncRequest
 import au.com.shiftyjelly.pocketcasts.servers.sync.FileAccount
 import au.com.shiftyjelly.pocketcasts.servers.sync.FileImageUploadData
@@ -64,7 +66,6 @@ import kotlinx.coroutines.rx2.rxSingle
 import retrofit2.HttpException
 import retrofit2.Response
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Singleton
 class SyncManagerImpl @Inject constructor(

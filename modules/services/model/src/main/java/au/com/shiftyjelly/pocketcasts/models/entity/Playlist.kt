@@ -5,9 +5,9 @@ import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.extensions.splitIgnoreEmpty
 import java.io.Serializable
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Entity(
     tableName = "filters",

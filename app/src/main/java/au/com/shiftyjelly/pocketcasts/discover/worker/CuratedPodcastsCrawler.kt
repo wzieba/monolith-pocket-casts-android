@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.discover.worker
 
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.models.entity.CuratedPodcast
-import au.com.shiftyjelly.pocketcasts.servers.BuildConfig
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverRow
 import au.com.shiftyjelly.pocketcasts.servers.model.ListFeed
 import au.com.shiftyjelly.pocketcasts.servers.model.ListType

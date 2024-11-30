@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class ColorAdapter(
     private val colorList: IntArray,
@@ -45,7 +43,7 @@ class ColorAdapter(
         layoutParams.marginEnd = 16.dpToPx(parent.context)
         view.layoutParams = layoutParams
         view.setBackgroundResource(R.drawable.filter_circle)
-        view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(UR.attr.primary_interactive_02))
+        view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(R.attr.primary_interactive_02))
         view.isClickable = true
         view.isFocusable = true
         view.isFocusableInTouchMode = true

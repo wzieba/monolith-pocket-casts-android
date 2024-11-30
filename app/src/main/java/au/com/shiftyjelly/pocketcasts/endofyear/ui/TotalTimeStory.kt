@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.AutoResizeText
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH10
@@ -35,9 +36,6 @@ import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -59,7 +57,7 @@ internal fun TotalTimeStory(
             val subtitle = subcompose("subtitle") {
                 TextH10(
                     text = texts.subtitle,
-                    color = colorResource(UR.color.coolgrey_90),
+                    color = colorResource(R.color.coolgrey_90),
                     fontScale = measurements.smallDeviceFactor,
                     disableAutoScale = true,
                     modifier = Modifier.padding(horizontal = 24.dp),

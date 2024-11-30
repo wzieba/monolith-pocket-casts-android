@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 
 open class ButtonPreference @JvmOverloads constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int = androidx.preference.R.attr.preferenceStyle) : Preference(context, attrs, defStyleAttr) {
     init {

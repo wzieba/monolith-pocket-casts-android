@@ -8,7 +8,7 @@ import android.view.SurfaceView
 import android.widget.FrameLayout
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.ui.AspectRatioFrameLayout
-import au.com.shiftyjelly.pocketcasts.player.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.repositories.playback.PlaybackManager
 import au.com.shiftyjelly.pocketcasts.repositories.playback.SimplePlayer
 

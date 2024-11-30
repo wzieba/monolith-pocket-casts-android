@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.ItemTouchUIUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.views.helper.MultiSwipeHelper.Callback
 import kotlin.math.abs
 

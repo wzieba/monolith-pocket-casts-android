@@ -19,10 +19,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.filters.databinding.FragmentFilterBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentFilterBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcasts
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
@@ -64,8 +65,6 @@ import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val ARG_PLAYLIST_UUID = "playlist_uuid"
 private const val ARG_PLAYLIST_TITLE = "playlist_title"

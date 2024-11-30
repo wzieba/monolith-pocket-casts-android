@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.core.widget.ImageViewCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.Bookmark
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
@@ -28,7 +29,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.podcast.UploadProgressManager
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.helper.ColorUtils
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
-import au.com.shiftyjelly.pocketcasts.views.R
 import com.jakewharton.rxrelay2.BehaviorRelay
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Observable
@@ -39,9 +39,6 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 import kotlin.math.roundToInt
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class FileStatusIconsView @JvmOverloads constructor(
     context: Context,
@@ -83,9 +80,9 @@ class FileStatusIconsView @JvmOverloads constructor(
         bookmarksAvailable: Boolean = false,
         tintColor: Int,
     ) {
-        val captionColor = context.getThemeColor(UR.attr.primary_text_02)
+        val captionColor = context.getThemeColor(R.attr.primary_text_02)
         val captionWithAlpha = ColorUtils.colorWithAlpha(captionColor, 128)
-        val iconColor = context.getThemeColor(UR.attr.primary_icon_02)
+        val iconColor = context.getThemeColor(R.attr.primary_icon_02)
         progressCircle.setColor(captionColor)
         progressBar.indeterminateTintList = ColorStateList.valueOf(captionColor)
         imgBookmark.imageTintList = ColorStateList.valueOf(tintColor)
@@ -154,7 +151,7 @@ class FileStatusIconsView @JvmOverloads constructor(
                     progressCircle.isVisible = false
                     imgIcon.setImageResource(R.drawable.ic_downloaded)
                     updateTimeLeft(textView = lblStatus, episode = episode)
-                    ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(context.getThemeColor(UR.attr.support_02)))
+                    ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(context.getThemeColor(R.attr.support_02)))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.DOWNLOADING) {
                     imgIcon.isVisible = false
                     progressBar.isVisible = false
@@ -228,7 +225,7 @@ class FileStatusIconsView @JvmOverloads constructor(
                     captionWithAlpha
                 } else {
                     context.getThemeColor(
-                        UR.attr.primary_text_02,
+                        R.attr.primary_text_02,
                     )
                 }
                 lblStatus.setTextColor(statusColor)
@@ -245,7 +242,7 @@ class FileStatusIconsView @JvmOverloads constructor(
 
         val episodeGreyedOut = episode.playingStatus == EpisodePlayingStatus.COMPLETED || episode.isArchived
 
-        val statusColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(UR.attr.primary_text_02)
+        val statusColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(R.attr.primary_text_02)
         lblStatus.setTextColor(statusColor)
     }
 

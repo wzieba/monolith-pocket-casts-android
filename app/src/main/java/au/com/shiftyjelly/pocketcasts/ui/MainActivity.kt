@@ -177,8 +177,6 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 import android.provider.Settings as AndroidProviderSettings
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 import com.google.android.material.R as MR
 
 private const val SAVEDSTATE_PLAYER_OPEN = "player_open"
@@ -276,7 +274,7 @@ class MainActivity :
             }
             OnboardingFinish.DoneGoToDiscover -> {
                 settings.setHasDoneInitialOnboarding()
-                openTab(VR.id.navigation_discover)
+                openTab(R.id.navigation_discover)
             }
             OnboardingFinish.DoneShowPlusPromotion -> {
                 settings.setHasDoneInitialOnboarding()
@@ -366,7 +364,7 @@ class MainActivity :
                         setupEndOfYearLaunchBottomSheet()
                     }
                     if (settings.getEndOfYearShowBadge2023()) {
-                        binding.bottomNavigation.getOrCreateBadge(VR.id.navigation_profile)
+                        binding.bottomNavigation.getOrCreateBadge(R.id.navigation_profile)
                     }
                 }
             }
@@ -374,11 +372,11 @@ class MainActivity :
 
         var selectedTab = settings.selectedTab()
         val tabs = buildMap {
-            put(VR.id.navigation_podcasts) { FragmentInfo(PodcastsFragment(), true) }
-            put(VR.id.navigation_filters) { FragmentInfo(FiltersFragment(), true) }
-            put(VR.id.navigation_discover) { FragmentInfo(DiscoverFragment(), false) }
-            put(VR.id.navigation_profile) { FragmentInfo(ProfileFragment(), true) }
-            put(VR.id.navigation_upnext) {
+            put(R.id.navigation_podcasts) { FragmentInfo(PodcastsFragment(), true) }
+            put(R.id.navigation_filters) { FragmentInfo(FiltersFragment(), true) }
+            put(R.id.navigation_discover) { FragmentInfo(DiscoverFragment(), false) }
+            put(R.id.navigation_profile) { FragmentInfo(ProfileFragment(), true) }
+            put(R.id.navigation_upnext) {
                 FragmentInfo(
                     UpNextFragment.newInstance(
                         embedded = false,
@@ -400,7 +398,7 @@ class MainActivity :
             // The navigator has to be initialised in onCreate or else race conditions happen
             val podcastCount = runBlocking(Dispatchers.Default) { podcastManager.countSubscribed() }
             selectedTab =
-                if (podcastCount == 0) VR.id.navigation_discover else VR.id.navigation_podcasts
+                if (podcastCount == 0) R.id.navigation_discover else R.id.navigation_podcasts
         }
 
         navigator = BottomNavigator.onCreateWithDetachability(
@@ -439,12 +437,12 @@ class MainActivity :
                     if (settings.selectedTab() != currentTab) {
                         trackTabOpened(currentTab)
                         when (currentTab) {
-                            VR.id.navigation_profile -> resetEoYBadgeIfNeeded()
+                            R.id.navigation_profile -> resetEoYBadgeIfNeeded()
                         }
                     }
                     settings.setSelectedTab(currentTab)
                 } else if (it is NavigatorAction.NewFragmentAdded) {
-                    if (navigator.currentTab() == VR.id.navigation_profile) {
+                    if (navigator.currentTab() == R.id.navigation_profile) {
                         resetEoYBadgeIfNeeded()
                     }
                 }
@@ -462,10 +460,10 @@ class MainActivity :
     }
 
     private fun resetEoYBadgeIfNeeded() {
-        if (binding.bottomNavigation.getBadge(VR.id.navigation_profile) != null &&
+        if (binding.bottomNavigation.getBadge(R.id.navigation_profile) != null &&
             settings.getEndOfYearShowBadge2023()
         ) {
-            binding.bottomNavigation.removeBadge(VR.id.navigation_profile)
+            binding.bottomNavigation.removeBadge(R.id.navigation_profile)
             settings.setEndOfYearShowBadge2023(false)
         }
     }
@@ -1145,7 +1143,7 @@ class MainActivity :
     }
 
     override fun closePodcastsToRoot() {
-        navigator.reset(tab = VR.id.navigation_podcasts, resetRootFragment = true)
+        navigator.reset(tab = R.id.navigation_podcasts, resetRootFragment = true)
     }
 
     override fun setSupportActionBar(toolbar: Toolbar?) {
@@ -1265,10 +1263,10 @@ class MainActivity :
                     )
                 }
                 is ShowPodcastsDeepLink -> {
-                    openTab(VR.id.navigation_podcasts)
+                    openTab(R.id.navigation_podcasts)
                 }
                 is ShowDiscoverDeepLink -> {
-                    openTab(VR.id.navigation_discover)
+                    openTab(R.id.navigation_discover)
                 }
                 is ShowUpNextDeepLink -> {
                     // Do nothig, handled in onMiniPlayerVisible()
@@ -1279,7 +1277,7 @@ class MainActivity :
                             withContext(Dispatchers.Main) {
                                 settings.setSelectedFilter(it.uuid)
                                 // HACK: Go diving to find if a filter fragment
-                                openTab(VR.id.navigation_filters)
+                                openTab(R.id.navigation_filters)
                                 val filtersFragment = supportFragmentManager.fragments.find { it is FiltersFragment } as? FiltersFragment
                                 filtersFragment?.openPlaylist(it)
                             }
@@ -1348,7 +1346,7 @@ class MainActivity :
             return
         }
         settings.referralClaimCode.set(code, false)
-        openTab(VR.id.navigation_profile)
+        openTab(R.id.navigation_profile)
         val fragment = ReferralsGuestPassFragment.newInstance(ReferralsGuestPassFragment.ReferralsPageType.Claim)
         showBottomSheet(fragment)
     }
@@ -1534,7 +1532,7 @@ class MainActivity :
     }
 
     private fun showUpgradedFromPromoCode(description: String) {
-        openTab(VR.id.navigation_profile)
+        openTab(R.id.navigation_profile)
         PromoCodeUpgradedFragment.newInstance(description)
             .show(supportFragmentManager, "upgraded_from_promocode")
     }
@@ -1559,11 +1557,11 @@ class MainActivity :
 
     private fun trackTabOpened(tab: Int, isInitial: Boolean = false) {
         val event: AnalyticsEvent? = when (tab) {
-            VR.id.navigation_podcasts -> AnalyticsEvent.PODCASTS_TAB_OPENED
-            VR.id.navigation_upnext -> AnalyticsEvent.UP_NEXT_TAB_OPENED
-            VR.id.navigation_filters -> AnalyticsEvent.FILTERS_TAB_OPENED
-            VR.id.navigation_discover -> AnalyticsEvent.DISCOVER_TAB_OPENED
-            VR.id.navigation_profile -> AnalyticsEvent.PROFILE_TAB_OPENED
+            R.id.navigation_podcasts -> AnalyticsEvent.PODCASTS_TAB_OPENED
+            R.id.navigation_upnext -> AnalyticsEvent.UP_NEXT_TAB_OPENED
+            R.id.navigation_filters -> AnalyticsEvent.FILTERS_TAB_OPENED
+            R.id.navigation_discover -> AnalyticsEvent.DISCOVER_TAB_OPENED
+            R.id.navigation_profile -> AnalyticsEvent.PROFILE_TAB_OPENED
             else -> {
                 Timber.e("Can't open invalid tab")
                 null

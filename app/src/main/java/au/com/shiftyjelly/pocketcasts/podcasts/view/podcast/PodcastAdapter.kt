@@ -29,8 +29,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterEpisodeBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterEpisodeHeaderBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterPodcastHeaderBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.Bookmark
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
@@ -38,10 +42,6 @@ import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.to.PodcastGrouping
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodesSortType
-import au.com.shiftyjelly.pocketcasts.podcasts.R
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterEpisodeBinding
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterEpisodeHeaderBinding
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterPodcastHeaderBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.helper.readMore
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlayButton
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.ratings.StarRatingView
@@ -76,9 +76,6 @@ import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import java.util.Date
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private val differ: DiffUtil.ItemCallback<Any> = object : DiffUtil.ItemCallback<Any>() {
     override fun areItemsTheSame(oldItem: Any, newItem: Any): Boolean {
@@ -364,7 +361,7 @@ class PodcastAdapter(
             val text = if (episodeHeader.episodeLimit != null) {
                 val limited = "Limited to ${episodeHeader.episodeLimit}"
                 val spannable = SpannableString("$quantityString • $limited")
-                val color = ContextCompat.getColor(holder.itemView.context, UR.color.orange_50)
+                val color = ContextCompat.getColor(holder.itemView.context, R.color.orange_50)
                 spannable.setSpan(ForegroundColorSpan(color), spannable.length - limited.length, spannable.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
                 spannable
             } else {

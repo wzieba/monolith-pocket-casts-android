@@ -9,18 +9,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcasts
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.extensions.hide
 import au.com.shiftyjelly.pocketcasts.views.extensions.show
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class ShareListIncomingAdapter(
     private val clickListener: ClickListener,
@@ -126,7 +123,7 @@ class ShareListIncomingAdapter(
             } else {
                 holder.allButton.show()
                 holder.allButton.setText(R.string.podcasts_share_subscribe_to_all)
-                holder.allButton.setTextColor(context.getThemeColor(UR.attr.support_02))
+                holder.allButton.setTextColor(context.getThemeColor(R.attr.support_02))
             }
             holder.countText.text = context.resources.getStringPluralPodcasts(podcasts.size)
         }
@@ -147,12 +144,12 @@ class ShareListIncomingAdapter(
     private fun updateTick(imageView: ImageView, alreadyAdded: Boolean, podcast: Podcast) {
         if (alreadyAdded) {
             imageView.setImageResource(R.drawable.ic_tick)
-            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(UR.attr.support_02)))
+            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(R.attr.support_02)))
             imageView.contentDescription = "Unsubscribe from " + podcast.title.ifEmpty { "podcast" } + " button."
             imageView.setOnClickListener { clickListener.onUnsubscribeClick(podcast) }
         } else {
             imageView.setImageResource(R.drawable.ic_add_black_24dp)
-            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(UR.attr.primary_icon_01)))
+            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(context.getThemeColor(R.attr.primary_icon_01)))
             imageView.contentDescription = "Subscribe to " + podcast.title.ifEmpty { "podcast" } + " button."
             imageView.setOnClickListener {
                 updateTick(imageView, true, podcast)

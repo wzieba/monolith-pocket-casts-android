@@ -10,10 +10,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.bars.NavigationButton
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.compose.podcast.PodcastSelectGrid
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 /**
  * The first page when sharing a list of podcasts. Select the podcasts to share.

@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.models.entity
 
 import androidx.room.ColumnInfo
-import au.com.shiftyjelly.pocketcasts.model.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 
 data class ExternalPodcast(
     @ColumnInfo(name = "id") val id: String,

@@ -12,8 +12,6 @@ import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.time.Duration
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.profile.R as PR
 
 @AndroidEntryPoint
 class AutomotiveSettingsActivity : AppCompatActivity(), FragmentHostListener {
@@ -34,7 +32,7 @@ class AutomotiveSettingsActivity : AppCompatActivity(), FragmentHostListener {
         val settingsFragment = AutomotiveSettingsFragment()
         supportFragmentManager.beginTransaction().replace(R.id.frameMain, settingsFragment).commitNowAllowingStateLoss()
 
-        val btnClose = findViewById<ImageView>(PR.id.btnClose)
+        val btnClose = findViewById<ImageView>(R.id.btnClose)
         btnClose?.setImageResource(R.drawable.ic_arrow_back)
         btnClose?.setOnClickListener { handleBackPressed() }
     }

@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 
 private fun constructItemView(adapterType: FilterOptionsAdapterType, parent: ViewGroup): View {
     val layoutId = if (adapterType is FilterOptionsAdapterType.Checkbox) R.layout.filters_checkbox_row else R.layout.filters_radio_row

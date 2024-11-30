@@ -27,6 +27,7 @@ import androidx.wear.compose.material.InlineSlider
 import androidx.wear.compose.material.InlineSliderDefaults
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.tooling.preview.devices.WearDevices
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH30
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH50
@@ -40,8 +41,6 @@ import com.google.android.horologist.compose.layout.ScalingLazyColumnState
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberColumnState
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object EffectsScreen {
     const val route = "effects"

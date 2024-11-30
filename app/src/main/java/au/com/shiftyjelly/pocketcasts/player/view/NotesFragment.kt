@@ -14,9 +14,10 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
-import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentNotesBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentNotesBinding
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.NotesViewModel
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
@@ -35,7 +36,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.setLongStyleDate
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class NotesFragment : BaseFragment() {

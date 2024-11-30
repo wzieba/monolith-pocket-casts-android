@@ -59,6 +59,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.coerceAtMost
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.buttons.BaseRowButton
 import au.com.shiftyjelly.pocketcasts.compose.components.PagerDotIndicator
@@ -86,8 +87,6 @@ import java.sql.Date
 import java.time.Instant
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal interface ShareClipPageListener {
     fun onShareClip(podcast: Podcast, episode: PodcastEpisode, clipRange: Clip.Range, platform: SocialPlatform, cardType: CardType)

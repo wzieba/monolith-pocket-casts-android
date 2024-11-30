@@ -11,7 +11,7 @@ import androidx.core.text.HtmlCompat
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.toPublisher
 import androidx.work.WorkManager
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast.Companion.AUTO_DOWNLOAD_NEW_EPISODES
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode

@@ -50,6 +50,7 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.coerceAtLeast
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.PagerProgressingIndicator
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH30
@@ -61,8 +62,6 @@ import au.com.shiftyjelly.pocketcasts.utils.Util
 import java.io.File
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.TimeSource
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun StoriesPage(

@@ -10,8 +10,8 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.ViewMiniPlayerBinding
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
@@ -32,7 +32,6 @@ import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.parcelize.Parcelize
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class MiniPlayer @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
     FrameLayout(context, attrs), CoroutineScope {

@@ -19,6 +19,7 @@ import androidx.media.utils.MediaConstants.DESCRIPTION_EXTRAS_KEY_COMPLETION_STA
 import androidx.media.utils.MediaConstants.DESCRIPTION_EXTRAS_VALUE_COMPLETION_STATUS_FULLY_PLAYED
 import androidx.media.utils.MediaConstants.DESCRIPTION_EXTRAS_VALUE_COMPLETION_STATUS_NOT_PLAYED
 import androidx.media.utils.MediaConstants.DESCRIPTION_EXTRAS_VALUE_COMPLETION_STATUS_PARTIALLY_PLAYED
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.localization.helper.tryToLocaliseFilters
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
@@ -38,8 +39,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.playback.FOLDER_ROOT_PREFIX
 import au.com.shiftyjelly.pocketcasts.utils.Util
 import coil.executeBlocking
 import coil.imageLoader
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 data class AutoMediaId(
     val episodeId: String,

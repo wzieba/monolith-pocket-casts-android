@@ -1,8 +1,8 @@
 package au.com.shiftyjelly.pocketcasts.taskerplugin.addtoupnext
 
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.hilt.episodeManager
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.hilt.playbackManager
 import com.joaomgcd.taskerpluginlibrary.action.TaskerPluginRunnerActionNoOutput

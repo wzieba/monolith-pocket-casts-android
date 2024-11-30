@@ -8,11 +8,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.theme
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @Composable
 fun HorizontalLogoText(

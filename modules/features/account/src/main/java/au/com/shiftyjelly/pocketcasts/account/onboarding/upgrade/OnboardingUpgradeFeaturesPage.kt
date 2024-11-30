@@ -61,6 +61,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.components.UpgradeFeatureItem
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.UpgradeRowButton
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.paywallfeatures.UpgradeLayoutFeatures
@@ -82,7 +83,6 @@ import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionFrequency
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingFlow
 import au.com.shiftyjelly.pocketcasts.settings.onboarding.OnboardingUpgradeSource
 import au.com.shiftyjelly.pocketcasts.utils.extensions.pxToDp
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val MAX_OFFER_BADGE_TEXT_LENGTH = 23
 private const val MIN_SCREEN_WIDTH_FOR_HORIZONTAL_DISPLAY = 400

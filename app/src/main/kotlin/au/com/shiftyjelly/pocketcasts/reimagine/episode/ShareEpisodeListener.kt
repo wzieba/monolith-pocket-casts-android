@@ -1,5 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.reimagine.episode
 
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
@@ -12,7 +13,6 @@ import au.com.shiftyjelly.pocketcasts.sharing.VisualCardType
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal class ShareEpisodeListener @AssistedInject constructor(
     @Assisted private val fragment: ShareEpisodeFragment,

@@ -6,8 +6,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.children
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
-import au.com.shiftyjelly.pocketcasts.views.R
 
 class PagerIndicator @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
 

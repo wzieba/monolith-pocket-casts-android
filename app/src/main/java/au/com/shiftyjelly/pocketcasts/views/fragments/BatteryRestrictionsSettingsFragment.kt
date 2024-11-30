@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.compose.content
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.bars.NavigationButton
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
@@ -50,8 +51,6 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.SystemBatteryRestrictions
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 private const val ARG_CLOSE_BUTTON = "close_button"
 
@@ -184,7 +183,7 @@ private fun Page(
                             .align(Alignment.CenterVertically),
                     ) {
                         GradientIcon(
-                            painter = painterResource(VR.drawable.ic_outline_info_24),
+                            painter = painterResource(R.drawable.ic_outline_info_24),
                             colors = if (isUnrestricted) {
                                 listOf(MaterialTheme.theme.colors.primaryText02)
                             } else {

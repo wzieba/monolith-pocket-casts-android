@@ -23,6 +23,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.ChangePasswordError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.ChangePasswordState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.ChangePwdViewModel
@@ -31,7 +32,6 @@ import au.com.shiftyjelly.pocketcasts.compose.buttons.RowLoadingButton
 import au.com.shiftyjelly.pocketcasts.compose.components.PasswordField
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH40
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun ChangePasswordPage(

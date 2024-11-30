@@ -17,6 +17,7 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.IntentCompat
 import androidx.core.os.bundleOf
 import androidx.media.utils.MediaConstants.PLAYBACK_STATE_EXTRAS_KEY_MEDIA_ID
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -65,7 +66,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 class MediaSessionManager(
     val playbackManager: PlaybackManager,

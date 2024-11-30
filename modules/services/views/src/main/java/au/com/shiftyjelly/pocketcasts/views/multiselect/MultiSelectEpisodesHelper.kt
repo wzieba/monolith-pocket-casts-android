@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import androidx.lifecycle.toLiveData
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
@@ -24,7 +25,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.UserEpisodeManager
 import au.com.shiftyjelly.pocketcasts.utils.combineLatest
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.dialog.ConfirmationDialog
 import au.com.shiftyjelly.pocketcasts.views.dialog.ShareDialogFactory
 import au.com.shiftyjelly.pocketcasts.views.helper.CloudDeleteHelper
@@ -38,9 +38,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val WARNING_LIMIT = 3
 class MultiSelectEpisodesHelper @Inject constructor(
@@ -80,7 +77,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 archive(resources = resources, fragmentManager = fragmentManager)
                 true
             }
-            UR.id.menu_unarchive -> {
+            R.id.menu_unarchive -> {
                 unarchive(resources = resources)
                 true
             }
@@ -96,7 +93,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 download(resources, fragmentManager)
                 true
             }
-            UR.id.menu_undownload -> {
+            R.id.menu_undownload -> {
                 deleteDownload()
                 true
             }
@@ -104,7 +101,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 markAsPlayed(resources = resources, fragmentManager = fragmentManager)
                 true
             }
-            UR.id.menu_markasunplayed -> {
+            R.id.menu_markasunplayed -> {
                 markAsUnplayed(resources = resources)
                 true
             }
@@ -140,7 +137,7 @@ class MultiSelectEpisodesHelper @Inject constructor(
                 star(resources = resources)
                 true
             }
-            UR.id.menu_unstar -> {
+            R.id.menu_unstar -> {
                 unstar(resources = resources)
                 true
             }

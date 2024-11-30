@@ -8,14 +8,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
-import au.com.shiftyjelly.pocketcasts.discover.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.discover.extensions.updateSubscribeButtonIcon
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverPodcast
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
 import au.com.shiftyjelly.pocketcasts.views.extensions.setRippleBackground
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class PodcastGridRow @JvmOverloads constructor(
     context: Context,
@@ -36,7 +35,7 @@ class PodcastGridRow @JvmOverloads constructor(
             val listener = if (value != null) {
                 OnClickListener {
                     val uuid = podcast?.uuid ?: return@OnClickListener
-                    btnSubscribe.updateSubscribeButtonIcon(subscribed = true, colorSubscribed = UR.attr.contrast_01, colorUnsubscribed = UR.attr.contrast_01)
+                    btnSubscribe.updateSubscribeButtonIcon(subscribed = true, colorSubscribed = R.attr.contrast_01, colorUnsubscribed = R.attr.contrast_01)
                     value(uuid)
                 }
             } else {
@@ -81,7 +80,7 @@ class PodcastGridRow @JvmOverloads constructor(
                 lblSubtitle.text = value.author
                 loadImage()
                 isVisible = true
-                btnSubscribe.updateSubscribeButtonIcon(subscribed = value.isSubscribed, colorSubscribed = UR.attr.contrast_01, colorUnsubscribed = UR.attr.contrast_01)
+                btnSubscribe.updateSubscribeButtonIcon(subscribed = value.isSubscribed, colorSubscribed = R.attr.contrast_01, colorUnsubscribed = R.attr.contrast_01)
             } else {
                 clear()
             }

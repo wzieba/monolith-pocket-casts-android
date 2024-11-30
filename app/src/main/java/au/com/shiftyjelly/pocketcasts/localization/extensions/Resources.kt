@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.localization.extensions
 
 import android.content.res.Resources
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import kotlin.math.roundToInt
 
 fun Resources.getStringPlural(count: Int, @StringRes singular: Int, @StringRes plural: Int): String {

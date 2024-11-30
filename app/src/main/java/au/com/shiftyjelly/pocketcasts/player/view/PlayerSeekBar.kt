@@ -11,15 +11,14 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.graphics.ColorUtils
 import androidx.core.view.isVisible
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.to.Chapters
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.ui.theme.ThemeColor
 import au.com.shiftyjelly.pocketcasts.utils.toHhMmSs
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class PlayerSeekBar @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
     private val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

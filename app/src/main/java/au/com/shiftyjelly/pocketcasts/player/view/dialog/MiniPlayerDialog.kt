@@ -2,6 +2,7 @@ package au.com.shiftyjelly.pocketcasts.player.view.dialog
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
@@ -13,9 +14,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.podcast.EpisodeManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 /**
  * A dialog to either mark the current episode as played or clear the Up Next.
@@ -32,7 +30,7 @@ class MiniPlayerDialog(
     private var isOptionClicked = false
     fun show(context: Context) {
         analyticsTracker.track(AnalyticsEvent.MINI_PLAYER_LONG_PRESS_MENU_SHOWN)
-        val dangerColor = context.getThemeColor(UR.attr.support_05)
+        val dangerColor = context.getThemeColor(R.attr.support_05)
         OptionsDialog()
             .addTextOption(
                 titleId = R.string.mark_played,

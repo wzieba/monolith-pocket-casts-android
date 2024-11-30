@@ -19,6 +19,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPlural
@@ -60,8 +61,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val ARG_SHOW_TOOLBAR = "show_toolbar"
 
@@ -133,7 +132,7 @@ class AutoDownloadSettingsFragment :
 
         if (!showToolbar) {
             val listContainer = view.findViewById<View>(android.R.id.list_container)
-            val childContainer = view.findViewById<View>(UR.id.frameChildFragment)
+            val childContainer = view.findViewById<View>(R.id.frameChildFragment)
 
             listContainer.updateLayoutParams<FrameLayout.LayoutParams> { topMargin = 0 }
             childContainer.updateLayoutParams<FrameLayout.LayoutParams> { topMargin = 0 }
@@ -298,7 +297,7 @@ class AutoDownloadSettingsFragment :
     private fun openPodcastsActivity() {
         val fragment = PodcastSelectFragment.newInstance(source = PodcastSelectFragmentSource.DOWNLOADS)
         childFragmentManager.beginTransaction()
-            .replace(UR.id.frameChildFragment, fragment)
+            .replace(R.id.frameChildFragment, fragment)
             .addToBackStack("podcastSelect")
             .commit()
         toolbar?.title = getString(R.string.settings_auto_download_podcasts)
@@ -332,7 +331,7 @@ class AutoDownloadSettingsFragment :
     private fun openPlaylistActivity() {
         val fragment = FilterSelectFragment.newInstance(FilterSelectFragment.Source.AUTO_DOWNLOAD)
         childFragmentManager.beginTransaction()
-            .replace(UR.id.frameChildFragment, fragment)
+            .replace(R.id.frameChildFragment, fragment)
             .addToBackStack("filterSelect")
             .commit()
         toolbar?.title = getString(R.string.settings_auto_download_filters)

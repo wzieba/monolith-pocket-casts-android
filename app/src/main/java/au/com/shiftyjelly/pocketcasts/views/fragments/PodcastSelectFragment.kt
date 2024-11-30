@@ -13,8 +13,11 @@ import androidx.core.os.BundleCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
+import au.com.shiftyjelly.pocketcasts.databinding.SettingsFragmentPodcastSelectBinding
+import au.com.shiftyjelly.pocketcasts.databinding.SettingsRowPodcastBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcastsSelected
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.type.PodcastsSortType
@@ -22,8 +25,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageReques
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
-import au.com.shiftyjelly.pocketcasts.views.databinding.SettingsFragmentPodcastSelectBinding
-import au.com.shiftyjelly.pocketcasts.views.databinding.SettingsRowPodcastBinding
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -35,7 +36,6 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import kotlinx.parcelize.Parcelize
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class PodcastSelectFragment : BaseFragment() {
@@ -116,8 +116,8 @@ class PodcastSelectFragment : BaseFragment() {
         podcastManager.findSubscribedRx()
             .zipWith(Single.fromCallable { listener.podcastSelectFragmentGetCurrentSelection() })
             .map { pair ->
-                val podcasts = paR.first
-                val selected = paR.second
+                val podcasts = pair.first
+                val selected = pair.second
                 return@map podcasts
                     .sortedBy { PodcastsSortType.cleanStringForSort(it.title) }
                     .map { SelectablePodcast(it, selected.contains(it.uuid)) }

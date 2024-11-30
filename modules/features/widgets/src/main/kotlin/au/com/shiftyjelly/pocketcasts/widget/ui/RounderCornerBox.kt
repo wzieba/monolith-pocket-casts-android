@@ -14,7 +14,7 @@ import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.unit.ColorProvider
-import au.com.shiftyjelly.pocketcasts.images.R as IR
+import au.com.shiftyjelly.pocketcasts.R
 
 @Composable
 internal fun RounderCornerBox(

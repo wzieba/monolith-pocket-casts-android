@@ -2,10 +2,10 @@ package au.com.shiftyjelly.pocketcasts.settings.util
 
 import android.content.res.Resources
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import java.util.Random
 import java.util.UnknownFormatConversionException
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class FunnyTimeConverter {
 

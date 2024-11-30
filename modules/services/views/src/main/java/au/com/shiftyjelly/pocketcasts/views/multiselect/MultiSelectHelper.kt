@@ -9,14 +9,13 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 abstract class MultiSelectHelper<T> : CoroutineScope {
     override val coroutineContext: CoroutineContext

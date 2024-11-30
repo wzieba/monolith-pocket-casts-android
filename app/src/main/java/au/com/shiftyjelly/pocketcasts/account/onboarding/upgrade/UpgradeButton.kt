@@ -3,11 +3,10 @@ package au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Brush
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.patronGradientBrush
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.plusGradientBrush
 import au.com.shiftyjelly.pocketcasts.models.type.Subscription
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 sealed class UpgradeButton(
     @StringRes val shortNameRes: Int,
@@ -22,8 +21,8 @@ sealed class UpgradeButton(
         override val planType: PlanType,
     ) : UpgradeButton(
         shortNameRes = R.string.pocket_casts_plus_short,
-        backgroundColorRes = UR.color.plus_gold,
-        textColorRes = UR.color.black,
+        backgroundColorRes = R.color.plus_gold,
+        textColorRes = R.color.black,
         subscription = subscription,
         planType = planType,
         gradientBackgroundColor = plusGradientBrush,
@@ -34,8 +33,8 @@ sealed class UpgradeButton(
         override val planType: PlanType,
     ) : UpgradeButton(
         shortNameRes = R.string.pocket_casts_patron_short,
-        backgroundColorRes = UR.color.patron_purple,
-        textColorRes = UR.color.white,
+        backgroundColorRes = R.color.patron_purple,
+        textColorRes = R.color.white,
         subscription = subscription,
         planType = planType,
         gradientBackgroundColor = patronGradientBrush,

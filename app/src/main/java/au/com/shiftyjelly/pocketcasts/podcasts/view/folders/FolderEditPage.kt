@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.bars.BottomSheetAppBar
 import au.com.shiftyjelly.pocketcasts.compose.bars.NavigationButton
 import au.com.shiftyjelly.pocketcasts.compose.components.FolderColorPicker
@@ -28,8 +29,6 @@ import au.com.shiftyjelly.pocketcasts.compose.components.TextC70
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP50
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @Composable
 fun FolderEditPage(
@@ -97,7 +96,7 @@ private fun DeleteButton(onDeleteClick: () -> Unit, modifier: Modifier = Modifie
             .clickable { onDeleteClick() },
     ) {
         Icon(
-            painter = painterResource(VR.drawable.ic_delete),
+            painter = painterResource(R.drawable.ic_delete),
             contentDescription = null,
             tint = MaterialTheme.theme.colors.support05,
             modifier = Modifier.padding(horizontal = 16.dp),

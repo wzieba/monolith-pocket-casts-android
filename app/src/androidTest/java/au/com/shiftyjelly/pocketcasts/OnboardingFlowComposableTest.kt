@@ -22,7 +22,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.kotlin.mock
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 /**
  * This test class is in the app component so Hilt can access the application for injection.
@@ -42,7 +41,7 @@ class OnboardingFlowComposableTest {
     ) {
         composeTestRule.activity.setContent {
             CompositionLocalProvider(
-                LocalContext provides ContextThemeWrapper(LocalContext.current, UR.style.ThemeDark),
+                LocalContext provides ContextThemeWrapper(LocalContext.current, R.style.ThemeDark),
             ) {
                 navController = TestNavHostController(LocalContext.current).apply {
                     navigatorProvider.addNavigator(ComposeNavigator())

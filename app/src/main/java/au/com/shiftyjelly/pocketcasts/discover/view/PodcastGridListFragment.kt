@@ -11,10 +11,10 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.discover.R
 import au.com.shiftyjelly.pocketcasts.discover.view.DiscoverFragment.Companion.EPISODE_UUID_KEY
 import au.com.shiftyjelly.pocketcasts.discover.view.DiscoverFragment.Companion.LIST_ID_KEY
 import au.com.shiftyjelly.pocketcasts.discover.view.DiscoverFragment.Companion.PODCAST_UUID_KEY
@@ -44,7 +44,6 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 open class PodcastGridListFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
 

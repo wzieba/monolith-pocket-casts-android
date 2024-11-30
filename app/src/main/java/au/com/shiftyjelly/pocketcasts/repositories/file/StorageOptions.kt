@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.repositories.file
 
 import android.content.Context
 import android.os.Environment
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import java.io.File
 
 class StorageOptions {

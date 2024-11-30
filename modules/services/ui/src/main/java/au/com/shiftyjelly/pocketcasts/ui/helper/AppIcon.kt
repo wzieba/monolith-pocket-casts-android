@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.BuildConfig
 import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
@@ -12,8 +13,6 @@ import au.com.shiftyjelly.pocketcasts.preferences.model.AppIconSetting
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val PREFERENCE_APPICON = "pocketCastsAppIcon"
 

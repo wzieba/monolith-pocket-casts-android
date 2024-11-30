@@ -19,12 +19,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.extensions.setContentWithViewCompositionStrategy
-import au.com.shiftyjelly.pocketcasts.player.R
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterPlayerHeaderBinding
 import au.com.shiftyjelly.pocketcasts.player.binding.setSeekBarState
-import au.com.shiftyjelly.pocketcasts.player.databinding.AdapterPlayerHeaderBinding
 import au.com.shiftyjelly.pocketcasts.player.view.bookmark.BookmarkActivityContract
 import au.com.shiftyjelly.pocketcasts.player.view.nowplaying.ArtworkSection
 import au.com.shiftyjelly.pocketcasts.player.view.nowplaying.PlayerControls
@@ -65,8 +65,6 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val UP_NEXT_FLING_VELOCITY_THRESHOLD = 1000.0f
 

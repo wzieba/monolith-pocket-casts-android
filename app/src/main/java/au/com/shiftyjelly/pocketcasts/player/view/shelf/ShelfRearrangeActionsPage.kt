@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.compose.theme
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
@@ -24,7 +25,6 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.ThemeColor
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.map
 import android.graphics.Color as AndroidColor
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun ShelfRearrangeActionsPage(

@@ -36,13 +36,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.OrientationPreview
 import au.com.shiftyjelly.pocketcasts.compose.components.ChapterImage
 import au.com.shiftyjelly.pocketcasts.compose.components.EpisodeImage
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.to.Chapter
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory.PlaceholderType
 import au.com.shiftyjelly.pocketcasts.utils.extensions.getActivity
@@ -53,7 +53,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable

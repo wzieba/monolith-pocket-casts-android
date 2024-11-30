@@ -6,7 +6,7 @@ import android.text.style.ForegroundColorSpan
 import androidx.annotation.ColorInt
 import androidx.core.text.set
 import androidx.core.text.toSpannable
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode

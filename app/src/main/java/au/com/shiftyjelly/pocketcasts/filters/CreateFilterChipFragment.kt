@@ -16,8 +16,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.filters.databinding.FragmentCreateFilterChipBinding
-import au.com.shiftyjelly.pocketcasts.filters.databinding.RowCreateEpisodeBinding
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateFilterChipBinding
+import au.com.shiftyjelly.pocketcasts.databinding.RowCreateEpisodeBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcasts
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
@@ -40,7 +41,6 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class CreateFilterChipFragment : BaseFragment(), CoroutineScope {

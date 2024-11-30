@@ -38,6 +38,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingsSection.horizontalPadding
@@ -49,7 +50,6 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import kotlin.time.Duration
 import kotlinx.coroutines.delay
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 object SettingsSection {
     val horizontalPadding = 24.dp

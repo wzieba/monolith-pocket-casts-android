@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentResetPasswordBinding
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.ResetPasswordError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.ResetPasswordState
@@ -19,9 +20,6 @@ import au.com.shiftyjelly.pocketcasts.views.extensions.showKeyboard
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class ResetPasswordFragment : BaseFragment() {
@@ -108,9 +106,9 @@ class ResetPasswordFragment : BaseFragment() {
         val binding = binding ?: return
         val context = binding.root.context
 
-        val emailColor = context.getThemeColor(UR.attr.primary_interactive_01)
+        val emailColor = context.getThemeColor(R.attr.primary_interactive_01)
         val emailDrawable = context.getTintedDrawable(R.drawable.ic_mail, emailColor)
-        val tickColor = context.getThemeColor(UR.attr.support_02)
+        val tickColor = context.getThemeColor(R.attr.support_02)
         val tickDrawable = if (!invalidEmail)context.getTintedDrawable(R.drawable.ic_tick_circle, tickColor) else null
         val max = 64
         emailDrawable?.setBounds(0, 0, max, max)

@@ -8,6 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.toLiveData
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -22,7 +23,6 @@ import io.reactivex.BackpressureStrategy
 import java.util.Collections
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class MultiSelectFragment : BaseFragment(), MultiSelectTouchCallback.ItemTouchHelperAdapter {

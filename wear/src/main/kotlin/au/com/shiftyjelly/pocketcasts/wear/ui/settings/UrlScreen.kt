@@ -13,6 +13,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.navigation.composable
 import androidx.wear.remote.interactions.RemoteActivityHelper
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ScreenHeaderChip
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.WatchListChip
@@ -23,7 +24,6 @@ import java.util.concurrent.Executors
 import kotlinx.coroutines.guava.await
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object UrlScreenRoutes {
     const val termsOfService = "url_screen_terms_of_service"

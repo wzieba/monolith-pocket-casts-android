@@ -8,9 +8,9 @@ import android.content.Intent.EXTRA_STREAM
 import android.net.Uri
 import android.provider.MediaStore.INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH
 import androidx.core.content.IntentCompat
-import au.com.shiftyjelly.pocketcasts.deeplink.BuildConfig.SERVER_LIST_HOST
-import au.com.shiftyjelly.pocketcasts.deeplink.BuildConfig.SERVER_SHORT_HOST
-import au.com.shiftyjelly.pocketcasts.deeplink.BuildConfig.WEB_BASE_HOST
+import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_LIST_HOST
+import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_SHORT_HOST
+import au.com.shiftyjelly.pocketcasts.BuildConfig.WEB_BASE_HOST
 import au.com.shiftyjelly.pocketcasts.deeplink.DeepLink.Companion.ACTION_OPEN_ADD_BOOKMARK
 import au.com.shiftyjelly.pocketcasts.deeplink.DeepLink.Companion.ACTION_OPEN_BOOKMARK
 import au.com.shiftyjelly.pocketcasts.deeplink.DeepLink.Companion.ACTION_OPEN_CHANGE_BOOKMARK_TITLE

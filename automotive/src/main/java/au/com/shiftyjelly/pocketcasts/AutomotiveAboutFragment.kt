@@ -39,8 +39,6 @@ import au.com.shiftyjelly.pocketcasts.settings.LogsFragment
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeDrawable
 import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class AutomotiveAboutFragment : Fragment() {
@@ -81,7 +79,7 @@ private fun AboutPage(
         modifier = Modifier.verticalScroll(scrollState),
     ) {
         Image(
-            painter = painterResource(context.getThemeDrawable(UR.attr.logo_title_vertical)),
+            painter = painterResource(context.getThemeDrawable(R.attr.logo_title_vertical)),
             contentDescription = stringResource(R.string.settings_app_icon),
             modifier = Modifier
                 .padding(top = 56.dp)

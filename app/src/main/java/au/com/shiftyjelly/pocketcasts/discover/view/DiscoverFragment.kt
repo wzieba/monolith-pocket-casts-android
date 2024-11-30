@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.discover.databinding.FragmentDiscoverBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentDiscoverBinding
 import au.com.shiftyjelly.pocketcasts.discover.viewmodel.DiscoverState
 import au.com.shiftyjelly.pocketcasts.discover.viewmodel.DiscoverViewModel
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource

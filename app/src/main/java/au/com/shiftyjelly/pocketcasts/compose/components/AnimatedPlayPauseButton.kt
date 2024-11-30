@@ -18,6 +18,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.SimpleColorFilter
 import com.airbnb.lottie.compose.LottieAnimation
@@ -27,8 +28,6 @@ import com.airbnb.lottie.compose.rememberLottieAnimatable
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.airbnb.lottie.compose.rememberLottieDynamicProperties
 import com.airbnb.lottie.compose.rememberLottieDynamicProperty
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val FRAME_MIN = 0
 private const val FRAME_MAX = 20
@@ -45,7 +44,7 @@ fun AnimatedPlayPauseButton(
     circleSize: Dp = 80.dp,
     circleColor: Color = Color.White,
 ) {
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(UR.raw.large_play_button))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.large_play_button))
     val lottieAnimatable = rememberLottieAnimatable()
     val clipSpec = if (isPlaying) {
         LottieClipSpec.Frame(FRAME_PLAY_IMAGE, FRAME_MAX)

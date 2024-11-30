@@ -23,6 +23,7 @@ import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.ToggleChipDefaults
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.to.RefreshState
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.to.SubscriptionStatus
@@ -36,9 +37,6 @@ import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberColumnState
 import com.google.android.horologist.compose.material.ToggleChip
 import com.google.android.horologist.compose.material.ToggleChipToggleControl
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.settings.R as SR
 
 object SettingsScreen {
     const val route = "settings_screen"
@@ -151,7 +149,7 @@ private fun Content(
         item {
             WatchListChip(
                 title = stringResource(R.string.settings_privacy_analytics),
-                iconRes = SR.drawable.whatsnew_privacy,
+                iconRes = R.drawable.whatsnew_privacy,
                 onClick = onPrivacyClicked,
             )
         }
@@ -189,7 +187,7 @@ private fun Content(
         item {
             WatchListChip(
                 title = stringResource(R.string.settings_title_about),
-                iconRes = SR.drawable.settings_about,
+                iconRes = R.drawable.settings_about,
                 onClick = onAboutClicked,
             )
         }

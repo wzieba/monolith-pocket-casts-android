@@ -20,12 +20,12 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentUpnextBinding
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.UpNextViewModel
@@ -57,9 +57,6 @@ import javax.inject.Inject
 import kotlin.math.abs
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class UpNextFragment : BaseFragment(), UpNextListener, UpNextTouchCallback.ItemTouchHelperAdapter {
@@ -356,7 +353,7 @@ class UpNextFragment : BaseFragment(), UpNextListener, UpNextTouchCallback.ItemT
         multiSelectHelper.listener = multiSelectListener
 
         multiSelectHelper.context = view.context
-        multiSelectToolbar.setup(viewLifecycleOwner, multiSelectHelper, menuRes = VR.menu.menu_multiselect_upnext, activity = requireActivity())
+        multiSelectToolbar.setup(viewLifecycleOwner, multiSelectHelper, menuRes = R.menu.menu_multiselect_upnext, activity = requireActivity())
 
         if (!isEmbedded) {
             startTour()

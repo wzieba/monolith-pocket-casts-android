@@ -34,15 +34,13 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupProperties
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import au.com.shiftyjelly.pocketcasts.images.R as RD
-import au.com.shiftyjelly.pocketcasts.taskerplugin.R as RT
 
 class TaskerInputFieldState<T>(val content: Content<T>) {
     data class Content<T> constructor(
@@ -105,7 +103,7 @@ fun <T> ComposableTaskerInputField(content: TaskerInputFieldState.Content<T>) {
                             if (hasTaskerVariables) {
                                 IconButton(onClick = { selectionMode = TaskerInputFieldSelectMode.Variable }) {
                                     Icon(
-                                        painter = painterResource(RT.drawable.label_outline),
+                                        painter = painterResource(R.drawable.label_outline),
                                         contentDescription = stringResource(R.string.tasker_variables),
                                         tint = MaterialTheme.theme.colors.primaryIcon01,
                                         modifier = Modifier.padding(end = 16.dp, start = 16.dp),
@@ -115,7 +113,7 @@ fun <T> ComposableTaskerInputField(content: TaskerInputFieldState.Content<T>) {
                             if (hasSuggestedItems) {
                                 IconButton(onClick = { selectionMode = TaskerInputFieldSelectMode.ItemList }) {
                                     Icon(
-                                        painter = painterResource(RD.drawable.ic_search),
+                                        painter = painterResource(R.drawable.ic_search),
                                         contentDescription = stringResource(R.string.search),
                                         tint = MaterialTheme.theme.colors.primaryIcon01,
                                         modifier = Modifier.padding(end = 16.dp, start = 16.dp),
@@ -171,7 +169,7 @@ private fun ComposableTaskerInputFieldPreview() {
             TaskerInputFieldState.Content(
                 MutableStateFlow("some value"),
                 R.string.archive,
-                RD.drawable.ic_widget_play,
+                R.drawable.ic_widget_play,
                 MutableStateFlow(true),
                 {},
                 listOf("%test"),

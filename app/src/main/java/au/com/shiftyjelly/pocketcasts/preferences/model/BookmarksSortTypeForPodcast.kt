@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.preferences.model
 
 import android.content.SharedPreferences
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.preferences.UserSetting
 
 // Be careful changing these values because we also use them as properties for Tracks

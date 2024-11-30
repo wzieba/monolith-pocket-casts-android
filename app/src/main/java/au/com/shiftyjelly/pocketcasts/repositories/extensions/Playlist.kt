@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.repositories.extensions
 
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 private const val FILTER_COLOR_SIZE = 5
 

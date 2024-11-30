@@ -1,14 +1,14 @@
 package au.com.shiftyjelly.pocketcasts.taskerplugin.addtoupnext.config
 
 import android.app.Application
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.taskerplugin.addtoupnext.ActionHelperAddToUpNext
 import au.com.shiftyjelly.pocketcasts.taskerplugin.addtoupnext.InputAddToUpNext
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.ViewModelBase
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as RD
+import au.com.shiftyjelly.pocketcasts.R as RD
 
 @HiltViewModel
 class ViewModelConfigAddToUpNext @Inject constructor(

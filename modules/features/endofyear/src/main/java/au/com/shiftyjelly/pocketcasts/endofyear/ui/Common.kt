@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.buttons.RowOutlinedButton
 import au.com.shiftyjelly.pocketcasts.compose.extensions.nonScaledSp
 import au.com.shiftyjelly.pocketcasts.endofyear.R
@@ -35,8 +36,6 @@ import au.com.shiftyjelly.pocketcasts.endofyear.StoryCaptureController
 import au.com.shiftyjelly.pocketcasts.models.to.Story
 import java.io.File
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 internal const val StoryRotationDegrees = -15f
 internal const val StoryRotationRadians = (StoryRotationDegrees * Math.PI / 180).toFloat()
@@ -108,10 +107,10 @@ internal fun OutlinedEoyButton(
         fontSize = 18.nonScaledSp,
         colors = ButtonDefaults.outlinedButtonColors(
             backgroundColor = Color.Transparent,
-            contentColor = colorResource(UR.color.coolgrey_90),
+            contentColor = colorResource(R.color.coolgrey_90),
         ),
         border = ButtonDefaults.outlinedBorder.copy(
-            brush = SolidColor(colorResource(UR.color.coolgrey_90)),
+            brush = SolidColor(colorResource(R.color.coolgrey_90)),
         ),
         onClick = onClick,
         includePadding = false,
@@ -178,7 +177,7 @@ internal class HumaneTextFactory(
         text: String,
         modifier: Modifier = Modifier,
         paddingValues: PaddingValues = PaddingValues(),
-        color: Color = colorResource(UR.color.coolgrey_90),
+        color: Color = colorResource(R.color.coolgrey_90),
     ) {
         Text(
             text = text,

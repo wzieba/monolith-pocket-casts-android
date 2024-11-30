@@ -1,5 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.preferences
 
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.JsonReader
 import com.squareup.moshi.JsonWriter

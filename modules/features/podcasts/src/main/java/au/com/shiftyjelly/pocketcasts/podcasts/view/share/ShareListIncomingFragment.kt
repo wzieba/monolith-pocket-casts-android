@@ -8,6 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
@@ -24,9 +25,6 @@ import au.com.shiftyjelly.pocketcasts.views.extensions.show
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class ShareListIncomingFragment : BaseFragment(), ShareListIncomingAdapter.ClickListener {
@@ -97,7 +95,7 @@ class ShareListIncomingFragment : BaseFragment(), ShareListIncomingAdapter.Click
             @Suppress("DEPRECATION")
             activity?.onBackPressed()
         }
-        toolbar.navigationIcon = context.getThemeTintedDrawable(R.drawable.ic_cancel, UR.attr.secondary_icon_01)
+        toolbar.navigationIcon = context.getThemeTintedDrawable(R.drawable.ic_cancel, R.attr.secondary_icon_01)
 
         viewModel.share.observe(viewLifecycleOwner) { share ->
             when (share) {

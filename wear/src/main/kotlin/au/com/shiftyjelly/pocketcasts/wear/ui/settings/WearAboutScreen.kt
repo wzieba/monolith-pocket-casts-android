@@ -8,12 +8,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import au.com.shiftyjelly.pocketcasts.BuildConfig
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.WatchListChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberColumnState
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object WearAboutScreen {
     const val route = "wear_about_screen"

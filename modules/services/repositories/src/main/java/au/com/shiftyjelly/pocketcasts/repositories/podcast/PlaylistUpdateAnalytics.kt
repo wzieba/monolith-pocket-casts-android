@@ -1,5 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.repositories.podcast
 
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
@@ -7,7 +8,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.extensions.colorIndex
 import au.com.shiftyjelly.pocketcasts.repositories.extensions.drawableId
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 class PlaylistUpdateAnalytics @Inject constructor(
     private val analyticsTracker: AnalyticsTracker,

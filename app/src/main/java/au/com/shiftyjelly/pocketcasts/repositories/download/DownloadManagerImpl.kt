@@ -12,6 +12,7 @@ import androidx.work.Data
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeDownloadError
@@ -24,7 +25,6 @@ import au.com.shiftyjelly.pocketcasts.models.type.EpisodePlayingStatus
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeStatusEnum
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.Settings.NotificationId
-import au.com.shiftyjelly.pocketcasts.repositories.R
 import au.com.shiftyjelly.pocketcasts.repositories.download.task.DownloadEpisodeTask
 import au.com.shiftyjelly.pocketcasts.repositories.download.task.UpdateEpisodeTask
 import au.com.shiftyjelly.pocketcasts.repositories.download.task.UpdateShowNotesTask
@@ -57,7 +57,6 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 class DownloadManagerImpl @Inject constructor(
     private val fileStorage: FileStorage,

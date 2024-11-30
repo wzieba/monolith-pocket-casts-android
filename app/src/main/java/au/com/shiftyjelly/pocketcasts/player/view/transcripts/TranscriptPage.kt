@@ -47,6 +47,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.extractor.text.CuesWithTiming
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
@@ -76,7 +77,6 @@ import com.kevinnzou.web.LoadingState
 import com.kevinnzou.web.WebView
 import com.kevinnzou.web.rememberWebViewNavigator
 import com.kevinnzou.web.rememberWebViewState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @kotlin.OptIn(ExperimentalMaterialApi::class)
 @Composable

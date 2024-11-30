@@ -3,8 +3,8 @@ package au.com.shiftyjelly.pocketcasts.taskerplugin.controlplayback.config
 import android.app.Application
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.type.TrimMode
-import au.com.shiftyjelly.pocketcasts.taskerplugin.R
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.ViewModelBase
 import au.com.shiftyjelly.pocketcasts.taskerplugin.controlplayback.ActionHelperControlPlayback
 import au.com.shiftyjelly.pocketcasts.taskerplugin.controlplayback.InputControlPlayback
@@ -12,8 +12,6 @@ import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltViewModel
 class ViewModelConfigControlPlayback @Inject constructor(

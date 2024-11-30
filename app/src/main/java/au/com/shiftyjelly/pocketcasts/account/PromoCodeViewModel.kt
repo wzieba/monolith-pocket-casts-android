@@ -5,6 +5,7 @@ import android.content.res.Resources
 import androidx.annotation.DrawableRes
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.repositories.subscription.SubscriptionManager
 import au.com.shiftyjelly.pocketcasts.repositories.sync.SyncManager
 import au.com.shiftyjelly.pocketcasts.servers.sync.PromoCodeResponse

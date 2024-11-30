@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
@@ -19,7 +20,6 @@ import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sign
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 interface RowSwipeable {
     val episodeRow: ViewGroup
@@ -288,8 +288,8 @@ private abstract class SwipeToArchiveCallback : MultiSwipeHelper.SimpleCallback(
     ) {
         leftToRightLayout.translationX = foregroundView.translationX
 
-        val item1 = rightToLeftLayout.findViewById<ViewGroup>(UR.id.rightLeftItem1)
-        val item2 = rightToLeftLayout.findViewById<ViewGroup>(UR.id.rightLeftItem2)
+        val item1 = rightToLeftLayout.findViewById<ViewGroup>(R.id.rightLeftItem1)
+        val item2 = rightToLeftLayout.findViewById<ViewGroup>(R.id.rightLeftItem2)
 
         val context = rightToLeftLayout.context
 
@@ -336,8 +336,8 @@ private abstract class SwipeToArchiveCallback : MultiSwipeHelper.SimpleCallback(
     ) {
         rightToLeftLayout.translationX = foregroundView.translationX
 
-        val item1 = leftToRightLayout.findViewById<ViewGroup>(UR.id.leftRightItem1)
-        val item2 = leftToRightLayout.findViewById<ViewGroup>(UR.id.leftRightItem2)
+        val item1 = leftToRightLayout.findViewById<ViewGroup>(R.id.leftRightItem1)
+        val item2 = leftToRightLayout.findViewById<ViewGroup>(R.id.leftRightItem2)
 
         val context = leftToRightLayout.context
 

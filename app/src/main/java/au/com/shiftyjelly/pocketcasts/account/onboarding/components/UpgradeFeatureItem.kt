@@ -15,9 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.UpgradeFeatureItem
 import au.com.shiftyjelly.pocketcasts.compose.text.HtmlText
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 fun UpgradeFeatureItem(
@@ -45,7 +45,7 @@ fun UpgradeFeatureItem(
             html = stringResource(item.title),
             color = color,
             linkColor = color,
-            textStyleResId = UR.style.H50,
+            textStyleResId = R.style.H50,
         )
     }
 }

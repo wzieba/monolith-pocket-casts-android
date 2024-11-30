@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.preview.ThemePreviewParameterProvider
 import au.com.shiftyjelly.pocketcasts.compose.theme
@@ -40,8 +41,6 @@ import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier.PATRON
 import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier.PLUS
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import coil.compose.AsyncImage
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 fun UserAvatar(
@@ -192,15 +191,15 @@ data class UserAvatarConfig(
 @Composable
 private fun SubscriptionTier.toLightColor() = when (this) {
     NONE -> Color.Transparent
-    PLUS -> colorResource(UR.color.plus_gold_light)
-    PATRON -> colorResource(UR.color.patron_purple_light)
+    PLUS -> colorResource(R.color.plus_gold_light)
+    PATRON -> colorResource(R.color.patron_purple_light)
 }
 
 @Composable
 private fun SubscriptionTier.toDarkColor() = when (this) {
     NONE -> Color.Transparent
-    PLUS -> colorResource(UR.color.plus_gold_dark)
-    PATRON -> colorResource(UR.color.patron_purple)
+    PLUS -> colorResource(R.color.plus_gold_dark)
+    PATRON -> colorResource(R.color.patron_purple)
 }
 
 @Composable

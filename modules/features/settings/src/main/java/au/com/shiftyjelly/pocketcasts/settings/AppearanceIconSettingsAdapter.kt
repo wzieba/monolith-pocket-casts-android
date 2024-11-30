@@ -8,6 +8,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier
 import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterAppearanceAppiconItemBinding
@@ -15,8 +16,6 @@ import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.helper.AppIcon
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
 import kotlin.math.min
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class AppearanceIconSettingsAdapter(
     private var mainWidth: Int?,
@@ -75,8 +74,8 @@ class AppearanceIconSettingsAdapter(
 
     inner class ViewHolder(val binding: AdapterAppearanceAppiconItemBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
-        private val selectColor = itemView.context.getThemeColor(UR.attr.support_01)
-        private val deselectColor = itemView.context.getThemeColor(UR.attr.primary_ui_04)
+        private val selectColor = itemView.context.getThemeColor(R.attr.support_01)
+        private val deselectColor = itemView.context.getThemeColor(R.attr.primary_ui_04)
         private val strokeWidth = 4.dpToPx(itemView.context)
 
         init {

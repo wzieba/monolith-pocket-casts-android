@@ -5,10 +5,9 @@ import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.inPortrait
-import au.com.shiftyjelly.pocketcasts.views.R
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object UiUtil {
 

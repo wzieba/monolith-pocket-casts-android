@@ -2,9 +2,7 @@ package au.com.shiftyjelly.pocketcasts.views.multiselect
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 sealed class MultiSelectAction(
     open val groupId: String,

@@ -9,11 +9,9 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.profile.databinding.AdapterAddFileImageBinding
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 val diffCallback = object : DiffUtil.ItemCallback<AddFileColourAdapter.Item>() {
     override fun areItemsTheSame(oldItem: AddFileColourAdapter.Item, newItem: AddFileColourAdapter.Item): Boolean {
@@ -57,7 +55,7 @@ class AddFileColourAdapter(val onSelectedChange: (Item) -> Unit, val onLockedIte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = AdapterAddFileImageBinding.inflate(inflater, parent, false)
-        binding.root.setBackgroundResource(VR.drawable.filter_circle)
+        binding.root.setBackgroundResource(R.drawable.filter_circle)
         return ViewHolder(binding)
     }
 
@@ -87,7 +85,7 @@ class AddFileColourAdapter(val onSelectedChange: (Item) -> Unit, val onLockedIte
             holder.itemView.backgroundTintList = ColorStateList.valueOf(item.color)
             if (locked && item.lockable) {
                 view.setImageResource(R.drawable.ic_locked)
-                view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(UR.attr.contrast_01))
+                view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(R.attr.contrast_01))
                 holder.itemView.setOnClickListener { onLockedItemTapped() }
             } else {
                 view.setImageDrawable(null)

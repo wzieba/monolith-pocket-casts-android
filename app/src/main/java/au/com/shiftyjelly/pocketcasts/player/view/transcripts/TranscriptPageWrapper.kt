@@ -49,20 +49,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.buttons.CloseButton
 import au.com.shiftyjelly.pocketcasts.compose.buttons.IconButtonSmall
 import au.com.shiftyjelly.pocketcasts.compose.components.SearchBar
 import au.com.shiftyjelly.pocketcasts.compose.components.SearchBarDefaults
 import au.com.shiftyjelly.pocketcasts.compose.preview.ThemePreviewParameterProvider
-import au.com.shiftyjelly.pocketcasts.images.R
 import au.com.shiftyjelly.pocketcasts.player.view.transcripts.TranscriptDefaults.TranscriptColors
 import au.com.shiftyjelly.pocketcasts.player.view.transcripts.TranscriptSearchViewModel.SearchUiState
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.ShelfSharedViewModel
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.ShelfSharedViewModel.TransitionState
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private val SearchBarMaxWidth = 500.dp
 private val SearchBarHeight = 43.dp

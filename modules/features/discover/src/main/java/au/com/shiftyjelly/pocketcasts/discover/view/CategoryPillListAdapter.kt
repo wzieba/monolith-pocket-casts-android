@@ -11,10 +11,10 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.R.string.clear_all
 import au.com.shiftyjelly.pocketcasts.discover.databinding.CategoryPillBinding
 import au.com.shiftyjelly.pocketcasts.discover.view.CategoryPillListAdapter.CategoryPillViewHolder
-import au.com.shiftyjelly.pocketcasts.localization.R.string.clear_all
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverCategory
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverCategory.Companion.ALL_CATEGORIES_ID
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor

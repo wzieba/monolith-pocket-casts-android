@@ -8,10 +8,10 @@ import androidx.fragment.app.viewModels
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.models.type.TrimMode
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlaybackSpeedPreference
 import au.com.shiftyjelly.pocketcasts.podcasts.viewmodel.PodcastEffectsViewModel
 import au.com.shiftyjelly.pocketcasts.repositories.playback.PlaybackManager
@@ -25,9 +25,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon
 import au.com.shiftyjelly.pocketcasts.views.helper.ToolbarColors
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class PodcastEffectsFragment : PreferenceFragmentCompat() {
@@ -77,7 +74,7 @@ class PodcastEffectsFragment : PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.setBackgroundColor(view.context.getThemeColor(UR.attr.primary_ui_01))
+        view.setBackgroundColor(view.context.getThemeColor(R.attr.primary_ui_01))
         view.isClickable = true
 
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)

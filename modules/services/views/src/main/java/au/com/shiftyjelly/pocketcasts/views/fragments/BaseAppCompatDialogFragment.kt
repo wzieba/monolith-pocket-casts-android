@@ -13,7 +13,6 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 open class BaseAppCompatDialogFragment : AppCompatDialogFragment(), CoroutineScope {
@@ -29,7 +28,7 @@ open class BaseAppCompatDialogFragment : AppCompatDialogFragment(), CoroutineSco
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (view.background == null) {
-            view.setBackgroundColor(view.context.getThemeColor(UR.attr.primary_ui_01))
+            view.setBackgroundColor(view.context.getThemeColor(R.attr.primary_ui_01))
         }
         view.isClickable = true
 

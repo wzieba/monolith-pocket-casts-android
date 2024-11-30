@@ -25,6 +25,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.bars.NavigationButton
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
@@ -37,7 +38,6 @@ import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralEpi
 import au.com.shiftyjelly.pocketcasts.settings.viewmodel.ManualCleanupViewModel
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.Util
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun ManualCleanupPage(

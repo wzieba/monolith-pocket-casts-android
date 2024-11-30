@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.fragment.compose.content
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
@@ -15,9 +16,6 @@ import au.com.shiftyjelly.pocketcasts.views.dialog.ConfirmationDialog
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class FolderEditFragment : BaseDialogFragment() {
@@ -74,8 +72,8 @@ class FolderEditFragment : BaseDialogFragment() {
                     dismiss()
                 }
             }
-            .setIconId(VR.drawable.ic_delete)
-            .setIconTint(UR.attr.support_05)
+            .setIconId(R.drawable.ic_delete)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "delete_folder_warning")
     }
 

@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.models.type
 
 import android.content.res.Resources
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPlural
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
 import com.android.billingclient.api.ProductDetails

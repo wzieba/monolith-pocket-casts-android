@@ -7,6 +7,7 @@ import android.os.Build
 import android.util.Base64
 import androidx.core.content.edit
 import androidx.work.NetworkType
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.models.to.AutoArchiveAfterPlaying
 import au.com.shiftyjelly.pocketcasts.models.to.AutoArchiveInactive
 import au.com.shiftyjelly.pocketcasts.models.to.PlaybackEffects

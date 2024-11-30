@@ -2,13 +2,10 @@ package au.com.shiftyjelly.pocketcasts.views.multiselect
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 sealed class MultiSelectEpisodeAction(
     override val groupId: String,
@@ -27,7 +24,7 @@ sealed class MultiSelectEpisodeAction(
 ) {
     object DeleteDownload : MultiSelectEpisodeAction(
         groupId = "download",
-        actionId = UR.id.menu_undownload,
+        actionId = R.id.menu_undownload,
         title = R.string.delete_download,
         iconRes = R.drawable.ic_undownload,
         analyticsValue = "remove_download",
@@ -48,7 +45,7 @@ sealed class MultiSelectEpisodeAction(
     )
     object Unarchive : MultiSelectEpisodeAction(
         groupId = "archive",
-        actionId = UR.id.menu_unarchive,
+        actionId = R.id.menu_unarchive,
         title = R.string.unarchive,
         iconRes = R.drawable.ic_unarchive,
         analyticsValue = "unarchive",
@@ -69,7 +66,7 @@ sealed class MultiSelectEpisodeAction(
     )
     object MarkAsUnplayed : MultiSelectEpisodeAction(
         groupId = "mark_as_played",
-        actionId = UR.id.menu_markasunplayed,
+        actionId = R.id.menu_markasunplayed,
         title = R.string.mark_as_unplayed,
         iconRes = R.drawable.ic_markasunplayed,
         analyticsValue = "mark_as_unplayed",
@@ -97,7 +94,7 @@ sealed class MultiSelectEpisodeAction(
     )
     object Unstar : MultiSelectEpisodeAction(
         groupId = "star",
-        actionId = UR.id.menu_unstar,
+        actionId = R.id.menu_unstar,
         title = R.string.unstar,
         iconRes = R.drawable.ic_unstar,
         analyticsValue = "unstar",

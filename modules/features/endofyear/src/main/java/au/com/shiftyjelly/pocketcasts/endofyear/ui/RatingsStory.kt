@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.HorizontalDirection
 import au.com.shiftyjelly.pocketcasts.compose.components.ScrollingRow
@@ -61,9 +62,6 @@ import au.com.shiftyjelly.pocketcasts.models.to.Story
 import dev.shreyaspatil.capturable.capturable
 import java.io.File
 import kotlinx.coroutines.delay
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 internal fun RatingsStory(
@@ -147,7 +145,7 @@ private fun PresentRatings(
                 text = stringResource(R.string.eoy_story_ratings_title_1),
                 fontScale = measurements.smallDeviceFactor,
                 disableAutoScale = true,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
             Spacer(
@@ -160,7 +158,7 @@ private fun PresentRatings(
                 },
                 fontSize = 15.sp,
                 disableAutoScale = true,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 modifier = Modifier.padding(horizontal = 24.dp),
             )
             ShareStoryButton(
@@ -291,7 +289,7 @@ private fun RowScope.RatingBar(
         TextH20(
             text = "$rating",
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier
                 .offset { if (forceVisible) IntOffset.Zero else textOffset }
                 .padding(bottom = 8.dp)
@@ -380,7 +378,7 @@ private fun OopsiesText(
             Image(
                 painter = painterResource(R.drawable.eoy_star_text_stop),
                 contentDescription = null,
-                colorFilter = ColorFilter.tint(colorResource(UR.color.coolgrey_90)),
+                colorFilter = ColorFilter.tint(colorResource(R.color.coolgrey_90)),
                 modifier = Modifier.padding(horizontal = 8.dp),
             )
         }
@@ -408,7 +406,7 @@ private fun NoRatingsInfo(
             text = stringResource(R.string.eoy_story_ratings_title_2),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         Spacer(
@@ -418,7 +416,7 @@ private fun NoRatingsInfo(
             text = stringResource(R.string.eoy_story_ratings_subtitle_3),
             fontSize = 15.sp,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         OutlinedEoyButton(

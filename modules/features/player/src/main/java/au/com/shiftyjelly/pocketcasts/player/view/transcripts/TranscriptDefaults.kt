@@ -12,14 +12,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.player.R
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 object TranscriptDefaults {
     val ContentOffsetTop = 64.dp
     val ContentOffsetBottom = 80.dp
-    val TranscriptFontFamily = FontFamily(listOf(Font(UR.font.roboto_serif)))
+    val TranscriptFontFamily = FontFamily(listOf(Font(R.font.roboto_serif)))
     val SearchOccurrenceDefaultSpanStyle = SpanStyle(fontSize = 16.sp, fontWeight = FontWeight.W500, fontFamily = TranscriptFontFamily, background = Color.White.copy(alpha = .2f), color = Color.White)
     val SearchOccurrenceSelectedSpanStyle = SpanStyle(fontSize = 16.sp, fontWeight = FontWeight.W500, fontFamily = TranscriptFontFamily, background = Color.White, color = Color.Black)
 

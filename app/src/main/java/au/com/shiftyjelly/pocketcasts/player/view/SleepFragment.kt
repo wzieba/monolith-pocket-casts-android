@@ -9,9 +9,10 @@ import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
-import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentSleepBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentSleepBinding
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.settings.PlaybackSettingsFragment
 import au.com.shiftyjelly.pocketcasts.settings.PlaybackSettingsFragment.Companion.SCROLL_TO_SLEEP_TIMER
@@ -35,7 +36,6 @@ import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class SleepFragment : BaseDialogFragment() {
@@ -108,7 +108,7 @@ class SleepFragment : BaseDialogFragment() {
             val fragmentHostListener = (activity as? FragmentHostListener)
             fragmentHostListener?.apply {
                 closePlayer() // Closes player if open
-                openTab(VR.id.navigation_profile)
+                openTab(R.id.navigation_profile)
                 addFragment(SettingsFragment())
                 addFragment(fragment)
             }

@@ -8,8 +8,8 @@ import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R
-import au.com.shiftyjelly.pocketcasts.discover.databinding.RowPromotionBinding
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.RowPromotionBinding
 import au.com.shiftyjelly.pocketcasts.discover.extensions.updateSubscribeButtonIcon
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto

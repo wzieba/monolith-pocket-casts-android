@@ -1,8 +1,8 @@
 package au.com.shiftyjelly.pocketcasts.analytics.di
 
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.analytics.AccountStatusInfo
-import au.com.shiftyjelly.pocketcasts.analytics.BuildConfig
 import au.com.shiftyjelly.pocketcasts.analytics.TracksAnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.experiments.Experiment
 import au.com.shiftyjelly.pocketcasts.analytics.experiments.ExperimentProvider

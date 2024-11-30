@@ -3,18 +3,16 @@ package au.com.shiftyjelly.pocketcasts.podcasts.view.podcasts
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.buttons.ToggleButtonOption
 import au.com.shiftyjelly.pocketcasts.models.type.PodcastsSortType
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.podcasts.view.share.ShareListCreateActivity
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.BadgeType
 import au.com.shiftyjelly.pocketcasts.preferences.model.PodcastGridLayoutType
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class PodcastsOptionsDialog(
     val fragment: Fragment,

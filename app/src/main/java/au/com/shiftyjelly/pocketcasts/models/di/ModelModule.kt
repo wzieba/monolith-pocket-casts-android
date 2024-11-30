@@ -3,7 +3,7 @@ package au.com.shiftyjelly.pocketcasts.models.di
 import android.app.Application
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import au.com.shiftyjelly.pocketcasts.model.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.models.db.AppDatabase
 import au.com.shiftyjelly.pocketcasts.models.db.dao.ChapterDao
 import au.com.shiftyjelly.pocketcasts.models.db.dao.EndOfYearDao

@@ -9,11 +9,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.models.to.EpisodeItem
 import au.com.shiftyjelly.pocketcasts.preferences.Settings.MediaNotificationControls.Companion.items
 import au.com.shiftyjelly.pocketcasts.search.component.SearchEpisodeItem
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun SearchEpisodeResultsPage(

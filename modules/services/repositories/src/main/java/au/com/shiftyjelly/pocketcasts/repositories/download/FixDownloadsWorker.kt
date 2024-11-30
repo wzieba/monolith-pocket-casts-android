@@ -13,6 +13,7 @@ import androidx.work.ForegroundInfo
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
@@ -25,8 +26,6 @@ import dagger.assisted.AssistedInject
 import java.io.File
 import kotlinx.coroutines.flow.fold
 import kotlinx.coroutines.flow.onEach
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltWorker
 class FixDownloadsWorker @AssistedInject constructor(

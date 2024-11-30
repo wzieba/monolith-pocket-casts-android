@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.filters.databinding.FragmentCreateContainerBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
@@ -28,9 +29,6 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.ThemeColor
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class CreateFilterContainerFragment : BaseFragment() {
@@ -101,7 +99,7 @@ class CreateFilterContainerFragment : BaseFragment() {
     }
 
     private fun updateToolbarColors() {
-        val colorResId = Playlist.themeColors.getOrNull(viewModel.colorIndex.value) ?: UR.attr.filter_01
+        val colorResId = Playlist.themeColors.getOrNull(viewModel.colorIndex.value) ?: R.attr.filter_01
         val tintColor = view?.context?.getThemeColor(colorResId) ?: return
         val iconRes = if (binding.viewPager.currentItem == 0) R.drawable.ic_close else R.drawable.ic_arrow_back
         val backIcon = context?.getTintedDrawable(iconRes, ThemeColor.filterIcon01(theme.activeTheme, tintColor))
@@ -146,7 +144,7 @@ class CreateFilterContainerFragment : BaseFragment() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.colorIndex.collect {
-                    val colorResId = Playlist.themeColors.getOrNull(it) ?: UR.attr.filter_01
+                    val colorResId = Playlist.themeColors.getOrNull(it) ?: R.attr.filter_01
                     val tintColor = requireContext().getThemeColor(colorResId)
                     val stateList = ColorStateList(
                         arrayOf(

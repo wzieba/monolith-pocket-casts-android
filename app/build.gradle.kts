@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.sentry)
     alias(libs.plugins.google.services)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -14,6 +15,10 @@ android {
     defaultConfig {
         applicationId = project.property("applicationId").toString()
         multiDexEnabled = true
+
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     sourceSets {
@@ -93,6 +98,7 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.work.runtime)
     implementation(libs.engage)
+    implementation(libs.compose.material3.window.size)
 
 //    implementation(projects.modules.features.account)
 //    implementation(projects.modules.features.discover)
@@ -273,6 +279,29 @@ dependencies {
     implementation(libs.timber)
 
     implementation(libs.billing.ktx)
+
+
+    api(libs.room)
+    implementation(libs.room.ktx)
+    implementation(libs.room.rx2)
+    implementation(libs.ffmpeg)
+    implementation(libs.moshi.adapters)
+    implementation(libs.retrofit.moshi)
+    implementation(libs.retrofit.protobuf) { exclude(group = "com.google.protobuf", module = "protobuf-java") }
+    implementation(libs.retrofit.rx2)
+    implementation(libs.automattic.tracks)
+    implementation(libs.coil.compose)
+    implementation(libs.reorderable)
+    implementation(libs.rx2.extensions)
+
+    implementation(libs.lifecycle.process)
+    implementation(libs.lifecycle.reactivestreams.ktx)
+    implementation(libs.androidx.webkit)
+    implementation(libs.okHttp.logging)
+    implementation(libs.compose.webview)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.car)
+
 
 
 

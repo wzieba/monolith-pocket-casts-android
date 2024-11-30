@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import au.com.shiftyjelly.pocketcasts.discover.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
@@ -19,7 +19,6 @@ import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
 import au.com.shiftyjelly.pocketcasts.views.buttons.AnimatedPlayButton
 import au.com.shiftyjelly.pocketcasts.views.extensions.setRippleBackground
 import au.com.shiftyjelly.pocketcasts.views.extensions.showIf
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class EpisodeRow @JvmOverloads constructor(
     context: Context,
@@ -105,6 +104,6 @@ class EpisodeRow @JvmOverloads constructor(
         episodeTitleView.text = null
         durationView.text = null
         publishedView.text = null
-        imageView.setImageResource(imageView.context.getThemeDrawable(UR.attr.defaultArtworkSmall))
+        imageView.setImageResource(imageView.context.getThemeDrawable(R.attr.defaultArtworkSmall))
     }
 }

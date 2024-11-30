@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.constraintlayout.widget.ConstraintLayout
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 import com.google.android.material.button.MaterialButton
 
 class TourStepView @JvmOverloads constructor(

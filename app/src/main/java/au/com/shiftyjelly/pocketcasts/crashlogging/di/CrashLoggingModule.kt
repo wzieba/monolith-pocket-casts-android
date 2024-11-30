@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.crashlogging.di
 
 import android.app.Application
 import android.content.Context
-import au.com.shiftyjelly.pocketcasts.crashlogging.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.crashlogging.BuildDataProvider
 import au.com.shiftyjelly.pocketcasts.crashlogging.ContextBasedLocaleProvider
 import au.com.shiftyjelly.pocketcasts.crashlogging.FilteringCrashLogging

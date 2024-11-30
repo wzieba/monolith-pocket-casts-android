@@ -16,6 +16,7 @@ import android.os.Build
 import androidx.annotation.StringRes
 import androidx.core.content.getSystemService
 import androidx.core.graphics.drawable.toBitmap
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.deeplink.ReferralsDeepLink
@@ -45,7 +46,6 @@ import java.time.Year
 import kotlin.time.Duration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast as PodcastModel
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode as EpisodeModel
 

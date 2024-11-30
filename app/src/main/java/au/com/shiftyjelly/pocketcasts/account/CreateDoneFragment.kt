@@ -13,10 +13,10 @@ import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SubscriptionType
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateDoneBinding
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateDoneBinding
 
 @AndroidEntryPoint
 class CreateDoneFragment : BaseFragment() {

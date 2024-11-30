@@ -15,6 +15,8 @@ import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentConfirmationBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
@@ -24,8 +26,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.R
-import au.com.shiftyjelly.pocketcasts.databinding.FragmentConfirmationBinding
 
 @AndroidEntryPoint
 open class ConfirmationDialog : BottomSheetDialogFragment() {

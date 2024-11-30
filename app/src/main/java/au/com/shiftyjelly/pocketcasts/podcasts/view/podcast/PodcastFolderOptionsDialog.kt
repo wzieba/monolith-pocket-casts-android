@@ -1,10 +1,9 @@
 package au.com.shiftyjelly.pocketcasts.podcasts.view.podcast
 
 import androidx.fragment.app.FragmentActivity
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Folder
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class PodcastFolderOptionsDialog(
     val folder: Folder,

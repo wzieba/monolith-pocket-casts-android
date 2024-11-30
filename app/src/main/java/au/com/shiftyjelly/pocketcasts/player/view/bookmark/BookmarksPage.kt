@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.bookmark.BookmarkRow
@@ -51,7 +52,6 @@ import au.com.shiftyjelly.pocketcasts.views.multiselect.MultiSelectBookmarksHelp
 import java.util.Date
 import java.util.UUID
 import kotlinx.coroutines.flow.collectLatest
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun BookmarksPage(

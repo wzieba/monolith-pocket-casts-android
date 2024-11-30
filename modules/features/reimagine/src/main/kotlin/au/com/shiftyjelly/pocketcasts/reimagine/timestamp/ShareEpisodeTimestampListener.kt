@@ -1,5 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.reimagine.timestamp
 
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
@@ -14,7 +15,6 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlin.time.Duration
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal class ShareEpisodeTimestampListener @AssistedInject constructor(
     @Assisted private val fragment: ShareEpisodeTimestampFragment,

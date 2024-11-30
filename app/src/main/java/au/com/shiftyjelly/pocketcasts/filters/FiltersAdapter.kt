@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.filters.databinding.FiltersRowFiltersBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FiltersRowFiltersBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralEpisodes
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.views.helper.PlaylistHelper

@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.repositories.support.Support
 import au.com.shiftyjelly.pocketcasts.settings.status.ServiceStatusChecker.Check.Internet
 import au.com.shiftyjelly.pocketcasts.settings.status.ServiceStatusChecker.Check.Urls
@@ -20,7 +21,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltViewModel
 class StatusViewModel @Inject constructor(

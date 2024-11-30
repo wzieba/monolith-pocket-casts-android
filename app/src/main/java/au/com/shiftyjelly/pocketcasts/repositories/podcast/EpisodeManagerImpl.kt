@@ -6,6 +6,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.source.UnrecognizedInputFormatException
 import androidx.room.withTransaction
 import androidx.sqlite.db.SimpleSQLiteQuery
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeAnalytics
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -56,7 +57,6 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.rx2.asFlowable
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class EpisodeManagerImpl @Inject constructor(
     private val settings: Settings,

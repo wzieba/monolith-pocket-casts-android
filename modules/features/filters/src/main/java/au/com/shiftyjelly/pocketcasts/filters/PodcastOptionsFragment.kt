@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.commit
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.filters.databinding.PodcastOptionsFragmentBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PlaylistManager
@@ -31,7 +32,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val ARG_PLAYLIST_UUID = "playlist_uuid"
 
@@ -152,7 +152,7 @@ class PodcastOptionsFragment : BaseFragment(), PodcastSelectFragment.Listener, C
             (activity as FragmentHostListener).closeModal(this)
         }
 
-        val backgroundColor = context?.getThemeColor(UR.attr.primary_ui_01) ?: Color.WHITE
+        val backgroundColor = context?.getThemeColor(R.attr.primary_ui_01) ?: Color.WHITE
         val semiTransparentBackground = androidx.core.graphics.ColorUtils.setAlphaComponent(backgroundColor, 128)
         podcastSelectDisabled.setBackgroundColor(semiTransparentBackground)
     }

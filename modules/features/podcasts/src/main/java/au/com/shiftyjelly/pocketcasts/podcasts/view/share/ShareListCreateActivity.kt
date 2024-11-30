@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.podcasts.view.share
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import au.com.shiftyjelly.pocketcasts.podcasts.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import dagger.hilt.android.AndroidEntryPoint

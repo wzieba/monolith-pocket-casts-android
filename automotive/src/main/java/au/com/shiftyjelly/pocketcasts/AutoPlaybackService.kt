@@ -37,8 +37,6 @@ import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 const val FILTERS_ROOT = "__FILTERS__"
 const val DISCOVER_ROOT = "__DISCOVER__"

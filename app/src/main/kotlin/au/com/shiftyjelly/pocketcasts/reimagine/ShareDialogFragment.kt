@@ -30,6 +30,7 @@ import androidx.core.view.doOnLayout
 import androidx.fragment.app.viewModels
 import androidx.fragment.compose.content
 import androidx.lifecycle.lifecycleScope
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.dialogs.OptionsDialogComponent
@@ -63,7 +64,6 @@ import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.launch
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.TypeParceler
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 import com.google.android.material.R as MR
 
 @AndroidEntryPoint

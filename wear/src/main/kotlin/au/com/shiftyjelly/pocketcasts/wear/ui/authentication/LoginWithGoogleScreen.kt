@@ -8,6 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.utils.Network
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ErrorScreen
@@ -15,7 +16,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.horologist.auth.ui.googlesignin.signin.GoogleSignInScreen
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 import com.google.android.horologist.auth.composables.R as HR
 
 @Composable

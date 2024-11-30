@@ -3,6 +3,7 @@ package au.com.shiftyjelly.pocketcasts.wear.ui.authentication
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.material.ChipDefaults
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.BuildConfig
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
@@ -10,8 +11,6 @@ import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberColumnState
 import com.google.android.horologist.compose.material.Chip
 import com.google.android.horologist.images.base.paintable.DrawableResPaintable
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun LoginScreen(

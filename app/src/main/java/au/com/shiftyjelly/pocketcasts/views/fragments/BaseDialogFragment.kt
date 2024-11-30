@@ -11,6 +11,7 @@ import androidx.core.graphics.ColorUtils
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.doOnLayout
 import androidx.navigation.NavHostController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
 import au.com.shiftyjelly.pocketcasts.ui.helper.StatusBarColor
@@ -23,7 +24,6 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 open class BaseDialogFragment : BottomSheetDialogFragment(), CoroutineScope {
@@ -47,7 +47,7 @@ open class BaseDialogFragment : BottomSheetDialogFragment(), CoroutineScope {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (view.background == null) {
-            view.setBackgroundColor(view.context.getThemeColor(UR.attr.primary_ui_01))
+            view.setBackgroundColor(view.context.getThemeColor(R.attr.primary_ui_01))
         }
         view.isClickable = true
 

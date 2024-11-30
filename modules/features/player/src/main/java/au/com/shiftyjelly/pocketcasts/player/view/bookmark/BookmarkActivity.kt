@@ -3,8 +3,8 @@ package au.com.shiftyjelly.pocketcasts.player.view.bookmark
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
+import au.com.shiftyjelly.pocketcasts.R
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class BookmarkActivity : AppCompatActivity() {
@@ -12,7 +12,7 @@ class BookmarkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(VR.layout.activity_blank_fragment)
+        setContentView(R.layout.activity_blank_fragment)
 
         val arguments = BookmarkArguments.createFromIntent(intent)
 
@@ -24,7 +24,7 @@ class BookmarkActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             val fragment = arguments.buildFragment()
             supportFragmentManager.beginTransaction()
-                .replace(VR.id.container, fragment)
+                .replace(R.id.container, fragment)
                 .commitNow()
         }
     }

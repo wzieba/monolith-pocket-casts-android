@@ -9,6 +9,7 @@ import android.content.Intent
 import android.util.Xml
 import androidx.core.text.HtmlCompat
 import androidx.preference.PreferenceFragmentCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
@@ -23,7 +24,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Call
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class OpmlExporter(
     private val fragment: PreferenceFragmentCompat,

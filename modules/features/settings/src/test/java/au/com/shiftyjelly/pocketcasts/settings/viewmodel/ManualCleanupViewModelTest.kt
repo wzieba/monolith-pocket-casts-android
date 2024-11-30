@@ -1,5 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.settings.viewmodel
 
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.repositories.playback.PlaybackManager
@@ -18,7 +19,6 @@ import org.mockito.kotlin.never
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyBlocking
 import org.mockito.kotlin.whenever
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ManualCleanupViewModelTest {

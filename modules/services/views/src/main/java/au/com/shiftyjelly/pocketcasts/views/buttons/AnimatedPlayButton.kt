@@ -10,7 +10,7 @@ import android.view.ViewOutlineProvider
 import android.widget.FrameLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.updateLayoutParams
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 import com.airbnb.lottie.LottieProperty

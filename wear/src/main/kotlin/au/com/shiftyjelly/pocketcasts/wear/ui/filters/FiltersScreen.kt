@@ -12,6 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.foundation.lazy.items
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.extensions.drawableId
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearColors
@@ -21,7 +22,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.component.WatchListChip
 import au.com.shiftyjelly.pocketcasts.wear.ui.filters.FiltersViewModel.UiState
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object FiltersScreen {
     const val route = "filters_screen"

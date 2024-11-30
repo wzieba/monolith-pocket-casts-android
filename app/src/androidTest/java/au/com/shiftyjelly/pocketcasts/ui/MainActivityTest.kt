@@ -31,6 +31,7 @@ import androidx.test.filters.LargeTest
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.rule.GrantPermissionRule
 import androidx.test.uiautomator.UiDevice
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.adevinta.android.barista.interaction.BaristaClickInteractions.clickOn
 import java.io.File
@@ -45,9 +46,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.discover.R as DR
-import au.com.shiftyjelly.pocketcasts.podcasts.R as PR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 private const val RUN_SCREENSHOTS = false
 
@@ -83,12 +81,12 @@ class MainActivityTest {
 
     private fun takeScreenshots() {
         // open the podcasts tab
-        doubleClickOn(VR.id.navigation_podcasts)
+        doubleClickOn(R.id.navigation_podcasts)
         sleepSecs(1)
         takeScreenshot()
 
         // open the podcast grid options bottom sheet
-        clickOn(PR.id.more_options)
+        clickOn(R.id.more_options)
         sleepSecs(2)
         takeScreenshot()
 
@@ -102,7 +100,7 @@ class MainActivityTest {
         sleepSecs(2)
 
         // open the filters tab (double tap to make sure the top level page is opened)
-        doubleClickOn(VR.id.navigation_filters)
+        doubleClickOn(R.id.navigation_filters)
         sleepSecs(1)
         takeScreenshot()
 
@@ -112,7 +110,7 @@ class MainActivityTest {
         takeScreenshot()
 
         // open the discover tab
-        doubleClickOn(VR.id.navigation_discover)
+        doubleClickOn(R.id.navigation_discover)
         sleepSecs(4)
         takeScreenshot()
 
@@ -134,7 +132,7 @@ class MainActivityTest {
         takeScreenshot()
 
         // open settings page
-        clickOn(PR.id.settings)
+        clickOn(R.id.settings)
         sleepSecs(1)
         takeScreenshot()
 
@@ -151,7 +149,7 @@ class MainActivityTest {
         sleepSecs(2)
 
         // open the profile tab
-        clickOn(VR.id.navigation_profile)
+        clickOn(R.id.navigation_profile)
         sleepSecs(1)
         takeScreenshot()
 
@@ -190,7 +188,7 @@ class MainActivityTest {
         takeScreenshot()
 
         // open the podcasts tab
-        clickOn(VR.id.navigation_podcasts)
+        clickOn(R.id.navigation_podcasts)
         sleepSecs(2)
         longPressToolbar()
         sleepSecs(5)
@@ -229,7 +227,7 @@ class MainActivityTest {
 
     private fun longPressToolbar() {
         try {
-            onView(allOf(withId(PR.id.toolbar), isDisplayed())).perform(
+            onView(allOf(withId(R.id.toolbar), isDisplayed())).perform(
                 GeneralClickAction(
                     Tap.LONG,
                     GeneralLocation.CENTER,

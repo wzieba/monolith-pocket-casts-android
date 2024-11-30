@@ -9,7 +9,7 @@ import androidx.glance.Image
 import androidx.glance.ImageProvider
 import androidx.glance.layout.Box
 import androidx.glance.layout.size
-import au.com.shiftyjelly.pocketcasts.images.R as IR
+import au.com.shiftyjelly.pocketcasts.R
 
 @Composable
 internal fun PocketCastsLogo(

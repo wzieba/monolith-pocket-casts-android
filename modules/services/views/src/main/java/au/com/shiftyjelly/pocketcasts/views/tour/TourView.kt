@@ -16,7 +16,6 @@ import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class TourView @JvmOverloads constructor(
     context: Context,
@@ -34,7 +33,7 @@ class TourView @JvmOverloads constructor(
     init {
         backgroundView.layoutParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         backgroundView.isClickable = true
-        backgroundView.id = UR.id.tour_background
+        backgroundView.id = R.id.tour_background
         addView(backgroundView)
 
         visibility = View.GONE
@@ -64,7 +63,7 @@ class TourView @JvmOverloads constructor(
             layoutParams.startToStart = LayoutParams.PARENT_ID
             layoutParams.endToEnd = LayoutParams.PARENT_ID
             stepView.layoutParams = layoutParams
-            stepView.id = UR.id.stepview
+            stepView.id = R.id.stepview
             addView(stepView)
 
             this.currentStepView = stepView
@@ -85,7 +84,7 @@ class TourView @JvmOverloads constructor(
             (this.parent as? ViewGroup)?.removeView(this)
         }
         val stepText = if (stepIndex == 0) "NEW" else "$stepIndex of ${(steps?.size ?: 0) - 1}"
-        val stepColor = if (stepIndex == 0) context.getThemeColor(UR.attr.support_05) else context.getThemeColor(UR.attr.primary_text_02)
+        val stepColor = if (stepIndex == 0) context.getThemeColor(R.attr.support_05) else context.getThemeColor(R.attr.primary_text_02)
         stepView.setupStepText(stepText, stepColor)
 
         val newConstraints = ConstraintSet().apply { clone(this@TourView) }
@@ -106,7 +105,7 @@ class TourView @JvmOverloads constructor(
             childDrawingRect.inset(-inset, -inset)
             backgroundView.moveCutout(childDrawingRect.toRectF())
 
-            lastAnchor?.let { newConstraints.clear(UR.id.stepview, it) } // Remove the constraint to the previous view
+            lastAnchor?.let { newConstraints.clear(R.id.stepview, it) } // Remove the constraint to the previous view
             if (step.gravity == Gravity.TOP) {
                 newConstraints.connect(stepView.id, ConstraintSet.BOTTOM, LayoutParams.PARENT_ID, ConstraintSet.BOTTOM, height - childDrawingRect.top + margin)
                 lastAnchor = ConstraintSet.BOTTOM

@@ -8,7 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.Transformation
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import au.com.shiftyjelly.pocketcasts.views.R
+import au.com.shiftyjelly.pocketcasts.R
 
 fun View.showIf(show: Boolean) {
     if (show) {

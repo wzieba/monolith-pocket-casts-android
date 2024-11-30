@@ -16,7 +16,6 @@ import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.use
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @SuppressLint("Recycle") // Kotlin use() doesn't work with this warning
 class GradientIcon @JvmOverloads constructor(
@@ -28,32 +27,32 @@ class GradientIcon @JvmOverloads constructor(
     var drawableIcon: Drawable? = null
     var overlay: Drawable? = null
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var color0: Int = context.getThemeColor(UR.attr.gradient_01_a)
-    private var color1: Int = context.getThemeColor(UR.attr.gradient_01_e)
+    private var color0: Int = context.getThemeColor(R.attr.gradient_01_a)
+    private var color1: Int = context.getThemeColor(R.attr.gradient_01_e)
     private var boundsRect: RectF? = null
     private var gradientBitmap: Bitmap? = null
 
-    private val gradientStarts = listOf(UR.attr.gradient_01_a, UR.attr.gradient_02_a, UR.attr.gradient_03_a, UR.attr.gradient_04_a, UR.attr.gradient_05_a)
-    private val gradientEnds = listOf(UR.attr.gradient_01_e, UR.attr.gradient_02_e, UR.attr.gradient_03_e, UR.attr.gradient_04_e, UR.attr.gradient_05_e)
+    private val gradientStarts = listOf(R.attr.gradient_01_a, R.attr.gradient_02_a, R.attr.gradient_03_a, R.attr.gradient_04_a, R.attr.gradient_05_a)
+    private val gradientEnds = listOf(R.attr.gradient_01_e, R.attr.gradient_02_e, R.attr.gradient_03_e, R.attr.gradient_04_e, R.attr.gradient_05_e)
 
     init {
         if (attrs != null) {
-            context.obtainStyledAttributes(attrs, UR.styleable.GradientIcon).use {
+            context.obtainStyledAttributes(attrs, R.styleable.GradientIcon).use {
                 var drawable: Drawable? = null
                 var overlay: Drawable? = null
 
-                if (it.hasValue(UR.styleable.GradientIcon_src)) {
-                    drawable = AppCompatResources.getDrawable(context, it.getResourceId(UR.styleable.GradientIcon_src, -1))
+                if (it.hasValue(R.styleable.GradientIcon_src)) {
+                    drawable = AppCompatResources.getDrawable(context, it.getResourceId(R.styleable.GradientIcon_src, -1))
                 }
 
-                if (it.hasValue(UR.styleable.GradientIcon_src_overlay)) {
-                    overlay = AppCompatResources.getDrawable(context, it.getResourceId(UR.styleable.GradientIcon_src_overlay, -1))
+                if (it.hasValue(R.styleable.GradientIcon_src_overlay)) {
+                    overlay = AppCompatResources.getDrawable(context, it.getResourceId(R.styleable.GradientIcon_src_overlay, -1))
                 }
 
-                if (it.hasValue(UR.styleable.GradientIcon_gradient)) {
-                    val gradientIndex = it.getInt(UR.styleable.GradientIcon_gradient, 0)
-                    val start = gradientStarts.getOrElse(gradientIndex) { UR.attr.gradient_01_a }
-                    val end = gradientEnds.getOrElse(gradientIndex) { UR.attr.gradient_01_e }
+                if (it.hasValue(R.styleable.GradientIcon_gradient)) {
+                    val gradientIndex = it.getInt(R.styleable.GradientIcon_gradient, 0)
+                    val start = gradientStarts.getOrElse(gradientIndex) { R.attr.gradient_01_a }
+                    val end = gradientEnds.getOrElse(gradientIndex) { R.attr.gradient_01_e }
                     color0 = context.getThemeColor(start)
                     color1 = context.getThemeColor(end)
                 }

@@ -6,7 +6,6 @@ import android.view.View
 import androidx.annotation.ColorInt
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 /**
  * Sets the background and nav bar color to a dynamic color.
@@ -15,7 +14,7 @@ import au.com.shiftyjelly.pocketcasts.ui.R as UR
 fun BottomSheetDialogFragment.applyColor(theme: Theme, @ColorInt color: Int) {
     val dialogBackground = GradientDrawable()
     dialogBackground.color = ColorStateList.valueOf(color)
-    dialogBackground.cornerRadius = context?.resources?.getDimension(UR.dimen.bottom_sheet_corner_radius) ?: 0f
+    dialogBackground.cornerRadius = context?.resources?.getDimension(R.dimen.bottom_sheet_corner_radius) ?: 0f
     (view?.parent as? View)?.background = dialogBackground
     view?.setBackgroundColor(color)
 

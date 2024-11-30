@@ -18,6 +18,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.ChangeEmailFragment
 import au.com.shiftyjelly.pocketcasts.account.ChangePwdFragment
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.ProfileUpgradeBanner
@@ -54,10 +55,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import au.com.shiftyjelly.pocketcasts.cartheme.R as CR
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
@@ -252,7 +249,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setSummary(body)
             .setOnConfirm { performSignOut() }
             .setIconId(R.drawable.ic_signout)
-            .setIconTint(UR.attr.support_05)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "signout_warning")
     }
 
@@ -262,8 +259,8 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setTitle(getString(R.string.profile_delete_account_title))
             .setSummary(getString(R.string.profile_delete_account_question))
             .setOnConfirm { deleteAccountPermanent() }
-            .setIconId(VR.drawable.ic_delete)
-            .setIconTint(UR.attr.support_05)
+            .setIconId(R.drawable.ic_delete)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "deleteaccount_warning")
     }
 
@@ -274,7 +271,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setSummary(getString(R.string.profile_delete_account_permanent_question))
             .setOnConfirm { performDeleteAccount() }
             .setIconId(R.drawable.ic_failedwarning)
-            .setIconTint(UR.attr.support_05)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "deleteaccount_permanent_warning")
     }
 

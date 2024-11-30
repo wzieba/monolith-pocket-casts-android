@@ -8,12 +8,12 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.deeplink.AddBookmarkDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ChangeBookmarkTitleDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.DeleteBookmarkDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowBookmarkDeepLink
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.repositories.R
 import au.com.shiftyjelly.pocketcasts.repositories.playback.PlaybackManager
 import au.com.shiftyjelly.pocketcasts.utils.AppPlatform
 import au.com.shiftyjelly.pocketcasts.utils.Util
@@ -21,8 +21,6 @@ import au.com.shiftyjelly.pocketcasts.utils.extensions.isAppForeground
 import au.com.shiftyjelly.pocketcasts.utils.featureflag.BookmarkFeatureControl
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class BookmarkHelper @Inject constructor(
     private val playbackManager: PlaybackManager,

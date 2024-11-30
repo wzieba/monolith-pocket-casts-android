@@ -36,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.components.UpgradeFeatureItem
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.plusGradientBrush
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.PlusUpgradeLayoutReviewsItem
@@ -49,12 +50,8 @@ import au.com.shiftyjelly.pocketcasts.compose.components.TextH50
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP50
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP60
 import au.com.shiftyjelly.pocketcasts.compose.images.SubscriptionBadge
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.rateUs
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 fun UpgradeLayoutReviews(
@@ -113,7 +110,7 @@ fun UpgradeLayoutReviews(
                     TextP50(
                         text = stringResource(R.string.paywall_layout_reviews_subtitle),
                         fontWeight = FontWeight.W400,
-                        color = colorResource(UR.color.coolgrey_50),
+                        color = colorResource(R.color.coolgrey_50),
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .padding(horizontal = 40.dp)
@@ -164,7 +161,7 @@ fun UpgradeLayoutReviews(
                         TextP60(
                             text = stringResource(R.string.paywall_layout_reviews_see_all_reviews_in_store),
                             fontWeight = FontWeight.W400,
-                            color = colorResource(UR.color.plus_gold_dark),
+                            color = colorResource(R.color.plus_gold_dark),
                             textAlign = TextAlign.Center,
                         )
                     }
@@ -264,7 +261,7 @@ fun ReviewItem(
     ) {
         Column(
             modifier = Modifier
-                .background(colorResource(UR.color.darkgrey_60))
+                .background(colorResource(R.color.darkgrey_60))
                 .padding(horizontal = 20.dp)
                 .padding(top = 16.dp, bottom = 20.dp),
         ) {
@@ -281,7 +278,7 @@ fun ReviewItem(
                 TextP50(
                     text = stringResource(data.dateResourceId),
                     fontWeight = FontWeight.W400,
-                    color = colorResource(UR.color.coolgrey_60),
+                    color = colorResource(R.color.coolgrey_60),
                     modifier = Modifier.padding(start = 4.dp),
                 )
             }

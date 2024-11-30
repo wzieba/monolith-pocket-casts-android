@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageButton
-import au.com.shiftyjelly.pocketcasts.podcasts.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.views.extensions.hide
 import au.com.shiftyjelly.pocketcasts.views.extensions.show
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil

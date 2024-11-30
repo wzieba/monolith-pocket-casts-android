@@ -3,8 +3,7 @@ package au.com.shiftyjelly.pocketcasts.preferences.model
 import android.content.res.Resources
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class NewEpisodeNotificationAction(
     val id: Int,

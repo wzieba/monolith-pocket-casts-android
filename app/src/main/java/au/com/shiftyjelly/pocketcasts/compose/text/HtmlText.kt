@@ -12,10 +12,10 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.theme
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 fun HtmlText(
@@ -27,7 +27,7 @@ fun HtmlText(
     maxLines: Int = Int.MAX_VALUE,
     lineSpacingMultiplier: Float = 1.4f,
     selectable: Boolean = false,
-    @StyleRes textStyleResId: Int = UR.style.H50,
+    @StyleRes textStyleResId: Int = R.style.H50,
 ) {
     AndroidView(
         modifier = modifier,

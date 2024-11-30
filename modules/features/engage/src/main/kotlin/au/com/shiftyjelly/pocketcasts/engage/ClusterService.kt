@@ -2,6 +2,7 @@ package au.com.shiftyjelly.pocketcasts.engage
 
 import android.content.Context
 import android.net.Uri
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.deeplink.ShareListDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowEpisodeDeepLink
@@ -31,7 +32,6 @@ import com.google.android.engage.service.PublishUserAccountManagementRequest
 import com.google.android.gms.tasks.Task
 import kotlin.math.roundToInt
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal class ClusterService(
     private val context: Context,

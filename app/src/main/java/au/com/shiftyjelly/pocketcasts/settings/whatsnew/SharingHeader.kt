@@ -34,11 +34,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @Composable
 fun SharingHeader() = SharingHeader(

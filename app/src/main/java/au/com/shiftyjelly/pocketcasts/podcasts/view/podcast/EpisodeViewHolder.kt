@@ -14,6 +14,8 @@ import androidx.core.view.marginLeft
 import androidx.core.view.updateLayoutParams
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterEpisodeBinding
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
@@ -21,7 +23,6 @@ import au.com.shiftyjelly.pocketcasts.models.entity.Bookmark
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodePlayingStatus
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeStatusEnum
-import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterEpisodeBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlayButton
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.ArtworkConfiguration
@@ -49,9 +50,6 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 import kotlin.math.roundToInt
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class EpisodeViewHolder(
     val binding: AdapterEpisodeBinding,
@@ -101,7 +99,7 @@ class EpisodeViewHolder(
     override val leftIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
         get() {
             return if (isUpNext == true) {
-                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
+                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(R.attr.support_05)))
             } else {
                 val addToUpNextIcon = when (upNextAction) {
                     Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playnext
@@ -113,8 +111,8 @@ class EpisodeViewHolder(
                 }
 
                 listOf(
-                    EpisodeItemTouchHelper.IconWithBackground(addToUpNextIcon, binding.episodeRow.context.getThemeColor(UR.attr.support_04)),
-                    EpisodeItemTouchHelper.IconWithBackground(secondaryUpNextIcon, binding.episodeRow.context.getThemeColor(UR.attr.support_03)),
+                    EpisodeItemTouchHelper.IconWithBackground(addToUpNextIcon, binding.episodeRow.context.getThemeColor(R.attr.support_04)),
+                    EpisodeItemTouchHelper.IconWithBackground(secondaryUpNextIcon, binding.episodeRow.context.getThemeColor(R.attr.support_03)),
                 )
             }
         }
@@ -127,12 +125,12 @@ class EpisodeViewHolder(
                 } else {
                     R.drawable.ic_archive
                 },
-                backgroundColor = binding.episodeRow.context.getThemeColor(UR.attr.support_06),
+                backgroundColor = binding.episodeRow.context.getThemeColor(R.attr.support_06),
             )
 
             val shareItem = EpisodeItemTouchHelper.IconWithBackground(
                 iconRes = R.drawable.ic_share,
-                backgroundColor = binding.episodeRow.context.getThemeColor(UR.attr.support_01),
+                backgroundColor = binding.episodeRow.context.getThemeColor(R.attr.support_01),
             )
 
             return listOf(archiveItem, shareItem)
@@ -169,8 +167,8 @@ class EpisodeViewHolder(
 
         binding.playButton.listener = playButtonListener
 
-        val captionColor = context.getThemeColor(UR.attr.primary_text_02)
-        val iconColor = context.getThemeColor(UR.attr.primary_icon_02)
+        val captionColor = context.getThemeColor(R.attr.primary_text_02)
+        val iconColor = context.getThemeColor(R.attr.primary_icon_02)
         binding.progressCircle.setColor(captionColor)
         binding.progressBar.indeterminateTintList = ColorStateList.valueOf(captionColor)
         binding.imgBookmark.imageTintList = ColorStateList.valueOf(tintColor)
@@ -235,7 +233,7 @@ class EpisodeViewHolder(
                     imgIcon.isVisible = true
                     imgIcon.setImageResource(R.drawable.ic_downloaded)
                     updateTimeLeft(textView = lblStatus, episode = episode)
-                    ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(context.getThemeColor(UR.attr.support_02)))
+                    ImageViewCompat.setImageTintList(imgIcon, ColorStateList.valueOf(context.getThemeColor(R.attr.support_02)))
                 } else if (episode.episodeStatus == EpisodeStatusEnum.DOWNLOADING) {
                     progressCircle.isVisible = true
                     lblStatus.text = context.getString(R.string.episode_row_downloading, combinedData.downloadProgress)
@@ -306,8 +304,8 @@ class EpisodeViewHolder(
             episodeRow.performClick()
         }
 
-        val selectedColor = context.getThemeColor(UR.attr.primary_ui_02_selected)
-        val unselectedColor = context.getThemeColor(UR.attr.primary_ui_02)
+        val selectedColor = context.getThemeColor(R.attr.primary_ui_02_selected)
+        val unselectedColor = context.getThemeColor(R.attr.primary_ui_02)
         checkbox.setOnCheckedChangeListener { _, isChecked ->
             binding.episodeRow.setBackgroundColor(if (isMultiSelecting && isChecked) selectedColor else unselectedColor)
         }
@@ -332,20 +330,20 @@ class EpisodeViewHolder(
         val episodeGreyedOut = episode.playingStatus == EpisodePlayingStatus.COMPLETED || episode.isArchived
         val alphaCaptionColor = ColorUtils.colorWithAlpha(captionColor, 128)
         val dateTintColor = if (episodeGreyedOut) alphaCaptionColor else tintColor
-        val dateTextColor = if (episodeGreyedOut) alphaCaptionColor else context.getThemeColor(UR.attr.primary_text_02)
+        val dateTextColor = if (episodeGreyedOut) alphaCaptionColor else context.getThemeColor(R.attr.primary_text_02)
         date.text = episode.getSummaryText(dateFormatter = dateFormatter, tintColor = dateTintColor, showDuration = false, context = date.context)
         date.setTextColor(dateTextColor)
 
         val textColor = if (episodeGreyedOut) {
-            ColorUtils.colorWithAlpha(context.getThemeColor(UR.attr.primary_text_01), 128)
+            ColorUtils.colorWithAlpha(context.getThemeColor(R.attr.primary_text_01), 128)
         } else {
             context.getThemeColor(
-                UR.attr.primary_text_01,
+                R.attr.primary_text_01,
             )
         }
         title.setTextColor(textColor)
 
-        val statusColor = if (episodeGreyedOut) alphaCaptionColor else context.getThemeColor(UR.attr.primary_text_02)
+        val statusColor = if (episodeGreyedOut) alphaCaptionColor else context.getThemeColor(R.attr.primary_text_02)
         lblStatus.setTextColor(statusColor)
 
         val attributes = mutableListOf(

@@ -17,6 +17,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
@@ -48,8 +49,6 @@ import org.xml.sax.InputSource
 import org.xml.sax.SAXException
 import org.xml.sax.SAXParseException
 import org.xml.sax.helpers.DefaultHandler
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltWorker
 class OpmlImportTask @AssistedInject constructor(

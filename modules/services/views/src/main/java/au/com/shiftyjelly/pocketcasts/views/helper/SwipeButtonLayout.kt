@@ -2,14 +2,12 @@ package au.com.shiftyjelly.pocketcasts.views.helper
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 data class SwipeButtonLayout(
     val leftPrimary: () -> SwipeButton,
@@ -34,7 +32,7 @@ sealed interface SwipeButton {
 
         override val iconRes = R.drawable.ic_upnext_movetotop
 
-        override val backgroundColor: (Context) -> Int = { it.getThemeColor(UR.attr.support_04) }
+        override val backgroundColor: (Context) -> Int = { it.getThemeColor(R.attr.support_04) }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit
             get() = { baseEpisode, rowIndex ->
@@ -56,7 +54,7 @@ sealed interface SwipeButton {
         override val iconRes = R.drawable.ic_upnext_movetobottom
 
         override val backgroundColor: (Context) -> Int = {
-            it.getThemeColor(UR.attr.support_03)
+            it.getThemeColor(R.attr.support_03)
         }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit = { baseEpisode, rowIndex ->
@@ -76,7 +74,7 @@ sealed interface SwipeButton {
 
         override val iconRes = R.drawable.ic_upnext_remove
 
-        override val backgroundColor: (Context) -> Int = { it.getThemeColor(UR.attr.support_05) }
+        override val backgroundColor: (Context) -> Int = { it.getThemeColor(R.attr.support_05) }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit = { baseEpisode, rowIndex ->
             viewModel.episodeSwipeRemoveUpNext(
@@ -94,10 +92,10 @@ sealed interface SwipeButton {
         private val viewModel: SwipeButtonLayoutViewModel,
     ) : SwipeButton {
 
-        override val iconRes = VR.drawable.ic_delete
+        override val iconRes = R.drawable.ic_delete
 
         override val backgroundColor: (Context) -> Int =
-            { it.getThemeColor(UR.attr.support_05) }
+            { it.getThemeColor(R.attr.support_05) }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit = { episode, rowIndex ->
             if (episode !is UserEpisode) {
@@ -127,7 +125,7 @@ sealed interface SwipeButton {
             }
 
         override val backgroundColor: (Context) -> Int =
-            { it.getThemeColor(UR.attr.support_06) }
+            { it.getThemeColor(R.attr.support_06) }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit = { episode, rowIndex ->
             if (episode !is PodcastEpisode) {
@@ -147,7 +145,7 @@ sealed interface SwipeButton {
         override val iconRes = R.drawable.ic_share
 
         override val backgroundColor: (Context) -> Int =
-            { it.getThemeColor(UR.attr.support_01) }
+            { it.getThemeColor(R.attr.support_01) }
 
         override val onClick: (BaseEpisode, RowIndex) -> Unit = { episode, _ ->
             if (episode !is PodcastEpisode) {

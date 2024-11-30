@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.databinding.FragmentCreateDoneBinding
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
@@ -16,8 +17,6 @@ import au.com.shiftyjelly.pocketcasts.account.viewmodel.SubscriptionType
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class CreateDoneFragment : BaseFragment() {

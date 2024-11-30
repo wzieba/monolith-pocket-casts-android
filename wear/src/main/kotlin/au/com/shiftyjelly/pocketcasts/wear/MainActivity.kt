@@ -25,6 +25,7 @@ import androidx.wear.compose.navigation.composable
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavHostState
 import androidx.wear.tooling.preview.devices.WearDevices
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.to.SubscriptionStatus
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearAppTheme
@@ -51,7 +52,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.settings.settingsRoutes
 import com.google.android.horologist.compose.layout.AppScaffold
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

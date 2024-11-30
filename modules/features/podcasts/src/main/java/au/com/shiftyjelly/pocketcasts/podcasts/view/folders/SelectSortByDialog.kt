@@ -2,10 +2,10 @@ package au.com.shiftyjelly.pocketcasts.podcasts.view.folders
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.type.PodcastsSortType
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.views.dialog.OptionsDialog
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 /**
  * Sort order dialog used when picking podcasts from their collection. For example which podcasts are in a folder.

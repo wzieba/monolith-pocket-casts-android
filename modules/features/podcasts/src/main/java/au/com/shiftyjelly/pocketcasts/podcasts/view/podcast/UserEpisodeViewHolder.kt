@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.core.view.marginLeft
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.Bookmark
@@ -45,9 +46,6 @@ import io.reactivex.rxkotlin.Observables
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 class UserEpisodeViewHolder(
     val binding: AdapterUserEpisodeBinding,
@@ -96,7 +94,7 @@ class UserEpisodeViewHolder(
     override val leftIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
         get() {
             return if (isUpNext == true) {
-                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(UR.attr.support_05)))
+                listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.episodeRow.context.getThemeColor(R.attr.support_05)))
             } else {
                 val addToUpNextIcon = when (upNextAction) {
                     Settings.UpNextAction.PLAY_NEXT -> R.drawable.ic_upnext_playnext
@@ -108,16 +106,16 @@ class UserEpisodeViewHolder(
                 }
 
                 listOf(
-                    EpisodeItemTouchHelper.IconWithBackground(addToUpNextIcon, binding.episodeRow.context.getThemeColor(UR.attr.support_04)),
-                    EpisodeItemTouchHelper.IconWithBackground(secondaryUpNextIcon, binding.episodeRow.context.getThemeColor(UR.attr.support_03)),
+                    EpisodeItemTouchHelper.IconWithBackground(addToUpNextIcon, binding.episodeRow.context.getThemeColor(R.attr.support_04)),
+                    EpisodeItemTouchHelper.IconWithBackground(secondaryUpNextIcon, binding.episodeRow.context.getThemeColor(R.attr.support_03)),
                 )
             }
         }
     override val rightIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground> =
         listOf(
             EpisodeItemTouchHelper.IconWithBackground(
-                iconRes = VR.drawable.ic_delete,
-                backgroundColor = binding.episodeRow.context.getThemeColor(UR.attr.support_05),
+                iconRes = R.drawable.ic_delete,
+                backgroundColor = binding.episodeRow.context.getThemeColor(R.attr.support_05),
             ),
         )
 
@@ -143,7 +141,7 @@ class UserEpisodeViewHolder(
         binding.playButton.setButtonType(episode, playButtonType, tintColor, fromListUuid = null)
         binding.playButton.listener = playButtonListener
 
-        val captionColor = context.getThemeColor(UR.attr.primary_text_02)
+        val captionColor = context.getThemeColor(R.attr.primary_text_02)
         val captionWithAlpha = ColorUtils.colorWithAlpha(captionColor, 128)
 
         binding.fileStatusIconsView.setup(
@@ -194,11 +192,11 @@ class UserEpisodeViewHolder(
                 val episodeGreyedOut = episode.playingStatus == EpisodePlayingStatus.COMPLETED || episode.isArchived
 
                 val dateTintColor = if (episodeGreyedOut) captionWithAlpha else tintColor
-                val dateTextColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(UR.attr.primary_text_02)
+                val dateTextColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(R.attr.primary_text_02)
                 dateTextView.text = episode.getSummaryText(dateFormatter = dateFormatter, tintColor = dateTintColor, showDuration = false, context = dateTextView.context)
                 dateTextView.setTextColor(dateTextColor)
 
-                val textColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(UR.attr.primary_text_01)
+                val textColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(R.attr.primary_text_01)
                 titleTextView.setTextColor(textColor)
 
                 val status = binding.fileStatusIconsView.statusText
@@ -211,11 +209,11 @@ class UserEpisodeViewHolder(
 
         val episodeGreyedOut = episode.playingStatus == EpisodePlayingStatus.COMPLETED || episode.isArchived
         val dateTintColor = if (episodeGreyedOut) captionWithAlpha else tintColor
-        val dateTextColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(UR.attr.primary_text_02)
+        val dateTextColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(R.attr.primary_text_02)
         dateTextView.text = episode.getSummaryText(dateFormatter = dateFormatter, tintColor = dateTintColor, showDuration = false, context = dateTextView.context)
         dateTextView.setTextColor(dateTextColor)
 
-        val textColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(UR.attr.primary_text_01)
+        val textColor = if (episodeGreyedOut) captionWithAlpha else context.getThemeColor(R.attr.primary_text_01)
         titleTextView.setTextColor(textColor)
 
         titleTextView.text = episode.title
@@ -251,8 +249,8 @@ class UserEpisodeViewHolder(
             checkbox.setOnClickListener { episodeRow.performClick() }
         }
 
-        val selectedColor = context.getThemeColor(UR.attr.primary_ui_02_selected)
-        val unselectedColor = context.getThemeColor(UR.attr.primary_ui_02)
+        val selectedColor = context.getThemeColor(R.attr.primary_ui_02_selected)
+        val unselectedColor = context.getThemeColor(R.attr.primary_ui_02)
         checkbox.setOnCheckedChangeListener { _, isChecked ->
             binding.episodeRow.setBackgroundColor(if (isMultiSelecting && isChecked) selectedColor else unselectedColor)
         }

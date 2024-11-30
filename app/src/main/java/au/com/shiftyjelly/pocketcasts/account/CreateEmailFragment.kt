@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountError
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.SubscriptionType
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateEmailBinding
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getTintedDrawable
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
@@ -23,8 +25,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.R
-import au.com.shiftyjelly.pocketcasts.databinding.FragmentCreateEmailBinding
 
 @AndroidEntryPoint
 class CreateEmailFragment : BaseFragment() {
@@ -47,7 +47,7 @@ class CreateEmailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val binding = binding ?: return
+        val binding: FragmentCreateEmailBinding = binding ?: return
         val txtEmail = binding.txtEmail
         val txtPassword = binding.txtPassword
         val progress = binding.progress

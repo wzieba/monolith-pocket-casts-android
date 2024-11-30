@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.helper.PlaylistHelper
 
 class FilterAutoDownloadAdapter(private val filters: List<Playlist>, private val clickListener: ClickListener, val isDarkTheme: Boolean) : androidx.recyclerview.widget.RecyclerView.Adapter<FilterAutoDownloadAdapter.ViewHolder>() {

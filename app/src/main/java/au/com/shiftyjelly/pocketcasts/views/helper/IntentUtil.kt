@@ -6,7 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.FileUtil
 import java.io.File
 import java.io.UnsupportedEncodingException

@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.graphics.applyCanvas
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.scale
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.endofyear.ui.backgroundColor
 import au.com.shiftyjelly.pocketcasts.models.to.Story
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
@@ -25,7 +26,6 @@ import kotlin.math.roundToInt
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @Composable
 internal fun rememberStoryCaptureController(): StoryCaptureController {

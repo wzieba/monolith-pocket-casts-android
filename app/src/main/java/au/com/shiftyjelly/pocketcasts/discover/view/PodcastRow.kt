@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
-import au.com.shiftyjelly.pocketcasts.discover.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.discover.extensions.updateSubscribeButtonIcon
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
@@ -16,7 +16,6 @@ import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeDrawable
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
 import au.com.shiftyjelly.pocketcasts.views.extensions.setRippleBackground
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class PodcastRow @JvmOverloads constructor(
     context: Context,
@@ -73,6 +72,6 @@ class PodcastRow @JvmOverloads constructor(
     fun clear() {
         lblTitle.text = null
         lblSubtitle.text = null
-        imageView.setImageResource(imageView.context.getThemeDrawable(UR.attr.defaultArtworkSmall))
+        imageView.setImageResource(imageView.context.getThemeDrawable(R.attr.defaultArtworkSmall))
     }
 }

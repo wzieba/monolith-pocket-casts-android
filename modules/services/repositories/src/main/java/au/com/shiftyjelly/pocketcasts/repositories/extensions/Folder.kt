@@ -1,6 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.repositories.extensions
 
-import au.com.shiftyjelly.pocketcasts.images.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Folder
 
 private val AUTOMOTIVE_DRAWABLES = arrayOf(

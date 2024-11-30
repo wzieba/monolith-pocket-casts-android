@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.paywallreviews
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 data class ReviewData(
     @StringRes val titleResourceId: Int,

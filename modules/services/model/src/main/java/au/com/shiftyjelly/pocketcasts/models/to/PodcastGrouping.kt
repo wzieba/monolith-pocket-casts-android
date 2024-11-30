@@ -3,10 +3,10 @@ package au.com.shiftyjelly.pocketcasts.models.to
 import android.content.Context
 import android.content.res.Resources
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodesSortType
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 sealed class PodcastGrouping(
     @StringRes val groupName: Int,

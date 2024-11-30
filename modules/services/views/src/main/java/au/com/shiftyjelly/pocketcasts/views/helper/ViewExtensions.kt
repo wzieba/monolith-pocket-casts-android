@@ -4,13 +4,13 @@ import android.graphics.Outline
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.widget.TextView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.TimeHelper
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
 import au.com.shiftyjelly.pocketcasts.models.type.UserEpisodeServerStatus
 import au.com.shiftyjelly.pocketcasts.utils.extensions.toLocalizedFormatLongStyle
 import java.util.Date
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 fun View.toCircle(circle: Boolean) {
     if (!circle) {

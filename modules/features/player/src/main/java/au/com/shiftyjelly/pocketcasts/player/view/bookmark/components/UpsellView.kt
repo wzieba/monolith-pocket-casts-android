@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.buttons.UpsellButtonTitle
@@ -27,7 +28,6 @@ import au.com.shiftyjelly.pocketcasts.player.view.bookmark.components.UpsellView
 import au.com.shiftyjelly.pocketcasts.repositories.subscription.FreeTrial
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun UpsellView(

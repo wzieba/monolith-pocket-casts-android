@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.discover.databinding.ItemMostPopularPodcastsBinding
@@ -15,7 +16,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageReques
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory.PlaceholderType
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
 import au.com.shiftyjelly.pocketcasts.servers.model.DiscoverPodcast
-import au.com.shiftyjelly.pocketcasts.ui.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
 
 internal class MostPopularPodcastsAdapter(

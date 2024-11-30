@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import au.com.shiftyjelly.pocketcasts.account.AccountActivity
-import au.com.shiftyjelly.pocketcasts.profile.databinding.FragmentTrialFinishedBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentTrialFinishedBinding
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 

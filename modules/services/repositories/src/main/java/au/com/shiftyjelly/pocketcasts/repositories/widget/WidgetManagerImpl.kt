@@ -7,13 +7,13 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.RemoteViews
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.core.ui.widget.PodcastWidget
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.repositories.R
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory.PlaceholderType
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
@@ -28,7 +28,6 @@ import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 class WidgetManagerImpl @Inject constructor(
     private val settings: Settings,

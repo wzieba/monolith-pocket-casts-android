@@ -11,7 +11,7 @@ import androidx.annotation.ColorInt
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.discover.extensions.updateSubscribeButtonIcon
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
@@ -21,7 +21,6 @@ import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.ui.theme.ThemeColor
 import com.google.android.material.chip.Chip
 import java.util.Locale
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class CarouselItemViewHolder(val theme: Theme, itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -66,8 +65,8 @@ class CarouselItemViewHolder(val theme: Theme, itemView: View) : RecyclerView.Vi
             setBackingGradient(podcast.color)
             btnSubscribe.updateSubscribeButtonIcon(
                 subscribed = podcast.isSubscribed,
-                colorSubscribed = UR.attr.contrast_02,
-                colorUnsubscribed = UR.attr.contrast_02,
+                colorSubscribed = R.attr.contrast_02,
+                colorUnsubscribed = R.attr.contrast_02,
             )
             lblTitle.text = podcast.title
             lblTitle.setTextColor(ThemeColor.contrast01(theme.activeTheme))

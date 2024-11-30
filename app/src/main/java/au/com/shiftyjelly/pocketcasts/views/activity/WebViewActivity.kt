@@ -14,8 +14,8 @@ import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import au.com.shiftyjelly.pocketcasts.databinding.ActivityWebViewBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.views.databinding.ActivityWebViewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext

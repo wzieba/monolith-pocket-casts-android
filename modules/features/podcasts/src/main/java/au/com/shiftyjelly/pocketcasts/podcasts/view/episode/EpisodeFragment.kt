@@ -23,6 +23,7 @@ import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -38,7 +39,6 @@ import au.com.shiftyjelly.pocketcasts.reimagine.ShareDialogFragment
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
 import au.com.shiftyjelly.pocketcasts.servers.shownotes.ShowNotesState
-import au.com.shiftyjelly.pocketcasts.ui.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.extensions.themed
 import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
@@ -66,9 +66,6 @@ import kotlin.time.Duration
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.TypeParceler
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class EpisodeFragment : BaseFragment() {
@@ -186,9 +183,9 @@ class EpisodeFragment : BaseFragment() {
     private fun createShowNotesFormatter(context: Context): ShowNotesFormatter {
         val showNotesFormatter = ShowNotesFormatter(context)
         showNotesFormatter.apply {
-            setBackgroundThemeColor(UR.attr.primary_ui_01)
-            setTextThemeColor(UR.attr.primary_text_01)
-            setLinkThemeColor(UR.attr.primary_text_01)
+            setBackgroundThemeColor(R.attr.primary_ui_01)
+            setTextThemeColor(R.attr.primary_text_01)
+            setLinkThemeColor(R.attr.primary_text_01)
             setConvertTimesToLinks(viewModel.isCurrentlyPlayingEpisode())
         }
         return showNotesFormatter
@@ -468,7 +465,7 @@ class EpisodeFragment : BaseFragment() {
                     .setTitle(getString(R.string.podcast_remove_downloaded_file))
                     .addTextOption(
                         titleId = R.string.podcast_file_remove,
-                        titleColor = it.context.getThemeColor(UR.attr.support_05),
+                        titleColor = it.context.getThemeColor(R.attr.support_05),
                         click = { viewModel.deleteDownloadedEpisode() },
                     )
                 activity?.supportFragmentManager?.let { fragmentManager ->

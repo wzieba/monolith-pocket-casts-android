@@ -3,10 +3,10 @@ package au.com.shiftyjelly.pocketcasts.endofyear.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.components.DialogButtonState
 import au.com.shiftyjelly.pocketcasts.compose.components.DialogFrame
 import au.com.shiftyjelly.pocketcasts.compose.components.DialogText
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun ScreenshotDetectedDialog(

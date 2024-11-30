@@ -2,10 +2,10 @@ package au.com.shiftyjelly.pocketcasts.wear.ui.player
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ObtainConfirmationScreen
 import au.com.shiftyjelly.pocketcasts.wear.ui.player.StreamingConfirmationScreen.Result
 import com.google.android.horologist.compose.layout.ScreenScaffold
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object StreamingConfirmationScreen {
     const val route = "streaming_confirmation"

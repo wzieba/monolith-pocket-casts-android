@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
-import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentLongPressOptionsBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentLongPressOptionsBinding
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.PlayerViewModel
 import au.com.shiftyjelly.pocketcasts.ui.helper.StatusBarColor
 import au.com.shiftyjelly.pocketcasts.views.extensions.applyColor

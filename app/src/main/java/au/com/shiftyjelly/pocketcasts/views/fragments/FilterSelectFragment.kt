@@ -10,12 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentFilterSelectBinding
+import au.com.shiftyjelly.pocketcasts.databinding.SettingsRowFilterBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPlural
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PlaylistManager
 import au.com.shiftyjelly.pocketcasts.utils.extensions.getSerializableCompat
-import au.com.shiftyjelly.pocketcasts.views.databinding.FragmentFilterSelectBinding
-import au.com.shiftyjelly.pocketcasts.views.databinding.SettingsRowFilterBinding
 import au.com.shiftyjelly.pocketcasts.views.helper.PlaylistHelper
 import au.com.shiftyjelly.pocketcasts.views.viewmodels.FilterSelectViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +29,6 @@ import io.reactivex.rxkotlin.zipWith
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class FilterSelectFragment private constructor() : BaseFragment() {

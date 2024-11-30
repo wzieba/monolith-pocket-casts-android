@@ -20,13 +20,13 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.viewModels
 import androidx.fragment.compose.content
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingRow
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingRowToggle
 import au.com.shiftyjelly.pocketcasts.compose.preview.ThemePreviewParameterProvider
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.settings.viewmodel.BetaFeaturesViewModel
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme

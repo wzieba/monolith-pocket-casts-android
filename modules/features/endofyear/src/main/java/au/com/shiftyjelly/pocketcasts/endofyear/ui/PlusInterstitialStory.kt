@@ -25,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.HorizontalDirection
 import au.com.shiftyjelly.pocketcasts.compose.components.ScrollingRow
@@ -32,9 +33,6 @@ import au.com.shiftyjelly.pocketcasts.compose.components.TextH10
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
 import au.com.shiftyjelly.pocketcasts.compose.extensions.nonScaledSp
 import au.com.shiftyjelly.pocketcasts.models.to.Story
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 internal fun PlusInterstitialStory(
@@ -143,7 +141,7 @@ private fun PlusInfo(
             text = stringResource(R.string.end_of_year_stories_theres_more),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         Spacer(
@@ -153,7 +151,7 @@ private fun PlusInfo(
             text = stringResource(R.string.end_of_year_stories_subscribe_to_plus),
             fontSize = 15.sp,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         OutlinedEoyButton(

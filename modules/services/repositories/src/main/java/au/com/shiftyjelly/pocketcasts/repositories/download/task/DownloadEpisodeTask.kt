@@ -13,6 +13,7 @@ import androidx.work.Data
 import androidx.work.ForegroundInfo
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.EpisodeDownloadError
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
@@ -63,7 +64,6 @@ import okhttp3.MediaType
 import okhttp3.Request
 import okhttp3.Response
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private class UnderscoreInHostName : Exception("Download URL is invalid, as it contains an underscore in the hostname. Please contact the podcast author to resolve this.")
 

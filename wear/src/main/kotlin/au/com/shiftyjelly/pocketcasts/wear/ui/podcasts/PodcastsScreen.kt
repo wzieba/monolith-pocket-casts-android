@@ -25,6 +25,7 @@ import androidx.wear.compose.material.Chip
 import androidx.wear.compose.material.ChipDefaults
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.components.PodcastImage
 import au.com.shiftyjelly.pocketcasts.compose.extensions.darker
 import au.com.shiftyjelly.pocketcasts.models.to.FolderItem
@@ -33,8 +34,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.component.LoadingSpinner
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ScreenHeaderChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object PodcastsScreen {
     const val argumentFolderUuid = "folderUuid"

@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.bars.ThemedTopAppBar
 import au.com.shiftyjelly.pocketcasts.compose.components.SettingRow
@@ -33,9 +34,6 @@ import au.com.shiftyjelly.pocketcasts.settings.privacy.PrivacyFragment
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.extensions.getActivity
 import au.com.shiftyjelly.pocketcasts.views.fragments.BatteryRestrictionsSettingsFragment
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.settings.R as SR
 
 @Composable
 fun SettingsFragmentPage(
@@ -136,7 +134,7 @@ fun SettingsFragmentPage(
 private fun DeveloperRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_developer),
-        icon = painterResource(SR.drawable.ic_developer_mode),
+        icon = painterResource(R.drawable.ic_developer_mode),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient03A,
             MaterialTheme.theme.colors.gradient03E,
@@ -162,7 +160,7 @@ private fun BetaFeatures(onClick: () -> Unit) {
 private fun BatteryOptimizationRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_battery_settings),
-        icon = painterResource(SR.drawable.ic_baseline_warning_amber_24),
+        icon = painterResource(R.drawable.ic_baseline_warning_amber_24),
         iconGradientColors = listOf(
             MaterialTheme.theme.colors.gradient03A,
             MaterialTheme.theme.colors.gradient03E,
@@ -197,7 +195,7 @@ private fun GeneralRow(onClick: () -> Unit) {
 private fun NotificationRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_notifications),
-        icon = painterResource(SR.drawable.settings_notifications),
+        icon = painterResource(R.drawable.settings_notifications),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -206,7 +204,7 @@ private fun NotificationRow(onClick: () -> Unit) {
 private fun AppearanceRow(isSignedInAsPlusOrPatron: Boolean, onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_appearance),
-        icon = painterResource(SR.drawable.settings_appearance),
+        icon = painterResource(R.drawable.settings_appearance),
         primaryTextEndDrawable = if (isSignedInAsPlusOrPatron) null else R.drawable.ic_plus,
         modifier = Modifier.rowModifier(onClick),
     )
@@ -216,7 +214,7 @@ private fun AppearanceRow(isSignedInAsPlusOrPatron: Boolean, onClick: () -> Unit
 private fun StorageAndDataUseRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_storage),
-        icon = painterResource(SR.drawable.settings_storage),
+        icon = painterResource(R.drawable.settings_storage),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -225,7 +223,7 @@ private fun StorageAndDataUseRow(onClick: () -> Unit) {
 private fun AutoArchiveRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_auto_archive),
-        icon = painterResource(SR.drawable.settings_auto_archive),
+        icon = painterResource(R.drawable.settings_auto_archive),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -234,7 +232,7 @@ private fun AutoArchiveRow(onClick: () -> Unit) {
 private fun AutoDownloadRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_auto_download),
-        icon = painterResource(SR.drawable.settings_auto_download),
+        icon = painterResource(R.drawable.settings_auto_download),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -261,7 +259,7 @@ private fun HeadphoneControlsRow(onClick: () -> Unit) {
 private fun ImportAndExportOpmlRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_import_export),
-        icon = painterResource(SR.drawable.settings_import_export),
+        icon = painterResource(R.drawable.settings_import_export),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -270,7 +268,7 @@ private fun ImportAndExportOpmlRow(onClick: () -> Unit) {
 private fun PrivacyRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_privacy),
-        icon = painterResource(SR.drawable.whatsnew_privacy),
+        icon = painterResource(R.drawable.whatsnew_privacy),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -279,7 +277,7 @@ private fun PrivacyRow(onClick: () -> Unit) {
 private fun AboutRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_about),
-        icon = painterResource(SR.drawable.settings_about),
+        icon = painterResource(R.drawable.settings_about),
         modifier = Modifier.rowModifier(onClick),
     )
 }
@@ -288,7 +286,7 @@ private fun AboutRow(onClick: () -> Unit) {
 private fun AdvancedRow(onClick: () -> Unit) {
     SettingRow(
         primaryText = stringResource(R.string.settings_title_advanced),
-        icon = painterResource(SR.drawable.settings_advanced),
+        icon = painterResource(R.drawable.settings_advanced),
         modifier = Modifier.rowModifier(onClick),
     )
 }

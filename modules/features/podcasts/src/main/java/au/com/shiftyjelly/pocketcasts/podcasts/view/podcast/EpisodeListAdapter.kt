@@ -8,10 +8,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterEpisodeBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.databinding.AdapterUserEpisodeBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlayButton
@@ -28,7 +28,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.SwipeButtonLayoutFactory
 import au.com.shiftyjelly.pocketcasts.views.multiselect.MultiSelectEpisodesHelper
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.rx2.asObservable
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 val PLAYBACK_DIFF: DiffUtil.ItemCallback<BaseEpisode> = object : DiffUtil.ItemCallback<BaseEpisode>() {
     override fun areItemsTheSame(oldItem: BaseEpisode, newItem: BaseEpisode): Boolean {
@@ -110,7 +109,7 @@ class EpisodeListAdapter(
     private fun bindEpisodeViewHolder(position: Int, holder: EpisodeViewHolder) {
         val episode = getItem(position) as PodcastEpisode
 
-        val tintColor = this.tintColor ?: holder.itemView.context.getThemeColor(UR.attr.primary_icon_01)
+        val tintColor = this.tintColor ?: holder.itemView.context.getThemeColor(R.attr.primary_icon_01)
         holder.setup(
             episode = episode,
             fromListUuid = fromListUuid,
@@ -140,7 +139,7 @@ class EpisodeListAdapter(
 
     private fun bindUserEpisodeViewHolder(position: Int, holder: UserEpisodeViewHolder) {
         val userEpisode = getItem(position) as UserEpisode
-        val tintColor = this.tintColor ?: holder.itemView.context.getThemeColor(UR.attr.primary_icon_01)
+        val tintColor = this.tintColor ?: holder.itemView.context.getThemeColor(R.attr.primary_icon_01)
         holder.setup(
             episode = userEpisode,
             tintColor = tintColor,

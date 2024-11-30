@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.preferences.model
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class PlayOverNotificationSetting(
     val preferenceInt: Int,

@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
@@ -34,8 +35,6 @@ import au.com.shiftyjelly.pocketcasts.player.view.transcripts.TranscriptViewMode
 import au.com.shiftyjelly.pocketcasts.player.view.transcripts.TranscriptViewModel.UiState
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.TranscriptFormat
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun TranscriptError(

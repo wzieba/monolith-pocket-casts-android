@@ -3,15 +3,13 @@ package au.com.shiftyjelly.pocketcasts.discover.extensions
 import android.content.res.ColorStateList
 import android.widget.ImageView
 import androidx.annotation.AttrRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 fun ImageView.updateSubscribeButtonIcon(
     subscribed: Boolean,
-    @AttrRes colorSubscribed: Int = UR.attr.support_02,
-    @AttrRes colorUnsubscribed: Int = UR.attr.primary_icon_02,
+    @AttrRes colorSubscribed: Int = R.attr.support_02,
+    @AttrRes colorUnsubscribed: Int = R.attr.primary_icon_02,
 ) {
     val drawableRes = if (subscribed) R.drawable.ic_check_black_24dp else R.drawable.ic_add_black_24dp
     this.setImageResource(drawableRes)

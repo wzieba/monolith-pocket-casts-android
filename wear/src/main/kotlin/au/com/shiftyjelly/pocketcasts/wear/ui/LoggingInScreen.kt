@@ -29,12 +29,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.images.GravatarProfileImage
 import au.com.shiftyjelly.pocketcasts.compose.images.ProfileImage
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearAppTheme
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.LoadingSpinner
 import com.google.android.horologist.compose.layout.ScreenScaffold
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object LoggingInScreen {
     const val route = "loggingInScreen"

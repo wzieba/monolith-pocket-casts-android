@@ -1,6 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.nova
 
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowEpisodeDeepLink
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowPodcastDeepLink
@@ -14,7 +15,6 @@ import io.branch.engage.conduit.source.PodcastEpisode
 import io.branch.engage.conduit.source.PodcastEpisodeCatalog
 import io.branch.engage.conduit.source.PodcastSeries
 import io.branch.engage.conduit.source.PodcastSeriesCatalog
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 internal class CatalogFactory(
     private val context: Context,

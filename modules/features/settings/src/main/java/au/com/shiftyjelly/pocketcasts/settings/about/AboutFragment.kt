@@ -51,6 +51,7 @@ import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.compose.content
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
@@ -72,8 +73,6 @@ import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class AboutFragment : BaseFragment() {
@@ -110,64 +109,64 @@ class AboutFragment : BaseFragment() {
 
 private val icons = listOf(
     AppIcon(
-        image = UR.attr.about_logo_wordpress,
+        image = R.attr.about_logo_wordpress,
         text = R.string.settings_about_wordpress,
         url = "https://wordpress.com/",
-        color = UR.attr.about_logo_wordpress_color,
+        color = R.attr.about_logo_wordpress_color,
         rotate = (-45..45).random(),
         x = 0.0,
         y = 23.20,
     ),
     AppIcon(
-        image = UR.attr.about_logo_jetpack,
+        image = R.attr.about_logo_jetpack,
         text = R.string.settings_about_jetpack,
         url = "https://jetpack.com/",
-        color = UR.attr.about_logo_jetpack_color,
+        color = R.attr.about_logo_jetpack_color,
         rotate = (-45..45).random(),
         x = 6.17,
         y = 0.0,
     ),
     AppIcon(
-        image = UR.attr.about_logo_dayone,
+        image = R.attr.about_logo_dayone,
         text = R.string.settings_about_dayone,
         url = "https://dayoneapp.com/",
-        color = UR.attr.about_logo_dayone_color,
+        color = R.attr.about_logo_dayone_color,
         rotate = (-45..45).random(),
         x = 3.83,
         y = 7.40,
     ),
     AppIcon(
-        image = UR.attr.about_logo_pocketcasts,
+        image = R.attr.about_logo_pocketcasts,
         text = R.string.app_name,
         url = "https://www.pocketcasts.com/",
-        color = UR.attr.about_logo_pocketcasts_color,
+        color = R.attr.about_logo_pocketcasts_color,
         rotate = 0,
         x = 2.77,
         y = 0.0,
     ),
     AppIcon(
-        image = UR.attr.about_logo_woo,
+        image = R.attr.about_logo_woo,
         text = R.string.settings_about_woo,
         url = "https://woocommerce.com/",
-        color = UR.attr.about_logo_woo_color,
+        color = R.attr.about_logo_woo_color,
         rotate = (-45..45).random(),
         x = 1.94,
         y = 17.28,
     ),
     AppIcon(
-        image = UR.attr.about_logo_simplenote,
+        image = R.attr.about_logo_simplenote,
         text = R.string.settings_about_simplenote,
         url = "https://simplenote.com/",
-        color = UR.attr.about_logo_simplenote_color,
+        color = R.attr.about_logo_simplenote_color,
         rotate = (-45..45).random(),
         x = 1.49,
         y = 0.0,
     ),
     AppIcon(
-        image = UR.attr.about_logo_tumblr,
+        image = R.attr.about_logo_tumblr,
         text = R.string.settings_about_tumblr,
         url = "https://tumbR.com/",
-        color = UR.attr.about_logo_tumblr_color,
+        color = R.attr.about_logo_tumblr_color,
         rotate = (-45..45).random(),
         x = 1.205,
         y = 19.9,
@@ -195,7 +194,7 @@ private fun AboutPage(
         }
         item {
             Image(
-                painter = painterResource(context.getThemeDrawable(UR.attr.logo_title_vertical)),
+                painter = painterResource(context.getThemeDrawable(R.attr.logo_title_vertical)),
                 contentDescription = stringResource(R.string.settings_app_icon),
                 modifier = Modifier.padding(top = 56.dp),
             )

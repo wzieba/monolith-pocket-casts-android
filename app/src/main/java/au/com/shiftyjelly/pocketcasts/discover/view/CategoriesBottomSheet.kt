@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R.layout
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.R.layout
 import au.com.shiftyjelly.pocketcasts.localization.helper.tryToLocalise
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseDialogFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -27,7 +28,7 @@ class CategoriesBottomSheet(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView: RecyclerView =
-            view.findViewById(au.com.shiftyjelly.pocketcasts.discover.R.id.categoriesRecyclerView)
+            view.findViewById(R.id.categoriesRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
         val adapter = CategoriesBottomSheetAdapter {

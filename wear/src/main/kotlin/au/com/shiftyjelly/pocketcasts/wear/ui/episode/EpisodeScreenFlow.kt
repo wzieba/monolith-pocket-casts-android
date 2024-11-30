@@ -17,6 +17,7 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
 import androidx.wear.compose.foundation.SwipeToDismissBoxState
 import androidx.wear.compose.navigation.composable
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.NotificationScreen
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.NowPlayingPager
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ObtainConfirmationScreen
@@ -25,7 +26,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.player.StreamingConfirmationScreen
 import com.google.android.horologist.compose.layout.ScalingLazyColumnDefaults
 import com.google.android.horologist.compose.layout.rememberColumnState
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object EpisodeScreenFlow {
     const val episodeUuidArgument = "episodeUuid"

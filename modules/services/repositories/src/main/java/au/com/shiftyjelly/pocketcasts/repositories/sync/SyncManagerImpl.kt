@@ -2,6 +2,7 @@ package au.com.shiftyjelly.pocketcasts.repositories.sync
 
 import android.accounts.Account
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.TracksAnalyticsTracker
@@ -64,7 +65,6 @@ import kotlinx.coroutines.rx2.rxSingle
 import retrofit2.HttpException
 import retrofit2.Response
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Singleton
 class SyncManagerImpl @Inject constructor(

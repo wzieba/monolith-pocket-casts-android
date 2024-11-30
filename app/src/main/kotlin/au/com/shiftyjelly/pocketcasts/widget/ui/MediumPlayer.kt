@@ -17,9 +17,9 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.width
 import androidx.glance.layout.wrapContentHeight
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.action.OpenPocketCastsAction
 import au.com.shiftyjelly.pocketcasts.widget.data.MediumPlayerWidgetState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun MediumPlayer(state: MediumPlayerWidgetState) {

@@ -1,8 +1,8 @@
 package au.com.shiftyjelly.pocketcasts.settings
 
 import android.content.Context
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.views.dialog.ConfirmationDialog
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 /**
  * A dialog that shows a Downloads - Cleanup confirmation dialog.

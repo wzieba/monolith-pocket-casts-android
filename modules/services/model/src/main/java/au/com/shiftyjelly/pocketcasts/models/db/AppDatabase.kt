@@ -13,6 +13,7 @@ import androidx.room.TypeConverters
 import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.converter.AutoArchiveAfterPlayingTypeConverter
 import au.com.shiftyjelly.pocketcasts.models.converter.AutoArchiveInactiveTypeConverter
 import au.com.shiftyjelly.pocketcasts.models.converter.AutoArchiveLimitTypeConverter
@@ -66,7 +67,6 @@ import au.com.shiftyjelly.pocketcasts.models.to.Transcript
 import java.io.File
 import java.util.Arrays
 import java.util.Date
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Database(
     entities = [

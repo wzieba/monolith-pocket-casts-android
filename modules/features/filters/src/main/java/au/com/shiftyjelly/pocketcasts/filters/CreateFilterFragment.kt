@@ -17,6 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.filters.databinding.FragmentCreateFilterBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.extensions.colorIndex
@@ -41,9 +42,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 private const val ARG_MODE = "mode"
 private const val ARG_PLAYLIST_UUID = "playlist_uuid"
@@ -261,12 +259,12 @@ class CreateFilterFragment : BaseFragment(), CoroutineScope {
 
     private fun setupIconView(view: IconView, selected: Boolean) {
         if (selected) {
-            view.setBackgroundResource(VR.drawable.filter_circle)
-            view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(UR.attr.primary_interactive_02))
+            view.setBackgroundResource(R.drawable.filter_circle)
+            view.imageTintList = ColorStateList.valueOf(view.context.getThemeColor(R.attr.primary_interactive_02))
             view.backgroundTintList = ColorStateList.valueOf(tintColor)
             view.isSelected = true
         } else {
-            view.setBackgroundResource(VR.drawable.filter_icon_button_unselected)
+            view.setBackgroundResource(R.drawable.filter_icon_button_unselected)
             view.imageTintList = ColorStateList.valueOf(ThemeColor.filterIcon02(theme.activeTheme, tintColor))
             view.backgroundTintList = null
         }

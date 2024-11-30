@@ -41,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.PodcastImage
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH10
@@ -56,9 +57,6 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 internal fun TopShowsStory(
@@ -172,7 +170,7 @@ private fun PodcastItem(
         TextH20(
             text = "#${index + 1}",
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier
                 .offset { IntOffset(x = (50.dp * (1f - animationProgress)).roundToPx(), y = 0) }
                 .alpha(animationProgress),
@@ -213,14 +211,14 @@ private fun PodcastItem(
                 fontSize = 15.sp,
                 fontScale = measurements.smallDeviceFactor,
                 disableAutoScale = true,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 maxLines = 1,
             )
             TextH20(
                 text = podcast.title,
                 fontScale = measurements.smallDeviceFactor,
                 disableAutoScale = true,
-                color = colorResource(UR.color.coolgrey_90),
+                color = colorResource(R.color.coolgrey_90),
                 maxLines = 2,
             )
         }

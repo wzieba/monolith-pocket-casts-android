@@ -11,9 +11,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentVideoBinding
 import au.com.shiftyjelly.pocketcasts.player.binding.setPlaybackState
-import au.com.shiftyjelly.pocketcasts.player.databinding.FragmentVideoBinding
 import au.com.shiftyjelly.pocketcasts.player.view.PlayerSeekBar
 import au.com.shiftyjelly.pocketcasts.player.viewmodel.VideoViewModel
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
@@ -26,7 +27,6 @@ import com.airbnb.lottie.LottieAnimationView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlin.time.Duration
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class VideoFragment : Fragment(), PlayerSeekBar.OnUserSeekListener {
@@ -73,7 +73,7 @@ class VideoFragment : Fragment(), PlayerSeekBar.OnUserSeekListener {
         binding.skipBackText.text = "${settings.skipBackInSecs.value}"
         binding.jumpForwardText.text = "${settings.skipForwardInSecs.value}"
 
-        binding.playButton.setCircleTintColor(ContextCompat.getColor(context, UR.color.transparent))
+        binding.playButton.setCircleTintColor(ContextCompat.getColor(context, R.color.transparent))
 
         binding.btnPip.setOnClickListener {
             activity?.let {

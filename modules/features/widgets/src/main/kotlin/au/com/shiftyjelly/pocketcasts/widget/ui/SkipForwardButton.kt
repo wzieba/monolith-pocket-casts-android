@@ -13,10 +13,9 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.semantics.contentDescription
 import androidx.glance.semantics.semantics
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.action.SkipForwardAction
 import au.com.shiftyjelly.pocketcasts.widget.data.LocalSource
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun SkipForwardButton(

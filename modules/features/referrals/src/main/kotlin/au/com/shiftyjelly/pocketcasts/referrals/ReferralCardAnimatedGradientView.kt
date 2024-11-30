@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.extensions.rainbowBrush
 import au.com.shiftyjelly.pocketcasts.utils.DeviceOrientationDetector
 import au.com.shiftyjelly.pocketcasts.utils.OrientationData
@@ -51,7 +52,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.sample
 import kotlinx.coroutines.isActive
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @Composable
 fun ReferralCardAnimatedBackgroundView(

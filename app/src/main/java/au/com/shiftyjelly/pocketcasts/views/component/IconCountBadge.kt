@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.views.component
 
 import android.content.Context
-import au.com.shiftyjelly.pocketcasts.ui.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
 import com.google.android.material.badge.BadgeDrawable

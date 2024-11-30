@@ -20,9 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import au.com.shiftyjelly.pocketcasts.R
 import com.google.android.horologist.composables.MarqueeText
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 /**
  * An animated text only display showing scrolling title and still artist in two separated rows.

@@ -16,6 +16,7 @@ import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.media.MediaBrowserServiceCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.localization.BuildConfig
@@ -63,7 +64,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.rx2.asObservable
 import kotlinx.coroutines.rx2.awaitSingleOrNull
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 const val MEDIA_ID_ROOT = "__ROOT__"
 const val PODCASTS_ROOT = "__PODCASTS__"

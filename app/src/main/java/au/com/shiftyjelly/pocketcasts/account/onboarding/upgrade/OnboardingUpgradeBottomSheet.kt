@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.OutlinedRowButton
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.UnselectedOutlinedRowButton
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.OnboardingUpgradeHelper.UpgradeRowButton
@@ -43,14 +44,12 @@ import au.com.shiftyjelly.pocketcasts.account.viewmodel.OnboardingUpgradeBottomS
 import au.com.shiftyjelly.pocketcasts.compose.bottomsheet.Pill
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH20
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP60
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.models.type.OfferSubscriptionPricingPhase
 import au.com.shiftyjelly.pocketcasts.models.type.RecurringSubscriptionPricingPhase
 import au.com.shiftyjelly.pocketcasts.models.type.Subscription
 import au.com.shiftyjelly.pocketcasts.models.type.Subscription.SubscriptionTier
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import java.util.Locale
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val UNKNOWN_TIER = "unknown_tier"
 

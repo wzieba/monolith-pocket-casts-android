@@ -15,6 +15,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.databinding.AccountActivityBinding
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountState
 import au.com.shiftyjelly.pocketcasts.account.viewmodel.CreateAccountViewModel
@@ -26,7 +27,6 @@ import au.com.shiftyjelly.pocketcasts.utils.Util
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.images.R as IR
 
 @AndroidEntryPoint
 class AccountActivity : AppCompatActivity() {

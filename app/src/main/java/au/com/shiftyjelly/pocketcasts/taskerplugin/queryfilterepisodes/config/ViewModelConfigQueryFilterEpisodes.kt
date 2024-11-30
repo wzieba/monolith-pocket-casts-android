@@ -3,7 +3,7 @@ package au.com.shiftyjelly.pocketcasts.taskerplugin.queryfilterepisodes.config
 import android.app.Application
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.OutputQueryEpisodes
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.ViewModelBase
 import au.com.shiftyjelly.pocketcasts.taskerplugin.base.hilt.playlistManager
@@ -14,7 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import au.com.shiftyjelly.pocketcasts.images.R as RD
+import au.com.shiftyjelly.pocketcasts.R as RD
 
 @HiltViewModel
 class ViewModelConfigQueryFilterEpisodes @Inject constructor(

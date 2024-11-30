@@ -3,6 +3,7 @@ package au.com.shiftyjelly.pocketcasts.account.viewmodel
 import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PodcastManager
 import au.com.shiftyjelly.pocketcasts.repositories.subscription.SubscriptionManager
 import au.com.shiftyjelly.pocketcasts.repositories.sync.LoginResult
@@ -11,7 +12,6 @@ import au.com.shiftyjelly.pocketcasts.repositories.sync.SyncManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltViewModel
 class SignInViewModel

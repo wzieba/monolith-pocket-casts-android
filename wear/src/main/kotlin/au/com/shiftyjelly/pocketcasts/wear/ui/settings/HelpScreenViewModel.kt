@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.shared.WatchMessageSendState
 import au.com.shiftyjelly.pocketcasts.shared.WatchPhoneCommunication
 import au.com.shiftyjelly.pocketcasts.shared.WatchPhoneCommunicationState
@@ -16,7 +17,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @HiltViewModel
 class HelpScreenViewModel @Inject constructor(

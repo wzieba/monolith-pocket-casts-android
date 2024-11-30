@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
-import au.com.shiftyjelly.pocketcasts.discover.R
-import au.com.shiftyjelly.pocketcasts.discover.databinding.PodcastListFragmentBinding
+import au.com.shiftyjelly.pocketcasts.databinding.PodcastListFragmentBinding
 import au.com.shiftyjelly.pocketcasts.discover.view.DiscoverFragment.Companion.PODCAST_UUID_KEY
 import au.com.shiftyjelly.pocketcasts.discover.viewmodel.PodcastListViewState
 import au.com.shiftyjelly.pocketcasts.localization.helper.tryToLocalise
@@ -33,7 +33,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon.BackArrow
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class PodcastListFragment : PodcastGridListFragment() {
@@ -164,7 +163,7 @@ class PodcastListFragment : PodcastGridListFragment() {
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         if (expandedStyle !is ExpandedStyle.DescriptiveList) {
-            val dividerDrawable = ContextCompat.getDrawable(binding.recyclerView.context, UR.drawable.divider_indented)
+            val dividerDrawable = ContextCompat.getDrawable(binding.recyclerView.context, R.drawable.divider_indented)
             if (dividerDrawable != null) {
                 val divider = DividerItemDecoration(context, RecyclerView.VERTICAL).apply {
                     setDrawable(dividerDrawable)

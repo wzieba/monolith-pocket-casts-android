@@ -9,7 +9,7 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.TextToolbar
 import androidx.compose.ui.platform.TextToolbarStatus
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 
 /**
  * Custom implementation for [TextToolbar].

@@ -18,6 +18,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.account.ChangeEmailFragment
 import au.com.shiftyjelly.pocketcasts.account.ChangePwdFragment
 import au.com.shiftyjelly.pocketcasts.account.onboarding.upgrade.ProfileUpgradeBanner
@@ -25,11 +26,11 @@ import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.extensions.setContentWithViewCompositionStrategy
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentAccountDetailsBinding
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.to.SubscriptionStatus
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.profile.champion.PocketCastsChampionBottomSheetDialog
-import au.com.shiftyjelly.pocketcasts.profile.databinding.FragmentAccountDetailsBinding
 import au.com.shiftyjelly.pocketcasts.repositories.playback.PlaybackManager
 import au.com.shiftyjelly.pocketcasts.repositories.playback.UpNextQueue
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.EpisodeManager
@@ -53,11 +54,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.cartheme.R as CR
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
@@ -252,7 +248,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setSummary(body)
             .setOnConfirm { performSignOut() }
             .setIconId(R.drawable.ic_signout)
-            .setIconTint(UR.attr.support_05)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "signout_warning")
     }
 
@@ -262,8 +258,8 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setTitle(getString(R.string.profile_delete_account_title))
             .setSummary(getString(R.string.profile_delete_account_question))
             .setOnConfirm { deleteAccountPermanent() }
-            .setIconId(VR.drawable.ic_delete)
-            .setIconTint(UR.attr.support_05)
+            .setIconId(R.drawable.ic_delete)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "deleteaccount_warning")
     }
 
@@ -274,7 +270,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
             .setSummary(getString(R.string.profile_delete_account_permanent_question))
             .setOnConfirm { performDeleteAccount() }
             .setIconId(R.drawable.ic_failedwarning)
-            .setIconTint(UR.attr.support_05)
+            .setIconTint(R.attr.support_05)
             .show(childFragmentManager, "deleteaccount_permanent_warning")
     }
 
@@ -303,7 +299,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
 
     private fun signOutAutomotive() {
         val context = context ?: return
-        val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, CR.style.Theme_Car_NoActionBar) else context
+        val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, R.style.Theme_Car_NoActionBar) else context
         val builder = AlertDialog.Builder(themedContext)
         builder.setTitle(getString(R.string.profile_sign_out))
             .setMessage(getString(R.string.profile_sign_out_confirm))
@@ -314,7 +310,7 @@ class AccountDetailsFragment : BaseFragment(), OnUserViewClickListener {
 
     private fun clearDataAlert() {
         val context = context ?: return
-        val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, CR.style.Theme_Car_NoActionBar) else context
+        val themedContext = if (Util.isAutomotive(context)) ContextThemeWrapper(context, R.style.Theme_Car_NoActionBar) else context
         val builder = AlertDialog.Builder(themedContext)
         builder.setTitle(getString(R.string.profile_clear_data_question))
             .setMessage(getString(R.string.profile_clear_data_would_you_also_like_question))

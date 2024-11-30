@@ -19,6 +19,7 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -45,8 +46,6 @@ import au.com.shiftyjelly.pocketcasts.views.fragments.BaseFragment
 import au.com.shiftyjelly.pocketcasts.views.helper.UiUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private const val ARG_FLOATING = "arg_floating"
 private const val ARG_ONLY_SEARCH_REMOTE = "arg_only_search_remote"
@@ -179,8 +178,8 @@ class SearchFragment : BaseFragment() {
         val searchView = binding.searchView
         searchView.findViewById<SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)?.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-            setTextColor(context.getThemeColor(UR.attr.secondary_text_01))
-            val hintColor = UR.attr.secondary_text_02
+            setTextColor(context.getThemeColor(R.attr.secondary_text_01))
+            val hintColor = R.attr.secondary_text_02
             setHintTextColor(context.getThemeColor(hintColor))
         }
 

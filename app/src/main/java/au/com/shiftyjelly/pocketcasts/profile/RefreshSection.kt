@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.compose.components.DialogButtonState
 import au.com.shiftyjelly.pocketcasts.compose.components.DialogFrame
@@ -43,8 +44,6 @@ import java.time.Instant
 import java.time.temporal.ChronoUnit
 import java.util.Date
 import kotlin.time.Duration.Companion.milliseconds
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun RefreshSection(

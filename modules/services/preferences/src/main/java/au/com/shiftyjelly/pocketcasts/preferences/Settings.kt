@@ -3,6 +3,7 @@ package au.com.shiftyjelly.pocketcasts.preferences
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.work.NetworkType
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.to.AutoArchiveAfterPlaying
 import au.com.shiftyjelly.pocketcasts.models.to.AutoArchiveInactive
 import au.com.shiftyjelly.pocketcasts.models.to.PlaybackEffects
@@ -33,8 +34,6 @@ import io.reactivex.Observable
 import java.time.Instant
 import java.util.Date
 import kotlinx.coroutines.flow.Flow
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 interface Settings {
 

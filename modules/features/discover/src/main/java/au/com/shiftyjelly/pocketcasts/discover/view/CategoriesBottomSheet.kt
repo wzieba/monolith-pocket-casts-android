@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.discover.R.layout
+import au.com.shiftyjelly.pocketcasts.R.layout
 import au.com.shiftyjelly.pocketcasts.localization.helper.tryToLocalise
 import au.com.shiftyjelly.pocketcasts.views.fragments.BaseDialogFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior

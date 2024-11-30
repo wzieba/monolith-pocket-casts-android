@@ -34,14 +34,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupProperties
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.AppTheme
 import au.com.shiftyjelly.pocketcasts.compose.theme
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import au.com.shiftyjelly.pocketcasts.images.R as RD
+import au.com.shiftyjelly.pocketcasts.R as RD
 import au.com.shiftyjelly.pocketcasts.taskerplugin.R as RT
 
 class TaskerInputFieldState<T>(val content: Content<T>) {

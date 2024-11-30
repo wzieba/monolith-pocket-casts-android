@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.models.type
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class AutoDownloadLimitSetting(
     val id: Int,

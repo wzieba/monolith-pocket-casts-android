@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.models.type
 
 import android.content.res.Resources
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.featureflag.Feature
 import au.com.shiftyjelly.pocketcasts.utils.featureflag.FeatureFlag
 import au.com.shiftyjelly.pocketcasts.utils.featureflag.FeatureTier

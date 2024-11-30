@@ -2,10 +2,7 @@ package au.com.shiftyjelly.pocketcasts.views.multiselect
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.views.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
+import au.com.shiftyjelly.pocketcasts.R
 
 sealed class MultiSelectBookmarkAction(
     override val groupId: String,
@@ -32,7 +29,7 @@ sealed class MultiSelectBookmarkAction(
 
     data class EditBookmark(override val isVisible: Boolean) : MultiSelectBookmarkAction(
         groupId = "edit",
-        actionId = UR.id.menu_edit,
+        actionId = R.id.menu_edit,
         title = R.string.edit,
         iconRes = R.drawable.ic_edit,
         analyticsValue = "edit",

@@ -1,7 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.podcasts.view.components
 
-import au.com.shiftyjelly.pocketcasts.podcasts.R
-import au.com.shiftyjelly.pocketcasts.images.R as IR
+import au.com.shiftyjelly.pocketcasts.R
 
 enum class PlayButtonType(val drawableId: Int, val label: String) {
     DOWNLOAD(R.drawable.button_download, "Download"),

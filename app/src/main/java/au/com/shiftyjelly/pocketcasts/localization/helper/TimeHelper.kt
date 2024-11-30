@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.localization.helper
 
 import android.content.Context
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralHours
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralMins
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralMinutes

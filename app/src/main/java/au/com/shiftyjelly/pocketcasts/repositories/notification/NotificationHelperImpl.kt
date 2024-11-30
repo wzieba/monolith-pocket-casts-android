@@ -9,11 +9,11 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.repositories.sync.NotificationBroadcastReceiver.Companion.INTENT_EXTRA_NOTIFICATION_TAG
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 class NotificationHelperImpl @Inject constructor(@ApplicationContext private val context: Context) : NotificationHelper {
 

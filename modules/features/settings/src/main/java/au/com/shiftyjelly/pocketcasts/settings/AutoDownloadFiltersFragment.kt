@@ -8,6 +8,7 @@ import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PlaylistManager
@@ -23,8 +24,6 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class AutoDownloadFiltersFragment : androidx.fragment.app.Fragment(), FilterAutoDownloadAdapter.ClickListener {
@@ -51,11 +50,11 @@ class AutoDownloadFiltersFragment : androidx.fragment.app.Fragment(), FilterAuto
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val recyclerView = inflater.inflate(VR.layout.fragment_recyclerview, container, false) as androidx.recyclerview.widget.RecyclerView
+        val recyclerView = inflater.inflate(R.layout.fragment_recyclerview, container, false) as androidx.recyclerview.widget.RecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
 
-        val columns = resources.getInteger(UR.integer.podcast_list_column_num)
+        val columns = resources.getInteger(R.integer.podcast_list_column_num)
         val layoutManager = androidx.recyclerview.widget.GridLayoutManager(activity, columns)
         recyclerView.layoutManager = layoutManager
 

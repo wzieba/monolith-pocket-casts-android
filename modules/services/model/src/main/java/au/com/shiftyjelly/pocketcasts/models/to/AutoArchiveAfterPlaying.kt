@@ -2,7 +2,7 @@ package au.com.shiftyjelly.pocketcasts.models.to
 
 import android.content.Context
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.Util
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.hours

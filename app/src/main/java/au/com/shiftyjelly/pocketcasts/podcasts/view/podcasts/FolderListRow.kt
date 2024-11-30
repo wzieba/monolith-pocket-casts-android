@@ -17,12 +17,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.folder.FolderImageSmall
 import au.com.shiftyjelly.pocketcasts.compose.images.CountBadge
 import au.com.shiftyjelly.pocketcasts.compose.images.CountBadgeStyle
 import au.com.shiftyjelly.pocketcasts.compose.theme
 import au.com.shiftyjelly.pocketcasts.preferences.model.BadgeType
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 fun FolderListRow(

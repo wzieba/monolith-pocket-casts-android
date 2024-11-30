@@ -5,13 +5,13 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPlural
 import au.com.shiftyjelly.pocketcasts.models.entity.Bookmark
 import au.com.shiftyjelly.pocketcasts.repositories.bookmark.BookmarkManager
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.dialog.ConfirmationDialog
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
@@ -20,8 +20,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class MultiSelectBookmarksHelper @Inject constructor(
     private val bookmarkManager: BookmarkManager,
@@ -62,7 +60,7 @@ class MultiSelectBookmarksHelper @Inject constructor(
                 true
             }
 
-            UR.id.menu_edit -> {
+            R.id.menu_edit -> {
                 edit()
                 true
             }
@@ -130,7 +128,7 @@ class MultiSelectBookmarksHelper @Inject constructor(
                 ),
             )
             .setIconId(R.drawable.ic_delete)
-            .setIconTint(UR.attr.support_05)
+            .setIconTint(R.attr.support_05)
             .setOnConfirm {
                 launch {
                     bookmarks.forEach {

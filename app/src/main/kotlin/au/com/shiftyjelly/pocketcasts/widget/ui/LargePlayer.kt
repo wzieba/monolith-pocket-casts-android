@@ -14,9 +14,9 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.wrapContentHeight
 import androidx.glance.layout.wrapContentSize
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.action.OpenPocketCastsAction
 import au.com.shiftyjelly.pocketcasts.widget.data.LargePlayerWidgetState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @Composable
 internal fun LargePlayer(state: LargePlayerWidgetState) {

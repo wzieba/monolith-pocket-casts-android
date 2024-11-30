@@ -13,13 +13,13 @@ import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralSeconds
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodeStatusEnum
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.podcasts.viewmodel.PodcastSettingsViewModel
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.AutoAddUpNextLimitBehaviour
@@ -46,10 +46,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.settings.R as SR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.Listener, HasBackstack {
@@ -132,7 +128,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
         super.onViewCreated(view, savedInstanceState)
         showLoading()
 
-        view.setBackgroundColor(view.context.getThemeColor(UR.attr.primary_ui_01))
+        view.setBackgroundColor(view.context.getThemeColor(R.attr.primary_ui_01))
         view.isClickable = true
 
         toolbar = view.findViewById(R.id.toolbar)
@@ -267,7 +263,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
         )
             .setTitle(getString(title))
             .setSummary(getString(summary))
-            .setIconId(SR.drawable.ic_refresh)
+            .setIconId(R.drawable.ic_refresh)
         parentFragmentManager.let {
             dialog.show(it, "update_queued")
         }
@@ -359,7 +355,7 @@ class PodcastSettingsFragment : BasePreferenceFragment(), FilterSelectFragment.L
                 shouldFilterPlaylistsWithAllPodcasts = true,
             )
             childFragmentManager.beginTransaction()
-                .replace(UR.id.frameChildFragment, fragment)
+                .replace(R.id.frameChildFragment, fragment)
                 .addToBackStack("filterSelect")
                 .commit()
             true

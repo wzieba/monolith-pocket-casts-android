@@ -26,7 +26,6 @@ dependencies {
     api(libs.media3.extractor)
     api(libs.moshi)
     api(libs.okhttp)
-    api(libs.room)
     api(libs.rx2.java)
 
     api(projects.modules.services.utils)
@@ -36,6 +35,7 @@ dependencies {
     implementation(libs.dagger.hilt.core)
     implementation(libs.play.auth)
     implementation(libs.play.cast)
+    api(libs.room)
     implementation(libs.room.ktx)
     implementation(libs.room.rx2)
     implementation(libs.timber)

@@ -11,7 +11,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.widget.ImageViewCompat
-import au.com.shiftyjelly.pocketcasts.podcasts.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.views.extensions.setRippleBackground
 
 class ToggleActionButton @JvmOverloads constructor(

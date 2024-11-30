@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import java.util.Locale
 import org.junit.Test
 import org.junit.runner.RunWith

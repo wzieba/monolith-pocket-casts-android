@@ -39,12 +39,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.Devices
 import au.com.shiftyjelly.pocketcasts.compose.components.PodcastImage
 import au.com.shiftyjelly.pocketcasts.compose.components.TextH10
 import au.com.shiftyjelly.pocketcasts.compose.components.TextP40
 import au.com.shiftyjelly.pocketcasts.endofyear.StoryCaptureController
-import au.com.shiftyjelly.pocketcasts.localization.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.FriendlyDurationUnit
 import au.com.shiftyjelly.pocketcasts.localization.helper.toFriendlyString
 import au.com.shiftyjelly.pocketcasts.models.to.Story
@@ -52,8 +52,6 @@ import au.com.shiftyjelly.pocketcasts.models.to.TopPodcast
 import dev.shreyaspatil.capturable.capturable
 import java.io.File
 import kotlin.math.sqrt
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -199,7 +197,7 @@ private fun TopShowInfo(
             ),
             fontScale = measurements.smallDeviceFactor,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         Spacer(
@@ -221,7 +219,7 @@ private fun TopShowInfo(
             ),
             fontSize = 15.sp,
             disableAutoScale = true,
-            color = colorResource(UR.color.coolgrey_90),
+            color = colorResource(R.color.coolgrey_90),
             modifier = Modifier.padding(horizontal = 24.dp),
         )
         ShareStoryButton(

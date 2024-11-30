@@ -3,9 +3,8 @@ package au.com.shiftyjelly.pocketcasts.sharing
 import android.content.Context
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.getPackageInfo
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 enum class SocialPlatform(
     @DrawableRes val logoId: Int,

@@ -15,14 +15,13 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx
-import au.com.shiftyjelly.pocketcasts.views.R
 import au.com.shiftyjelly.pocketcasts.views.databinding.AdapterMultiselectItemBinding
 import au.com.shiftyjelly.pocketcasts.views.databinding.AdapterMultiselectTitleBinding
 import au.com.shiftyjelly.pocketcasts.views.extensions.setRippleBackground
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 private val MULTI_SELECT_ACTION_DIFF = object : DiffUtil.ItemCallback<Any>() {
     override fun areItemsTheSame(oldItem: Any, newItem: Any): Boolean {
@@ -60,7 +59,7 @@ class MultiSelectAdapter(val editable: Boolean, val listener: ((MultiSelectActio
 
                 val elevation = ObjectAnimator.ofPropertyValuesHolder(backgroundView, PropertyValuesHolder.ofFloat(View.TRANSLATION_Z, 16.dpToPx(backgroundView.resources.displayMetrics).toFloat()))
 
-                val color = ObjectAnimator.ofInt(backgroundView, "backgroundColor", normalBackground, itemView.context.getThemeColor(UR.attr.primary_ui_05))
+                val color = ObjectAnimator.ofInt(backgroundView, "backgroundColor", normalBackground, itemView.context.getThemeColor(R.attr.primary_ui_05))
                 color.setEvaluator(ArgbEvaluator())
 
                 playTogether(elevation, color)

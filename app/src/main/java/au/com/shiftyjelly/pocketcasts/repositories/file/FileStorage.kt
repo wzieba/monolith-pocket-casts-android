@@ -68,7 +68,7 @@ open class FileStorage @Inject constructor(
     }
 
     private fun getOrCreateDir(parentDir: File, name: String): File = File(parentDir, name + File.separator).also { dir ->
-        dR.mkdirs()
+        dir.mkdirs()
         addNoMediaFile(dir)
     }
 
@@ -84,7 +84,7 @@ open class FileStorage @Inject constructor(
             throw StorageException("Ooops, please set the Custom Folder Location in the settings.")
         }
         val storageCustomDir = File(path)
-        if (!storageCustomDR.exists() && !storageCustomDR.mkdirs()) {
+        if (!storageCustomDir.exists() && !storageCustomDir.mkdirs()) {
             throw StorageException("Storage custom folder unavailable.")
         }
         storageCustomDir
@@ -93,7 +93,7 @@ open class FileStorage @Inject constructor(
     }
 
     private fun addNoMediaFile(dir: File) {
-        if (!dR.exists()) {
+        if (!dir.exists()) {
             return
         }
         val noMediaFile = File(dir, ".nomedia")
@@ -150,12 +150,12 @@ open class FileStorage @Inject constructor(
     }
 
     private fun moveDir(fromDir: File, toDir: File) {
-        if (fromDR.exists() && fromDR.isDirectory) {
+        if (fromDir.exists() && fromDir.isDirectory) {
             try {
                 FileUtil.copy(fromDir, toDir)
-                fromDR.delete()
+                fromDir.delete()
             } catch (e: IOException) {
-                Timber.e(e, "Problems moving a  directory to a new location. from: ${fromDR.absolutePath} to: ${toDR.absolutePath}")
+                Timber.e(e, "Problems moving a  directory to a new location. from: ${fromDir.absolutePath} to: ${toDir.absolutePath}")
             }
         }
     }
@@ -163,15 +163,15 @@ open class FileStorage @Inject constructor(
     suspend fun moveStorage(oldDir: File, newDir: File, episodesManager: EpisodeManager) {
         try {
             val oldPocketCastsDir = File(oldDir, "PocketCasts")
-            if (oldPocketCastsDR.exists() && oldPocketCastsDR.isDirectory) {
+            if (oldPocketCastsDir.exists() && oldPocketCastsDir.isDirectory) {
                 LogBuffer.i(LogBuffer.TAG_BACKGROUND_TASKS, "Pocket casts directory exists")
 
-                newDR.mkdirs()
+                newDir.mkdirs()
                 val newPocketCastsDir = File(newDir, "PocketCasts")
                 val episodesDir = getOrCreateDir(newPocketCastsDir, DIR_EPISODES)
 
                 // Check existing media and mark those episodes as downloaded
-                episodesDR.takeIf(File::exists)?.listFiles().orEmpty()
+                episodesDir.takeIf(File::exists)?.listFiles().orEmpty()
                     .matchWithFileNames()
                     .filterInvalidFileNames()
                     .findMatchingEpisodes(episodesManager)
@@ -242,9 +242,9 @@ open class FileStorage @Inject constructor(
             // Get all possible locations
             val dirPaths = buildSet {
                 addAll(StorageOptions().getFolderLocations(context).map(FolderLocation::filePath))
-                add(context.filesDR.absolutePath)
+                add(context.filesDir.absolutePath)
                 val customDir = settings.getStorageCustomFolder()
-                if (customDR.isNotBlank() && File(customDir).exists()) {
+                if (customDir.isNotBlank() && File(customDir).exists()) {
                     add(customDir)
                 }
             }

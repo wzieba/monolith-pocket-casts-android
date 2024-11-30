@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.taskerplugin.controlplayback
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfigHelperNoOutput
 import com.joaomgcd.taskerpluginlibrary.input.TaskerInput

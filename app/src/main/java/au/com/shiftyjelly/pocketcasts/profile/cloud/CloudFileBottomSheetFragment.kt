@@ -16,9 +16,11 @@ import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
+import au.com.shiftyjelly.pocketcasts.databinding.BottomSheetCloudFileBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.UserEpisode
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.to.SubscriptionStatus
@@ -26,12 +28,10 @@ import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
 import au.com.shiftyjelly.pocketcasts.models.type.UserEpisodeServerStatus
 import au.com.shiftyjelly.pocketcasts.player.view.bookmark.BookmarksContainerFragment
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
-import au.com.shiftyjelly.pocketcasts.profile.R
 import au.com.shiftyjelly.pocketcasts.profile.cloud.CloudBottomSheetViewModel.Companion.DOWNLOAD
 import au.com.shiftyjelly.pocketcasts.profile.cloud.CloudBottomSheetViewModel.Companion.EDIT
 import au.com.shiftyjelly.pocketcasts.profile.cloud.CloudBottomSheetViewModel.Companion.UPLOAD
 import au.com.shiftyjelly.pocketcasts.profile.cloud.CloudBottomSheetViewModel.Companion.UPLOAD_UPGRADE_REQUIRED
-import au.com.shiftyjelly.pocketcasts.profile.databinding.BottomSheetCloudFileBinding
 import au.com.shiftyjelly.pocketcasts.repositories.bookmark.BookmarkManager
 import au.com.shiftyjelly.pocketcasts.repositories.download.DownloadManager
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
@@ -56,10 +56,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.rx2.asObservable
 import kotlinx.parcelize.Parcelize
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.profile.R as PR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
@@ -115,8 +111,8 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
             return super.onCreateDialog(savedInstanceState)
         }
 
-        val context = ContextThemeWrapper(requireContext(), UR.style.ThemeDark)
-        return BottomSheetDialog(context, UR.style.BottomSheetDialogThemeDark)
+        val context = ContextThemeWrapper(requireContext(), R.style.ThemeDark)
+        return BottomSheetDialog(context, R.style.BottomSheetDialogThemeDark)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -158,7 +154,7 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
 
                 binding.lblTitle.text = episode.title
                 val btnPlay = binding.btnPlay
-                val tintColor = view.context.getThemeColor(UR.attr.primary_icon_01)
+                val tintColor = view.context.getThemeColor(R.attr.primary_icon_01)
                 btnPlay.setCircleTintColor(tintColor)
                 btnPlay.setPlaying(isPlaying, false)
                 btnPlay.setOnPlayClicked {
@@ -275,7 +271,7 @@ class CloudFileBottomSheetFragment : BottomSheetDialogFragment() {
                 }
 
                 val cloudRes = when (episode.serverStatus) {
-                    UserEpisodeServerStatus.LOCAL, UserEpisodeServerStatus.MISSING -> PR.drawable.ic_upload_file
+                    UserEpisodeServerStatus.LOCAL, UserEpisodeServerStatus.MISSING -> R.drawable.ic_upload_file
                     UserEpisodeServerStatus.UPLOADING, UserEpisodeServerStatus.WAITING_FOR_WIFI, UserEpisodeServerStatus.QUEUED -> R.drawable.ic_downloading
                     UserEpisodeServerStatus.UPLOADED -> if (episode.isDownloaded) R.drawable.ic_upload___remove_from_cloud___menu else R.drawable.ic_download
                 }

@@ -15,11 +15,11 @@ import androidx.glance.layout.size
 import androidx.glance.layout.width
 import androidx.glance.semantics.contentDescription
 import androidx.glance.semantics.semantics
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.widget.action.OpenPocketCastsAction
 import au.com.shiftyjelly.pocketcasts.widget.action.controlPlaybackAction
 import au.com.shiftyjelly.pocketcasts.widget.data.LocalSource
 import au.com.shiftyjelly.pocketcasts.widget.data.SmallPlayerWidgetState
-import au.com.shiftyjelly.pocketcasts.R
 
 @Composable
 internal fun SmallPlayer(state: SmallPlayerWidgetState) {

@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.compose.foundation.lazy.items
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode
 import au.com.shiftyjelly.pocketcasts.preferences.model.ArtworkConfiguration.Element
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearAppTheme
@@ -15,7 +16,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.component.ScreenHeaderChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
 import java.util.Date
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object DownloadsScreen {
     const val route = "downloads_screen"

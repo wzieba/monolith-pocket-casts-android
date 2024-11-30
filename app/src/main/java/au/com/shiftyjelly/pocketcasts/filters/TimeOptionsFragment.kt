@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import au.com.shiftyjelly.pocketcasts.filters.databinding.FilterOptionsFragmentBinding
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.FilterOptionsFragmentBinding
 import au.com.shiftyjelly.pocketcasts.models.entity.Playlist
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PlaylistManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.PlaylistProperty
@@ -24,7 +25,6 @@ import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val ARG_PLAYLIST_UUID = "playlist_uuid"
 private const val ARG_OPTIONS_TYPE = "options_type"

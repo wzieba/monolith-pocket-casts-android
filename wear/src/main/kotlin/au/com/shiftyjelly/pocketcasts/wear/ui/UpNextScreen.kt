@@ -22,12 +22,12 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.PositionIndicator
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.Text
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.repositories.playback.UpNextQueue
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.EpisodeChip
 import au.com.shiftyjelly.pocketcasts.wear.ui.component.ScreenHeaderChip
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object UpNextScreen {
     const val route = "up_next_screen"

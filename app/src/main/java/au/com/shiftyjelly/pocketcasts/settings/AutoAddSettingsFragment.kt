@@ -15,17 +15,18 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterAutoAddPodcastBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterHeaderBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterOptionRowBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterPlainTextRowBinding
+import au.com.shiftyjelly.pocketcasts.databinding.FragmentAutoAddSettingsBinding
 import au.com.shiftyjelly.pocketcasts.localization.extensions.getStringPluralPodcastsSelected
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.AutoAddUpNextLimitBehaviour
 import au.com.shiftyjelly.pocketcasts.repositories.images.PocketCastsImageRequestFactory
 import au.com.shiftyjelly.pocketcasts.repositories.images.loadInto
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterAutoAddPodcastBinding
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterHeaderBinding
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterOptionRowBinding
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterPlainTextRowBinding
-import au.com.shiftyjelly.pocketcasts.settings.databinding.FragmentAutoAddSettingsBinding
 import au.com.shiftyjelly.pocketcasts.settings.viewmodel.AutoAddSettingsViewModel
 import au.com.shiftyjelly.pocketcasts.ui.helper.FragmentHostListener
 import au.com.shiftyjelly.pocketcasts.ui.theme.ThemeColor
@@ -38,8 +39,6 @@ import au.com.shiftyjelly.pocketcasts.views.helper.NavigationIcon.BackArrow
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 @AndroidEntryPoint
 class AutoAddSettingsFragment : BaseFragment(), PodcastSelectFragment.Listener {

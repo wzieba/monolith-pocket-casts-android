@@ -16,9 +16,9 @@ import androidx.core.view.isVisible
 import androidx.core.view.marginLeft
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.localization.helper.RelativeDateFormatter
 import au.com.shiftyjelly.pocketcasts.models.entity.BaseEpisode
-import au.com.shiftyjelly.pocketcasts.player.R
 import au.com.shiftyjelly.pocketcasts.player.databinding.AdapterUpNextBinding
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.preferences.model.ArtworkConfiguration.Element
@@ -41,7 +41,6 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.rx2.asFlowable
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 class UpNextEpisodeViewHolder(
     val binding: AdapterUpNextBinding,
@@ -98,7 +97,7 @@ class UpNextEpisodeViewHolder(
         isMultiSelecting: Boolean,
         isSelected: Boolean,
     ) {
-        val tintColor = itemView.context.getAttrTextStyleColor(UR.attr.textSubtitle1)
+        val tintColor = itemView.context.getAttrTextStyleColor(R.attr.textSubtitle1)
 
         disposable = episodeManager
             .findByUuidFlow(episode.uuid)
@@ -131,8 +130,8 @@ class UpNextEpisodeViewHolder(
         binding.checkbox.isChecked = isSelected
         binding.checkbox.setOnClickListener { binding.itemContainer.performClick() }
 
-        val selectedColor = context.getThemeColor(UR.attr.primary_ui_02_selected)
-        val unselectedColor = context.getThemeColor(UR.attr.primary_ui_01)
+        val selectedColor = context.getThemeColor(R.attr.primary_ui_02_selected)
+        val unselectedColor = context.getThemeColor(R.attr.primary_ui_01)
         binding.checkbox.setOnCheckedChangeListener { _, isChecked ->
             binding.itemContainer.setBackgroundColor(if (isMultiSelecting && isChecked) selectedColor else unselectedColor)
         }
@@ -182,9 +181,9 @@ class UpNextEpisodeViewHolder(
         get() = Settings.UpNextAction.PLAY_NEXT
     override val leftIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
         get() = listOf(
-            EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_movetotop, binding.itemContainer.context.getThemeColor(UR.attr.support_04)),
-            EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_movetobottom, binding.itemContainer.context.getThemeColor(UR.attr.support_03)),
+            EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_movetotop, binding.itemContainer.context.getThemeColor(R.attr.support_04)),
+            EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_movetobottom, binding.itemContainer.context.getThemeColor(R.attr.support_03)),
         )
     override val rightIconDrawablesRes: List<EpisodeItemTouchHelper.IconWithBackground>
-        get() = listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.itemContainer.context.getThemeColor(UR.attr.support_05)))
+        get() = listOf(EpisodeItemTouchHelper.IconWithBackground(R.drawable.ic_upnext_remove, binding.itemContainer.context.getThemeColor(R.attr.support_05)))
 }

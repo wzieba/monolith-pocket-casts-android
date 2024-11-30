@@ -10,6 +10,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.wear.tooling.preview.devices.WearDevices
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.compose.CallOnce
 import au.com.shiftyjelly.pocketcasts.repositories.playback.UpNextQueue
 import au.com.shiftyjelly.pocketcasts.wear.theme.WearAppTheme
@@ -20,8 +21,6 @@ import au.com.shiftyjelly.pocketcasts.wear.ui.podcasts.PodcastsScreen
 import au.com.shiftyjelly.pocketcasts.wear.ui.settings.SettingsScreen
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.ScalingLazyColumnState
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 object WatchListScreen {
     const val route = "watch_list_screen"

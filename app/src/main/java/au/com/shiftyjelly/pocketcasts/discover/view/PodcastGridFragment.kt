@@ -13,8 +13,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-import au.com.shiftyjelly.pocketcasts.discover.R
-import au.com.shiftyjelly.pocketcasts.discover.databinding.PodcastGridFragmentBinding
+import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.PodcastGridFragmentBinding
 import au.com.shiftyjelly.pocketcasts.discover.viewmodel.PodcastListViewState
 import au.com.shiftyjelly.pocketcasts.servers.model.DisplayStyle
 import au.com.shiftyjelly.pocketcasts.servers.model.ListFeed

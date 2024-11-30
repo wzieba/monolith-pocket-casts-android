@@ -20,6 +20,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
@@ -34,7 +35,6 @@ import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
 import au.com.shiftyjelly.pocketcasts.models.type.EpisodesSortType
 import au.com.shiftyjelly.pocketcasts.player.view.bookmark.BookmarksSortByDialog
 import au.com.shiftyjelly.pocketcasts.podcasts.BuildConfig
-import au.com.shiftyjelly.pocketcasts.podcasts.R
 import au.com.shiftyjelly.pocketcasts.podcasts.databinding.FragmentPodcastBinding
 import au.com.shiftyjelly.pocketcasts.podcasts.view.components.PlayButton
 import au.com.shiftyjelly.pocketcasts.podcasts.view.episode.EpisodeContainerFragment
@@ -92,10 +92,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.rx2.asObservable
 import kotlinx.coroutines.withContext
 import kotlinx.parcelize.Parcelize
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
-import au.com.shiftyjelly.pocketcasts.views.R as VR
 
 @AndroidEntryPoint
 class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
@@ -531,7 +527,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
     private fun onHeadsetSettingsClicked() {
         val fragmentHostListener = (activity as? FragmentHostListener)
         fragmentHostListener?.apply {
-            openTab(VR.id.navigation_profile)
+            openTab(R.id.navigation_profile)
             addFragment(SettingsFragment())
             addFragment(HeadphoneControlsSettingsFragment())
         }
@@ -601,7 +597,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
         this.binding = binding
 
         val context = binding.root.context
-        val headerColor = context.getThemeColor(UR.attr.support_09)
+        val headerColor = context.getThemeColor(R.attr.support_09)
         binding.headerBackgroundPlaceholder.setBackgroundColor(headerColor)
         binding.toolbar.setBackgroundColor(headerColor)
         statusBarColor = StatusBarColor.Custom(headerColor, true)
@@ -620,7 +616,7 @@ class PodcastFragment : BaseFragment(), Toolbar.OnMenuItemClickListener {
                 @Suppress("DEPRECATION")
                 activity?.onBackPressed()
             }
-            val iconColor = it.context.getThemeColor(UR.attr.contrast_01)
+            val iconColor = it.context.getThemeColor(R.attr.contrast_01)
             it.menu.setupChromeCastButton(context) {
                 chromeCastAnalytics.trackChromeCastViewShown()
             }

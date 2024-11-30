@@ -10,6 +10,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.fragment.compose.content
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.compose.AppThemeWithBackground
 import au.com.shiftyjelly.pocketcasts.podcasts.viewmodel.GiveRatingViewModel
@@ -22,7 +23,6 @@ import com.google.android.material.snackbar.Snackbar
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
 
 private const val ARG_PODCAST_UUID = "podcastUuid"
 

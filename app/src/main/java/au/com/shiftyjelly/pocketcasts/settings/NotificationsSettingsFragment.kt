@@ -17,6 +17,7 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceScreen
 import androidx.preference.SwitchPreference
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.preferences.NotificationSound
@@ -46,8 +47,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @AndroidEntryPoint
 class NotificationsSettingsFragment :
@@ -175,7 +174,7 @@ class NotificationsSettingsFragment :
     private fun openSelectPodcasts() {
         val fragment = PodcastSelectFragment.newInstance(source = PodcastSelectFragmentSource.NOTIFICATIONS)
         childFragmentManager.beginTransaction()
-            .replace(UR.id.frameChildFragment, fragment)
+            .replace(R.id.frameChildFragment, fragment)
             .addToBackStack("podcastSelect")
             .commit()
         toolbar?.title = getString(R.string.settings_select_podcasts)

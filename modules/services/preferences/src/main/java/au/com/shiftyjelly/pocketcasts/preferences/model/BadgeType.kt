@@ -1,7 +1,7 @@
 package au.com.shiftyjelly.pocketcasts.preferences.model
 
 import androidx.annotation.StringRes
-import au.com.shiftyjelly.pocketcasts.localization.R
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.utils.log.LogBuffer
 
 enum class BadgeType(

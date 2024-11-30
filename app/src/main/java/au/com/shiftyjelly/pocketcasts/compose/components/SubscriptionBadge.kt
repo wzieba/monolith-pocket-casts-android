@@ -24,10 +24,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier
-import au.com.shiftyjelly.pocketcasts.images.R as IR
-import au.com.shiftyjelly.pocketcasts.localization.R as LR
-import au.com.shiftyjelly.pocketcasts.ui.R as UR
 
 @Composable
 fun SubscriptionBadge(
@@ -84,7 +82,7 @@ private fun BadgesPreview() {
         )
         SubscriptionBadge(
             subscriptionTier = SubscriptionTier.PATRON,
-            backgroundColor = colorResource(UR.color.patron_purple),
+            backgroundColor = colorResource(R.color.patron_purple),
             fontColor = Color.White,
             iconColor = Color.White,
         )
@@ -93,7 +91,7 @@ private fun BadgesPreview() {
         )
         SubscriptionBadge(
             subscriptionTier = SubscriptionTier.PLUS,
-            backgroundColor = colorResource(UR.color.plus_gold_dark),
+            backgroundColor = colorResource(R.color.plus_gold_dark),
             fontColor = Color.Black,
             iconColor = Color.Black,
         )

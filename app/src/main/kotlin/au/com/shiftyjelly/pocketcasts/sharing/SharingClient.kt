@@ -16,6 +16,10 @@ import android.os.Build
 import androidx.annotation.StringRes
 import androidx.core.content.getSystemService
 import androidx.core.graphics.drawable.toBitmap
+import au.com.shiftyjelly.pocketcasts.BuildConfig.META_APP_ID
+import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_SHORT_URL
+import au.com.shiftyjelly.pocketcasts.BuildConfig.WEB_BASE_HOST
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsEvent
 import au.com.shiftyjelly.pocketcasts.analytics.SourceView
 import au.com.shiftyjelly.pocketcasts.deeplink.ReferralsDeepLink
@@ -44,10 +48,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast as PodcastModel
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode as EpisodeModel
-import au.com.shiftyjelly.pocketcasts.BuildConfig.META_APP_ID
-import au.com.shiftyjelly.pocketcasts.BuildConfig.SERVER_SHORT_URL
-import au.com.shiftyjelly.pocketcasts.BuildConfig.WEB_BASE_HOST
-import au.com.shiftyjelly.pocketcasts.R
 
 class SharingClient(
     private val context: Context,
