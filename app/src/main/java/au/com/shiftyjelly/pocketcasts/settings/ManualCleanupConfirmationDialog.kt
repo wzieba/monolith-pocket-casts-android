@@ -11,7 +11,7 @@ class ManualCleanupConfirmationDialog(context: Context, onConfirm: () -> Unit) :
     init {
         setTitle(context.getString(R.string.settings_downloads_clean_up))
         setSummary(context.getString(R.string.settings_downloads_clean_up_summary))
-        setIconId(au.com.shiftyjelly.pocketcasts.views.R.drawable.ic_delete)
+        setIconId(R.drawable.ic_delete)
         setButtonType(ButtonType.Danger(context.getString(R.string.delete)))
         setOnConfirm { onConfirm() }
     }

@@ -544,13 +544,13 @@ class PlaybackSettingsFragment : BaseFragment() {
                     title = primaryText,
                     buttons = listOf(
                         DialogButtonState(
-                            text = stringResource(au.com.shiftyjelly.pocketcasts.localization.R.string.cancel).uppercase(
+                            text = stringResource(R.string.cancel).uppercase(
                                 Locale.getDefault(),
                             ),
                             onClick = { showDialog = false },
                         ),
                         DialogButtonState(
-                            text = stringResource(au.com.shiftyjelly.pocketcasts.localization.R.string.ok),
+                            text = stringResource(R.string.ok),
                             onClick = onFinish,
                             enabled = value.text.toPositiveNumberOrNull() != null,
                         ),

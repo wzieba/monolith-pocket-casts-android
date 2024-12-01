@@ -2,7 +2,6 @@ package au.com.shiftyjelly.pocketcasts.servers.di
 
 import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.preferences.AccessToken
-import au.com.shiftyjelly.pocketcasts.servers.BuildConfig
 import au.com.shiftyjelly.pocketcasts.servers.CleanAndRetryInterceptor
 import au.com.shiftyjelly.pocketcasts.servers.OkHttpInterceptor
 import au.com.shiftyjelly.pocketcasts.servers.interceptors.BasicAuthInterceptor

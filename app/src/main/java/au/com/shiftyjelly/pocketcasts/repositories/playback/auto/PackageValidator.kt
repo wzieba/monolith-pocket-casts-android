@@ -29,7 +29,7 @@ import android.util.Log
 import androidx.annotation.XmlRes
 import androidx.core.app.NotificationManagerCompat
 import androidx.media.MediaBrowserServiceCompat
-import au.com.shiftyjelly.pocketcasts.localization.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import java.io.IOException
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException

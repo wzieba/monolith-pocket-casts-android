@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
@@ -47,11 +49,11 @@ class CreateEmailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val binding: FragmentCreateEmailBinding = binding ?: return
-        val txtEmail = binding.txtEmail
-        val txtPassword = binding.txtPassword
-        val progress = binding.progress
-        val txtError = binding.txtError
+        val binding = binding ?: return
+        val txtEmail: TextInputEditText = binding.txtEmail
+        val txtPassword: TextInputEditText = binding.txtPassword
+        val progress: ProgressBar = binding.progress
+        val txtError: TextView = binding.txtError
 
         viewModel.clearError(CreateAccountError.CANNOT_CREATE_ACCOUNT)
 

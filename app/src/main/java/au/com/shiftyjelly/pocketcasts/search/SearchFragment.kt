@@ -34,7 +34,6 @@ import au.com.shiftyjelly.pocketcasts.models.type.EpisodeViewSource
 import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.search.SearchResultsFragment.Companion.ResultsType
 import au.com.shiftyjelly.pocketcasts.search.SearchViewModel.SearchResultType
-import au.com.shiftyjelly.pocketcasts.search.databinding.FragmentSearchBinding
 import au.com.shiftyjelly.pocketcasts.search.searchhistory.SearchHistoryClearAllConfirmationDialog
 import au.com.shiftyjelly.pocketcasts.search.searchhistory.SearchHistoryPage
 import au.com.shiftyjelly.pocketcasts.search.searchhistory.SearchHistoryViewModel

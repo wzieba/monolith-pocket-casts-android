@@ -4,6 +4,7 @@ import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
 import android.view.View
 import androidx.annotation.ColorInt
+import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

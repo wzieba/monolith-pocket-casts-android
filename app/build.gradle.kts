@@ -1,3 +1,5 @@
+import com.google.protobuf.gradle.id
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,6 +9,7 @@ plugins {
     alias(libs.plugins.google.services)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.protobuf)
 }
 
 android {
@@ -52,7 +55,32 @@ android {
     }
 }
 
+protobuf {
+    protoc {
+        artifact = libs.protobuf.protoc.get().toString()
+    }
+    generateProtoTasks {
+        all().configureEach {
+            builtins {
+                forEach {
+                    println(it.name)
+                }
+                id("java") {
+                    option("lite")
+                }
+//                getByName("java") {
+//                    option("lite")
+//                }
+                id("kotlin") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
+
 dependencies {
+    implementation(libs.accessibility.test.framework)
     ksp(libs.dagger.hilt.compiler)
     ksp(libs.hilt.compiler)
     ksp(libs.showkase.processor)
@@ -302,6 +330,11 @@ dependencies {
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.car)
 
+    implementation(libs.protobuf.kotlinlite)
+    implementation(libs.protobuf.javalite)
+    implementation(libs.coroutines.test)
+    implementation(libs.junit)
+    implementation(libs.device.names)
 
 
 

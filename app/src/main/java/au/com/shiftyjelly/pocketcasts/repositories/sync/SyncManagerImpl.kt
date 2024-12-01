@@ -19,7 +19,6 @@ import au.com.shiftyjelly.pocketcasts.preferences.Settings
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.UploadProgressManager
 import au.com.shiftyjelly.pocketcasts.repositories.podcast.toUploadData
 import au.com.shiftyjelly.pocketcasts.servers.model.AuthResultModel
-import au.com.shiftyjelly.pocketcasts.servers.podcast.PodcastRatingsResponse
 import au.com.shiftyjelly.pocketcasts.servers.sync.EpisodeSyncRequest
 import au.com.shiftyjelly.pocketcasts.servers.sync.FileAccount
 import au.com.shiftyjelly.pocketcasts.servers.sync.FileImageUploadData

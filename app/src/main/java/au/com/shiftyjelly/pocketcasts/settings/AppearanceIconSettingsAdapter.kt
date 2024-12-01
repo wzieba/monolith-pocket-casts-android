@@ -9,9 +9,9 @@ import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import au.com.shiftyjelly.pocketcasts.R
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterAppearanceAppiconItemBinding
 import au.com.shiftyjelly.pocketcasts.models.to.SignInState
 import au.com.shiftyjelly.pocketcasts.models.type.SubscriptionTier
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterAppearanceAppiconItemBinding
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.helper.AppIcon
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx

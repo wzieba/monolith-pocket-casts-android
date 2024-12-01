@@ -10,7 +10,7 @@ import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import au.com.shiftyjelly.pocketcasts.R
-import au.com.shiftyjelly.pocketcasts.settings.databinding.AdapterAppearanceThemeItemBinding
+import au.com.shiftyjelly.pocketcasts.databinding.AdapterAppearanceThemeItemBinding
 import au.com.shiftyjelly.pocketcasts.ui.extensions.getThemeColor
 import au.com.shiftyjelly.pocketcasts.ui.theme.Theme
 import au.com.shiftyjelly.pocketcasts.utils.extensions.dpToPx

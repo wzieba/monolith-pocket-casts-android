@@ -16,10 +16,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.text.HtmlCompat
 import androidx.work.ListenableWorker
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.R
 import au.com.shiftyjelly.pocketcasts.analytics.AnalyticsTracker
 import au.com.shiftyjelly.pocketcasts.deeplink.ShowEpisodeDeepLink
-import au.com.shiftyjelly.pocketcasts.localization.BuildConfig
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast
 import au.com.shiftyjelly.pocketcasts.models.entity.Podcast.AutoAddUpNext
 import au.com.shiftyjelly.pocketcasts.models.entity.PodcastEpisode

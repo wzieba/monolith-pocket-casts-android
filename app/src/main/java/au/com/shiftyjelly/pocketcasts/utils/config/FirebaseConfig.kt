@@ -1,6 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.utils.config
 
-import au.com.shiftyjelly.pocketcasts.helper.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 import au.com.shiftyjelly.pocketcasts.utils.featureflag.Feature
 
 object FirebaseConfig {

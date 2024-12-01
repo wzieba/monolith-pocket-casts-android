@@ -1,6 +1,6 @@
 package au.com.shiftyjelly.pocketcasts.utils.featureflag
 
-import au.com.shiftyjelly.pocketcasts.helper.BuildConfig
+import au.com.shiftyjelly.pocketcasts.BuildConfig
 
 data class ReleaseVersion(
     val major: Int,
